@@ -37,6 +37,6 @@
     }
   },
   "files": {
-    "ignore": ["dist", ".astro", "pagefind", "node_modules", "scripts", "coverage"]
+    "ignore": ["dist", ".astro", "pagefind", "node_modules", "scripts", "coverage", "scrape-out"]
   }
 }
