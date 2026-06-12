@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "18N830V2",
+  "sizeInch": 18,
+  "impedanceOhm": 6,
+  "fsHz": 31,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 6,
+  "vasL": 262,
+  "sdCm2": 1212,
+  "xmaxMm": 8,
+  "reOhm": 4.8,
+  "bl": 22.4,
+  "mmsG": 210,
+  "peW": 550,
+  "sensitivityDb": 94.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/bms-18n830v2/specifications"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD-320Fe/Ti",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 76.2,
+  "fLowHz": 500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 110,
+  "peW": 130,
+  "magnetMaterial": "ferrite",
+  "weightKg": 5.8,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD320FETI8/motor-cd-320fe-ti-8-oh/"
+}

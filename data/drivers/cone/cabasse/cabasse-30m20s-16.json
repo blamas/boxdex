@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cabasse",
+  "model": "30M20S",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 60,
+  "qts": 0.635,
+  "qes": 0.75,
+  "qms": 4.14,
+  "vasL": 99.4,
+  "sdCm2": 530,
+  "xmaxMm": 4.5,
+  "reOhm": 11.95,
+  "bl": 12.9,
+  "mmsG": 27.9,
+  "peW": 150,
+  "sensitivityDb": 94.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CABASSE"
+}

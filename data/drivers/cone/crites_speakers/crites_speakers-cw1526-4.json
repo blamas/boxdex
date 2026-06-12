@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Crites Speakers",
+  "model": "CW1526",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 26.3,
+  "qts": 0.263,
+  "qes": 0.27,
+  "qms": 9.93,
+  "vasL": 506.3,
+  "sdCm2": 851,
+  "xmaxMm": 7,
+  "reOhm": 3.36,
+  "bl": 12.3,
+  "mmsG": 73.4,
+  "peW": 150,
+  "sensitivityDb": 101.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CRITES%20SPEAKERS"
+}

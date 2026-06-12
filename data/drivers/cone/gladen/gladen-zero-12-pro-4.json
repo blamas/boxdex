@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Gladen",
+  "model": "ZERO 12 PRO",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.38,
+  "qes": 0.4,
+  "qms": 6.32,
+  "vasL": 93.72,
+  "sdCm2": 510,
+  "xmaxMm": 12.5,
+  "reOhm": 3.7,
+  "bl": 13.95,
+  "mmsG": 135,
+  "peW": 500,
+  "sensitivityDb": 88.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/gladen-zero-12-pro/specifications"
+}

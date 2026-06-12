@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "PW450ND",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.273,
+  "qes": 0.28,
+  "qms": 10.5,
+  "vasL": 205,
+  "sdCm2": 1158,
+  "xmaxMm": 5,
+  "reOhm": 5.75,
+  "bl": 28.1,
+  "mmsG": 160.9,
+  "peW": 500,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Davis",
+  "model": "31TCA12W",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.283,
+  "qes": 0.32,
+  "qms": 2.42,
+  "vasL": 335,
+  "sdCm2": 530,
+  "xmaxMm": 6,
+  "reOhm": 6.28,
+  "bl": 11.7,
+  "mmsG": 40.8,
+  "peW": 200,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVIS"
+}

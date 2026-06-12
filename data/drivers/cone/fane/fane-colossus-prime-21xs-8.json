@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "Colossus Prime 21XS",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.339,
+  "qes": 0.354,
+  "qms": 7.88,
+  "vasL": 266,
+  "sdCm2": 1520,
+  "xmaxMm": 14,
+  "reOhm": 5.1,
+  "bl": 31.3,
+  "mmsG": 304,
+  "peW": 1500,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://fane-international.com/downloads/FaneColossusPrime21XS-PreliminarySpecifications0924.pdf"
+}

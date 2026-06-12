@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L12/568H",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 58.8,
+  "qts": 0.41,
+  "qes": 0.44,
+  "qms": 5.8,
+  "vasL": 72,
+  "sdCm2": 530,
+  "xmaxMm": 4,
+  "reOhm": 6.17,
+  "bl": 14.4,
+  "mmsG": 40,
+  "peW": 100,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l12568h"
+}

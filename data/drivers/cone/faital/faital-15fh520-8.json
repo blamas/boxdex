@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15FH520",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.39,
+  "qes": 0.41,
+  "qms": 10.1,
+  "vasL": 186.5,
+  "sdCm2": 847,
+  "xmaxMm": 8.75,
+  "reOhm": 5.6,
+  "mmsG": 105,
+  "peW": 600,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 4.6,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151060150"
+}

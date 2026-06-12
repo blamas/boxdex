@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "MAN062.00",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 103,
+  "qts": 0.3,
+  "qes": 0.33,
+  "qms": 2.83,
+  "vasL": 4.07,
+  "sdCm2": 132,
+  "xmaxMm": 3.9,
+  "reOhm": 5.7,
+  "bl": 12.72,
+  "mmsG": 14.5,
+  "peW": 250,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://lavocespeakers.com/product/man062-00/"
+}

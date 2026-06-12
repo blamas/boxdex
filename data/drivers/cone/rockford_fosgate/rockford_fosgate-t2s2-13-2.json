@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "T2S2-13",
+  "sizeInch": 15,
+  "impedanceOhm": 2,
+  "fsHz": 25.5,
+  "qts": 0.353,
+  "qes": 0.4,
+  "qms": 3.01,
+  "vasL": 68.7,
+  "sdCm2": 707,
+  "xmaxMm": 12.9,
+  "reOhm": 1.6,
+  "bl": 16,
+  "mmsG": 397.3,
+  "peW": 2000,
+  "sensitivityDb": 93.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ROCKFORD%20FOSGATE"
+}

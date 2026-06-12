@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "S3 1024",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30.2,
+  "qts": 0.476,
+  "qes": 0.61,
+  "qms": 2.17,
+  "vasL": 25.3,
+  "sdCm2": 346.4,
+  "xmaxMm": 6,
+  "reOhm": 4.06,
+  "bl": 15.3,
+  "mmsG": 185.1,
+  "peW": 450,
+  "sensitivityDb": 85.5
+}

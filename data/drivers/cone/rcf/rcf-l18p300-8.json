@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L18P300",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 8.3,
+  "vasL": 226,
+  "sdCm2": 1130,
+  "xmaxMm": 7.8,
+  "reOhm": 5.03,
+  "bl": 23.5,
+  "mmsG": 180,
+  "peW": 500,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l18p300"
+}

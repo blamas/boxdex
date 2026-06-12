@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "G12T-100",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 81,
+  "qts": 0.833,
+  "qes": 0.887,
+  "qms": 13.57,
+  "vasL": 47,
+  "sdCm2": 517,
+  "xmaxMm": 2,
+  "reOhm": 7.49,
+  "bl": 11.5,
+  "mmsG": 30.8,
+  "peW": 100,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

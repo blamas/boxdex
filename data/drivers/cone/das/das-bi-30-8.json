@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "BI-30",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.145,
+  "qes": 0.163,
+  "qms": 1.285,
+  "vasL": 283,
+  "sdCm2": 780,
+  "xmaxMm": 6.6,
+  "reOhm": 5,
+  "bl": 22.9,
+  "mmsG": 97.4,
+  "peW": 500,
+  "sensitivityDb": 99.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "5321 Nd",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.272,
+  "qes": 0.3,
+  "qms": 2.9,
+  "vasL": 150,
+  "sdCm2": 892,
+  "xmaxMm": 5.2,
+  "reOhm": 5.6,
+  "bl": 23.2,
+  "mmsG": 112,
+  "peW": 500,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

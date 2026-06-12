@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "8CL51",
+  "sizeInch": 8,
+  "impedanceOhm": 16,
+  "fsHz": 83,
+  "qts": 0.51,
+  "qes": 0.54,
+  "qms": 8.9,
+  "vasL": 9.5,
+  "sdCm2": 220,
+  "xmaxMm": 6,
+  "reOhm": 10.1,
+  "bl": 16.1,
+  "mmsG": 26,
+  "peW": 200,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/8/16/8CL51"
+}

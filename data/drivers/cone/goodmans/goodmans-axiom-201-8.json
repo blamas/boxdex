@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Goodmans",
+  "model": "AXIOM 201",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42.5,
+  "qts": 0.421,
+  "qes": 0.493,
+  "qms": 2.891,
+  "vasL": 157.7,
+  "sdCm2": 549.5,
+  "xmaxMm": 2.5,
+  "reOhm": 5.49,
+  "bl": 10.6,
+  "mmsG": 37.6,
+  "peW": 30,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GOODMANS"
+}

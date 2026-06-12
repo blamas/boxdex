@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Skar Audio",
+  "model": "EV-12 S4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 45.7,
+  "qts": 0.71,
+  "qes": 0.804,
+  "qms": 6.08,
+  "vasL": 34.8,
+  "sdCm2": 536,
+  "xmaxMm": 8.5,
+  "reOhm": 3.42,
+  "bl": 13.6,
+  "mmsG": 151.6,
+  "peW": 200,
+  "sensitivityDb": 88,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/skar-ev-12-s4/specifications"
+}

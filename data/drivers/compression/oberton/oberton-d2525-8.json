@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Oberton",
+  "model": "D2525",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25,
+  "fLowHz": 2500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 105,
+  "peW": 20,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-hf-drivers/241-d2525.html"
+}

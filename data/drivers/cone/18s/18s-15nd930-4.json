@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15ND930",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.24,
+  "qes": 0.24,
+  "qms": 7.1,
+  "vasL": 182,
+  "sdCm2": 850,
+  "xmaxMm": 7.5,
+  "reOhm": 2.8,
+  "bl": 17,
+  "mmsG": 113,
+  "peW": 500,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neo",
+  "weightKg": 4.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/4/15nd930%20-%204ohm"
+}

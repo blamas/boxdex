@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12MCB700",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 51,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 3.9,
+  "vasL": 59.5,
+  "sdCm2": 550,
+  "xmaxMm": 7,
+  "reOhm": 5.4,
+  "bl": 20.4,
+  "mmsG": 69,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "weightKg": 7.8,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/112MCB708/altavoz-12mcb700-8-oh/"
+}

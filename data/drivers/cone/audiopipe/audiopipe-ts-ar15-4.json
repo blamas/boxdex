@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiopipe",
+  "model": "TS-AR15",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 24,
+  "qts": 0.48,
+  "qes": 0.68,
+  "qms": 1.6,
+  "vasL": 99.11,
+  "sdCm2": 940,
+  "xmaxMm": 7.5,
+  "reOhm": 3.6,
+  "bl": 21.1,
+  "mmsG": 556.7,
+  "peW": 500,
+  "sensitivityDb": 84.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audiopipe-ts-ar15/specifications"
+}

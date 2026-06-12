@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Alpine",
+  "model": "SWX-1043D Type-X",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.54,
+  "qes": 0.59,
+  "qms": 6.41,
+  "vasL": 18,
+  "sdCm2": 360,
+  "xmaxMm": 10.3,
+  "reOhm": 7,
+  "bl": 24.8,
+  "mmsG": 266,
+  "peW": 1000,
+  "sensitivityDb": 82.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALPINE"
+}

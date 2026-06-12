@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eton",
+  "model": "12-680/A8/62 HEX SYMPHONIE II",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.296,
+  "qes": 0.33,
+  "qms": 2.87,
+  "vasL": 173,
+  "sdCm2": 515,
+  "xmaxMm": 6,
+  "reOhm": 6.1,
+  "bl": 15.6,
+  "mmsG": 80.5,
+  "peW": 200,
+  "sensitivityDb": 92.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ETON"
+}

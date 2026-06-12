@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "Colossus Prime 21NDXL",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.36,
+  "qes": 0.374,
+  "qms": 9.8,
+  "vasL": 241,
+  "sdCm2": 1520,
+  "xmaxMm": 14,
+  "reOhm": 5.1,
+  "bl": 30,
+  "mmsG": 320,
+  "peW": 1500,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://fane-international.com/downloads/FaneColossusPrime21NDXL-PreliminarySpecifications0924.pdf"
+}

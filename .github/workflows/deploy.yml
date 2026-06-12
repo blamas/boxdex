@@ -1,0 +1,77 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      _disabled:
+        description: "Deploy is disabled until the repo is public"
+        required: false
+
+# Deploy disabled: re-enable by restoring the push trigger once the repo is public
+# on:
+#   push:
+#     branches: [main]
+#   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 26
+          cache: npm
+
+      - id: pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Install
+        run: npm ci
+
+      - name: Compute auth hashes
+        if: ${{ secrets.SITE_AUTH_PASSWORDS != '' }}
+        run: |
+          HASHES=$(node -e "
+            const crypto = require('crypto');
+            const raw = process.env.SITE_AUTH_PASSWORDS;
+            const hashes = raw.split('\n').map(p => p.trim()).filter(Boolean)
+              .map(p => crypto.createHash('sha256').update(p).digest('hex'));
+            process.stdout.write(hashes.join(','));
+          ")
+          echo "SITE_AUTH_HASHES=$HASHES" >> $GITHUB_ENV
+        env:
+          SITE_AUTH_PASSWORDS: ${{ secrets.SITE_AUTH_PASSWORDS }}
+
+      - name: Build
+        run: npm run build
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          SITE_AUTH_HASHES: ${{ env.SITE_AUTH_HASHES }}
+
+      - name: Pagefind
+        run: npx pagefind --site dist
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

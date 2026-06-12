@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "15 SR 4 CP",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 5.53,
+  "vasL": 101.2,
+  "sdCm2": 754.8,
+  "xmaxMm": 8,
+  "reOhm": 5.1,
+  "bl": 25.03,
+  "mmsG": 175.1,
+  "peW": 1200,
+  "sensitivityDb": 95.1,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2025/07/Z008323.pdf"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15FX560",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.3,
+  "qes": 0.31,
+  "qms": 6.8,
+  "vasL": 159,
+  "sdCm2": 864,
+  "xmaxMm": 9.42,
+  "reOhm": 5.2,
+  "mmsG": 115,
+  "peW": 700,
+  "sensitivityDb": 99,
+  "magnetMaterial": "neodymium slug crown",
+  "weightKg": 7.5,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151060200"
+}

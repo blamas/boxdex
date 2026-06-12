@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD-171Fe/PT",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44.4,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 108,
+  "peW": 80,
+  "magnetMaterial": "ferrite",
+  "weightKg": 2.3,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD171FEPT8/motor-cd-171fe-pt-8-oh/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Resonant Engineering",
+  "model": "XXX-18",
+  "sizeInch": 18,
+  "impedanceOhm": 2,
+  "fsHz": 29,
+  "qts": 0.569,
+  "qes": 0.64,
+  "qms": 5.09,
+  "vasL": 244.2,
+  "sdCm2": 1210,
+  "xmaxMm": 16,
+  "reOhm": 1.9,
+  "bl": 11.7,
+  "mmsG": 253.1,
+  "peW": 2000,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RESONANT%20ENGINEERING"
+}

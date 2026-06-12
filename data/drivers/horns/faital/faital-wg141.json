@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Faital PRO",
+  "model": "WG141",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 110,
+  "coverageVerticalDeg": 110,
+  "cutoffHz": 800,
+  "mouthWmm": 130,
+  "mouthHmm": 163,
+  "depthMm": 200,
+  "profile": "oblate_spheroid",
+  "material": "al",
+  "weightKg": 1.4,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Horns/product_details/index.php?id=903020110"
+}

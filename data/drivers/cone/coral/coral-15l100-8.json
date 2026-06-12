@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Coral",
+  "model": "15L100",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.256,
+  "qes": 0.27,
+  "qms": 4.93,
+  "vasL": 265.7,
+  "sdCm2": 907,
+  "xmaxMm": 3.6,
+  "reOhm": 5.3,
+  "bl": 21.6,
+  "mmsG": 130.7,
+  "peW": 100,
+  "sensitivityDb": 97.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CORAL"
+}

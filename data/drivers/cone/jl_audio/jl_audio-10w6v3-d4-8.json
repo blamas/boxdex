@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "10W6V3-D4",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30.1,
+  "qts": 0.513,
+  "qes": 0.543,
+  "qms": 9.228,
+  "vasL": 23.3,
+  "sdCm2": 318.1,
+  "xmaxMm": 10.5,
+  "reOhm": 6.45,
+  "bl": 19.6,
+  "mmsG": 170.3,
+  "peW": 600,
+  "sensitivityDb": 83.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JL%20AUDIO"
+}

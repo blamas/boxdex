@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "122Nd",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 56,
+  "qts": 0.138,
+  "qes": 0.14,
+  "qms": 12,
+  "vasL": 72,
+  "sdCm2": 530,
+  "xmaxMm": 2,
+  "reOhm": 5.2,
+  "bl": 24,
+  "mmsG": 44.2,
+  "peW": 200,
+  "sensitivityDb": 103.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

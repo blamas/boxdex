@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Morel",
+  "model": "ULTIMO 102",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 27,
+  "qts": 0.391,
+  "qes": 0.58,
+  "qms": 1.2,
+  "vasL": 47.4,
+  "sdCm2": 346,
+  "xmaxMm": 13.4,
+  "reOhm": 1.7,
+  "bl": 7.8,
+  "mmsG": 123,
+  "peW": 1000,
+  "sensitivityDb": 90.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MOREL"
+}

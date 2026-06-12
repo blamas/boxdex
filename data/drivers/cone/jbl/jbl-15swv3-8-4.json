@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "15SWV3.8",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 53.4,
+  "qts": 0.52,
+  "qes": 0.53,
+  "qms": 18.9,
+  "vasL": 43.9,
+  "sdCm2": 840,
+  "xmaxMm": 11,
+  "reOhm": 3.1,
+  "bl": 20,
+  "mmsG": 201.9,
+  "peW": 1900,
+  "sensitivityDb": 92.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-15swv3-8/specifications"
+}

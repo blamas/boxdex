@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18FBR700",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35.56,
+  "qts": 0.271,
+  "qes": 0.277,
+  "qms": 12.63,
+  "vasL": 231.3,
+  "sdCm2": 1110,
+  "xmaxMm": 8,
+  "reOhm": 5.26,
+  "bl": 25.17,
+  "mmsG": 149.08,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/384-18fbr700.html"
+}

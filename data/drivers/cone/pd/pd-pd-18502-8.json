@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD.1850/2",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33.1,
+  "qts": 0.24,
+  "qes": 0.24,
+  "qms": 15.4,
+  "vasL": 203.84,
+  "sdCm2": 1164,
+  "xmaxMm": 11.1,
+  "reOhm": 5.2,
+  "bl": 31,
+  "mmsG": 215.2,
+  "peW": 800,
+  "sensitivityDb": 96.7
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "BLACKBASS-12 8 Ohms",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.482,
+  "qes": 0.51,
+  "qms": 8.8,
+  "vasL": 61,
+  "sdCm2": 490,
+  "xmaxMm": 7.5,
+  "reOhm": 7.2,
+  "bl": 20.7,
+  "mmsG": 166.2,
+  "peW": 300,
+  "sensitivityDb": 87.1
+}

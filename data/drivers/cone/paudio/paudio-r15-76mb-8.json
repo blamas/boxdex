@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "R15/76MB",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 62.5,
+  "qts": 0.421,
+  "qes": 0.44,
+  "qms": 9.92,
+  "vasL": 83.4,
+  "sdCm2": 880,
+  "xmaxMm": 4.2,
+  "reOhm": 5.8,
+  "bl": 20.9,
+  "mmsG": 84.4,
+  "peW": 500,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

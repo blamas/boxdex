@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPA-15A",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 33,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 8.9,
+  "vasL": 321.3,
+  "sdCm2": 856.3,
+  "xmaxMm": 4,
+  "peW": 450,
+  "sensitivityDb": 100.5,
+  "reOhm": 5.22,
+  "bl": 15.7,
+  "mmsG": 76,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappa_15A.pdf"
+}

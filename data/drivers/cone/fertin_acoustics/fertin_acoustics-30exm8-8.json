@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fertin Acoustics",
+  "model": "30EXM8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 23.7,
+  "qts": 0.147,
+  "qes": 0.15,
+  "qms": 6.46,
+  "vasL": 250,
+  "sdCm2": 490,
+  "xmaxMm": 3,
+  "reOhm": 6.2,
+  "bl": 19.3,
+  "mmsG": 60.7,
+  "peW": 50,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FERTIN%20ACOUSTICS"
+}

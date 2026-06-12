@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "SIGMA PRO 18 A2 (prodance)",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.299,
+  "qes": 0.31,
+  "qms": 8.18,
+  "vasL": 613,
+  "sdCm2": 1140,
+  "xmaxMm": 6.1,
+  "reOhm": 6.47,
+  "bl": 19.5,
+  "mmsG": 111.4,
+  "peW": 650,
+  "sensitivityDb": 98.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Goldwood",
+  "model": "GW-1038",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 33.7,
+  "qts": 1.1,
+  "qes": 1.5,
+  "qms": 4.4,
+  "vasL": 90.299,
+  "sdCm2": 355,
+  "xmaxMm": 2.5,
+  "reOhm": 7.2,
+  "bl": 6.8,
+  "mmsG": 43.792,
+  "peW": 130,
+  "sensitivityDb": 85.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/goldwood-sound-gw-1038/specifications"
+}

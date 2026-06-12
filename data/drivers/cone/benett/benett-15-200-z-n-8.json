@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Benett",
+  "model": "15.200 Z/N",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32.9,
+  "qts": 0.265,
+  "qes": 0.273,
+  "qms": 9.264,
+  "vasL": 344,
+  "sdCm2": 855,
+  "xmaxMm": 5,
+  "reOhm": 5.5,
+  "bl": 17,
+  "mmsG": 69.6,
+  "peW": 200,
+  "sensitivityDb": 100.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BENETT"
+}

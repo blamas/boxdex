@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15M300v2 vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.297,
+  "qes": 0.31,
+  "qms": 7,
+  "vasL": 185,
+  "sdCm2": 850,
+  "xmaxMm": 4.9,
+  "reOhm": 6.3,
+  "bl": 19.8,
+  "mmsG": 68.5,
+  "peW": 300,
+  "sensitivityDb": 100.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

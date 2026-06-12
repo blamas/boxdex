@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "SAF214.50",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.435,
+  "qes": 0.46,
+  "qms": 7.9,
+  "vasL": 267,
+  "sdCm2": 1661,
+  "xmaxMm": 11.6,
+  "reOhm": 5.5,
+  "bl": 30.3,
+  "mmsG": 407.7,
+  "peW": 2000,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LAVOCE"
+}

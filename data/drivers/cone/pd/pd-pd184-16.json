@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD184",
+  "sizeInch": 18,
+  "impedanceOhm": 16,
+  "fsHz": 27,
+  "qts": 0.253,
+  "qes": 0.26,
+  "qms": 9.6,
+  "vasL": 473,
+  "sdCm2": 1150,
+  "xmaxMm": 9.5,
+  "reOhm": 5.9,
+  "bl": 23.04,
+  "mmsG": 138,
+  "peW": 600,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ceramic",
+  "weightKg": 11.65,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=2"
+}

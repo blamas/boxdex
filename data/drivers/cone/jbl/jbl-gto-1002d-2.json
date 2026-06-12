@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "GTO 1002D",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 27,
+  "qts": 0.429,
+  "qes": 0.46,
+  "qms": 6.45,
+  "vasL": 38.7,
+  "sdCm2": 355,
+  "xmaxMm": 6.3,
+  "reOhm": 1,
+  "bl": 7.6,
+  "mmsG": 158.6,
+  "peW": 250,
+  "sensitivityDb": 93.2
+}

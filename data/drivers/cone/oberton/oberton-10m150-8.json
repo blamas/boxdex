@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "10M150",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 74,
+  "qts": 0.43,
+  "qes": 0.45,
+  "qms": 8.89,
+  "vasL": 25.9,
+  "sdCm2": 317.3,
+  "xmaxMm": 3.25,
+  "reOhm": 5.15,
+  "bl": 11.62,
+  "mmsG": 25.54,
+  "peW": 150,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/179-10m150.html"
+}

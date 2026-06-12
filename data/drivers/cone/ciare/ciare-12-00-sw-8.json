@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "12.00 SW",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 43.61,
+  "qts": 0.38,
+  "qes": 0.4,
+  "qms": 6.99,
+  "vasL": 32,
+  "sdCm2": 490,
+  "xmaxMm": 11.5,
+  "reOhm": 6.79,
+  "bl": 25.28,
+  "mmsG": 137.3,
+  "peW": 1000,
+  "sensitivityDb": 90.1
+}

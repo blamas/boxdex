@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fertin Acoustics",
+  "model": "38EX-12.5 V",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.125,
+  "qes": 0.13,
+  "qms": 3.17,
+  "vasL": 935,
+  "sdCm2": 830,
+  "xmaxMm": 3,
+  "reOhm": 5,
+  "bl": 17.8,
+  "mmsG": 65.4,
+  "peW": 80,
+  "sensitivityDb": 101.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FERTIN%20ACOUSTICS"
+}

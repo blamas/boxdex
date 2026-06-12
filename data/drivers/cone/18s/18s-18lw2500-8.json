@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18LW2500",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.335,
+  "qes": 0.34,
+  "qms": 22,
+  "vasL": 135,
+  "sdCm2": 1130,
+  "xmaxMm": 9.1,
+  "reOhm": 4.9,
+  "bl": 29.9,
+  "mmsG": 290.5,
+  "peW": 1600,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

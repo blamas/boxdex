@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiotechnology",
+  "model": "FLEXUNITS 12 B 77 25 10",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.3,
+  "qes": 0.34,
+  "qms": 2.5,
+  "vasL": 250,
+  "sdCm2": 515,
+  "xmaxMm": 4.3,
+  "reOhm": 5.39,
+  "bl": 12.24,
+  "mmsG": 60.2,
+  "peW": 125,
+  "sensitivityDb": 92.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audio-technology-flexunits-12-b-77-25-10/specifications"
+}

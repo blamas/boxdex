@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE180",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1000,
+  "fHighHz": 17000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 106.5,
+  "peW": 60,
+  "weightKg": 1.7,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/8/DE180"
+}

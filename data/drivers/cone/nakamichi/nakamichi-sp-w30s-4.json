@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Nakamichi",
+  "model": "SP-W30S",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27.8,
+  "qts": 0.464,
+  "qes": 0.541,
+  "qms": 3.26,
+  "vasL": 92.3,
+  "sdCm2": 547.4,
+  "xmaxMm": 6.6,
+  "reOhm": 3.4,
+  "bl": 12.8,
+  "mmsG": 149.6,
+  "peW": 200,
+  "sensitivityDb": 91.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=NAKAMICHI"
+}

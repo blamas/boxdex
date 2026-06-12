@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "ATC",
+  "model": "PA75-314 BLCR",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.212,
+  "qes": 0.257,
+  "qms": 1.2,
+  "vasL": 77,
+  "sdCm2": 550,
+  "xmaxMm": 1.8,
+  "reOhm": 5.4,
+  "bl": 20.2,
+  "mmsG": 68.9,
+  "peW": 75,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ATC"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPALITE 3012 LF",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.324,
+  "qes": 0.34,
+  "qms": 6.94,
+  "vasL": 106.7,
+  "sdCm2": 545.4,
+  "xmaxMm": 8.2,
+  "reOhm": 5.6,
+  "bl": 16.6,
+  "mmsG": 72.3,
+  "peW": 450,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

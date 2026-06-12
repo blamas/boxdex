@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "FTR15-4080HDX",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40.5,
+  "qts": 0.33,
+  "qes": 0.36,
+  "qms": 3.98,
+  "vasL": 104.3,
+  "sdCm2": 855.3,
+  "xmaxMm": 7.3,
+  "reOhm": 5.1,
+  "bl": 23.4,
+  "mmsG": 151.9,
+  "peW": 1000,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

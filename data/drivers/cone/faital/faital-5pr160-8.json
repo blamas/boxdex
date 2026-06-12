@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "5PR160",
+  "sizeInch": 5,
+  "impedanceOhm": 8,
+  "fsHz": 90,
+  "qts": 0.31,
+  "qes": 0.33,
+  "qms": 4.4,
+  "vasL": 3.7,
+  "sdCm2": 85.2,
+  "xmaxMm": 5.1,
+  "reOhm": 6.1,
+  "mmsG": 8.5,
+  "peW": 120,
+  "sensitivityDb": 92,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 0.85,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101010110"
+}

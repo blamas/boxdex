@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "ALPHA-6CBMRA",
+  "impedanceOhm": 8,
+  "sizeInch": 6,
+  "fsHz": 407,
+  "qts": 1.35,
+  "qes": 1.74,
+  "qms": 6.04,
+  "vasL": 0.45,
+  "sdCm2": 126.7,
+  "xmaxMm": 1.5,
+  "peW": 100,
+  "sensitivityDb": 97.8,
+  "reOhm": 5.26,
+  "bl": 7.86,
+  "mmsG": 8,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Alpha_6CBMRA.pdf"
+}

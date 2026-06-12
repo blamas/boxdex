@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "K10-200E",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 67,
+  "qts": 0.471,
+  "qes": 0.499,
+  "qms": 8.41,
+  "vasL": 37,
+  "sdCm2": 346.4,
+  "xmaxMm": 4,
+  "reOhm": 5.3,
+  "bl": 10.7,
+  "mmsG": 25.6,
+  "peW": 200,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

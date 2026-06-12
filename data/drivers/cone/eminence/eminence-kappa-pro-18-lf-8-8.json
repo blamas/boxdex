@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPA PRO 18 LF-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.329,
+  "qes": 0.34,
+  "qms": 10.66,
+  "vasL": 391,
+  "sdCm2": 1159,
+  "xmaxMm": 8,
+  "reOhm": 5.39,
+  "bl": 19.5,
+  "mmsG": 119.1,
+  "peW": 800,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

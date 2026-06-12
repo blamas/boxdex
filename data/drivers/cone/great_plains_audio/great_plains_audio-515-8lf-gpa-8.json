@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Great Plains Audio",
+  "model": "515-8LF GPA",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 27.4,
+  "qts": 0.255,
+  "qes": 0.261,
+  "qms": 11.63,
+  "vasL": 470.1,
+  "sdCm2": 856,
+  "xmaxMm": 5.1,
+  "reOhm": 6.7,
+  "bl": 18.1,
+  "mmsG": 73.7,
+  "peW": 125,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GREAT%20PLAINS%20AUDIO"
+}

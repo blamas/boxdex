@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powersoft",
+  "model": "30''-4MM M-FORCE 02 REVERSED",
+  "sizeInch": 31.5,
+  "impedanceOhm": 0.25,
+  "fsHz": 32,
+  "qts": 0.153,
+  "qes": 0.156,
+  "qms": 8.367,
+  "vasL": 170,
+  "sdCm2": 3420,
+  "xmaxMm": 3.8,
+  "reOhm": 0.19,
+  "bl": 24.2,
+  "mmsG": 2382.8,
+  "peW": 5000,
+  "sensitivityDb": 113.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=POWERSOFT"
+}

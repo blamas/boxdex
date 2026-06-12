@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Isophon",
+  "model": "BS 35-8 vp06",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 26.8,
+  "qts": 0.479,
+  "qes": 0.624,
+  "qms": 2.07,
+  "vasL": 259,
+  "sdCm2": 346,
+  "xmaxMm": 4.5,
+  "reOhm": 6.3,
+  "bl": 6.2,
+  "mmsG": 22.9,
+  "peW": 50,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ISOPHON"
+}

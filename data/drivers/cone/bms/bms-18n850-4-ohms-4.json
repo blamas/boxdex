@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "18N850 4 Ohms",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 23.7,
+  "qts": 0.261,
+  "qes": 0.27,
+  "qms": 7.45,
+  "vasL": 288,
+  "sdCm2": 1212,
+  "xmaxMm": 11,
+  "reOhm": 3,
+  "bl": 23.1,
+  "mmsG": 322.4,
+  "peW": 1200,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BMS"
+}

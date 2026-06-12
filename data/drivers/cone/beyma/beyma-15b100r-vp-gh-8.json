@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15B100R vp GH",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 27.3,
+  "qts": 0.215,
+  "qes": 0.22,
+  "qms": 9.4,
+  "vasL": 334,
+  "sdCm2": 873.5,
+  "xmaxMm": 3,
+  "reOhm": 5.34,
+  "bl": 21.3,
+  "mmsG": 108.8,
+  "peW": 150,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18HP1042",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.41,
+  "qes": 0.43,
+  "qms": 10.3,
+  "vasL": 191.9,
+  "sdCm2": 1212,
+  "xmaxMm": 9,
+  "reOhm": 5.5,
+  "mmsG": 187.5,
+  "peW": 1000,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 6.7,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201070121"
+}

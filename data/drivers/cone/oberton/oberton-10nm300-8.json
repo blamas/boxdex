@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "10NM300",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 71.36,
+  "qts": 0.209,
+  "qes": 0.214,
+  "qms": 9.15,
+  "vasL": 20.61,
+  "sdCm2": 317.3,
+  "xmaxMm": 5.25,
+  "reOhm": 5.58,
+  "bl": 20.12,
+  "mmsG": 34.62,
+  "peW": 400,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/132-10nm300.html"
+}

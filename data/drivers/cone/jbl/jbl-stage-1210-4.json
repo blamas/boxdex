@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "STAGE 1210",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 31.7,
+  "qts": 0.55,
+  "qes": 0.6,
+  "qms": 6.64,
+  "vasL": 64.6,
+  "sdCm2": 530.9,
+  "xmaxMm": 6.6,
+  "reOhm": 3.6,
+  "bl": 13.6,
+  "mmsG": 154.2,
+  "peW": 250,
+  "sensitivityDb": 90.8
+}

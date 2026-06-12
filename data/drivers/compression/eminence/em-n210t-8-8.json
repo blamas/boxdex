@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Eminence",
+  "model": "N210T-8",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 50.8,
+  "fLowHz": 1500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1500,
+  "sensitivityHornDb": 108.5,
+  "peW": 50,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/N210T_8.pdf"
+}

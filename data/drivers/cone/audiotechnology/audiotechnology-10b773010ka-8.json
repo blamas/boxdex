@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiotechnology",
+  "model": "10B773010KA",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24.4,
+  "qts": 0.283,
+  "qes": 0.3,
+  "qms": 5.1,
+  "vasL": 128,
+  "sdCm2": 326,
+  "xmaxMm": 9.8,
+  "reOhm": 6.2,
+  "bl": 12.5,
+  "mmsG": 49.5,
+  "peW": 150,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIOTECHNOLOGY"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "P1S8-12",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.593,
+  "qes": 0.64,
+  "qms": 8,
+  "vasL": 109,
+  "sdCm2": 540,
+  "xmaxMm": 9,
+  "reOhm": 6.8,
+  "bl": 15.6,
+  "mmsG": 140.5,
+  "peW": 250,
+  "sensitivityDb": 87.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ROCKFORD%20FOSGATE"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Celestion",
+  "model": "CDX1-1731",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1200,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2200,
+  "sensitivityHornDb": 110,
+  "peW": 40,
+  "magnetMaterial": "neodymium",
+  "datasheetUrl": "https://celestion.com/product/cdx1-1731/"
+}

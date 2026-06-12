@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND4020Ti2",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 100,
+  "fLowHz": 600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 113,
+  "peW": 160,
+  "magnetMaterial": "neodymium",
+  "weightKg": 3.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/2-0/8/nd4020ti2"
+}

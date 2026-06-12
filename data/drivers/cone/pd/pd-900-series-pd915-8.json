@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "900 Series PD915",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42.9,
+  "qts": 0.28,
+  "qes": 0.29,
+  "qms": 7.31,
+  "vasL": 129.52,
+  "sdCm2": 881.41,
+  "xmaxMm": 6,
+  "reOhm": 5.77,
+  "bl": 24.94,
+  "mmsG": 115.95,
+  "peW": 600,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ceramic",
+  "weightKg": 7.8,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=19"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L 15P02 vp FREDO51",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 80,
+  "qts": 0.518,
+  "qes": 0.59,
+  "qms": 4.26,
+  "vasL": 77,
+  "sdCm2": 855,
+  "xmaxMm": 2.4,
+  "reOhm": 6.5,
+  "bl": 17.1,
+  "mmsG": 52.7,
+  "peW": 200,
+  "sensitivityDb": 101.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

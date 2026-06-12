@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18LX60",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.368,
+  "qes": 0.38,
+  "qms": 11.45,
+  "vasL": 500,
+  "sdCm2": 1320,
+  "xmaxMm": 9,
+  "reOhm": 5.5,
+  "bl": 20.4,
+  "mmsG": 169.7,
+  "peW": 700,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

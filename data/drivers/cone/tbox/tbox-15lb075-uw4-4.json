@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "the box",
+  "model": "15LB075-UW4",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 40,
+  "qts": 0.382,
+  "qes": 0.4,
+  "qms": 8.48,
+  "vasL": 158.9,
+  "sdCm2": 900,
+  "xmaxMm": 4,
+  "reOhm": 3.6,
+  "bl": 16,
+  "mmsG": 113.1,
+  "peW": 300,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.thomann.fr/the_box_15lb075_uw4_speaker_15.htm"
+}

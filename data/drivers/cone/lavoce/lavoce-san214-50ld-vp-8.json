@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "SAN214.50LD vp",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.223,
+  "qes": 0.23,
+  "qms": 7,
+  "vasL": 250,
+  "sdCm2": 1661,
+  "xmaxMm": 7.2,
+  "reOhm": 5.3,
+  "bl": 43.5,
+  "mmsG": 435.4,
+  "peW": 1700,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LAVOCE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "RAGIN CAJUN 10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 84,
+  "qts": 0.64,
+  "qes": 0.68,
+  "qms": 10.8,
+  "vasL": 34.1,
+  "sdCm2": 366.1,
+  "xmaxMm": 0.5,
+  "reOhm": 7.3,
+  "bl": 10.6,
+  "mmsG": 19.8,
+  "peW": 75,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

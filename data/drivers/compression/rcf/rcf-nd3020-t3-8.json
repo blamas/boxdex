@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "RCF",
+  "model": "ND3020-T3",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 76,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 500,
+  "sensitivityHornDb": 109,
+  "peW": 110,
+  "magnetMaterial": "neodymium",
+  "weightKg": 3.2,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/nd3020-t3"
+}

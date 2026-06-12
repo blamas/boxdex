@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSF061.52",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 91,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 5.42,
+  "vasL": 6.62,
+  "sdCm2": 143,
+  "xmaxMm": 3.8,
+  "reOhm": 5.5,
+  "bl": 10.81,
+  "mmsG": 13.3,
+  "peW": 125,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsf061-52/"
+}

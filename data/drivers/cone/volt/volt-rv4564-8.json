@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Volt",
+  "model": "RV4564",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.313,
+  "qes": 0.34,
+  "qms": 3.94,
+  "vasL": 238,
+  "sdCm2": 1029,
+  "xmaxMm": 9.6,
+  "reOhm": 5.8,
+  "bl": 25.5,
+  "mmsG": 233.7,
+  "peW": 750,
+  "sensitivityDb": 94.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOLT"
+}

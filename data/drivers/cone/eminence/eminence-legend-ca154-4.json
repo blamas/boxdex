@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LEGEND CA154",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 51.1,
+  "qts": 0.487,
+  "qes": 0.54,
+  "qms": 4.94,
+  "vasL": 108.2,
+  "sdCm2": 823.7,
+  "xmaxMm": 4.5,
+  "reOhm": 2.92,
+  "bl": 12.2,
+  "mmsG": 85.3,
+  "peW": 300,
+  "sensitivityDb": 100.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

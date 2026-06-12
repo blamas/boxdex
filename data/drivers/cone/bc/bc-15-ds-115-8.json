@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15 DS 115",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.174,
+  "qes": 0.18,
+  "qms": 5.2,
+  "vasL": 94,
+  "sdCm2": 855,
+  "xmaxMm": 6.8,
+  "reOhm": 4.9,
+  "bl": 37.8,
+  "mmsG": 253.6,
+  "peW": 1600,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

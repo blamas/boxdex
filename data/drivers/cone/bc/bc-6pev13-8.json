@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "6PEV13",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 126,
+  "qts": 0.36,
+  "qes": 0.39,
+  "qms": 4.6,
+  "vasL": 6,
+  "sdCm2": 132,
+  "xmaxMm": 2.5,
+  "reOhm": 5.2,
+  "bl": 8.2,
+  "mmsG": 6,
+  "peW": 120,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/6.5/8/6PEV13"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dynaudio",
+  "model": "ESOTEC MW182",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 40,
+  "qts": 0.64,
+  "qes": 0.84,
+  "qms": 2.8,
+  "vasL": 34,
+  "sdCm2": 235,
+  "xmaxMm": 4.5,
+  "reOhm": 3.7,
+  "bl": 6.4,
+  "mmsG": 36.5,
+  "peW": 180,
+  "sensitivityDb": 86,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/dynaudio-esotec-mw182/specifications"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "E-18ELF",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.44,
+  "qes": 0.47,
+  "qms": 7.4,
+  "vasL": 263.57,
+  "sdCm2": 1117,
+  "xmaxMm": 7.5,
+  "reOhm": 6,
+  "bl": 21.5,
+  "mmsG": 188.3,
+  "peW": 800,
+  "sensitivityDb": 93.6
+}

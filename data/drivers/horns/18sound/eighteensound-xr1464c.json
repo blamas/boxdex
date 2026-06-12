@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "18 Sound",
+  "model": "XR1464C",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 800,
+  "mouthWmm": 240,
+  "mouthHmm": 240,
+  "profile": "oblate_spheroid",
+  "constantDirectivity": true,
+  "material": "composite material",
+  "weightKg": 1.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/horn/1-4/0/XR1464C"
+}

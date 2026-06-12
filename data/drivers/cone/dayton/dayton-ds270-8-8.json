@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "DS270-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30.7,
+  "qts": 0.444,
+  "qes": 0.55,
+  "qms": 2.31,
+  "vasL": 84.7,
+  "sdCm2": 353,
+  "xmaxMm": 5.5,
+  "reOhm": 5.4,
+  "bl": 10.2,
+  "mmsG": 55.4,
+  "peW": 100,
+  "sensitivityDb": 90.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

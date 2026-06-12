@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "DCS380-4 v2017",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 21.5,
+  "qts": 0.434,
+  "qes": 0.49,
+  "qms": 3.79,
+  "vasL": 267,
+  "sdCm2": 819.4,
+  "xmaxMm": 8.4,
+  "reOhm": 2.9,
+  "bl": 12.4,
+  "mmsG": 193.2,
+  "peW": 250,
+  "sensitivityDb": 93.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

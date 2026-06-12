@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "IMPERIUM 18NDXL",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.295,
+  "qes": 0.3,
+  "qms": 17.7,
+  "vasL": 203,
+  "sdCm2": 1164,
+  "xmaxMm": 12,
+  "reOhm": 5.6,
+  "bl": 29.4,
+  "mmsG": 220,
+  "peW": 1200,
+  "sensitivityDb": 95.7
+}

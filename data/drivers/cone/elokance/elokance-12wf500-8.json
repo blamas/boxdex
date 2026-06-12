@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Elokance",
+  "model": "12WF500",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 1.102,
+  "qes": 1.29,
+  "qms": 7.56,
+  "vasL": 99.1,
+  "sdCm2": 518.5,
+  "xmaxMm": 3.6,
+  "reOhm": 5.8,
+  "bl": 7.4,
+  "mmsG": 38.5,
+  "peW": 120,
+  "sensitivityDb": 93.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELOKANCE"
+}

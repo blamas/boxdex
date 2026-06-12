@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-330PAX",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.238,
+  "qes": 0.25,
+  "qms": 5.09,
+  "vasL": 190,
+  "sdCm2": 530,
+  "xmaxMm": 4.5,
+  "reOhm": 6.3,
+  "bl": 15.9,
+  "mmsG": 48.2,
+  "peW": 125,
+  "sensitivityDb": 97.4
+}

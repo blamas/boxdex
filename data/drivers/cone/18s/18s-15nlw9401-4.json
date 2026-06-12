@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15NLW9401",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 40,
+  "qts": 0.25,
+  "qes": 0.26,
+  "qms": 6.14,
+  "vasL": 114,
+  "sdCm2": 850,
+  "xmaxMm": 10,
+  "reOhm": 2.8,
+  "bl": 20,
+  "mmsG": 150,
+  "peW": 1200,
+  "sensitivityDb": 97.5,
+  "magnetMaterial": "neo",
+  "weightKg": 7.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/4/15nlw9401%20-%204%20ohm"
+}

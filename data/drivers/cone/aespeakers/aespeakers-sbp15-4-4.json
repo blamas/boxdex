@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "SBP15-4",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 21.3,
+  "qts": 0.432,
+  "qes": 0.47,
+  "qms": 5.35,
+  "vasL": 364,
+  "sdCm2": 855,
+  "xmaxMm": 14,
+  "reOhm": 2.7,
+  "bl": 11,
+  "mmsG": 157.2,
+  "peW": 500,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

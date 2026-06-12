@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "B-52",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 22.8,
+  "qts": 0.229,
+  "qes": 0.24,
+  "qms": 4.94,
+  "vasL": 430,
+  "sdCm2": 1134,
+  "xmaxMm": 6,
+  "reOhm": 5.89,
+  "bl": 26.8,
+  "mmsG": 204.3,
+  "peW": 300,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

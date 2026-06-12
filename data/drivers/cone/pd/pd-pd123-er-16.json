@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD123 ER",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 60.5,
+  "qts": 0.247,
+  "qes": 0.257,
+  "qms": 6.62,
+  "vasL": 51,
+  "sdCm2": 530,
+  "xmaxMm": 6.5,
+  "reOhm": 5.6,
+  "bl": 21.49,
+  "mmsG": 54,
+  "peW": 400,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ceramic",
+  "weightKg": 7.8,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=10"
+}

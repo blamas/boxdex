@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "FBASS10-18",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.43,
+  "qes": 0.48,
+  "qms": 4.84,
+  "vasL": 32.4,
+  "sdCm2": 353,
+  "xmaxMm": 4.5,
+  "reOhm": 5.6,
+  "bl": 12.48,
+  "mmsG": 32.18,
+  "peW": 150,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://lavocespeakers.com/product/fbass10-18/"
+}

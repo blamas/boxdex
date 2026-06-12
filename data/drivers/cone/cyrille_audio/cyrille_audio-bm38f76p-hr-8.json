@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cyrille Audio",
+  "model": "BM38F76P-HR",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43.1,
+  "qts": 0.291,
+  "qes": 0.309,
+  "qms": 4.969,
+  "vasL": 188.3,
+  "sdCm2": 907.9,
+  "xmaxMm": 4.6,
+  "reOhm": 5.23,
+  "bl": 19.6,
+  "mmsG": 83.8,
+  "peW": 300,
+  "sensitivityDb": 100.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CYRILLE-AUDIO"
+}

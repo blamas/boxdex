@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BASSLITE SC10",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 46,
+  "qts": 0.448,
+  "qes": 0.56,
+  "qms": 2.23,
+  "vasL": 78.3,
+  "sdCm2": 350.1,
+  "xmaxMm": 4.4,
+  "reOhm": 12.21,
+  "bl": 12.9,
+  "mmsG": 26.3,
+  "peW": 100,
+  "sensitivityDb": 91.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

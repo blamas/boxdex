@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "GOTO",
+  "model": "SG38WNS",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 28.1,
+  "qts": 0.154,
+  "qes": 0.16,
+  "qms": 3.89,
+  "vasL": 348.6,
+  "sdCm2": 940,
+  "xmaxMm": 4,
+  "reOhm": 11.1,
+  "bl": 37.4,
+  "mmsG": 114.2,
+  "peW": 200,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GOTO"
+}

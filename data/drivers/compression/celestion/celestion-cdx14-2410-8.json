@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Celestion",
+  "model": "CDX14-2410",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 60,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 106,
+  "peW": 50,
+  "magnetMaterial": "ferrite",
+  "datasheetUrl": "https://celestion.com/product/cdx14-2410/"
+}

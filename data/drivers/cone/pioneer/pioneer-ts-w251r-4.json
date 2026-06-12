@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W251R",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 28.9,
+  "qts": 0.68,
+  "qes": 0.735,
+  "qms": 9.13,
+  "vasL": 57.86,
+  "sdCm2": 338,
+  "xmaxMm": 7.8,
+  "reOhm": 3.58,
+  "bl": 8.65,
+  "mmsG": 84.7,
+  "peW": 120,
+  "sensitivityDb": 84.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-w251r/specifications"
+}

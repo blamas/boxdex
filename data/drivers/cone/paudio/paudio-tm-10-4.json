@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "TM-10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 55,
+  "qts": 0.572,
+  "qes": 0.61,
+  "qms": 9.26,
+  "vasL": 9.9,
+  "sdCm2": 340,
+  "xmaxMm": 4,
+  "reOhm": 3.6,
+  "bl": 16.7,
+  "mmsG": 136.5,
+  "peW": 400,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

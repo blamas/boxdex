@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "1200GTI",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 37,
+  "qts": 0.47,
+  "qes": 0.52,
+  "qms": 4.89,
+  "vasL": 56.6,
+  "sdCm2": 548,
+  "xmaxMm": 5.46,
+  "reOhm": 2.5,
+  "bl": 12.48,
+  "mmsG": 139.26,
+  "peW": 600,
+  "sensitivityDb": 88,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-1200gti/specifications"
+}

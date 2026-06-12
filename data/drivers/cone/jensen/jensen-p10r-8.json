@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "P10R",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 97,
+  "qts": 1.46,
+  "qes": 1.62,
+  "qms": 14.83,
+  "vasL": 27.4,
+  "sdCm2": 330,
+  "xmaxMm": 0.8,
+  "reOhm": 6.68,
+  "bl": 6.1,
+  "mmsG": 15,
+  "peW": 25,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2240H/G",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.23,
+  "qes": 0.25,
+  "qms": 2.2,
+  "vasL": 480,
+  "sdCm2": 1250,
+  "xmaxMm": 5.5,
+  "reOhm": 6,
+  "bl": 25,
+  "mmsG": 130,
+  "peW": 300,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-2240h-g/specifications"
+}

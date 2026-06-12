@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "the box",
+  "model": "Speaker 12-280/8-A",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50.6,
+  "qts": 0.472,
+  "qes": 0.51,
+  "qms": 6.33,
+  "vasL": 72.8,
+  "sdCm2": 510.7,
+  "xmaxMm": 5.5,
+  "reOhm": 5.7,
+  "bl": 13.3,
+  "mmsG": 49.7,
+  "peW": 280,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.thomann.fr/the_box_speaker_122808a.htm"
+}

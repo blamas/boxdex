@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eton",
+  "model": "11-581/50 HEX v2015",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.299,
+  "qes": 0.31,
+  "qms": 8.8,
+  "vasL": 151,
+  "sdCm2": 366,
+  "xmaxMm": 5,
+  "reOhm": 5.2,
+  "bl": 12,
+  "mmsG": 59.5,
+  "peW": 150,
+  "sensitivityDb": 91.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ETON"
+}

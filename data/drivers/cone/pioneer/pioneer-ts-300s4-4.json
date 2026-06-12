@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-300S4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.7,
+  "qes": 0.74,
+  "qms": 13.3,
+  "vasL": 77.88,
+  "sdCm2": 487,
+  "xmaxMm": 5,
+  "mmsG": 149.5,
+  "peW": 400,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-300s4/specifications"
+}

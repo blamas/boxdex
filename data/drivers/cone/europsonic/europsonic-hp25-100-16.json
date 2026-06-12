@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Europsonic",
+  "model": "HP25/100",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 37,
+  "qts": 0.425,
+  "qes": 0.517,
+  "qms": 2.379,
+  "vasL": 86.1,
+  "sdCm2": 346,
+  "xmaxMm": 4.1,
+  "reOhm": 8.4,
+  "bl": 11.7,
+  "mmsG": 36.1,
+  "peW": 50,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EUROPSONIC"
+}

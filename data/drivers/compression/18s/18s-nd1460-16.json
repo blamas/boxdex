@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND1460",
+  "impedanceOhm": 16,
+  "exitInch": 1.4,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 109,
+  "peW": 100,
+  "magnetMaterial": "neodymium",
+  "weightKg": 2.9,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-4/16/nd1460%2016ohm"
+}

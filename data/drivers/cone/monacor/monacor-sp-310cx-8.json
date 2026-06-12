@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-310CX",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.324,
+  "qes": 0.36,
+  "qms": 3.24,
+  "vasL": 41,
+  "sdCm2": 346,
+  "xmaxMm": 2.5,
+  "reOhm": 5.6,
+  "bl": 13,
+  "mmsG": 28.8,
+  "peW": 200,
+  "sensitivityDb": 97.4
+}

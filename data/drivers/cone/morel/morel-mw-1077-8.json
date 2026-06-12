@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Morel",
+  "model": "MW 1077",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.501,
+  "qes": 0.62,
+  "qms": 2.62,
+  "vasL": 147,
+  "sdCm2": 324,
+  "xmaxMm": 4.3,
+  "reOhm": 6.8,
+  "bl": 7.9,
+  "mmsG": 32.3,
+  "peW": 200,
+  "sensitivityDb": 89.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MOREL"
+}

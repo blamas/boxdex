@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "OMEGA PRO-12-2KW-8",
+  "impedanceOhm": 8,
+  "sizeInch": 12,
+  "fsHz": 48.14,
+  "qts": 0.39,
+  "qes": 0.4,
+  "qms": 14.88,
+  "vasL": 49.55,
+  "sdCm2": 545.4,
+  "xmaxMm": 7.1,
+  "peW": 1000,
+  "sensitivityDb": 93.33,
+  "reOhm": 6.04,
+  "bl": 20.4,
+  "mmsG": 91.96
+}

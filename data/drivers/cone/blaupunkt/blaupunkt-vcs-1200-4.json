@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Blaupunkt",
+  "model": "VCS 1200",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 23,
+  "qts": 0.487,
+  "qes": 0.51,
+  "qms": 10.94,
+  "vasL": 102,
+  "sdCm2": 520,
+  "xmaxMm": 13,
+  "reOhm": 3.12,
+  "bl": 12.5,
+  "mmsG": 177.9,
+  "peW": 600,
+  "sensitivityDb": 89.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BLAUPUNKT"
+}

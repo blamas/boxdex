@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2123H",
+  "sizeInch": 10,
+  "impedanceOhm": 6,
+  "fsHz": 75,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 4,
+  "vasL": 25,
+  "sdCm2": 314,
+  "xmaxMm": 2.5,
+  "reOhm": 4.18,
+  "bl": 13,
+  "mmsG": 24.86,
+  "peW": 125,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-2123h/specifications"
+}

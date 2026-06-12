@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PRV Audio",
+  "model": "15W 700",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 31.7,
+  "qts": 0.625,
+  "qes": 0.65,
+  "qms": 16.27,
+  "vasL": 308.1,
+  "sdCm2": 935,
+  "xmaxMm": 6.9,
+  "reOhm": 6.4,
+  "bl": 14,
+  "mmsG": 100.3,
+  "peW": 350,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRV%20AUDIO"
+}

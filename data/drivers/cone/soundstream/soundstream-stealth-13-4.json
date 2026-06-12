@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Soundstream",
+  "model": "STEALTH-13",
+  "sizeInch": 13,
+  "impedanceOhm": 4,
+  "fsHz": 30.2,
+  "qts": 0.85,
+  "qes": 1.525,
+  "qms": 1.92,
+  "vasL": 42.17,
+  "sdCm2": 551,
+  "xmaxMm": 6,
+  "reOhm": 3.62,
+  "bl": 11.27,
+  "mmsG": 282,
+  "peW": 200,
+  "sensitivityDb": 80.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/soundstream-stealth-13/specifications"
+}

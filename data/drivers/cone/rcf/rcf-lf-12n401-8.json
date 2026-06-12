@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF 12N401",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.205,
+  "qes": 0.21,
+  "qms": 9.1,
+  "vasL": 50,
+  "sdCm2": 531,
+  "xmaxMm": 5.2,
+  "reOhm": 5.5,
+  "bl": 26.2,
+  "mmsG": 86.9,
+  "peW": 800,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

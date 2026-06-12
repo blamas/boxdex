@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "TAD",
+  "model": "TL-1102",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.298,
+  "qes": 0.32,
+  "qms": 4.35,
+  "vasL": 121,
+  "sdCm2": 366,
+  "xmaxMm": 3.1,
+  "reOhm": 7.2,
+  "bl": 13.4,
+  "mmsG": 40.9,
+  "peW": 100,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TAD"
+}

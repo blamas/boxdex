@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "DVC385-88",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 20.9,
+  "qts": 0.446,
+  "qes": 0.47,
+  "qms": 8.65,
+  "vasL": 237,
+  "sdCm2": 829.6,
+  "xmaxMm": 11.1,
+  "reOhm": 2.4,
+  "bl": 12.6,
+  "mmsG": 236.1,
+  "peW": 350,
+  "sensitivityDb": 93.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10B-60",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.35,
+  "qes": 0.46,
+  "qms": 1.53,
+  "vasL": 115,
+  "sdCm2": 380,
+  "xmaxMm": 4,
+  "reOhm": 6.05,
+  "bl": 10.9,
+  "mmsG": 46.34,
+  "peW": 40,
+  "sensitivityDb": 90.6
+}

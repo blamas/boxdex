@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "BIANCO-18SW450 v2020",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.375,
+  "qes": 0.4,
+  "qms": 6.11,
+  "vasL": 423,
+  "sdCm2": 1244,
+  "xmaxMm": 9,
+  "reOhm": 5,
+  "bl": 19.4,
+  "mmsG": 178.2,
+  "peW": 450,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

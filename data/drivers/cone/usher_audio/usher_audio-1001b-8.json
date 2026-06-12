@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Usher Audio",
+  "model": "1001B",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.387,
+  "qes": 0.42,
+  "qms": 4.87,
+  "vasL": 100.2,
+  "sdCm2": 330,
+  "xmaxMm": 5,
+  "reOhm": 5.8,
+  "bl": 10.7,
+  "mmsG": 45.9,
+  "peW": 100,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=USHER%20AUDIO"
+}

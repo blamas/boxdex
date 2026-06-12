@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Sica",
+  "model": "CD 83.26/380",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25,
+  "fLowHz": 2500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 107.3,
+  "fsHz": 1500,
+  "peW": 20,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z009470.pdf"
+}

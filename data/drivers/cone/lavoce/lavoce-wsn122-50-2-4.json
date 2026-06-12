@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSN122.50-4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 49,
+  "qts": 0.29,
+  "qes": 0.34,
+  "qms": 4.29,
+  "vasL": 64.43,
+  "sdCm2": 531,
+  "xmaxMm": 5.3,
+  "reOhm": 3.1,
+  "bl": 13.64,
+  "mmsG": 60.6,
+  "peW": 250,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsn122-50-2/"
+}

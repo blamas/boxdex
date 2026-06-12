@@ -1,0 +1,32 @@
+---
+import DriverCompare from "../../../components/DriverCompare.svelte";
+import Layout from "../../../components/Layout.astro";
+import { localeStaticPaths, useLocale } from "../../../i18n";
+
+export { localeStaticPaths as getStaticPaths };
+
+const { t, localeBase } = useLocale(Astro.params);
+---
+
+<Layout
+  title={t.pages.driversCompare.title}
+  description={t.pages.driversCompare.description}
+  preloadData={["/api/drivers.json"]}
+>
+  <h1>{t.pages.driversCompare.heading}</h1>
+  <p class="subtitle">{t.pages.driversCompare.subtitle}</p>
+  <DriverCompare client:only="svelte" t={t.driverCompare} tRadar={t.radarCompare} localeBase={localeBase} />
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

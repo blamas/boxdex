@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JB Systems",
+  "model": "153431 SW 15 250",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.309,
+  "qes": 0.334,
+  "qms": 4.218,
+  "vasL": 115.3,
+  "sdCm2": 706,
+  "xmaxMm": 4.1,
+  "reOhm": 6.47,
+  "bl": 19.5,
+  "mmsG": 63.9,
+  "peW": 250,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JB%20SYSTEMS"
+}

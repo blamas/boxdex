@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Magnat",
+  "model": "OMEGA 380",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 21.3,
+  "qts": 0.247,
+  "qes": 0.26,
+  "qms": 4.97,
+  "vasL": 375,
+  "sdCm2": 824.5,
+  "xmaxMm": 12,
+  "reOhm": 3.6,
+  "bl": 16.2,
+  "mmsG": 142.4,
+  "peW": 500,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAGNAT"
+}

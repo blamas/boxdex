@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "SB210",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 25.4,
+  "qts": 0.412,
+  "qes": 0.47,
+  "qms": 3.31,
+  "vasL": 73,
+  "sdCm2": 340,
+  "xmaxMm": 7.5,
+  "reOhm": 3.32,
+  "bl": 9.9,
+  "mmsG": 87.3,
+  "peW": 200,
+  "sensitivityDb": 89.8
+}

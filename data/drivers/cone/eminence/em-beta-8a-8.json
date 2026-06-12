@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BETA-8A",
+  "impedanceOhm": 8,
+  "sizeInch": 8,
+  "fsHz": 65,
+  "qts": 0.38,
+  "qes": 0.42,
+  "qms": 4.95,
+  "vasL": 23.3,
+  "sdCm2": 210,
+  "xmaxMm": 3,
+  "peW": 225,
+  "sensitivityDb": 95.1,
+  "reOhm": 5.99,
+  "bl": 9.6,
+  "mmsG": 16,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Beta_8A.pdf"
+}

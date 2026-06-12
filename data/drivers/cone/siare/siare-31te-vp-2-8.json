@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Siare",
+  "model": "31TE vp 2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 41.3,
+  "qts": 0.506,
+  "qes": 0.58,
+  "qms": 3.99,
+  "vasL": 99.9,
+  "sdCm2": 530.9,
+  "xmaxMm": 4.7,
+  "reOhm": 4.2,
+  "bl": 10.5,
+  "mmsG": 58.7,
+  "peW": 120,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SIARE"
+}

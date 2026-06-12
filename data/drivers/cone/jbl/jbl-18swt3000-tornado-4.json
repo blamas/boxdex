@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "18SWT3000(TORNADO)",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 41,
+  "qts": 0.55,
+  "qes": 0.57,
+  "qms": 17.7,
+  "vasL": 126,
+  "sdCm2": 1194,
+  "xmaxMm": 10.6,
+  "reOhm": 2.3,
+  "bl": 15.9,
+  "mmsG": 243,
+  "peW": 1500,
+  "sensitivityDb": 93.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-18swt3000-tornado-/specifications"
+}

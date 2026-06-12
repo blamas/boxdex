@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-252PA",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.681,
+  "qes": 1,
+  "qms": 2.13,
+  "vasL": 30,
+  "sdCm2": 350,
+  "xmaxMm": 2.4,
+  "reOhm": 7.7,
+  "bl": 11.3,
+  "mmsG": 47.9,
+  "peW": 75,
+  "sensitivityDb": 89.1
+}

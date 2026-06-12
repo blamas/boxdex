@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE1085TN",
+  "impedanceOhm": 16,
+  "exitInch": 2,
+  "voiceCoilMm": 100,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 108,
+  "peW": 140,
+  "weightKg": 3.7,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/2/16/DE1085TN"
+}

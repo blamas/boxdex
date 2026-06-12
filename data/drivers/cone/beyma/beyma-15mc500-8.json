@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15MC500",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.45,
+  "qes": 0.47,
+  "qms": 7.8,
+  "vasL": 134,
+  "sdCm2": 880,
+  "xmaxMm": 8,
+  "reOhm": 5.6,
+  "mmsG": 98,
+  "peW": 500,
+  "sensitivityDb": 98,
+  "weightKg": 6.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/115MC508/altavoz-15mc500-8-oh/"
+}

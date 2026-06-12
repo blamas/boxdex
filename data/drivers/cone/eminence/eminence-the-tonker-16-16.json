@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "THE TONKER 16",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 97,
+  "qts": 0.581,
+  "qes": 0.61,
+  "qms": 12.21,
+  "vasL": 32.4,
+  "sdCm2": 519.5,
+  "xmaxMm": 0.8,
+  "reOhm": 14.63,
+  "bl": 21.4,
+  "mmsG": 31.4,
+  "peW": 150,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

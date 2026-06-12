@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "10 SR 2.5 CP",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 34.5,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 6.35,
+  "vasL": 66.7,
+  "sdCm2": 353,
+  "xmaxMm": 6,
+  "reOhm": 5.2,
+  "bl": 13.7,
+  "mmsG": 56.5,
+  "peW": 300,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2025/07/Z006013.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2217H",
+  "sizeInch": 14,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.31,
+  "qes": 0.33,
+  "qms": 6,
+  "vasL": 83.8,
+  "sdCm2": 630,
+  "xmaxMm": 7.6,
+  "reOhm": 4.76,
+  "bl": 18.4,
+  "mmsG": 83,
+  "peW": 300,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-2217h/specifications"
+}

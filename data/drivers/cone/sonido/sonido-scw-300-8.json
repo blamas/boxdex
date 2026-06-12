@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sonido",
+  "model": "SCW-300",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.401,
+  "qes": 0.49,
+  "qms": 2.2,
+  "vasL": 210,
+  "sdCm2": 464,
+  "xmaxMm": 4.5,
+  "reOhm": 7.4,
+  "bl": 9.9,
+  "mmsG": 29.7,
+  "peW": 50,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SONIDO"
+}

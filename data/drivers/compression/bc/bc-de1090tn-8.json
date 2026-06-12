@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE1090TN",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 100,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 108,
+  "peW": 120,
+  "weightKg": 1.9,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1.4/8/DE1090TN"
+}

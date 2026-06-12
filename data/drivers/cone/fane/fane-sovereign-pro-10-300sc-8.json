@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "SOVEREIGN PRO 10-300SC",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 47,
+  "qts": 0.329,
+  "qes": 0.34,
+  "qms": 10.13,
+  "vasL": 45.4,
+  "sdCm2": 361,
+  "xmaxMm": 4.8,
+  "reOhm": 5.5,
+  "bl": 14.8,
+  "mmsG": 46.1,
+  "peW": 300,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

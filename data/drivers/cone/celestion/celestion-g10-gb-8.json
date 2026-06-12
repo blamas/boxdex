@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "G10-GB",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 93.8,
+  "qts": 1.398,
+  "qes": 1.748,
+  "qms": 6.992,
+  "vasL": 33,
+  "sdCm2": 323.7,
+  "xmaxMm": 1,
+  "reOhm": 6.4,
+  "bl": 5.3,
+  "mmsG": 12.8,
+  "peW": 30,
+  "sensitivityDb": 94.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

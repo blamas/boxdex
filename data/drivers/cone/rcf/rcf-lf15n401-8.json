@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF15N401",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.22,
+  "qes": 0.23,
+  "qms": 5.8,
+  "vasL": 160,
+  "sdCm2": 900,
+  "xmaxMm": 9,
+  "reOhm": 5.1,
+  "bl": 27.8,
+  "mmsG": 158,
+  "peW": 900,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neodymium",
+  "weightKg": 8.77,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf15n401"
+}

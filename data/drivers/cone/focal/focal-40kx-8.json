@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "40KX",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34.6,
+  "qts": 0.82,
+  "qes": 0.97,
+  "qms": 5.3,
+  "vasL": 64.8,
+  "sdCm2": 804.3,
+  "xmaxMm": 5.6,
+  "reOhm": 4.2,
+  "bl": 16.7,
+  "mmsG": 295.9,
+  "peW": 500,
+  "sensitivityDb": 89.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

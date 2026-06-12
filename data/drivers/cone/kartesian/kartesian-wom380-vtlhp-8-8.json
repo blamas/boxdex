@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kartesian",
+  "model": "WOM380_vTLHP-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.39,
+  "qes": 0.4,
+  "qms": 14.88,
+  "vasL": 156.6,
+  "sdCm2": 830,
+  "xmaxMm": 7,
+  "reOhm": 4.8,
+  "bl": 18.1,
+  "mmsG": 120.6,
+  "peW": 400,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KARTESIAN"
+}

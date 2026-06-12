@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Magnat",
+  "model": "SUB 400 SUPREME",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 21,
+  "qts": 0.228,
+  "qes": 0.24,
+  "qms": 4.6,
+  "vasL": 330,
+  "sdCm2": 840,
+  "xmaxMm": 9.5,
+  "reOhm": 3.4,
+  "bl": 17.9,
+  "mmsG": 172.2,
+  "peW": 400,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAGNAT"
+}

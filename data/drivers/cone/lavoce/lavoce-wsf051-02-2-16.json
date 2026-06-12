@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSF051.02-16",
+  "sizeInch": 5,
+  "impedanceOhm": 16,
+  "fsHz": 98,
+  "qts": 0.66,
+  "qes": 0.74,
+  "qms": 6.54,
+  "vasL": 4.02,
+  "sdCm2": 86,
+  "xmaxMm": 3.2,
+  "reOhm": 11.9,
+  "bl": 8.27,
+  "mmsG": 6.9,
+  "peW": 60,
+  "sensitivityDb": 90.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsf051-02-2/"
+}

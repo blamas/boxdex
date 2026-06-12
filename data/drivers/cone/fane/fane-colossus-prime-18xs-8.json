@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "COLOSSUS PRIME 18XS",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.385,
+  "qes": 0.404,
+  "qms": 8.2,
+  "vasL": 257,
+  "sdCm2": 1209,
+  "xmaxMm": 12,
+  "reOhm": 5.2,
+  "bl": 22.4,
+  "mmsG": 188,
+  "peW": 1200,
+  "sensitivityDb": 95.4
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR330M0 + PR33S66 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.172,
+  "qes": 0.193,
+  "qms": 1.56,
+  "vasL": 117,
+  "sdCm2": 538,
+  "xmaxMm": 3.6,
+  "reOhm": 5.8,
+  "bl": 23.5,
+  "mmsG": 97.6,
+  "peW": 150,
+  "sensitivityDb": 95.5
+}

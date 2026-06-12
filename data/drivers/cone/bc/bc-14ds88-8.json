@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "14DS88",
+  "sizeInch": 14,
+  "impedanceOhm": 8,
+  "fsHz": 44,
+  "qts": 0.18,
+  "qes": 0.19,
+  "qms": 8,
+  "vasL": 55,
+  "sdCm2": 707,
+  "xmaxMm": 11,
+  "reOhm": 5.6,
+  "bl": 36.9,
+  "mmsG": 170,
+  "peW": 700,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/13.5/8/14DS88"
+}

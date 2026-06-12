@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15NMB1000",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.24,
+  "qes": 0.24,
+  "qms": 8.3,
+  "vasL": 124,
+  "sdCm2": 855,
+  "xmaxMm": 6.5,
+  "reOhm": 5.3,
+  "bl": 25.2,
+  "mmsG": 100,
+  "peW": 900,
+  "sensitivityDb": 101,
+  "magnetMaterial": "neo",
+  "weightKg": 6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15nmb1000"
+}

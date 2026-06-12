@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-SW301",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 34.9,
+  "qts": 1.012,
+  "qes": 1.14,
+  "qms": 9,
+  "vasL": 19.87,
+  "sdCm2": 435,
+  "xmaxMm": 10.8,
+  "reOhm": 3.2,
+  "bl": 13.1,
+  "mmsG": 281,
+  "peW": 250,
+  "sensitivityDb": 80.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-sw301/specifications"
+}

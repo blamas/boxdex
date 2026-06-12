@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18iDSDS",
+  "sizeInch": 18,
+  "impedanceOhm": 2,
+  "fsHz": 29,
+  "qts": 0.17,
+  "qes": 0.18,
+  "qms": 7,
+  "vasL": 136,
+  "sdCm2": 1225,
+  "xmaxMm": 18,
+  "reOhm": 1.3,
+  "bl": 24.4,
+  "mmsG": 444,
+  "peW": 1800,
+  "sensitivityDb": 95,
+  "magnetMaterial": "neo",
+  "weightKg": 16,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/2/18idSDS"
+}

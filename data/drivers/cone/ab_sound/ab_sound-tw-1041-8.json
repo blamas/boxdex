@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AB Sound",
+  "model": "TW 1041",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.433,
+  "qes": 0.48,
+  "qms": 4.43,
+  "vasL": 158,
+  "sdCm2": 353,
+  "xmaxMm": 8,
+  "reOhm": 6.3,
+  "bl": 8.5,
+  "mmsG": 27.3,
+  "peW": 100,
+  "sensitivityDb": 93.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AB%20SOUND"
+}

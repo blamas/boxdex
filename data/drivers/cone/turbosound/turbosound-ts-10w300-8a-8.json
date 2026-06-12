@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Turbosound",
+  "model": "TS-10W300/8A",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.415,
+  "qes": 0.44,
+  "qms": 7.45,
+  "vasL": 31.6,
+  "sdCm2": 346,
+  "xmaxMm": 3.4,
+  "reOhm": 7.8,
+  "bl": 16.8,
+  "mmsG": 47.9,
+  "peW": 300,
+  "sensitivityDb": 92.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TURBOSOUND"
+}

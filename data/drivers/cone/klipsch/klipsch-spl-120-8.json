@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Klipsch",
+  "model": "SPL-120",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 31.1,
+  "qts": 0.507,
+  "qes": 0.554,
+  "qms": 5.994,
+  "vasL": 58.4,
+  "sdCm2": 518.8,
+  "xmaxMm": 5.7,
+  "reOhm": 5.03,
+  "bl": 17.3,
+  "mmsG": 169,
+  "peW": 200,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KLIPSCH"
+}

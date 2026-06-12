@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "10 BP 2 CS",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 54.6,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 5.93,
+  "vasL": 42.6,
+  "sdCm2": 330.1,
+  "xmaxMm": 1.5,
+  "reOhm": 6.13,
+  "bl": 13.5,
+  "mmsG": 30.5,
+  "peW": 150,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SICA"
+}

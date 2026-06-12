@@ -1,0 +1,52 @@
+[tools]
+node = "26"
+
+[settings]
+node.compile = false
+
+[env]
+NODE_ENV = "development"
+
+[tasks.dev]
+run = "npm run dev"
+description = "Start Astro dev server"
+
+[tasks.build]
+run = "npm run build"
+description = "Production build (validates all data)"
+
+[tasks.preview]
+run = "npm run preview"
+description = "Serve the production build locally"
+
+[tasks.test]
+run = "npm test"
+description = "Run vitest"
+
+[tasks.coverage]
+run = "npm run test:coverage"
+description = "Run vitest with V8 coverage (text + html report)"
+
+[tasks.lint]
+run = "npm run lint"
+description = "Run Biome check"
+
+[tasks.check]
+run = "npm run check"
+description = "Astro/Svelte/TS type-check (astro check)"
+
+[tasks.fix]
+run = "npx biome check --write ."
+description = "Auto-fix Biome formatting and import order"
+
+[tasks.verify]
+depends = ["lint", "check", "knip", "coverage", "build"]
+description = "Full pre-push gate: lint + type-check + knip + test + build"
+
+[tasks.install]
+run = "npm install"
+description = "Install npm dependencies"
+
+[tasks.knip]
+run = "npm run knip"
+description = "Detect unused files, exports and dependencies"

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Beyma",
+  "model": "TD/194",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 2000,
+  "mouthWmm": 177,
+  "mouthHmm": 177,
+  "depthMm": 145,
+  "profile": "conical",
+  "material": "aluminium",
+  "weightKg": 1,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/horns/1TD194/bocina-td-194/"
+}

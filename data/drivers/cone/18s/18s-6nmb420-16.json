@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "6NMB420",
+  "sizeInch": 6.5,
+  "impedanceOhm": 16,
+  "fsHz": 112,
+  "qts": 0.4,
+  "qes": 0.46,
+  "qms": 3.42,
+  "vasL": 5.9,
+  "sdCm2": 130,
+  "xmaxMm": 3,
+  "reOhm": 10.6,
+  "bl": 9,
+  "mmsG": 8.5,
+  "peW": 200,
+  "sensitivityDb": 100,
+  "magnetMaterial": "neo",
+  "weightKg": 1.25,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/6-5/16/6nmb420%20-%2016%20ohm"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10NDL64",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 56,
+  "qts": 0.26,
+  "qes": 0.29,
+  "qms": 3.4,
+  "vasL": 31,
+  "sdCm2": 320,
+  "xmaxMm": 6,
+  "reOhm": 5.7,
+  "bl": 16.2,
+  "mmsG": 37,
+  "peW": 250,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/10/8/10NDL64"
+}

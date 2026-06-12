@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "1501AL-1",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 19,
+  "qts": 0.191,
+  "qes": 0.2,
+  "qms": 4.34,
+  "vasL": 630,
+  "sdCm2": 865.7,
+  "xmaxMm": 6.4,
+  "reOhm": 9.54,
+  "bl": 25.8,
+  "mmsG": 117,
+  "peW": 150,
+  "sensitivityDb": 94.6
+}

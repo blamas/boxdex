@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "JAY7010",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28.1,
+  "qts": 0.314,
+  "qes": 0.33,
+  "qms": 6.28,
+  "vasL": 546.6,
+  "sdCm2": 1159.2,
+  "xmaxMm": 9.1,
+  "reOhm": 5.62,
+  "bl": 18.2,
+  "mmsG": 110.7,
+  "peW": 650,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18NLW4500",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 9.7,
+  "vasL": 151,
+  "sdCm2": 1225,
+  "xmaxMm": 15.3,
+  "reOhm": 5,
+  "bl": 30.3,
+  "mmsG": 286,
+  "peW": 1800,
+  "sensitivityDb": 97,
+  "weightKg": 12,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/8/18nlw4500"
+}

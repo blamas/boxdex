@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18LW1400",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 6.6,
+  "vasL": 210,
+  "sdCm2": 1225,
+  "xmaxMm": 9,
+  "reOhm": 3.6,
+  "bl": 22.1,
+  "mmsG": 190,
+  "peW": 1000,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ferrite",
+  "weightKg": 13.3,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/4/18lw1400"
+}

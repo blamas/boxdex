@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "18 K 4 PL",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36.8,
+  "qts": 0.32,
+  "qes": 0.35,
+  "qms": 4.62,
+  "vasL": 201,
+  "sdCm2": 1164.2,
+  "xmaxMm": 6.5,
+  "reOhm": 6,
+  "bl": 26.8,
+  "mmsG": 178.8,
+  "peW": 1200,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z008402.pdf"
+}

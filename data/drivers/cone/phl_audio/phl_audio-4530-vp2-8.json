@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "4530 vp2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45.8,
+  "qts": 0.454,
+  "qes": 0.532,
+  "qms": 3.105,
+  "vasL": 86.8,
+  "sdCm2": 540,
+  "xmaxMm": 6,
+  "reOhm": 6.21,
+  "bl": 13.8,
+  "mmsG": 56.9,
+  "peW": 300,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

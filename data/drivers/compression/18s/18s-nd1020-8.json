@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND1020",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 35,
+  "fLowHz": 1600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1600,
+  "sensitivityHornDb": 108.5,
+  "peW": 30,
+  "magnetMaterial": "neodymium",
+  "weightKg": 0.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-0/8/ND1020"
+}

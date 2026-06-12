@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BETA-15A",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 35,
+  "qts": 0.58,
+  "qes": 0.63,
+  "qms": 8.1,
+  "vasL": 334.6,
+  "sdCm2": 823.7,
+  "xmaxMm": 4,
+  "peW": 300,
+  "sensitivityDb": 98.2,
+  "reOhm": 6.32,
+  "bl": 11.5,
+  "mmsG": 60,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Beta_15A.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Siemens",
+  "model": "KL405",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 75.8,
+  "qts": 0.77,
+  "qes": 0.8,
+  "qms": 20.71,
+  "vasL": 68,
+  "sdCm2": 660.5,
+  "xmaxMm": 3,
+  "reOhm": 5.57,
+  "bl": 11.5,
+  "mmsG": 39.7,
+  "peW": 200,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SIEMENS"
+}

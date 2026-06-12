@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Elder Audio",
+  "model": "10LB075-U",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 56.8,
+  "qts": 0.38,
+  "qes": 0.4,
+  "qms": 7.56,
+  "vasL": 33.3,
+  "sdCm2": 354,
+  "xmaxMm": 2,
+  "reOhm": 5.8,
+  "bl": 14.6,
+  "mmsG": 41.4,
+  "peW": 250,
+  "sensitivityDb": 95.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELDER%20AUDIO"
+}

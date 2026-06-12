@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oxygen",
+  "model": "SPIRAL 12.1",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.749,
+  "qes": 0.885,
+  "qms": 4.872,
+  "vasL": 94,
+  "sdCm2": 490,
+  "xmaxMm": 7,
+  "reOhm": 3.6,
+  "bl": 9.3,
+  "mmsG": 124.4,
+  "peW": 150,
+  "sensitivityDb": 88.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=OXYGEN"
+}

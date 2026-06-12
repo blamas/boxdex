@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Gladen",
+  "model": "SQX 10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 38.8,
+  "qts": 0.39,
+  "qes": 0.423,
+  "qms": 4.99,
+  "vasL": 24.5,
+  "sdCm2": 319,
+  "xmaxMm": 10,
+  "reOhm": 3.2,
+  "bl": 13.5,
+  "mmsG": 98.8,
+  "peW": 350,
+  "sensitivityDb": 87.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/gladen-sqx-10/specifications"
+}

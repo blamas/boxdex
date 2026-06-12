@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "HP-10T",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 70,
+  "qts": 0.72,
+  "qes": 1.03,
+  "qms": 2.39,
+  "vasL": 21.46,
+  "sdCm2": 340,
+  "xmaxMm": 1,
+  "reOhm": 6.84,
+  "bl": 10.81,
+  "mmsG": 40,
+  "peW": 200,
+  "sensitivityDb": 90.4
+}

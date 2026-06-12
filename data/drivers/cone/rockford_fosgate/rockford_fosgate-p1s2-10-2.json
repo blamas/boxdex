@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "P1S2-10",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 30,
+  "qts": 0.52,
+  "qes": 0.644,
+  "qms": 2.7,
+  "vasL": 39.6,
+  "sdCm2": 370,
+  "xmaxMm": 9,
+  "reOhm": 1.6,
+  "bl": 8.04,
+  "mmsG": 138,
+  "peW": 250,
+  "sensitivityDb": 84,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/rockford-fosgate-p1s2-10/specifications"
+}

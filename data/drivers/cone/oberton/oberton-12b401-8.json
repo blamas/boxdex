@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12B401",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 46.63,
+  "qts": 0.245,
+  "qes": 0.25,
+  "qms": 13.93,
+  "vasL": 69.6,
+  "sdCm2": 514.7,
+  "xmaxMm": 6.75,
+  "reOhm": 5.48,
+  "bl": 19.95,
+  "mmsG": 61.9,
+  "peW": 400,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/387-12b401.html"
+}

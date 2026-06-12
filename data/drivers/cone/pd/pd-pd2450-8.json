@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD2450",
+  "sizeInch": 24,
+  "impedanceOhm": 8,
+  "fsHz": 30.477,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 6.89,
+  "vasL": 565.373,
+  "sdCm2": 2248.01,
+  "xmaxMm": 18,
+  "reOhm": 5.58,
+  "bl": 32.357,
+  "mmsG": 342.347,
+  "peW": 1000,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ceramic",
+  "weightKg": 27.2,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=17"
+}

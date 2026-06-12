@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "SMC8060/N",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44.4,
+  "fLowHz": 800,
+  "fHighHz": 18000,
+  "minCrossoverHz": 1500,
+  "sensitivityHornDb": 107,
+  "peW": 50,
+  "magnetMaterial": "ferrite",
+  "weightKg": 1.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1SMC8060N8/motor-smc-8060-n-8-oh/"
+}

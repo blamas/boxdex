@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "EVX-155",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35.4,
+  "qts": 0.212,
+  "qes": 0.22,
+  "qms": 5.56,
+  "vasL": 220,
+  "sdCm2": 790,
+  "xmaxMm": 6.4,
+  "reOhm": 5,
+  "bl": 20.2,
+  "mmsG": 80.4,
+  "peW": 600,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELECTROVOICE"
+}

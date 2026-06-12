@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L10/568H",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 70.1,
+  "qts": 0.4,
+  "qes": 0.42,
+  "qms": 6,
+  "vasL": 28.8,
+  "sdCm2": 346,
+  "xmaxMm": 3,
+  "reOhm": 5.05,
+  "bl": 12.6,
+  "mmsG": 30,
+  "peW": 100,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l10568h"
+}

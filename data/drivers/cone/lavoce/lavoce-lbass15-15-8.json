@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "LBASS15-15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.74,
+  "qes": 0.88,
+  "qms": 4.72,
+  "vasL": 284.84,
+  "sdCm2": 854.8,
+  "xmaxMm": 4.7,
+  "reOhm": 5.6,
+  "bl": 9.89,
+  "mmsG": 66.8,
+  "peW": 100,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://lavocespeakers.com/product/lbass15-15/"
+}

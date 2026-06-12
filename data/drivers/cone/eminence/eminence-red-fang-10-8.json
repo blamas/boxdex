@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "RED FANG 10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 111,
+  "qts": 0.481,
+  "qes": 0.5,
+  "qms": 12.64,
+  "vasL": 21.3,
+  "sdCm2": 366.1,
+  "xmaxMm": 0.5,
+  "reOhm": 5.8,
+  "bl": 12.1,
+  "mmsG": 18.2,
+  "peW": 50,
+  "sensitivityDb": 101,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

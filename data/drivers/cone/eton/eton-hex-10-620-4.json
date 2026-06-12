@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eton",
+  "model": "HEX 10-620",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 20,
+  "qts": 0.28,
+  "qes": 0.29,
+  "qms": 6,
+  "vasL": 55,
+  "sdCm2": 337,
+  "xmaxMm": 2,
+  "reOhm": 3,
+  "bl": 15.5,
+  "mmsG": 180,
+  "peW": 600,
+  "sensitivityDb": 84,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/eton-hex-10-620/specifications"
+}

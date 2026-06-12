@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTA 12B",
+  "impedanceOhm": 16,
+  "sizeInch": 12,
+  "fsHz": 58,
+  "qts": 0.48,
+  "qes": 0.52,
+  "qms": 7.04,
+  "vasL": 87,
+  "sdCm2": 519.5,
+  "xmaxMm": 2.7,
+  "peW": 400,
+  "sensitivityDb": 98.3,
+  "reOhm": 11.4,
+  "bl": 16,
+  "mmsG": 32,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Delta_12B.pdf"
+}

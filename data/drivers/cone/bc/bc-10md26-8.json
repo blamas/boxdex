@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10MD26",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 76,
+  "qts": 0.21,
+  "qes": 0.22,
+  "qms": 4.8,
+  "vasL": 20,
+  "sdCm2": 320,
+  "xmaxMm": 1.5,
+  "reOhm": 5.8,
+  "bl": 19.6,
+  "mmsG": 31,
+  "peW": 350,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/10/8/10MD26"
+}

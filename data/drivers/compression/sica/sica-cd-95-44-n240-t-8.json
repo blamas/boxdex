@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Sica",
+  "model": "CD 95.44/N240 T",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1600,
+  "sensitivityHornDb": 106.3,
+  "fsHz": 800,
+  "peW": 60,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z009493.pdf"
+}

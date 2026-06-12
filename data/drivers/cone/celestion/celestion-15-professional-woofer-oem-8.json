@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "15 Professional Woofer - OEM",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46.9,
+  "qts": 0.497,
+  "qes": 0.55,
+  "qms": 5.18,
+  "vasL": 175,
+  "sdCm2": 854,
+  "xmaxMm": 3.5,
+  "reOhm": 5.44,
+  "bl": 14,
+  "mmsG": 67.3,
+  "peW": 150,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

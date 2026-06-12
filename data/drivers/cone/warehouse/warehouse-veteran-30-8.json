@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Warehouse Sound",
+  "model": "VETERAN 30",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 94.8,
+  "qts": 0.733,
+  "qes": 0.78,
+  "qms": 12.15,
+  "vasL": 524.7,
+  "sdCm2": 366.1,
+  "xmaxMm": 2,
+  "reOhm": 7.99,
+  "bl": 2.5,
+  "mmsG": 1,
+  "peW": 30,
+  "sensitivityDb": 109.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=WAREHOUSE"
+}

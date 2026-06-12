@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "Kl3015CX-8 vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.438,
+  "qes": 0.47,
+  "qms": 6.48,
+  "vasL": 219.7,
+  "sdCm2": 889.6,
+  "xmaxMm": 7.8,
+  "reOhm": 5.71,
+  "bl": 16,
+  "mmsG": 88.6,
+  "peW": 400,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

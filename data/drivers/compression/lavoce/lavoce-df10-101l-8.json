@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "LaVoce",
+  "model": "DF10.101L",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25.4,
+  "fLowHz": 1500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 107,
+  "peW": 20,
+  "datasheetUrl": "https://lavocespeakers.com/product/df10-101l/"
+}

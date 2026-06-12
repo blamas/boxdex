@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "CF1830E",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 40.5,
+  "qts": 0.342,
+  "qes": 0.371,
+  "qms": 4.367,
+  "vasL": 167.9,
+  "sdCm2": 1130,
+  "xmaxMm": 5,
+  "reOhm": 5.27,
+  "bl": 24.4,
+  "mmsG": 164.6,
+  "peW": 700,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

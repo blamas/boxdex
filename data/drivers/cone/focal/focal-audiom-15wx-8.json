@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "AUDIOM 15WX",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 24.4,
+  "qts": 0.353,
+  "qes": 0.41,
+  "qms": 2.54,
+  "vasL": 318.9,
+  "sdCm2": 855.3,
+  "xmaxMm": 6,
+  "reOhm": 6.35,
+  "bl": 18,
+  "mmsG": 136.8,
+  "peW": 225,
+  "sensitivityDb": 93.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "3128",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.195,
+  "qes": 0.22,
+  "qms": 1.75,
+  "vasL": 276,
+  "sdCm2": 550,
+  "xmaxMm": 3,
+  "reOhm": 5.5,
+  "bl": 15.6,
+  "mmsG": 62.3,
+  "peW": 80,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

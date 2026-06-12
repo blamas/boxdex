@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "10 K 4 PL",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 62.5,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 5.29,
+  "vasL": 19.5,
+  "sdCm2": 346.4,
+  "xmaxMm": 5,
+  "reOhm": 6.1,
+  "bl": 20.38,
+  "mmsG": 56.8,
+  "peW": 800,
+  "sensitivityDb": 94.9,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2024/12/Z006950.pdf"
+}

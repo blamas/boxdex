@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MTX Audio",
+  "model": "T815-22",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 32.3,
+  "qts": 0.635,
+  "qes": 0.764,
+  "qms": 3.768,
+  "vasL": 57,
+  "sdCm2": 804.2,
+  "xmaxMm": 6.1,
+  "reOhm": 3.14,
+  "bl": 17.9,
+  "mmsG": 386.2,
+  "peW": 600,
+  "sensitivityDb": 90,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MTX"
+}

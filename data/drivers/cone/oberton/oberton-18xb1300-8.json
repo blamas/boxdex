@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18XB1300",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35.2,
+  "qts": 0.287,
+  "qes": 0.296,
+  "qms": 9.56,
+  "vasL": 170.9,
+  "sdCm2": 1158,
+  "xmaxMm": 8,
+  "reOhm": 5.2,
+  "bl": 29.6,
+  "mmsG": 225.3,
+  "peW": 1300,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=OBERTON"
+}

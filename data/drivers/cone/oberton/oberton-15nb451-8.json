@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15NB451",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.57,
+  "qts": 0.257,
+  "qes": 0.263,
+  "qms": 10.54,
+  "vasL": 145.21,
+  "sdCm2": 829.6,
+  "xmaxMm": 7,
+  "reOhm": 5.5,
+  "bl": 22.87,
+  "mmsG": 100.63,
+  "peW": 450,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/125-15nb451.html"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Celestion",
+  "model": "CDX14-2420",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 60,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 106.5,
+  "peW": 70,
+  "magnetMaterial": "neodymium",
+  "datasheetUrl": "https://celestion.com/product/cdx14-2420/"
+}

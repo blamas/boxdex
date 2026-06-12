@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "HH Electronics",
+  "model": "B15L",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.479,
+  "qes": 0.52,
+  "qms": 6.09,
+  "vasL": 151.7,
+  "sdCm2": 730.6,
+  "xmaxMm": 3.6,
+  "reOhm": 6.73,
+  "bl": 14.6,
+  "mmsG": 54.2,
+  "peW": 100,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HH%20ELECTRONICS"
+}

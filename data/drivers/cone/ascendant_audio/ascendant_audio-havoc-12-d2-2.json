@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ascendant Audio",
+  "model": "HAVOC 12 D2",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 33.7,
+  "qts": 0.379,
+  "qes": 0.4,
+  "qms": 7.09,
+  "vasL": 28.9,
+  "sdCm2": 480,
+  "xmaxMm": 8.2,
+  "reOhm": 1.4,
+  "bl": 13.6,
+  "mmsG": 249.3,
+  "peW": 1000,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ASCENDANT%20AUDIO"
+}

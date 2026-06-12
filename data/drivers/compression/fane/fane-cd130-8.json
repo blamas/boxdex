@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Fane",
+  "model": "CD-130",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 34.4,
+  "fLowHz": 2000,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 106,
+  "peW": 30,
+  "datasheetUrl": "https://fane-international.com/downloads/Fane-CD130-DS240316.pdf"
+}

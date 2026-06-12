@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LEGEND B102",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.389,
+  "qes": 0.42,
+  "qms": 5.31,
+  "vasL": 65,
+  "sdCm2": 344.9,
+  "xmaxMm": 3,
+  "reOhm": 6.89,
+  "bl": 11.8,
+  "mmsG": 28.2,
+  "peW": 200,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

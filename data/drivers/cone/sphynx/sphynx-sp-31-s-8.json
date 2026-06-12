@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sphynx",
+  "model": "SP-31-S",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 1.255,
+  "qes": 1.63,
+  "qms": 5.46,
+  "vasL": 101,
+  "sdCm2": 529.5,
+  "xmaxMm": 3.8,
+  "reOhm": 7.09,
+  "bl": 8.1,
+  "mmsG": 58.6,
+  "peW": 150,
+  "sensitivityDb": 88.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SPHYNX"
+}

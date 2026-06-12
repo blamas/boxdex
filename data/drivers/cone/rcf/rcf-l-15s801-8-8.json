@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L 15S801-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 11,
+  "vasL": 113,
+  "sdCm2": 850,
+  "xmaxMm": 6,
+  "reOhm": 6.1,
+  "bl": 23.4,
+  "mmsG": 98.5,
+  "peW": 700,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

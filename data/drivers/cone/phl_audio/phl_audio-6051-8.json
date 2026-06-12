@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "6051",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.209,
+  "qes": 0.22,
+  "qms": 4.21,
+  "vasL": 135.6,
+  "sdCm2": 892,
+  "xmaxMm": 5.3,
+  "reOhm": 4.1,
+  "bl": 25,
+  "mmsG": 137,
+  "peW": 700,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

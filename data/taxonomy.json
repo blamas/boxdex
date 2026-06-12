@@ -1,0 +1,50 @@
+{
+  "$comment": "Controlled vocabularies for enclosure frontmatter. An array is a closed list (a value outside it is a build error); null means the field is free-form (any string). Wire fields up in src/content.config.ts via enumOf().",
+  "recommendedFor": [
+    "techno",
+    "tekno",
+    "hardtek",
+    "frenchcore",
+    "hardcore",
+    "acid",
+    "hardstyle",
+    "tribe",
+    "raggatek",
+    "mental",
+    "dub",
+    "psytrance",
+    "breakcore",
+    "bass_music"
+  ],
+  "connectors": ["speakON NL2", "speakON NL4", "speakON NL8", "XLR", "binding post", "jack 6.35mm"],
+  "topology": [
+    "sealed",
+    "bass_reflex",
+    "bandpass",
+    "tapped_horn",
+    "front_loaded_horn",
+    "folded_horn",
+    "scoop",
+    "transmission_line"
+  ],
+  "topologyVariant": null,
+  "license": [
+    "CC0-1.0",
+    "CC-BY-4.0",
+    "CC-BY-SA-4.0",
+    "CC-BY-NC-4.0",
+    "CC-BY-NC-SA-4.0",
+    "CC-BY-NC-ND-4.0",
+    "LicenseRef-Permission",
+    "LicenseRef-Proprietary"
+  ],
+  "hornProfile": [
+    "conical",
+    "exponential",
+    "tractrix",
+    "oblate_spheroid",
+    "radial",
+    "multicell",
+    "diffraction"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "8WR300",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 5.4,
+  "vasL": 15,
+  "sdCm2": 220,
+  "xmaxMm": 6,
+  "reOhm": 6,
+  "bl": 15.5,
+  "mmsG": 28,
+  "peW": 300,
+  "sensitivityDb": 95,
+  "weightKg": 3.3,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/108WR308/altavoz-8wr300-8-oh/"
+}

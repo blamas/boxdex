@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Decware",
+  "model": "DHM 108B",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.316,
+  "qes": 0.33,
+  "qms": 7.49,
+  "vasL": 53,
+  "sdCm2": 363.2,
+  "xmaxMm": 5.5,
+  "reOhm": 6.9,
+  "bl": 18.2,
+  "mmsG": 72.2,
+  "peW": 275,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DECWARE"
+}

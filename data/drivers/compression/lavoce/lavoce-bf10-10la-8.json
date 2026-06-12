@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "LaVoce",
+  "model": "BF10.10LA",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25.4,
+  "fLowHz": 2500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 5000,
+  "sensitivityHornDb": 106,
+  "peW": 20,
+  "datasheetUrl": "https://lavocespeakers.com/product/bf10-10la/"
+}

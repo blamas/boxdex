@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "C15-600EL",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44.9,
+  "qts": 0.352,
+  "qes": 0.37,
+  "qms": 7.45,
+  "vasL": 137.4,
+  "sdCm2": 829,
+  "xmaxMm": 5,
+  "reOhm": 5.3,
+  "bl": 18.9,
+  "mmsG": 88.1,
+  "peW": 600,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

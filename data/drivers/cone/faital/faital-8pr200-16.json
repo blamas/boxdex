@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "8PR200",
+  "sizeInch": 8,
+  "impedanceOhm": 16,
+  "fsHz": 60,
+  "qts": 0.46,
+  "qes": 0.49,
+  "qms": 8.8,
+  "vasL": 16.1,
+  "sdCm2": 209,
+  "xmaxMm": 8.65,
+  "reOhm": 11.8,
+  "mmsG": 26.7,
+  "peW": 200,
+  "sensitivityDb": 94,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 2.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101030201"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "SSF102.50L",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.475,
+  "qes": 0.53,
+  "qms": 4.6,
+  "vasL": 25.6,
+  "sdCm2": 363,
+  "xmaxMm": 5.7,
+  "reOhm": 5.5,
+  "bl": 15.4,
+  "mmsG": 73.1,
+  "peW": 400,
+  "sensitivityDb": 91.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LAVOCE"
+}

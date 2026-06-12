@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF15X401",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 7.6,
+  "vasL": 146,
+  "sdCm2": 900,
+  "xmaxMm": 12,
+  "reOhm": 5.5,
+  "bl": 26.5,
+  "mmsG": 170,
+  "peW": 1500,
+  "sensitivityDb": 96.5,
+  "weightKg": 12,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf15x401"
+}

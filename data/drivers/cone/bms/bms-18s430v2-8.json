@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "18S430vv2",
+  "impedanceOhm": 8,
+  "sizeInch": 18,
+  "fsHz": 31,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 6,
+  "vasL": 262,
+  "sdCm2": 1213,
+  "xmaxMm": 8,
+  "peW": 1200,
+  "sensitivityDb": 96,
+  "reOhm": 4.8,
+  "bl": 23.5,
+  "mmsG": 210
+}

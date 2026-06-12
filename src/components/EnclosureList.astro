@@ -1,0 +1,50 @@
+---
+import { DEFAULT_LOCALE } from "../i18n";
+import { humanize } from "../lib/format";
+import { BASE } from "../lib/site";
+
+// Compact list of enclosures (related builds, "used in" lists, …).
+interface Item {
+  id: string;
+  data: { name: string; category: string; topology: string };
+}
+interface Props {
+  items: Item[];
+}
+const { items } = Astro.props;
+const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
+const localeBase = `${BASE}/${locale}`;
+---
+
+<ul class="enclosure-list">
+  {items.map((e) => (
+    <li>
+      <a href={`${localeBase}/enclosures/${e.id}`}>{e.data.name}</a>
+      <span class={`badge badge-${e.data.category}`}>{e.data.category}</span>
+      <span class="muted">{humanize(e.data.topology)}</span>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .enclosure-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .enclosure-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+</style>

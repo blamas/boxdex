@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Davis",
+  "model": "39GPA15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 26.2,
+  "qts": 0.338,
+  "qes": 0.36,
+  "qms": 5.64,
+  "vasL": 384,
+  "sdCm2": 804,
+  "xmaxMm": 7.5,
+  "reOhm": 4.9,
+  "bl": 14,
+  "mmsG": 86.8,
+  "peW": 300,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVIS"
+}

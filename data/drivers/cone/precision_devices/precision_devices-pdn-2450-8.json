@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PDN 2450",
+  "sizeInch": 25,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.362,
+  "qes": 0.38,
+  "qms": 7.8,
+  "vasL": 459.7,
+  "sdCm2": 2290,
+  "xmaxMm": 6.9,
+  "reOhm": 5.58,
+  "bl": 34.2,
+  "mmsG": 395.6,
+  "peW": 1000,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

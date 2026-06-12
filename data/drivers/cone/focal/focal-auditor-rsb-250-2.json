@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "AUDITOR RSB-250",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 29,
+  "qts": 0.594,
+  "qes": 0.68,
+  "qms": 4.7,
+  "vasL": 42,
+  "sdCm2": 307,
+  "xmaxMm": 9.5,
+  "reOhm": 1.6,
+  "bl": 6.4,
+  "mmsG": 94.7,
+  "peW": 250,
+  "sensitivityDb": 90.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

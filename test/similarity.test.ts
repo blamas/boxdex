@@ -1,0 +1,142 @@
+import { describe, expect, it } from "vitest";
+import type { CompressionDriver, ConeDriver, Driver } from "../src/lib/schemas";
+import { allSubstitutes } from "../src/lib/similarity";
+
+function subs(target: Driver, pool: Driver[], limit = 10) {
+  return allSubstitutes([target, ...pool], limit).get(target.id) ?? [];
+}
+
+function makeCone(id: string, partial: Partial<ConeDriver> = {}): ConeDriver {
+  return {
+    id,
+    type: "cone",
+    brand: "Test",
+    model: id,
+    impedanceOhm: 8,
+    peW: 600,
+    sizeInch: 18,
+    fsHz: 35,
+    qts: 0.35,
+    vasL: 180,
+    sdCm2: 1180,
+    xmaxMm: 8,
+    sensitivityDb: 97,
+    ...partial,
+  };
+}
+
+function makeCd(id: string, partial: Partial<CompressionDriver> = {}): CompressionDriver {
+  return {
+    id,
+    type: "compression",
+    brand: "Test",
+    model: id,
+    impedanceOhm: 8,
+    peW: 80,
+    exitInch: 1.4,
+    voiceCoilMm: 75,
+    fLowHz: 500,
+    fHighHz: 18000,
+    minCrossoverHz: 800,
+    sensitivityHornDb: 108,
+    ...partial,
+  };
+}
+
+describe("subs: hard filters", () => {
+  const target = makeCone("target");
+
+  it("excludes the target itself, other sizes and other types", () => {
+    const pool = [
+      target,
+      makeCone("same-size"),
+      makeCone("other-size", { sizeInch: 15 }),
+      makeCd("cd"),
+    ];
+    const ids = subs(target, pool).map((c) => c.driver.id);
+    expect(ids).toEqual(["same-size"]);
+  });
+
+  it("matches compression drivers on throat exit", () => {
+    const cd = makeCd("cd-target");
+    const pool = [makeCd("same-exit"), makeCd("other-exit", { exitInch: 2 })];
+    const ids = subs(cd, pool).map((c) => c.driver.id);
+    expect(ids).toEqual(["same-exit"]);
+  });
+
+  it("honours the limit", () => {
+    const target2 = makeCone("t");
+    const pool = Array.from({ length: 15 }, (_, i) => makeCone(`c${i}`));
+    expect(subs(target2, pool, 10)).toHaveLength(10);
+  });
+});
+
+describe("subs: cone scoring", () => {
+  const target = makeCone("target");
+
+  it("scores an identical driver 0 / close and ranks it first", () => {
+    const pool = [makeCone("twin"), makeCone("far", { qts: 0.7, fsHz: 55 })];
+    const [first, second] = subs(target, pool);
+    expect(first.driver.id).toBe("twin");
+    expect(first.score).toBe(0);
+    expect(first.tier).toBe("close");
+    expect(second.tier).toBe("risky");
+  });
+
+  it("penalises less Xmax harder than more Xmax", () => {
+    const pool = [makeCone("more", { xmaxMm: 16 }), makeCone("less", { xmaxMm: 4 })];
+    const [first, second] = subs(target, pool);
+    expect(first.driver.id).toBe("more");
+    expect(first.score).toBeLessThan(second.score);
+  });
+
+  it("grades a moderate deviation as usable", () => {
+    // Qts off by ×2 alone: 3·1/9 ≈ 0.33 → usable
+    const [c] = subs(target, [makeCone("c", { qts: 0.7 })]);
+    expect(c.tier).toBe("usable");
+  });
+
+  it("reports per-parameter deltas", () => {
+    const [c] = subs(target, [makeCone("c", { fsHz: 40 })]);
+    const fs = c.deltas.find((d) => d.label === "Fs");
+    expect(fs).toEqual({ label: "Fs", unit: "Hz", target: 35, candidate: 40 });
+  });
+});
+
+describe("subs: compression scoring", () => {
+  const target = makeCd("target");
+
+  it("penalises a higher protection floor harder than a lower one", () => {
+    const pool = [
+      makeCd("lower-floor", { minCrossoverHz: 400 }),
+      makeCd("higher-floor", { minCrossoverHz: 1600 }),
+    ];
+    const [first, second] = subs(target, pool);
+    expect(first.driver.id).toBe("lower-floor");
+    expect(first.score).toBeLessThan(second.score);
+  });
+});
+
+describe("subs: flags", () => {
+  const target = makeCone("target");
+
+  it("flags impedance, power and Xmax regressions", () => {
+    const [c] = subs(target, [makeCone("c", { impedanceOhm: 4, peW: 300, xmaxMm: 5 })]);
+    expect(c.flags).toEqual([
+      "4 Ω vs 8 Ω: amp load changes",
+      "300 W vs 600 W: lower power handling",
+      "Xmax 5 mm < 8 mm: lower excursion-limited SPL",
+    ]);
+  });
+
+  it("flags a raised CD crossover floor", () => {
+    const cd = makeCd("t");
+    const [c] = subs(cd, [makeCd("c", { minCrossoverHz: 1200 })]);
+    expect(c.flags).toContain("min crossover 1200 Hz > 800 Hz: raise the XO");
+  });
+
+  it("has no flags for an equivalent driver", () => {
+    const [c] = subs(target, [makeCone("c")]);
+    expect(c.flags).toEqual([]);
+  });
+});

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZTW 12MK2 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 22.5,
+  "qts": 0.484,
+  "qes": 0.55,
+  "qms": 4.04,
+  "vasL": 148.6,
+  "sdCm2": 505,
+  "xmaxMm": 14.7,
+  "reOhm": 4,
+  "bl": 11.1,
+  "mmsG": 120.4,
+  "peW": 400,
+  "sensitivityDb": 89.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GROUND%20ZERO"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "STUDIO 15L",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.338,
+  "qes": 0.37,
+  "qms": 3.92,
+  "vasL": 190,
+  "sdCm2": 845.2,
+  "xmaxMm": 4.3,
+  "reOhm": 5.2,
+  "bl": 16.2,
+  "mmsG": 65.9,
+  "peW": 200,
+  "sensitivityDb": 100.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fluxmag",
+  "model": "1504B",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22.5,
+  "qts": 0.224,
+  "qes": 0.23,
+  "qms": 8.04,
+  "vasL": 433.8,
+  "sdCm2": 855,
+  "xmaxMm": 7.3,
+  "reOhm": 5.45,
+  "bl": 19.9,
+  "mmsG": 118.2,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FLUXMAG"
+}

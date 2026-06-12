@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "8NTLS2000",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.19,
+  "qes": 0.19,
+  "qms": 11.5,
+  "vasL": 27,
+  "sdCm2": 227,
+  "xmaxMm": 7.4,
+  "reOhm": 5.4,
+  "bl": 17.2,
+  "mmsG": 42,
+  "peW": 350,
+  "sensitivityDb": 93.5,
+  "magnetMaterial": "neo",
+  "weightKg": 1.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/8-0/8/8ntls2000-8"
+}

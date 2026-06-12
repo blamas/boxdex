@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Realistic",
+  "model": "PRO 250 vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 47.3,
+  "qts": 0.619,
+  "qes": 0.76,
+  "qms": 3.35,
+  "vasL": 196.6,
+  "sdCm2": 870.9,
+  "xmaxMm": 5.5,
+  "reOhm": 5.6,
+  "bl": 11.6,
+  "mmsG": 61.3,
+  "peW": 250,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=REALISTIC"
+}

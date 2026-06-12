@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fusion",
+  "model": "NV-SW12",
+  "sizeInch": 10,
+  "impedanceOhm": 1,
+  "fsHz": 26.4,
+  "qts": 0.438,
+  "qes": 0.47,
+  "qms": 6.42,
+  "vasL": 52.2,
+  "sdCm2": 309.2,
+  "xmaxMm": 7.5,
+  "reOhm": 0.94,
+  "bl": 5.6,
+  "mmsG": 93.4,
+  "peW": 400,
+  "sensitivityDb": 94.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FUSION"
+}

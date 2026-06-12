@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "ER-15B",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.303,
+  "qes": 0.31,
+  "qms": 12.89,
+  "vasL": 226.5,
+  "sdCm2": 851.6,
+  "xmaxMm": 3.3,
+  "reOhm": 5.2,
+  "bl": 16.7,
+  "mmsG": 61.5,
+  "peW": 200,
+  "sensitivityDb": 101.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

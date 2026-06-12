@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "21L45",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.275,
+  "qes": 0.28,
+  "qms": 14.16,
+  "vasL": 660,
+  "sdCm2": 1764,
+  "xmaxMm": 9,
+  "reOhm": 6.3,
+  "bl": 30.8,
+  "mmsG": 267.9,
+  "peW": 800,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "400 GN-A",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.196,
+  "qes": 0.2,
+  "qms": 9.33,
+  "vasL": 448,
+  "sdCm2": 855,
+  "xmaxMm": 5,
+  "reOhm": 6.5,
+  "bl": 22.7,
+  "mmsG": 109.5,
+  "peW": 120,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

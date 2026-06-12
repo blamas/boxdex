@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21NTLW5000",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 5.2,
+  "vasL": 270,
+  "sdCm2": 1662,
+  "xmaxMm": 17.5,
+  "reOhm": 5.3,
+  "bl": 32,
+  "mmsG": 372,
+  "peW": 1800,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neo",
+  "weightKg": 12.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/21-0/8/21ntlw5000"
+}

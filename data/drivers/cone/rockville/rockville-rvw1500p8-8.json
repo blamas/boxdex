@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockville",
+  "model": "RVW1500P8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 28.3,
+  "qts": 0.503,
+  "qes": 0.576,
+  "qms": 3.971,
+  "vasL": 254,
+  "sdCm2": 881.4,
+  "xmaxMm": 7.5,
+  "reOhm": 6.8,
+  "bl": 16.9,
+  "mmsG": 135.6,
+  "peW": 750,
+  "sensitivityDb": 92.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ROCKVILLE"
+}

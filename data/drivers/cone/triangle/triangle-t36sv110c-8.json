@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Triangle",
+  "model": "T36SV110C",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 30.7,
+  "qts": 0.457,
+  "qes": 0.49,
+  "qms": 6.74,
+  "vasL": 91.3,
+  "sdCm2": 594,
+  "xmaxMm": 6,
+  "reOhm": 7.4,
+  "bl": 20.6,
+  "mmsG": 145.4,
+  "peW": 200,
+  "sensitivityDb": 89.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TRIANGLE"
+}

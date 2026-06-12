@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "SIGMA PRO-18A",
+  "impedanceOhm": 8,
+  "sizeInch": 18,
+  "fsHz": 28,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 8.28,
+  "vasL": 441.2,
+  "sdCm2": 1140,
+  "xmaxMm": 6.1,
+  "peW": 650,
+  "sensitivityDb": 99,
+  "reOhm": 6.29,
+  "bl": 22.1,
+  "mmsG": 130,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Sigma_Pro_18A_2.pdf"
+}

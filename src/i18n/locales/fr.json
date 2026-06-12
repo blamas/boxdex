@@ -1,0 +1,746 @@
+{
+  "nav": {
+    "catalog": "Catalogue",
+    "compare": "Comparer",
+    "explore": "Explorer",
+    "find": "Trouver",
+    "stack": "Stack",
+    "drivers": "HP",
+    "helpLabel": "Aide & glossaire",
+    "toggleTheme": "Basculer thème clair/sombre"
+  },
+  "footer": {
+    "text": "Boxdex : plans de caissons libres. Toutes les unités en SI. Les données peuvent être des simulations ou des mesures, vérifiez les badges de provenance. Contributions bienvenues via PR."
+  },
+  "curveLabels": {
+    "spl": "SPL (dB)",
+    "spl_stacked": "SPL empilé (dB)",
+    "phase": "Phase (°)",
+    "impedance": "Impédance (Ω)",
+    "group_delay": "Retard de groupe (ms)",
+    "distortion": "Distorsion (%)",
+    "power_compression": "Compression de puissance (dB)"
+  },
+  "categoryLabels": {
+    "sub": "Subwoofer",
+    "kick": "Kick",
+    "mid": "Mid",
+    "top": "Top"
+  },
+  "axisLabels": {
+    "volumeL": "Volume net",
+    "footprintCm2": "Empreinte",
+    "heightMm": "Hauteur",
+    "weightKg": "Poids",
+    "f3Hz": "F3 bas",
+    "f3HzHigh": "F3 haut",
+    "maxSplDb": "SPL max",
+    "sensitivityDb": "Sensibilité",
+    "outputDensity": "Densité de sortie",
+    "outputPerKg": "Sortie par kg"
+  },
+  "pages": {
+    "catalog": {
+      "title": "Catalogue",
+      "description": "Plans de caissons libres : catalogue de designs subwoofer et top",
+      "heading": "Catalogue de caissons"
+    },
+    "compare": {
+      "title": "Comparer",
+      "description": "Superposer les courbes de réponse en fréquence de plusieurs caissons",
+      "heading": "Comparer des caissons",
+      "subtitle": "Superposez les courbes SPL, de phase ou d'impédance. Sélectionnez les caissons dans la liste ci-dessous."
+    },
+    "explore": {
+      "title": "Explorer",
+      "description": "Explorer l'espace de conception des caissons : volume, SPL, F3 et plus",
+      "heading": "Espace de conception",
+      "subtitle": "Tracez deux métriques et trouvez les designs Pareto-optimaux."
+    },
+    "find": {
+      "title": "Trouver",
+      "description": "Filtrer et trier les caissons par F3, SPL, volume et autres contraintes",
+      "heading": "Trouver un caisson",
+      "subtitle": "Filtrez par contraintes, triez par n'importe quelle métrique."
+    },
+    "stack": {
+      "title": "Mon stack",
+      "description": "Composez une sono et calculez la couverture.",
+      "heading": "Mon stack",
+      "subtitle": "Choisissez les caissons par rôle, réglez les quantités et vérifiez la couverture et les crossovers."
+    },
+    "help": {
+      "title": "Aide",
+      "description": "Comment utiliser Boxdex : trouver des caissons, comparer des builds, planifier une sono, plus un glossaire complet des termes HP et systèmes"
+    },
+    "drivers": {
+      "title": "Haut-parleurs",
+      "description": "Parcourir et comparer les HP graves, les HP à compression et les horns",
+      "heading": "Haut-parleurs",
+      "subtitle": "HP graves (paramètres Thiele-Small), HP à compression (specs horn/throat) et horns (waveguides) dans la base. Changez de catalogue avec les onglets, cochez jusqu'à 4 cases et cliquez sur Comparer pour un tableau et un radar."
+    },
+    "driversCompare": {
+      "title": "Comparer des HP",
+      "description": "Comparaison côte à côte des paramètres T/S avec radar",
+      "heading": "Comparer des HP",
+      "subtitle": "Paramètres T/S côte à côte. Le radar normalise chaque axe à 100 = maximum du catalogue."
+    },
+    "hornsCompare": {
+      "title": "Comparer des horns",
+      "description": "Comparaison des specs de horns avec radar de couverture",
+      "heading": "Comparer des horns",
+      "subtitle": "Specs de horns côte à côte. Le radar normalise chaque axe à 100 = maximum du catalogue."
+    }
+  },
+  "catalogGrid": {
+    "all": "Tous",
+    "sort": "Trier",
+    "nameAZ": "Nom (A-Z)",
+    "design": "design",
+    "designs": "designs",
+    "emptyState": "Aucun design dans cette catégorie pour l'instant.",
+    "volume": "Volume",
+    "f3": "F3",
+    "f3High": "F3 haut",
+    "maxSpl": "SPL max",
+    "drivers": "HP",
+    "addToStack": "+ stack",
+    "added": "✓ ajouté",
+    "verified": "vérifié"
+  },
+  "compare": {
+    "search": "Rechercher…",
+    "normalise": "Normaliser le pic à 0 dB",
+    "advanced": "Avancé",
+    "has": "A",
+    "driver": "HP",
+    "allEnclosures": "Tous les caissons",
+    "freqRange": "Plage de fréq.",
+    "minHz": "min Hz",
+    "maxHz": "max Hz",
+    "enclosures": "Caissons",
+    "loading": "Chargement…",
+    "emptyState": "Sélectionnez au moins un caisson ci-dessous, ou les caissons sélectionnés n'ont pas de données {kind}.",
+    "provenanceNote": "Plein = mesuré · Pointillé = simulé",
+    "available": "{label} disponible",
+    "missing": "{label} absent"
+  },
+  "explorer": {
+    "category": "Catégorie",
+    "topology": "Topologie",
+    "driverSize": "Taille HP",
+    "sortBy": "Trier par",
+    "advanced": "Avancé",
+    "driverCount": "Nombre de HP",
+    "f3Min": "F3 min (Hz)",
+    "f3Max": "F3 max (Hz)",
+    "minSpl": "SPL min (dB)",
+    "volMin": "Vol min (L)",
+    "volMax": "Vol max (L)",
+    "measuredOnly": "Mesurés uniquement",
+    "hasPlans": "A des plans",
+    "verifiedOnly": "Vérifiés uniquement",
+    "clearN": "Effacer {n}",
+    "emptyState": "Aucun caisson ne correspond à ces critères. Essayez d'assouplir un filtre.",
+    "enclosure": "caisson",
+    "enclosures": "caissons",
+    "found": "trouvé(s)",
+    "all": "Tous",
+    "plansAvailable": "Plans disponibles",
+    "columns": {
+      "name": "Nom",
+      "cat": "Cat",
+      "topology": "Topologie",
+      "drivers": "HP",
+      "volume": "Volume (L)",
+      "f3": "F3 (Hz)",
+      "maxSpl": "SPL max (dB)",
+      "provenance": "Provenance",
+      "tags": "Tags"
+    }
+  },
+  "driverExplorer": {
+    "tabs": {
+      "cone": "HP graves",
+      "compression": "HP à compression",
+      "horn": "Horns"
+    },
+    "brand": "Marque",
+    "size": "Taille",
+    "exit": "Exit",
+    "impedance": "Impédance",
+    "profile": "Profil",
+    "maxCutoff": "Cutoff max (Hz)",
+    "advanced": "Avancé",
+    "clearN": "Effacer {n}",
+    "all": "Tous",
+    "driver": "HP",
+    "drivers": "HP",
+    "horn": "horn",
+    "horns": "horns",
+    "compare": "Comparer {n} →",
+    "maxComparers": "4 {type} maximum peuvent être comparés à la fois.",
+    "advancedCone": {
+      "maxFs": "Fs max (Hz)",
+      "qtsMin": "Qts min",
+      "qtsMax": "Qts max",
+      "minXmax": "Xmax min (mm)",
+      "minPe": "Pe min (W)"
+    },
+    "advancedComp": {
+      "maxCrossover": "Crossover max (Hz)",
+      "minSens": "Sens min (dB)"
+    },
+    "columns": {
+      "brandModel": "Marque / Modèle",
+      "exit": "Exit",
+      "hDeg": "H°",
+      "vDeg": "V°",
+      "cutoffHz": "Cutoff Hz",
+      "mouthCm2": "Mouth cm²",
+      "depthMm": "Depth mm",
+      "profile": "Profil",
+      "size": "Taille",
+      "impedanceOhm": "Ω",
+      "fs": "Fs Hz",
+      "qts": "Qts",
+      "ebpTitle": "Produit Efficacité-Bande Passante = Fs/Qes (<50 clos, >100 bass-reflex)",
+      "ebp": "EBP",
+      "vas": "Vas L",
+      "xmax": "Xmax mm",
+      "pe": "Pe W",
+      "sens": "Sens dB",
+      "vcMm": "VC mm",
+      "lowHz": "Bas Hz",
+      "highHz": "Haut Hz",
+      "minXover": "Xover min",
+      "aesW": "AES W"
+    }
+  },
+  "stackBuilder": {
+    "search": "Rechercher…",
+    "loading": "Chargement…",
+    "builder": "Builder",
+    "emptyHint": "Choisissez une catégorie ci-dessous pour ajouter le premier caisson.",
+    "remove": "Supprimer",
+    "summary": "Résumé",
+    "physical": "Physique",
+    "cabinets": "caissons",
+    "totalWeight": "poids total",
+    "transportVolume": "volume de transport",
+    "transportVolumeTip": "Somme des boîtes englobantes externes de chaque caisson, l'espace occupé dans le van, avant les pertes d'empilement.",
+    "plywoodSheets": "feuilles de contreplaqué",
+    "plywoodTip": "Feuilles entières non découpées cumulées sur les listes de débit des plans{sheetInfo}. ~ si un plan ne précise pas le nombre de feuilles.",
+    "acoustic": "Acoustique",
+    "maxSplLabel": "SPL max @1 m",
+    "maxSplTip": "Somme en puissance du SPL max de chaque bande plus son gain de couplage (subs +6 dB/doublement, mid/top +3), à 1 m. ~ si un caisson n'a pas de SPL max renseigné.",
+    "bandwidth": "bandwidth (Hz)",
+    "powerElectrical": "Puissance et électrique",
+    "aesContinuous": "AES (continu)",
+    "programPower": "puissance programme",
+    "ampPeak": "peak ampli",
+    "ampPeakTip": "2× AES = +3 dB, la convention sinus / peak ampli, pas une valeur de headroom musical (le crest musical est ≥6 dB).",
+    "minGenerator": "générateur min",
+    "generatorTip": "Consommation AES continue ÷ {efficiency} rendement ampli × {headroom} headroom (faire tourner un groupe à ≤ ~75 %). Les vieux amplis sans PFC consomment plus de puissance réactive. Déclassez davantage.",
+    "ampMatching": "Adaptation ampli",
+    "noImpedance": "pas de données d'impédance nominale",
+    "noPower": "pas de données de puissance",
+    "noSpl": "pas de données SPL",
+    "wiringsNote": "Les câblages placent les caissons de la ligne sur un canal d'ampli (2-4 Ω nécessite un ampli stable à 2 Ω, en dessous de 2 Ω séparer sur plusieurs canaux). La puissance ampli est la puissance continue dans la charge choisie : ≥ 1× le total AES des caissons, idéalement 2× pour les peaks propres, un ampli qui clip tue les HP plus vite qu'un vrai surdimensionnement. Charges nominales uniquement, l'impédance réelle descend plus bas.",
+    "coverage": "Couverture",
+    "depthFromStack": "Distance depuis le stack",
+    "targetSpl": "SPL cible",
+    "crestFactor": "Crest factor",
+    "coverageNote": "Array gain : subs +6 dB/doublement (couplé), mid/top +3 dB/doublement (large bande) · −6 dB/doublement de distance (source ponctuelle) · le headroom est par rapport à la cible + {crestDb} dB de crest peak",
+    "systemResponse": "Réponse système",
+    "ampChannel": "ampli ≥ {min} (idéal {ideal}) par canal",
+    "headroomOk": "+{n} dB headroom",
+    "headroomLow": "{n} dB",
+    "needMore": "{n} dB · besoin de ×{need} (+{more} de plus)",
+    "splPerCab": "{spl} dB/caisson",
+    "arrayGain": "+{gain} array",
+    "at": "à {d} m"
+  },
+  "systemResponse": {
+    "crossovers": "Crossovers",
+    "crossoversTip": "Points suggérés : le crossover indiqué du caisson bas quand le plan le précise, sinon la moyenne géométrique de la zone de recouvrement des bandes, jamais en dessous du plancher de protection du HP à compression. Modifiez n'importe quel point pour correspondre à votre DSP, les valeurs hors plage avertissent mais ne sont jamais bloquées. LR4 (24 dB/oct), à vérifier avec des mesures.",
+    "applyToPrediction": "appliquer à la prédiction",
+    "resetToSuggested": "Réinitialiser à la valeur suggérée",
+    "spectralGap": "lacune spectrale",
+    "raisedToCdFloor": "relevé au plancher CD",
+    "stated": "indiqué",
+    "spectralBalance": "Équilibre spectral : subs {tilt} vs tops",
+    "spectralBalanceSuffix": "moy",
+    "loading": "Chargement des courbes…",
+    "noSplYet": "Aucune courbe SPL chargée pour l'instant.",
+    "noSplAvailable": "Aucune courbe SPL disponible pour les caissons sélectionnés.",
+    "chartNoteXo": "Gras = réponse système prédite avec crossovers LR4 idéaux appliqués (bandes filtrées, somme cohérente, suppose des bandes alignées en phase). Pointillé = bandes individuelles filtrées. Prédiction dérivée. Courbes stockées inchangées.",
+    "chartNoteNoXo": "Gras = réponse système prédite (courbes par bande pondérées par le gain de couplage, puis sommées en puissance). Pointillé = bandes individuelles. Prédiction dérivée. Courbes stockées inchangées.",
+    "systemPredicted": "Système (prédit)"
+  },
+  "boxCurves": {
+    "simulation": "Simulation",
+    "measurement": "Mesure",
+    "loading": "Chargement…",
+    "failedToLoad": "Échec du chargement des courbes : {error}",
+    "noData": "Aucune donnée de courbe disponible pour ce caisson.",
+    "noKindCurve": "Aucune courbe {kind} pour ce HP.",
+    "simulationDashed": "simulation (pointillé)",
+    "measuredSolid": "mesuré (plein)"
+  },
+  "designSpace": {
+    "xAxis": "Axe X",
+    "yAxis": "Axe Y",
+    "colorBy": "Couleur par",
+    "topology": "Topologie",
+    "category": "Catégorie",
+    "paretoOnly": "Frontière de Pareto uniquement",
+    "loading": "Chargement…",
+    "note": "Les points cerclés sont Pareto-optimaux : cercle = mesuré, triangle = simulé. Cliquez sur un point pour ouvrir son plan.",
+    "provenance": "Provenance"
+  },
+  "radarCompare": {
+    "selectPlaceholder": "sélectionner...",
+    "selectPrompt": "Sélectionnez au moins une entrée dans la liste déroulante ci-dessus, ou allez à {listLabel} et cochez des cases pour comparer.",
+    "parameter": "Paramètre",
+    "datasheet": "Fiche technique",
+    "loading": "Chargement…",
+    "link": "↗ lien",
+    "remove": "Supprimer"
+  },
+  "driverCompare": {
+    "addLabel": "Ajouter un HP",
+    "backLabel": "← tous les HP",
+    "listLabel": "la liste des HP",
+    "axes": {
+      "cone": {
+        "sensitivity": "Sensibilité",
+        "xmax": "Xmax",
+        "power": "Puissance",
+        "sd": "Sd",
+        "vas": "Vas",
+        "fsInv": "Fs (inv.)"
+      },
+      "compression": {
+        "sensitivity": "Sensibilité",
+        "power": "Puissance",
+        "topEnd": "Top end",
+        "voiceCoil": "Voice coil",
+        "minXoverInv": "Xover min (inv.)",
+        "lowEndInv": "Low end (inv.)"
+      }
+    },
+    "rows": {
+      "cone": {
+        "size": "Taille",
+        "impedance": "Impédance",
+        "fs": "Fs",
+        "qts": "Qts",
+        "qes": "Qes",
+        "qms": "Qms",
+        "vas": "Vas",
+        "sd": "Sd",
+        "xmax": "Xmax",
+        "re": "Re",
+        "bl": "BL",
+        "mms": "Mms",
+        "pe": "Pe",
+        "sensitivity": "Sensibilité"
+      },
+      "compression": {
+        "throatExit": "Throat exit",
+        "throat": "Throat",
+        "voiceCoil": "Voice coil",
+        "impedance": "Impédance",
+        "lowEnd": "Low end",
+        "topEnd": "Top end",
+        "minCrossover": "Crossover min",
+        "crossoverSlope": "Pente crossover",
+        "sensitivityHorn": "Sensibilité (horn)",
+        "fs": "Fs",
+        "magnet": "Aimant",
+        "weight": "Poids",
+        "powerAes": "Puissance (AES)"
+      }
+    },
+    "noteTemplate": "Tous les axes normalisés à 100 = max parmi les HP {type} du catalogue. Les axes marqués \"(inv.)\" sont inversés : un score plus élevé signifie une valeur plus faible (meilleur)."
+  },
+  "hornCompare": {
+    "addLabel": "Ajouter un horn",
+    "backLabel": "← tous les horns",
+    "listLabel": "la liste des horns",
+    "axes": {
+      "coverageH": "Couverture H",
+      "coverageV": "Couverture V",
+      "cutoffInv": "Cutoff (inv.)",
+      "mouth": "Mouth",
+      "depthInv": "Depth (inv.)"
+    },
+    "rows": {
+      "throatExit": "Throat exit",
+      "coverageHV": "Couverture (H×V)",
+      "directivity": "Directivité",
+      "constantDirectivity": "constante (CD)",
+      "flareCutoff": "Flare cutoff",
+      "mouthArea": "Mouth area",
+      "mouthWH": "Mouth (L×H)",
+      "depth": "Depth",
+      "profile": "Profil",
+      "material": "Matériau",
+      "weight": "Poids"
+    },
+    "note": "Tous les axes normalisés à 100 = max parmi les horns du catalogue. Les axes marqués \"(inv.)\" sont inversés : un score plus élevé signifie une valeur plus faible (meilleur)."
+  },
+  "pageActions": {
+    "copied": "copié !",
+    "share": "Partager"
+  },
+  "exportMenu": {
+    "export": "Exporter",
+    "csv": "CSV",
+    "json": "JSON",
+    "pdf": "PDF"
+  },
+  "loadMore": {
+    "more": "{n} de plus…"
+  },
+  "substituteList": {
+    "driver": "HP",
+    "fit": "Adéquation",
+    "notes": "Notes",
+    "compare": "Comparer",
+    "compareClosest": "Comparer les {n} plus proches avec le {model} →",
+    "provenanceNoteCone": "Classé par similarité de paramètres uniquement (Qts, Fs, Vas, Xmax, sensibilité). Même taille nominale requise. Une indication, pas une simulation, modélisez l'échange avant de couper ou d'acheter.",
+    "provenanceNoteComp": "Classé par similarité de paramètres uniquement (plancher crossover, plage, sensibilité, voice coil). Même exit requis. Une indication, pas une simulation, modélisez l'échange avant de couper ou d'acheter.",
+    "emptyCone": "Aucun autre HP grave {size}\" dans le catalogue pour l'instant.",
+    "emptyComp": "Aucun autre HP à compression avec exit {size}\" dans le catalogue pour l'instant.",
+    "compareTitle": "Comparer {model1} et {model2}"
+  },
+  "enclosureDetail": {
+    "specifications": "Spécifications",
+    "driversSection": "Haut-parleurs ({n})",
+    "brand": "Marque",
+    "model": "Modèle",
+    "format": "Format",
+    "impedance": "Impédance",
+    "fs": "Fs",
+    "detail": "Détail",
+    "pe": "Pe",
+    "sensitivity": "Sensibilité",
+    "measurementsSims": "Mesures / Simulations",
+    "images": "Images",
+    "plans": "Plans",
+    "sources": "Sources",
+    "relatedEnclosures": "Utilise aussi ces HP",
+    "downloadPdf": "Télécharger le PDF",
+    "by": "par",
+    "rev": "rév",
+    "verified": "vérifié",
+    "coneDetail": "Qts {qts} · Vas {vas} L · Xmax {xmax} mm",
+    "compDetail": "{fLow}-{fHigh} Hz · xover ≥ {minXo} Hz",
+    "exitSuffix": "\" exit",
+    "specRows": {
+      "topology": "Topologie",
+      "ways": "Voies",
+      "buildComplexity": "Complexité de construction",
+      "netVolume": "Volume net",
+      "grossVolume": "Volume brut",
+      "dimensions": "Dimensions (H×L×P)",
+      "footprint": "Empreinte",
+      "weight": "Poids",
+      "f3": "F3",
+      "f6": "F6",
+      "fb": "Fb (port tuning)",
+      "f3High": "F3 haut",
+      "maxSpl": "SPL max",
+      "maxSplExcursion": "SPL max (limité par excursion)",
+      "maxSplThermal": "SPL max (limité thermiquement)",
+      "sensitivity": "Sensibilité",
+      "impedanceMin": "Impédance minimum",
+      "coverageAngle": "Angle de couverture",
+      "recommendedCrossover": "Crossover recommandé",
+      "hornCutoff": "Horn cutoff",
+      "hornMouth": "Horn mouth",
+      "hornThroat": "Horn throat",
+      "recommendedPower": "Puissance recommandée",
+      "powerAes": "Puissance (AES)",
+      "powerProgram": "Puissance programme",
+      "maxPortVelocity": "Vitesse max port",
+      "outputDensity": "Densité de sortie",
+      "plywoodThickness": "Épaisseur contreplaqué",
+      "plywoodSheets": "Feuilles de contreplaqué",
+      "connectors": "Connecteurs"
+    }
+  },
+  "driverDetail": {
+    "specifications": "Spécifications",
+    "allDrivers": "tous les HP",
+    "tsParams": "Paramètres Thiele-Small",
+    "compSpecs": "Specs HP à compression",
+    "enclosures": "Utilisé dans les caissons",
+    "substitutes": "Candidats de substitution",
+    "mateHorns": "Horns compatibles (même exit)",
+    "mateCDs": "HP à compression compatibles (même exit)",
+    "alignmentHint": "Indication d'alignement",
+    "noCompatible": "Aucun dans le catalogue pour l'instant.",
+    "specRows": {
+      "nominalSize": "Taille nominale",
+      "impedance": "Impédance",
+      "fs": "Fs",
+      "qts": "Qts",
+      "qes": "Qes",
+      "qms": "Qms",
+      "vas": "Vas",
+      "sd": "Sd",
+      "xmax": "Xmax",
+      "re": "Re",
+      "bl": "Bl",
+      "mms": "Mms",
+      "pe": "Pe",
+      "sensitivity": "Sensibilité",
+      "throatExit": "Throat exit",
+      "throat": "Throat",
+      "voiceCoil": "Voice coil",
+      "usableRange": "Plage utilisable",
+      "minCrossover": "Crossover min",
+      "crossoverSlope": "Pente crossover",
+      "sensitivityHorn": "Sensibilité (sur horn)",
+      "magnet": "Aimant",
+      "weight": "Poids",
+      "powerAes": "Puissance (AES)"
+    },
+    "alignmentHints": {
+      "sealed": "EBP < 50 : favorise un alignement clos.",
+      "flexible": "EBP 50-100 : fonctionne en clos ou en bass-reflex.",
+      "ported": "EBP > 100 : favorise un alignement bass-reflex."
+    },
+    "ebpLabel": "EBP",
+    "sealedVbLabel": "Vb clos (alignement clos) : {vb} L"
+  },
+  "hornDetail": {
+    "specifications": "Spécifications",
+    "compatibleCDs": "HP à compression compatibles (même exit)",
+    "noCompatibleCDs": "Aucun HP à compression avec cet exit dans le catalogue.",
+    "compatibleDrivers": "HP à compression compatibles"
+  },
+  "help": {
+    "toc": {
+      "using": "Utiliser le site",
+      "glossary": "Glossaire"
+    },
+    "sections": {
+      "using": {
+        "heading": "Utiliser le site",
+        "finding": {
+          "heading": "Trouver des caissons",
+          "catalog": {
+            "term": "Catalogue",
+            "ariaLabel": "Lien vers Catalogue",
+            "def": "Tous les caissons en cartes. Filtrez par catégorie (sub · kick · mid · top) pour affiner la liste. Chaque carte renvoie à la page complète avec tableau de specs, courbes, plans et infos HP."
+          },
+          "find": {
+            "term": "Trouver par contraintes",
+            "ariaLabel": "Lien vers Trouver par contraintes",
+            "def": "Filtrez sur des chiffres précis : F3, SPL max, volume interne, taille et nombre de HP, topologie et tags. Triez par n'importe quelle métrique, y compris les densités d'efficacité (dB/L, dB/kg) pour trouver le meilleur design selon une contrainte donnée."
+          },
+          "explore": {
+            "term": "Espace de conception",
+            "ariaLabel": "Lien vers Espace de conception",
+            "def": "Nuage de points de deux métriques quelconques sur tout le catalogue, avec mise en évidence de la frontière de Pareto. Pratique pour repérer les designs vraiment meilleurs sur deux axes à la fois."
+          }
+        },
+        "comparing": {
+          "heading": "Comparer des builds",
+          "compareEnclosures": {
+            "term": "Comparer des caissons",
+            "ariaLabel": "Lien vers Comparer des caissons",
+            "def": "Superposez les courbes de réponse (SPL, phase, impédance…) de plusieurs caissons. Les mesures sont prioritaires sur les simulations quand les deux existent. La normalisation de pic optionnelle permet de comparer les formes indépendamment du niveau absolu."
+          },
+          "compareDrivers": {
+            "term": "Comparer des HP",
+            "ariaLabel": "Lien vers Comparer des HP",
+            "def": "Paramètres T/S côte à côte plus un radar, jusqu'à 4 HP. Les liens sont partageables via ?ids= dans l'URL."
+          }
+        },
+        "driversHorns": {
+          "heading": "HP et horns",
+          "driverCatalog": {
+            "term": "Catalogue de HP",
+            "ariaLabel": "Lien vers Catalogue de HP",
+            "def": "Onglets HP graves · compression · horns avec filtre et tri. Chaque page HP affiche les specs complètes, les indications dérivées (EBP, Vb clos) et tous les caissons du catalogue qui l'utilisent."
+          },
+          "substitutes": {
+            "term": "Candidats de substitution",
+            "ariaLabel": "Lien vers Candidats de substitution",
+            "def": "Chaque page HP et caisson liste les alternatives compatibles (même taille pour les graves, même exit pour les HP à compression), classées par similarité de paramètres et niveaux close · utilisable · risqué. Des alertes signalent les régressions d'impédance, de puissance ou de Xmax."
+          },
+          "hornMatching": {
+            "term": "Matching horn ↔ HP à compression",
+            "ariaLabel": "Lien vers Matching horn",
+            "def": "Les pages de horns listent les HP à compression compatibles et vice-versa, correspondant sur le diamètre d'exit. Pas de lien stocké, dérivé en direct des specs."
+          }
+        },
+        "planningRig": {
+          "heading": "Planifier une sono",
+          "stackBuilder": {
+            "term": "Stack builder",
+            "ariaLabel": "Lien vers Stack builder",
+            "def": "Assemblez une sono complète à partir des caissons du catalogue avec des quantités par ligne. L'état est encodé dans l'URL pour que les builds soient partageables. Le résumé couvre le nombre de caissons, le poids, le volume de transport, les feuilles de contreplaqué, la bandwidth et le SPL max cumulé avec l'array gain par catégorie."
+          },
+          "ampMatching": {
+            "term": "Adaptation d'ampli",
+            "ariaLabel": "Lien vers Adaptation d'ampli",
+            "def": "Pour chaque ligne, tous les câblages série/parallèle des caissons sont affichés avec la charge résultante notée ok · attention (sous 4 Ω) · danger (sous 2 Ω) · inefficace (au-dessus de 16 Ω), plus la puissance de canal ampli recommandée."
+          },
+          "crossoverSuggestions": {
+            "term": "Suggestions de crossover",
+            "ariaLabel": "Lien vers Suggestions de crossover",
+            "def": "Un point de crossover par paire de bandes adjacentes : la valeur indiquée du caisson quand disponible, sinon la moyenne géométrique de la zone de recouvrement, limitée aux planchers de protection des HP à compression. Les lacunes spectrales sont signalées plutôt que masquées."
+          },
+          "systemResponse": {
+            "term": "Réponse système prédite",
+            "ariaLabel": "Lien vers Réponse système prédite",
+            "def": "Courbes par bande plus une composite. Le bouton LR4 applique des filtres Linkwitz-Riley 4e ordre idéaux aux points de crossover suggérés et affiche la somme cohérente."
+          }
+        },
+        "dataProvenance": {
+          "heading": "Données et provenance",
+          "measuredVsSim": {
+            "term": "Badges mesuré vs simulé",
+            "ariaLabel": "Lien vers Badges mesuré vs simulé",
+            "def": "Chaque caisson est marqué mesuré ou simulé. Les mesures viennent de REW ou Klippel, les simulations de Hornresp ou AkAbak. Les deux ne sont jamais mélangés sur la même courbe."
+          },
+          "exports": {
+            "term": "Exports",
+            "ariaLabel": "Lien vers Exports",
+            "def": "Les vues Comparer et Stack exportent en CSV ou JSON. Le Stack a aussi une fiche imprimable. Les données brutes sont disponibles via les APIs JSON : /api/manifest.json, /api/drivers.json, /api/horns.json, /api/curves/<slug>.json."
+          }
+        }
+      },
+      "glossary": {
+        "heading": "Glossaire",
+        "subtitle": "Le vocabulaire derrière les specs : de quoi lire une fiche technique et dimensionner une sono.",
+        "driver": {
+          "heading": "Paramètres de HP",
+          "fs": {
+            "term": "Fs (Hz)",
+            "def": "Résonance à l'air libre du HP : la fréquence où la masse mobile et la suspension résonnent naturellement. Un HP produit peu de sortie utile en dessous de Fs dans la plupart des caissons, un HP de sub veut Fs sous ~40 Hz."
+          },
+          "qts": {
+            "term": "Qts / Qes / Qms",
+            "def": "L'amortissement de la résonance du HP : Qes est l'amortissement électrique (force du moteur), Qms mécanique (pertes de suspension), Qts la combinaison. Qts est le paramètre de correspondance le plus important lors de l'échange de HP, un caisson conçu pour Qts 0,35 se comporte différemment avec un HP à 0,5."
+          },
+          "vas": {
+            "term": "Vas (L)",
+            "def": "Volume de compliance équivalent : le volume d'air ayant la même élasticité que la suspension du HP. Avec Qts et Fs, il détermine le volume et l'accord que veut le HP."
+          },
+          "xmax": {
+            "term": "Xmax (mm)",
+            "def": "De combien le cône peut se déplacer (dans un sens) avant que la voice coil sorte de l'entrefer. Au-delà, la sortie ne monte plus et la distorsion grimpe vite. Xmax limite le SPL max propre d'un sub aux basses fréquences."
+          },
+          "sd": {
+            "term": "Sd (cm²)",
+            "def": "Surface rayonnante effective du cône. La capacité SPL aux basses fréquences est déterminée par Sd × Xmax (volume déplacé) : deux HP 15\" déplacent à peu près autant d'air qu'un 21\"."
+          },
+          "sensitivity": {
+            "term": "Sensibilité (dB)",
+            "def": "SPL à 1 m pour 1 W (2,83 V dans 8 Ω) d'entrée. 3 dB de sensibilité de plus = même volume pour la moitié de la puissance ampli. Le horn échange la taille du caisson contre la sensibilité, c'est pourquoi scoops et horns dominent les sonos de freeparty."
+          },
+          "ebp": {
+            "term": "EBP",
+            "def": "Produit Efficacité-Bande Passante : Fs ÷ Qes. Une règle empirique pour le type de charge adapté : sous 50 favorise le clos, au-dessus de 100 favorise le bass-reflex/horn, entre les deux, les deux fonctionnent."
+          },
+          "minCrossover": {
+            "term": "Crossover min (Hz)",
+            "def": "La fréquence la plus basse à laquelle un HP à compression peut être croisé (avec la pente indiquée). Croiser plus bas envoie une excursion que le diaphragme ne peut pas supporter, c'est ainsi que les tweeters et les CD meurent dans les fêtes. Dans le doute, croisez plus haut."
+          }
+        },
+        "system": {
+          "heading": "Chiffres caisson et système",
+          "f3": {
+            "term": "F3 / F6 (Hz)",
+            "def": "La fréquence où la réponse du caisson a chuté de 3 dB (ou 6 dB) par rapport à son niveau moyen : la limite pratique basse du caisson. F3 plus bas = basses plus profondes, généralement payées en taille de caisson ou en sensibilité."
+          },
+          "fb": {
+            "term": "Fb (Hz)",
+            "def": "Fréquence d'accord du port d'un caisson bass-reflex ou à horn. En dessous de Fb, le HP se décharge, l'excursion monte vite et Xmax limite la sortie. Un filtre passe-haut sub-sonique juste sous Fb protège les HP."
+          },
+          "maxSpl": {
+            "term": "SPL max (dB)",
+            "def": "Sortie maximale à 1 m avant d'atteindre une limite. Deux plafonds indépendants : limité par l'excursion sous Fb (la course du cône s'épuise) et limité thermiquement au-dessus (chaleur de la voice coil). Le chiffre principal est celui qui s'applique."
+          },
+          "crestFactor": {
+            "term": "Crest factor (dB)",
+            "def": "Écart entre les peaks d'un signal et son niveau moyen (RMS). La musique dance compressée se situe autour de 6 dB, un signal sinus de test à 3 dB. Votre ampli doit passer les peaks proprement pendant que les caissons voient la puissance moyenne."
+          },
+          "arrayGain": {
+            "term": "Array gain / couplage",
+            "def": "Empiler des caissons augmente la sortie : les subs proches couplent de façon cohérente (+6 dB par doublement, quatre subs jouent 12 dB plus fort qu'un), tandis que les caissons mid/top s'additionnent en puissance (+3 dB par doublement). C'est pourquoi les murs de subs fonctionnent."
+          },
+          "distanceLoss": {
+            "term": "Perte de distance",
+            "def": "Une source ponctuelle perd 6 dB par doublement de distance : 130 dB à 1 m donne ~104 dB à 20 m. Les grands stacks et les murs font mieux dans leur plage de couplage, mais c'est l'hypothèse de planification sûre."
+          },
+          "crossover": {
+            "term": "Crossover / LR4",
+            "def": "Le filtre divisant le signal entre sub, kick, mid et top. LR4 (Linkwitz-Riley 4e ordre, 24 dB/oct) est la référence en sono live : chaque côté est à −6 dB au point de crossover et ils se somment à plat quand les bandes sont alignées en phase."
+          },
+          "provenance": {
+            "term": "Mesuré vs simulé",
+            "def": "Les courbes ici sont soit simulées (prédiction Hornresp/AkAbak) soit mesurées sur un vrai build (REW, Klippel). Les simulations sont des points de départ honnêtes, les mesures sont la réalité. Le catalogue ne mélange jamais les deux."
+          }
+        },
+        "power": {
+          "heading": "Puissance et électrique",
+          "aesPower": {
+            "term": "Puissance AES / programme / peak",
+            "def": "AES : puissance continue que le HP supporte (test de bruit 2 h). Programme : ~2× AES, la valeur musicale. Peak : ~4× AES, instantanée. Dimensionnez les amplis sur la puissance continue dans la vraie charge, pas la valeur peak sur l'étiquette."
+          },
+          "impedance": {
+            "term": "Impédance (Ω)",
+            "def": "La charge électrique que présente le caisson. Nominale (4/8/16 Ω) est une moyenne, l'impédance réelle descend plus bas avec la fréquence. Diviser la charge par deux double approximativement la puissance ampli tirée, jusqu'à ce que l'ampli manque de courant."
+          },
+          "wiring": {
+            "term": "Câblage série / parallèle",
+            "def": "Le parallèle divise l'impédance (deux caissons 8 Ω = 4 Ω), la série l'additionne (= 16 Ω). La plupart des amplis sont à l'aise à 4 Ω, les bons à 2 Ω, en dessous vous grillez l'ampli. Sous-alimenter avec un ampli qui clip tue plus de HP qu'un vrai surdimensionnement."
+          }
+        },
+        "topologies": {
+          "heading": "Topologies",
+          "sealed": {
+            "term": "Clos",
+            "def": "Un caisson fermé : précis, prévisible, compact, tolérant aux substitutions de HP, mais la façon la moins efficace de faire du grave. Rare dans les sonos de freeparty sauf pour le duty infra."
+          },
+          "bass_reflex": {
+            "term": "Bass-reflex (éventé)",
+            "def": "Un caisson avec un port accordé qui amplifie la sortie autour de Fb. Meilleure extension par litre, facile à construire et à simuler, le standard pour les kicks et les tops, courant pour les subs. Surveillez la vélocité du port (souffle) à fort niveau."
+          },
+          "bandpass": {
+            "term": "Bandpass",
+            "def": "Le HP attaque dans une chambre et toute la sortie sort par des ports : fort SPL sur une bande étroite, le caisson faisant office de filtre. Fort mais monotone si poussé hors de sa bande, plus difficile à vérifier sans mesures."
+          },
+          "tapped_horn": {
+            "term": "Tapped horn",
+            "def": "Un horn replié où les deux côtés du cône alimentent le même chemin. Le meilleur SPL par litre et par watt dans sa bande passante, mais très spécifique au HP : un tapped horn conçu pour un HP fonctionne rarement avec un autre. Simulez avant toute substitution."
+          },
+          "front_loaded_horn": {
+            "term": "Front-loaded horn",
+            "def": "Un horn devant le cône (souvent avec une chambre arrière close ou éventée) : gros gains de sensibilité et directivité contrôlée. Nécessite une grande bouche pour charger bas, d'où la taille imposante des bass horns ou leur empilement."
+          },
+          "folded_horn": {
+            "term": "Folded horn",
+            "def": "Un chemin de horn replié pour s'adapter à un caisson transportable (W-bins et dérivés). Son classique punchy de kick/basses de festival, le repli compromet légèrement le haut de sa plage."
+          },
+          "scoop": {
+            "term": "Scoop",
+            "def": "Un horn chargé arrière ouvert à l'avant : le classique freeparty. Peu coûteux à construire, tolérant aux choix de HP et aux tolérances de fabrication, très fort par watt, au prix d'un grave plus flou et moins contrôlé qu'un tapped horn ou un bass-reflex. Les murs de scoops sont un rite de passage de la sono."
+          },
+          "transmission_line": {
+            "term": "Ligne de transmission",
+            "def": "Un long conduit amorti derrière le HP, ~quart de longueur d'onde à l'accord : extension profonde et propre dans un caisson modeste. Plus un choix hi-fi/studio qu'un cheval de bataille de sono, grand pour le SPL qu'il produit."
+          }
+        }
+      }
+    }
+  }
+}

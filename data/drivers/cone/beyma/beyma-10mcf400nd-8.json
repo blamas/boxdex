@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10MCF400Nd",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 270,
+  "qts": 0.455,
+  "qes": 0.47,
+  "qms": 14.5,
+  "vasL": 1.8,
+  "sdCm2": 380,
+  "xmaxMm": 0.6,
+  "reOhm": 5.9,
+  "bl": 28.8,
+  "mmsG": 39.1,
+  "peW": 400,
+  "sensitivityDb": 102.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

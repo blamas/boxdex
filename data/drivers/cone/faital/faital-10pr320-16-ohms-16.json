@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "10PR320 16 Ohms",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 50,
+  "qts": 0.38,
+  "qes": 0.43,
+  "qms": 3.3,
+  "vasL": 44.1,
+  "sdCm2": 321,
+  "xmaxMm": 6.6,
+  "reOhm": 11.3,
+  "bl": 16.6,
+  "mmsG": 33.2,
+  "peW": 300,
+  "sensitivityDb": 91.6,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101040140"
+}

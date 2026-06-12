@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "HX 380",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.55,
+  "qes": 0.62,
+  "qms": 4.8,
+  "vasL": 123.2,
+  "sdCm2": 793,
+  "xmaxMm": 14,
+  "reOhm": 2.8,
+  "bl": 13.17,
+  "mmsG": 204,
+  "peW": 700,
+  "sensitivityDb": 89.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-hx-380/specifications"
+}

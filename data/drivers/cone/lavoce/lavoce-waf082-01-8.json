@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WAF082.01",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 76,
+  "qts": 0.21,
+  "qes": 0.22,
+  "qms": 3.84,
+  "vasL": 10.21,
+  "sdCm2": 220,
+  "xmaxMm": 5.8,
+  "reOhm": 5.1,
+  "bl": 17.95,
+  "mmsG": 29.3,
+  "peW": 250,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://lavocespeakers.com/product/waf082-01/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BX18-4085",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.2,
+  "qes": 0.206,
+  "qms": 6.635,
+  "vasL": 337,
+  "sdCm2": 1134,
+  "xmaxMm": 3.4,
+  "reOhm": 5.84,
+  "bl": 28.4,
+  "mmsG": 150.6,
+  "peW": 150,
+  "sensitivityDb": 99.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Artech",
+  "model": "SPM-303",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.243,
+  "qes": 0.27,
+  "qms": 2.4,
+  "vasL": 95,
+  "sdCm2": 496,
+  "xmaxMm": 3.6,
+  "reOhm": 7.1,
+  "bl": 22.5,
+  "mmsG": 102.2,
+  "peW": 100,
+  "sensitivityDb": 92.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ARTECH"
+}

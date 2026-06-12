@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Europsonic",
+  "model": "HPC25/60",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 33.7,
+  "qts": 1.217,
+  "qes": 1.722,
+  "qms": 4.148,
+  "vasL": 106.4,
+  "sdCm2": 346,
+  "xmaxMm": 2.9,
+  "reOhm": 6.6,
+  "bl": 5.3,
+  "mmsG": 35.2,
+  "peW": 30,
+  "sensitivityDb": 86.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EUROPSONIC"
+}

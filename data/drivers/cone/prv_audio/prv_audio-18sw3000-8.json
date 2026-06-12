@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PRV Audio",
+  "model": "18SW3000",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 43.7,
+  "qts": 0.342,
+  "qes": 0.35,
+  "qms": 14.39,
+  "vasL": 111.3,
+  "sdCm2": 1195,
+  "xmaxMm": 6.7,
+  "reOhm": 5.18,
+  "bl": 31.1,
+  "mmsG": 238.2,
+  "peW": 1500,
+  "sensitivityDb": 98.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRV%20AUDIO"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiotechnology",
+  "model": "FLEXUNIT 15 F 102 25 10 KAP",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 6.93,
+  "vasL": 410,
+  "sdCm2": 835,
+  "xmaxMm": 8.6,
+  "reOhm": 6.02,
+  "bl": 18.7,
+  "mmsG": 126.1,
+  "peW": 400,
+  "sensitivityDb": 93.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audio-technology-flexunit-15-f-102-25-10-kap/specifications"
+}

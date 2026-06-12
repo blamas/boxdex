@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Morel",
+  "model": "PRIMO 124",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 28,
+  "qts": 0.47,
+  "qes": 0.56,
+  "qms": 3.1,
+  "vasL": 85,
+  "sdCm2": 463,
+  "xmaxMm": 8,
+  "reOhm": 3,
+  "bl": 10.23,
+  "mmsG": 111,
+  "peW": 350,
+  "sensitivityDb": 87.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/morel-primo-124/specifications"
+}

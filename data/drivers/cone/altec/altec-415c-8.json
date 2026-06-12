@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "415C",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 24.6,
+  "qts": 0.526,
+  "qes": 0.602,
+  "qms": 4.191,
+  "vasL": 749.2,
+  "sdCm2": 883,
+  "xmaxMm": 3,
+  "reOhm": 4.2,
+  "bl": 8.1,
+  "mmsG": 61.2,
+  "peW": 50,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "NTR21-5010JD",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 30.2,
+  "qts": 0.291,
+  "qes": 0.308,
+  "qms": 5.231,
+  "vasL": 341.215,
+  "sdCm2": 1663,
+  "xmaxMm": 9,
+  "reOhm": 5.36,
+  "bl": 32.39,
+  "mmsG": 319.232,
+  "peW": 1600,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://celestion.com/product/ntr21-5010jd/"
+}

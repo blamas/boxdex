@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18LW2420",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 6.3,
+  "vasL": 196,
+  "sdCm2": 1225,
+  "xmaxMm": 10,
+  "reOhm": 5.2,
+  "bl": 25.5,
+  "mmsG": 210,
+  "peW": 1300,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite",
+  "weightKg": 12.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/8/18lw2420"
+}

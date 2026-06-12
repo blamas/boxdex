@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W302F",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 33.4,
+  "qts": 0.6,
+  "qes": 0.621,
+  "qms": 17.757,
+  "vasL": 105.6,
+  "sdCm2": 511,
+  "xmaxMm": 6,
+  "reOhm": 3,
+  "bl": 8.9,
+  "mmsG": 78.7,
+  "peW": 150,
+  "sensitivityDb": 94.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

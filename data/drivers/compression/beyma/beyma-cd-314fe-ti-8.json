@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD-314Fe/Ti",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 76.2,
+  "fLowHz": 600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 109,
+  "peW": 130,
+  "magnetMaterial": "ferrite",
+  "weightKg": 5.4,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD314FETI8/motor-cd-314fe-ti-8-oh/"
+}

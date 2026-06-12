@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jamo",
+  "model": "20388 - 15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.848,
+  "qes": 0.99,
+  "qms": 5.9,
+  "vasL": 495,
+  "sdCm2": 851,
+  "xmaxMm": 6,
+  "reOhm": 5.81,
+  "bl": 8.4,
+  "mmsG": 71.3,
+  "peW": 100,
+  "sensitivityDb": 93.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JAMO"
+}

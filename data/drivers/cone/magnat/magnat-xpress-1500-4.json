@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Magnat",
+  "model": "XPRESS 1500",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 26,
+  "qts": 0.312,
+  "qes": 0.33,
+  "qms": 5.6,
+  "vasL": 255,
+  "sdCm2": 829.6,
+  "xmaxMm": 7.9,
+  "reOhm": 3,
+  "bl": 14.5,
+  "mmsG": 141.8,
+  "peW": 300,
+  "sensitivityDb": 97.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAGNAT"
+}

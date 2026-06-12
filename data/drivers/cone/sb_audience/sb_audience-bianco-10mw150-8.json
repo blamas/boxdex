@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "BIANCO-10MW150",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.293,
+  "qes": 0.3,
+  "qms": 11.81,
+  "vasL": 34.6,
+  "sdCm2": 366,
+  "xmaxMm": 4.3,
+  "reOhm": 5.2,
+  "bl": 15.8,
+  "mmsG": 38.2,
+  "peW": 300,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

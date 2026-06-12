@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "18-800N",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.306,
+  "qes": 0.325,
+  "qms": 5.27,
+  "vasL": 217,
+  "sdCm2": 1133,
+  "xmaxMm": 7.1,
+  "reOhm": 5.2,
+  "bl": 23.6,
+  "mmsG": 145.5,
+  "peW": 800,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "D131",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.176,
+  "qes": 0.18,
+  "qms": 8.5,
+  "vasL": 127.4,
+  "sdCm2": 527.1,
+  "xmaxMm": 0.8,
+  "reOhm": 6.3,
+  "bl": 18.5,
+  "mmsG": 31,
+  "peW": 75,
+  "sensitivityDb": 102.5
+}

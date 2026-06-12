@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LIL BUDDY",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 149,
+  "qts": 0.843,
+  "qes": 0.93,
+  "qms": 9.06,
+  "vasL": 10,
+  "sdCm2": 366.1,
+  "xmaxMm": 0.8,
+  "reOhm": 6.31,
+  "bl": 11.7,
+  "mmsG": 21.4,
+  "peW": 50,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

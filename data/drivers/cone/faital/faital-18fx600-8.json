@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18FX600",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.3,
+  "qes": 0.31,
+  "qms": 9.8,
+  "vasL": 257.3,
+  "sdCm2": 1213,
+  "xmaxMm": 11.25,
+  "reOhm": 5,
+  "mmsG": 175,
+  "peW": 700,
+  "sensitivityDb": 99,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 6.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151070160"
+}

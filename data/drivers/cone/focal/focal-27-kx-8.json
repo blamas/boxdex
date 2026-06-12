@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "27 KX",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.908,
+  "qes": 0.97,
+  "qms": 14.19,
+  "vasL": 14.9,
+  "sdCm2": 314.2,
+  "xmaxMm": 4.5,
+  "reOhm": 4.6,
+  "bl": 12.1,
+  "mmsG": 101.9,
+  "peW": 300,
+  "sensitivityDb": 86.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "15 PFS 3",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.45,
+  "qes": 0.52,
+  "qms": 3.24,
+  "vasL": 135.5,
+  "sdCm2": 855.3,
+  "xmaxMm": 7,
+  "reOhm": 5.1,
+  "bl": 17.5,
+  "mmsG": 127.7,
+  "peW": 500,
+  "sensitivityDb": 95.9,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z008314.pdf"
+}

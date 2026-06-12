@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "POWER 12 COMPETITION",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 7.47,
+  "vasL": 122,
+  "sdCm2": 550,
+  "xmaxMm": 9,
+  "reOhm": 4.1,
+  "bl": 16.7,
+  "mmsG": 104.7,
+  "peW": 500,
+  "sensitivityDb": 95.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

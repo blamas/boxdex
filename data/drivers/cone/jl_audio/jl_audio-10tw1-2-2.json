@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "10TW1-2",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 41.45,
+  "qts": 0.65,
+  "qes": 0.697,
+  "qms": 9.7,
+  "vasL": 10.31,
+  "sdCm2": 268,
+  "xmaxMm": 10.31,
+  "reOhm": 2.428,
+  "bl": 11.51,
+  "mmsG": 146,
+  "peW": 300,
+  "sensitivityDb": 82.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jl-audio-10tw1-2/specifications"
+}

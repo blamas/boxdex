@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "6NB150",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 62.32,
+  "qts": 0.28,
+  "qes": 0.296,
+  "qms": 5.22,
+  "vasL": 9.3,
+  "sdCm2": 127,
+  "xmaxMm": 5.5,
+  "reOhm": 5.57,
+  "bl": 10.77,
+  "mmsG": 15.72,
+  "peW": 150,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/338-6nb150.html"
+}

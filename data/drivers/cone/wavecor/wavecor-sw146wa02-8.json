@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Wavecor",
+  "model": "SW146WA02",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.53,
+  "qes": 0.57,
+  "qms": 9,
+  "vasL": 5.5,
+  "sdCm2": 85,
+  "xmaxMm": 6,
+  "reOhm": 6.35,
+  "bl": 7.8,
+  "mmsG": 16.1,
+  "peW": 55,
+  "sensitivityDb": 83.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/wavecor-sw146wa02/specifications"
+}

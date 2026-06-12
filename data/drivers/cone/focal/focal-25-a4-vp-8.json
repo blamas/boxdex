@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "25 A4 vp",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30.2,
+  "qts": 0.666,
+  "qes": 0.746,
+  "qms": 6.243,
+  "vasL": 31.5,
+  "sdCm2": 330.1,
+  "xmaxMm": 4.2,
+  "reOhm": 4.14,
+  "bl": 11.9,
+  "mmsG": 134.9,
+  "peW": 200,
+  "sensitivityDb": 85.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

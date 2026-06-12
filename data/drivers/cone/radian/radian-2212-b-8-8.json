@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Radian",
+  "model": "2212 B-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 51.2,
+  "qts": 0.568,
+  "qes": 0.59,
+  "qms": 15.6,
+  "vasL": 80.4,
+  "sdCm2": 559,
+  "xmaxMm": 0.9,
+  "reOhm": 6.4,
+  "bl": 13.6,
+  "mmsG": 52.7,
+  "peW": 250,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RADIAN"
+}

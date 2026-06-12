@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-400HT",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 21,
+  "qts": 0.241,
+  "qes": 0.25,
+  "qms": 6.55,
+  "vasL": 410,
+  "sdCm2": 855,
+  "xmaxMm": 4,
+  "reOhm": 6.4,
+  "bl": 22,
+  "mmsG": 143.6,
+  "peW": 150,
+  "sensitivityDb": 94.8
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15MB35",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 47.7,
+  "qts": 0.336,
+  "qes": 0.35,
+  "qms": 8.38,
+  "vasL": 115.1,
+  "sdCm2": 829.6,
+  "xmaxMm": 6.75,
+  "reOhm": 5.06,
+  "bl": 20.07,
+  "mmsG": 92.95,
+  "peW": 700,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/401-15mb35.html"
+}

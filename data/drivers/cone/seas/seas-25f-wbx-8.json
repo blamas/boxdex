@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "25F-WBX",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.597,
+  "qes": 0.745,
+  "qms": 3.006,
+  "vasL": 114.5,
+  "sdCm2": 340,
+  "xmaxMm": 6,
+  "reOhm": 6.47,
+  "bl": 7.8,
+  "mmsG": 35,
+  "peW": 60,
+  "sensitivityDb": 89.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

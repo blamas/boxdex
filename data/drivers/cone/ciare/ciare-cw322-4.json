@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "CW322",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 22,
+  "qts": 0.251,
+  "qes": 0.27,
+  "qms": 3.52,
+  "vasL": 355,
+  "sdCm2": 517,
+  "xmaxMm": 5,
+  "reOhm": 3.2,
+  "bl": 9.5,
+  "mmsG": 55.2,
+  "peW": 100,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

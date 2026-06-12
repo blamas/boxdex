@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "University Sound",
+  "model": "C-15W-1P",
+  "sizeInch": 15,
+  "impedanceOhm": 2,
+  "fsHz": 58,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 5.3,
+  "vasL": 232,
+  "sdCm2": 865.1,
+  "xmaxMm": 3,
+  "reOhm": 1.38,
+  "bl": 7.1,
+  "mmsG": 34,
+  "peW": 150,
+  "sensitivityDb": 110.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=UNIVERSITY"
+}

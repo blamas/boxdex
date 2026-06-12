@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND4015BE",
+  "impedanceOhm": 8,
+  "exitInch": 1.5,
+  "voiceCoilMm": 100,
+  "fLowHz": 900,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 113,
+  "peW": 140,
+  "magnetMaterial": "neodymium",
+  "weightKg": 3.2,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-5/8/ND4015BE"
+}

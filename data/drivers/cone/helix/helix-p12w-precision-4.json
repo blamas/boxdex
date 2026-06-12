@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Helix",
+  "model": "P12W PRECISION",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.25,
+  "qes": 0.27,
+  "qms": 3.81,
+  "vasL": 72,
+  "sdCm2": 511,
+  "xmaxMm": 8.5,
+  "reOhm": 3,
+  "bl": 18.1,
+  "mmsG": 179.1,
+  "peW": 400,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/helix-p12w-precision/specifications"
+}

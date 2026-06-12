@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "APOLLO 18N",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.338,
+  "qes": 0.35,
+  "qms": 10.02,
+  "vasL": 253.6,
+  "sdCm2": 1200,
+  "xmaxMm": 9.1,
+  "reOhm": 6.1,
+  "bl": 26.3,
+  "mmsG": 196.9,
+  "peW": 1200,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

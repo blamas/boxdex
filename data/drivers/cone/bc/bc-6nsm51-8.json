@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "6NSM51",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 280,
+  "qts": 0.6,
+  "qes": 0.68,
+  "qms": 5.4,
+  "vasL": 0.7,
+  "sdCm2": 143,
+  "xmaxMm": 2.8,
+  "reOhm": 5.4,
+  "bl": 13.9,
+  "mmsG": 13.5,
+  "peW": 250,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/6.5/8/6NSM51"
+}

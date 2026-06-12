@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "FW 800 N",
+  "sizeInch": 31.5,
+  "impedanceOhm": 8,
+  "fsHz": 18,
+  "qts": 0.698,
+  "qes": 0.76,
+  "qms": 8.5,
+  "vasL": 3201.1,
+  "sdCm2": 3581.7,
+  "xmaxMm": 4.6,
+  "reOhm": 6.8,
+  "bl": 21.1,
+  "mmsG": 439.2,
+  "peW": 150,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

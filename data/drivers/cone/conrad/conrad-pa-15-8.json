@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Conrad",
+  "model": "PA 15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34.8,
+  "qts": 0.356,
+  "qes": 0.404,
+  "qms": 3.012,
+  "vasL": 216.4,
+  "sdCm2": 835,
+  "xmaxMm": 4,
+  "reOhm": 5.7,
+  "bl": 17.1,
+  "mmsG": 94.4,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CONRAD"
+}

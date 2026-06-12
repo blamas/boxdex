@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18 IPAL",
+  "sizeInch": 18,
+  "impedanceOhm": 2,
+  "fsHz": 32,
+  "qts": 0.135,
+  "qes": 0.14,
+  "qms": 4.2,
+  "vasL": 164,
+  "sdCm2": 1210,
+  "xmaxMm": 5.7,
+  "reOhm": 1.3,
+  "bl": 24,
+  "mmsG": 309.6,
+  "peW": 1700,
+  "sensitivityDb": 105.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

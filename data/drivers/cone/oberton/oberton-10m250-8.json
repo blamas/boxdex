@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "10M250",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 76.65,
+  "qts": 0.28,
+  "qes": 0.285,
+  "qms": 14.62,
+  "vasL": 23.05,
+  "sdCm2": 317.3,
+  "xmaxMm": 2.75,
+  "reOhm": 6.09,
+  "bl": 16.61,
+  "mmsG": 26.82,
+  "peW": 250,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/178-10m250.html"
+}

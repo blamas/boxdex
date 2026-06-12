@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Oberton",
+  "model": "ND5071",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 72,
+  "fLowHz": 1000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 109,
+  "peW": 75,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-hf-drivers/357-nd5071.html"
+}

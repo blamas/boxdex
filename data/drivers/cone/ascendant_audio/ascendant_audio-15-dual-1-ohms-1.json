@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ascendant Audio",
+  "model": "15 DUAL 1 Ohms",
+  "sizeInch": 15,
+  "impedanceOhm": 1,
+  "fsHz": 29.9,
+  "qts": 0.274,
+  "qes": 0.29,
+  "qms": 5.03,
+  "vasL": 55.1,
+  "sdCm2": 810,
+  "xmaxMm": 9.4,
+  "reOhm": 0.7,
+  "bl": 14.6,
+  "mmsG": 472.9,
+  "peW": 2500,
+  "sensitivityDb": 99.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ASCENDANT%20AUDIO"
+}

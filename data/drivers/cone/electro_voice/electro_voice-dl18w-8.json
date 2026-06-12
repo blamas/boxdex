@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "DL18W",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 4,
+  "vasL": 543.7,
+  "sdCm2": 1142,
+  "xmaxMm": 3.3,
+  "reOhm": 6,
+  "bl": 21,
+  "mmsG": 136.3,
+  "peW": 400,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELECTROVOICE"
+}

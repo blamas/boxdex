@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-SW3002S4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.61,
+  "qes": 0.64,
+  "qms": 13.01,
+  "vasL": 35.4,
+  "sdCm2": 578,
+  "xmaxMm": 8.8,
+  "reOhm": 3,
+  "bl": 17,
+  "mmsG": 243,
+  "peW": 400,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-sw3002s4/specifications"
+}

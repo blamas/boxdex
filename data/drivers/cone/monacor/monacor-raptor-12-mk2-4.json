@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "RAPTOR 12 MK2",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.523,
+  "qes": 0.56,
+  "qms": 7.87,
+  "vasL": 32,
+  "sdCm2": 470,
+  "xmaxMm": 10.1,
+  "reOhm": 3.4,
+  "bl": 16.6,
+  "mmsG": 212,
+  "peW": 1000,
+  "sensitivityDb": 89.2
+}

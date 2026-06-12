@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND3A",
+  "impedanceOhm": 16,
+  "exitInch": 1.4,
+  "voiceCoilMm": 75,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 112,
+  "peW": 110,
+  "magnetMaterial": "neodymium",
+  "weightKg": 1.65,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-4/16/nd3a"
+}

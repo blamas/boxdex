@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Stereo Integrity",
+  "model": "HS-24 MKII",
+  "sizeInch": 25,
+  "impedanceOhm": 4,
+  "fsHz": 18.6,
+  "qts": 0.39,
+  "qes": 0.42,
+  "qms": 5.52,
+  "vasL": 553.7,
+  "sdCm2": 2077.8,
+  "xmaxMm": 15.9,
+  "reOhm": 2.9,
+  "bl": 25.4,
+  "mmsG": 800.3,
+  "peW": 2000,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=STEREO%20INTEGRITY"
+}

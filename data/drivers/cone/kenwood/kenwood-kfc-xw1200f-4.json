@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "KFC-XW1200F",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 24.8,
+  "qts": 0.544,
+  "qes": 0.67,
+  "qms": 2.9,
+  "vasL": 62.69,
+  "sdCm2": 490,
+  "xmaxMm": 8.5,
+  "reOhm": 3.2,
+  "bl": 12.9,
+  "mmsG": 224,
+  "peW": 350,
+  "sensitivityDb": 83.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/kenwood-kfc-xw1200f/specifications"
+}

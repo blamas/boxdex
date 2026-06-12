@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18WRS600",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.47,
+  "qes": 0.48,
+  "qms": 13.8,
+  "vasL": 354,
+  "sdCm2": 1255,
+  "xmaxMm": 8.5,
+  "reOhm": 5.2,
+  "bl": 19,
+  "mmsG": 178,
+  "peW": 600,
+  "sensitivityDb": 97,
+  "weightKg": 8.7,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/118WRS608/altavoz-18wrs600-8-oh/"
+}

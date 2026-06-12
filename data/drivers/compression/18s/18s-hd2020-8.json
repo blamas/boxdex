@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "HD2020",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 61,
+  "fLowHz": 1000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 108,
+  "peW": 70,
+  "magnetMaterial": "ferrite",
+  "weightKg": 3,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/2-0/8/HD2020"
+}

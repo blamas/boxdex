@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "M320.50 CS/FX-W",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 26.8,
+  "qts": 0.374,
+  "qes": 0.39,
+  "qms": 8.9,
+  "vasL": 137.6,
+  "sdCm2": 530.9,
+  "xmaxMm": 4.5,
+  "reOhm": 3.17,
+  "bl": 11.8,
+  "mmsG": 101.3,
+  "peW": 100,
+  "sensitivityDb": 94.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

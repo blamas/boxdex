@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Vifa",
+  "model": "WCF265",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.305,
+  "qes": 0.35,
+  "qms": 2.39,
+  "vasL": 155.9,
+  "sdCm2": 337,
+  "xmaxMm": 5,
+  "reOhm": 5.5,
+  "bl": 10.3,
+  "mmsG": 44.9,
+  "peW": 80,
+  "sensitivityDb": 91.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VIFA"
+}

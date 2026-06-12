@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "18.00 NDW1",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 29.2,
+  "qts": 0.312,
+  "qes": 0.32,
+  "qms": 12.36,
+  "vasL": 296.4,
+  "sdCm2": 1152.1,
+  "xmaxMm": 7,
+  "reOhm": 5.7,
+  "bl": 24.7,
+  "mmsG": 186.6,
+  "peW": 500,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

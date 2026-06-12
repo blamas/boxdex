@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND2060A",
+  "impedanceOhm": 16,
+  "exitInch": 2,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 110,
+  "peW": 80,
+  "magnetMaterial": "neodymium",
+  "weightKg": 3.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/2-0/16/nd2060a%2016ohm"
+}

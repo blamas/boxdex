@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "Kappa Pro-12A",
+  "impedanceOhm": 8,
+  "sizeInch": 12,
+  "fsHz": 37,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 6.93,
+  "vasL": 121,
+  "sdCm2": 519.5,
+  "xmaxMm": 4.8,
+  "peW": 500,
+  "sensitivityDb": 97.1,
+  "reOhm": 5.46,
+  "bl": 17.3,
+  "mmsG": 59,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappa_Pro_12A.pdf"
+}

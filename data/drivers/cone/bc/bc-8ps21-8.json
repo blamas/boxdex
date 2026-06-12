@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "8PS21",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 73,
+  "qts": 0.33,
+  "qes": 0.36,
+  "qms": 4.2,
+  "vasL": 14,
+  "sdCm2": 220,
+  "xmaxMm": 5,
+  "reOhm": 5.4,
+  "bl": 12.6,
+  "mmsG": 23,
+  "peW": 200,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/8/8/8PS21"
+}

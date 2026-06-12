@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "WS25 E",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 1.435,
+  "qes": 2.92,
+  "qms": 2.82,
+  "vasL": 113,
+  "sdCm2": 346,
+  "xmaxMm": 3.6,
+  "reOhm": 5.9,
+  "bl": 3.7,
+  "mmsG": 32.5,
+  "peW": 80,
+  "sensitivityDb": 85.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

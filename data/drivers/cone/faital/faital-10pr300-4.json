@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "10PR300",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 50,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 5.8,
+  "vasL": 49.8,
+  "sdCm2": 348,
+  "xmaxMm": 4.92,
+  "reOhm": 3.3,
+  "mmsG": 34.4,
+  "peW": 300,
+  "sensitivityDb": 96,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 2.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101040111"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eton",
+  "model": "12-212/C8/62 HEX SYMPHONY II",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 7.2,
+  "vasL": 176,
+  "sdCm2": 515,
+  "xmaxMm": 8.5,
+  "reOhm": 6.2,
+  "bl": 15.7,
+  "mmsG": 92.7,
+  "peW": 200,
+  "sensitivityDb": 90.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/eton-12-212-c8-62-hex-symphony-ii/specifications"
+}

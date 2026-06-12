@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "American Bass",
+  "model": "SL 124",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 31.5,
+  "qts": 0.543,
+  "qes": 0.61,
+  "qms": 5.295,
+  "vasL": 85.7,
+  "sdCm2": 491,
+  "xmaxMm": 8.5,
+  "reOhm": 3.44,
+  "bl": 10.65,
+  "mmsG": 101.7,
+  "peW": 250,
+  "sensitivityDb": 88.3,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/american-bass-sl-124/specifications"
+}

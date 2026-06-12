@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "400 GMF PRO MK2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 10.6,
+  "vasL": 247,
+  "sdCm2": 804,
+  "xmaxMm": 5.8,
+  "reOhm": 6.5,
+  "bl": 18.1,
+  "mmsG": 75.9,
+  "peW": 200,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

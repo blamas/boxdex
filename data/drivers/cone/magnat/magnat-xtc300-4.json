@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Magnat",
+  "model": "XTC300",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.317,
+  "qes": 0.33,
+  "qms": 8,
+  "vasL": 81,
+  "sdCm2": 510,
+  "xmaxMm": 6.9,
+  "reOhm": 3.5,
+  "bl": 15.9,
+  "mmsG": 126.7,
+  "peW": 300,
+  "sensitivityDb": 93.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAGNAT"
+}

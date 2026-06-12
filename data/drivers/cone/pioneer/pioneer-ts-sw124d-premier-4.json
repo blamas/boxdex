@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-SW124D(PREMIER)",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 31.7,
+  "qts": 0.55,
+  "qes": 0.56,
+  "qms": 38.54,
+  "vasL": 28.062,
+  "sdCm2": 403,
+  "xmaxMm": 8.6,
+  "reOhm": 3.94,
+  "bl": 17.04,
+  "mmsG": 207,
+  "peW": 300,
+  "sensitivityDb": 83.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-sw124d-premier-/specifications"
+}

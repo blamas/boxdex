@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MCM Electronics",
+  "model": "55-2981",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 41.8,
+  "qts": 0.54,
+  "qes": 0.655,
+  "qms": 3.08,
+  "vasL": 58.1,
+  "sdCm2": 363,
+  "xmaxMm": 3.9,
+  "reOhm": 6.3,
+  "bl": 10.8,
+  "mmsG": 46.1,
+  "peW": 70,
+  "sensitivityDb": 91.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MCM"
+}

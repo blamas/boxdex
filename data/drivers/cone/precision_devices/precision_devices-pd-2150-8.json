@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD 2150",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.193,
+  "qes": 0.2,
+  "qms": 5.51,
+  "vasL": 628,
+  "sdCm2": 1630,
+  "xmaxMm": 6,
+  "reOhm": 5.48,
+  "bl": 34.3,
+  "mmsG": 310.4,
+  "peW": 400,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

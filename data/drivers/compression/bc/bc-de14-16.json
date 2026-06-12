@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE14",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 36,
+  "fLowHz": 2000,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2200,
+  "sensitivityHornDb": 106.5,
+  "peW": 30,
+  "weightKg": 1,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/16/DE14"
+}

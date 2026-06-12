@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15NXL701",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43.4,
+  "qts": 0.3,
+  "qes": 0.312,
+  "qms": 8.45,
+  "vasL": 127.09,
+  "sdCm2": 829.6,
+  "xmaxMm": 9.25,
+  "reOhm": 5.3,
+  "bl": 21.71,
+  "mmsG": 101.61,
+  "peW": 700,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/406-15nxl701.html"
+}

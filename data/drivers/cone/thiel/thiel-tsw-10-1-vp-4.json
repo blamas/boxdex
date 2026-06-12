@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Thiel",
+  "model": "TSW 10.1 vp",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 18,
+  "qts": 0.397,
+  "qes": 0.44,
+  "qms": 4.1,
+  "vasL": 94,
+  "sdCm2": 327,
+  "xmaxMm": 9.4,
+  "reOhm": 2,
+  "bl": 8,
+  "mmsG": 124.7,
+  "peW": 100,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=THIEL"
+}

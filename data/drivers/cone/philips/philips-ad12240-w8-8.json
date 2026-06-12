@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Philips",
+  "model": "AD12240/W8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.392,
+  "qes": 0.41,
+  "qms": 8.95,
+  "vasL": 215.7,
+  "sdCm2": 510.7,
+  "xmaxMm": 7.4,
+  "reOhm": 7.15,
+  "bl": 12.7,
+  "mmsG": 51.1,
+  "peW": 100,
+  "sensitivityDb": 93.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHILIPS"
+}

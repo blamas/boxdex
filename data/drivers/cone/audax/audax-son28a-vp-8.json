@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "SON28A vp",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.505,
+  "qes": 0.603,
+  "qms": 3.125,
+  "vasL": 114.2,
+  "sdCm2": 344,
+  "xmaxMm": 4,
+  "reOhm": 7.92,
+  "bl": 10.1,
+  "mmsG": 40.9,
+  "peW": 30,
+  "sensitivityDb": 89.1
+}

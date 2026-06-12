@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Oberton",
+  "model": "D3673",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 72,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 110.5,
+  "peW": 80,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-hf-drivers/234-d3673.html"
+}

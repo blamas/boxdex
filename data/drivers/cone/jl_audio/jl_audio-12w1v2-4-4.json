@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "12W1V2-4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 23.68,
+  "qts": 0.414,
+  "qes": 0.443,
+  "qms": 6.465,
+  "vasL": 105.876,
+  "sdCm2": 525,
+  "xmaxMm": 9.5,
+  "reOhm": 4.104,
+  "bl": 15.16,
+  "mmsG": 166.7,
+  "peW": 300,
+  "sensitivityDb": 86.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jl-audio-12w1v2-4/specifications"
+}

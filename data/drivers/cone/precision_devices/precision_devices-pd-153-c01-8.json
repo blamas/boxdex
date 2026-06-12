@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD 153 C01",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.265,
+  "qes": 0.27,
+  "qms": 13.13,
+  "vasL": 195,
+  "sdCm2": 907,
+  "xmaxMm": 5.5,
+  "reOhm": 5.22,
+  "bl": 21.6,
+  "mmsG": 98.5,
+  "peW": 400,
+  "sensitivityDb": 100.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

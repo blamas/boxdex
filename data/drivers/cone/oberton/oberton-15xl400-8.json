@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15XL400",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 48.78,
+  "qts": 0.337,
+  "qes": 0.35,
+  "qms": 9.3,
+  "vasL": 140,
+  "sdCm2": 829.6,
+  "xmaxMm": 5.25,
+  "reOhm": 5.6,
+  "bl": 18.92,
+  "mmsG": 73.05,
+  "peW": 400,
+  "sensitivityDb": 102,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/170-15xl400.html"
+}

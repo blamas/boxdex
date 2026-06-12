@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "American Bass",
+  "model": "SL 104",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 33.6,
+  "qts": 0.52,
+  "qes": 0.58,
+  "qms": 4.931,
+  "vasL": 26.8,
+  "sdCm2": 314,
+  "xmaxMm": 8.5,
+  "reOhm": 3.69,
+  "bl": 11.53,
+  "mmsG": 99.1,
+  "peW": 250,
+  "sensitivityDb": 84.3,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/american-bass-sl-104/specifications"
+}

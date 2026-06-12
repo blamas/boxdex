@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15FH530",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.35,
+  "qes": 0.36,
+  "qms": 8.9,
+  "vasL": 140.6,
+  "sdCm2": 864,
+  "xmaxMm": 9.25,
+  "reOhm": 5.1,
+  "mmsG": 123.5,
+  "peW": 500,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 8.5,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151060110"
+}

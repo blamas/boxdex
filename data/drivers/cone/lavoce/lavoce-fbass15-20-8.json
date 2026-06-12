@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "FBASS15-20",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.53,
+  "qes": 0.57,
+  "qms": 8.71,
+  "vasL": 234.41,
+  "sdCm2": 855,
+  "xmaxMm": 4.3,
+  "reOhm": 5.2,
+  "bl": 12.78,
+  "mmsG": 70.34,
+  "peW": 200,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://lavocespeakers.com/product/fbass15-20/"
+}

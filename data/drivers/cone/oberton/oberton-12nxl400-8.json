@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12NXL400",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48.6,
+  "qts": 0.203,
+  "qes": 0.207,
+  "qms": 11.9,
+  "vasL": 79.24,
+  "sdCm2": 514.7,
+  "xmaxMm": 5.25,
+  "reOhm": 5.7,
+  "bl": 20.57,
+  "mmsG": 50.06,
+  "peW": 450,
+  "sensitivityDb": 101,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/130-12nxl400.html"
+}

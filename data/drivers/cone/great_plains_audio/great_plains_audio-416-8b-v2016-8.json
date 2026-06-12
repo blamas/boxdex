@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Great Plains Audio",
+  "model": "416-8B v2016",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 21.5,
+  "qts": 0.271,
+  "qes": 0.28,
+  "qms": 8.32,
+  "vasL": 787,
+  "sdCm2": 820,
+  "xmaxMm": 4,
+  "reOhm": 6.6,
+  "bl": 14.5,
+  "mmsG": 65.9,
+  "peW": 150,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GREAT%20PLAINS%20AUDIO"
+}

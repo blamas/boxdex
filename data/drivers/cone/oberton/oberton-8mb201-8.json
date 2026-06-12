@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "8MB201",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 67.7,
+  "qts": 0.314,
+  "qes": 0.33,
+  "qms": 6.24,
+  "vasL": 14.74,
+  "sdCm2": 200,
+  "xmaxMm": 7,
+  "reOhm": 5.8,
+  "bl": 12.54,
+  "mmsG": 21,
+  "peW": 200,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/181-8mb201.html"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "BN15/350SB vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.461,
+  "qes": 0.49,
+  "qms": 7.67,
+  "vasL": 163,
+  "sdCm2": 855,
+  "xmaxMm": 5,
+  "reOhm": 5,
+  "bl": 15.1,
+  "mmsG": 78.6,
+  "peW": 350,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "6CMV2",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 90,
+  "qts": 0.34,
+  "qes": 0.45,
+  "qms": 1.4,
+  "vasL": 6.5,
+  "sdCm2": 140,
+  "xmaxMm": 5.7,
+  "reOhm": 5.3,
+  "bl": 9.4,
+  "mmsG": 13,
+  "peW": 220,
+  "sensitivityDb": 94,
+  "weightKg": 2.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/606CMV28/altavoz-6cmv2-8-oh/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Nirvana",
+  "model": "SUPER 15 FERRITE",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 31.7,
+  "qts": 0.321,
+  "qes": 0.357,
+  "qms": 3.219,
+  "vasL": 337.1,
+  "sdCm2": 851,
+  "xmaxMm": 1,
+  "reOhm": 6.8,
+  "bl": 17,
+  "mmsG": 75.9,
+  "peW": 50,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20NIRVANA"
+}

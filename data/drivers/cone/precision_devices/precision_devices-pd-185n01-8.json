@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD 185N01",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35.6,
+  "qts": 0.383,
+  "qes": 0.39,
+  "qms": 21.47,
+  "vasL": 174.5,
+  "sdCm2": 1164.2,
+  "xmaxMm": 8.4,
+  "reOhm": 5,
+  "bl": 25,
+  "mmsG": 217.6,
+  "peW": 1000,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

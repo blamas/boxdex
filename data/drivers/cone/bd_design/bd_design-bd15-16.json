@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BD Design",
+  "model": "BD15",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 38.9,
+  "qts": 0.247,
+  "qes": 0.26,
+  "qms": 5.12,
+  "vasL": 258.2,
+  "sdCm2": 855,
+  "xmaxMm": 4,
+  "reOhm": 13.6,
+  "bl": 29.1,
+  "mmsG": 66.4,
+  "peW": 200,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BD%20DESIGN"
+}

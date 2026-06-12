@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "GRS",
+  "model": "12SW-4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 29.6,
+  "qts": 0.991,
+  "qes": 1.27,
+  "qms": 4.51,
+  "vasL": 90,
+  "sdCm2": 530,
+  "xmaxMm": 4.5,
+  "reOhm": 3.57,
+  "bl": 8.1,
+  "mmsG": 126.5,
+  "peW": 120,
+  "sensitivityDb": 88.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GRS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Skar Audio",
+  "model": "EV-10 S2",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 47.5,
+  "qts": 0.69,
+  "qes": 0.768,
+  "qms": 6.76,
+  "vasL": 15.2,
+  "sdCm2": 366,
+  "xmaxMm": 8.5,
+  "reOhm": 1.95,
+  "bl": 10.3,
+  "mmsG": 140.3,
+  "peW": 150,
+  "sensitivityDb": 85.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/skar-ev-10-s2/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "IMF HP-15W",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 30.8,
+  "qts": 0.517,
+  "qes": 0.61,
+  "qms": 3.41,
+  "vasL": 304.7,
+  "sdCm2": 829,
+  "xmaxMm": 3.5,
+  "reOhm": 6.6,
+  "bl": 13.3,
+  "mmsG": 84.4,
+  "peW": 300,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

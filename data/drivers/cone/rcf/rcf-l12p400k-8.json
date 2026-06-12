@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L12P400K",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 33.7,
+  "qts": 0.25,
+  "qes": 0.26,
+  "qms": 7,
+  "vasL": 130,
+  "sdCm2": 456,
+  "xmaxMm": 6,
+  "reOhm": 5.9,
+  "bl": 15.5,
+  "mmsG": 50,
+  "peW": 200,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l12p400k"
+}

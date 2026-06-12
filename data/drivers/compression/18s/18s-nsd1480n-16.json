@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "NSD1480N",
+  "impedanceOhm": 16,
+  "exitInch": 1.4,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 111,
+  "peW": 100,
+  "weightKg": 3.1,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-4/16/nsd1480n"
+}

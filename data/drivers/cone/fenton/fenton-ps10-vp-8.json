@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fenton",
+  "model": "PS10 vp",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 57.6,
+  "qts": 0.657,
+  "qes": 0.78,
+  "qms": 4.16,
+  "vasL": 37.9,
+  "sdCm2": 359,
+  "xmaxMm": 3.8,
+  "reOhm": 7.2,
+  "bl": 11,
+  "mmsG": 36.4,
+  "peW": 125,
+  "sensitivityDb": 92.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FENTON"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12FH510",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 10.9,
+  "vasL": 81.3,
+  "sdCm2": 533,
+  "xmaxMm": 7.5,
+  "reOhm": 5.1,
+  "mmsG": 61,
+  "peW": 500,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 7.8,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151050105"
+}

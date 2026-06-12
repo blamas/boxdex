@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18GT200 v1",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 24.6,
+  "qts": 0.213,
+  "qes": 0.22,
+  "qms": 7.11,
+  "vasL": 595,
+  "sdCm2": 1320,
+  "xmaxMm": 5.8,
+  "reOhm": 6,
+  "bl": 26.9,
+  "mmsG": 171.8,
+  "peW": 250,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

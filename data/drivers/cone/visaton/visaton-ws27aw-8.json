@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "WS27AW",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.902,
+  "qes": 1.15,
+  "qms": 4.18,
+  "vasL": 105,
+  "sdCm2": 350,
+  "xmaxMm": 7.7,
+  "reOhm": 6.8,
+  "bl": 6.4,
+  "mmsG": 28.7,
+  "peW": 150,
+  "sensitivityDb": 89.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

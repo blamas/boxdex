@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Radian",
+  "model": "745NEO",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 76.2,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 111,
+  "peW": 110,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0111/0324/0254/files/745NeoPB-data_sheet-final_070817.pdf?782"
+}

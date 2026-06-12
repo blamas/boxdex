@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "10 H 2 CS",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30.3,
+  "qts": 0.37,
+  "qes": 0.41,
+  "qms": 4,
+  "vasL": 84.3,
+  "sdCm2": 339.8,
+  "xmaxMm": 6,
+  "reOhm": 6.1,
+  "bl": 12.38,
+  "mmsG": 53.7,
+  "peW": 200,
+  "sensitivityDb": 90.8,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2026/02/Z006720.pdf"
+}

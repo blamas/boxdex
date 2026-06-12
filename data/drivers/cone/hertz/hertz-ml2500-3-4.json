@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "hertz Hertz Audio",
+  "model": "ML2500.3",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.598,
+  "qes": 0.65,
+  "qms": 7.5,
+  "vasL": 23.5,
+  "sdCm2": 344,
+  "xmaxMm": 10.3,
+  "reOhm": 2.75,
+  "bl": 12,
+  "mmsG": 164.2,
+  "peW": 700,
+  "sensitivityDb": 87.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HERTZ%20AUDIO"
+}

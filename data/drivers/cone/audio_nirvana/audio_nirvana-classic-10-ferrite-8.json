@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Nirvana",
+  "model": "CLASSIC 10 FERRITE",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 33.1,
+  "qts": 0.237,
+  "qes": 0.25,
+  "qms": 4.52,
+  "vasL": 180.6,
+  "sdCm2": 344,
+  "xmaxMm": 1,
+  "reOhm": 7.2,
+  "bl": 11.3,
+  "mmsG": 21.2,
+  "peW": 45,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20NIRVANA"
+}

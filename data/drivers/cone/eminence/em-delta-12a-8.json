@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTA-12A",
+  "impedanceOhm": 8,
+  "sizeInch": 12,
+  "fsHz": 55,
+  "qts": 0.43,
+  "qes": 0.46,
+  "qms": 5.27,
+  "vasL": 81.3,
+  "sdCm2": 519.5,
+  "xmaxMm": 2.4,
+  "peW": 400,
+  "sensitivityDb": 98.3,
+  "reOhm": 6.3,
+  "bl": 13.5,
+  "mmsG": 39,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Delta_12A.pdf"
+}

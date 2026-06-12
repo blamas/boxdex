@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "LO15-D16",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 33.8,
+  "qts": 0.823,
+  "qes": 0.86,
+  "qms": 19.4,
+  "vasL": 311,
+  "sdCm2": 855,
+  "xmaxMm": 7.9,
+  "reOhm": 6.15,
+  "bl": 10.5,
+  "mmsG": 73.1,
+  "peW": 200,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

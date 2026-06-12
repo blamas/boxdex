@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sphynx",
+  "model": "SP-W250-PP",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.794,
+  "qes": 1.01,
+  "qms": 3.72,
+  "vasL": 65.8,
+  "sdCm2": 319,
+  "xmaxMm": 4,
+  "reOhm": 6.45,
+  "bl": 7.2,
+  "mmsG": 29.7,
+  "peW": 80,
+  "sensitivityDb": 90.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SPHYNX"
+}

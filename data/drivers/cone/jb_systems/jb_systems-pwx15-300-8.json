@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JB Systems",
+  "model": "PWX15-300",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40.1,
+  "qts": 0.552,
+  "qes": 0.63,
+  "qms": 4.47,
+  "vasL": 169.9,
+  "sdCm2": 855.3,
+  "xmaxMm": 5,
+  "reOhm": 5.5,
+  "bl": 14.5,
+  "mmsG": 95,
+  "peW": 300,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JB%20SYSTEMS"
+}

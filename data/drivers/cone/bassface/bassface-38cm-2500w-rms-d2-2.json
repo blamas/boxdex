@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Bassface",
+  "model": "38CM 2500W RMS D2",
+  "sizeInch": 15,
+  "impedanceOhm": 2,
+  "fsHz": 40.9,
+  "qts": 0.386,
+  "qes": 0.409,
+  "qms": 6.958,
+  "vasL": 80.2,
+  "sdCm2": 804.2,
+  "xmaxMm": 11.8,
+  "reOhm": 1,
+  "bl": 10.4,
+  "mmsG": 170.9,
+  "peW": 2500,
+  "sensitivityDb": 102.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BASSFACE"
+}

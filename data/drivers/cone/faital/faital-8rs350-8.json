@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "8RS350",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.3,
+  "qes": 0.31,
+  "qms": 6.9,
+  "vasL": 23.7,
+  "sdCm2": 226,
+  "xmaxMm": 7.37,
+  "reOhm": 5.3,
+  "mmsG": 43.3,
+  "peW": 300,
+  "sensitivityDb": 90,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 4.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101030207"
+}

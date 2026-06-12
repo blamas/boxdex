@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15PD601",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38.2,
+  "qts": 0.228,
+  "qes": 0.232,
+  "qms": 13.41,
+  "vasL": 133.31,
+  "sdCm2": 829.6,
+  "xmaxMm": 8.5,
+  "reOhm": 6.35,
+  "bl": 28.7,
+  "mmsG": 125.14,
+  "peW": 600,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/536-15pd601.html"
+}

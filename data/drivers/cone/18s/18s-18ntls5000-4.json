@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18NTLS5000",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 37,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 8.4,
+  "vasL": 75,
+  "sdCm2": 1225,
+  "xmaxMm": 17.75,
+  "reOhm": 2.7,
+  "bl": 30.7,
+  "mmsG": 510,
+  "peW": 1800,
+  "sensitivityDb": 89,
+  "magnetMaterial": "neo",
+  "weightKg": 13.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/4/18NTLS5000"
+}

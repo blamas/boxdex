@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sony",
+  "model": "XS-L104P5B",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 37.7,
+  "qts": 0.569,
+  "qes": 0.61,
+  "qms": 8.52,
+  "vasL": 19.3,
+  "sdCm2": 333.3,
+  "xmaxMm": 6,
+  "reOhm": 3.55,
+  "bl": 14.1,
+  "mmsG": 143.8,
+  "peW": 330,
+  "sensitivityDb": 87.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SONY"
+}

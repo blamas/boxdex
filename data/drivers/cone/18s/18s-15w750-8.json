@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15W750",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 9.34,
+  "vasL": 218,
+  "sdCm2": 850,
+  "xmaxMm": 8,
+  "reOhm": 5.1,
+  "bl": 17.6,
+  "mmsG": 88,
+  "peW": 600,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ferrite",
+  "weightKg": 7.9,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15W750"
+}

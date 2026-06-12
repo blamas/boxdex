@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10W400",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 70,
+  "qts": 0.396,
+  "qes": 0.44,
+  "qms": 3.99,
+  "vasL": 31,
+  "sdCm2": 350,
+  "xmaxMm": 4.3,
+  "reOhm": 5.1,
+  "bl": 12.1,
+  "mmsG": 28.6,
+  "peW": 280,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

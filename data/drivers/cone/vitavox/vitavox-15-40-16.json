@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Vitavox",
+  "model": "15/40",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 43.5,
+  "qts": 0.305,
+  "qes": 0.315,
+  "qms": 9.173,
+  "vasL": 212,
+  "sdCm2": 804,
+  "xmaxMm": 4,
+  "reOhm": 9.57,
+  "bl": 21.8,
+  "mmsG": 57.2,
+  "peW": 150,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VITAVOX"
+}

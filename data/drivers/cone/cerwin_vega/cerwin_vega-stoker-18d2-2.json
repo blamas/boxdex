@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cerwin-Vega",
+  "model": "STOKER 18D2",
+  "sizeInch": 18,
+  "impedanceOhm": 2,
+  "fsHz": 31,
+  "qts": 0.191,
+  "qes": 0.196,
+  "qms": 7.923,
+  "vasL": 163.7,
+  "sdCm2": 1196.8,
+  "xmaxMm": 7,
+  "reOhm": 1.7,
+  "bl": 23.4,
+  "mmsG": 323.4,
+  "peW": 1600,
+  "sensitivityDb": 102.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CERWIN-VEGA"
+}

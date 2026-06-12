@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "DL18MT",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.269,
+  "qes": 0.269,
+  "qms": 6.59,
+  "vasL": 580.5,
+  "sdCm2": 1300,
+  "xmaxMm": 5.59,
+  "reOhm": 6,
+  "bl": 24.5,
+  "mmsG": 178.8,
+  "peW": 400,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/electro-voice-dl18mt/specifications"
+}

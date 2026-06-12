@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12 NDL 88",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 51,
+  "qts": 0.274,
+  "qes": 0.29,
+  "qms": 5,
+  "vasL": 52,
+  "sdCm2": 522,
+  "xmaxMm": 5.7,
+  "reOhm": 5,
+  "bl": 19.9,
+  "mmsG": 71.5,
+  "peW": 700,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

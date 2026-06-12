@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "5378",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 42,
+  "qts": 0.403,
+  "qes": 0.44,
+  "qms": 4.73,
+  "vasL": 243.5,
+  "sdCm2": 856.3,
+  "xmaxMm": 3.2,
+  "reOhm": 8,
+  "bl": 17.1,
+  "mmsG": 60.6,
+  "peW": 150,
+  "sensitivityDb": 98.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

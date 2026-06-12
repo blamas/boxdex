@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "P1S4-12",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 25,
+  "qts": 0.55,
+  "qes": 0.656,
+  "qms": 3.4,
+  "vasL": 88.3,
+  "sdCm2": 548,
+  "xmaxMm": 9,
+  "reOhm": 3.6,
+  "bl": 12.99,
+  "mmsG": 195.8,
+  "peW": 250,
+  "sensitivityDb": 85.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/rockford-fosgate-p1s4-12/specifications"
+}

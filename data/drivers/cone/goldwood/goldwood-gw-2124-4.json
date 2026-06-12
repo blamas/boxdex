@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Goldwood",
+  "model": "GW‐212/4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 35.8,
+  "qts": 1.204,
+  "qes": 1.502,
+  "qms": 6.1,
+  "vasL": 166.6,
+  "sdCm2": 519,
+  "xmaxMm": 3.5,
+  "reOhm": 3.6,
+  "bl": 4.9,
+  "mmsG": 45,
+  "peW": 120,
+  "sensitivityDb": 88.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/goldwood-sound-gw‐212-4/specifications"
+}

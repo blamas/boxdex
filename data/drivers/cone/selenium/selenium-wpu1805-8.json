@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "WPU1805",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.447,
+  "qes": 0.46,
+  "qms": 15.43,
+  "vasL": 316,
+  "sdCm2": 1190,
+  "xmaxMm": 4.3,
+  "reOhm": 6.7,
+  "bl": 20.7,
+  "mmsG": 137.7,
+  "peW": 450,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SELENIUM"
+}

@@ -1,0 +1,20 @@
+---
+// Renders a label/value table, skipping rows whose value is undefined/null.
+// Pre-format values (e.g. with `withUnit`) so this component stays presentational.
+interface Row {
+  label: string;
+  value: string | undefined;
+}
+interface Props {
+  rows: Row[];
+}
+const { rows } = Astro.props;
+---
+
+<table>
+  <tbody>
+    {rows.map(({ label, value }) => value != null && (
+      <tr><th>{label}</th><td>{value}</td></tr>
+    ))}
+  </tbody>
+</table>

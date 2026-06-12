@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "American Bass",
+  "model": "DX 12",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 35.6,
+  "qts": 0.6,
+  "qes": 0.677,
+  "qms": 5.25,
+  "vasL": 41.5,
+  "sdCm2": 471,
+  "xmaxMm": 12,
+  "reOhm": 3.44,
+  "bl": 13.28,
+  "mmsG": 155,
+  "peW": 400,
+  "sensitivityDb": 86.2,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/american-bass-dx-12/specifications"
+}

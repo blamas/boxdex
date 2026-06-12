@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "10NMB200",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 58.67,
+  "qts": 0.316,
+  "qes": 0.327,
+  "qms": 8.92,
+  "vasL": 34.93,
+  "sdCm2": 317.3,
+  "xmaxMm": 4.25,
+  "reOhm": 5.82,
+  "bl": 14.07,
+  "mmsG": 30.21,
+  "peW": 200,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/379-10nmb200.html"
+}

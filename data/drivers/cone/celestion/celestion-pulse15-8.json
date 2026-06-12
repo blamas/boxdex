@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "PULSE15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35.7,
+  "qts": 0.431,
+  "qes": 0.474,
+  "qms": 4.75,
+  "vasL": 246.7,
+  "sdCm2": 855,
+  "xmaxMm": 4.75,
+  "reOhm": 5.76,
+  "bl": 15.06,
+  "mmsG": 83.32,
+  "peW": 400,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://celestion.com/product/pulse15/"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "RCF",
+  "model": "NDX595",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1200,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 110,
+  "peW": 70,
+  "magnetMaterial": "neodymium",
+  "weightKg": 1.04,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/ndx595"
+}

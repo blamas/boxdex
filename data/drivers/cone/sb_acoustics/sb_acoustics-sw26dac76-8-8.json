@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Acoustics",
+  "model": "SW26DAC76-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.288,
+  "qes": 0.3,
+  "qms": 7,
+  "vasL": 45.4,
+  "sdCm2": 312,
+  "xmaxMm": 7.9,
+  "reOhm": 6.4,
+  "bl": 22.6,
+  "mmsG": 190.3,
+  "peW": 200,
+  "sensitivityDb": 83.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20ACOUSTICS"
+}

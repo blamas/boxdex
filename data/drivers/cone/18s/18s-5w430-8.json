@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "5W430",
+  "sizeInch": 5,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.32,
+  "qes": 0.36,
+  "qms": 2.77,
+  "vasL": 15,
+  "sdCm2": 90,
+  "xmaxMm": 6,
+  "reOhm": 5.4,
+  "bl": 6.3,
+  "mmsG": 8.2,
+  "peW": 80,
+  "sensitivityDb": 89,
+  "magnetMaterial": "ferrite",
+  "weightKg": 1.2,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/5-0/8/5W430"
+}

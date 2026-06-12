@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12 HPL 64-4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 50,
+  "qts": 0.296,
+  "qes": 0.33,
+  "qms": 2.87,
+  "vasL": 85,
+  "sdCm2": 520,
+  "xmaxMm": 4,
+  "reOhm": 3.7,
+  "bl": 12.6,
+  "mmsG": 45.2,
+  "peW": 200,
+  "sensitivityDb": 100.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "STUDIO 12B",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47,
+  "qts": 0.274,
+  "qes": 0.3,
+  "qms": 3.21,
+  "vasL": 144,
+  "sdCm2": 530,
+  "xmaxMm": 5.1,
+  "reOhm": 5.2,
+  "bl": 12.7,
+  "mmsG": 31.4,
+  "peW": 200,
+  "sensitivityDb": 100.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Davis",
+  "model": "25GCA10WR vp",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 39.2,
+  "qts": 0.405,
+  "qes": 0.48,
+  "qms": 2.6,
+  "vasL": 74.4,
+  "sdCm2": 330,
+  "xmaxMm": 6,
+  "reOhm": 5.96,
+  "bl": 10.2,
+  "mmsG": 33.8,
+  "peW": 130,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVIS"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE10",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25,
+  "fLowHz": 1500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 107,
+  "peW": 20,
+  "weightKg": 0.8,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/8/DE10"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "SD-18",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33.2,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 7.11,
+  "vasL": 264.3,
+  "sdCm2": 1250,
+  "xmaxMm": 5,
+  "reOhm": 5.1,
+  "bl": 27.4,
+  "mmsG": 190.4,
+  "peW": 800,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

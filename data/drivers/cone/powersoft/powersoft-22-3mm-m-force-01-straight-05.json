@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powersoft",
+  "model": "22''-3MM M-FORCE 01 STRAIGHT",
+  "sizeInch": 21.5,
+  "impedanceOhm": 0.5,
+  "fsHz": 29.7,
+  "qts": 0.12,
+  "qes": 0.122,
+  "qms": 6.021,
+  "vasL": 80,
+  "sdCm2": 1660,
+  "xmaxMm": 4.8,
+  "reOhm": 0.26,
+  "bl": 23.5,
+  "mmsG": 1382.8,
+  "peW": 5000,
+  "sensitivityDb": 109.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=POWERSOFT"
+}

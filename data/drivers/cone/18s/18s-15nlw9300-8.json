@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15NLW9300",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 6.7,
+  "vasL": 170,
+  "sdCm2": 850,
+  "xmaxMm": 8,
+  "reOhm": 6,
+  "bl": 24.4,
+  "mmsG": 107,
+  "peW": 800,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neo",
+  "weightKg": 6.8,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15NLW9300"
+}

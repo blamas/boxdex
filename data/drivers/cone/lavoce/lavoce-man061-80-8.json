@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "MAN061.80",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 172,
+  "qts": 0.57,
+  "qes": 0.65,
+  "qms": 4.69,
+  "vasL": 1.59,
+  "sdCm2": 132,
+  "xmaxMm": 3,
+  "reOhm": 5.56,
+  "bl": 11.03,
+  "mmsG": 13.26,
+  "peW": 150,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/man061-80/"
+}

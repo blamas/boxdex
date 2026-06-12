@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "FTR12-3070C",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 66.1,
+  "qts": 0.332,
+  "qes": 0.375,
+  "qms": 2.9,
+  "vasL": 39.6,
+  "sdCm2": 530,
+  "xmaxMm": 3,
+  "reOhm": 5.44,
+  "bl": 18.6,
+  "mmsG": 57.7,
+  "peW": 350,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

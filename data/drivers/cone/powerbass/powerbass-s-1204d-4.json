@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powerbass",
+  "model": "S-1204D",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 31,
+  "qts": 0.5,
+  "qes": 0.563,
+  "qms": 4.5,
+  "vasL": 65,
+  "sdCm2": 511,
+  "xmaxMm": 9.5,
+  "reOhm": 1.59,
+  "bl": 9.1,
+  "mmsG": 150.5,
+  "peW": 300,
+  "sensitivityDb": 87.2,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/powerbass-s-1204d/specifications"
+}

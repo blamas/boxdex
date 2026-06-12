@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10 NW 76 4 Ohms",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 67,
+  "qts": 0.194,
+  "qes": 0.2,
+  "qms": 7,
+  "vasL": 17.8,
+  "sdCm2": 320,
+  "xmaxMm": 3,
+  "reOhm": 3,
+  "bl": 17,
+  "mmsG": 45.5,
+  "peW": 400,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "W15GTI",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 25.2,
+  "qts": 0.476,
+  "qes": 0.51,
+  "qms": 7.2,
+  "vasL": 132.2,
+  "sdCm2": 780,
+  "xmaxMm": 10.2,
+  "reOhm": 2.95,
+  "bl": 15.4,
+  "mmsG": 257.3,
+  "peW": 800,
+  "sensitivityDb": 92.5
+}

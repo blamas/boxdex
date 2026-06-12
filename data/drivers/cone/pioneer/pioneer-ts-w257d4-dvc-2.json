@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W257D4 DVC",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 39.7,
+  "qts": 0.546,
+  "qes": 0.57,
+  "qms": 12.94,
+  "vasL": 18.2,
+  "sdCm2": 350,
+  "xmaxMm": 5.3,
+  "reOhm": 1.5,
+  "bl": 10,
+  "mmsG": 152.1,
+  "peW": 300,
+  "sensitivityDb": 92.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

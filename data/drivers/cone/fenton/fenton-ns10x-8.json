@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fenton",
+  "model": "NS10X",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 67.5,
+  "qts": 0.563,
+  "qes": 0.65,
+  "qms": 4.185,
+  "vasL": 40.2,
+  "sdCm2": 339.8,
+  "xmaxMm": 3.8,
+  "reOhm": 6.6,
+  "bl": 9.8,
+  "mmsG": 22.4,
+  "peW": 125,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FENTON"
+}

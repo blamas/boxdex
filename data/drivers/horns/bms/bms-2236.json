@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "BMS",
+  "model": "2236",
+  "exitInch": 2,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 400,
+  "mouthWmm": 498,
+  "mouthHmm": 348,
+  "depthMm": 265,
+  "profile": "radial",
+  "material": "Fiberglass",
+  "datasheetUrl": "https://www.bmsspeakers.com/index.php-145.html?id=bms_2236"
+}

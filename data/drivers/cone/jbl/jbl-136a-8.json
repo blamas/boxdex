@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "136A",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 16,
+  "qts": 0.212,
+  "qes": 0.22,
+  "qms": 5.5,
+  "vasL": 736.2,
+  "sdCm2": 882.6,
+  "xmaxMm": 5.1,
+  "reOhm": 6.3,
+  "bl": 20.6,
+  "mmsG": 146.8,
+  "peW": 100,
+  "sensitivityDb": 94.4
+}

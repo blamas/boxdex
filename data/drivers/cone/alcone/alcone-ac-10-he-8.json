@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Alcone",
+  "model": "AC 10 HE",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.322,
+  "qes": 0.35,
+  "qms": 4.1,
+  "vasL": 100,
+  "sdCm2": 346,
+  "xmaxMm": 3.5,
+  "reOhm": 6.4,
+  "bl": 13.2,
+  "mmsG": 54.2,
+  "peW": 150,
+  "sensitivityDb": 90.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALCONE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "A26RE4 - H1411",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.415,
+  "qes": 0.45,
+  "qms": 5.28,
+  "vasL": 161,
+  "sdCm2": 350,
+  "xmaxMm": 4,
+  "reOhm": 6.1,
+  "bl": 9.6,
+  "mmsG": 43.2,
+  "peW": 80,
+  "sensitivityDb": 90.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

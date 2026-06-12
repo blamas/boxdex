@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sphynx",
+  "model": "SP-W12-GLB",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.782,
+  "qes": 0.93,
+  "qms": 4.93,
+  "vasL": 65.9,
+  "sdCm2": 520,
+  "xmaxMm": 5.8,
+  "reOhm": 7.3,
+  "bl": 15,
+  "mmsG": 142.3,
+  "peW": 200,
+  "sensitivityDb": 86,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SPHYNX"
+}

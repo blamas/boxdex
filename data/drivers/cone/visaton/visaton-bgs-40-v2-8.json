@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "BGS 40 v2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.424,
+  "qes": 0.49,
+  "qms": 3.13,
+  "vasL": 263,
+  "sdCm2": 855,
+  "xmaxMm": 5.7,
+  "reOhm": 6.5,
+  "bl": 14.3,
+  "mmsG": 61.7,
+  "peW": 200,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

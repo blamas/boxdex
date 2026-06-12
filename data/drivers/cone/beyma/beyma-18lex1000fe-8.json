@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18LEX1000Fe",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.38,
+  "qes": 0.39,
+  "qms": 7.3,
+  "vasL": 250,
+  "sdCm2": 1255,
+  "xmaxMm": 11,
+  "reOhm": 5.4,
+  "bl": 23.8,
+  "mmsG": 196,
+  "peW": 1000,
+  "sensitivityDb": 98,
+  "weightKg": 11.75,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/118LEX10FE8/altavoz-18lex1000fe-8-oh/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSN041.00",
+  "sizeInch": 4,
+  "impedanceOhm": 8,
+  "fsHz": 104,
+  "qts": 0.3,
+  "qes": 0.32,
+  "qms": 7.06,
+  "vasL": 1.79,
+  "sdCm2": 56,
+  "xmaxMm": 4,
+  "reOhm": 5.6,
+  "bl": 8.3,
+  "mmsG": 5.9,
+  "peW": 40,
+  "sensitivityDb": 91.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsn041-00/"
+}

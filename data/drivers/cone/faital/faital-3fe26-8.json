@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "3FE26",
+  "sizeInch": 3,
+  "impedanceOhm": 8,
+  "fsHz": 150,
+  "qts": 0.79,
+  "qes": 1.1,
+  "qms": 2.8,
+  "vasL": 0.9,
+  "sdCm2": 33,
+  "xmaxMm": 2,
+  "reOhm": 6.2,
+  "mmsG": 1.9,
+  "peW": 20,
+  "sensitivityDb": 90,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 0.15,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401000160"
+}

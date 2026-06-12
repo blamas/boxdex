@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "DC 386",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 19.8,
+  "qts": 0.209,
+  "qes": 0.22,
+  "qms": 4.27,
+  "vasL": 450,
+  "sdCm2": 683,
+  "xmaxMm": 4,
+  "reOhm": 5.5,
+  "bl": 17.1,
+  "mmsG": 93.9,
+  "peW": 85,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

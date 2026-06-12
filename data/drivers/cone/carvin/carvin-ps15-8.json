@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Carvin",
+  "model": "PS15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.46,
+  "qes": 0.514,
+  "qms": 4.41,
+  "vasL": 204,
+  "sdCm2": 852,
+  "xmaxMm": 3.7,
+  "reOhm": 5.31,
+  "bl": 13.9,
+  "mmsG": 69.05,
+  "peW": 400,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/carvin-ps15/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "RAMROD",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 101,
+  "qts": 0.64,
+  "qes": 0.68,
+  "qms": 10.8,
+  "vasL": 24.6,
+  "sdCm2": 366.1,
+  "xmaxMm": 0.5,
+  "reOhm": 7.3,
+  "bl": 11.4,
+  "mmsG": 19,
+  "peW": 75,
+  "sensitivityDb": 98.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "5NSM38",
+  "sizeInch": 5,
+  "impedanceOhm": 8,
+  "fsHz": 300,
+  "qts": 0.79,
+  "qes": 0.99,
+  "qms": 4.1,
+  "vasL": 0.3,
+  "sdCm2": 95,
+  "xmaxMm": 2.2,
+  "reOhm": 5.3,
+  "bl": 10.1,
+  "mmsG": 9,
+  "peW": 110,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/5/8/5NSM38"
+}

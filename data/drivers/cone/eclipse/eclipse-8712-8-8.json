@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eclipse",
+  "model": "8712.8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.39,
+  "qes": 0.4,
+  "qms": 13.2,
+  "vasL": 84.95,
+  "sdCm2": 471,
+  "xmaxMm": 18.5,
+  "reOhm": 7.2,
+  "bl": 23.03,
+  "mmsG": 234.5,
+  "peW": 200,
+  "sensitivityDb": 84.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/eclipse-8712-8/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Europsonic",
+  "model": "TS45/1000PRO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.796,
+  "qes": 0.95,
+  "qms": 4.92,
+  "vasL": 205,
+  "sdCm2": 720,
+  "xmaxMm": 6,
+  "reOhm": 7.3,
+  "bl": 13.2,
+  "mmsG": 143.7,
+  "peW": 500,
+  "sensitivityDb": 87.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EUROPSONIC"
+}

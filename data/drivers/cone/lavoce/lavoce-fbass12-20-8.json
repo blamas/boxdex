@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "FBASS12-20",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.46,
+  "qes": 0.51,
+  "qms": 4.71,
+  "vasL": 75.41,
+  "sdCm2": 543.25,
+  "xmaxMm": 4.3,
+  "reOhm": 5.3,
+  "bl": 13.26,
+  "mmsG": 50.73,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://lavocespeakers.com/product/fbass12-20/"
+}

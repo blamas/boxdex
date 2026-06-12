@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cabasse",
+  "model": "55NDS",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 23.5,
+  "qts": 0.369,
+  "qes": 0.39,
+  "qms": 6.8,
+  "vasL": 975,
+  "sdCm2": 1800,
+  "xmaxMm": 4.2,
+  "reOhm": 5.5,
+  "bl": 21.1,
+  "mmsG": 213.7,
+  "peW": 200,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CABASSE"
+}

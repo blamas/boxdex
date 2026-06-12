@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "10MB300",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 64.7,
+  "qts": 0.244,
+  "qes": 0.251,
+  "qms": 9.66,
+  "vasL": 22.75,
+  "sdCm2": 317.3,
+  "xmaxMm": 5.25,
+  "reOhm": 5.43,
+  "bl": 18.32,
+  "mmsG": 38.13,
+  "peW": 400,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/176-10mb300.html"
+}

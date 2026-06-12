@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "A30GU30-55D",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 24,
+  "qts": 0.209,
+  "qes": 0.22,
+  "qms": 4.05,
+  "vasL": 277,
+  "sdCm2": 517,
+  "xmaxMm": 3.1,
+  "reOhm": 3.6,
+  "bl": 12.1,
+  "mmsG": 59.5,
+  "peW": 150,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

@@ -1,0 +1,268 @@
+---
+import Layout from "../../components/Layout.astro";
+import { localeStaticPaths, useLocale } from "../../i18n";
+
+export { localeStaticPaths as getStaticPaths };
+
+const { t } = useLocale(Astro.params);
+
+const { sections } = t.help;
+const { using, glossary } = sections;
+---
+
+<Layout
+  title={t.pages.help.title}
+  description={t.pages.help.description}
+>
+  <h1>{t.pages.help.title}</h1>
+
+  <nav class="toc">
+    <a href="#using">{t.help.toc.using}</a>
+    <a href="#glossary">{t.help.toc.glossary}</a>
+  </nav>
+
+  <section class="help-section" id="using">
+    <h2>{using.heading}</h2>
+
+    <div class="feature-group">
+      <h3>{using.finding.heading}</h3>
+      <dl>
+        <div class="entry" id="catalog">
+          <dt>{using.finding.catalog.term} <a class="anchor" href="#catalog" aria-label={using.finding.catalog.ariaLabel}>#</a></dt>
+          <dd>{using.finding.catalog.def}</dd>
+        </div>
+        <div class="entry" id="find">
+          <dt>{using.finding.find.term} <a class="anchor" href="#find" aria-label={using.finding.find.ariaLabel}>#</a></dt>
+          <dd>{using.finding.find.def}</dd>
+        </div>
+        <div class="entry" id="explore">
+          <dt>{using.finding.explore.term} <a class="anchor" href="#explore" aria-label={using.finding.explore.ariaLabel}>#</a></dt>
+          <dd>{using.finding.explore.def}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="feature-group">
+      <h3>{using.comparing.heading}</h3>
+      <dl>
+        <div class="entry" id="compare">
+          <dt>{using.comparing.compareEnclosures.term} <a class="anchor" href="#compare" aria-label={using.comparing.compareEnclosures.ariaLabel}>#</a></dt>
+          <dd>{using.comparing.compareEnclosures.def}</dd>
+        </div>
+        <div class="entry" id="compare-drivers">
+          <dt>{using.comparing.compareDrivers.term} <a class="anchor" href="#compare-drivers" aria-label={using.comparing.compareDrivers.ariaLabel}>#</a></dt>
+          <dd>{using.comparing.compareDrivers.def}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="feature-group">
+      <h3>{using.driversHorns.heading}</h3>
+      <dl>
+        <div class="entry" id="drivers">
+          <dt>{using.driversHorns.driverCatalog.term} <a class="anchor" href="#drivers" aria-label={using.driversHorns.driverCatalog.ariaLabel}>#</a></dt>
+          <dd>{using.driversHorns.driverCatalog.def}</dd>
+        </div>
+        <div class="entry" id="substitutes">
+          <dt>{using.driversHorns.substitutes.term} <a class="anchor" href="#substitutes" aria-label={using.driversHorns.substitutes.ariaLabel}>#</a></dt>
+          <dd>{using.driversHorns.substitutes.def}</dd>
+        </div>
+        <div class="entry" id="horn-matching">
+          <dt>{using.driversHorns.hornMatching.term} <a class="anchor" href="#horn-matching" aria-label={using.driversHorns.hornMatching.ariaLabel}>#</a></dt>
+          <dd>{using.driversHorns.hornMatching.def}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="feature-group">
+      <h3>{using.planningRig.heading}</h3>
+      <dl>
+        <div class="entry" id="stack">
+          <dt>{using.planningRig.stackBuilder.term} <a class="anchor" href="#stack" aria-label={using.planningRig.stackBuilder.ariaLabel}>#</a></dt>
+          <dd>{using.planningRig.stackBuilder.def}</dd>
+        </div>
+        <div class="entry" id="amp-matching">
+          <dt>{using.planningRig.ampMatching.term} <a class="anchor" href="#amp-matching" aria-label={using.planningRig.ampMatching.ariaLabel}>#</a></dt>
+          <dd>{using.planningRig.ampMatching.def}</dd>
+        </div>
+        <div class="entry" id="crossover-suggestions">
+          <dt>{using.planningRig.crossoverSuggestions.term} <a class="anchor" href="#crossover-suggestions" aria-label={using.planningRig.crossoverSuggestions.ariaLabel}>#</a></dt>
+          <dd>{using.planningRig.crossoverSuggestions.def}</dd>
+        </div>
+        <div class="entry" id="system-response">
+          <dt>{using.planningRig.systemResponse.term} <a class="anchor" href="#system-response" aria-label={using.planningRig.systemResponse.ariaLabel}>#</a></dt>
+          <dd>{using.planningRig.systemResponse.def}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="feature-group">
+      <h3>{using.dataProvenance.heading}</h3>
+      <dl>
+        <div class="entry" id="provenance-badges">
+          <dt>{using.dataProvenance.measuredVsSim.term} <a class="anchor" href="#provenance-badges" aria-label={using.dataProvenance.measuredVsSim.ariaLabel}>#</a></dt>
+          <dd>{using.dataProvenance.measuredVsSim.def}</dd>
+        </div>
+        <div class="entry" id="exports">
+          <dt>{using.dataProvenance.exports.term} <a class="anchor" href="#exports" aria-label={using.dataProvenance.exports.ariaLabel}>#</a></dt>
+          <dd>{using.dataProvenance.exports.def}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="help-section" id="glossary">
+    <h2>{glossary.heading}</h2>
+    <p class="section-subtitle">{glossary.subtitle}</p>
+
+    <nav class="toc toc-glossary">
+      <a href={`#${Object.keys(glossary.driver).find((k) => k !== "heading") ?? "fs"}`}>{glossary.driver.heading}</a>
+      <a href={`#${Object.keys(glossary.system).find((k) => k !== "heading") ?? "f3"}`}>{glossary.system.heading}</a>
+      <a href={`#${Object.keys(glossary.power).find((k) => k !== "heading") ?? "aes-power"}`}>{glossary.power.heading}</a>
+      <a href={`#${Object.keys(glossary.topologies).find((k) => k !== "heading") ?? "sealed"}`}>{glossary.topologies.heading}</a>
+    </nav>
+
+    <div class="glossary-group">
+      <h3>{glossary.driver.heading}</h3>
+      <dl>
+        {Object.entries(glossary.driver).filter(([k]) => k !== "heading").map(([id, entry]) => (
+          <div class="entry" id={id.replace(/_/g, "-")}>
+            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dd>{(entry as { term: string; def: string }).def}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="glossary-group">
+      <h3>{glossary.system.heading}</h3>
+      <dl>
+        {Object.entries(glossary.system).filter(([k]) => k !== "heading").map(([id, entry]) => (
+          <div class="entry" id={id.replace(/_/g, "-")}>
+            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dd>{(entry as { term: string; def: string }).def}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="glossary-group">
+      <h3>{glossary.power.heading}</h3>
+      <dl>
+        {Object.entries(glossary.power).filter(([k]) => k !== "heading").map(([id, entry]) => (
+          <div class="entry" id={id.replace(/_/g, "-")}>
+            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dd>{(entry as { term: string; def: string }).def}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="glossary-group">
+      <h3>{glossary.topologies.heading}</h3>
+      <dl>
+        {Object.entries(glossary.topologies).filter(([k]) => k !== "heading").map(([id, entry]) => (
+          <div class="entry" id={id.replace(/_/g, "-")}>
+            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dd>{(entry as { term: string; def: string }).def}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .toc {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .toc a + a::before {
+    content: "·";
+    color: var(--muted);
+    padding: 0 0.6rem;
+  }
+
+  .toc-glossary {
+    margin-bottom: 1.5rem;
+  }
+
+  .help-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 1rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-top: -0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-group,
+  .glossary-group {
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-mono);
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  .entry {
+    margin-bottom: 1rem;
+    scroll-margin-top: 1rem;
+  }
+
+  dt {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  dd {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: var(--text);
+    padding-left: 1rem;
+    border-left: 2px solid var(--line);
+  }
+
+  .anchor {
+    color: var(--line);
+    text-decoration: none;
+    margin-left: 0.25rem;
+  }
+
+  .entry:hover .anchor,
+  .anchor:focus-visible {
+    color: var(--accent);
+  }
+</style>

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZHW 38X",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22.6,
+  "qts": 0.43,
+  "qes": 0.47,
+  "qms": 5.05,
+  "vasL": 147,
+  "sdCm2": 851,
+  "xmaxMm": 12.5,
+  "reOhm": 4.3,
+  "bl": 21.1,
+  "mmsG": 342.5,
+  "peW": 1000,
+  "sensitivityDb": 90.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GROUND%20ZERO"
+}

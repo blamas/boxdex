@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "T24PR15",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 51.6,
+  "qts": 0.257,
+  "qes": 0.28,
+  "qms": 3.19,
+  "vasL": 123,
+  "sdCm2": 328.4,
+  "xmaxMm": 2,
+  "reOhm": 5.5,
+  "bl": 8.6,
+  "mmsG": 11.7,
+  "peW": 30,
+  "sensitivityDb": 101.4
+}

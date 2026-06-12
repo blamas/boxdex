@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "21 S 4 PL",
+  "sizeInch": 21.5,
+  "impedanceOhm": 4,
+  "fsHz": 38.7,
+  "qts": 0.431,
+  "qes": 0.48,
+  "qms": 4.19,
+  "vasL": 229.8,
+  "sdCm2": 1661.9,
+  "xmaxMm": 6.4,
+  "reOhm": 3.51,
+  "bl": 22.5,
+  "mmsG": 284.9,
+  "peW": 1000,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SICA"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "285 GMF vp JTR 2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47.6,
+  "qts": 0.335,
+  "qes": 0.346,
+  "qms": 10.1,
+  "vasL": 186,
+  "sdCm2": 471,
+  "xmaxMm": 4,
+  "reOhm": 6.5,
+  "bl": 10.2,
+  "mmsG": 18.7,
+  "peW": 70,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

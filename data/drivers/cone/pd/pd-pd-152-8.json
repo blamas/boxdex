@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PD",
+  "model": "PD 152",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.266,
+  "qes": 0.28,
+  "qms": 5.25,
+  "vasL": 170,
+  "sdCm2": 890,
+  "xmaxMm": 5.1,
+  "reOhm": 5.7,
+  "bl": 23,
+  "mmsG": 103.4,
+  "peW": 400,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

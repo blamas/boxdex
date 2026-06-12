@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "RCF",
+  "model": "ND1411-M",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 38,
+  "fLowHz": 1500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1500,
+  "sensitivityHornDb": 109,
+  "peW": 25,
+  "magnetMaterial": "neodymium",
+  "weightKg": 0.69,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/nd1411-m"
+}

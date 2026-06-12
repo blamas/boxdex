@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pyle Audio",
+  "model": "PPA18 vp",
+  "sizeInch": 18,
+  "impedanceOhm": 16,
+  "fsHz": 24.2,
+  "qts": 0.39,
+  "qes": 0.55,
+  "qms": 1.34,
+  "vasL": 503.2,
+  "sdCm2": 1200,
+  "xmaxMm": 6,
+  "reOhm": 8,
+  "bl": 19.6,
+  "mmsG": 173.5,
+  "peW": 300,
+  "sensitivityDb": 93.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PYLE%20AUDIO"
+}

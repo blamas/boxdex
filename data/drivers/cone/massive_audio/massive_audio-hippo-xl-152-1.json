@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Massive Audio",
+  "model": "HIPPO XL 152",
+  "sizeInch": 15,
+  "impedanceOhm": 1,
+  "fsHz": 43.1,
+  "qts": 0.363,
+  "qes": 0.386,
+  "qms": 5.972,
+  "vasL": 26,
+  "sdCm2": 804,
+  "xmaxMm": 5.7,
+  "reOhm": 0.9,
+  "bl": 17.3,
+  "mmsG": 475.1,
+  "peW": 2000,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MASSIVEAUDIO"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "BS10N/250",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 58,
+  "qts": 0.438,
+  "qes": 0.47,
+  "qms": 6.45,
+  "vasL": 30.9,
+  "sdCm2": 346.3,
+  "xmaxMm": 4.8,
+  "reOhm": 5.1,
+  "bl": 12.7,
+  "mmsG": 41,
+  "peW": 250,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

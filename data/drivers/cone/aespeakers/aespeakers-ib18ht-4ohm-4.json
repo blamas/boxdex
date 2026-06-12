@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "IB18HT-4ohm",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 18.4,
+  "qts": 0.567,
+  "qes": 0.63,
+  "qms": 5.7,
+  "vasL": 632.1,
+  "sdCm2": 1218,
+  "xmaxMm": 16.7,
+  "reOhm": 2.8,
+  "bl": 11.3,
+  "mmsG": 246.7,
+  "peW": 500,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

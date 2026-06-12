@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "1505-8 DT v1993",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44.2,
+  "qts": 0.371,
+  "qes": 0.39,
+  "qms": 7.8,
+  "vasL": 198,
+  "sdCm2": 800,
+  "xmaxMm": 5.1,
+  "reOhm": 5.2,
+  "bl": 14.7,
+  "mmsG": 58.7,
+  "peW": 350,
+  "sensitivityDb": 100.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

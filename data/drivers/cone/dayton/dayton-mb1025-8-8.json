@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "MB1025-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.35,
+  "qes": 0.37,
+  "qms": 6.47,
+  "vasL": 50.7,
+  "sdCm2": 346.4,
+  "xmaxMm": 3,
+  "reOhm": 5.3,
+  "bl": 13,
+  "mmsG": 41.5,
+  "peW": 350,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

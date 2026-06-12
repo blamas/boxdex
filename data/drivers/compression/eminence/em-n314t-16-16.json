@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Eminence",
+  "model": "N314T-16 1.4\" Throat Size HF Device - Neodymium",
+  "impedanceOhm": 16,
+  "exitInch": 1.4,
+  "voiceCoilMm": 76.2,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 110.6,
+  "peW": 100
+}

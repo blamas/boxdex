@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Acoustics",
+  "model": "SB42FHCL75-6",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 18.4,
+  "qts": 0.307,
+  "qes": 0.32,
+  "qms": 7.4,
+  "vasL": 462,
+  "sdCm2": 850,
+  "xmaxMm": 11.5,
+  "reOhm": 4.6,
+  "bl": 16.5,
+  "mmsG": 164,
+  "peW": 300,
+  "sensitivityDb": 93.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20ACOUSTICS"
+}

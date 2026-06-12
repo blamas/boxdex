@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powersoft",
+  "model": "30''-3MM M-FORCE 02 STRAIGHT",
+  "sizeInch": 31.5,
+  "impedanceOhm": 0.25,
+  "fsHz": 30,
+  "qts": 0.124,
+  "qes": 0.126,
+  "qms": 7.275,
+  "vasL": 230,
+  "sdCm2": 3420,
+  "xmaxMm": 4,
+  "reOhm": 0.19,
+  "bl": 23.9,
+  "mmsG": 2001,
+  "peW": 5000,
+  "sensitivityDb": 115.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=POWERSOFT"
+}

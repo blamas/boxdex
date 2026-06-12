@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "KFC-PS2516W",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 27.3,
+  "qts": 0.608,
+  "qes": 0.675,
+  "qms": 6.1,
+  "vasL": 68.1,
+  "sdCm2": 415,
+  "xmaxMm": 11,
+  "reOhm": 4,
+  "bl": 11.8,
+  "mmsG": 121.7,
+  "peW": 300,
+  "sensitivityDb": 85,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/kenwood-kfc-ps2516w/specifications"
+}

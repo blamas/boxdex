@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "FTR18-4080FD",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 4.33,
+  "vasL": 395.56,
+  "sdCm2": 1126,
+  "xmaxMm": 6,
+  "reOhm": 5.39,
+  "bl": 22.88,
+  "mmsG": 172.42,
+  "peW": 1000,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://celestion.com/product/ftr18-4080fd/"
+}

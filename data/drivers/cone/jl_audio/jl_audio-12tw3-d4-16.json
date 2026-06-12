@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "12TW3-D4",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 26.5,
+  "qts": 0.531,
+  "qes": 0.558,
+  "qms": 10.766,
+  "vasL": 48.7,
+  "sdCm2": 539,
+  "xmaxMm": 7.9,
+  "reOhm": 9.28,
+  "bl": 28.9,
+  "mmsG": 302.4,
+  "peW": 400,
+  "sensitivityDb": 83.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JL%20AUDIO"
+}

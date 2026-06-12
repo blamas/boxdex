@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "Kappa Pro-10LF",
+  "impedanceOhm": 8,
+  "sizeInch": 10,
+  "fsHz": 39,
+  "qts": 0.28,
+  "qes": 0.29,
+  "qms": 8.97,
+  "vasL": 72.97,
+  "sdCm2": 376.9,
+  "xmaxMm": 7.2,
+  "peW": 600,
+  "sensitivityDb": 91.6,
+  "reOhm": 5.47,
+  "bl": 14.46,
+  "mmsG": 46,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappa_Pro_10LF.pdf"
+}

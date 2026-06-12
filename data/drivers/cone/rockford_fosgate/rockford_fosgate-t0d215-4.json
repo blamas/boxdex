@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "T0D215",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 25.5,
+  "qts": 0.438,
+  "qes": 0.47,
+  "qms": 6.5,
+  "vasL": 94.4,
+  "sdCm2": 845,
+  "xmaxMm": 9.3,
+  "reOhm": 3.4,
+  "bl": 21.9,
+  "mmsG": 413,
+  "peW": 800,
+  "sensitivityDb": 90.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ROCKFORD%20FOSGATE"
+}

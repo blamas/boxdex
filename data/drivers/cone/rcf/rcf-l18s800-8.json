@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L18S800",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 8.3,
+  "vasL": 206,
+  "sdCm2": 1134,
+  "xmaxMm": 5,
+  "reOhm": 4.97,
+  "bl": 24.5,
+  "mmsG": 148,
+  "peW": 300,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l18s800"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15NW530",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 5.81,
+  "vasL": 154,
+  "sdCm2": 855,
+  "xmaxMm": 7.5,
+  "reOhm": 5.3,
+  "bl": 22,
+  "mmsG": 135,
+  "peW": 500,
+  "sensitivityDb": 96,
+  "magnetMaterial": "neo",
+  "weightKg": 4.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15NW530"
+}

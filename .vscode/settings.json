@@ -1,0 +1,23 @@
+{
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  // Validate enclosure MDX frontmatter against the committed schema (regenerated from the
+  // zod collection via `npm run schema:gen`). Requires the redhat.vscode-yaml extension.
+  "yaml.schemas": {
+    "./schema/enclosure.schema.json": "data/enclosures/**/index.mdx"
+  },
+  "search.exclude": {
+    //"src/content": true,
+    ".astro": true
+  }
+}

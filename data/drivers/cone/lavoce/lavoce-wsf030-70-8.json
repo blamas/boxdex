@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSF030.70",
+  "sizeInch": 3,
+  "impedanceOhm": 8,
+  "fsHz": 112,
+  "qts": 0.61,
+  "qes": 0.71,
+  "qms": 4.33,
+  "vasL": 0.89,
+  "sdCm2": 33,
+  "xmaxMm": 3.3,
+  "reOhm": 6.3,
+  "bl": 4.65,
+  "mmsG": 3.5,
+  "peW": 30,
+  "sensitivityDb": 85.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsf030-70/"
+}

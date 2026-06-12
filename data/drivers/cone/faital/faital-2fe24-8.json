@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "2FE24",
+  "sizeInch": 2,
+  "impedanceOhm": 8,
+  "fsHz": 170,
+  "qts": 0.94,
+  "qes": 1.22,
+  "qms": 4.1,
+  "vasL": 0.3,
+  "sdCm2": 20.1,
+  "xmaxMm": 1.75,
+  "reOhm": 6.5,
+  "mmsG": 1.9,
+  "peW": 20,
+  "sensitivityDb": 85,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 0.122,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=40900010"
+}

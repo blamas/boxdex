@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Volt",
+  "model": "M2500.2 PA",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 59,
+  "qts": 0.137,
+  "qes": 0.16,
+  "qms": 0.96,
+  "vasL": 34,
+  "sdCm2": 337,
+  "xmaxMm": 0.4,
+  "reOhm": 5.1,
+  "bl": 20.1,
+  "mmsG": 34.1,
+  "peW": 200,
+  "sensitivityDb": 100.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOLT"
+}

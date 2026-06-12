@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD1S",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25.4,
+  "fLowHz": 2000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 106,
+  "peW": 30,
+  "magnetMaterial": "ferrite",
+  "weightKg": 0.6,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD1S8/motor-cd1s-8-oh/"
+}

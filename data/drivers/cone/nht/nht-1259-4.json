@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "NHT",
+  "model": "1259",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 19,
+  "qts": 0.461,
+  "qes": 0.56,
+  "qms": 2.6,
+  "vasL": 190,
+  "sdCm2": 507,
+  "xmaxMm": 12,
+  "reOhm": 3.4,
+  "bl": 9.8,
+  "mmsG": 133.1,
+  "peW": 200,
+  "sensitivityDb": 89.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=NHT"
+}

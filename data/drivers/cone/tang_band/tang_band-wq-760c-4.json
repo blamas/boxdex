@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tang Band",
+  "model": "WQ-760C",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 25,
+  "qts": 0.372,
+  "qes": 0.4,
+  "qms": 5.32,
+  "vasL": 95.4,
+  "sdCm2": 500,
+  "xmaxMm": 6,
+  "reOhm": 3.2,
+  "bl": 13.7,
+  "mmsG": 148.9,
+  "peW": 300,
+  "sensitivityDb": 91.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANG%20BAND"
+}

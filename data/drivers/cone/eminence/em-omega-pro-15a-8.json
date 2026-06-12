@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "OMEGA PRO-15A",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 33,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 5.69,
+  "vasL": 258.5,
+  "sdCm2": 856.3,
+  "xmaxMm": 4.8,
+  "peW": 800,
+  "sensitivityDb": 97.3,
+  "reOhm": 5.28,
+  "bl": 17.5,
+  "mmsG": 94,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Omega_Pro_15A.pdf"
+}

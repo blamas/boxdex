@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18W1300",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 5,
+  "vasL": 336,
+  "sdCm2": 1225,
+  "xmaxMm": 8.5,
+  "reOhm": 5,
+  "bl": 20.4,
+  "mmsG": 129,
+  "peW": 850,
+  "sensitivityDb": 99.5,
+  "magnetMaterial": "ferrite",
+  "weightKg": 13,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/8/18W1300"
+}

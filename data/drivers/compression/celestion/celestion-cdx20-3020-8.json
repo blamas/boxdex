@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Celestion",
+  "model": "CDX20-3020",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 107,
+  "peW": 100,
+  "magnetMaterial": "ferrite",
+  "datasheetUrl": "https://celestion.com/product/cdx20-3020/"
+}

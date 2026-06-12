@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W304C",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 22.3,
+  "qts": 0.274,
+  "qes": 0.282,
+  "qms": 10.219,
+  "vasL": 134,
+  "sdCm2": 496,
+  "xmaxMm": 9.8,
+  "reOhm": 3,
+  "bl": 14,
+  "mmsG": 131.1,
+  "peW": 300,
+  "sensitivityDb": 93.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

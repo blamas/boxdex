@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Acoustics",
+  "model": "SB29SWNRX-75-6",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.29,
+  "qes": 0.31,
+  "qms": 4.5,
+  "vasL": 66,
+  "sdCm2": 312,
+  "xmaxMm": 9.5,
+  "reOhm": 4.5,
+  "bl": 15.5,
+  "mmsG": 130.9,
+  "peW": 200,
+  "sensitivityDb": 86.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20ACOUSTICS"
+}

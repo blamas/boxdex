@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "LaVoce",
+  "model": "DN10.143",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 38,
+  "fLowHz": 1200,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1800,
+  "sensitivityHornDb": 110,
+  "peW": 35,
+  "datasheetUrl": "https://lavocespeakers.com/product/dn10-143/"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CP/850/ND 8 OH.",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 100,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 500,
+  "sensitivityHornDb": 112,
+  "peW": 100,
+  "magnetMaterial": "neodymium",
+  "weightKg": 4.4,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CP85ND8/motor-cp-850nd-8-oh/"
+}

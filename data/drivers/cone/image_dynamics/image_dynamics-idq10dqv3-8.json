@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Image Dynamics",
+  "model": "IDQ10DQV3",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25.5,
+  "qts": 0.384,
+  "qes": 0.47,
+  "qms": 2.1,
+  "vasL": 71,
+  "sdCm2": 399.1,
+  "xmaxMm": 9,
+  "reOhm": 4.1,
+  "bl": 13.1,
+  "mmsG": 122.2,
+  "peW": 300,
+  "sensitivityDb": 88.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=IMAGE%20DYNAMICS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "14NA100",
+  "sizeInch": 14,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 5.6,
+  "vasL": 99.5,
+  "sdCm2": 707,
+  "xmaxMm": 8.8,
+  "reOhm": 5.1,
+  "bl": 23.5,
+  "mmsG": 96.5,
+  "peW": 800,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/13.5/8/14NA100"
+}

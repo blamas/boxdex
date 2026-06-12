@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "NDC 21-5",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 32.2,
+  "qts": 0.344,
+  "qes": 0.35,
+  "qms": 18.93,
+  "vasL": 270.8,
+  "sdCm2": 1662,
+  "xmaxMm": 8.8,
+  "reOhm": 6.22,
+  "bl": 35.4,
+  "mmsG": 349.3,
+  "peW": 1500,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

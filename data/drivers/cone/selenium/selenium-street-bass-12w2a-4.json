@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "STREET BASS 12W2A",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.46,
+  "qes": 0.48,
+  "qms": 11.09,
+  "vasL": 164,
+  "sdCm2": 556,
+  "xmaxMm": 3.75,
+  "reOhm": 3.3,
+  "bl": 9.88,
+  "mmsG": 75.3,
+  "peW": 250,
+  "sensitivityDb": 91.5
+}

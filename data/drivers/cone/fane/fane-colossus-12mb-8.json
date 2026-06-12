@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "Colossus 12MB",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.286,
+  "qes": 0.333,
+  "qms": 2.05,
+  "vasL": 56,
+  "sdCm2": 530,
+  "xmaxMm": 5.5,
+  "reOhm": 5.5,
+  "bl": 18.3,
+  "mmsG": 59,
+  "peW": 500,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://fane-international.com/downloads/FANE-COLOSSUS-12MB-DS141117.pdf"
+}

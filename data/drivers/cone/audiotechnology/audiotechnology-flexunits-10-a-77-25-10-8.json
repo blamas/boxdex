@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiotechnology",
+  "model": "FLEXUNITS 10 A 77 25 10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.26,
+  "qes": 0.29,
+  "qms": 2.32,
+  "vasL": 140,
+  "sdCm2": 326,
+  "xmaxMm": 4.3,
+  "reOhm": 5.35,
+  "bl": 11.17,
+  "mmsG": 43.07,
+  "peW": 100,
+  "sensitivityDb": 90.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audio-technology-flexunits-10-a-77-25-10/specifications"
+}

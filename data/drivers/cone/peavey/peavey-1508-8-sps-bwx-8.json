@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "1508-8 SPS BWX",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 41.9,
+  "qts": 0.438,
+  "qes": 0.457,
+  "qms": 10.357,
+  "vasL": 185.9,
+  "sdCm2": 840,
+  "xmaxMm": 4.7,
+  "reOhm": 5.27,
+  "bl": 15.3,
+  "mmsG": 76.8,
+  "peW": 500,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

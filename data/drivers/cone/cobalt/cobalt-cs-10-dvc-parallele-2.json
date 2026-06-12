@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cobalt",
+  "model": "CS 10 DVC parallele",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 30,
+  "qts": 0.387,
+  "qes": 0.41,
+  "qms": 7.06,
+  "vasL": 60,
+  "sdCm2": 325,
+  "xmaxMm": 6,
+  "reOhm": 1.85,
+  "bl": 7.7,
+  "mmsG": 69.5,
+  "peW": 200,
+  "sensitivityDb": 94.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=COBALT"
+}

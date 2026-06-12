@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF21N551",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 6.2,
+  "vasL": 200,
+  "sdCm2": 1700,
+  "xmaxMm": 15,
+  "reOhm": 5.2,
+  "bl": 39,
+  "mmsG": 434,
+  "peW": 2000,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neodymium",
+  "weightKg": 14,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf21n551"
+}

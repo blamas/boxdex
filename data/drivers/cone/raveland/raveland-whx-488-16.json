@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Raveland",
+  "model": "WHX 488",
+  "sizeInch": 18,
+  "impedanceOhm": 16,
+  "fsHz": 28,
+  "qts": 0.978,
+  "qes": 1.33,
+  "qms": 3.7,
+  "vasL": 355,
+  "sdCm2": 1256,
+  "xmaxMm": 4,
+  "reOhm": 8,
+  "bl": 14.6,
+  "mmsG": 201.3,
+  "peW": 150,
+  "sensitivityDb": 89.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RAVELAND"
+}

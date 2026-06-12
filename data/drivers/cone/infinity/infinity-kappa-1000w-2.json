@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "KAPPA 1000W",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 30.5,
+  "qts": 0.37,
+  "qes": 0.408,
+  "qms": 4,
+  "vasL": 27,
+  "sdCm2": 330,
+  "xmaxMm": 10.25,
+  "reOhm": 1.97,
+  "bl": 12,
+  "mmsG": 155.7,
+  "peW": 1000,
+  "sensitivityDb": 84.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/infinity-kappa-1000w/specifications"
+}

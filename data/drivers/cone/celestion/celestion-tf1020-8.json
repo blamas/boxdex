@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TF1020",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60.9,
+  "qts": 0.32,
+  "qes": 0.361,
+  "qms": 2.853,
+  "vasL": 37.45,
+  "sdCm2": 346,
+  "xmaxMm": 2,
+  "reOhm": 5.79,
+  "bl": 13.79,
+  "mmsG": 30.92,
+  "peW": 150,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://celestion.com/product/tf1020/"
+}

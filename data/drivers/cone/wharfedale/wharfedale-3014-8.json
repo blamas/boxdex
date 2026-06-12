@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Wharfedale",
+  "model": "3014",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 20.7,
+  "qts": 0.342,
+  "qes": 0.4,
+  "qms": 2.343,
+  "vasL": 319.1,
+  "sdCm2": 547.4,
+  "xmaxMm": 8,
+  "reOhm": 5.4,
+  "bl": 11.7,
+  "mmsG": 77.7,
+  "peW": 100,
+  "sensitivityDb": 92.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=WHARFEDALE"
+}

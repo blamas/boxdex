@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15FW76",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.21,
+  "qes": 0.22,
+  "qms": 5.1,
+  "vasL": 138,
+  "sdCm2": 855,
+  "xmaxMm": 7,
+  "reOhm": 5.1,
+  "bl": 26.2,
+  "mmsG": 117,
+  "peW": 500,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/8/15FW76"
+}

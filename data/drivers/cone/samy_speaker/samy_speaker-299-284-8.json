@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Samy Speaker",
+  "model": "299-284",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.472,
+  "qes": 0.52,
+  "qms": 5.07,
+  "vasL": 182.9,
+  "sdCm2": 344.9,
+  "xmaxMm": 4,
+  "reOhm": 6.47,
+  "bl": 7.4,
+  "mmsG": 21.2,
+  "peW": 50,
+  "sensitivityDb": 93.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SAMY%20SPEAKER"
+}

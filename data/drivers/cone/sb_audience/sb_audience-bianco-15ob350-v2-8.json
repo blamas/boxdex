@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "BIANCO-15OB350 V2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.572,
+  "qes": 0.6,
+  "qms": 12.17,
+  "vasL": 212.7,
+  "sdCm2": 855.3,
+  "xmaxMm": 8.4,
+  "reOhm": 7.2,
+  "bl": 16.5,
+  "mmsG": 105.6,
+  "peW": 350,
+  "sensitivityDb": 93.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

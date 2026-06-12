@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "8 L 2 SL",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 64,
+  "qts": 0.32,
+  "qes": 0.36,
+  "qms": 2.69,
+  "vasL": 18.2,
+  "sdCm2": 213.8,
+  "xmaxMm": 3.5,
+  "reOhm": 6.1,
+  "bl": 12.3,
+  "mmsG": 22.1,
+  "peW": 200,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z005055.pdf"
+}

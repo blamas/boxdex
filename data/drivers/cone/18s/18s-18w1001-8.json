@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18W1001",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 7.1,
+  "vasL": 268,
+  "sdCm2": 1134,
+  "xmaxMm": 7,
+  "reOhm": 5.8,
+  "bl": 27.6,
+  "mmsG": 139,
+  "peW": 1000,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ferrite",
+  "weightKg": 13.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/8/18W1001"
+}

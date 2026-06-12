@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF18N408",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.33,
+  "qes": 0.36,
+  "qms": 3.6,
+  "vasL": 193,
+  "sdCm2": 1220,
+  "xmaxMm": 15,
+  "reOhm": 4.3,
+  "bl": 25.7,
+  "mmsG": 284,
+  "peW": 1500,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neodymium",
+  "weightKg": 9,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf18n408"
+}

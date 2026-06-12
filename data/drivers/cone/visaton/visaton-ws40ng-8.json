@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "WS40NG",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.252,
+  "qes": 0.32,
+  "qms": 1.18,
+  "vasL": 500,
+  "sdCm2": 780,
+  "xmaxMm": 6.5,
+  "reOhm": 6,
+  "bl": 14.3,
+  "mmsG": 69.1,
+  "peW": 200,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

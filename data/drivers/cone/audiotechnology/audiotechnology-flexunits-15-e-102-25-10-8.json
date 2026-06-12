@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiotechnology",
+  "model": "FLEXUNITS 15 E 102 25 10",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 18,
+  "qts": 0.22,
+  "qes": 0.258,
+  "qms": 1.5,
+  "vasL": 600,
+  "sdCm2": 829,
+  "xmaxMm": 8.6,
+  "reOhm": 5.96,
+  "bl": 18.22,
+  "mmsG": 127,
+  "peW": 400,
+  "sensitivityDb": 93.2,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audio-technology-flexunits-15-e-102-25-10/specifications"
+}

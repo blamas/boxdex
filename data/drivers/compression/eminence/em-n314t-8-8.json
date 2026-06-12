@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Eminence",
+  "model": "N314T-8 1.4\" Throat Size HF Device - Neodymium",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 76.2,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 110.9,
+  "peW": 100,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/N314T8.pdf"
+}

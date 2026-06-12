@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR300T4 s&eacute;rie vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.519,
+  "qes": 0.57,
+  "qms": 5.8,
+  "vasL": 220,
+  "sdCm2": 517,
+  "xmaxMm": 4,
+  "reOhm": 6.8,
+  "bl": 9.3,
+  "mmsG": 31.5,
+  "peW": 350,
+  "sensitivityDb": 95.6
+}

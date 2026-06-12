@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jinwey",
+  "model": "YDA-250-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60.1,
+  "qts": 1.473,
+  "qes": 1.81,
+  "qms": 7.92,
+  "vasL": 35.8,
+  "sdCm2": 350,
+  "xmaxMm": 1.9,
+  "reOhm": 6.9,
+  "bl": 7,
+  "mmsG": 33.6,
+  "peW": 80,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JINWEY"
+}

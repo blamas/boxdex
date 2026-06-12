@@ -1,0 +1,422 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, getEntry, render } from "astro:content";
+import BoxCurves from "../../../components/BoxCurves.svelte";
+import EnclosureList from "../../../components/EnclosureList.astro";
+import Layout from "../../../components/Layout.astro";
+import { LOCALES, tt, useLocale } from "../../../i18n";
+import { humanize, withUnit } from "../../../lib/format";
+import { deriveMetrics, provenanceOf } from "../../../lib/metrics";
+
+export async function getStaticPaths() {
+  const enclosures = await getCollection("enclosures");
+  return LOCALES.flatMap((locale) =>
+    enclosures.map((entry) => ({
+      params: { locale, slug: entry.id },
+      props: { entry },
+    }))
+  );
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+const { specs, dims } = data;
+
+const { t, localeBase } = useLocale(Astro.params);
+const sr = t.enclosureDetail.specRows;
+
+const metrics = deriveMetrics({
+  netVolumeL: data.netVolumeL,
+  dims: data.dims,
+  weightKg: data.weightKg,
+  specs: data.specs,
+});
+
+const provenance = provenanceOf(data.measurements);
+
+const specRows: { label: string; value: string | undefined }[] = [
+  {
+    label: sr.topology,
+    value: humanize(data.topology) + (data.topologyVariant ? ` · ${data.topologyVariant}` : ""),
+  },
+  { label: sr.ways, value: data.ways !== undefined ? `${data.ways}-way` : undefined },
+  { label: sr.buildComplexity, value: data.buildComplexity },
+  { label: sr.netVolume, value: withUnit(metrics.volumeL, "L") },
+  { label: sr.grossVolume, value: withUnit(data.grossVolumeL, "L") },
+  { label: sr.dimensions, value: `${dims.hMm} × ${dims.wMm} × ${dims.dMm} mm` },
+  { label: sr.footprint, value: withUnit(metrics.footprintCm2, "cm²") },
+  { label: sr.weight, value: withUnit(data.weightKg, "kg") },
+  { label: sr.f3, value: withUnit(specs.f3Hz, "Hz") },
+  { label: sr.f6, value: withUnit(specs.f6Hz, "Hz") },
+  { label: sr.fb, value: withUnit(specs.fbHz, "Hz") },
+  { label: sr.f3High, value: withUnit(specs.f3HzHigh, "Hz") },
+  { label: sr.maxSpl, value: withUnit(specs.maxSplDb, "dB") },
+  { label: sr.maxSplExcursion, value: withUnit(specs.maxSplExcursionDb, "dB") },
+  { label: sr.maxSplThermal, value: withUnit(specs.maxSplThermalDb, "dB") },
+  { label: sr.sensitivity, value: withUnit(specs.sensitivityDb, "dB") },
+  { label: sr.impedanceMin, value: withUnit(specs.impedanceMinOhm, "Ω") },
+  {
+    label: sr.coverageAngle,
+    value: specs.coverageAngleDeg !== undefined ? `${specs.coverageAngleDeg}°` : undefined,
+  },
+  { label: sr.recommendedCrossover, value: withUnit(specs.recommendedCrossoverHz, "Hz") },
+  { label: sr.hornCutoff, value: withUnit(specs.hornCutoffHz, "Hz") },
+  { label: sr.hornMouth, value: withUnit(specs.hornMouthCm2, "cm²") },
+  { label: sr.hornThroat, value: withUnit(specs.hornThroatCm2, "cm²") },
+  { label: sr.recommendedPower, value: withUnit(specs.recommendedPowerW, "W") },
+  { label: sr.powerAes, value: withUnit(specs.powerAesW, "W") },
+  { label: sr.powerProgram, value: withUnit(specs.powerProgramW, "W") },
+  { label: sr.maxPortVelocity, value: withUnit(specs.maxVelocityMs, "m/s") },
+  { label: sr.outputDensity, value: withUnit(metrics.outputDensity, "dB/size") },
+  { label: sr.plywoodThickness, value: withUnit(data.plywoodThicknessMm, "mm") },
+  {
+    label: sr.plywoodSheets,
+    value:
+      data.sheetCount !== undefined
+        ? `${data.sheetCount}×${
+            data.sheetSizeMm ? ` ${data.sheetSizeMm.wMm}×${data.sheetSizeMm.hMm} mm` : ""
+          }`
+        : undefined,
+  },
+  {
+    label: sr.connectors,
+    value: data.connectors.length > 0 ? data.connectors.join(", ") : undefined,
+  },
+];
+
+const driverEntries = await Promise.all(data.drivers.map((ref) => getEntry("drivers", ref.id)));
+
+const allEnclosures = await getCollection("enclosures");
+const thisDriverIds = new Set(data.drivers.map((ref) => ref.id));
+const relatedEnclosures = allEnclosures
+  .filter((e) => e.id !== entry.id && e.data.drivers.some((ref) => thisDriverIds.has(ref.id)))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const allPdfGlob = import.meta.glob("/data/enclosures/**/*.pdf", {
+  query: "?url",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const planUrls = data.plans.map((filename) => {
+  const key = `/data/enclosures/${entry.id}/${filename}`;
+  return { filename, url: allPdfGlob[key] ?? null };
+});
+
+const allSourceGlob = import.meta.glob("/data/enclosures/**/*", {
+  query: "?url",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const sourceFiles = data.sources.map((s) => {
+  const key = `/data/enclosures/${entry.id}/${s.file}`;
+  return { ...s, url: allSourceGlob[key] ?? null };
+});
+
+const heroImage = data.images[0];
+const galleryImages = data.images.slice(1);
+const hasCurves = data.measurements.length > 0 || data.simulations.length > 0;
+const categoryLabel =
+  t.categoryLabels[data.category as keyof typeof t.categoryLabels] ?? data.category;
+---
+
+<Layout
+  title={data.name}
+  description={`${categoryLabel} enclosure: ${data.name}`}
+  preloadData={hasCurves ? [`/api/curves/${entry.id}.json`] : []}
+>
+  <div class="detail">
+    <header class="detail-header">
+      <div class="badges">
+        <span class={`badge badge-${data.category}`}>{data.category}</span>
+        <span class={`badge badge-${provenance}`}>{provenance}</span>
+        {data.verified && <span class="badge badge-verified">{t.enclosureDetail.verified}</span>}
+      </div>
+      <h1 data-pagefind-meta="title">{data.name}</h1>
+      <p class="meta">
+        <a href={`${localeBase}/help#${data.topology}`} data-pagefind-filter="topology">{humanize(data.topology)}</a>
+        {data.author && <> · {t.enclosureDetail.by} {data.author}</>}
+        {data.revision && <> · {t.enclosureDetail.rev} {data.revision}</>}
+        · <span class="muted">{data.license}</span>
+      </p>
+      <p class="meta" data-pagefind-filter="category">{data.category}</p>
+      {data.recommendedFor.length > 0 && (
+        <ul class="tag-list">
+          {data.recommendedFor.map((tag) => <li class="tag">{tag}</li>)}
+        </ul>
+      )}
+      {heroImage && (
+        <Image
+          src={heroImage}
+          alt={data.name}
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 900px) 100vw, 900px"
+          loading="eager"
+          class="hero-img"
+        />
+      )}
+    </header>
+
+    <div class="detail-body">
+      <section class="specs-section">
+        <h2>{t.enclosureDetail.specifications}</h2>
+        <table>
+          <tbody>
+            {specRows.map(({ label, value }) => value != null && (
+              <tr><th>{label}</th><td>{value}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="drivers-section">
+        <h2>{tt(t.enclosureDetail.driversSection, { n: data.driverCount })}</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>{t.enclosureDetail.brand}</th>
+              <th>{t.enclosureDetail.model}</th>
+              <th>{t.enclosureDetail.format}</th>
+              <th>{t.enclosureDetail.impedance}</th>
+              <th>{t.enclosureDetail.fs}</th>
+              <th>{t.enclosureDetail.detail}</th>
+              <th>{t.enclosureDetail.pe}</th>
+              <th>{t.enclosureDetail.sensitivity}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {driverEntries.map((d) => d && (
+              <tr>
+                <td>{d.data.brand}</td>
+                <td>
+                  <a href={`${localeBase}/drivers/${d.id}`}>{d.data.model}</a>
+                  {d.data.datasheetUrl && (
+                    <a href={d.data.datasheetUrl} target="_blank" rel="noopener" class="ds-link">↗</a>
+                  )}
+                </td>
+                {d.data.type === "cone" ? (
+                  <>
+                    <td>{d.data.sizeInch}"</td>
+                    <td>{d.data.impedanceOhm} Ω</td>
+                    <td>{d.data.fsHz} Hz</td>
+                    <td>{tt(t.enclosureDetail.coneDetail, { qts: d.data.qts, vas: d.data.vasL, xmax: d.data.xmaxMm })}</td>
+                    <td>{d.data.peW} W</td>
+                    <td>{d.data.sensitivityDb} dB</td>
+                  </>
+                ) : (
+                  <>
+                    <td>{d.data.exitInch}"{t.enclosureDetail.exitSuffix}</td>
+                    <td>{d.data.impedanceOhm} Ω</td>
+                    <td>{d.data.fsHz ? `${d.data.fsHz} Hz` : ""}</td>
+                    <td>{tt(t.enclosureDetail.compDetail, { fLow: d.data.fLowHz, fHigh: d.data.fHighHz, minXo: d.data.minCrossoverHz })}</td>
+                    <td>{d.data.peW} W</td>
+                    <td>{d.data.sensitivityHornDb} dB</td>
+                  </>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {hasCurves && (
+        <section class="curves-section">
+          <h2>{t.enclosureDetail.measurementsSims}</h2>
+          <BoxCurves client:only="svelte" slug={entry.id} name={data.name} t={t.boxCurves} curveLabels={t.curveLabels} />
+        </section>
+      )}
+
+      {galleryImages.length > 0 && (
+        <section class="images-section">
+          <h2>{t.enclosureDetail.images}</h2>
+          <div class="image-gallery">
+            {galleryImages.map((img) => (
+              <Image
+                src={img}
+                alt={data.name}
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+                loading="lazy"
+                class="gallery-img"
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {planUrls.length > 0 && (
+        <section class="plans-section">
+          <h2>{t.enclosureDetail.plans}</h2>
+          <ul class="plan-list">
+            {planUrls.map(({ filename, url }) => (
+              <li>
+                {url
+                  ? <a href={url} download={filename}>{filename}</a>
+                  : <span class="muted">{filename} (not found)</span>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {sourceFiles.length > 0 && (
+        <section class="plans-section">
+          <h2>{t.enclosureDetail.sources}</h2>
+          <ul class="plan-list">
+            {sourceFiles.map(({ tool, file, note, url }) => (
+              <li>
+                {url
+                  ? <a href={url} download={file}>{file}</a>
+                  : <span class="muted">{file} (not found)</span>}
+                <span class="muted"> · {tool}{note ? ` · ${note}` : ""}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {relatedEnclosures.length > 0 && (
+        <section class="related-section">
+          <h2>{t.enclosureDetail.relatedEnclosures}</h2>
+          <EnclosureList items={relatedEnclosures} />
+        </section>
+      )}
+
+      {data.sourceUrl && (
+        <p class="source-url">
+          Source: <a href={data.sourceUrl} target="_blank" rel="noopener">{data.sourceUrl}</a>
+        </p>
+      )}
+
+      <section class="notes-section">
+        <h2>Notes</h2>
+        <div class="notes-body">
+          <Content />
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .detail-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badges {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0.25rem 0;
+    text-transform: capitalize;
+  }
+
+  .detail-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  :global(.hero-img) {
+    width: 100%;
+    height: auto;
+    margin-top: 1.25rem;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.75rem;
+  }
+
+  :global(.gallery-img) {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+
+  .plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .plan-list a {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .source-url {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .notes-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 70ch;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  .ds-link {
+    color: var(--muted);
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+    text-decoration: none;
+  }
+
+  .ds-link:hover {
+    color: var(--accent);
+  }
+
+  .tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    background: var(--surface-subtle);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+</style>

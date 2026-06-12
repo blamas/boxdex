@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15B450",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45.1,
+  "qts": 0.285,
+  "qes": 0.294,
+  "qms": 9.6,
+  "vasL": 146.9,
+  "sdCm2": 829.6,
+  "xmaxMm": 5.4,
+  "reOhm": 5.32,
+  "bl": 20.5,
+  "mmsG": 82,
+  "peW": 450,
+  "sensitivityDb": 100.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=OBERTON"
+}

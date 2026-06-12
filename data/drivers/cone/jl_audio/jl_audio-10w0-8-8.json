@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "10W0-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25.6,
+  "qts": 0.394,
+  "qes": 0.413,
+  "qms": 8.564,
+  "vasL": 69.4039,
+  "sdCm2": 353,
+  "xmaxMm": 8.636,
+  "reOhm": 6.43,
+  "bl": 15.69,
+  "mmsG": 98.3,
+  "peW": 125,
+  "sensitivityDb": 86.3,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jl-audio-10w0-8/specifications"
+}

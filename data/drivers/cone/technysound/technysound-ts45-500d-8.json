@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Technysound",
+  "model": "TS45/500D",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 26.7,
+  "qts": 0.683,
+  "qes": 0.82,
+  "qms": 4.09,
+  "vasL": 492,
+  "sdCm2": 1225,
+  "xmaxMm": 4,
+  "reOhm": 7.16,
+  "bl": 14.9,
+  "mmsG": 151.8,
+  "peW": 250,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TECHNYSOUND"
+}

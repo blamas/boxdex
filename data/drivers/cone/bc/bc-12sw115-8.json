@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12SW115",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.25,
+  "qes": 0.26,
+  "qms": 9.3,
+  "vasL": 34,
+  "sdCm2": 522,
+  "xmaxMm": 13.5,
+  "reOhm": 5.1,
+  "bl": 30.3,
+  "mmsG": 198,
+  "peW": 1700,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/12/8/12SW115"
+}

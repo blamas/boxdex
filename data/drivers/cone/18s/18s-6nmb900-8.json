@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "6NMB900",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 95,
+  "qts": 0.32,
+  "qes": 0.36,
+  "qms": 2.87,
+  "vasL": 10.3,
+  "sdCm2": 130,
+  "xmaxMm": 3,
+  "reOhm": 5.2,
+  "bl": 8.5,
+  "mmsG": 7.4,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neo",
+  "weightKg": 1.25,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/6-5/8/6NMB900"
+}

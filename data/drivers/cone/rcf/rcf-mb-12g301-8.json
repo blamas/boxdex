@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "MB 12G301",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.264,
+  "qes": 0.28,
+  "qms": 4.7,
+  "vasL": 72,
+  "sdCm2": 530,
+  "xmaxMm": 4.8,
+  "reOhm": 5.4,
+  "bl": 17.8,
+  "mmsG": 49.3,
+  "peW": 400,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

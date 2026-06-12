@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "8PR210",
+  "sizeInch": 8,
+  "impedanceOhm": 16,
+  "fsHz": 65,
+  "qts": 0.34,
+  "qes": 0.37,
+  "qms": 4.3,
+  "vasL": 15.7,
+  "sdCm2": 216,
+  "xmaxMm": 7.17,
+  "reOhm": 11.2,
+  "mmsG": 24.8,
+  "peW": 200,
+  "sensitivityDb": 94,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 4.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101030141"
+}

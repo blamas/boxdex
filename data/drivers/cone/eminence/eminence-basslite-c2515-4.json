@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BASSLITE C2515",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 38,
+  "qts": 0.45,
+  "qes": 0.5,
+  "qms": 4.7,
+  "vasL": 260,
+  "sdCm2": 856,
+  "xmaxMm": 4.5,
+  "reOhm": 3.72,
+  "bl": 11.1,
+  "mmsG": 70,
+  "peW": 300,
+  "sensitivityDb": 96.4
+}

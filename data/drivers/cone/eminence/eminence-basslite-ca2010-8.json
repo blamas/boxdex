@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BASSLITE CA2010",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 51,
+  "qts": 0.505,
+  "qes": 0.52,
+  "qms": 17.5,
+  "vasL": 49,
+  "sdCm2": 360.7,
+  "xmaxMm": 3.5,
+  "reOhm": 5.46,
+  "bl": 11,
+  "mmsG": 36.2,
+  "peW": 150,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

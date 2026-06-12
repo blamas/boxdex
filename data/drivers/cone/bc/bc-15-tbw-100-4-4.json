@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15 TBW 100-4",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 39,
+  "qts": 0.285,
+  "qes": 0.3,
+  "qms": 5.55,
+  "vasL": 88,
+  "sdCm2": 855,
+  "xmaxMm": 7.8,
+  "reOhm": 3.2,
+  "bl": 22.5,
+  "mmsG": 193.9,
+  "peW": 1500,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

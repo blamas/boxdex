@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2203H",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 16,
+  "qts": 0.137,
+  "qes": 0.14,
+  "qms": 6,
+  "vasL": 399.3,
+  "sdCm2": 527.1,
+  "xmaxMm": 5.1,
+  "reOhm": 6.3,
+  "bl": 20.9,
+  "mmsG": 96.5,
+  "peW": 100,
+  "sensitivityDb": 93.7
+}

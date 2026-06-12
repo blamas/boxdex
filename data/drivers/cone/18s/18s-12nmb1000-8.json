@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12NMB1000",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.19,
+  "qes": 0.19,
+  "qms": 8.4,
+  "vasL": 58,
+  "sdCm2": 531,
+  "xmaxMm": 3.5,
+  "reOhm": 5.5,
+  "bl": 24.4,
+  "mmsG": 61,
+  "peW": 600,
+  "sensitivityDb": 102,
+  "magnetMaterial": "neo",
+  "weightKg": 5.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/8/12NMB1000"
+}

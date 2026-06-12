@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "3860",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 75,
+  "qts": 0.172,
+  "qes": 0.18,
+  "qms": 3.9,
+  "vasL": 25,
+  "sdCm2": 373,
+  "xmaxMm": 2,
+  "reOhm": 4.6,
+  "bl": 20.6,
+  "mmsG": 35.1,
+  "peW": 250,
+  "sensitivityDb": 102.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "WPU1509",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.35,
+  "qes": 0.35,
+  "qms": 18.34,
+  "vasL": 164,
+  "sdCm2": 814,
+  "xmaxMm": 3.8,
+  "reOhm": 6.2,
+  "bl": 21.1,
+  "mmsG": 113.5,
+  "peW": 450,
+  "sensitivityDb": 95.2
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF18N451",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 6,
+  "vasL": 245,
+  "sdCm2": 1200,
+  "xmaxMm": 9,
+  "reOhm": 5,
+  "bl": 30.2,
+  "mmsG": 235,
+  "peW": 1500,
+  "sensitivityDb": 97.5,
+  "magnetMaterial": "neodymium",
+  "weightKg": 10.5,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf18n451"
+}

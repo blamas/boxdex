@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "K3838",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.176,
+  "qes": 0.19,
+  "qms": 2.4,
+  "vasL": 481.4,
+  "sdCm2": 770,
+  "xmaxMm": 4,
+  "reOhm": 5.5,
+  "bl": 19,
+  "mmsG": 90.4,
+  "peW": 120,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Stereo Integrity",
+  "model": "HST-18 Dual 2 Ohms",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 16.4,
+  "qts": 0.388,
+  "qes": 0.41,
+  "qms": 7.1,
+  "vasL": 267,
+  "sdCm2": 1178,
+  "xmaxMm": 19,
+  "reOhm": 3.9,
+  "bl": 25.9,
+  "mmsG": 686.2,
+  "peW": 2000,
+  "sensitivityDb": 89.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=STEREO%20INTEGRITY"
+}

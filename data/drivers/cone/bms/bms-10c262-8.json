@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "10C262",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.368,
+  "qes": 0.4,
+  "qms": 4.6,
+  "vasL": 25.5,
+  "sdCm2": 320,
+  "xmaxMm": 5.1,
+  "reOhm": 5.9,
+  "bl": 14.3,
+  "mmsG": 33.7,
+  "peW": 400,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BMS"
+}

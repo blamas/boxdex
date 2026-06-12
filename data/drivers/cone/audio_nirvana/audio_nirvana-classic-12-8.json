@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Nirvana",
+  "model": "CLASSIC 12",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.345,
+  "qes": 0.37,
+  "qms": 5.09,
+  "vasL": 309.8,
+  "sdCm2": 624,
+  "xmaxMm": 0.9,
+  "reOhm": 7.2,
+  "bl": 13.3,
+  "mmsG": 46.4,
+  "peW": 30,
+  "sensitivityDb": 96.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20NIRVANA"
+}

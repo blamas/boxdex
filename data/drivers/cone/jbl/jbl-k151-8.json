@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "K151",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.268,
+  "qes": 0.28,
+  "qms": 6,
+  "vasL": 365.3,
+  "sdCm2": 1070,
+  "xmaxMm": 4.4,
+  "reOhm": 6,
+  "bl": 22.3,
+  "mmsG": 123.7,
+  "peW": 150,
+  "sensitivityDb": 98.7
+}

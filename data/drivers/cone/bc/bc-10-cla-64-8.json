@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10 CLA 64",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 74,
+  "qts": 0.422,
+  "qes": 0.45,
+  "qms": 6.8,
+  "vasL": 18.5,
+  "sdCm2": 320,
+  "xmaxMm": 3,
+  "reOhm": 6.3,
+  "bl": 15.3,
+  "mmsG": 35.9,
+  "peW": 250,
+  "sensitivityDb": 95.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

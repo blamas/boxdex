@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Vifa",
+  "model": "PLW 26 452/8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.319,
+  "qes": 0.36,
+  "qms": 2.82,
+  "vasL": 130,
+  "sdCm2": 337,
+  "xmaxMm": 6.5,
+  "reOhm": 5.9,
+  "bl": 11.1,
+  "mmsG": 45.9,
+  "peW": 100,
+  "sensitivityDb": 91.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VIFA"
+}

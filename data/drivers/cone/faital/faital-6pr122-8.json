@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "6PR122",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 110,
+  "qts": 0.39,
+  "qes": 0.44,
+  "qms": 3.3,
+  "vasL": 4.7,
+  "sdCm2": 137.3,
+  "xmaxMm": 2.75,
+  "reOhm": 6,
+  "mmsG": 11.7,
+  "peW": 120,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 1.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101020120"
+}

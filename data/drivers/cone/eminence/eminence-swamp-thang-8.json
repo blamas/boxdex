@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "SWAMP THANG",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 97,
+  "qts": 0.53,
+  "qes": 0.55,
+  "qms": 14.43,
+  "vasL": 41.3,
+  "sdCm2": 532.4,
+  "xmaxMm": 0.8,
+  "reOhm": 6.92,
+  "bl": 14.1,
+  "mmsG": 25.9,
+  "peW": 150,
+  "sensitivityDb": 101,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

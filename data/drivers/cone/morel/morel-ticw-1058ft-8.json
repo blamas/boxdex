@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Morel",
+  "model": "TICW 1058FT",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.3,
+  "qes": 0.35,
+  "qms": 3.6,
+  "vasL": 82,
+  "sdCm2": 343,
+  "xmaxMm": 10.5,
+  "reOhm": 6.3,
+  "bl": 15.7,
+  "mmsG": 81.2,
+  "peW": 600,
+  "sensitivityDb": 87.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/morel-ticw-1058ft/specifications"
+}

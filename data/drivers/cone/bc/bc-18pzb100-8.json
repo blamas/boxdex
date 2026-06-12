@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18PZB100",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 8.8,
+  "vasL": 297,
+  "sdCm2": 1134,
+  "xmaxMm": 8,
+  "reOhm": 5.3,
+  "bl": 26,
+  "mmsG": 170,
+  "peW": 700,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/18/8/18PZB100"
+}

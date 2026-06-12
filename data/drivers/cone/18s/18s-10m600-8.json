@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10M600",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 70,
+  "qts": 0.23,
+  "qes": 0.25,
+  "qms": 4.5,
+  "vasL": 25.6,
+  "sdCm2": 350,
+  "xmaxMm": 4,
+  "reOhm": 5.2,
+  "bl": 17.6,
+  "mmsG": 32,
+  "peW": 400,
+  "sensitivityDb": 102,
+  "magnetMaterial": "ferrite",
+  "weightKg": 7.35,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/10-0/8/10M600"
+}

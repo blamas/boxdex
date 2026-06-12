@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "5\"MP60/N",
+  "sizeInch": 5,
+  "impedanceOhm": 8,
+  "fsHz": 63,
+  "qts": 0.46,
+  "qes": 0.58,
+  "qms": 2.3,
+  "vasL": 5.8,
+  "sdCm2": 85,
+  "xmaxMm": 5.5,
+  "reOhm": 5.33,
+  "mmsG": 11,
+  "peW": 50,
+  "sensitivityDb": 88,
+  "weightKg": 1.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/205MP6N8/altavoz-5mp60-n-8-oh/"
+}

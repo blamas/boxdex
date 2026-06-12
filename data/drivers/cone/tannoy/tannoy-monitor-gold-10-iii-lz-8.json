@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "MONITOR GOLD 10 III-LZ",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.23,
+  "qes": 0.26,
+  "qms": 2,
+  "vasL": 200,
+  "sdCm2": 360,
+  "xmaxMm": 2.9,
+  "reOhm": 5.81,
+  "bl": 11.1,
+  "mmsG": 34,
+  "peW": 15,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

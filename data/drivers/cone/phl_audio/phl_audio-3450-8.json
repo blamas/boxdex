@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "3450",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 80,
+  "qts": 0.242,
+  "qes": 0.26,
+  "qms": 3.4,
+  "vasL": 25,
+  "sdCm2": 373,
+  "xmaxMm": 2.2,
+  "reOhm": 5.2,
+  "bl": 17.6,
+  "mmsG": 30.9,
+  "peW": 200,
+  "sensitivityDb": 100.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

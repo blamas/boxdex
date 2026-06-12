@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KappaLITE 3012HO",
+  "impedanceOhm": 8,
+  "sizeInch": 12,
+  "fsHz": 52,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 8.39,
+  "vasL": 81.1,
+  "sdCm2": 532.4,
+  "xmaxMm": 6.2,
+  "peW": 400,
+  "sensitivityDb": 100.5,
+  "reOhm": 5.5,
+  "bl": 15.9,
+  "mmsG": 47,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappalite_3012HO.pdf"
+}

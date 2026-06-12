@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W126C(PREMIER)",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 32.6,
+  "qts": 0.42,
+  "qes": 0.43,
+  "qms": 10.82,
+  "vasL": 55.614,
+  "sdCm2": 490,
+  "xmaxMm": 8.7,
+  "reOhm": 2.79,
+  "bl": 13.92,
+  "mmsG": 146,
+  "peW": 400,
+  "sensitivityDb": 88.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-w126c-premier-/specifications"
+}

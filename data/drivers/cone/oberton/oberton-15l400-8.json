@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15L400",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43.25,
+  "qts": 0.287,
+  "qes": 0.294,
+  "qms": 11.56,
+  "vasL": 229.9,
+  "sdCm2": 829.6,
+  "xmaxMm": 3.25,
+  "reOhm": 5.45,
+  "bl": 16.87,
+  "mmsG": 56.6,
+  "peW": 400,
+  "sensitivityDb": 102.5,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/171-15l400.html"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "L 470",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.203,
+  "qes": 0.21,
+  "qms": 5.9,
+  "vasL": 457,
+  "sdCm2": 890,
+  "xmaxMm": 4.2,
+  "reOhm": 6.8,
+  "bl": 22.4,
+  "mmsG": 98.5,
+  "peW": 150,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "RCF",
+  "model": "ND950 2.0",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 102,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 500,
+  "sensitivityHornDb": 110,
+  "peW": 140,
+  "magnetMaterial": "neodymium",
+  "weightKg": 3.82,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/nd950-2.0"
+}

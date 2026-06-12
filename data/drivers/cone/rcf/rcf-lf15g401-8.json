@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF15G401",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 6.2,
+  "vasL": 150,
+  "sdCm2": 900,
+  "xmaxMm": 9,
+  "reOhm": 4.8,
+  "bl": 24.6,
+  "mmsG": 150,
+  "peW": 800,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ceramic",
+  "weightKg": 13,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf15g401"
+}

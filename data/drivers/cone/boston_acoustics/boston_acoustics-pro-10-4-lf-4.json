@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Boston Acoustics",
+  "model": "PRO 10.4 LF",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.36,
+  "qes": 0.42,
+  "qms": 2.53,
+  "vasL": 66.26,
+  "sdCm2": 363,
+  "xmaxMm": 7.5,
+  "reOhm": 4,
+  "bl": 13.7,
+  "mmsG": 94.9,
+  "peW": 250,
+  "sensitivityDb": 89.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/boston-acoustics-pro-10-4-lf/specifications"
+}

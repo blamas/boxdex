@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "12IB4",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 40.5,
+  "qts": 0.631,
+  "qes": 0.67,
+  "qms": 10.97,
+  "vasL": 112.4,
+  "sdCm2": 506,
+  "xmaxMm": 6,
+  "reOhm": 6.07,
+  "bl": 10.7,
+  "mmsG": 49.3,
+  "peW": 125,
+  "sensitivityDb": 93.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JL%20AUDIO"
+}

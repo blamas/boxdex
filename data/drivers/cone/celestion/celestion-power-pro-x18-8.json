@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "POWER PRO X18",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34.8,
+  "qts": 0.379,
+  "qes": 0.431,
+  "qms": 3.147,
+  "vasL": 188.9,
+  "sdCm2": 1210,
+  "xmaxMm": 8.6,
+  "reOhm": 5.1,
+  "bl": 24.2,
+  "mmsG": 227.3,
+  "peW": 1200,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "G-12 vp1",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 30.9,
+  "qts": 0.389,
+  "qes": 0.45,
+  "qms": 2.89,
+  "vasL": 166.2,
+  "sdCm2": 522.8,
+  "xmaxMm": 3,
+  "reOhm": 6.57,
+  "bl": 13.2,
+  "mmsG": 61,
+  "peW": 150,
+  "sensitivityDb": 93.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

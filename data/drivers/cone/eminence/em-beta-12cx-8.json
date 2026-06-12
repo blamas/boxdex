@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BETA 12CX",
+  "impedanceOhm": 8,
+  "sizeInch": 12,
+  "fsHz": 47,
+  "qts": 0.48,
+  "qes": 0.52,
+  "qms": 5.64,
+  "vasL": 120.94,
+  "sdCm2": 538.9,
+  "xmaxMm": 3.5,
+  "peW": 250,
+  "sensitivityDb": 97.3,
+  "reOhm": 5.42,
+  "bl": 10.79,
+  "mmsG": 38,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Beta_12CX.pdf"
+}

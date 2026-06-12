@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "GTO 1014",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 28.7,
+  "qts": 0.456,
+  "qes": 0.48,
+  "qms": 9.1,
+  "vasL": 29.2,
+  "sdCm2": 330,
+  "xmaxMm": 7.3,
+  "reOhm": 3,
+  "bl": 13.5,
+  "mmsG": 160.8,
+  "peW": 350,
+  "sensitivityDb": 87.8
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18NBX100",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 7,
+  "vasL": 192,
+  "sdCm2": 1210,
+  "xmaxMm": 10,
+  "reOhm": 3.6,
+  "bl": 22,
+  "mmsG": 225,
+  "peW": 1200,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/18/4/18NBX100"
+}

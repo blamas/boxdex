@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "1000GTI",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 62,
+  "qts": 0.64,
+  "qes": 0.73,
+  "qms": 5.44,
+  "vasL": 19,
+  "sdCm2": 345,
+  "xmaxMm": 5.97,
+  "reOhm": 3.2,
+  "bl": 10.04,
+  "mmsG": 58.68,
+  "peW": 300,
+  "sensitivityDb": 86,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-1000gti/specifications"
+}

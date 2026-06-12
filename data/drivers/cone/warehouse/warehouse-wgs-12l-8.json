@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Warehouse Sound",
+  "model": "WGS 12L",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 49.6,
+  "qts": 0.242,
+  "qes": 0.25,
+  "qms": 7.41,
+  "vasL": 50.5,
+  "sdCm2": 366.1,
+  "xmaxMm": 3.3,
+  "reOhm": 5.84,
+  "bl": 16.7,
+  "mmsG": 38.3,
+  "peW": 200,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=WAREHOUSE"
+}

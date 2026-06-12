@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "25F-EWX",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 3.8,
+  "vasL": 175,
+  "sdCm2": 349,
+  "xmaxMm": 8,
+  "reOhm": 5.72,
+  "bl": 12,
+  "mmsG": 37,
+  "peW": 60,
+  "sensitivityDb": 92.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/seas-25f-ewx/specifications"
+}

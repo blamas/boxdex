@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF18G908",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 7.6,
+  "vasL": 268,
+  "sdCm2": 1200,
+  "xmaxMm": 9,
+  "reOhm": 4.8,
+  "bl": 24.6,
+  "mmsG": 182,
+  "peW": 900,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ceramic",
+  "weightKg": 13,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf18g908"
+}

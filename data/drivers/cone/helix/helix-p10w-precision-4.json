@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Helix",
+  "model": "P10W PRECISION",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 25,
+  "qts": 0.28,
+  "qes": 0.306,
+  "qms": 3.26,
+  "vasL": 50,
+  "sdCm2": 346,
+  "xmaxMm": 6.5,
+  "reOhm": 2.8,
+  "bl": 13.4,
+  "mmsG": 123,
+  "peW": 350,
+  "sensitivityDb": 85.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/helix-p10w-precision/specifications"
+}

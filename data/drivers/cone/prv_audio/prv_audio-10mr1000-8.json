@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PRV Audio",
+  "model": "10MR1000",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 59.2,
+  "qts": 0.323,
+  "qes": 0.33,
+  "qms": 14.71,
+  "vasL": 31,
+  "sdCm2": 363.1,
+  "xmaxMm": 5,
+  "reOhm": 7.1,
+  "bl": 18.6,
+  "mmsG": 43.1,
+  "peW": 500,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRV%20AUDIO"
+}

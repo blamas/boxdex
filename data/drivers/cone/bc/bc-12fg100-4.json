@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12FG100",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 5.4,
+  "vasL": 53,
+  "sdCm2": 522,
+  "xmaxMm": 10.3,
+  "reOhm": 2.9,
+  "bl": 17.24,
+  "mmsG": 161.9,
+  "peW": 1000,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/12/4/12FG100"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "4530 vp clio p",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47.1,
+  "qts": 0.46,
+  "qes": 0.537,
+  "qms": 3.191,
+  "vasL": 93.2,
+  "sdCm2": 535,
+  "xmaxMm": 6,
+  "reOhm": 6.17,
+  "bl": 12.9,
+  "mmsG": 49.2,
+  "peW": 300,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

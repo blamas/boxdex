@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18\"LX60V2/S",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.48,
+  "qes": 0.5,
+  "qms": 15.7,
+  "vasL": 236,
+  "sdCm2": 1320,
+  "xmaxMm": 8,
+  "reOhm": 5.1,
+  "mmsG": 215,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "weightKg": 11.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/118LX60V2S8/altavoz-18lx60v2-s-8-oh/"
+}

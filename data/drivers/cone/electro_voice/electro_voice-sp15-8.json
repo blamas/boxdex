@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "SP15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.446,
+  "qes": 0.49,
+  "qms": 5,
+  "vasL": 280.4,
+  "sdCm2": 806,
+  "xmaxMm": 3,
+  "reOhm": 5.5,
+  "bl": 12,
+  "mmsG": 51.4,
+  "peW": 40,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELECTROVOICE"
+}

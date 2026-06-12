@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peerless",
+  "model": "CSX 257 H",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 22.6,
+  "qts": 0.346,
+  "qes": 0.4,
+  "qms": 2.56,
+  "vasL": 144.4,
+  "sdCm2": 330,
+  "xmaxMm": 9,
+  "reOhm": 5.5,
+  "bl": 10.1,
+  "mmsG": 52.4,
+  "peW": 200,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEERLESS"
+}

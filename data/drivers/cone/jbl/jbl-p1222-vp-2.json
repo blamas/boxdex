@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "P1222 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 28.6,
+  "qts": 0.545,
+  "qes": 0.58,
+  "qms": 9.04,
+  "vasL": 43.3,
+  "sdCm2": 562,
+  "xmaxMm": 6.9,
+  "reOhm": 1,
+  "bl": 9.9,
+  "mmsG": 316.7,
+  "peW": 400,
+  "sensitivityDb": 93.4
+}

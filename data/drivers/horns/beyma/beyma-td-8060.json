@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Beyma",
+  "model": "TD-8060",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 80,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 2000,
+  "mouthWmm": 113,
+  "mouthHmm": 130,
+  "depthMm": 67.4,
+  "profile": "conical",
+  "material": "polycarbonate",
+  "weightKg": 0.13,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/horns/1TD8060/bocina-td-8060/"
+}

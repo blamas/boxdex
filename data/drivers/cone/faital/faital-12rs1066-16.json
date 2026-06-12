@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12RS1066",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 45,
+  "qts": 0.44,
+  "qes": 0.46,
+  "qms": 11.2,
+  "vasL": 28.4,
+  "sdCm2": 496,
+  "xmaxMm": 12.45,
+  "reOhm": 12,
+  "mmsG": 151.5,
+  "peW": 1000,
+  "sensitivityDb": 92,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 6.6,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201050127"
+}

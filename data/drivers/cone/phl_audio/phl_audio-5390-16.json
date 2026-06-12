@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "5390",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 44,
+  "qts": 0.303,
+  "qes": 0.33,
+  "qms": 3.7,
+  "vasL": 180,
+  "sdCm2": 892,
+  "xmaxMm": 4.5,
+  "reOhm": 12.2,
+  "bl": 28.8,
+  "mmsG": 81.1,
+  "peW": 300,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12MB700",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 46,
+  "qts": 0.25,
+  "qes": 0.26,
+  "qms": 7.27,
+  "vasL": 100,
+  "sdCm2": 531,
+  "xmaxMm": 4.5,
+  "reOhm": 9.5,
+  "bl": 22.1,
+  "mmsG": 46,
+  "peW": 450,
+  "sensitivityDb": 100.5,
+  "magnetMaterial": "ferrite",
+  "weightKg": 8.3,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/16/12mb700"
+}

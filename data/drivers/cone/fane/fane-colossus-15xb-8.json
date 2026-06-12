@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "COLOSSUS 15XB",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.32,
+  "qes": 0.336,
+  "qms": 7.5,
+  "vasL": 168,
+  "sdCm2": 855,
+  "xmaxMm": 7.5,
+  "reOhm": 6.4,
+  "bl": 22.1,
+  "mmsG": 108,
+  "peW": 400,
+  "sensitivityDb": 96.2
+}

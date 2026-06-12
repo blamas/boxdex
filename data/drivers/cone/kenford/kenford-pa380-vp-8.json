@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenford",
+  "model": "PA380 vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.522,
+  "qes": 0.64,
+  "qms": 2.83,
+  "vasL": 260,
+  "sdCm2": 846,
+  "xmaxMm": 3.5,
+  "reOhm": 5.5,
+  "bl": 12.5,
+  "mmsG": 84.6,
+  "peW": 200,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KENFORD"
+}

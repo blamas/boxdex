@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "515-8C vp jpvoit",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34.2,
+  "qts": 0.337,
+  "qes": 0.391,
+  "qms": 2.432,
+  "vasL": 414.9,
+  "sdCm2": 870.9,
+  "xmaxMm": 4.1,
+  "reOhm": 7.42,
+  "bl": 15.1,
+  "mmsG": 55.7,
+  "peW": 75,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

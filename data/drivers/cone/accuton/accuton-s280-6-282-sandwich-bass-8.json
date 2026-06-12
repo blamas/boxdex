@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Accuton",
+  "model": "S280-6-282 SANDWICH BASS",
+  "sizeInch": 11,
+  "impedanceOhm": 8,
+  "fsHz": 22.8,
+  "qts": 0.26,
+  "qes": 0.28,
+  "qms": 4.91,
+  "vasL": 185,
+  "sdCm2": 408,
+  "xmaxMm": 6,
+  "reOhm": 6.6,
+  "bl": 15.3,
+  "mmsG": 62.5,
+  "peW": 150,
+  "sensitivityDb": 90.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/accuton-s280-6-282-sandwich-bass/specifications"
+}

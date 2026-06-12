@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "21XL3000",
+  "sizeInch": 21,
+  "impedanceOhm": 4,
+  "fsHz": 32,
+  "qts": 0.22,
+  "qes": 0.22,
+  "qms": 17,
+  "vasL": 223.5,
+  "sdCm2": 1744,
+  "xmaxMm": 17.67,
+  "reOhm": 3,
+  "mmsG": 470,
+  "peW": 3000,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 21.5,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201080006"
+}

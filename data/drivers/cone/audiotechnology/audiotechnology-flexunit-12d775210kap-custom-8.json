@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiotechnology",
+  "model": "FLEXUNIT 12D775210KAP Custom",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 19,
+  "qts": 0.388,
+  "qes": 0.417,
+  "qms": 5.5,
+  "vasL": 340,
+  "sdCm2": 515,
+  "xmaxMm": 8.6,
+  "reOhm": 5.5,
+  "bl": 11,
+  "mmsG": 76.7,
+  "peW": 250,
+  "sensitivityDb": 91.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIOTECHNOLOGY"
+}

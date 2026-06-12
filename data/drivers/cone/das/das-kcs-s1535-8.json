@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "KCS S1535",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.428,
+  "qes": 0.46,
+  "qms": 6.08,
+  "vasL": 178.8,
+  "sdCm2": 907.9,
+  "xmaxMm": 3.5,
+  "reOhm": 5.34,
+  "bl": 17.1,
+  "mmsG": 97.6,
+  "peW": 200,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

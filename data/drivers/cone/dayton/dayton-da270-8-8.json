@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "DA270-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 27.8,
+  "qts": 0.43,
+  "qes": 0.55,
+  "qms": 1.95,
+  "vasL": 108.5,
+  "sdCm2": 346,
+  "xmaxMm": 6.1,
+  "reOhm": 6.3,
+  "bl": 10.1,
+  "mmsG": 51.3,
+  "peW": 80,
+  "sensitivityDb": 88.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/dayton-audio-da270-8/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fenton",
+  "model": "WPP25",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 43.8,
+  "qts": 0.987,
+  "qes": 1.277,
+  "qms": 4.35,
+  "vasL": 32.9,
+  "sdCm2": 346.4,
+  "xmaxMm": 3.5,
+  "reOhm": 7.12,
+  "bl": 10.2,
+  "mmsG": 67.5,
+  "peW": 125,
+  "sensitivityDb": 85.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FENTON"
+}

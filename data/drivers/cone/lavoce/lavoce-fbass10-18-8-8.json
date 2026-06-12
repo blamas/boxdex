@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "FBASS10-18-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 62,
+  "qts": 0.416,
+  "qes": 0.46,
+  "qms": 4.4,
+  "vasL": 35,
+  "sdCm2": 353,
+  "xmaxMm": 3.6,
+  "reOhm": 5.6,
+  "bl": 12.5,
+  "mmsG": 32.9,
+  "peW": 150,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LAVOCE"
+}

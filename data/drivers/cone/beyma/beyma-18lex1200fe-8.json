@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18LEX1200FE",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.378,
+  "qes": 0.39,
+  "qms": 12.2,
+  "vasL": 277,
+  "sdCm2": 1255,
+  "xmaxMm": 11,
+  "reOhm": 5.3,
+  "bl": 23.2,
+  "mmsG": 197.2,
+  "peW": 1200,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

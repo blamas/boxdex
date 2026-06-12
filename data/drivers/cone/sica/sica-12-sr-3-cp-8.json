@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "12 SR 3 CP",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.4,
+  "qes": 0.46,
+  "qms": 2.96,
+  "vasL": 60.9,
+  "sdCm2": 490.9,
+  "xmaxMm": 8,
+  "reOhm": 5.2,
+  "bl": 16.57,
+  "mmsG": 104,
+  "peW": 450,
+  "sensitivityDb": 92.2,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z007942.pdf"
+}

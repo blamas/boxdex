@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "P12Q",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 90.4,
+  "qts": 1.944,
+  "qes": 2.38,
+  "qms": 10.62,
+  "vasL": 47.5,
+  "sdCm2": 491,
+  "xmaxMm": 0.8,
+  "reOhm": 5.72,
+  "bl": 5.5,
+  "mmsG": 22.1,
+  "peW": 40,
+  "sensitivityDb": 95.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

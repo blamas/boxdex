@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE36",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 38,
+  "fLowHz": 1200,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1800,
+  "sensitivityHornDb": 108,
+  "peW": 35,
+  "weightKg": 1.1,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/16/DE36"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "SM118/N v2015",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.581,
+  "qes": 0.65,
+  "qms": 5.5,
+  "vasL": 206,
+  "sdCm2": 1150,
+  "xmaxMm": 5.5,
+  "reOhm": 6.3,
+  "bl": 18.2,
+  "mmsG": 129.2,
+  "peW": 400,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}
