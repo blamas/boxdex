@@ -55,7 +55,7 @@ export const darkTheme = {
   },
 };
 
-export const lightTheme = {
+const lightTheme = {
   backgroundColor: "transparent",
   textStyle: { color: "#1f2328" },
   title: { textStyle: { color: "#1f2328" } },
@@ -85,8 +85,8 @@ export const lightTheme = {
   },
 };
 
-export const DARK_ACCENT = "#39ff14";
-export const LIGHT_ACCENT = "#1a7f37";
+const DARK_ACCENT = "#39ff14";
+const LIGHT_ACCENT = "#1a7f37";
 
 // Returns the theme object and accent colour matching the current HTML data-theme attribute.
 export function getActiveTheme(): { theme: typeof darkTheme; accent: string } {

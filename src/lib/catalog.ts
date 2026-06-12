@@ -4,7 +4,7 @@
 import type { Driver, Horn } from "./schemas";
 
 // Numeric bound from an <input type="number">: "" = filter inactive.
-export type NumBound = number | "";
+type NumBound = number | "";
 
 export interface DriverFilters {
   brand: string; // "all" or exact brand

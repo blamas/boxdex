@@ -23,7 +23,7 @@ const driverBase = {
   datasheetUrl: z.string().url().optional(),
 };
 
-export const coneDriverSchema = z.object({
+const coneDriverSchema = z.object({
   type: z.literal("cone"),
   ...driverBase,
   sizeInch: z.number().positive(),
@@ -40,7 +40,7 @@ export const coneDriverSchema = z.object({
   sensitivityDb: z.number(),
 });
 
-export const compressionDriverSchema = z.object({
+const compressionDriverSchema = z.object({
   type: z.literal("compression"),
   ...driverBase,
   exitInch: z.number().positive(),

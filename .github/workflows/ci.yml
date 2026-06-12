@@ -24,7 +24,10 @@ jobs:
       - name: Type-check
         run: npx astro check
 
-      - name: Test
+      - name: Dead code (knip)
+        run: npx knip
+
+      - name: Test (coverage thresholds enforced)
         run: npx vitest run --coverage
 
       - name: Build

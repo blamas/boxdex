@@ -40,9 +40,13 @@ run = "npx biome check --write ."
 description = "Auto-fix Biome formatting and import order"
 
 [tasks.verify]
-depends = ["lint", "check", "test", "build"]
-description = "Full pre-push gate: lint + type-check + test + build"
+depends = ["lint", "check", "knip", "test", "build"]
+description = "Full pre-push gate: lint + type-check + knip + test + build"
 
 [tasks.install]
 run = "npm install"
 description = "Install npm dependencies"
+
+[tasks.knip]
+run = "npx knip"
+description = "Detect unused files, exports and dependencies"

@@ -11,6 +11,7 @@
     "check": "astro check",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "knip": "knip",
     "schema:gen": "astro sync && cp .astro/collections/drivers.schema.json schema/driver.schema.json && cp .astro/collections/enclosures.schema.json schema/enclosure.schema.json && cp .astro/collections/horns.schema.json schema/horn.schema.json && biome format --write schema/"
   },
   "dependencies": {
@@ -27,6 +28,7 @@
     "@biomejs/biome": "^2.4.16",
     "@types/node": "^25.9.3",
     "@vitest/coverage-v8": "^4.1.8",
+    "knip": "^6.16.1",
     "typescript": "^5.9.3",
     "vitest": "^4.1.8"
   }
