@@ -1,8 +1,13 @@
 # Contributing to Boxdex
 
+All content lives under `data/` and is validated at build time: `npm run build` (or
+`mise run verify` for the full gate) tells you exactly what is wrong before you open
+a PR. Controlled vocabularies (topology, license, recommendedFor, connectors, horn
+profile) live in `data/taxonomy.json` — that file is the reference, not this document.
+
 ## Adding an enclosure
 
-Create `src/content/enclosures/<slug>/` where `<slug>` is a short, stable, kebab-case
+Create `data/enclosures/<slug>/` where `<slug>` is a short, stable, kebab-case
 identifier (e.g. `tapped-horn-18`). A significantly different build gets a new slug;
 minor edits use `revision:` on the same slug.
 
@@ -11,10 +16,10 @@ minor edits use `revision:` on the same slug.
 ```yaml
 ---
 name: "18\" Tapped Horn"
-category: sub          # sub | top
-topology: tapped_horn  # see list below
+category: sub          # sub | kick | mid | top
+topology: tapped_horn  # closed list: data/taxonomy.json → topology
 drivers:
-  - bc-18ds115-8       # must match a file in data/drivers/
+  - bc-18ds115-8       # driver id = bare filename under data/drivers/
 driverCount: 1
 netVolumeL: 230
 dims:
@@ -34,21 +39,27 @@ simulations:
 #     kind: spl
 #     source: rew_measured
 #     file: spl_meas.csv
-license: CC-BY-SA-4.0
+license: CC-BY-SA-4.0  # required, closed list: data/taxonomy.json → license
 ---
 
 Build notes in Markdown here.
 ```
 
-### Topologies
+### License
 
-`sealed` · `bass_reflex` · `bandpass` · `tapped_horn` · `front_loaded_horn` ·
-`folded_horn` · `transmission_line`
+Every enclosure declares its own `license` (see [LICENSE.md](../LICENSE.md)). There is
+no default on purpose: silently labelling a third-party plan would misstate its rights.
+
+- `LicenseRef-Proprietary` entries are metadata-only — do **not** commit plan files,
+  link them via `sourceUrl`.
+- `LicenseRef-Permission` requires a `licenseNote` recording who granted permission,
+  when, and with what scope.
 
 ### CSV format
 
 Columns: `freq,value` (comma, semicolon, or tab). Lines starting with `#` and blank
-lines are ignored. Non-finite values are dropped.
+lines are ignored. Non-finite values are dropped. Curves are discrete points — never
+interpolated or resampled.
 
 | kind | unit |
 |------|------|
@@ -70,6 +81,10 @@ lines are ignored. Non-finite values are dropped.
 | `sensitivityDb` | `specs.sensitivityDb` |
 | `outputDensity` | `maxSplDb − 10 × log₁₀(netVolumeL)` (dB): "loud per litre" |
 
+The same rule applies to the acoustic-limit and power fields (`maxSplExcursionDb`,
+`maxSplThermalDb`, `powerAesW`, `powerProgramW`, `impedanceMinOhm`): factual or absent,
+never derived.
+
 ### Simulations vs measurements
 
 Use `simulations:` for software data (HornResp, AkAbak) and `measurements:` for
@@ -90,16 +105,35 @@ This is shown as solid (measured) vs. dashed (sim) lines and circle vs. triangle
 
 ## Adding a driver
 
-Create `data/drivers/<brand>/<id>.json`. See `schema/driver.schema.json` for the full
-schema with descriptions. The `id` must match the `drivers:` reference in any enclosures
-that use it. A dangling reference fails the build.
+Create `data/drivers/<type>/<manufacturer>/<id>.json` where `<type>` is `cone` or
+`compression` — the two have disjoint spec sets, discriminated on the required `type`
+field. The folders are organisational only: the **id is the bare filename** and must
+match the `drivers:` reference in any enclosure that uses it. A dangling reference
+fails the build.
+
+See `schema/driver.schema.json` for the full schema with descriptions (most editors
+pick it up automatically).
+
+## Adding a horn
+
+Create `data/drivers/horns/<manufacturer>/<id>.json` (schema in
+`schema/horn.schema.json`). Horns are their own catalogue, not tied to a cabinet:
+compatibility with compression drivers is derived from the `exitInch` throat match.
+Coverage is always H×V separate, never a single angle.
+
+## Changing a schema
+
+The zod schemas in `src/lib/schemas.ts` and `src/content.config.ts` are the source of
+truth. After editing them run `npm run schema:gen` and commit the regenerated
+`schema/*.schema.json` — CI fails if the mirrors drift. Never hand-edit the mirrors.
 
 ## Running locally
 
 ```sh
 npm install
-npm run dev       # dev server (search doesn't work here)
-npm run build     # production build + data validation
-npm test          # vitest
-npm run lint      # biome
+npm run dev        # dev server (search doesn't work here)
+npm run build      # production build + data validation
+npm test           # vitest
+npm run lint       # biome
+mise run verify    # everything CI runs: lint + type-check + test + build
 ```
