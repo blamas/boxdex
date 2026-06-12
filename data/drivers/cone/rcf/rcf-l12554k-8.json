@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L12/554K",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 40.3,
+  "qts": 0.23,
+  "qes": 0.23,
+  "qms": 8.55,
+  "vasL": 130,
+  "sdCm2": 456,
+  "xmaxMm": 5,
+  "reOhm": 6.15,
+  "bl": 15.4,
+  "mmsG": 35,
+  "peW": 150,
+  "sensitivityDb": 97.5
+}

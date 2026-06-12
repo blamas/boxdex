@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12PS100",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 44,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 3.9,
+  "vasL": 47,
+  "sdCm2": 531,
+  "xmaxMm": 8,
+  "reOhm": 5.01,
+  "bl": 22.5,
+  "mmsG": 106,
+  "peW": 700,
+  "sensitivityDb": 93.2,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/12/8/12ps100"
+}

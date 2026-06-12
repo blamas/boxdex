@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-18/1000HP",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.282,
+  "qes": 0.29,
+  "qms": 9.74,
+  "vasL": 219,
+  "sdCm2": 1166,
+  "xmaxMm": 7.9,
+  "reOhm": 5.4,
+  "bl": 27.1,
+  "mmsG": 179.9,
+  "peW": 1000,
+  "sensitivityDb": 98.8
+}

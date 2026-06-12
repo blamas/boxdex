@@ -1,0 +1,69 @@
+---
+name: "18\" Scoop Horn"
+category: sub
+topology: scoop
+drivers:
+  - bc-18sw115-8
+driverCount: 1
+netVolumeL: 210
+dims:
+  hMm: 840
+  wMm: 900
+  dMm: 680
+weightKg: 58
+specs:
+  maxVelocityMs: 24
+  f3Hz: 38
+  maxSplDb: 137
+  hornCutoffHz: 40
+  hornMouthCm2: 5400
+  hornThroatCm2: 1210
+  recommendedPowerW: 1400
+simulations:
+  - driver: bc-18sw115-8
+    kind: spl
+    source: hornresp_sim
+    file: spl.csv
+    note: "1W/1m, half-space"
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+buildComplexity: moderate
+recommendedFor:
+  - dub
+  - raggatek
+  - bass_music
+verified: false
+images:
+  - render.png
+  - photo-1.jpg
+  - photo-2.jpg
+sources:
+  - tool: hornresp
+    file: design.txt
+  - tool: akabak
+    file: array.aks
+sheetCount: 4
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+Classic scoop-style front-loaded horn around the 18SW115-8. The wide mouth and shallow
+fold give strong output from 40–120 Hz with a characteristic scooped voicing suited
+to reggae and dub systems.
+
+### Horn geometry
+
+- Mouth area: ~5400 cm² (wide-mouth scoop)
+- Throat matched to driver Sd (1210 cm²)
+- Single-fold path; driver fires upward into the fold
+- Expansion ratio: ~1.35
+
+### Usage
+
+Horizontal stacking of scoops increases coupling and directivity at low frequencies.
+Typical crossover to mid horn at 100–120 Hz.

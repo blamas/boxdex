@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "18 F 4 CP",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.29,
+  "qes": 0.31,
+  "qms": 5.5,
+  "vasL": 185.2,
+  "sdCm2": 1164,
+  "xmaxMm": 6.2,
+  "reOhm": 6.4,
+  "bl": 29.8,
+  "mmsG": 179.1,
+  "peW": 700,
+  "sensitivityDb": 97
+}

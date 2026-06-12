@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "12W700",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 58,
+  "qts": 0.36,
+  "qes": 0.4,
+  "qms": 3.93,
+  "vasL": 55,
+  "sdCm2": 531,
+  "xmaxMm": 6.5,
+  "reOhm": 5.7,
+  "bl": 17.7,
+  "mmsG": 51,
+  "peW": 700,
+  "sensitivityDb": 97.2
+}

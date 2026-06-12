@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SPH-250TC",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.304,
+  "qes": 0.32,
+  "qms": 6.2,
+  "vasL": 130,
+  "sdCm2": 346,
+  "xmaxMm": 4.5,
+  "reOhm": 6.8,
+  "bl": 13.5,
+  "mmsG": 56.8,
+  "peW": 100,
+  "sensitivityDb": 90.2
+}

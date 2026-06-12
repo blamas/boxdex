@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "21SW152-8",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 6.4,
+  "vasL": 200,
+  "sdCm2": 1680,
+  "xmaxMm": 15,
+  "reOhm": 6,
+  "bl": 39,
+  "mmsG": 450,
+  "peW": 2000,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/21/8/21sw152-8"
+}

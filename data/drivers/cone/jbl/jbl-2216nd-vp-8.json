@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2216Nd vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.429,
+  "qes": 0.48,
+  "qms": 4.08,
+  "vasL": 166.8,
+  "sdCm2": 907,
+  "xmaxMm": 8.1,
+  "reOhm": 5.27,
+  "bl": 18.3,
+  "mmsG": 135.1,
+  "peW": 600,
+  "sensitivityDb": 95.9
+}

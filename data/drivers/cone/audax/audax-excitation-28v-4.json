@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "Excitation 28V",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 148.6,
+  "qts": 2.324,
+  "qes": 2.63,
+  "qms": 19.95,
+  "vasL": 20,
+  "sdCm2": 530,
+  "xmaxMm": 0.5,
+  "reOhm": 3.6,
+  "bl": 5.4,
+  "mmsG": 22.6,
+  "peW": 80,
+  "sensitivityDb": 99.4
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "12FX600",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.241,
+  "qes": 0.25,
+  "qms": 6.88,
+  "vasL": 39,
+  "sdCm2": 500,
+  "xmaxMm": 5,
+  "reOhm": 5.3,
+  "bl": 25.1,
+  "mmsG": 98.8,
+  "peW": 700,
+  "sensitivityDb": 96.1
+}

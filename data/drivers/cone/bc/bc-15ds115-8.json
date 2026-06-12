@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15DS115-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.31,
+  "qes": 0.33,
+  "qms": 5.2,
+  "vasL": 110,
+  "sdCm2": 855,
+  "xmaxMm": 11,
+  "reOhm": 6.2,
+  "bl": 19,
+  "mmsG": 185,
+  "peW": 700,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/15/8/15ds115-8"
+}

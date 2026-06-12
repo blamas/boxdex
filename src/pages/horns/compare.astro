@@ -1,0 +1,25 @@
+---
+import HornCompare from "../../components/HornCompare.svelte";
+import Layout from "../../components/Layout.astro";
+---
+
+<Layout title="Compare Horns" description="Side-by-side horn/waveguide comparison with radar chart">
+  <h1>Compare Horns</h1>
+  <p class="subtitle">
+    Horns and waveguides side by side. Radar chart normalises each axis to 100 = catalogue maximum.
+  </p>
+  <HornCompare client:only="svelte" />
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

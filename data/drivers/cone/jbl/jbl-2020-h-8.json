@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2020 H",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.228,
+  "qes": 0.24,
+  "qms": 4.6,
+  "vasL": 65,
+  "sdCm2": 530,
+  "xmaxMm": 4,
+  "reOhm": 4.8,
+  "bl": 17.9,
+  "mmsG": 42.6,
+  "peW": 400,
+  "sensitivityDb": 101.9
+}

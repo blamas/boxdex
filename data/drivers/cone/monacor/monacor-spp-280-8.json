@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SPP-280",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.292,
+  "qes": 0.31,
+  "qms": 4.98,
+  "vasL": 145,
+  "sdCm2": 350,
+  "xmaxMm": 4.6,
+  "reOhm": 6.2,
+  "bl": 12.3,
+  "mmsG": 48,
+  "peW": 75,
+  "sensitivityDb": 91.7
+}

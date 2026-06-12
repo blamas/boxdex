@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "12 K 4 PL 1400W",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50.4,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 10.3,
+  "vasL": 43.3,
+  "sdCm2": 531,
+  "xmaxMm": 6,
+  "reOhm": 5.16,
+  "bl": 23.3,
+  "mmsG": 91.6,
+  "peW": 700,
+  "sensitivityDb": 94.8
+}

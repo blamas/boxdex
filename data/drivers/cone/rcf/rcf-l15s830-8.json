@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L15S830",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.28,
+  "qes": 0.3,
+  "qms": 4,
+  "vasL": 115,
+  "sdCm2": 850,
+  "xmaxMm": 4,
+  "reOhm": 5.6,
+  "bl": 22.2,
+  "mmsG": 82,
+  "peW": 800,
+  "sensitivityDb": 99.2
+}

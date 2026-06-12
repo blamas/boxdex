@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "15FH520 v2025",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.394,
+  "qes": 0.41,
+  "qms": 10.1,
+  "vasL": 186.5,
+  "sdCm2": 847,
+  "xmaxMm": 8.8,
+  "reOhm": 5.6,
+  "bl": 18,
+  "mmsG": 105.4,
+  "peW": 600,
+  "sensitivityDb": 96.8
+}

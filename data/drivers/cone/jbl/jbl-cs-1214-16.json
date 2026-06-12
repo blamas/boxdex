@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "CS-1214",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 28,
+  "qts": 0.492,
+  "qes": 0.57,
+  "qms": 3.6,
+  "vasL": 76.7,
+  "sdCm2": 530,
+  "xmaxMm": 6.3,
+  "reOhm": 8.85,
+  "bl": 21.3,
+  "mmsG": 165.9,
+  "peW": 250,
+  "sensitivityDb": 86.2
+}

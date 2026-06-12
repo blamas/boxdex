@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "GT 1041D",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 26.4,
+  "qts": 0.386,
+  "qes": 0.4,
+  "qms": 10.8,
+  "vasL": 52,
+  "sdCm2": 355,
+  "xmaxMm": 9,
+  "reOhm": 1.95,
+  "bl": 10,
+  "mmsG": 123.5,
+  "peW": 275,
+  "sensitivityDb": 91.9
+}

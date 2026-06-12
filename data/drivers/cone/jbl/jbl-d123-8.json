@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "D123",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.45,
+  "qes": 0.5,
+  "qms": 4.5,
+  "vasL": 135.9,
+  "sdCm2": 527.1,
+  "xmaxMm": 2.5,
+  "reOhm": 6,
+  "bl": 11,
+  "mmsG": 35.8,
+  "peW": 50,
+  "sensitivityDb": 97.2
+}

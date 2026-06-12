@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "GST-181200",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.54,
+  "qes": 0.57,
+  "qms": 13.73,
+  "vasL": 180.2,
+  "sdCm2": 1208,
+  "xmaxMm": 6,
+  "reOhm": 5.6,
+  "bl": 22.2,
+  "mmsG": 238.91,
+  "peW": 1200,
+  "sensitivityDb": 93.2
+}

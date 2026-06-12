@@ -1,0 +1,20 @@
+---
+import DesignSpace from "../components/DesignSpace.svelte";
+import Layout from "../components/Layout.astro";
+---
+
+<Layout title="Explore" description="Explore the enclosure design space: volume, SPL, F3, and more">
+  <h1>Design Space</h1>
+  <p class="subtitle">Plot any two metrics and find Pareto-optimal designs.</p>
+  <DesignSpace client:only="svelte" />
+</Layout>
+
+<style>
+  h1 { margin-bottom: 0.5rem; }
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

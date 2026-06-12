@@ -1,0 +1,179 @@
+{
+  "$ref": "#/definitions/drivers",
+  "definitions": {
+    "drivers": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "cone"
+            },
+            "brand": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            },
+            "impedanceOhm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "peW": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "datasheetUrl": {
+              "type": "string",
+              "format": "uri"
+            },
+            "sizeInch": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "fsHz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "qts": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "qes": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "qms": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "vasL": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "sdCm2": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "xmaxMm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "reOhm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "bl": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "mmsG": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "sensitivityDb": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "brand",
+            "model",
+            "impedanceOhm",
+            "peW",
+            "sizeInch",
+            "fsHz",
+            "qts",
+            "vasL",
+            "sdCm2",
+            "xmaxMm",
+            "sensitivityDb"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "compression"
+            },
+            "brand": {
+              "$ref": "#/definitions/drivers/anyOf/0/properties/brand"
+            },
+            "model": {
+              "$ref": "#/definitions/drivers/anyOf/0/properties/model"
+            },
+            "impedanceOhm": {
+              "$ref": "#/definitions/drivers/anyOf/0/properties/impedanceOhm"
+            },
+            "peW": {
+              "$ref": "#/definitions/drivers/anyOf/0/properties/peW"
+            },
+            "datasheetUrl": {
+              "$ref": "#/definitions/drivers/anyOf/0/properties/datasheetUrl"
+            },
+            "exitInch": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "throatMm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "voiceCoilMm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "fLowHz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "fHighHz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "minCrossoverHz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "crossoverSlopeDbOct": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "sensitivityHornDb": {
+              "type": "number"
+            },
+            "fsHz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "magnetMaterial": {
+              "type": "string"
+            },
+            "weightKg": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "type",
+            "brand",
+            "model",
+            "impedanceOhm",
+            "peW",
+            "exitInch",
+            "voiceCoilMm",
+            "fLowHz",
+            "fHighHz",
+            "minCrossoverHz",
+            "sensitivityHornDb"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,442 @@
+{
+  "$ref": "#/definitions/enclosures",
+  "definitions": {
+    "enclosures": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["sub", "kick", "mid", "top"]
+        },
+        "topology": {
+          "type": "string",
+          "enum": [
+            "sealed",
+            "bass_reflex",
+            "bandpass",
+            "tapped_horn",
+            "front_loaded_horn",
+            "folded_horn",
+            "scoop",
+            "transmission_line"
+          ]
+        },
+        "drivers": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "collection": {
+                    "type": "string"
+                  }
+                },
+                "required": ["id", "collection"],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "slug": {
+                    "type": "string"
+                  },
+                  "collection": {
+                    "type": "string"
+                  }
+                },
+                "required": ["slug", "collection"],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "minItems": 1
+        },
+        "driverCount": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "default": 1
+        },
+        "netVolumeL": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "dims": {
+          "type": "object",
+          "properties": {
+            "hMm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "wMm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "dMm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": ["hMm", "wMm", "dMm"],
+          "additionalProperties": false
+        },
+        "weightKg": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "specs": {
+          "type": "object",
+          "properties": {
+            "f3Hz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "f3HzHigh": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "f6Hz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "fbHz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "maxSplDb": {
+              "type": "number"
+            },
+            "maxSplExcursionDb": {
+              "type": "number"
+            },
+            "maxSplThermalDb": {
+              "type": "number"
+            },
+            "sensitivityDb": {
+              "type": "number"
+            },
+            "impedanceMinOhm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "recommendedPowerW": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "powerAesW": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "powerProgramW": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "coverageAngleDeg": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "recommendedCrossoverHz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "hornCutoffHz": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "hornMouthCm2": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "hornThroatCm2": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "maxVelocityMs": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": ["f3Hz"],
+          "additionalProperties": false
+        },
+        "simulations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "driver": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "collection": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["id", "collection"],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "slug": {
+                        "type": "string"
+                      },
+                      "collection": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["slug", "collection"],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "spl",
+                  "phase",
+                  "impedance",
+                  "group_delay",
+                  "distortion",
+                  "power_compression"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "enum": ["hornresp_sim", "akabak_sim"]
+              },
+              "file": {
+                "type": "string",
+                "pattern": "\\.csv$"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": ["driver", "kind", "source", "file"],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "measurements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "driver": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "collection": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["id", "collection"],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "slug": {
+                        "type": "string"
+                      },
+                      "collection": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["slug", "collection"],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "spl",
+                  "phase",
+                  "impedance",
+                  "group_delay",
+                  "distortion",
+                  "power_compression"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "enum": ["rew_measured", "klippel"]
+              },
+              "file": {
+                "type": "string",
+                "pattern": "\\.csv$"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": ["driver", "kind", "source", "file"],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tool": {
+                "type": "string"
+              },
+              "file": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": ["tool", "file"],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "plans": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\.pdf$"
+          },
+          "default": []
+        },
+        "author": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "ways": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "revision": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string",
+          "default": "CC-BY-SA-4.0"
+        },
+        "recommendedFor": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "techno",
+              "tekno",
+              "hardtek",
+              "frenchcore",
+              "hardcore",
+              "acid",
+              "hardstyle",
+              "tribe",
+              "raggatek",
+              "mental",
+              "dub",
+              "psytrance",
+              "breakcore",
+              "bass_music"
+            ]
+          },
+          "default": []
+        },
+        "verified": {
+          "type": "boolean",
+          "default": false
+        },
+        "buildComplexity": {
+          "type": "string",
+          "enum": ["simple", "moderate", "complex"]
+        },
+        "topologyVariant": {
+          "type": "string"
+        },
+        "connectors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "speakON NL2",
+              "speakON NL4",
+              "speakON NL8",
+              "XLR",
+              "binding post",
+              "jack 6.35mm"
+            ]
+          },
+          "default": []
+        },
+        "grossVolumeL": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "plywoodThicknessMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "sheetCount": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "sheetSizeMm": {
+          "type": "object",
+          "properties": {
+            "wMm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "hMm": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": ["wMm", "hMm"],
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "category", "topology", "drivers", "netVolumeL", "dims", "specs"],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

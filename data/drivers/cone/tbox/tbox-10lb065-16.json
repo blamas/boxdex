@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "the box",
+  "model": "10LB065-16N",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 65,
+  "qts": 0.379,
+  "qes": 0.439,
+  "qms": 2.789,
+  "vasL": 36.8,
+  "sdCm2": 346,
+  "xmaxMm": 2.5,
+  "reOhm": 10.5,
+  "bl": 16.3,
+  "mmsG": 27.3,
+  "peW": 200,
+  "sensitivityDb": 94.4
+}

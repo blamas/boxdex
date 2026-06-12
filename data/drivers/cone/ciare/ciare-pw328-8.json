@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "PW328",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.32,
+  "qes": 0.357,
+  "qms": 3.08,
+  "vasL": 91,
+  "sdCm2": 532,
+  "xmaxMm": 3,
+  "reOhm": 5.5,
+  "bl": 15.01,
+  "mmsG": 48.5,
+  "peW": 150,
+  "sensitivityDb": 96.3
+}

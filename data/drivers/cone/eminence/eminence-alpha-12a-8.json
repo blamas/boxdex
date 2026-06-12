@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "ALPHA 12A",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.77,
+  "qes": 0.88,
+  "qms": 6.53,
+  "vasL": 121.5,
+  "sdCm2": 520,
+  "xmaxMm": 2.4,
+  "reOhm": 6.26,
+  "bl": 8.5,
+  "mmsG": 33,
+  "peW": 75,
+  "sensitivityDb": 93.9
+}

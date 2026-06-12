@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-15A/350NEO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.252,
+  "qes": 0.26,
+  "qms": 7.75,
+  "vasL": 128,
+  "sdCm2": 840,
+  "xmaxMm": 3.5,
+  "reOhm": 5.5,
+  "bl": 23,
+  "mmsG": 81.5,
+  "peW": 350,
+  "sensitivityDb": 101.2
+}

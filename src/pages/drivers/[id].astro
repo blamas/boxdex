@@ -1,0 +1,238 @@
+---
+import { getCollection } from "astro:content";
+import EnclosureList from "../../components/EnclosureList.astro";
+import Layout from "../../components/Layout.astro";
+import SpecTable from "../../components/SpecTable.astro";
+import { alignmentFromEbp, ebp, sealedVbL } from "../../lib/driver";
+import { withUnit } from "../../lib/format";
+import { BASE } from "../../lib/site";
+
+export async function getStaticPaths() {
+  const drivers = await getCollection("drivers");
+  const enclosures = await getCollection("enclosures");
+  const horns = await getCollection("horns");
+  return drivers.map((entry) => {
+    // Compression drivers mate horns of the same throat exit (cone drivers mate none).
+    const exitInch = entry.data.type === "compression" ? entry.data.exitInch : null;
+    return {
+      params: { id: entry.id },
+      props: {
+        entry,
+        usedBy: enclosures
+          .filter((e) => e.data.drivers.some((ref) => ref.id === entry.id))
+          .sort((a, b) => a.data.name.localeCompare(b.data.name)),
+        mates:
+          exitInch === null
+            ? []
+            : horns
+                .filter((h) => h.data.exitInch === exitInch)
+                .sort((a, b) =>
+                  `${a.data.brand} ${a.data.model}`.localeCompare(`${b.data.brand} ${b.data.model}`)
+                ),
+      },
+    };
+  });
+}
+
+const { entry, usedBy, mates } = Astro.props;
+const d = entry.data;
+
+const ALIGNMENT_HINT: Record<string, string> = {
+  sealed: "EBP < 50: favours a sealed (closed) alignment.",
+  flexible: "EBP 50–100: works in either a sealed or ported alignment.",
+  ported: "EBP > 100: favours a ported (bass-reflex) alignment.",
+};
+
+// Cone drivers carry Thiele–Small params and derived alignment hints; compression drivers
+// carry a disjoint horn/throat spec set with no T/S meaning.
+const isCone = d.type === "cone";
+
+const specRows: { label: string; value: string | undefined }[] = isCone
+  ? [
+      { label: "Nominal size", value: `${d.sizeInch}"` },
+      { label: "Impedance", value: withUnit(d.impedanceOhm, "Ω") },
+      { label: "Fs", value: withUnit(d.fsHz, "Hz") },
+      { label: "Qts", value: String(d.qts) },
+      { label: "Qes", value: d.qes?.toString() },
+      { label: "Qms", value: d.qms?.toString() },
+      { label: "Vas", value: withUnit(d.vasL, "L") },
+      { label: "Sd", value: withUnit(d.sdCm2, "cm²") },
+      { label: "Xmax", value: withUnit(d.xmaxMm, "mm") },
+      { label: "Re", value: withUnit(d.reOhm, "Ω") },
+      { label: "Bl", value: withUnit(d.bl, "T·m") },
+      { label: "Mms", value: withUnit(d.mmsG, "g") },
+      { label: "Pe", value: withUnit(d.peW, "W") },
+      { label: "Sensitivity", value: withUnit(d.sensitivityDb, "dB") },
+    ]
+  : [
+      { label: "Throat exit", value: `${d.exitInch}"` },
+      { label: "Throat", value: withUnit(d.throatMm, "mm") },
+      { label: "Voice coil", value: withUnit(d.voiceCoilMm, "mm") },
+      { label: "Impedance", value: withUnit(d.impedanceOhm, "Ω") },
+      { label: "Usable range", value: `${d.fLowHz}–${d.fHighHz} Hz` },
+      { label: "Min crossover", value: withUnit(d.minCrossoverHz, "Hz") },
+      {
+        label: "Crossover slope",
+        value: d.crossoverSlopeDbOct ? `${d.crossoverSlopeDbOct} dB/oct` : undefined,
+      },
+      { label: "Sensitivity (on horn)", value: withUnit(d.sensitivityHornDb, "dB") },
+      { label: "Fs", value: withUnit(d.fsHz, "Hz") },
+      { label: "Magnet", value: d.magnetMaterial },
+      { label: "Weight", value: withUnit(d.weightKg, "kg") },
+      { label: "Power (AES)", value: withUnit(d.peW, "W") },
+    ];
+
+const ebpValue = isCone ? ebp(d.fsHz, d.qes) : undefined;
+const alignment = alignmentFromEbp(ebpValue);
+const vbClosed = isCone ? sealedVbL(d.vasL, d.qts) : undefined;
+
+const headline = isCone
+  ? `${d.sizeInch}" · ${d.impedanceOhm} Ω · ${d.peW} W · ${d.sensitivityDb} dB`
+  : `${d.exitInch}" exit · ${d.impedanceOhm} Ω · ${d.peW} W · ${d.sensitivityHornDb} dB`;
+
+const specHeading = isCone ? "Thiele–Small parameters" : "Compression driver specs";
+const description = isCone
+  ? `Thiele–Small parameters for ${d.brand} ${d.model}`
+  : `Compression driver specs for ${d.brand} ${d.model}`;
+---
+
+<Layout title={`${d.brand} ${d.model}`} description={description}>
+  <div class="detail">
+    <header class="detail-header">
+      <p class="crumb"><a href={`${BASE}/drivers`}>← all drivers</a></p>
+      <h1>{d.brand} {d.model}</h1>
+      <p class="meta">
+        {headline}
+        {d.datasheetUrl && (
+          <> · <a href={d.datasheetUrl} target="_blank" rel="noopener">datasheet ↗</a></>
+        )}
+      </p>
+    </header>
+
+    <div class="detail-body">
+      <section>
+        <h2>{specHeading}</h2>
+        <SpecTable rows={specRows} />
+      </section>
+
+      {d.type === "compression" && (
+        <section>
+          <h2>Compatible horns</h2>
+          {mates.length > 0 ? (
+            <ul class="horn-links">
+              {mates.map((h) => (
+                <li>
+                  <a href={`${BASE}/horns/${h.id}`}>{h.data.brand} {h.data.model}</a>
+                  <span class="muted"> · {h.data.coverageHorizontalDeg}°×{h.data.coverageVerticalDeg}°</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p class="muted">No {d.exitInch}" horn in the catalog yet.</p>
+          )}
+          <p class="provenance-note">
+            Matched on throat exit ({d.exitInch}") only. Verify mounting and crossover against
+            both datasheets.
+          </p>
+        </section>
+      )}
+
+      {isCone && (
+        <section>
+          <h2>Derived hints</h2>
+          <table>
+            <tbody>
+              <tr>
+                <th>EBP</th>
+                <td>
+                  {ebpValue !== undefined
+                    ? <>{ebpValue}{alignment && <span class="align-tag"> · {alignment}</span>}</>
+                    : <span class="muted">needs Qes</span>}
+                </td>
+              </tr>
+              <tr>
+                <th>Sealed Vb (Qtc ≈ 0.71)</th>
+                <td>{vbClosed !== undefined ? `≈ ${vbClosed} L` : <span class="muted">Qts too high</span>}</td>
+              </tr>
+            </tbody>
+          </table>
+          {alignment && <p class="provenance-note">{ALIGNMENT_HINT[alignment]}</p>}
+          <p class="provenance-note">
+            Rules of thumb from T/S parameters only. Verify against a real simulation before cutting wood.
+          </p>
+        </section>
+      )}
+
+      <section>
+        <h2>Used in {usedBy.length} {usedBy.length === 1 ? "build" : "builds"}</h2>
+        {usedBy.length > 0 ? (
+          <EnclosureList items={usedBy} />
+        ) : (
+          <p class="muted">No enclosure in the catalog uses this driver yet.</p>
+        )}
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .detail {
+    max-width: 720px;
+  }
+
+  .detail-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .crumb {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .detail-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  .align-tag {
+    color: var(--accent);
+    text-transform: capitalize;
+  }
+
+  .horn-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+</style>

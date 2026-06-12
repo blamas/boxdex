@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "the box",
+  "model": "Speaker 10-250/8-A",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 56.8,
+  "qts": 0.38,
+  "qes": 0.4,
+  "qms": 7.56,
+  "vasL": 33.3,
+  "sdCm2": 350,
+  "xmaxMm": 4,
+  "reOhm": 5.8,
+  "bl": 14.5,
+  "mmsG": 40.5,
+  "peW": 250,
+  "sensitivityDb": 95.2,
+  "datasheetUrl": "https://www.thomann.fr/the_box_speaker_102508a.htm"
+}

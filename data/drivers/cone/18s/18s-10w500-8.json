@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "10W500",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.29,
+  "qes": 0.31,
+  "qms": 4.22,
+  "vasL": 45.2,
+  "sdCm2": 350,
+  "xmaxMm": 6,
+  "reOhm": 6,
+  "bl": 14.6,
+  "mmsG": 33,
+  "peW": 400,
+  "sensitivityDb": 96
+}

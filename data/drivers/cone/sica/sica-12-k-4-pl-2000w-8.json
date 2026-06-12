@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "12 K 4 PL 2000W",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.24,
+  "qes": 0.254,
+  "qms": 4.41,
+  "vasL": 46.3,
+  "sdCm2": 531,
+  "xmaxMm": 7,
+  "reOhm": 5.49,
+  "bl": 24.7,
+  "mmsG": 93.6,
+  "peW": 1000,
+  "sensitivityDb": 94.9
+}

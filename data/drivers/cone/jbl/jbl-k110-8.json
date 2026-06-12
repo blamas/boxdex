@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "K110",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.364,
+  "qes": 0.4,
+  "qms": 4,
+  "vasL": 45.3,
+  "sdCm2": 316.1,
+  "xmaxMm": 2.9,
+  "reOhm": 6,
+  "bl": 10.7,
+  "mmsG": 18.5,
+  "peW": 75,
+  "sensitivityDb": 98.2
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "15FX560 v2015",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.296,
+  "qes": 0.31,
+  "qms": 6.8,
+  "vasL": 143,
+  "sdCm2": 813,
+  "xmaxMm": 7.5,
+  "reOhm": 5.2,
+  "bl": 21.3,
+  "mmsG": 113.7,
+  "peW": 700,
+  "sensitivityDb": 97.9
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18TBX100-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.35,
+  "qes": 0.37,
+  "qms": 7.2,
+  "vasL": 212,
+  "sdCm2": 1210,
+  "xmaxMm": 9,
+  "reOhm": 5.1,
+  "bl": 25.5,
+  "mmsG": 209,
+  "peW": 1200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/18/8/18tbx100-8"
+}

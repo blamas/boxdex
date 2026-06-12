@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "18XL2000",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.272,
+  "qes": 0.28,
+  "qms": 10.1,
+  "vasL": 202.4,
+  "sdCm2": 1124,
+  "xmaxMm": 12.1,
+  "reOhm": 5.3,
+  "bl": 30.7,
+  "mmsG": 282.7,
+  "peW": 2000,
+  "sensitivityDb": 95.8
+}

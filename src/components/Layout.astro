@@ -1,0 +1,175 @@
+---
+import { BASE } from "../lib/site";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Open enclosure plans database" } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Boxdex</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href={`${BASE}/sitemap-index.xml`} />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
+    <!-- Apply saved theme before first paint to avoid flash -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem("boxdex-theme");
+          if (t === "light" || (!t && !window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.dataset.theme = "light";
+          }
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header data-pagefind-ignore>
+      <div class="container">
+        <nav>
+          <a class="site-title" href={`${BASE}/`}>Boxdex</a>
+          <span class="tagline">open enclosure plans</span>
+          <div class="nav-links">
+            <a href={`${BASE}/`}>Catalog</a>
+            <a href={`${BASE}/compare`}>Compare</a>
+            <a href={`${BASE}/explore`}>Explore</a>
+            <a href={`${BASE}/find`}>Find</a>
+            <a href={`${BASE}/stack`}>Stack</a>
+            <a href={`${BASE}/drivers`}>Drivers</a>
+            <a href={`${BASE}/search`}>Search</a>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+            <span class="icon-dark">◑</span>
+            <span class="icon-light">◐</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer data-pagefind-ignore>
+      <div class="container">
+        <p>
+          Boxdex: open enclosure plans. All units SI. Data may be simulation or measurement;
+          check provenance badges. Contributions welcome via PR.
+        </p>
+      </div>
+    </footer>
+
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var html = document.documentElement;
+          var next = html.dataset.theme === "light" ? "dark" : "light";
+          if (next === "dark") {
+            delete html.dataset.theme;
+          } else {
+            html.dataset.theme = "light";
+          }
+          try { localStorage.setItem("boxdex-theme", next); } catch (_) {}
+          document.dispatchEvent(new CustomEvent("boxdex:themechange", { detail: { theme: next } }));
+        });
+      })();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>
+
+<style>
+  header {
+    border-bottom: 1px solid var(--line);
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .site-title {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .tagline {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    flex: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .nav-links a {
+    color: var(--text);
+  }
+
+  .nav-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  #theme-toggle {
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  #theme-toggle:hover {
+    color: var(--text);
+    border-color: var(--muted);
+  }
+
+  /* Show the right icon based on current theme */
+  :root:not([data-theme="light"]) .icon-light { display: none; }
+  [data-theme="light"] .icon-dark { display: none; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  main {
+    padding-top: 0;
+    padding-bottom: 3rem;
+    position: relative;
+  }
+</style>

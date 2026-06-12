@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12B450 ",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 46.3,
+  "qts": 0.235,
+  "qes": 0.241,
+  "qms": 9.6,
+  "vasL": 71.75,
+  "sdCm2": 515,
+  "xmaxMm": 7.8,
+  "reOhm": 5.1,
+  "bl": 19.3,
+  "mmsG": 61,
+  "peW": 450,
+  "sensitivityDb": 96.5
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BASSLITE S2010",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.31,
+  "qes": 0.34,
+  "qms": 4.16,
+  "vasL": 63.4,
+  "sdCm2": 350,
+  "xmaxMm": 4,
+  "reOhm": 5.02,
+  "bl": 11.9,
+  "mmsG": 33,
+  "peW": 150,
+  "sensitivityDb": 96.2
+}

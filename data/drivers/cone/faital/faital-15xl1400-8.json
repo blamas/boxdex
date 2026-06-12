@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "15XL1400",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.329,
+  "qes": 0.34,
+  "qms": 10.4,
+  "vasL": 79.7,
+  "sdCm2": 780,
+  "xmaxMm": 8.8,
+  "reOhm": 5.4,
+  "bl": 26.7,
+  "mmsG": 187.7,
+  "peW": 1400,
+  "sensitivityDb": 94.8
+}

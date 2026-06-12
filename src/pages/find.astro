@@ -1,0 +1,20 @@
+---
+import Explorer from "../components/Explorer.svelte";
+import Layout from "../components/Layout.astro";
+---
+
+<Layout title="Find" description="Filter and sort enclosures by F3, SPL, volume, and other constraints">
+  <h1>Find an Enclosure</h1>
+  <p class="subtitle">Filter by constraints, sort by any metric.</p>
+  <Explorer client:only="svelte" />
+</Layout>
+
+<style>
+  h1 { margin-bottom: 0.5rem; }
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

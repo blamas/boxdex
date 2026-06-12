@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "the box",
+  "model": "Speaker 18-500/8-A",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 40.1,
+  "qts": 0.425,
+  "qes": 0.45,
+  "qms": 7.61,
+  "vasL": 208.3,
+  "sdCm2": 1313,
+  "xmaxMm": 5.4,
+  "reOhm": 5.5,
+  "bl": 23.7,
+  "mmsG": 182.8,
+  "peW": 500,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.thomann.fr/the_box_speaker_185008a.htm"
+}

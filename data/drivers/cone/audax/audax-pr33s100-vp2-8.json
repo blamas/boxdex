@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR33S100 vp2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.136,
+  "qes": 0.14,
+  "qms": 4.42,
+  "vasL": 136.9,
+  "sdCm2": 530,
+  "xmaxMm": 3.8,
+  "reOhm": 5.85,
+  "bl": 23.4,
+  "mmsG": 59.5,
+  "peW": 200,
+  "sensitivityDb": 99.6
+}

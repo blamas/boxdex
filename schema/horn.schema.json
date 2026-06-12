@@ -1,0 +1,86 @@
+{
+  "$ref": "#/definitions/horns",
+  "definitions": {
+    "horns": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "exitInch": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "coverageHorizontalDeg": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "coverageVerticalDeg": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "cutoffHz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "mouthWmm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "mouthHmm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "depthMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "profile": {
+          "type": "string",
+          "enum": [
+            "conical",
+            "exponential",
+            "tractrix",
+            "oblate_spheroid",
+            "radial",
+            "multicell",
+            "diffraction"
+          ]
+        },
+        "constantDirectivity": {
+          "type": "boolean"
+        },
+        "material": {
+          "type": "string"
+        },
+        "weightKg": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "datasheetUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "brand",
+        "model",
+        "exitInch",
+        "coverageHorizontalDeg",
+        "coverageVerticalDeg",
+        "cutoffHz",
+        "mouthWmm",
+        "mouthHmm",
+        "profile"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "W18N8-1000",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.273,
+  "qes": 0.28,
+  "qms": 10.6,
+  "vasL": 211.8,
+  "sdCm2": 1136,
+  "xmaxMm": 7.8,
+  "reOhm": 5.4,
+  "bl": 27.4,
+  "mmsG": 176.6,
+  "peW": 1000,
+  "sensitivityDb": 98.8
+}

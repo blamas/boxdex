@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "10NDA610",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 89,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 7.1,
+  "vasL": 18,
+  "sdCm2": 350,
+  "xmaxMm": 2.5,
+  "reOhm": 5.5,
+  "bl": 20.3,
+  "mmsG": 30,
+  "peW": 400,
+  "sensitivityDb": 103
+}

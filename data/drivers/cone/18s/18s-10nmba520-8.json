@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "10NMBA520",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 4.2,
+  "vasL": 42,
+  "sdCm2": 350,
+  "xmaxMm": 4,
+  "reOhm": 5,
+  "bl": 14.6,
+  "mmsG": 28,
+  "peW": 300,
+  "sensitivityDb": 97.6
+}

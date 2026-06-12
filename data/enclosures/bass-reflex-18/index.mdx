@@ -1,0 +1,61 @@
+---
+name: "18\" Bass Reflex"
+category: sub
+topology: bass_reflex
+drivers:
+  - bc-18ds115-8
+driverCount: 1
+netVolumeL: 140
+dims:
+  hMm: 780
+  wMm: 550
+  dMm: 500
+weightKg: 42
+specs:
+  maxVelocityMs: 22
+  f3Hz: 40
+  f6Hz: 32
+  fbHz: 38
+  maxSplDb: 134
+  recommendedPowerW: 800
+simulations:
+  - driver: bc-18ds115-8
+    kind: spl
+    source: hornresp_sim
+    file: spl.csv
+    note: "1W/1m, half-space"
+  - driver: bc-18ds115-8
+    kind: impedance
+    source: hornresp_sim
+    file: impedance.csv
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+recommendedFor:
+  - bass_music
+  - dub
+verified: false
+images:
+  - render.png
+  - photo-1.jpg
+  - photo-2.jpg
+sources:
+  - tool: hornresp
+    file: design.txt
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+A conventional front-loaded bass reflex design tuned to 38 Hz. Lower output than the
+tapped horn variant but significantly smaller footprint and easier to build.
+
+### Port
+
+- Single round port, 150 mm diameter
+- Port length: 420 mm
+- Tuning: 38 Hz (Fb)

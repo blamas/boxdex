@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "10 D 1 CS ",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 76.1,
+  "qts": 1.56,
+  "qes": 1.7,
+  "qms": 19.5,
+  "vasL": 43.9,
+  "sdCm2": 328,
+  "xmaxMm": 1.5,
+  "reOhm": 6.9,
+  "bl": 5.4,
+  "mmsG": 15.2,
+  "peW": 60,
+  "sensitivityDb": 92.4
+}

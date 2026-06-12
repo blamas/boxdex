@@ -1,0 +1,44 @@
+name: Validate data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "src/content.config.ts"
+      - "src/lib/csv.ts"
+  pull_request:
+    paths:
+      - "data/**"
+      - "src/content.config.ts"
+      - "src/lib/csv.ts"
+
+jobs:
+  validate-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 26
+          cache: npm
+
+      - run: npm ci
+
+      # Runs the content loaders and validates every entry against the zod schema in
+      # src/content.config.ts. The same source of truth the build uses. Fails on any
+      # schema violation or dangling driver reference.
+      - name: Validate content schema
+        run: npx astro sync
+
+      # The committed schema/*.schema.json editor mirrors are generated from zod; fail if
+      # they drift from the current schema (contributor forgot `npm run schema:gen`).
+      - name: Check generated schemas are up to date
+        run: |
+          npm run schema:gen
+          if ! git diff --quiet -- schema/; then
+            echo "::error::schema/*.schema.json is stale. Run 'npm run schema:gen' and commit the result"
+            git diff -- schema/
+            exit 1
+          fi

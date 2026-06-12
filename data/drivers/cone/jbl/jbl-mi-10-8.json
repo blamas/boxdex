@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "MI-10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 75,
+  "qts": 0.334,
+  "qes": 0.41,
+  "qms": 1.8,
+  "vasL": 36.8,
+  "sdCm2": 340.6,
+  "xmaxMm": 2.9,
+  "reOhm": 5.6,
+  "bl": 11.3,
+  "mmsG": 19.9,
+  "peW": 150,
+  "sensitivityDb": 99.3
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SPA-45PA",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.457,
+  "qes": 0.52,
+  "qms": 3.77,
+  "vasL": 440,
+  "sdCm2": 1225,
+  "xmaxMm": 4,
+  "reOhm": 5.8,
+  "bl": 17.1,
+  "mmsG": 144,
+  "peW": 300,
+  "sensitivityDb": 96.5
+}

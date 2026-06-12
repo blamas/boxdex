@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR24ST150",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.263,
+  "qes": 0.29,
+  "qms": 2.8,
+  "vasL": 43,
+  "sdCm2": 340,
+  "xmaxMm": 3.5,
+  "reOhm": 5.8,
+  "bl": 15.6,
+  "mmsG": 39.8,
+  "peW": 150,
+  "sensitivityDb": 95.8
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "WFR24 vp",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 23.4,
+  "qts": 0.236,
+  "qes": 0.29,
+  "qms": 1.28,
+  "vasL": 280,
+  "sdCm2": 313.3,
+  "xmaxMm": 4,
+  "reOhm": 4.25,
+  "bl": 7,
+  "mmsG": 22.7,
+  "peW": 30,
+  "sensitivityDb": 95.7
+}

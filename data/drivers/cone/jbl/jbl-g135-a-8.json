@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "G135-A",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.473,
+  "qes": 0.51,
+  "qms": 6.6,
+  "vasL": 218,
+  "sdCm2": 896.1,
+  "xmaxMm": 5.2,
+  "reOhm": 6,
+  "bl": 14.7,
+  "mmsG": 64.6,
+  "peW": 200,
+  "sensitivityDb": 99.1
+}

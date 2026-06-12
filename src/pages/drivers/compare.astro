@@ -1,0 +1,25 @@
+---
+import DriverCompare from "../../components/DriverCompare.svelte";
+import Layout from "../../components/Layout.astro";
+---
+
+<Layout title="Compare Drivers" description="Side-by-side T/S parameter comparison with radar chart">
+  <h1>Compare Drivers</h1>
+  <p class="subtitle">
+    T/S parameters side by side. Radar chart normalises each axis to 100 = catalogue maximum.
+  </p>
+  <DriverCompare client:only="svelte" />
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

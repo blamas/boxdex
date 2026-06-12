@@ -1,0 +1,74 @@
+---
+name: "21\" Tapped Horn"
+category: sub
+topology: tapped_horn
+drivers:
+  - bc-21ds115-8
+driverCount: 1
+netVolumeL: 280
+dims:
+  hMm: 1120
+  wMm: 700
+  dMm: 780
+weightKg: 78
+specs:
+  maxVelocityMs: 22
+  f3Hz: 30
+  f6Hz: 23
+  maxSplDb: 141
+  recommendedPowerW: 1500
+simulations:
+  - driver: bc-21ds115-8
+    kind: spl
+    source: hornresp_sim
+    file: spl.csv
+    note: "1W/1m, half-space"
+  - driver: bc-21ds115-8
+    kind: impedance
+    source: hornresp_sim
+    file: impedance.csv
+  - driver: bc-21ds115-8
+    kind: phase
+    source: hornresp_sim
+    file: phase.csv
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+buildComplexity: complex
+recommendedFor:
+  - bass_music
+  - tekno
+  - tribe
+  - psytrance
+verified: false
+images:
+  - render.png
+  - photo-1.jpg
+  - photo-2.jpg
+sources:
+  - tool: hornresp
+    file: design.txt
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+Large-format 21" tapped horn achieving sub-30 Hz extension at very high output levels.
+The folded horn path keeps depth manageable given the cabinet volume.
+
+### Key design choices
+
+- Horn mouth area: ~4000 cm²
+- Horn throat area matched to driver Sd (1620 cm²)
+- Horn expansion ratio: ~1.45
+- 18 mm birch ply throughout; 21 mm for baffle
+- Internal bracing every 280 mm
+
+### Tuning
+
+Optimised for flat response from 30 Hz upward. Low-pass at 80–100 Hz recommended.
+This box is heavy. Budget for a dolly or two-person carry.

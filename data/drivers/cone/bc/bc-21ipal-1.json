@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "21IPAL",
+  "sizeInch": 21,
+  "impedanceOhm": 1,
+  "fsHz": 37,
+  "qts": 0.21,
+  "qes": 0.22,
+  "qms": 4.9,
+  "vasL": 155,
+  "sdCm2": 1680,
+  "xmaxMm": 22,
+  "reOhm": 0.7,
+  "bl": 19.1,
+  "mmsG": 487,
+  "peW": 2500,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/21/1/21ipal"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "12PR300-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.382,
+  "qes": 0.41,
+  "qms": 5.61,
+  "vasL": 73.5,
+  "sdCm2": 526,
+  "xmaxMm": 4.9,
+  "reOhm": 5.4,
+  "bl": 14.3,
+  "mmsG": 45.8,
+  "peW": 300,
+  "sensitivityDb": 98.2
+}

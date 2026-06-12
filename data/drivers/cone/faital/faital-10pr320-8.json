@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "10PR320",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.29,
+  "qes": 0.31,
+  "qms": 4.6,
+  "vasL": 45.9,
+  "sdCm2": 321,
+  "xmaxMm": 6.1,
+  "reOhm": 5.3,
+  "bl": 13.4,
+  "mmsG": 34.6,
+  "peW": 300,
+  "sensitivityDb": 95.9
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "12RS1066",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.332,
+  "qes": 0.34,
+  "qms": 13.9,
+  "vasL": 29.5,
+  "sdCm2": 476,
+  "xmaxMm": 7.1,
+  "reOhm": 5,
+  "bl": 24.5,
+  "mmsG": 154.6,
+  "peW": 1000,
+  "sensitivityDb": 92.1
+}

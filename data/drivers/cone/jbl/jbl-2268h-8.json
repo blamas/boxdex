@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2268H",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.354,
+  "qes": 0.39,
+  "qms": 3.8,
+  "vasL": 328,
+  "sdCm2": 1269,
+  "xmaxMm": 8,
+  "reOhm": 5.3,
+  "bl": 21.2,
+  "mmsG": 160.1,
+  "peW": 800,
+  "sensitivityDb": 98.6
+}

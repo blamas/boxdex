@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "10MB3P",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 80,
+  "qts": 0.46,
+  "qes": 0.473,
+  "qms": 16.45,
+  "vasL": 23,
+  "sdCm2": 363,
+  "xmaxMm": 6,
+  "reOhm": 5.31,
+  "bl": 13.6,
+  "mmsG": 32.8,
+  "peW": 300,
+  "sensitivityDb": 95.8
+}

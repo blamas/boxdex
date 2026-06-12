@@ -1,0 +1,56 @@
+---
+name: "12\"+1\" 2-Way Top"
+category: top
+topology: bass_reflex
+drivers:
+  - bc-12ndl76-8
+  - bc-de250-8
+driverCount: 2
+netVolumeL: 48
+dims:
+  hMm: 600
+  wMm: 440
+  dMm: 390
+weightKg: 24
+specs:
+  f3Hz: 68
+  f6Hz: 56
+  fbHz: 64
+  maxSplDb: 134
+  sensitivityDb: 99
+  recommendedPowerW: 500
+  recommendedCrossoverHz: 1500
+  coverageAngleDeg: 90
+  hornCutoffHz: 800
+ways: 2
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+recommendedFor:
+  - techno
+  - bass_music
+verified: false
+sources:
+  - tool: hornresp
+    file: design.txt
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+A 2-way top pairing a 12" B&C 12NDL76 woofer with a B&C DE250 1" compression driver on
+a 90°×60° waveguide (e.g. 18 Sound XT1086). Demonstrates a mixed driver table: cone
+woofer and compression driver in one enclosure.
+
+### Crossover
+
+- Recommended crossover ≥ 1500 Hz to stay above the DE250's usable lower limit
+- The CD mates any 1" exit horn; coverage is set by the chosen waveguide
+
+### Usage
+
+Flown or pole-mounted on a sub. High-pass at 80 Hz.

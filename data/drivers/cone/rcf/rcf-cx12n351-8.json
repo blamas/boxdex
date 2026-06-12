@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "CX12N351",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 58,
+  "qts": 0.2,
+  "qes": 0.21,
+  "qms": 5.4,
+  "vasL": 47,
+  "sdCm2": 530,
+  "xmaxMm": 6,
+  "reOhm": 5.8,
+  "bl": 25,
+  "mmsG": 62,
+  "peW": 90,
+  "sensitivityDb": 98.2
+}

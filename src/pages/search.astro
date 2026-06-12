@@ -1,0 +1,39 @@
+---
+import Search from "astro-pagefind/components/Search";
+import Layout from "../components/Layout.astro";
+---
+
+<Layout title="Search" description="Full-text search over all enclosure designs">
+  <h1>Search</h1>
+  <p class="note">Search is only available in a production build (<code>npm run build</code>), not in <code>astro dev</code>.</p>
+  <Search />
+</Layout>
+
+<style is:global>
+  /* Dark mode (default) */
+  :root {
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--text);
+    --pagefind-ui-background: var(--panel);
+    --pagefind-ui-border: var(--line);
+    --pagefind-ui-tag: var(--line);
+  }
+  /* Light mode */
+  [data-theme="light"] {
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--text);
+    --pagefind-ui-background: var(--panel);
+    --pagefind-ui-border: var(--line);
+    --pagefind-ui-tag: var(--line);
+  }
+</style>
+
+<style>
+  h1 { margin-bottom: 0.5rem; }
+  .note {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18DS115-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 5.6,
+  "vasL": 220,
+  "sdCm2": 1313,
+  "xmaxMm": 12,
+  "reOhm": 6.4,
+  "bl": 21,
+  "mmsG": 280,
+  "peW": 1000,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/18/8/18ds115-8"
+}

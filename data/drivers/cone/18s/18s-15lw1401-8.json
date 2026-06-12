@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "15LW1401",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 5.36,
+  "vasL": 131,
+  "sdCm2": 900,
+  "xmaxMm": 9,
+  "reOhm": 5,
+  "bl": 24.2,
+  "mmsG": 125,
+  "peW": 1400,
+  "sensitivityDb": 97.4
+}

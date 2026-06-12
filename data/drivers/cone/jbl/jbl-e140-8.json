@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "E140",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.183,
+  "qes": 0.19,
+  "qms": 5,
+  "vasL": 297.3,
+  "sdCm2": 896.1,
+  "xmaxMm": 3.6,
+  "reOhm": 5.5,
+  "bl": 23.3,
+  "mmsG": 93.7,
+  "peW": 200,
+  "sensitivityDb": 100.7
+}

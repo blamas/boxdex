@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "12E2CS",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47.5,
+  "qts": 0.36,
+  "qes": 0.44,
+  "qms": 2.1,
+  "vasL": 76.9,
+  "sdCm2": 491,
+  "xmaxMm": 2,
+  "reOhm": 6.2,
+  "bl": 14.5,
+  "mmsG": 49.8,
+  "peW": 150,
+  "sensitivityDb": 94.6
+}

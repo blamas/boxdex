@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "FTR15-4080FD",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35.4,
+  "qts": 0.28,
+  "qes": 0.302,
+  "qms": 3.9,
+  "vasL": 164.3,
+  "sdCm2": 851,
+  "xmaxMm": 6,
+  "reOhm": 5.6,
+  "bl": 23.1,
+  "mmsG": 127.2,
+  "peW": 1000,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://celestion.com/product/ftr15-4080fd/"
+}

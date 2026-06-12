@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2216ND (pour JBL 4367)",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 28.3,
+  "qts": 0.376,
+  "qes": 0.397,
+  "qms": 7.12,
+  "vasL": 333,
+  "sdCm2": 910,
+  "xmaxMm": 9.5,
+  "reOhm": 5.55,
+  "bl": 16.6,
+  "mmsG": 110.6,
+  "peW": 600,
+  "sensitivityDb": 96.3
+}

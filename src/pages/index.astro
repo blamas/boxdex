@@ -1,0 +1,34 @@
+---
+import CatalogGrid from "../components/CatalogGrid.svelte";
+import Layout from "../components/Layout.astro";
+import { BASE } from "../lib/site";
+---
+
+<Layout title="Catalog" description="Open enclosure plans: catalog of subwoofer and top designs">
+  <div class="page-header">
+    <h1>Enclosure Catalog</h1>
+    <p class="subtitle">
+      <a href={`${BASE}/compare`}>compare curves</a> &middot;
+      <a href={`${BASE}/explore`}>design space</a> &middot;
+      <a href={`${BASE}/find`}>find by constraints</a> &middot;
+      <a href={`${BASE}/drivers`}>drivers</a>
+    </p>
+  </div>
+  <CatalogGrid client:only="svelte" />
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+</style>

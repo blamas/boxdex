@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DEFINIMAX 4012HO",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 51,
+  "qts": 0.35,
+  "qes": 0.361,
+  "qms": 11.03,
+  "vasL": 53.801,
+  "sdCm2": 551,
+  "xmaxMm": 6.2,
+  "reOhm": 5.53,
+  "bl": 19.56,
+  "mmsG": 78,
+  "peW": 600,
+  "sensitivityDb": 94.8
+}

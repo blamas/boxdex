@@ -1,0 +1,77 @@
+---
+name: "18\" Tapped Horn"
+category: sub
+topology: tapped_horn
+drivers:
+  - bc-18ds115-8
+driverCount: 1
+netVolumeL: 230
+dims:
+  hMm: 1020
+  wMm: 600
+  dMm: 680
+weightKg: 62
+specs:
+  maxVelocityMs: 28
+  f3Hz: 35
+  f6Hz: 28
+  maxSplDb: 138
+  recommendedPowerW: 1000
+simulations:
+  - driver: bc-18ds115-8
+    kind: spl
+    source: hornresp_sim
+    file: spl.csv
+    note: "1W/1m, half-space"
+  - driver: bc-18ds115-8
+    kind: phase
+    source: hornresp_sim
+    file: phase.csv
+  - driver: bc-18ds115-8
+    kind: impedance
+    source: hornresp_sim
+    file: impedance.csv
+plans:
+  - plan.pdf
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+recommendedFor:
+  - bass_music
+  - tekno
+  - tribe
+  - psytrance
+verified: false
+images:
+  - render.png
+  - photo-1.jpg
+  - photo-2.jpg
+sources:
+  - tool: hornresp
+    file: design.txt
+  - tool: akabak
+    file: system.aks
+sheetCount: 5
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+This 18" tapped horn design uses a folded path to achieve very high efficiency in a
+compact footprint for the output level. The driver fires into a tapered horn that
+doubles back on itself, reducing the overall cabinet depth.
+
+### Key design choices
+
+- Horn mouth area: ~2400 cm²
+- Horn expansion ratio: ~1.4
+- Throat area matched to driver Sd
+- Internal bracing every 300 mm
+
+### Tuning
+
+The design is optimised for flat response from 35 Hz upward. Low-pass filtering at
+80–100 Hz is recommended when used as a sub in a system.

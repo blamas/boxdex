@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "21PA12 RV",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 57.2,
+  "qts": 1.462,
+  "qes": 2.079,
+  "qms": 4.926,
+  "vasL": 57.6,
+  "sdCm2": 283,
+  "xmaxMm": 1,
+  "reOhm": 3.65,
+  "bl": 3.1,
+  "mmsG": 15.1,
+  "peW": 10,
+  "sensitivityDb": 92.5
+}

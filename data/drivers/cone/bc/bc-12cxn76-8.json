@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12CXN76",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.19,
+  "qes": 0.2,
+  "qms": 8,
+  "vasL": 120,
+  "sdCm2": 522,
+  "xmaxMm": 6,
+  "reOhm": 5,
+  "bl": 17.6,
+  "mmsG": 47,
+  "peW": 350,
+  "sensitivityDb": 98.3,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/12/8/12cxn76"
+}

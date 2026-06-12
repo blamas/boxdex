@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2226HPL vp prodance",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.396,
+  "qes": 0.47,
+  "qms": 2.51,
+  "vasL": 140.1,
+  "sdCm2": 907.9,
+  "xmaxMm": 5.8,
+  "reOhm": 5.28,
+  "bl": 17.3,
+  "mmsG": 86.9,
+  "peW": 600,
+  "sensitivityDb": 99.2
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "12MB1000",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.18,
+  "qes": 0.19,
+  "qms": 6,
+  "vasL": 60,
+  "sdCm2": 531,
+  "xmaxMm": 2.5,
+  "reOhm": 5.8,
+  "bl": 23.5,
+  "mmsG": 55.5,
+  "peW": 800,
+  "sensitivityDb": 99
+}

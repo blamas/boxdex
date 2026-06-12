@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HD24S45TSM-C-4CA14",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.421,
+  "qes": 0.47,
+  "qms": 4.06,
+  "vasL": 190,
+  "sdCm2": 301,
+  "xmaxMm": 4,
+  "reOhm": 6.4,
+  "bl": 7.9,
+  "mmsG": 32,
+  "peW": 80,
+  "sensitivityDb": 89.9
+}

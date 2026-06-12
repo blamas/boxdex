@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "LE14A",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.323,
+  "qes": 0.34,
+  "qms": 6.5,
+  "vasL": 147.3,
+  "sdCm2": 658.7,
+  "xmaxMm": 5.1,
+  "reOhm": 6.3,
+  "bl": 20.9,
+  "mmsG": 133.5,
+  "peW": 150,
+  "sensitivityDb": 92.8
+}

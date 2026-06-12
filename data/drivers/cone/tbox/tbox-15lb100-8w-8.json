@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "the box",
+  "model": "15LB100-8W",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40.9,
+  "qts": 0.334,
+  "qes": 0.35,
+  "qms": 7.13,
+  "vasL": 113.5,
+  "sdCm2": 860,
+  "xmaxMm": 5.5,
+  "reOhm": 5.5,
+  "bl": 23.6,
+  "mmsG": 138.3,
+  "peW": 500,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.thomann.fr/the_box_15lb1008w_ersatzspeaker_15.htm"
+}

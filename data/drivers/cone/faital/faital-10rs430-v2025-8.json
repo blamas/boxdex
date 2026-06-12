@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "10RS430 v2025",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.282,
+  "qes": 0.29,
+  "qms": 10,
+  "vasL": 59.2,
+  "sdCm2": 344,
+  "xmaxMm": 9.2,
+  "reOhm": 6.8,
+  "bl": 18.1,
+  "mmsG": 69.3,
+  "peW": 400,
+  "sensitivityDb": 90.9
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12TBX100-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 6.9,
+  "vasL": 37.5,
+  "sdCm2": 531,
+  "xmaxMm": 9,
+  "reOhm": 5.1,
+  "bl": 25.5,
+  "mmsG": 119,
+  "peW": 1000,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/12/8/12tbx100-8"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "12ND930",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.21,
+  "qes": 0.218,
+  "qms": 5.64,
+  "vasL": 70,
+  "sdCm2": 531,
+  "xmaxMm": 6.5,
+  "reOhm": 5.5,
+  "bl": 21.2,
+  "mmsG": 57,
+  "peW": 500,
+  "sensitivityDb": 98
+}

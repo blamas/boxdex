@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "15MB700",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.29,
+  "qes": 0.31,
+  "qms": 4.6,
+  "vasL": 202,
+  "sdCm2": 850,
+  "xmaxMm": 5.5,
+  "reOhm": 5,
+  "bl": 17.6,
+  "mmsG": 73,
+  "peW": 600,
+  "sensitivityDb": 98.9
+}

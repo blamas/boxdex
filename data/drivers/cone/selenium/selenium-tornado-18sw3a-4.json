@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "TORNADO 18SW3A",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 41,
+  "qts": 0.55,
+  "qes": 0.57,
+  "qms": 17.8,
+  "vasL": 126.3,
+  "sdCm2": 1189,
+  "xmaxMm": 7.8,
+  "reOhm": 3.2,
+  "bl": 18.7,
+  "mmsG": 239.4,
+  "peW": 1100,
+  "sensitivityDb": 93.7
+}

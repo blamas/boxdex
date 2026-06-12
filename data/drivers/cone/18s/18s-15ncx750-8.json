@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "15NCX750",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 6.32,
+  "vasL": 141,
+  "sdCm2": 881,
+  "xmaxMm": 5.5,
+  "reOhm": 5.4,
+  "bl": 18.4,
+  "mmsG": 81,
+  "peW": 400,
+  "sensitivityDb": 98
+}

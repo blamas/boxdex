@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "12HP1030",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.303,
+  "qes": 0.31,
+  "qms": 13.8,
+  "vasL": 29,
+  "sdCm2": 469,
+  "xmaxMm": 6.6,
+  "reOhm": 5,
+  "bl": 24.6,
+  "mmsG": 133,
+  "peW": 1000,
+  "sensitivityDb": 93.3
+}

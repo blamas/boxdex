@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "E10-150S",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.5,
+  "qes": 0.55,
+  "qms": 5.15,
+  "vasL": 84.09,
+  "sdCm2": 363,
+  "xmaxMm": 4.1,
+  "reOhm": 5.8,
+  "bl": 9.48,
+  "mmsG": 20.4,
+  "peW": 150,
+  "sensitivityDb": 95.4
+}

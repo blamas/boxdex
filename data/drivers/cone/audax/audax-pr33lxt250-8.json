@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR33LXT250",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48.6,
+  "qts": 0.311,
+  "qes": 0.32,
+  "qms": 10.8,
+  "vasL": 55,
+  "sdCm2": 530,
+  "xmaxMm": 3.9,
+  "reOhm": 5.8,
+  "bl": 20.6,
+  "mmsG": 76.8,
+  "peW": 250,
+  "sensitivityDb": 96.3
+}

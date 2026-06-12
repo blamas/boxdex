@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-312CX",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.328,
+  "qes": 0.36,
+  "qms": 3.74,
+  "vasL": 64,
+  "sdCm2": 540,
+  "xmaxMm": 3,
+  "reOhm": 5.6,
+  "bl": 17,
+  "mmsG": 53.5,
+  "peW": 250,
+  "sensitivityDb": 98.2
+}

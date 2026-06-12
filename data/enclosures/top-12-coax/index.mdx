@@ -1,0 +1,62 @@
+---
+name: "12\" Coaxial Top"
+category: top
+topology: bass_reflex
+drivers:
+  - bc-12ndl76-8
+driverCount: 1
+netVolumeL: 45
+dims:
+  hMm: 560
+  wMm: 440
+  dMm: 380
+weightKg: 22
+specs:
+  f3Hz: 70
+  f6Hz: 58
+  fbHz: 65
+  maxSplDb: 132
+  sensitivityDb: 98
+  recommendedPowerW: 500
+measurements:
+  - driver: bc-12ndl76-8
+    kind: spl
+    source: rew_measured
+    file: spl.csv
+    note: "1m on-axis, anechoic, ground plane"
+ways: 2
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+recommendedFor:
+  - techno
+  - bass_music
+verified: false
+images:
+  - render.png
+  - photo-1.jpg
+  - photo-2.jpg
+sources:
+  - tool: hornresp
+    file: design.txt
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+Compact 12" bass-reflex top enclosure. The measurement was taken in ground-plane
+conditions at 1 m with a calibrated microphone in REW.
+
+### Port
+
+- Slot port at the rear, 80 mm × 200 mm
+- Port depth: 180 mm
+- Tuning: 65 Hz (Fb)
+
+### Usage
+
+Typically flown or placed on a sub. High-pass filter at 80 Hz is recommended.

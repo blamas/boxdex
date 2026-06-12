@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR240Z0 vp",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.377,
+  "qes": 0.39,
+  "qms": 11.7,
+  "vasL": 82,
+  "sdCm2": 358,
+  "xmaxMm": 4,
+  "reOhm": 6,
+  "bl": 13.2,
+  "mmsG": 57.8,
+  "peW": 100,
+  "sensitivityDb": 91.2
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FaitalPRO",
+  "model": "18FH500",
+  "sizeInch": 18,
+  "impedanceOhm": 16,
+  "fsHz": 30,
+  "qts": 0.327,
+  "qes": 0.34,
+  "qms": 8.68,
+  "vasL": 404.2,
+  "sdCm2": 1166,
+  "xmaxMm": 8.8,
+  "reOhm": 8,
+  "bl": 24.3,
+  "mmsG": 132.7,
+  "peW": 500,
+  "sensitivityDb": 97
+}

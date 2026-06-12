@@ -1,0 +1,419 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, getEntry, render } from "astro:content";
+import BoxCurves from "../../components/BoxCurves.svelte";
+import EnclosureList from "../../components/EnclosureList.astro";
+import Layout from "../../components/Layout.astro";
+import { CATEGORY_LABEL } from "../../lib/category";
+import { humanize, withUnit } from "../../lib/format";
+import { deriveMetrics, provenanceOf } from "../../lib/metrics";
+import { BASE } from "../../lib/site";
+
+export async function getStaticPaths() {
+  const enclosures = await getCollection("enclosures");
+  return enclosures.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+const { specs, dims } = data;
+
+const metrics = deriveMetrics({
+  netVolumeL: data.netVolumeL,
+  dims: data.dims,
+  weightKg: data.weightKg,
+  specs: data.specs,
+});
+
+const provenance = provenanceOf(data.measurements);
+
+// Data-driven spec table: add a row here and it renders if its value is present.
+const specRows: { label: string; value: string | undefined }[] = [
+  {
+    label: "Topology",
+    value: humanize(data.topology) + (data.topologyVariant ? ` · ${data.topologyVariant}` : ""),
+  },
+  { label: "Ways", value: data.ways !== undefined ? `${data.ways}-way` : undefined },
+  { label: "Build complexity", value: data.buildComplexity },
+  { label: "Net volume", value: withUnit(metrics.volumeL, "L") },
+  { label: "Gross volume", value: withUnit(data.grossVolumeL, "L") },
+  { label: "Dimensions (H×W×D)", value: `${dims.hMm} × ${dims.wMm} × ${dims.dMm} mm` },
+  { label: "Footprint", value: withUnit(metrics.footprintCm2, "cm²") },
+  { label: "Weight", value: withUnit(data.weightKg, "kg") },
+  { label: "F3", value: withUnit(specs.f3Hz, "Hz") },
+  { label: "F6", value: withUnit(specs.f6Hz, "Hz") },
+  { label: "Fb (port/vent tuning)", value: withUnit(specs.fbHz, "Hz") },
+  { label: "F3 high", value: withUnit(specs.f3HzHigh, "Hz") },
+  { label: "Max SPL", value: withUnit(specs.maxSplDb, "dB") },
+  { label: "Max SPL (excursion-limited)", value: withUnit(specs.maxSplExcursionDb, "dB") },
+  { label: "Max SPL (thermal-limited)", value: withUnit(specs.maxSplThermalDb, "dB") },
+  { label: "Sensitivity", value: withUnit(specs.sensitivityDb, "dB") },
+  { label: "Impedance minimum", value: withUnit(specs.impedanceMinOhm, "Ω") },
+  {
+    label: "Coverage angle",
+    value: specs.coverageAngleDeg !== undefined ? `${specs.coverageAngleDeg}°` : undefined,
+  },
+  { label: "Recommended crossover", value: withUnit(specs.recommendedCrossoverHz, "Hz") },
+  { label: "Horn cutoff", value: withUnit(specs.hornCutoffHz, "Hz") },
+  { label: "Horn mouth", value: withUnit(specs.hornMouthCm2, "cm²") },
+  { label: "Horn throat", value: withUnit(specs.hornThroatCm2, "cm²") },
+  { label: "Recommended power", value: withUnit(specs.recommendedPowerW, "W") },
+  { label: "Power handling (AES)", value: withUnit(specs.powerAesW, "W") },
+  { label: "Power handling (program)", value: withUnit(specs.powerProgramW, "W") },
+  { label: "Max port velocity", value: withUnit(specs.maxVelocityMs, "m/s") },
+  { label: "Output density", value: withUnit(metrics.outputDensity, "dB/size") },
+  { label: "Plywood thickness", value: withUnit(data.plywoodThicknessMm, "mm") },
+  {
+    label: "Plywood sheets",
+    value:
+      data.sheetCount !== undefined
+        ? `${data.sheetCount}×${
+            data.sheetSizeMm ? ` ${data.sheetSizeMm.wMm}×${data.sheetSizeMm.hMm} mm` : ""
+          }`
+        : undefined,
+  },
+  {
+    label: "Connectors",
+    value: data.connectors.length > 0 ? data.connectors.join(", ") : undefined,
+  },
+];
+
+const driverEntries = await Promise.all(data.drivers.map((ref) => getEntry("drivers", ref.id)));
+
+// Other enclosures sharing at least one of the same drivers
+const allEnclosures = await getCollection("enclosures");
+const thisDriverIds = new Set(data.drivers.map((ref) => ref.id));
+const relatedEnclosures = allEnclosures
+  .filter((e) => e.id !== entry.id && e.data.drivers.some((ref) => thisDriverIds.has(ref.id)))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const allPdfGlob = import.meta.glob("/data/enclosures/**/*.pdf", {
+  query: "?url",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const planUrls = data.plans.map((filename) => {
+  const key = `/data/enclosures/${entry.id}/${filename}`;
+  return { filename, url: allPdfGlob[key] ?? null };
+});
+
+// Resolve raw simulation source files (arbitrary extension → glob everything).
+const allSourceGlob = import.meta.glob("/data/enclosures/**/*", {
+  query: "?url",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const sourceFiles = data.sources.map((s) => {
+  const key = `/data/enclosures/${entry.id}/${s.file}`;
+  return { ...s, url: allSourceGlob[key] ?? null };
+});
+
+// First image doubles as the detail-page hero; the gallery shows the rest.
+const heroImage = data.images[0];
+const galleryImages = data.images.slice(1);
+---
+
+<Layout title={data.name} description={`${CATEGORY_LABEL[data.category]} enclosure: ${data.name}`}>
+  <div class="detail">
+    <header class="detail-header">
+      <div class="badges">
+        <span class={`badge badge-${data.category}`}>{data.category}</span>
+        <span class={`badge badge-${provenance}`}>{provenance}</span>
+        {data.verified && <span class="badge badge-verified">verified</span>}
+      </div>
+      <h1 data-pagefind-meta="title">{data.name}</h1>
+      <p class="meta">
+        <span data-pagefind-filter="topology">{humanize(data.topology)}</span>
+        {data.author && <> &mdash; by {data.author}</>}
+        {data.revision && <> &mdash; rev {data.revision}</>}
+        &mdash; <span class="muted">{data.license}</span>
+      </p>
+      <p class="meta" data-pagefind-filter="category">{data.category}</p>
+      {data.recommendedFor.length > 0 && (
+        <ul class="tag-list">
+          {data.recommendedFor.map((t) => <li class="tag">{t}</li>)}
+        </ul>
+      )}
+      {heroImage && (
+        <Image
+          src={heroImage}
+          alt={data.name}
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 900px) 100vw, 900px"
+          loading="eager"
+          class="hero-img"
+        />
+      )}
+    </header>
+
+    <div class="detail-body">
+      <section class="specs-section">
+        <h2>Specifications</h2>
+        <table>
+          <tbody>
+            {specRows.map(({ label, value }) => value != null && (
+              <tr><th>{label}</th><td>{value}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="drivers-section">
+        <h2>Drivers ({data.driverCount}×)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Format</th>
+              <th>Impedance</th>
+              <th>Fs</th>
+              <th>Detail</th>
+              <th>Pe</th>
+              <th>Sensitivity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {driverEntries.map((d) => d && (
+              <tr>
+                <td>{d.data.brand}</td>
+                <td>
+                  <a href={`${BASE}/drivers/${d.id}`}>{d.data.model}</a>
+                  {d.data.datasheetUrl && (
+                    <a href={d.data.datasheetUrl} target="_blank" rel="noopener" class="ds-link">↗</a>
+                  )}
+                </td>
+                {d.data.type === "cone" ? (
+                  <>
+                    <td>{d.data.sizeInch}"</td>
+                    <td>{d.data.impedanceOhm} Ω</td>
+                    <td>{d.data.fsHz} Hz</td>
+                    <td>Qts {d.data.qts} · Vas {d.data.vasL} L · Xmax {d.data.xmaxMm} mm</td>
+                    <td>{d.data.peW} W</td>
+                    <td>{d.data.sensitivityDb} dB</td>
+                  </>
+                ) : (
+                  <>
+                    <td>{d.data.exitInch}" exit</td>
+                    <td>{d.data.impedanceOhm} Ω</td>
+                    <td>{d.data.fsHz ? `${d.data.fsHz} Hz` : "—"}</td>
+                    <td>{d.data.fLowHz}–{d.data.fHighHz} Hz · xover ≥ {d.data.minCrossoverHz} Hz</td>
+                    <td>{d.data.peW} W</td>
+                    <td>{d.data.sensitivityHornDb} dB</td>
+                  </>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {(data.measurements.length > 0 || data.simulations.length > 0) && (
+        <section class="curves-section">
+          <h2>Measurements / Simulations</h2>
+          <BoxCurves client:only="svelte" slug={entry.id} name={data.name} />
+        </section>
+      )}
+
+      {galleryImages.length > 0 && (
+        <section class="images-section">
+          <h2>Images</h2>
+          <div class="image-gallery">
+            {galleryImages.map((img) => (
+              <Image
+                src={img}
+                alt={data.name}
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+                loading="lazy"
+                class="gallery-img"
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {planUrls.length > 0 && (
+        <section class="plans-section">
+          <h2>Plans</h2>
+          <ul class="plan-list">
+            {planUrls.map(({ filename, url }) => (
+              <li>
+                {url
+                  ? <a href={url} download={filename}>{filename}</a>
+                  : <span class="muted">{filename} (not found)</span>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {sourceFiles.length > 0 && (
+        <section class="plans-section">
+          <h2>Design files</h2>
+          <ul class="plan-list">
+            {sourceFiles.map(({ tool, file, note, url }) => (
+              <li>
+                {url
+                  ? <a href={url} download={file}>{file}</a>
+                  : <span class="muted">{file} (not found)</span>}
+                <span class="muted"> · {tool}{note ? ` · ${note}` : ""}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {relatedEnclosures.length > 0 && (
+        <section class="related-section">
+          <h2>Other builds using {data.drivers.length === 1 ? "this driver" : "these drivers"}</h2>
+          <EnclosureList items={relatedEnclosures} />
+        </section>
+      )}
+
+      {data.sourceUrl && (
+        <p class="source-url">
+          Source: <a href={data.sourceUrl} target="_blank" rel="noopener">{data.sourceUrl}</a>
+        </p>
+      )}
+
+      <section class="notes-section">
+        <h2>Notes</h2>
+        <div class="notes-body">
+          <Content />
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .detail {
+    max-width: 900px;
+  }
+
+  .detail-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badges {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0.25rem 0;
+    text-transform: capitalize;
+  }
+
+  .detail-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  :global(.hero-img) {
+    width: 100%;
+    height: auto;
+    margin-top: 1.25rem;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.75rem;
+  }
+
+  :global(.gallery-img) {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+
+  .plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .plan-list a {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .source-url {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .notes-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 70ch;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  .ds-link {
+    color: var(--muted);
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+    text-decoration: none;
+  }
+
+  .ds-link:hover {
+    color: var(--accent);
+  }
+
+  .tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    background: var(--surface-subtle);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+</style>

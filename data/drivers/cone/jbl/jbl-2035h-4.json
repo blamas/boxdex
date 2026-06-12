@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2035H",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 48,
+  "qts": 0.336,
+  "qes": 0.36,
+  "qms": 5,
+  "vasL": 140.5,
+  "sdCm2": 880,
+  "xmaxMm": 4.9,
+  "reOhm": 3.9,
+  "bl": 16.7,
+  "mmsG": 84.9,
+  "peW": 400,
+  "sensitivityDb": 101.5
+}

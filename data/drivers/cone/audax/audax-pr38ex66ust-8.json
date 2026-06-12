@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR38EX66UST",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.344,
+  "qes": 0.39,
+  "qms": 2.94,
+  "vasL": 309,
+  "sdCm2": 880,
+  "xmaxMm": 4,
+  "reOhm": 5.8,
+  "bl": 15.9,
+  "mmsG": 81.7,
+  "peW": 150,
+  "sensitivityDb": 97.9
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Lavoce",
+  "model": "SSF122.50L",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.41,
+  "qes": 0.46,
+  "qms": 2.9,
+  "vasL": 59,
+  "sdCm2": 528,
+  "xmaxMm": 11.5,
+  "reOhm": 5.4,
+  "bl": 17.3,
+  "mmsG": 101,
+  "peW": 400,
+  "sensitivityDb": 91.3,
+  "datasheetUrl": "https://lavocespeakers.com/product/ssf122-50l/"
+}
