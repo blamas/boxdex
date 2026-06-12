@@ -3,7 +3,11 @@ import DriverCompare from "../../components/DriverCompare.svelte";
 import Layout from "../../components/Layout.astro";
 ---
 
-<Layout title="Compare Drivers" description="Side-by-side T/S parameter comparison with radar chart">
+<Layout
+  title="Compare Drivers"
+  description="Side-by-side T/S parameter comparison with radar chart"
+  preloadData={["/api/drivers.json"]}
+>
   <h1>Compare Drivers</h1>
   <p class="subtitle">
     T/S parameters side by side. Radar chart normalises each axis to 100 = catalogue maximum.

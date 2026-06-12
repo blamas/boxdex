@@ -10,6 +10,7 @@ import {
   sortRecords,
 } from "../lib/metrics";
 import { BASE } from "../lib/site";
+import LoadMore from "./LoadMore.svelte";
 
 let records = $state<EnclosureRecord[]>([]);
 let category = $state<CategoryFilter>("all");
@@ -40,6 +41,11 @@ onMount(async () => {
   records = await res.json();
 });
 
+// Render in 100-row pages, extended by the infinite-scroll sentinel; the catalog
+// keeps growing and a single huge table render makes the page sluggish.
+const ROW_LIMIT = 100;
+let limit = $state(ROW_LIMIT);
+
 const results = $derived(
   sortRecords(
     filterEnclosures(records, {
@@ -60,6 +66,8 @@ const results = $derived(
     sortKey
   )
 );
+
+const visibleResults = $derived(results.slice(0, limit));
 
 function clearFilters() {
   category = "all";
@@ -235,7 +243,7 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
           </tr>
         </thead>
         <tbody>
-          {#each results as rec}
+          {#each visibleResults as rec (rec.slug)}
             <tr>
               <td>
                 <a href="{BASE}/enclosures/{rec.slug}">{rec.name}</a>
@@ -269,6 +277,10 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
         </tbody>
       </table>
     </div>
+    <LoadMore
+      remaining={results.length - visibleResults.length}
+      onmore={() => (limit += ROW_LIMIT)}
+    />
   {/if}
 </div>
 

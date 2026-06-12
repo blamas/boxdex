@@ -4,9 +4,12 @@ import { BASE } from "../lib/site";
 interface Props {
   title: string;
   description?: string;
+  // BASE-relative JSON endpoints the page's island fetches on mount; preloaded from
+  // the head so the data downloads in parallel with the island JS instead of after it.
+  preloadData?: string[];
 }
 
-const { title, description = "Open enclosure plans database" } = Astro.props;
+const { title, description = "Open enclosure plans database", preloadData = [] } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
@@ -22,6 +25,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <link rel="sitemap" href={`${BASE}/sitemap-index.xml`} />
     <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
+    {preloadData.map((p: string) => <link rel="preload" href={`${BASE}${p}`} as="fetch" crossorigin="anonymous" />)}
     <!-- Apply saved theme before first paint to avoid flash -->
     <script is:inline>
       (function () {

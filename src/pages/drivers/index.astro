@@ -3,7 +3,11 @@ import DriverExplorer from "../../components/DriverExplorer.svelte";
 import Layout from "../../components/Layout.astro";
 ---
 
-<Layout title="Drivers" description="Browse and compare cone drivers, compression drivers and horns">
+<Layout
+  title="Drivers"
+  description="Browse and compare cone drivers, compression drivers and horns"
+  preloadData={["/api/drivers.json", "/api/horns.json"]}
+>
   <h1>Drivers</h1>
   <p class="subtitle">
     Cone drivers (Thiele–Small parameters), compression drivers (horn/throat specs) and horns

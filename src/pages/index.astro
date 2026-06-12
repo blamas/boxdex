@@ -4,7 +4,11 @@ import Layout from "../components/Layout.astro";
 import { BASE } from "../lib/site";
 ---
 
-<Layout title="Catalog" description="Open enclosure plans: catalog of subwoofer and top designs">
+<Layout
+  title="Catalog"
+  description="Open enclosure plans: catalog of subwoofer and top designs"
+  preloadData={["/api/manifest.json"]}
+>
   <div class="page-header">
     <h1>Enclosure Catalog</h1>
     <p class="subtitle">

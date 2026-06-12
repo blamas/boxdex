@@ -10,6 +10,8 @@ import pagefind from "astro-pagefind";
 export default defineConfig({
   site: process.env.SITE_URL || "http://localhost:4321",
   output: "static",
+  // Prefetch internal links on hover so catalog → detail navigation feels instant.
+  prefetch: { prefetchAll: true, defaultStrategy: "hover" },
   integrations: [mdx(), svelte(), sitemap(), pagefind()],
   build: {
     assets: "_assets",

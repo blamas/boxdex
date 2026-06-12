@@ -5,6 +5,7 @@ import { ebp } from "../lib/driver";
 import type { CompressionDriver, ConeDriver, Driver, Horn } from "../lib/schemas";
 import { BASE } from "../lib/site";
 import { readParam } from "../lib/url-state";
+import LoadMore from "./LoadMore.svelte";
 
 // Tabs select which catalog (and column/filter set) is active. Cone and compression are
 // the two driver branches; horns are a separate collection rendered in the same page.
@@ -112,6 +113,15 @@ const filteredHorns = $derived(
 
 const resultCount = $derived(isHorn ? filteredHorns.length : filtered.length);
 
+// The full catalogue is ~800 rows and growing; rendering everything at once makes the
+// page sluggish. Render in 100-row pages, extended by the infinite-scroll sentinel —
+// filters/sort still see everything.
+const ROW_LIMIT = 100;
+let limit = $state(ROW_LIMIT);
+const visibleDrivers = $derived(filtered.slice(0, limit));
+const visibleHorns = $derived(filteredHorns.slice(0, limit));
+const hiddenCount = $derived(resultCount - (isHorn ? visibleHorns.length : visibleDrivers.length));
+
 const advancedFilterCount = $derived(
   isCone
     ? (maxFs !== "" ? 1 : 0) +
@@ -154,6 +164,7 @@ function setTab(t: Tab) {
   sortKey = t === "cone" ? "sizeInch" : "exitInch";
   sortAsc = true;
   showAdvanced = false;
+  limit = ROW_LIMIT;
 }
 
 function toggleSort(key: SortKey) {
@@ -331,7 +342,7 @@ function sortIndicator(key: SortKey) {
         </tr>
       </thead>
       <tbody>
-        {#each filteredHorns as h (h.id)}
+        {#each visibleHorns as h (h.id)}
           <tr class:row-selected={selected.has(h.id)}>
             <td class="check-col">
               <input
@@ -388,7 +399,7 @@ function sortIndicator(key: SortKey) {
         </tr>
       </thead>
       <tbody>
-        {#each filtered as d (d.id)}
+        {#each visibleDrivers as d (d.id)}
           <tr class:row-selected={selected.has(d.id)}>
             <td class="check-col">
               <input
@@ -431,6 +442,8 @@ function sortIndicator(key: SortKey) {
     </table>
   {/if}
 </div>
+
+<LoadMore remaining={hiddenCount} onmore={() => (limit += ROW_LIMIT)} />
 
 {#if selected.size > 0}
   <p class="hint">Max 4 {isHorn ? "horns" : "drivers"} can be compared at once.</p>

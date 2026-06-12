@@ -3,7 +3,11 @@ import Compare from "../components/Compare.svelte";
 import Layout from "../components/Layout.astro";
 ---
 
-<Layout title="Compare" description="Overlay frequency response curves for multiple enclosure designs">
+<Layout
+  title="Compare"
+  description="Overlay frequency response curves for multiple enclosure designs"
+  preloadData={["/api/manifest.json", "/api/drivers.json"]}
+>
   <h1>Compare Enclosures</h1>
   <p class="subtitle">Overlay SPL, phase, or impedance curves. Select enclosures from the list below.</p>
   <Compare client:only="svelte" />

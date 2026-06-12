@@ -117,9 +117,14 @@ const sourceFiles = data.sources.map((s) => {
 // First image doubles as the detail-page hero; the gallery shows the rest.
 const heroImage = data.images[0];
 const galleryImages = data.images.slice(1);
+const hasCurves = data.measurements.length > 0 || data.simulations.length > 0;
 ---
 
-<Layout title={data.name} description={`${CATEGORY_LABEL[data.category]} enclosure: ${data.name}`}>
+<Layout
+  title={data.name}
+  description={`${CATEGORY_LABEL[data.category]} enclosure: ${data.name}`}
+  preloadData={hasCurves ? [`/api/curves/${entry.id}.json`] : []}
+>
   <div class="detail">
     <header class="detail-header">
       <div class="badges">
@@ -214,7 +219,7 @@ const galleryImages = data.images.slice(1);
         </table>
       </section>
 
-      {(data.measurements.length > 0 || data.simulations.length > 0) && (
+      {hasCurves && (
         <section class="curves-section">
           <h2>Measurements / Simulations</h2>
           <BoxCurves client:only="svelte" slug={entry.id} name={data.name} />

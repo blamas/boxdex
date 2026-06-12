@@ -11,6 +11,7 @@ import {
 } from "../lib/metrics";
 import { BASE } from "../lib/site";
 import { decodeStack, encodeStack } from "../lib/stack";
+import LoadMore from "./LoadMore.svelte";
 
 let records = $state<EnclosureRecord[]>([]);
 let category = $state<CategoryFilter>("all");
@@ -38,6 +39,11 @@ function addToStack(slug: string, e: MouseEvent) {
 }
 
 const displayed = $derived.by(() => sortRecords(filterByCategory(records, category), sortKey));
+
+// Card pages of 100, extended by the infinite-scroll sentinel as the catalog grows.
+const ROW_LIMIT = 100;
+let limit = $state(ROW_LIMIT);
+const visibleCards = $derived(displayed.slice(0, limit));
 </script>
 
 <div class="catalog-controls">
@@ -64,7 +70,7 @@ const displayed = $derived.by(() => sortRecords(filterByCategory(records, catego
   <div class="empty-state">No designs in this category yet.</div>
 {:else}
   <div class="grid">
-    {#each displayed as rec (rec.slug)}
+    {#each visibleCards as rec (rec.slug)}
       <a href="{BASE}/enclosures/{rec.slug}" class="card-link">
         <article class="card">
           <div class="card-header">
@@ -112,6 +118,7 @@ const displayed = $derived.by(() => sortRecords(filterByCategory(records, catego
       </a>
     {/each}
   </div>
+  <LoadMore remaining={displayed.length - visibleCards.length} onmore={() => (limit += ROW_LIMIT)} />
 {/if}
 
 <style>

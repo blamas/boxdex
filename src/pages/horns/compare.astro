@@ -3,7 +3,11 @@ import HornCompare from "../../components/HornCompare.svelte";
 import Layout from "../../components/Layout.astro";
 ---
 
-<Layout title="Compare Horns" description="Side-by-side horn/waveguide comparison with radar chart">
+<Layout
+  title="Compare Horns"
+  description="Side-by-side horn/waveguide comparison with radar chart"
+  preloadData={["/api/horns.json"]}
+>
   <h1>Compare Horns</h1>
   <p class="subtitle">
     Horns and waveguides side by side. Radar chart normalises each axis to 100 = catalogue maximum.

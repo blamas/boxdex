@@ -3,7 +3,11 @@ import Explorer from "../components/Explorer.svelte";
 import Layout from "../components/Layout.astro";
 ---
 
-<Layout title="Find" description="Filter and sort enclosures by F3, SPL, volume, and other constraints">
+<Layout
+  title="Find"
+  description="Filter and sort enclosures by F3, SPL, volume, and other constraints"
+  preloadData={["/api/manifest.json"]}
+>
   <h1>Find an Enclosure</h1>
   <p class="subtitle">Filter by constraints, sort by any metric.</p>
   <Explorer client:only="svelte" />

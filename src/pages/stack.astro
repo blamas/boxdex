@@ -3,7 +3,11 @@ import Layout from "../components/Layout.astro";
 import StackBuilder from "../components/StackBuilder.svelte";
 ---
 
-<Layout title="My Stack" description="Build a sound system and calculate coverage.">
+<Layout
+  title="My Stack"
+  description="Build a sound system and calculate coverage."
+  preloadData={["/api/manifest.json"]}
+>
   <h1>My Stack</h1>
   <p class="subtitle">Select enclosures by role, set quantities, and check coverage and crossover.</p>
   <StackBuilder client:only="svelte" />

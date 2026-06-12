@@ -3,7 +3,11 @@ import DesignSpace from "../components/DesignSpace.svelte";
 import Layout from "../components/Layout.astro";
 ---
 
-<Layout title="Explore" description="Explore the enclosure design space: volume, SPL, F3, and more">
+<Layout
+  title="Explore"
+  description="Explore the enclosure design space: volume, SPL, F3, and more"
+  preloadData={["/api/manifest.json"]}
+>
   <h1>Design Space</h1>
   <p class="subtitle">Plot any two metrics and find Pareto-optimal designs.</p>
   <DesignSpace client:only="svelte" />
