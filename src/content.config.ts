@@ -1,5 +1,6 @@
-import { defineCollection, reference, z } from "astro:content";
+import { defineCollection, reference } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 import { CURVE_KINDS } from "./lib/csv";
 import { driverSchema, enumOf, hornSchema } from "./lib/schemas";
 
@@ -122,7 +123,7 @@ const enclosures = defineCollection({
       .superRefine((e, ctx) => {
         if (e.license === "LicenseRef-Proprietary" && e.plans.length > 0) {
           ctx.addIssue({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             path: ["plans"],
             message:
               "LicenseRef-Proprietary entries are metadata-only: plan files must not be committed (link via sourceUrl instead)",
@@ -130,7 +131,7 @@ const enclosures = defineCollection({
         }
         if (e.license === "LicenseRef-Permission" && !e.licenseNote) {
           ctx.addIssue({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             path: ["licenseNote"],
             message:
               "LicenseRef-Permission requires licenseNote recording the permission grant (who, when, scope)",

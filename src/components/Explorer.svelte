@@ -362,14 +362,6 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     align-items: center;
   }
 
-  .chips-section-label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-right: 0.25rem;
-    white-space: nowrap;
-  }
-
   .chip {
     background: none;
     border: 1px solid var(--line);

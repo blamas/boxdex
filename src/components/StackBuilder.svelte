@@ -897,12 +897,6 @@ const curvesLoading = $derived(
     background: color-mix(in srgb, var(--danger) 10%, transparent);
   }
 
-  .cov-power {
-    color: var(--muted);
-    font-size: 0.75rem;
-    white-space: nowrap;
-  }
-
   .cov-note {
     margin: 0.5rem 0 0;
     font-family: var(--font-mono);

@@ -509,34 +509,6 @@ function sortIndicator(key: SortKey) {
     width: 100px;
   }
 
-  .chip {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 3px;
-    padding: 0.2rem 0.55rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    cursor: pointer;
-    align-self: flex-end;
-    white-space: nowrap;
-  }
-
-  .chip:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .chip-active {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(57, 255, 20, 0.07);
-  }
-
-  :global([data-theme="light"]) .chip-active {
-    background: rgba(26, 127, 55, 0.07);
-  }
-
   .filter-footer {
     display: flex;
     align-items: center;
