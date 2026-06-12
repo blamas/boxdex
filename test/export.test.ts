@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { curveSeriesToCsv, recordsToCsv, toCsv } from "../src/lib/export";
-import type { EnclosureRecord } from "../src/lib/metrics";
+import { curveSeriesToCsv, jsonString, recordsToCsv, toCsv } from "../src/lib/export";
+import { makeMetrics, makeRecord } from "./fixtures";
 
 describe("toCsv", () => {
   it("joins rows and cells", () => {
@@ -45,24 +45,31 @@ describe("curveSeriesToCsv", () => {
 });
 
 describe("recordsToCsv", () => {
-  const rec = (over: Partial<EnclosureRecord>): EnclosureRecord =>
-    ({
+  it("has identity + all axis metric columns and leaves missing metrics blank", () => {
+    const rec = makeRecord({
       slug: "x",
       name: "X",
-      category: "sub",
       topology: "ported",
-      provenance: "sim",
-      metrics: {},
-      ...over,
-    }) as EnclosureRecord;
-
-  it("has identity + all axis metric columns and leaves missing metrics blank", () => {
-    const csv = recordsToCsv([rec({ metrics: { volumeL: 50, maxSplDb: 130 } })]);
+      metrics: makeMetrics({
+        volumeL: 50,
+        footprintCm2: 2400,
+        heightMm: 900,
+        f3Hz: 38,
+        maxSplDb: 130,
+      }),
+    });
+    const csv = recordsToCsv([rec]);
     const [header, row] = csv.split("\n");
     expect(header).toBe(
       "slug,name,category,topology,provenance,volumeL,footprintCm2,heightMm,weightKg,f3Hz,f3HzHigh,maxSplDb,sensitivityDb,outputDensity"
     );
-    // volumeL=50 in col 6, maxSplDb=130 in its column, others blank
-    expect(row).toBe("x,X,sub,ported,sim,50,,,,,,130,,");
+    // optional metrics without a value stay blank, never defaulted
+    expect(row).toBe("x,X,sub,ported,sim,50,2400,900,,38,,130,,");
+  });
+});
+
+describe("jsonString", () => {
+  it("pretty-prints with 2-space indentation", () => {
+    expect(jsonString({ a: 1 })).toBe('{\n  "a": 1\n}');
   });
 });

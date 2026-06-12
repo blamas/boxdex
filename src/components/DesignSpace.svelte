@@ -1,42 +1,33 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import { SERIES_COLORS } from "../lib/csv";
-import { echarts, getActiveTheme } from "../lib/echarts";
+import { type EChartsInstance, getActiveTheme } from "../lib/echarts";
 import { downloadBlob, jsonString, recordsToCsv } from "../lib/export";
 import { humanize } from "../lib/format";
 import {
   AXIS_FIELDS,
   AXIS_MAP,
   type EnclosureRecord,
+  type MetricKey,
   frontierLine,
+  metricKeyOf,
   paretoFront,
 } from "../lib/metrics";
 import { BASE } from "../lib/site";
+import { readParam, writeParams } from "../lib/url-state";
+import EChart from "./EChart.svelte";
 import ExportMenu from "./ExportMenu.svelte";
+import PageActions from "./PageActions.svelte";
 
 let records = $state<EnclosureRecord[]>([]);
-let xKey = $state("volumeL");
-let yKey = $state("maxSplDb");
+let xKey = $state<MetricKey>("volumeL");
+let yKey = $state<MetricKey>("maxSplDb");
 let colorKey = $state<"topology" | "category">("topology");
 let onlyPareto = $state(false);
-
-let host: HTMLDivElement;
-let chart: ReturnType<typeof echarts.init> | null = null;
 let initialized = $state(false);
-let copyDone = $state(false);
 
-async function copyLink() {
-  await navigator.clipboard.writeText(window.location.href);
-  copyDone = true;
-  setTimeout(() => {
-    copyDone = false;
-  }, 1500);
-}
-
-function initChart() {
-  const { theme } = getActiveTheme();
-  chart?.dispose();
-  chart = echarts.init(host, theme);
+// Clicking a point opens the enclosure's plan page.
+function onChartInit(chart: EChartsInstance) {
   chart.on("click", (p: { data?: { slug?: string } }) => {
     const slug = p.data?.slug;
     if (slug) location.href = `${BASE}/enclosures/${slug}`;
@@ -44,37 +35,18 @@ function initChart() {
 }
 
 onMount(async () => {
-  const params = new URLSearchParams(window.location.search);
-  const px = params.get("x");
-  const py = params.get("y");
-  const pc = params.get("color");
-  if (px && AXIS_MAP.has(px)) xKey = px;
-  if (py && AXIS_MAP.has(py)) yKey = py;
+  const px = metricKeyOf(readParam("x") ?? "");
+  const py = metricKeyOf(readParam("y") ?? "");
+  const pc = readParam("color");
+  if (px) xKey = px;
+  if (py) yKey = py;
   if (pc === "topology" || pc === "category") colorKey = pc;
-  if (params.get("pareto") === "1") onlyPareto = true;
+  if (readParam("pareto") === "1") onlyPareto = true;
 
   const res = await fetch(`${BASE}/api/manifest.json`);
   records = await res.json();
 
-  initChart();
   initialized = true;
-
-  const ro = new ResizeObserver(() => chart?.resize());
-  ro.observe(host);
-
-  function onThemeChange() {
-    initChart();
-    const opt = buildOption();
-    if (chart && opt) chart.setOption(opt, { notMerge: true });
-  }
-  document.addEventListener("boxdex:themechange", onThemeChange);
-
-  return () => {
-    ro.disconnect();
-    document.removeEventListener("boxdex:themechange", onThemeChange);
-    chart?.dispose();
-    chart = null;
-  };
 });
 
 // Records currently plotted: eligible on both axes, optionally pareto-only.
@@ -97,8 +69,6 @@ function exportJson() {
 }
 
 function buildOption() {
-  if (records.length === 0) return null;
-
   const { accent } = getActiveTheme();
 
   const eligible = records.filter(
@@ -207,38 +177,27 @@ function buildOption() {
   };
 }
 
-$effect(() => {
-  // Track reactive state so $effect re-runs on changes
-  [records, xKey, yKey, colorKey, onlyPareto];
-  const opt = buildOption();
-  if (chart && opt) {
-    chart.setOption(opt, { notMerge: true });
-  }
-});
-
 // Sync axis/colour/pareto selection to the URL so the share link is reproducible.
 $effect(() => {
   if (!initialized) return;
-  const params = new URLSearchParams();
-  if (xKey !== "volumeL") params.set("x", xKey);
-  if (yKey !== "maxSplDb") params.set("y", yKey);
-  if (colorKey !== "topology") params.set("color", colorKey);
-  if (onlyPareto) params.set("pareto", "1");
-  const qs = params.toString();
-  history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+  writeParams({
+    x: xKey !== "volumeL" ? xKey : undefined,
+    y: yKey !== "maxSplDb" ? yKey : undefined,
+    color: colorKey !== "topology" ? colorKey : undefined,
+    pareto: onlyPareto ? "1" : undefined,
+  });
 });
 </script>
 
 <div class="design-space">
-  <div class="page-header no-print">
-    <button class="link-btn" onclick={copyLink}>{copyDone ? "copied!" : "⎘ share"}</button>
+  <PageActions>
     <ExportMenu
       disabled={records.length === 0}
       onCsv={exportCsv}
       onJson={exportJson}
       onPrint={() => window.print()}
     />
-  </div>
+  </PageActions>
   <div class="controls no-print">
     <label>
       <span>X axis</span>
@@ -269,7 +228,11 @@ $effect(() => {
     </label>
   </div>
 
-  <div bind:this={host} class="chart-host"></div>
+  {#if records.length > 0}
+    <EChart option={buildOption} height={500} onInit={onChartInit} />
+  {:else}
+    <div class="chart-placeholder">Loading…</div>
+  {/if}
 
   <p class="note">
     Ringed points are Pareto-optimal &mdash; circle = measured, triangle = simulated.
@@ -309,35 +272,13 @@ $effect(() => {
     padding-top: 1.2rem;
   }
 
-  /* Pin the action buttons to the top-right of the page, level with the <h1>
-     (which the .astro page renders above this island). */
-  .page-header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .link-btn {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 4px;
-    padding: 0.3rem 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-
-  .link-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .chart-host {
-    width: 100%;
+  .chart-placeholder {
     height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-family: var(--font-mono);
   }
 
   .note {

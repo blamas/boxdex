@@ -2,6 +2,7 @@
 import { onMount } from "svelte";
 import { CATEGORIES, type Category } from "../lib/category";
 import { SERIES_COLORS, toPairs } from "../lib/csv";
+import { type CurvesResponse, pickCurve } from "../lib/curves";
 import type { EnclosureRecord } from "../lib/metrics";
 import { BASE } from "../lib/site";
 import {
@@ -19,23 +20,12 @@ import {
   encodeStack,
   recommendedGeneratorW,
   spectralBalance,
+  summarizeStack,
 } from "../lib/stack";
 import CrossoverStrip from "./CrossoverStrip.svelte";
 import CurveChart from "./CurveChart.svelte";
 import ExportMenu from "./ExportMenu.svelte";
-
-type CurveData = { freq: number[]; value: number[] };
-interface DriverCurves {
-  driverId: string;
-  source: string;
-  curves: Partial<Record<string, CurveData>>;
-}
-interface CurvesResponse {
-  slug: string;
-  name: string;
-  simulations: DriverCurves[];
-  measurements: DriverCurves[];
-}
+import PageActions from "./PageActions.svelte";
 
 let records = $state<EnclosureRecord[]>([]);
 let stack = $state<StackSlot[]>([]);
@@ -47,7 +37,6 @@ let coverage = $state<CoverageInputs>({
 let curveCache = $state<Record<string, CurvesResponse>>({});
 let loading = $state(true);
 let initialized = $state(false);
-let copyDone = $state(false);
 let pickerCat = $state<Category | null>(null);
 let pickerEl = $state<HTMLDivElement>();
 
@@ -96,74 +85,15 @@ const resolvedSlots = $derived.by(() =>
   })
 );
 
-const summary = $derived.by(() => {
-  let totalCabs = 0;
-  let totalWeightKg = 0;
-  let weightMissing = false;
-  let totalPowerAesW = 0;
-  let powerMissing = false;
-  let totalPowerProgramW = 0;
-  let hasProgram = false;
-  // Broadband power-sum of each band's max SPL (with its array gain) at 1 m.
-  let maxSplPower = 0;
-  let hasMaxSpl = false;
-  let maxSplPartial = false;
-  let lowHz = Number.POSITIVE_INFINITY;
-  let highHz = 0;
-
-  for (const { slot, rec } of resolvedSlots) {
-    totalCabs += slot.qty;
-    const cat = rec.category as Category;
-
-    if (rec.metrics.weightKg !== undefined) {
-      totalWeightKg += slot.qty * rec.metrics.weightKg;
-    } else {
-      weightMissing = true;
-    }
-
-    const aesPerCab = rec.powerAesW ?? rec.recommendedPowerW;
-    if (aesPerCab !== undefined) {
-      totalPowerAesW += slot.qty * aesPerCab;
-    } else {
-      powerMissing = true;
-    }
-    if (rec.powerProgramW !== undefined) {
-      totalPowerProgramW += slot.qty * rec.powerProgramW;
-      hasProgram = true;
-    }
-
-    if (rec.metrics.maxSplDb !== undefined) {
-      maxSplPower += 10 ** ((rec.metrics.maxSplDb + arrayGainDb(cat, slot.qty)) / 10);
-      hasMaxSpl = true;
-    } else {
-      maxSplPartial = true;
-    }
-
-    if (rec.metrics.f3Hz !== undefined) lowHz = Math.min(lowHz, rec.metrics.f3Hz);
-    highHz = Math.max(highHz, rec.recommendedCrossoverHz ?? CATEGORY_UPPER_HZ[cat]);
-  }
-
-  const systemMaxSplDb = hasMaxSpl ? 10 * Math.log10(maxSplPower) : undefined;
-  return {
-    totalCabs,
-    totalWeightKg,
-    weightMissing,
-    totalPowerAesW,
-    powerMissing,
-    totalPowerProgramW,
-    hasProgram,
-    systemMaxSplDb,
-    maxSplPartial,
-    lowHz: Number.isFinite(lowHz) ? lowHz : undefined,
-    highHz: highHz > 0 ? highHz : undefined,
-  };
-});
+const summary = $derived(
+  summarizeStack(resolvedSlots.map(({ slot, rec }) => ({ qty: slot.qty, rec })))
+);
 
 const coverageResults = $derived.by(() =>
   resolvedSlots.map(({ i, slot, rec }) => {
     const base = calcCoverage(
       rec.metrics.maxSplDb,
-      rec.category as Category,
+      rec.category,
       slot.qty,
       coverage.distanceM,
       coverage.targetSplDb,
@@ -175,33 +105,21 @@ const coverageResults = $derived.by(() =>
 
 const crossoverSlots = $derived.by(() =>
   resolvedSlots.map(({ rec }) => ({
-    category: rec.category as Category,
+    category: rec.category,
     f3Hz: rec.metrics.f3Hz ?? 20,
-    upperHz: rec.recommendedCrossoverHz ?? CATEGORY_UPPER_HZ[rec.category as Category],
+    upperHz: rec.recommendedCrossoverHz ?? CATEGORY_UPPER_HZ[rec.category],
     name: rec.name,
   }))
 );
-
-function pickSplCurve(payload: CurvesResponse): { dc: DriverCurves; isMeas: boolean } | null {
-  for (const dc of payload.measurements) {
-    if (dc.curves.spl) return { dc, isMeas: true };
-  }
-  for (const dc of payload.simulations) {
-    if (dc.curves.spl) return { dc, isMeas: false };
-  }
-  return null;
-}
 
 // Bands feeding the predicted system response, with per-band quantities.
 const responseBands = $derived.by<ResponseBand[]>(() =>
   resolvedSlots.flatMap(({ slot, rec }) => {
     const payload = curveCache[slot.slug];
     if (!payload) return [];
-    const picked = pickSplCurve(payload);
-    if (!picked?.dc.curves.spl) return [];
-    return [
-      { category: rec.category as Category, qty: slot.qty, points: toPairs(picked.dc.curves.spl) },
-    ];
+    const curve = pickCurve(payload, "spl")?.dc.curves.spl;
+    if (!curve) return [];
+    return [{ category: rec.category, qty: slot.qty, points: toPairs(curve) }];
   })
 );
 
@@ -218,14 +136,14 @@ const responseSeries = $derived.by<ChartSeries[]>(() => {
   const bands: ChartSeries[] = resolvedSlots.flatMap(({ i, slot, rec }) => {
     const payload = curveCache[slot.slug];
     if (!payload) return [];
-    const picked = pickSplCurve(payload);
-    if (!picked?.dc.curves.spl) return [];
-    const gain = arrayGainDb(rec.category as Category, slot.qty);
+    const curve = pickCurve(payload, "spl")?.dc.curves.spl;
+    if (!curve) return [];
+    const gain = arrayGainDb(rec.category, slot.qty);
     return [
       {
         name: `${rec.name} ×${slot.qty}`,
         color: SERIES_COLORS[i % SERIES_COLORS.length],
-        points: toPairs(picked.dc.curves.spl).map(([f, d]) => [f, d + gain] as [number, number]),
+        points: toPairs(curve).map(([f, d]) => [f, d + gain] as [number, number]),
         dashed: true,
       },
     ];
@@ -294,14 +212,6 @@ function setQtyFromInput(idx: number, value: string) {
   }
 }
 
-async function copyLink() {
-  await navigator.clipboard.writeText(location.href);
-  copyDone = true;
-  setTimeout(() => {
-    copyDone = false;
-  }, 1500);
-}
-
 function fmtW(w: number): string {
   return w >= 1000 ? `${(w / 1000).toFixed(1)} kW` : `${w} W`;
 }
@@ -325,10 +235,9 @@ const curvesLoading = $derived(
 {/snippet}
 
 <div class="stack-builder">
-  <div class="stack-header no-print">
-    <button class="link-btn" onclick={copyLink}>{copyDone ? "copied!" : "⎘ share"}</button>
+  <PageActions>
     <ExportMenu onPrint={() => window.print()} />
-  </div>
+  </PageActions>
 
   {#if loading}
     <p class="muted">Loading…</p>
@@ -601,32 +510,6 @@ const curvesLoading = $derived(
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-  }
-
-  /* Pin the action buttons to the top-right of the page, level with the <h1>
-     (which the .astro page renders above this island). */
-  .stack-header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .link-btn {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 4px;
-    padding: 0.3rem 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-
-  .link-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
   }
 
   .section {

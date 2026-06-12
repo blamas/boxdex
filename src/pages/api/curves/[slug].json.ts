@@ -2,6 +2,7 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import type { APIRoute, GetStaticPaths } from "astro";
 import { type CurveKind, parseCurveCsv } from "../../../lib/csv";
+import type { DriverCurves } from "../../../lib/curves";
 
 interface Props {
   entry: CollectionEntry<"enclosures">;
@@ -12,14 +13,6 @@ const csvFiles = import.meta.glob("/data/enclosures/**/*.csv", {
   import: "default",
   eager: true,
 }) as Record<string, string>;
-
-type CurveData = { freq: number[]; value: number[] };
-
-interface DriverCurves {
-  driverId: string;
-  source: string;
-  curves: Partial<Record<CurveKind, CurveData>>;
-}
 
 function loadCurves(
   slug: string,
@@ -35,7 +28,7 @@ function loadCurves(
     if (raw == null) continue;
     const parsed = parseCurveCsv(raw);
     // biome-ignore lint/style/noNonNullAssertion: key was just set above
-    map.get(driverId)!.curves[entry.kind as CurveKind] = { freq: parsed.freq, value: parsed.value };
+    map.get(driverId)!.curves[entry.kind as CurveKind] = parsed;
   }
   return [...map.values()];
 }

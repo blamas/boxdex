@@ -2,13 +2,19 @@
 import { onMount } from "svelte";
 import { CATEGORY_FILTERS, type CategoryFilter } from "../lib/category";
 import { humanize } from "../lib/format";
-import { AXIS_FIELDS, type EnclosureRecord, filterByCategory, sortRecords } from "../lib/metrics";
+import {
+  AXIS_FIELDS,
+  type EnclosureRecord,
+  type MetricKey,
+  filterByCategory,
+  sortRecords,
+} from "../lib/metrics";
 import { BASE } from "../lib/site";
 import { decodeStack, encodeStack } from "../lib/stack";
 
 let records = $state<EnclosureRecord[]>([]);
 let category = $state<CategoryFilter>("all");
-let sortKey = $state("name");
+let sortKey = $state<MetricKey | "name">("name");
 
 let addedSlugs = $state(new Set<string>());
 

@@ -2,36 +2,22 @@
 import { onMount } from "svelte";
 import { CATEGORIES } from "../lib/category";
 import { SERIES_COLORS, normalisePeak, toPairs } from "../lib/csv";
+import { CURVE_Y_LABELS, type CurvesResponse, pickCurve } from "../lib/curves";
 import { curveSeriesToCsv, downloadBlob, jsonString } from "../lib/export";
 import { humanize } from "../lib/format";
 import type { EnclosureRecord } from "../lib/metrics";
+import type { Driver } from "../lib/schemas";
 import { BASE } from "../lib/site";
+import { readParam, writeParams } from "../lib/url-state";
 import CurveChart from "./CurveChart.svelte";
 import ExportMenu from "./ExportMenu.svelte";
+import PageActions from "./PageActions.svelte";
 
+// The kinds this page lets you overlay (subset of CurveKind).
 type Kind = "spl" | "phase" | "impedance";
-type CurveData = { freq: number[]; value: number[] };
-
-interface DriverCurves {
-  driverId: string;
-  source: string;
-  curves: Partial<Record<Kind, CurveData>>;
-}
-interface CurvesResponse {
-  slug: string;
-  name: string;
-  simulations: DriverCurves[];
-  measurements: DriverCurves[];
-}
-
-interface DriverInfo {
-  id: string;
-  brand: string;
-  model: string;
-}
 
 let records = $state<EnclosureRecord[]>([]);
-let driverList = $state<DriverInfo[]>([]);
+let driverList = $state<Driver[]>([]);
 let driverFilter = $state("all");
 let selected = $state<string[]>([]);
 let cache = $state<Record<string, CurvesResponse>>({});
@@ -45,16 +31,9 @@ let showAdvanced = $state(false);
 let kindFilter = $state<Kind | "all">("all");
 let categoryFilter = $state("all");
 
-const Y_LABELS: Record<Kind, string> = {
-  spl: "SPL (dB)",
-  phase: "Phase (°)",
-  impedance: "Impedance (Ω)",
-};
-
 onMount(async () => {
-  const params = new URLSearchParams(window.location.search);
-  const urlSlugs = (params.get("slugs") ?? "").split(",").filter(Boolean);
-  const urlKind = params.get("kind") as Kind | null;
+  const urlSlugs = (readParam("slugs") ?? "").split(",").filter(Boolean);
+  const urlKind = readParam("kind") as Kind | null;
 
   const [manifestRes, driversRes] = await Promise.all([
     fetch(`${BASE}/api/manifest.json`),
@@ -81,11 +60,10 @@ onMount(async () => {
 // Sync URL when selection or kind changes
 $effect(() => {
   if (!initialized) return;
-  const params = new URLSearchParams();
-  if (selected.length > 0) params.set("slugs", selected.join(","));
-  if (kind !== "spl") params.set("kind", kind);
-  const qs = params.toString();
-  history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+  writeParams({
+    slugs: selected.length > 0 ? selected.join(",") : undefined,
+    kind: kind !== "spl" ? kind : undefined,
+  });
 });
 
 $effect(() => {
@@ -99,16 +77,6 @@ $effect(() => {
     }
   }
 });
-
-function pickCurve(payload: CurvesResponse, k: Kind): { dc: DriverCurves; isMeas: boolean } | null {
-  for (const dc of payload.measurements) {
-    if (dc.curves[k]) return { dc, isMeas: true };
-  }
-  for (const dc of payload.simulations) {
-    if (dc.curves[k]) return { dc, isMeas: false };
-  }
-  return null;
-}
 
 const series = $derived.by(() => {
   return selected.flatMap((slug, i) => {
@@ -125,7 +93,7 @@ const series = $derived.by(() => {
     const label = isMeas
       ? `${payload.name} (meas · ${dc.driverId})`
       : `${payload.name} (sim · ${dc.driverId})`;
-    let values = kind === "spl" && normalise ? normalisePeak(curve.value) : curve.value;
+    const values = kind === "spl" && normalise ? normalisePeak(curve.value) : curve.value;
 
     let pairs = toPairs({ freq: curve.freq, value: values });
     if (freqMin !== "") pairs = pairs.filter(([f]) => f >= Number(freqMin));
@@ -151,15 +119,6 @@ function toggleSelect(slug: string) {
   } else {
     selected = [...selected, slug];
   }
-}
-
-let copyDone = $state(false);
-async function copyLink() {
-  await navigator.clipboard.writeText(window.location.href);
-  copyDone = true;
-  setTimeout(() => {
-    copyDone = false;
-  }, 1500);
 }
 
 function exportCsv() {
@@ -192,15 +151,14 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
 </script>
 
 <div class="compare">
-  <div class="page-header no-print">
-    <button class="link-btn" onclick={copyLink}>{copyDone ? "copied!" : "⎘ share"}</button>
+  <PageActions>
     <ExportMenu
       disabled={series.length === 0}
       onCsv={exportCsv}
       onJson={exportJson}
       onPrint={() => window.print()}
     />
-  </div>
+  </PageActions>
   <div class="controls no-print">
     <div class="segmented">
       {#each (["spl", "phase", "impedance"] as Kind[]) as k}
@@ -273,7 +231,7 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
       Select at least one box below, or the selected boxes have no {kind} data.
     </div>
   {:else}
-    <CurveChart series={series} yName={Y_LABELS[kind]} />
+    <CurveChart series={series} yName={CURVE_Y_LABELS[kind]} />
   {/if}
 
   <p class="provenance-note">Solid = measured · Dashed = simulated · Measurements take priority over simulations</p>
@@ -461,31 +419,6 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
     gap: 0.4rem;
     font-family: var(--font-mono);
     font-size: 0.8rem;
-  }
-
-  /* Pin the action buttons to the top-right of the page, level with the <h1>
-     (which the .astro page renders above this island). */
-  .page-header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .link-btn {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 4px;
-    padding: 0.3rem 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-  }
-
-  .link-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
   }
 
   .box-list {

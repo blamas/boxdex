@@ -98,3 +98,5 @@ export function getActiveTheme(): { theme: typeof darkTheme; accent: string } {
 }
 
 export { echarts };
+
+export type EChartsInstance = ReturnType<typeof echarts.init>;

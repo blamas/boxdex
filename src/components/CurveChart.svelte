@@ -1,6 +1,5 @@
 <script lang="ts">
-import { onMount } from "svelte";
-import { echarts, getActiveTheme } from "../lib/echarts";
+import EChart from "./EChart.svelte";
 
 interface Series {
   name: string;
@@ -17,10 +16,7 @@ const {
   height = 380,
 }: { series: Series[]; yName: string; height?: number } = $props();
 
-let host: HTMLDivElement;
-let chart: ReturnType<typeof echarts.init> | null = null;
-
-function buildOption(s: Series[], yN: string) {
+function buildOption() {
   return {
     backgroundColor: "transparent",
     tooltip: { trigger: "axis" },
@@ -45,10 +41,10 @@ function buildOption(s: Series[], yN: string) {
     },
     yAxis: {
       type: "value",
-      name: yN,
+      name: yName,
       scale: true,
     },
-    series: s.map((ser) => ({
+    series: series.map((ser) => ({
       type: "line",
       name: ser.name,
       data: ser.points,
@@ -59,38 +55,6 @@ function buildOption(s: Series[], yN: string) {
     })),
   };
 }
-
-function initChart() {
-  const { theme } = getActiveTheme();
-  chart?.dispose();
-  chart = echarts.init(host, theme);
-  chart.setOption(buildOption(series, yName), { notMerge: true });
-}
-
-onMount(() => {
-  initChart();
-
-  const ro = new ResizeObserver(() => chart?.resize());
-  ro.observe(host);
-
-  function onThemeChange() {
-    initChart();
-  }
-  document.addEventListener("boxdex:themechange", onThemeChange);
-
-  return () => {
-    ro.disconnect();
-    document.removeEventListener("boxdex:themechange", onThemeChange);
-    chart?.dispose();
-    chart = null;
-  };
-});
-
-$effect(() => {
-  if (chart) {
-    chart.setOption(buildOption(series, yName), { notMerge: true });
-  }
-});
 </script>
 
-<div bind:this={host} style="width:100%;height:{height}px;"></div>
+<EChart option={buildOption} {height} />

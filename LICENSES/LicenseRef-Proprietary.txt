@@ -1,0 +1,18 @@
+Proprietary · metadata-only entry
+
+This enclosure entry describes a design whose plans are not freely licensed
+and for which Boxdex holds no redistribution permission. All rights remain
+with the original author or publisher.
+
+Entries under this license must not include the protected plan files (PDF,
+CAD, original drawings, original photos) in this repository. They may only
+contain:
+
+  - factual specifications (dimensions, tuning, driver fitment), which as
+    facts are not subject to copyright;
+  - simulations and measurements produced independently by Boxdex
+    contributors;
+  - a link to the official source where the plans can be obtained.
+
+To build this design, obtain the plans from the original publisher via the
+entry's source link.

@@ -1,60 +1,10 @@
 <script lang="ts">
 import { onMount } from "svelte";
+import { filterDrivers, filterHorns, mouthCm2, sortDrivers, sortHorns } from "../lib/catalog";
 import { ebp } from "../lib/driver";
+import type { CompressionDriver, ConeDriver, Driver, Horn } from "../lib/schemas";
 import { BASE } from "../lib/site";
-
-interface BaseDriver {
-  id: string;
-  brand: string;
-  model: string;
-  impedanceOhm: number;
-  peW: number;
-  datasheetUrl?: string;
-}
-interface ConeDriver extends BaseDriver {
-  type: "cone";
-  sizeInch: number;
-  fsHz: number;
-  qts: number;
-  qes?: number;
-  vasL: number;
-  sdCm2: number;
-  xmaxMm: number;
-  sensitivityDb: number;
-}
-interface CompressionDriver extends BaseDriver {
-  type: "compression";
-  exitInch: number;
-  throatMm?: number;
-  voiceCoilMm: number;
-  fLowHz: number;
-  fHighHz: number;
-  minCrossoverHz: number;
-  crossoverSlopeDbOct?: number;
-  sensitivityHornDb: number;
-  fsHz?: number;
-  magnetMaterial?: string;
-  weightKg?: number;
-}
-type Driver = ConeDriver | CompressionDriver;
-
-interface Horn {
-  id: string;
-  brand: string;
-  model: string;
-  exitInch: number;
-  coverageHorizontalDeg: number;
-  coverageVerticalDeg: number;
-  cutoffHz: number;
-  mouthWmm: number;
-  mouthHmm: number;
-  depthMm?: number;
-  profile: string;
-  constantDirectivity?: boolean;
-  material?: string;
-  weightKg?: number;
-  datasheetUrl?: string;
-}
+import { readParam } from "../lib/url-state";
 
 // Tabs select which catalog (and column/filter set) is active. Cone and compression are
 // the two driver branches; horns are a separate collection rendered in the same page.
@@ -85,7 +35,7 @@ let selected = $state<Set<string>>(new Set());
 let showAdvanced = $state(false);
 
 onMount(async () => {
-  const initial = new URLSearchParams(window.location.search).get("tab");
+  const initial = readParam("tab");
   if (initial === "compression" || initial === "horn") {
     tab = initial;
     sortKey = "exitInch";
@@ -101,7 +51,6 @@ onMount(async () => {
 
 const isCone = $derived(tab === "cone");
 const isHorn = $derived(tab === "horn");
-const mouthCm2 = (h: Horn) => Math.round((h.mouthWmm * h.mouthHmm) / 100);
 
 const ofType = $derived(isHorn ? [] : drivers.filter((d) => d.type === tab));
 
@@ -129,84 +78,36 @@ const exits = $derived(
 const impedances = $derived([...new Set(ofType.map((d) => d.impedanceOhm))].sort((a, b) => a - b));
 const profiles = $derived([...new Set(horns.map((h) => h.profile))].sort());
 
-// Per-column value getters so sorting works across the disjoint field sets.
-function sortValue(d: Driver, key: SortKey): number | string | undefined {
-  if (key === "brand") return d.brand;
-  if (key === "model") return d.model;
-  if (key === "impedanceOhm") return d.impedanceOhm;
-  if (key === "peW") return d.peW;
-  if (d.type === "cone") {
-    if (key === "sizeInch") return d.sizeInch;
-    if (key === "fsHz") return d.fsHz;
-    if (key === "qts") return d.qts;
-    if (key === "vasL") return d.vasL;
-    if (key === "xmaxMm") return d.xmaxMm;
-    if (key === "sensitivityDb") return d.sensitivityDb;
-  } else {
-    if (key === "exitInch") return d.exitInch;
-    if (key === "voiceCoilMm") return d.voiceCoilMm;
-    if (key === "fLowHz") return d.fLowHz;
-    if (key === "fHighHz") return d.fHighHz;
-    if (key === "minCrossoverHz") return d.minCrossoverHz;
-    if (key === "sensitivityHornDb") return d.sensitivityHornDb;
-  }
-  return undefined;
-}
-
-function hornSortValue(h: Horn, key: SortKey): number | string {
-  if (key === "brand") return h.brand;
-  if (key === "mouthCm2") return mouthCm2(h);
-  if (key === "depthMm") return h.depthMm ?? 0;
-  if (key === "exitInch") return h.exitInch;
-  if (key === "coverageHorizontalDeg") return h.coverageHorizontalDeg;
-  if (key === "coverageVerticalDeg") return h.coverageVerticalDeg;
-  if (key === "cutoffHz") return h.cutoffHz;
-  return h.brand;
-}
-
 const filtered = $derived(
-  ofType
-    .filter((d) => filterBrand === "all" || d.brand === filterBrand)
-    .filter((d) => filterImpedance === "all" || d.impedanceOhm === Number(filterImpedance))
-    .filter((d) =>
-      d.type === "cone" ? filterSize === "all" || d.sizeInch === Number(filterSize) : true
-    )
-    .filter((d) =>
-      d.type === "compression" ? filterSize === "all" || d.exitInch === Number(filterSize) : true
-    )
-    .filter((d) => d.type !== "cone" || maxFs === "" || d.fsHz <= Number(maxFs))
-    .filter((d) => d.type !== "cone" || minQts === "" || d.qts >= Number(minQts))
-    .filter((d) => d.type !== "cone" || maxQts === "" || d.qts <= Number(maxQts))
-    .filter((d) => d.type !== "cone" || minXmax === "" || d.xmaxMm >= Number(minXmax))
-    .filter((d) => d.type !== "cone" || minPe === "" || d.peW >= Number(minPe))
-    .filter(
-      (d) =>
-        d.type !== "compression" || maxCrossover === "" || d.minCrossoverHz <= Number(maxCrossover)
-    )
-    .filter(
-      (d) => d.type !== "compression" || minSens === "" || d.sensitivityHornDb >= Number(minSens)
-    )
-    .sort((a, b) => {
-      const va = sortValue(a, sortKey);
-      const vb = sortValue(b, sortKey);
-      if (va === undefined || vb === undefined) return 0;
-      const cmp = va < vb ? -1 : va > vb ? 1 : 0;
-      return sortAsc ? cmp : -cmp;
-    })
+  sortDrivers(
+    filterDrivers(ofType, {
+      brand: filterBrand,
+      size: filterSize,
+      impedance: filterImpedance,
+      maxFs,
+      minQts,
+      maxQts,
+      minXmax,
+      minPe,
+      maxCrossover,
+      minSens,
+    }),
+    sortKey,
+    sortAsc
+  )
 );
 
 const filteredHorns = $derived(
-  horns
-    .filter((h) => filterBrand === "all" || h.brand === filterBrand)
-    .filter((h) => filterSize === "all" || h.exitInch === Number(filterSize))
-    .filter((h) => filterProfile === "all" || h.profile === filterProfile)
-    .filter((h) => maxCutoff === "" || h.cutoffHz <= Number(maxCutoff))
-    .sort((a, b) => {
-      const va = hornSortValue(a, sortKey);
-      const vb = hornSortValue(b, sortKey);
-      const cmp = va < vb ? -1 : va > vb ? 1 : 0;
-      return sortAsc ? cmp : -cmp;
-    })
+  sortHorns(
+    filterHorns(horns, {
+      brand: filterBrand,
+      exit: filterSize,
+      profile: filterProfile,
+      maxCutoff,
+    }),
+    sortKey,
+    sortAsc
+  )
 );
 
 const resultCount = $derived(isHorn ? filteredHorns.length : filtered.length);

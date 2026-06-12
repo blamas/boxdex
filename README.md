@@ -60,3 +60,8 @@ automatically on push to `main`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the folder convention, CSV format, and
 metric definitions.
+
+## License
+
+Code is MIT; driver specs are CC0; each enclosure entry carries its own license
+in its frontmatter: see [LICENSE.md](LICENSE.md).

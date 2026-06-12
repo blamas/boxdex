@@ -58,7 +58,7 @@ export const GET: APIRoute = async () => {
         recommendedPowerW: data.specs.recommendedPowerW,
         powerAesW: data.specs.powerAesW,
         powerProgramW: data.specs.powerProgramW,
-        metrics: metrics as unknown as Record<string, number | undefined>,
+        metrics,
       };
     })
     .sort((a, b) => a.name.localeCompare(b.name));

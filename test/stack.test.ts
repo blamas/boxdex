@@ -10,7 +10,9 @@ import {
   encodeStack,
   recommendedGeneratorW,
   spectralBalance,
+  summarizeStack,
 } from "../src/lib/stack";
+import { makeMetrics, makeRecord } from "./fixtures";
 
 describe("encodeStack / decodeStack", () => {
   it("round-trips a stack with multiple entries", () => {
@@ -188,5 +190,79 @@ describe("compositeResponse / spectralBalance", () => {
       },
     ];
     expect(spectralBalance(bands)).toBeNull();
+  });
+});
+
+describe("summarizeStack", () => {
+  const sub = makeRecord({
+    slug: "sub",
+    category: "sub",
+    powerAesW: 1000,
+    powerProgramW: 2000,
+    metrics: makeMetrics({ f3Hz: 35, maxSplDb: 138, weightKg: 60 }),
+  });
+  const top = makeRecord({
+    slug: "top",
+    category: "top",
+    recommendedCrossoverHz: undefined,
+    recommendedPowerW: 400,
+    metrics: makeMetrics({ f3Hz: 90, maxSplDb: 132, weightKg: 25 }),
+  });
+
+  it("totals cabinets, weight and power across slots", () => {
+    const s = summarizeStack([
+      { qty: 4, rec: sub },
+      { qty: 2, rec: top },
+    ]);
+    expect(s.totalCabs).toBe(6);
+    expect(s.totalWeightKg).toBe(4 * 60 + 2 * 25);
+    expect(s.weightMissing).toBe(false);
+    // sub uses powerAesW, top falls back to recommendedPowerW
+    expect(s.totalPowerAesW).toBe(4 * 1000 + 2 * 400);
+    expect(s.powerMissing).toBe(false);
+    expect(s.totalPowerProgramW).toBe(4 * 2000);
+    expect(s.hasProgram).toBe(true);
+  });
+
+  it("power-sums max SPL with per-category array gain", () => {
+    // 4 subs: 138 + 20*log10(4) = 150.04 dB band level; single band → that exactly
+    const s = summarizeStack([{ qty: 4, rec: sub }]);
+    expect(s.systemMaxSplDb).toBeCloseTo(150.04, 1);
+    expect(s.maxSplPartial).toBe(false);
+  });
+
+  it("flags partial data instead of fabricating numbers", () => {
+    const bare = makeRecord({
+      slug: "bare",
+      category: "kick",
+      metrics: makeMetrics({ f3Hz: 50 }),
+    });
+    const s = summarizeStack([
+      { qty: 1, rec: sub },
+      { qty: 1, rec: bare },
+    ]);
+    expect(s.weightMissing).toBe(true);
+    expect(s.powerMissing).toBe(true);
+    expect(s.maxSplPartial).toBe(true);
+    // the sub's figure still counts
+    expect(s.systemMaxSplDb).toBeCloseTo(138, 0);
+  });
+
+  it("derives bandwidth from lowest f3 to the highest crossover or category upper bound", () => {
+    const s = summarizeStack([
+      { qty: 1, rec: sub },
+      { qty: 1, rec: top },
+    ]);
+    expect(s.lowHz).toBe(35);
+    // top has no recommendedCrossoverHz → CATEGORY_UPPER_HZ.top = 20000
+    expect(s.highHz).toBe(20000);
+  });
+
+  it("returns the empty-stack shape", () => {
+    const s = summarizeStack([]);
+    expect(s.totalCabs).toBe(0);
+    expect(s.systemMaxSplDb).toBeUndefined();
+    expect(s.lowHz).toBeUndefined();
+    expect(s.highHz).toBeUndefined();
   });
 });

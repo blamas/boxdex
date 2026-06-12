@@ -64,7 +64,8 @@ data/
 - `maxSplDb` is **optional**. Boxes without it are excluded from SPL sorts/plots, never defaulted
 - Acoustic limits: `maxSplExcursionDb` (below Fb, Xmax-bound) and `maxSplThermalDb` (above Fb, power-bound) are the two independent ceilings; `maxSplDb` is the headline figure. `powerAesW`/`powerProgramW` are system power handling; `impedanceMinOhm` is the load minimum. All optional, all factual. **Never derive or fabricate them**, leave absent if unknown
 - `provenance` is derived: `"measured"` when `measurements.length > 0`, else `"sim"`
-- Controlled vocabularies (`recommendedFor`, `connectors`, `topology`, `topologyVariant`) live in `data/taxonomy.json`, wired via `enumOf()` in `content.config.ts`. An array = closed list (out-of-list value is a build error); `null` = free-form string. Add/lock a field by editing the JSON. No code change.
+- Controlled vocabularies (`recommendedFor`, `connectors`, `topology`, `topologyVariant`, `license`) live in `data/taxonomy.json`, wired via `enumOf()` in `content.config.ts`. An array = closed list (out-of-list value is a build error); `null` = free-form string. Add/lock a field by editing the JSON. No code change.
+- `license` is **required, no default** (a silent default would misstate third-party rights). SPDX CC ids or `LicenseRef-Permission`/`LicenseRef-Proprietary`; texts in `LICENSES/`, human map in `LICENSE.md`. `LicenseRef-Proprietary` entries are metadata-only (`plans` must be empty; link via `sourceUrl`); `LicenseRef-Permission` requires `licenseNote` recording the grant. Both enforced at build. New license value: add to taxonomy + drop text in `LICENSES/`.
 
 ### Curves API shape (`/api/curves/<slug>.json`)
 

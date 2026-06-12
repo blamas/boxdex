@@ -1,4 +1,5 @@
 import type { Category } from "./category";
+import type { EnclosureRecord } from "./metrics";
 
 export interface StackSlot {
   slug: string;
@@ -82,6 +83,88 @@ export function decodeStack(encoded: string): { state: StackSlot[]; cov: Coverag
   }
 
   return { state, cov };
+}
+
+// A stack line item once its slug resolved to a manifest record.
+export interface StackEntry {
+  qty: number;
+  rec: EnclosureRecord;
+}
+
+export interface StackSummary {
+  totalCabs: number;
+  totalWeightKg: number;
+  weightMissing: boolean;
+  totalPowerAesW: number;
+  powerMissing: boolean;
+  totalPowerProgramW: number;
+  hasProgram: boolean;
+  // Broadband power-sum of each band's max SPL (with its array gain) at 1 m;
+  // undefined when no cab has a figure, "partial" when some are missing.
+  systemMaxSplDb: number | undefined;
+  maxSplPartial: boolean;
+  lowHz: number | undefined;
+  highHz: number | undefined;
+}
+
+export function summarizeStack(entries: StackEntry[]): StackSummary {
+  let totalCabs = 0;
+  let totalWeightKg = 0;
+  let weightMissing = false;
+  let totalPowerAesW = 0;
+  let powerMissing = false;
+  let totalPowerProgramW = 0;
+  let hasProgram = false;
+  let maxSplPower = 0;
+  let hasMaxSpl = false;
+  let maxSplPartial = false;
+  let lowHz = Number.POSITIVE_INFINITY;
+  let highHz = 0;
+
+  for (const { qty, rec } of entries) {
+    totalCabs += qty;
+
+    if (rec.metrics.weightKg !== undefined) {
+      totalWeightKg += qty * rec.metrics.weightKg;
+    } else {
+      weightMissing = true;
+    }
+
+    const aesPerCab = rec.powerAesW ?? rec.recommendedPowerW;
+    if (aesPerCab !== undefined) {
+      totalPowerAesW += qty * aesPerCab;
+    } else {
+      powerMissing = true;
+    }
+    if (rec.powerProgramW !== undefined) {
+      totalPowerProgramW += qty * rec.powerProgramW;
+      hasProgram = true;
+    }
+
+    if (rec.metrics.maxSplDb !== undefined) {
+      maxSplPower += 10 ** ((rec.metrics.maxSplDb + arrayGainDb(rec.category, qty)) / 10);
+      hasMaxSpl = true;
+    } else {
+      maxSplPartial = true;
+    }
+
+    if (rec.metrics.f3Hz !== undefined) lowHz = Math.min(lowHz, rec.metrics.f3Hz);
+    highHz = Math.max(highHz, rec.recommendedCrossoverHz ?? CATEGORY_UPPER_HZ[rec.category]);
+  }
+
+  return {
+    totalCabs,
+    totalWeightKg,
+    weightMissing,
+    totalPowerAesW,
+    powerMissing,
+    totalPowerProgramW,
+    hasProgram,
+    systemMaxSplDb: hasMaxSpl ? 10 * Math.log10(maxSplPower) : undefined,
+    maxSplPartial,
+    lowHz: Number.isFinite(lowHz) ? lowHz : undefined,
+    highHz: highHz > 0 ? highHz : undefined,
+  };
 }
 
 // System SPL at distance: inverse-square loss from the 1 m reference (−20·log10 d,

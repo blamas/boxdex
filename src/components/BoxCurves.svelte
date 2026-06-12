@@ -1,52 +1,29 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import { CURVE_KINDS, type CurveKind, SERIES_COLORS, toPairs } from "../lib/csv";
+import { CURVE_Y_LABELS, type CurvesResponse, initialCurveView } from "../lib/curves";
 import { humanize } from "../lib/format";
 import { BASE } from "../lib/site";
 import CurveChart from "./CurveChart.svelte";
 
 let { slug, name }: { slug: string; name: string } = $props();
 
-type Kind = CurveKind;
-type CurveData = { freq: number[]; value: number[] };
-
-interface DriverCurves {
-  driverId: string;
-  source: string;
-  curves: Partial<Record<Kind, CurveData>>;
-}
-interface CurvesResponse {
-  slug: string;
-  name: string;
-  simulations: DriverCurves[];
-  measurements: DriverCurves[];
-}
-
-const Y_LABELS: Record<Kind, string> = {
-  spl: "SPL (dB)",
-  phase: "Phase (°)",
-  impedance: "Impedance (Ω)",
-  group_delay: "Group delay (ms)",
-  distortion: "Distortion (%)",
-  power_compression: "Power compression (dB)",
-};
-const KINDS: Kind[] = [...CURVE_KINDS];
-
 let data = $state<CurvesResponse | null>(null);
 let error = $state<string | null>(null);
 let activeTab = $state<"sim" | "meas">("sim");
 let activeDriverIdx = $state(0);
-let activeKind = $state<Kind>("spl");
+let activeKind = $state<CurveKind>("spl");
 
 onMount(async () => {
   try {
     const res = await fetch(`${BASE}/api/curves/${slug}.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
-    if (data && data.measurements.length > 0) activeTab = "meas";
-    const group = activeTab === "meas" ? data?.measurements : data?.simulations;
-    const first = KINDS.find((k) => group?.[0]?.curves[k]);
-    if (first) activeKind = first;
+    if (data) {
+      const initial = initialCurveView(data);
+      activeTab = initial.tab;
+      activeKind = initial.kind;
+    }
   } catch (e) {
     error = String(e);
   }
@@ -58,7 +35,9 @@ const activeGroup = $derived(
 
 const activeDriver = $derived(activeGroup[activeDriverIdx] ?? null);
 
-const availableKinds = $derived(activeDriver ? KINDS.filter((k) => activeDriver.curves[k]) : []);
+const availableKinds = $derived(
+  activeDriver ? CURVE_KINDS.filter((k) => activeDriver.curves[k]) : []
+);
 
 const series = $derived.by(() => {
   if (!activeDriver) return [];
@@ -81,7 +60,7 @@ function switchTab(tab: "sim" | "meas") {
   activeTab = tab;
   activeDriverIdx = 0;
   const group = tab === "meas" ? data?.measurements : data?.simulations;
-  const first = KINDS.find((k) => group?.[0]?.curves[k]);
+  const first = CURVE_KINDS.find((k) => group?.[0]?.curves[k]);
   if (first) activeKind = first;
 }
 </script>
@@ -132,7 +111,7 @@ function switchTab(tab: "sim" | "meas") {
     </div>
 
     {#if availableKinds.length > 0}
-      <CurveChart series={series} yName={Y_LABELS[activeKind]} />
+      <CurveChart series={series} yName={CURVE_Y_LABELS[activeKind]} />
       {#if activeDriver}
         <p class="provenance-note">
           {activeDriver.source} &mdash;

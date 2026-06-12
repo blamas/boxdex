@@ -2,7 +2,13 @@
 import { onMount } from "svelte";
 import { CATEGORIES, type CategoryFilter } from "../lib/category";
 import { humanize } from "../lib/format";
-import { AXIS_FIELDS, type EnclosureRecord, sortRecords } from "../lib/metrics";
+import {
+  AXIS_FIELDS,
+  type EnclosureRecord,
+  type MetricKey,
+  filterEnclosures,
+  sortRecords,
+} from "../lib/metrics";
 import { BASE } from "../lib/site";
 
 let records = $state<EnclosureRecord[]>([]);
@@ -19,7 +25,7 @@ let driverCountFilter = $state("all");
 let hasMeasurementsOnly = $state(false);
 let hasPlansOnly = $state(false);
 let verifiedOnly = $state(false);
-let sortKey = $state("volumeL");
+let sortKey = $state<MetricKey>("volumeL");
 
 const allTopologies = $derived([...new Set(records.map((r) => r.topology))].sort());
 
@@ -34,46 +40,26 @@ onMount(async () => {
   records = await res.json();
 });
 
-const results = $derived.by(() => {
-  const filtered = records.filter((r) => {
-    if (category !== "all" && r.category !== category) return false;
-    if (topology !== "all" && r.topology !== topology) return false;
-    if (driverSize !== "all" && !r.driverSizes.includes(Number(driverSize))) return false;
-    if (driverCountFilter !== "all") {
-      if (driverCountFilter === "4+") {
-        if (r.driverCount < 4) return false;
-      } else if (r.driverCount !== Number(driverCountFilter)) return false;
-    }
-    if (selectedTags.length > 0 && !r.recommendedFor.some((t) => selectedTags.includes(t)))
-      return false;
-    if (maxF3 !== "") {
-      const f3 = r.metrics.f3Hz;
-      if (f3 === undefined || f3 > Number(maxF3)) return false;
-    }
-    if (minF3 !== "") {
-      const f3 = r.metrics.f3Hz;
-      if (f3 === undefined || f3 < Number(minF3)) return false;
-    }
-    if (minSpl !== "") {
-      const spl = r.metrics.maxSplDb;
-      if (spl === undefined || spl < Number(minSpl)) return false;
-    }
-    if (minVol !== "") {
-      const vol = r.metrics.volumeL;
-      if (vol === undefined || vol < Number(minVol)) return false;
-    }
-    if (maxVol !== "") {
-      const vol = r.metrics.volumeL;
-      if (vol === undefined || vol > Number(maxVol)) return false;
-    }
-    if (hasMeasurementsOnly && !r.hasMeasurements) return false;
-    if (hasPlansOnly && !r.hasPlans) return false;
-    if (verifiedOnly && !r.verified) return false;
-    return true;
-  });
-
-  return sortRecords(filtered, sortKey);
-});
+const results = $derived(
+  sortRecords(
+    filterEnclosures(records, {
+      category,
+      topology,
+      driverSize,
+      driverCount: driverCountFilter,
+      tags: selectedTags,
+      minF3,
+      maxF3,
+      minSpl,
+      minVol,
+      maxVol,
+      measuredOnly: hasMeasurementsOnly,
+      plansOnly: hasPlansOnly,
+      verifiedOnly,
+    }),
+    sortKey
+  )
+);
 
 function clearFilters() {
   category = "all";

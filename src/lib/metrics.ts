@@ -7,8 +7,27 @@ export function provenanceOf(measurements: readonly unknown[]): Provenance {
   return measurements.length > 0 ? "measured" : "sim";
 }
 
+// Numeric, per-enclosure facts derived from frontmatter. Optional fields stay
+// undefined when unknown — never defaulted (see CLAUDE.md acoustic-limit rules).
+export interface DerivedMetrics {
+  volumeL: number;
+  footprintCm2: number;
+  heightMm: number;
+  weightKg: number | undefined;
+  f3Hz: number;
+  f3HzHigh: number | undefined;
+  maxSplDb: number | undefined;
+  maxSplExcursionDb: number | undefined;
+  maxSplThermalDb: number | undefined;
+  sensitivityDb: number | undefined;
+  impedanceMinOhm: number | undefined;
+  outputDensity: number | undefined;
+}
+
+export type MetricKey = keyof DerivedMetrics;
+
 export interface AxisField {
-  key: string;
+  key: MetricKey;
   label: string;
   unit: string;
   better: "min" | "max";
@@ -28,6 +47,11 @@ export const AXIS_FIELDS: AxisField[] = [
 
 export const AXIS_MAP = new Map(AXIS_FIELDS.map((f) => [f.key, f]));
 
+// Narrow an untrusted string (URL param, select value) to a plottable axis key.
+export function metricKeyOf(s: string): MetricKey | undefined {
+  return AXIS_FIELDS.find((f) => f.key === s)?.key;
+}
+
 export interface EnclosureInput {
   netVolumeL: number;
   dims: { hMm: number; wMm: number; dMm: number };
@@ -41,21 +65,6 @@ export interface EnclosureInput {
     sensitivityDb?: number;
     impedanceMinOhm?: number;
   };
-}
-
-export interface DerivedMetrics {
-  volumeL: number;
-  footprintCm2: number;
-  heightMm: number;
-  weightKg: number | undefined;
-  f3Hz: number;
-  f3HzHigh: number | undefined;
-  maxSplDb: number | undefined;
-  maxSplExcursionDb: number | undefined;
-  maxSplThermalDb: number | undefined;
-  sensitivityDb: number | undefined;
-  impedanceMinOhm: number | undefined;
-  outputDensity: number | undefined;
 }
 
 export function deriveMetrics(e: EnclosureInput): DerivedMetrics {
@@ -103,7 +112,7 @@ export interface EnclosureRecord {
   recommendedPowerW: number | undefined;
   powerAesW: number | undefined;
   powerProgramW: number | undefined;
-  metrics: Record<string, number | undefined>;
+  metrics: DerivedMetrics;
 }
 
 export function filterByCategory(
@@ -113,9 +122,61 @@ export function filterByCategory(
   return category === "all" ? records : records.filter((r) => r.category === category);
 }
 
+// Find-page filter state. "" / "all" / [] mean the criterion is inactive. Numeric
+// bounds on optional metrics exclude records missing the metric (an unknown SPL
+// cannot satisfy "min SPL").
+export interface EnclosureFilters {
+  category: CategoryFilter;
+  topology: string;
+  driverSize: string;
+  driverCount: string; // "all" | "1" | "2" | "3" | "4+"
+  tags: string[]; // recommendedFor, any-match
+  minF3: number | "";
+  maxF3: number | "";
+  minSpl: number | "";
+  minVol: number | "";
+  maxVol: number | "";
+  measuredOnly: boolean;
+  plansOnly: boolean;
+  verifiedOnly: boolean;
+}
+
+function inBounds(value: number | undefined, min: number | "", max: number | ""): boolean {
+  if (min === "" && max === "") return true;
+  if (value === undefined) return false;
+  return (min === "" || value >= Number(min)) && (max === "" || value <= Number(max));
+}
+
+export function filterEnclosures(
+  records: EnclosureRecord[],
+  f: EnclosureFilters
+): EnclosureRecord[] {
+  return records.filter((r) => {
+    if (f.category !== "all" && r.category !== f.category) return false;
+    if (f.topology !== "all" && r.topology !== f.topology) return false;
+    if (f.driverSize !== "all" && !r.driverSizes.includes(Number(f.driverSize))) return false;
+    if (f.driverCount !== "all") {
+      if (f.driverCount === "4+") {
+        if (r.driverCount < 4) return false;
+      } else if (r.driverCount !== Number(f.driverCount)) return false;
+    }
+    if (f.tags.length > 0 && !r.recommendedFor.some((t) => f.tags.includes(t))) return false;
+    if (!inBounds(r.metrics.f3Hz, f.minF3, f.maxF3)) return false;
+    if (!inBounds(r.metrics.maxSplDb, f.minSpl, "")) return false;
+    if (!inBounds(r.metrics.volumeL, f.minVol, f.maxVol)) return false;
+    if (f.measuredOnly && !r.hasMeasurements) return false;
+    if (f.plansOnly && !r.hasPlans) return false;
+    if (f.verifiedOnly && !r.verified) return false;
+    return true;
+  });
+}
+
 // Sort by "name" (A–Z) or by a metric key, honouring each axis's better direction.
 // Records missing the metric sort last. Returns a new array; input is not mutated.
-export function sortRecords(records: EnclosureRecord[], sortKey: string): EnclosureRecord[] {
+export function sortRecords(
+  records: EnclosureRecord[],
+  sortKey: MetricKey | "name"
+): EnclosureRecord[] {
   if (sortKey === "name") {
     return [...records].sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -131,7 +192,11 @@ export function sortRecords(records: EnclosureRecord[], sortKey: string): Enclos
 }
 
 // A record is dominated if another record is at-least-as-good on both axes and strictly better on one.
-export function paretoFront(records: EnclosureRecord[], xKey: string, yKey: string): Set<number> {
+export function paretoFront(
+  records: EnclosureRecord[],
+  xKey: MetricKey,
+  yKey: MetricKey
+): Set<number> {
   const xField = AXIS_MAP.get(xKey);
   const yField = AXIS_MAP.get(yKey);
   if (!xField || !yField) return new Set();
@@ -167,7 +232,7 @@ export function paretoFront(records: EnclosureRecord[], xKey: string, yKey: stri
 export function frontierLine(
   records: EnclosureRecord[],
   frontierSet: Set<number>,
-  xKey: string
+  xKey: MetricKey
 ): EnclosureRecord[] {
   return records
     .filter((_, i) => frontierSet.has(i))

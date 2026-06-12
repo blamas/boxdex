@@ -4,6 +4,7 @@
 
 import { AXIS_FIELDS, type EnclosureRecord } from "./metrics";
 
+/* v8 ignore start: DOM-only glue, exercised in the browser not in vitest */
 export function downloadBlob(filename: string, mime: string, content: string): void {
   const blob = new Blob([content], { type: mime });
   const url = URL.createObjectURL(blob);
@@ -13,6 +14,7 @@ export function downloadBlob(filename: string, mime: string, content: string): v
   a.click();
   URL.revokeObjectURL(url);
 }
+/* v8 ignore stop */
 
 // Quote a CSV cell when it contains a delimiter, quote, or newline (RFC 4180).
 function csvCell(v: string | number): string {
