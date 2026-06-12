@@ -1,14 +1,14 @@
 import { describe, expect, it } from "vitest";
 import {
-  type CoverageInputs,
-  type ResponseBand,
-  type StackSlot,
   arrayGainDb,
+  type CoverageInputs,
   calcCoverage,
   compositeResponse,
   decodeStack,
   encodeStack,
+  type ResponseBand,
   recommendedGeneratorW,
+  type StackSlot,
   spectralBalance,
   summarizeStack,
 } from "../src/lib/stack";

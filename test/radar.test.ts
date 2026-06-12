@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { type RadarAxis, axisMaxima, radarValues } from "../src/lib/radar";
+import { axisMaxima, type RadarAxis, radarValues } from "../src/lib/radar";
 
 interface Item {
   sens?: number;

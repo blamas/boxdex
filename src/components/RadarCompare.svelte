@@ -3,7 +3,7 @@ import { onMount } from "svelte";
 import { SERIES_COLORS } from "../lib/csv";
 import { getActiveTheme } from "../lib/echarts";
 import { downloadBlob, jsonString, toCsv } from "../lib/export";
-import { type CompareItem, type CompareView, axisMaxima, radarValues } from "../lib/radar";
+import { axisMaxima, type CompareItem, type CompareView, radarValues } from "../lib/radar";
 import { BASE } from "../lib/site";
 import { readParam, writeParams } from "../lib/url-state";
 import EChart from "./EChart.svelte";

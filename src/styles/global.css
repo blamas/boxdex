@@ -212,7 +212,9 @@ input[type="checkbox"] {
   position: relative;
   flex-shrink: 0;
   vertical-align: middle;
-  transition: border-color 0.1s, background 0.1s;
+  transition:
+    border-color 0.1s,
+    background 0.1s;
 }
 
 input[type="checkbox"]:hover {
@@ -288,6 +290,7 @@ button {
   footer,
   #theme-toggle,
   .no-print {
+    /* biome-ignore lint/complexity/noImportantStyles: must beat Svelte component-scoped styles in print */
     display: none !important;
   }
 

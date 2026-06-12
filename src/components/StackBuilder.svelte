@@ -7,18 +7,18 @@ import type { EnclosureRecord } from "../lib/metrics";
 import { BASE } from "../lib/site";
 import {
   AMP_EFFICIENCY,
+  arrayGainDb,
   CATEGORY_UPPER_HZ,
   type CoverageInputs,
-  DEFAULT_CREST_DB,
-  GENERATOR_HEADROOM,
-  type ResponseBand,
-  type StackSlot,
-  arrayGainDb,
   calcCoverage,
   compositeResponse,
+  DEFAULT_CREST_DB,
   decodeStack,
   encodeStack,
+  GENERATOR_HEADROOM,
+  type ResponseBand,
   recommendedGeneratorW,
+  type StackSlot,
   spectralBalance,
   summarizeStack,
 } from "../lib/stack";

@@ -5,8 +5,8 @@ import { humanize } from "../lib/format";
 import {
   AXIS_FIELDS,
   type EnclosureRecord,
-  type MetricKey,
   filterByCategory,
+  type MetricKey,
   sortRecords,
 } from "../lib/metrics";
 import { BASE } from "../lib/site";

@@ -1,6 +1,6 @@
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
-import { type EnclosureRecord, deriveMetrics, provenanceOf } from "../../lib/metrics";
+import { deriveMetrics, type EnclosureRecord, provenanceOf } from "../../lib/metrics";
 
 export const GET: APIRoute = async () => {
   const [enclosures, driverEntries] = await Promise.all([

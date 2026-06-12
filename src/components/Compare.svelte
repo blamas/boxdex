@@ -1,7 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import { CATEGORIES } from "../lib/category";
-import { SERIES_COLORS, normalisePeak, toPairs } from "../lib/csv";
+import { normalisePeak, SERIES_COLORS, toPairs } from "../lib/csv";
 import { CURVE_Y_LABELS, type CurvesResponse, pickCurve } from "../lib/curves";
 import { curveSeriesToCsv, downloadBlob, jsonString } from "../lib/export";
 import { humanize } from "../lib/format";

@@ -8,8 +8,8 @@ import {
   AXIS_FIELDS,
   AXIS_MAP,
   type EnclosureRecord,
-  type MetricKey,
   frontierLine,
+  type MetricKey,
   metricKeyOf,
   paretoFront,
 } from "../lib/metrics";

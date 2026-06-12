@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
   type DriverFilters,
-  type HornFilters,
   driverSortValue,
   filterDrivers,
   filterHorns,
+  type HornFilters,
   hornSortValue,
   mouthCm2,
   sortDrivers,
