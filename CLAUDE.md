@@ -17,7 +17,7 @@ mise run verify   # Full pre-push gate: lint + check + knip + test + build
 
 | Concern | Choice |
 |---------|--------|
-| Generator | Astro 5 + `@astrojs/mdx@^4` (v5+ requires Astro 6) |
+| Generator | Astro 6 + `@astrojs/mdx@^6` (zod 4: `z.url()`, not `z.string().url()`) |
 | Islands | Svelte 5 runes (`$state`, `$derived`, `$effect`) |
 | Charts | Apache ECharts (tree-shaken via `src/lib/echarts.ts`) |
 | Search | Pagefind via `astro-pagefind` (v2: component imports need the `.astro` extension) |
@@ -90,7 +90,7 @@ data/
 ## Known gotchas
 
 - **Biome 2** lints `.svelte`/`.astro` script blocks but can't see template usage: `useConst` + unused-symbol rules are off for those files via `overrides` in `biome.json`. Don't hand-remove "unused" imports in components without checking the markup.
-- **TypeScript stays on 5.9** until Astro 6: `@astrojs/svelte@7` peer-depends on `^5.3.3` and `npm ci` hard-fails (ERESOLVE) on TS 6.
+- **zod 4** (bundled by Astro 6) regenerates `schema/*.schema.json` in draft 2020-12 form — large diffs on `npm run schema:gen` after zod-touching upgrades are expected, just commit them.
 - **ECharts** is only loaded on the three interactive island pages (`/compare`, `/explore`, `/find`). All imports go through `src/lib/echarts.ts` to keep the bundle tree-shaken.
 - **`client:only="svelte"`** on all islands. No SSR for interactive components. Fetches use `BASE = import.meta.env.BASE_URL.replace(/\/$/, "")` prefix.
 - All units **SI only**: mm, L, Hz, dB, kg, W, Ω. No imperial.

@@ -15,21 +15,21 @@
     "schema:gen": "astro sync && cp .astro/collections/drivers.schema.json schema/driver.schema.json && cp .astro/collections/enclosures.schema.json schema/enclosure.schema.json && cp .astro/collections/horns.schema.json schema/horn.schema.json && biome format --write schema/"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/mdx": "^6.0.3",
     "@astrojs/sitemap": "^3.7.3",
-    "@astrojs/svelte": "^7.0.0",
-    "astro": "^5.0.0",
+    "@astrojs/svelte": "^8.1.2",
+    "astro": "^6.4.6",
     "astro-pagefind": "^2.0.0",
     "echarts": "^6.1.0",
-    "svelte": "^5.0.0"
+    "svelte": "^5.56.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.0",
+    "@astrojs/check": "^0.9.9",
     "@biomejs/biome": "^2.4.16",
     "@types/node": "^25.9.3",
     "@vitest/coverage-v8": "^4.1.8",
     "knip": "^6.16.1",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "vitest": "^4.1.8"
   }
 }

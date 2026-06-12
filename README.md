@@ -7,7 +7,7 @@ enclosures, plus a driver/horn catalogue to design around them.
 
 | Area | Choice |
 |------|--------|
-| Generator | Astro 5 (static) |
+| Generator | Astro 6 (static) |
 | Interactive islands | Svelte 5 (runes) |
 | Charts | **Apache ECharts**: one library for curve overlays, radar compare and design-space scatter |
 | Search | Pagefind via astro-pagefind |

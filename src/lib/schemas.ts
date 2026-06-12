@@ -20,7 +20,7 @@ const driverBase = {
   model: z.string(),
   impedanceOhm: z.number().positive(),
   peW: z.number().positive(),
-  datasheetUrl: z.string().url().optional(),
+  datasheetUrl: z.url().optional(),
 };
 
 const coneDriverSchema = z.object({
@@ -77,7 +77,7 @@ export const hornSchema = z.object({
   constantDirectivity: z.boolean().optional(),
   material: z.string().optional(),
   weightKg: z.number().positive().optional(),
-  datasheetUrl: z.string().url().optional(),
+  datasheetUrl: z.url().optional(),
 });
 
 // API entity shapes: collection data plus the entry id the JSON endpoints add.

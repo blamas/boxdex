@@ -100,7 +100,7 @@ const enclosures = defineCollection({
         images: z.array(image()).default([]),
         plans: z.array(z.string().endsWith(".pdf")).default([]),
         author: z.string().optional(),
-        sourceUrl: z.string().url().optional(),
+        sourceUrl: z.url().optional(),
         ways: z.number().int().min(1).max(4).optional(),
         revision: z.string().optional(),
         // No default on purpose: silently labelling a third-party plan would misstate
