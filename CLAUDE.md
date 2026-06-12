@@ -5,10 +5,12 @@
 ```sh
 mise run dev      # Astro dev server (search not available here)
 mise run build    # Production build: validates all content data
-mise run test     # Vitest (pure logic only)
+mise run test     # Vitest (pure logic only; coverage thresholds enforced)
 mise run lint     # Biome check
+mise run knip     # Unused files/exports/deps (CI gate)
 mise run fix      # Biome auto-fix formatting + import order
 mise run preview  # Serve the production dist/
+mise run verify   # Full pre-push gate: lint + check + knip + test + build
 ```
 
 ## Stack
@@ -18,9 +20,10 @@ mise run preview  # Serve the production dist/
 | Generator | Astro 5 + `@astrojs/mdx@^4` (v5+ requires Astro 6) |
 | Islands | Svelte 5 runes (`$state`, `$derived`, `$effect`) |
 | Charts | Apache ECharts (tree-shaken via `src/lib/echarts.ts`) |
-| Search | Pagefind via `astro-pagefind` |
-| Lint/format | Biome 1.9 |
-| Tests | Vitest |
+| Search | Pagefind via `astro-pagefind` (v2: component imports need the `.astro` extension) |
+| Lint/format | Biome 2.4 |
+| Tests | Vitest 4 |
+| Dead code | knip (`knip.json`; `data/` ignored) |
 | Node | 26 via mise (`node.compile = false` required on NixOS) |
 
 ## Data model
@@ -44,7 +47,7 @@ data/
 - **cone** (Thiele–Small): `sizeInch`, `fsHz`, `qts`, `qes?`, `qms?`, `vasL`, `sdCm2`, `xmaxMm`, `reOhm?`, `bl?`, `mmsG?`, `sensitivityDb`. EBP/Vb hints in `lib/driver.ts` are cone-only — callers gate on `d.type === "cone"`.
 - **compression** (horn HF): `exitInch`, `throatMm?`, `voiceCoilMm`, `fLowHz`, `fHighHz`, `minCrossoverHz`, `crossoverSlopeDbOct?`, `sensitivityHornDb`, `fsHz?`, `magnetMaterial?`, `weightKg?`. CD sensitivity is the **distinct** field `sensitivityHornDb` (on a reference horn) — never reuse cone free-field `sensitivityDb`.
 - A cone carrying CD-only fields (or vice-versa) is a **build error**. `exitInch` is a free number (not a closed enum).
-- Schema lives in `src/content.config.ts`; after any edit rerun `npm run schema:gen` to regenerate `schema/driver.schema.json` (CI fails on drift — **never hand-edit the mirror**).
+- Driver/horn zod schemas live in `src/lib/schemas.ts` (imported by `content.config.ts`; islands take the inferred `Driver`/`Horn` types via type-only imports, so zod stays out of client bundles). After any edit rerun `npm run schema:gen` to regenerate `schema/driver.schema.json` (CI fails on drift — **never hand-edit the mirror**).
 
 ### Horns: standalone catalog
 
@@ -53,7 +56,7 @@ data/
 - **Mix-and-match is by throat exit**: a horn mates a compression driver when `exitInch` matches. The horn detail page lists compatible CDs and the CD detail page lists compatible horns — both derived live, no stored link.
 - `profile` is a closed taxonomy list (`hornProfile` in `data/taxonomy.json`). Coverage is **H×V separate**, never a single angle.
 - Enclosures keep their own inline horn geometry (`hornCutoffHz`, `hornMouthCm2`, `coverageAngleDeg`, …) — horns are **not** referenced from enclosures.
-- Schema in `src/content.config.ts`; rerun `npm run schema:gen` (regenerates `schema/horn.schema.json` too) after edits.
+- Schema in `src/lib/schemas.ts`; rerun `npm run schema:gen` (regenerates `schema/horn.schema.json` too) after edits.
 
 ### Enclosure frontmatter: key invariants
 
@@ -78,9 +81,16 @@ data/
 }
 ```
 
+## Shared code (don't re-declare)
+
+- **Types**: `Driver`/`Horn` from `src/lib/schemas.ts`; curves API types, `pickCurve` (measurement priority) and `CURVE_Y_LABELS` from `src/lib/curves.ts`. `EnclosureRecord.metrics` is the typed `DerivedMetrics`; plottable axis keys are `MetricKey` — narrow untrusted strings via `metricKeyOf`.
+- **Components**: `PageActions.svelte` (pinned share button + export-menu children), `EChart.svelte` (owns ECharts init/resize/themechange/dispose — pass an option *builder function*, re-invoked on theme change; never init echarts in an island), `RadarCompare.svelte` (generic radar+table compare; `DriverCompare`/`HornCompare` are thin config wrappers).
+- **Logic**: catalog filter/sort in `lib/catalog.ts`, `filterEnclosures` in `lib/metrics.ts`, `summarizeStack` in `lib/stack.ts`. New island logic goes in `src/lib` with tests, not inline in `.svelte`.
+
 ## Known gotchas
 
-- **Biome crashes** on Svelte 5 `$props()` destructuring with `let` + `useConst` rule. Worked around via `overrides` in `biome.json` (rule disabled for `*.svelte`).
+- **Biome 2** lints `.svelte`/`.astro` script blocks but can't see template usage: `useConst` + unused-symbol rules are off for those files via `overrides` in `biome.json`. Don't hand-remove "unused" imports in components without checking the markup.
+- **TypeScript stays on 5.9** until Astro 6: `@astrojs/svelte@7` peer-depends on `^5.3.3` and `npm ci` hard-fails (ERESOLVE) on TS 6.
 - **ECharts** is only loaded on the three interactive island pages (`/compare`, `/explore`, `/find`). All imports go through `src/lib/echarts.ts` to keep the bundle tree-shaken.
 - **`client:only="svelte"`** on all islands. No SSR for interactive components. Fetches use `BASE = import.meta.env.BASE_URL.replace(/\/$/, "")` prefix.
 - All units **SI only**: mm, L, Hz, dB, kg, W, Ω. No imperial.
