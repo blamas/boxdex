@@ -9,6 +9,7 @@ import pagefind from "astro-pagefind";
 // Set `base` here (e.g. base: "/boxdex") when deploying to a repo subpath.
 export default defineConfig({
   site: process.env.SITE_URL || "http://localhost:4321",
+  base: process.env.SITE_BASE || "/",
   output: "static",
   // When adding a locale: also add it to src/i18n/index.ts + a new src/i18n/<code>.ts.
   i18n: {
