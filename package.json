@@ -15,7 +15,7 @@
     "schema:gen": "astro sync && cp .astro/collections/drivers.schema.json schema/driver.schema.json && cp .astro/collections/enclosures.schema.json schema/enclosure.schema.json && cp .astro/collections/horns.schema.json schema/horn.schema.json && biome format --write schema/"
   },
   "dependencies": {
-    "@astrojs/mdx": "^6.0.3",
+    "@astrojs/mdx": "^7.0.0",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/svelte": "^8.1.2",
     "astro": "^6.4.8",
