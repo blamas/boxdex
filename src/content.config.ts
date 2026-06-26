@@ -29,20 +29,25 @@ const horns = defineCollection({
   schema: hornSchema,
 });
 
-const simulation = z.object({
-  driver: z.array(reference("drivers")).min(1),
-  kind: z.enum(CURVE_KINDS),
-  source: z.enum([
-    "hornresp_sim",
-    "akabak_sim",
-    "catt_sim",
-    "vituixcad_sim",
-    "winsd_sim",
-    "basta_sim",
-  ]),
-  file: z.string().endsWith(".csv"),
-  note: z.string().optional(),
-});
+const simulation = z
+  .object({
+    driver: z.array(reference("drivers")).min(1),
+    kind: z.enum(CURVE_KINDS),
+    source: z.enum([
+      "hornresp_sim",
+      "akabak_sim",
+      "catt_sim",
+      "vituixcad_sim",
+      "winsd_sim",
+      "basta_sim",
+    ]),
+    file: z.string().endsWith(".csv"),
+    count: z.number().int().positive().default(1),
+    note: z.string().optional(),
+  })
+  .refine((v) => v.count === 1 || v.kind === "spl_stacked", {
+    message: "count > 1 is only valid for kind: spl_stacked",
+  });
 
 const measurement = z.object({
   driver: z.array(reference("drivers")).min(1),

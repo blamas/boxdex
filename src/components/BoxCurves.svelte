@@ -102,7 +102,7 @@ function switchTab(tab: "sim" | "meas") {
         <div class="driver-tabs">
           {#each activeGroup as dc, i}
             <button class:active={activeDriverIdx === i} onclick={() => (activeDriverIdx = i)}>
-              {dc.driverId}
+              {dc.count > 1 ? `${dc.driverId} · ${dc.count}×` : dc.driverId}
             </button>
           {/each}
         </div>
@@ -122,7 +122,7 @@ function switchTab(tab: "sim" | "meas") {
       {#if activeDriver}
         <p class="provenance-note">
           {activeDriver.source} &mdash;
-          {activeTab === "sim" ? t.simulationDashed : t.measuredSolid}
+          {activeTab === "sim" ? t.simulationDashed : t.measuredSolid}{activeDriver.note ? ` · ${activeDriver.note}` : ""}
         </p>
       {/if}
     {:else}

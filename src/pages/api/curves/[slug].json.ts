@@ -16,13 +16,16 @@ const csvFiles = import.meta.glob("/data/enclosures/**/*.csv", {
 
 function loadCurves(
   slug: string,
-  entries: { driver: { id: string }[]; kind: string; source: string; file: string }[]
+  entries: { driver: { id: string }[]; kind: string; source: string; file: string; count?: number; note?: string }[]
 ): DriverCurves[] {
-  // Group entries by sorted driver-id concat; deterministic across declaration order
+  // Group entries by sorted driver-id concat + count; deterministic across declaration order
   const map = new Map<string, DriverCurves>();
   for (const entry of entries) {
     const driverId = [...entry.driver.map((d) => d.id)].sort().join("+");
-    if (!map.has(driverId)) map.set(driverId, { driverId, source: entry.source, curves: {} });
+    const count = entry.count ?? 1;
+    const mapKey = `${driverId}:c${count}`;
+    if (!map.has(mapKey))
+      map.set(mapKey, { driverId, count, note: entry.note, source: entry.source, curves: {} });
     const key = `/data/enclosures/${slug}/${entry.file}`;
     const raw = csvFiles[key];
     if (raw == null) continue;
@@ -37,7 +40,7 @@ function loadCurves(
       }
     }
     // biome-ignore lint/style/noNonNullAssertion: key was just set above
-    map.get(driverId)!.curves[entry.kind as CurveKind] = parsed;
+    map.get(mapKey)!.curves[entry.kind as CurveKind] = parsed;
   }
   return [...map.values()];
 }

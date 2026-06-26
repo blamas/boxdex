@@ -163,7 +163,7 @@ export function summarizeStack(entries: StackEntry[]): StackSummary {
   let powerMissing = false;
   let totalPowerProgramW = 0;
   let hasProgram = false;
-  let maxSplPower = 0;
+  const catSplAcc: Partial<Record<Category, number>> = {};
   let hasMaxSpl = false;
   let maxSplPartial = false;
   let lowHz = Number.POSITIVE_INFINITY;
@@ -202,7 +202,9 @@ export function summarizeStack(entries: StackEntry[]): StackSummary {
     }
 
     if (rec.metrics.maxSplDb !== undefined) {
-      maxSplPower += 10 ** ((rec.metrics.maxSplDb + arrayGainDb(rec.category, qty)) / 10);
+      const slotSplDb = rec.metrics.maxSplDb + arrayGainDb(rec.category, qty);
+      const coeff = gainCoeff(rec.category);
+      catSplAcc[rec.category] = (catSplAcc[rec.category] ?? 0) + 10 ** (slotSplDb / coeff);
       hasMaxSpl = true;
     } else {
       maxSplPartial = true;
@@ -224,7 +226,16 @@ export function summarizeStack(entries: StackEntry[]): StackSummary {
     powerMissing,
     totalPowerProgramW,
     hasProgram,
-    systemMaxSplDb: hasMaxSpl ? 10 * Math.log10(maxSplPower) : undefined,
+    systemMaxSplDb: hasMaxSpl
+      ? (() => {
+          let systemPower = 0;
+          for (const [cat, acc] of Object.entries(catSplAcc) as [Category, number][]) {
+            const coeff = gainCoeff(cat);
+            systemPower += 10 ** ((coeff * Math.log10(acc)) / 10);
+          }
+          return 10 * Math.log10(systemPower);
+        })()
+      : undefined,
     maxSplPartial,
     lowHz: Number.isFinite(lowHz) ? lowHz : undefined,
     highHz: highHz > 0 ? highHz : undefined,

@@ -2,6 +2,7 @@
 import { type Translations, tt } from "../i18n";
 import type { CompareRow, CompareView, RadarAxis } from "../lib/radar";
 import type { Driver } from "../lib/schemas";
+import { scoreDriver } from "../lib/similarity";
 import RadarCompare from "./RadarCompare.svelte";
 
 // Cone and compression drivers have disjoint specs, so the radar axes and the parameter
@@ -241,6 +242,10 @@ function sanitizeIds(ids: string[], all: Driver[]): string[] {
   return valid.filter((id) => all.find((d) => d.id === id)?.type === firstType);
 }
 
+function sortPool(available: Driver[], anchor: Driver): Driver[] {
+  return [...available].sort((a, b) => scoreDriver(anchor, a) - scoreDriver(anchor, b));
+}
+
 function optionLabel(d: Driver): string {
   const size = d.type === "cone" ? `${d.sizeInch}"` : `${d.exitInch}" exit`;
   return `${d.brand} ${d.model} (${size} / ${d.impedanceOhm} Ω)`;
@@ -258,5 +263,6 @@ function optionLabel(d: Driver): string {
   {optionLabel}
   {view}
   {sanitizeIds}
+  {sortPool}
   csvExtra={[{ label: "type", value: (d) => d.type }]}
 />

@@ -146,7 +146,7 @@ function navHref(path: string) {
         var sel = document.getElementById("locale-select");
         if (sel && !sel._boxdexInit) {
           sel._boxdexInit = true;
-          sel.addEventListener("change", function () { window.location.href = this.value; });
+          sel.addEventListener("change", function () { window.location.href = this.value + window.location.search; });
         }
         var btn = document.getElementById("theme-toggle");
         if (!btn || btn._boxdexInit) return;
@@ -286,6 +286,7 @@ function navHref(path: string) {
     padding: 1.5rem 0;
     color: var(--muted);
     font-size: 0.8rem;
+    text-align: center;
   }
 
   main {

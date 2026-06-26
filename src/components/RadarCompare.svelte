@@ -27,6 +27,9 @@ interface Props {
   sanitizeIds?: (ids: string[], all: T[]) => string[];
   // Extra identity columns between "id" and "brand" in the CSV export.
   csvExtra?: { label: string; value: (item: T) => string | number }[];
+  // Optional: re-order the available pool before it hits the combobox.
+  // Receives items not yet selected and the anchor (first selected) item.
+  sortPool?: (available: T[], anchor: T) => T[];
 }
 
 const {
@@ -41,6 +44,7 @@ const {
   view,
   sanitizeIds = (ids, all) => ids.filter((id) => all.some((item) => item.id === id)),
   csvExtra = [],
+  sortPool,
 }: Props = $props();
 
 let all = $state<T[]>([]);
@@ -69,9 +73,12 @@ const selected = $derived(
 
 const v = $derived(view(selected, all));
 
-const available = $derived(
-  all.filter((item) => !selectedIds.includes(item.id) && (v.selectable?.(item) ?? true))
-);
+const available = $derived.by(() => {
+  const pool = all.filter(
+    (item) => !selectedIds.includes(item.id) && (v.selectable?.(item) ?? true)
+  );
+  return sortPool && selected.length > 0 ? sortPool(pool, selected[0]) : pool;
+});
 
 function addItem(id: string) {
   if (id && selectedIds.length < 4) selectedIds = [...selectedIds, id];

@@ -115,6 +115,16 @@ function flagsFor(target: Driver, c: Driver): string[] {
   return flags;
 }
 
+// Returns a numeric similarity score between two drivers (lower = closer match).
+// Returns Infinity when the candidate is a different type or size group (not a substitute).
+export function scoreDriver(target: Driver, candidate: Driver): number {
+  if (candidate.type !== target.type) return Infinity;
+  if (groupKey(target) !== groupKey(candidate)) return Infinity;
+  return target.type === "cone"
+    ? scoreConeOnly(target as ConeDriver, candidate as ConeDriver)
+    : scoreCompressionOnly(target as CompressionDriver, candidate as CompressionDriver);
+}
+
 function groupKey(d: Driver): string {
   return d.type === "cone"
     ? `cone-${(d as ConeDriver).sizeInch}`

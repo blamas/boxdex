@@ -28,6 +28,9 @@
       "items": {
         "anyOf": [
           {
+            "type": "number"
+          },
+          {
             "type": "string"
           },
           {
@@ -178,6 +181,9 @@
             "items": {
               "anyOf": [
                 {
+                  "type": "number"
+                },
+                {
                   "type": "string"
                 },
                 {
@@ -209,15 +215,36 @@
           },
           "kind": {
             "type": "string",
-            "enum": ["spl", "phase", "impedance", "group_delay", "distortion", "power_compression"]
+            "enum": [
+              "spl",
+              "spl_stacked",
+              "phase",
+              "impedance",
+              "group_delay",
+              "distortion",
+              "power_compression"
+            ]
           },
           "source": {
             "type": "string",
-            "enum": ["hornresp_sim", "akabak_sim"]
+            "enum": [
+              "hornresp_sim",
+              "akabak_sim",
+              "catt_sim",
+              "vituixcad_sim",
+              "winsd_sim",
+              "basta_sim"
+            ]
           },
           "file": {
             "type": "string",
             "pattern": ".*\\.csv$"
+          },
+          "count": {
+            "default": 1,
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
           },
           "note": {
             "type": "string"
@@ -237,6 +264,9 @@
             "items": {
               "anyOf": [
                 {
+                  "type": "number"
+                },
+                {
                   "type": "string"
                 },
                 {
@@ -268,7 +298,15 @@
           },
           "kind": {
             "type": "string",
-            "enum": ["spl", "phase", "impedance", "group_delay", "distortion", "power_compression"]
+            "enum": [
+              "spl",
+              "spl_stacked",
+              "phase",
+              "impedance",
+              "group_delay",
+              "distortion",
+              "power_compression"
+            ]
           },
           "source": {
             "type": "string",
@@ -342,6 +380,7 @@
         "CC-BY-SA-4.0",
         "CC-BY-NC-4.0",
         "CC-BY-NC-SA-4.0",
+        "CC-BY-NC-ND-4.0",
         "LicenseRef-Permission",
         "LicenseRef-Proprietary"
       ]

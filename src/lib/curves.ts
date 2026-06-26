@@ -5,6 +5,8 @@ import { CURVE_KINDS, type CurveKind, type ParsedCurve } from "./csv";
 
 export interface DriverCurves {
   driverId: string;
+  count: number;
+  note?: string;
   source: string;
   curves: Partial<Record<CurveKind, ParsedCurve>>;
 }
