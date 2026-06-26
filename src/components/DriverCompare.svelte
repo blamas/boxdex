@@ -243,7 +243,12 @@ function sanitizeIds(ids: string[], all: Driver[]): string[] {
 }
 
 function sortPool(available: Driver[], anchor: Driver): Driver[] {
-  return [...available].sort((a, b) => scoreDriver(anchor, a) - scoreDriver(anchor, b));
+  return [...available].sort((a, b) => {
+    const sa = scoreDriver(anchor, a);
+    const sb = scoreDriver(anchor, b);
+    if (sa === sb) return a.id.localeCompare(b.id);
+    return sa - sb;
+  });
 }
 
 function optionLabel(d: Driver): string {

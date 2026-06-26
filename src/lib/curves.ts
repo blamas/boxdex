@@ -38,24 +38,34 @@ export function initialCurveView(data: CurvesResponse): { tab: "sim" | "meas"; k
 }
 
 export interface CurveEntry {
-  // Stable selection key: "meas:<driverId>" or "sim:<driverId>"
+  // Stable selection key encoding driverId, count, source, and optional note.
   key: string;
   label: string;
   dc: DriverCurves;
   isMeas: boolean;
 }
 
-// All entries for a given kind, measurements first. Label uses note when present.
+function entryKey(prefix: "meas" | "sim", dc: DriverCurves): string {
+  return `${prefix}:${dc.driverId}:c${dc.count}:${dc.source}${dc.note ? `:${dc.note}` : ""}`;
+}
+
+function entryLabel(prefix: "meas" | "sim", dc: DriverCurves): string {
+  const countSuffix = dc.count > 1 ? ` · ${dc.count}×` : "";
+  const noteSuffix = dc.note ? ` · ${dc.note}` : "";
+  return `${prefix} · ${dc.driverId}${countSuffix}${noteSuffix}`;
+}
+
+// All entries for a given kind, measurements first.
 export function curveEntries(payload: CurvesResponse, kind: CurveKind): CurveEntry[] {
   const result: CurveEntry[] = [];
   for (const dc of payload.measurements) {
     if (dc.curves[kind]) {
-      result.push({ key: `meas:${dc.driverId}`, label: `meas · ${dc.driverId}`, dc, isMeas: true });
+      result.push({ key: entryKey("meas", dc), label: entryLabel("meas", dc), dc, isMeas: true });
     }
   }
   for (const dc of payload.simulations) {
     if (dc.curves[kind]) {
-      result.push({ key: `sim:${dc.driverId}`, label: `sim · ${dc.driverId}`, dc, isMeas: false });
+      result.push({ key: entryKey("sim", dc), label: entryLabel("sim", dc), dc, isMeas: false });
     }
   }
   return result;

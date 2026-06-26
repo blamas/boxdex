@@ -49,13 +49,18 @@ const simulation = z
     message: "count > 1 is only valid for kind: spl_stacked",
   });
 
-const measurement = z.object({
-  driver: z.array(reference("drivers")).min(1),
-  kind: z.enum(CURVE_KINDS),
-  source: z.enum(["rew_measured", "klippel"]),
-  file: z.string().endsWith(".csv"),
-  note: z.string().optional(),
-});
+const measurement = z
+  .object({
+    driver: z.array(reference("drivers")).min(1),
+    kind: z.enum(CURVE_KINDS),
+    source: z.enum(["rew_measured", "klippel"]),
+    file: z.string().endsWith(".csv"),
+    count: z.number().int().positive().default(1),
+    note: z.string().optional(),
+  })
+  .refine((v) => v.count === 1 || v.kind === "spl_stacked", {
+    message: "count > 1 is only valid for kind: spl_stacked",
+  });
 
 // Raw simulation project files (e.g. Hornresp record, AkAbak script) for remixing.
 const designSource = z.object({

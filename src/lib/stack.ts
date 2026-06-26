@@ -42,6 +42,18 @@ function gainCoeff(category: Category): number {
   return category === "sub" ? 20 : 10;
 }
 
+// Convert per-category accumulators (built in gainCoeff-scaled linear domain) back to
+// a single system SPL dB figure. Each category's acc inverts through its own coeff,
+// yielding a power-domain contribution that sums incoherently across categories.
+function catAccToSplDb(catSplAcc: Partial<Record<Category, number>>): number {
+  let systemPower = 0;
+  for (const [cat, acc] of Object.entries(catSplAcc) as [Category, number][]) {
+    const coeff = gainCoeff(cat);
+    systemPower += 10 ** ((coeff * Math.log10(acc)) / 10);
+  }
+  return 10 * Math.log10(systemPower);
+}
+
 export function arrayGainDb(category: Category, n: number): number {
   if (n <= 1) return 0;
   return gainCoeff(category) * Math.log10(n);
@@ -226,16 +238,7 @@ export function summarizeStack(entries: StackEntry[]): StackSummary {
     powerMissing,
     totalPowerProgramW,
     hasProgram,
-    systemMaxSplDb: hasMaxSpl
-      ? (() => {
-          let systemPower = 0;
-          for (const [cat, acc] of Object.entries(catSplAcc) as [Category, number][]) {
-            const coeff = gainCoeff(cat);
-            systemPower += 10 ** ((coeff * Math.log10(acc)) / 10);
-          }
-          return 10 * Math.log10(systemPower);
-        })()
-      : undefined,
+    systemMaxSplDb: hasMaxSpl ? catAccToSplDb(catSplAcc) : undefined,
     maxSplPartial,
     lowHz: Number.isFinite(lowHz) ? lowHz : undefined,
     highHz: highHz > 0 ? highHz : undefined,

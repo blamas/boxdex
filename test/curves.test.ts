@@ -12,8 +12,13 @@ import {
 const spl = { freq: [40, 80], value: [110, 120] };
 const impedance = { freq: [40, 80], value: [8, 12] };
 
-function dc(driverId: string, source: string, curves: DriverCurves["curves"]): DriverCurves {
-  return { driverId, source, curves };
+function dc(
+  driverId: string,
+  source: string,
+  curves: DriverCurves["curves"],
+  count = 1
+): DriverCurves {
+  return { driverId, count, source, curves };
 }
 
 function payload(
@@ -53,18 +58,18 @@ describe("curveEntries", () => {
     expect(entries[0].label).toBe("sim · d1");
   });
 
-  it("keys are prefixed with meas or sim", () => {
+  it("keys encode prefix, driverId, count, and source", () => {
     const p = payload([dc("d1", "hornresp_sim", { spl })], [dc("d1", "rew_measured", { spl })]);
     const entries = curveEntries(p, "spl");
-    expect(entries.find((e) => e.isMeas)?.key).toBe("meas:d1");
-    expect(entries.find((e) => !e.isMeas)?.key).toBe("sim:d1");
+    expect(entries.find((e) => e.isMeas)?.key).toBe("meas:d1:c1:rew_measured");
+    expect(entries.find((e) => !e.isMeas)?.key).toBe("sim:d1:c1:hornresp_sim");
   });
 });
 
 describe("resolveCurveEntry", () => {
   it("selects by key when found", () => {
     const p = payload([dc("d1", "hornresp_sim", { spl })], [dc("d1", "rew_measured", { spl })]);
-    const entry = resolveCurveEntry(p, "spl", "sim:d1");
+    const entry = resolveCurveEntry(p, "spl", "sim:d1:c1:hornresp_sim");
     expect(entry?.isMeas).toBe(false);
   });
 
