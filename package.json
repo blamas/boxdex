@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",
     "@astrojs/sitemap": "^3.7.3",
-    "@astrojs/svelte": "^8.1.2",
+    "@astrojs/svelte": "^9.0.0",
     "astro": "^6.4.8",
     "astro-pagefind": "^2.0.0",
     "echarts": "^6.1.0",
