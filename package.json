@@ -15,10 +15,10 @@
     "schema:gen": "astro sync && cp .astro/collections/drivers.schema.json schema/driver.schema.json && cp .astro/collections/enclosures.schema.json schema/enclosure.schema.json && cp .astro/collections/horns.schema.json schema/horn.schema.json && biome format --write schema/"
   },
   "dependencies": {
-    "@astrojs/mdx": "^6.0.3",
+    "@astrojs/mdx": "^7.0.0",
     "@astrojs/sitemap": "^3.7.3",
-    "@astrojs/svelte": "^8.1.2",
-    "astro": "^6.4.8",
+    "@astrojs/svelte": "^9.0.0",
+    "astro": "^7.0.3",
     "astro-pagefind": "^2.0.0",
     "echarts": "^6.1.0",
     "svelte": "^5.56.3"

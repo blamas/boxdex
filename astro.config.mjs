@@ -35,14 +35,6 @@ export default defineConfig({
     },
     build: {
       chunkSizeWarningLimit: 1000,
-      rollupOptions: {
-        maxParallelFileOps: 100,
-        // With 5000+ pages Vite generates thousands of chunks whose hashes
-        // become unstable during SSR prerender. One vendor chunk fixes it.
-        output: {
-          manualChunks: (id) => (id.includes("node_modules") ? "vendor" : undefined),
-        },
-      },
     },
   },
 });

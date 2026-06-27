@@ -17,7 +17,7 @@ mise run verify   # Full pre-push gate: lint + check + knip + test + build
 
 | Concern | Choice |
 |---------|--------|
-| Generator | Astro 6 + `@astrojs/mdx@^6` (zod 4: `z.url()`, not `z.string().url()`) |
+| Generator | Astro 7 + `@astrojs/mdx@^7` (zod 4: `z.url()`, not `z.string().url()`) |
 | Islands | Svelte 5 runes (`$state`, `$derived`, `$effect`, `$bindable`) |
 | Charts | Apache ECharts (tree-shaken via `src/lib/echarts.ts`) |
 | Search | Pagefind via `astro-pagefind` (v2: component imports need the `.astro` extension) |
