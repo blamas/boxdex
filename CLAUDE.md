@@ -22,9 +22,10 @@ node scripts/validate-driver.mjs <file>  # fast single-file check for one driver
 `scripts/local/` is gitignored personal tooling (scrapers, one-shot migrations,
 fk-fixture generators): never committed or pushed.
 
-A pre-commit hook (`.githooks/pre-commit`, wired via the `prepare` npm script's
-`git config core.hooksPath`) runs the relevant check automatically when staged files
-touch `data/drivers/**` or `data/enclosures/**`.
+A pre-commit hook (`lefthook.yml`, installed via the `prepare` npm script's
+`lefthook install`; the `lefthook` binary itself comes from `mise.toml`) runs the
+relevant check automatically when staged files touch `data/drivers/**` or
+`data/enclosures/**`.
 
 ## Stack
 

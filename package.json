@@ -15,7 +15,7 @@
     "knip": "knip",
     "schema:gen": "astro sync && cp .astro/collections/drivers.schema.json schema/driver.schema.json && cp .astro/collections/enclosures.schema.json schema/enclosure.schema.json && cp .astro/collections/horns.schema.json schema/horn.schema.json && biome format --write schema/",
     "validate:driver": "node scripts/validate-driver.mjs",
-    "prepare": "git config core.hooksPath .githooks || true"
+    "prepare": "lefthook install"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",
