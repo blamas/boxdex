@@ -1,0 +1,14 @@
+# Fast local feedback for data contributors: only runs when staged files touch data/.
+# Driver/horn files get a targeted single-file check; enclosure changes need the full
+# `astro sync` (cross-file referential checks: dangling driver refs, license rules).
+pre-commit:
+  commands:
+    validate-drivers:
+      glob: "data/drivers/**/*.json"
+      run: |
+        for f in {staged_files}; do
+          node scripts/validate-driver.mjs "$f" || exit 1
+        done
+    validate-enclosures:
+      glob: "data/enclosures/**"
+      run: npx astro sync
