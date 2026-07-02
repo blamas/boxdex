@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "RCF",
+  "model": "H100",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 75,
+  "cutoffHz": 800,
+  "mouthWmm": 182,
+  "mouthHmm": 182,
+  "depthMm": 133,
+  "profile": "oblate_spheroid",
+  "material": "structural polyurethane",
+  "weightKg": 0.06,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/h100"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KILOMAX PRO 18 A v2016",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.467,
+  "qes": 0.49,
+  "qms": 10.15,
+  "vasL": 331.5,
+  "sdCm2": 1159,
+  "xmaxMm": 10,
+  "reOhm": 5.07,
+  "bl": 17.1,
+  "mmsG": 140.5,
+  "peW": 1250,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

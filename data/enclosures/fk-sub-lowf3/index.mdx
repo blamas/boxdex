@@ -1,0 +1,40 @@
+---
+name: FK Sub LowF3
+category: sub
+topology: tapped_horn
+drivers:
+  - pyle-pdw21250-8
+driverCount: 1
+netVolumeL: 680
+dims:
+  wMm: 900
+  hMm: 1400
+  dMm: 1000
+weightKg: 110
+specs:
+  f3Hz: 22
+  sensitivityDb: 103
+  maxSplDb: 136
+simulations:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - tribe
+connectors:
+  - speakON NL4
+---
+
+FK Sub LowF3: 21" tapped horn reaching down to 22 Hz, extreme infrasonic extension.

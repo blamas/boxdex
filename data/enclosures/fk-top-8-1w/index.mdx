@@ -1,0 +1,41 @@
+---
+name: FK Top 8 1W
+category: top
+topology: bass_reflex
+drivers:
+  - em-beta-8a-8
+netVolumeL: 22
+dims:
+  wMm: 320
+  hMm: 440
+  dMm: 300
+weightKg: 9
+specs:
+  f3Hz: 80
+  fbHz: 75
+  sensitivityDb: 93
+  coverageAngleDeg: 90
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - em-beta-8a-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - em-beta-8a-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - acid
+  - dub
+connectors:
+  - speakON NL4
+ways: 1
+---
+
+1-way 8" bass reflex top. Eminence Beta-8A, 22 L.

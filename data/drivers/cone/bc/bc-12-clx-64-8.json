@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12 CLX 64",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.575,
+  "qes": 0.61,
+  "qms": 10.1,
+  "vasL": 74,
+  "sdCm2": 522,
+  "xmaxMm": 5.3,
+  "reOhm": 5.6,
+  "bl": 11.8,
+  "mmsG": 44.8,
+  "peW": 250,
+  "sensitivityDb": 96.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

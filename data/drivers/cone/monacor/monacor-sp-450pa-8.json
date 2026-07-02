@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-450PA",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.488,
+  "qes": 0.56,
+  "qms": 3.82,
+  "vasL": 670,
+  "sdCm2": 1250,
+  "xmaxMm": 4.3,
+  "reOhm": 6.5,
+  "bl": 15.5,
+  "mmsG": 132.5,
+  "peW": 125,
+  "sensitivityDb": 95.6
+}

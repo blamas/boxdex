@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "B&C",
+  "model": "ME60",
+  "exitInch": 2,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 800,
+  "mouthWmm": 232,
+  "mouthHmm": 237,
+  "depthMm": 202,
+  "profile": "oblate_spheroid",
+  "material": "cast aluminium",
+  "weightKg": 1.69,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/horn/2/0/ME60"
+}

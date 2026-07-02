@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Scan-Speak",
+  "model": "25W/8565-00",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.407,
+  "qes": 0.44,
+  "qms": 5.4,
+  "vasL": 229,
+  "sdCm2": 330,
+  "xmaxMm": 6.5,
+  "reOhm": 5.5,
+  "bl": 8.1,
+  "mmsG": 42.2,
+  "peW": 100,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SCAN%20SPEAK"
+}

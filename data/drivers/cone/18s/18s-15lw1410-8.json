@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15LW1410",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 5.36,
+  "vasL": 131,
+  "sdCm2": 850,
+  "xmaxMm": 8.5,
+  "reOhm": 5,
+  "bl": 24.1,
+  "mmsG": 138,
+  "peW": 1000,
+  "sensitivityDb": 98.5,
+  "magnetMaterial": "ferrite",
+  "weightKg": 12.9,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15lw1410"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "RSS460HO-4 v2015",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 18.8,
+  "qts": 0.322,
+  "qes": 0.35,
+  "qms": 4.05,
+  "vasL": 272,
+  "sdCm2": 1164,
+  "xmaxMm": 11.9,
+  "reOhm": 3.2,
+  "bl": 23.2,
+  "mmsG": 500.4,
+  "peW": 900,
+  "sensitivityDb": 93.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

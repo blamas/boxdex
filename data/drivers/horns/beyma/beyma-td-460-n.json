@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Beyma",
+  "model": "TD-460/N",
+  "exitInch": 2,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 630,
+  "mouthWmm": 365,
+  "mouthHmm": 235,
+  "depthMm": 227,
+  "profile": "conical",
+  "material": "rigid polyurethane foam",
+  "weightKg": 2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/horns/1TD460NR/bocina-td-460-n/"
+}

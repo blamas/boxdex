@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "CA25FEY",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.28,
+  "qes": 0.33,
+  "qms": 1.83,
+  "vasL": 150.7,
+  "sdCm2": 350,
+  "xmaxMm": 6,
+  "reOhm": 6,
+  "bl": 10.3,
+  "mmsG": 30,
+  "peW": 80,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

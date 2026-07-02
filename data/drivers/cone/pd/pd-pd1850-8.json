@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD1850",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.21,
+  "qes": 0.22,
+  "qms": 6.04,
+  "vasL": 249,
+  "sdCm2": 1150,
+  "xmaxMm": 16,
+  "reOhm": 5.4,
+  "bl": 31.57,
+  "mmsG": 216.4,
+  "peW": 800,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ceramic",
+  "weightKg": 17.27,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=15"
+}

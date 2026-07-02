@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18W1000",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.232,
+  "qes": 0.24,
+  "qms": 7.1,
+  "vasL": 268,
+  "sdCm2": 1134,
+  "xmaxMm": 7,
+  "reOhm": 5.8,
+  "bl": 27.2,
+  "mmsG": 139.1,
+  "peW": 1000,
+  "sensitivityDb": 100.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

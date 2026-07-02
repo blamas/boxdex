@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD.12SB30",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 16.18,
+  "vasL": 66.82,
+  "sdCm2": 531,
+  "xmaxMm": 7,
+  "reOhm": 5.88,
+  "bl": 19.22,
+  "mmsG": 68.56,
+  "peW": 400,
+  "sensitivityDb": 95.2
+}

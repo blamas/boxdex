@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HIF30HSMC",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 19,
+  "qts": 0.269,
+  "qes": 0.41,
+  "qms": 0.78,
+  "vasL": 645.5,
+  "sdCm2": 530,
+  "xmaxMm": 4,
+  "reOhm": 7.3,
+  "bl": 9.5,
+  "mmsG": 42.8,
+  "peW": 50,
+  "sensitivityDb": 92.7
+}

@@ -1,0 +1,40 @@
+---
+name: FK FLH 21
+category: sub
+topology: front_loaded_horn
+drivers:
+  - pyle-pdw21250-8
+netVolumeL: 600
+dims:
+  wMm: 900
+  hMm: 1200
+  dMm: 900
+weightKg: 90
+specs:
+  f3Hz: 35
+  sensitivityDb: 105
+  hornCutoffHz: 35
+  maxSplDb: 136
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tribe
+  - tekno
+  - raggatek
+connectors:
+  - speakON NL4
+---
+
+21" front-loaded horn sub. Pyle PDW21250, 600 L.

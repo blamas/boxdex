@@ -1,0 +1,52 @@
+---
+name: FK Top 10 Coax 2W
+category: top
+topology: sealed
+drivers:
+  - eton-11-581-50-hex-8
+  - bms-4545nd-8
+netVolumeL: 28
+dims:
+  wMm: 340
+  hMm: 480
+  dMm: 310
+weightKg: 12
+specs:
+  f3Hz: 80
+  sensitivityDb: 96
+  coverageAngleDeg: 60
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - eton-11-581-50-hex-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - eton-11-581-50-hex-8
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - eton-11-581-50-hex-8
+      - bms-4545nd-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - psytrance
+connectors:
+  - speakON NL4
+ways: 2
+---
+
+Coaxial 2-way 10"+1" sealed top. Narrow dispersion, 60 degree coverage.

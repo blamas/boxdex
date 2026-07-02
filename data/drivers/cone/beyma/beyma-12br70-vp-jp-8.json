@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12BR70 vp jp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 33.7,
+  "qts": 0.365,
+  "qes": 0.44,
+  "qms": 2.14,
+  "vasL": 104,
+  "sdCm2": 540,
+  "xmaxMm": 4.4,
+  "reOhm": 5.6,
+  "bl": 15.4,
+  "mmsG": 87.7,
+  "peW": 125,
+  "sensitivityDb": 93.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "MONITOR SILVER 12",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 49.7,
+  "qts": 0.237,
+  "qes": 0.29,
+  "qms": 1.29,
+  "vasL": 99.7,
+  "sdCm2": 527,
+  "xmaxMm": 1,
+  "reOhm": 11.8,
+  "bl": 22.6,
+  "mmsG": 40,
+  "peW": 15,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

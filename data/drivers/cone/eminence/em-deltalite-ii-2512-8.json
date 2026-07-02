@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTALITE 2512 |",
+  "impedanceOhm": 8,
+  "sizeInch": 12,
+  "fsHz": 53.1,
+  "qts": 0.52,
+  "qes": 0.64,
+  "qms": 2.94,
+  "vasL": 67.44,
+  "sdCm2": 519.5,
+  "xmaxMm": 4.9,
+  "peW": 250,
+  "sensitivityDb": 99.6,
+  "reOhm": 5.28,
+  "bl": 11.6,
+  "mmsG": 48.58,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/DeltaliteII_2512.pdf"
+}

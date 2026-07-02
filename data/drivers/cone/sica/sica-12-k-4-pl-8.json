@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "12 K 4 PL",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48.5,
+  "qts": 0.25,
+  "qes": 0.27,
+  "qms": 4.2,
+  "vasL": 47.4,
+  "sdCm2": 530.9,
+  "xmaxMm": 7,
+  "reOhm": 5.1,
+  "bl": 22.85,
+  "mmsG": 91,
+  "peW": 1000,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2025/11/Z008020.pdf"
+}

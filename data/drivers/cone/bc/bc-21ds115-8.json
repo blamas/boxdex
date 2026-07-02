@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "21DS115",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 10.2,
+  "vasL": 204,
+  "sdCm2": 1620,
+  "xmaxMm": 16.5,
+  "reOhm": 5.1,
+  "bl": 39.3,
+  "mmsG": 404,
+  "peW": 1700,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/21/8/21DS115"
+}

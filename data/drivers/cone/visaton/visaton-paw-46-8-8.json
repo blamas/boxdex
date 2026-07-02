@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "PAW 46-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 8.97,
+  "vasL": 325,
+  "sdCm2": 1210,
+  "xmaxMm": 4.9,
+  "reOhm": 6.1,
+  "bl": 23.32,
+  "mmsG": 186,
+  "peW": 700,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/visaton-paw-46-8/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10BR60 V2 vp JF rouge",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30.7,
+  "qts": 0.435,
+  "qes": 0.504,
+  "qms": 3.167,
+  "vasL": 113.7,
+  "sdCm2": 359.7,
+  "xmaxMm": 6.5,
+  "reOhm": 7.85,
+  "bl": 11.4,
+  "mmsG": 42.9,
+  "peW": 100,
+  "sensitivityDb": 90.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

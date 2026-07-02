@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powersoft",
+  "model": "30''-4MM M-FORCE 01 SHORT",
+  "sizeInch": 31.5,
+  "impedanceOhm": 0.5,
+  "fsHz": 32,
+  "qts": 0.207,
+  "qes": 0.212,
+  "qms": 8.367,
+  "vasL": 170,
+  "sdCm2": 3420,
+  "xmaxMm": 4.6,
+  "reOhm": 0.26,
+  "bl": 24.2,
+  "mmsG": 2382.8,
+  "peW": 5000,
+  "sensitivityDb": 111.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=POWERSOFT"
+}

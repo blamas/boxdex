@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18NXB700",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36.24,
+  "qts": 0.312,
+  "qes": 0.325,
+  "qms": 7.94,
+  "vasL": 155.46,
+  "sdCm2": 1110,
+  "xmaxMm": 9,
+  "reOhm": 5.17,
+  "bl": 27.82,
+  "mmsG": 213.6,
+  "peW": 1000,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/120-18nxb700.html"
+}

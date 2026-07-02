@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "McCauley",
+  "model": "6222",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.39,
+  "qes": 0.41,
+  "qms": 7.9,
+  "vasL": 41.9,
+  "sdCm2": 349.7,
+  "xmaxMm": 7,
+  "reOhm": 5.9,
+  "bl": 15.3,
+  "mmsG": 64.7,
+  "peW": 300,
+  "sensitivityDb": 91.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MC%20CAULEY"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "GA-SC64",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 88,
+  "qts": 0.579,
+  "qes": 0.6,
+  "qms": 16.82,
+  "vasL": 45,
+  "sdCm2": 519.5,
+  "xmaxMm": 1.2,
+  "reOhm": 7.63,
+  "bl": 13.9,
+  "mmsG": 27.5,
+  "peW": 40,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

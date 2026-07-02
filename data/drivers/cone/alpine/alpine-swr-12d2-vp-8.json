@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Alpine",
+  "model": "SWR-12D2 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.441,
+  "qes": 0.47,
+  "qms": 7.1,
+  "vasL": 46,
+  "sdCm2": 479,
+  "xmaxMm": 10,
+  "reOhm": 4,
+  "bl": 18.7,
+  "mmsG": 242.9,
+  "peW": 750,
+  "sensitivityDb": 87.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALPINE"
+}

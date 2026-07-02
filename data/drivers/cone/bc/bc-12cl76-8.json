@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12CL76",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.21,
+  "qes": 0.22,
+  "qms": 4.8,
+  "vasL": 59,
+  "sdCm2": 522,
+  "xmaxMm": 6,
+  "reOhm": 5.2,
+  "bl": 22.4,
+  "mmsG": 70,
+  "peW": 350,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/12/8/12CL76"
+}

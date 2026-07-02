@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12P1000ND",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 7.89,
+  "vasL": 49,
+  "sdCm2": 550,
+  "xmaxMm": 8,
+  "reOhm": 5.05,
+  "bl": 23.5,
+  "mmsG": 100,
+  "peW": 450,
+  "sensitivityDb": 94.6
+}

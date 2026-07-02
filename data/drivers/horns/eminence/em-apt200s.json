@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Eminence",
+  "model": "APT200S 5.9\" X 5.9\" Horn Flare",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 90,
+  "cutoffHz": 1300,
+  "mouthWmm": 150.4,
+  "mouthHmm": 151.1,
+  "depthMm": 109.7,
+  "profile": "conical",
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/APT200-S.pdf"
+}

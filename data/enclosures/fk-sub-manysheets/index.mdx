@@ -1,0 +1,45 @@
+---
+name: FK Sub ManySheets
+category: sub
+topology: tapped_horn
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 380
+dims:
+  wMm: 620
+  hMm: 980
+  dMm: 900
+weightKg: 72
+sheetCount: 12
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+plywoodThicknessMm: 18
+buildComplexity: complex
+specs:
+  f3Hz: 34
+  sensitivityDb: 103
+  maxSplDb: 134
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - tribe
+connectors:
+  - speakON NL4
+---
+
+FK Sub ManySheets: 18" tapped horn requiring 12 sheets of 2440x1220 mm plywood.

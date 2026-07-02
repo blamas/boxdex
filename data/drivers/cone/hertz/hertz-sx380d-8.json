@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "hertz Hertz Audio",
+  "model": "SX380D",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.651,
+  "qes": 0.7,
+  "qms": 9.3,
+  "vasL": 45,
+  "sdCm2": 851,
+  "xmaxMm": 6.1,
+  "reOhm": 4,
+  "bl": 21.8,
+  "mmsG": 309.1,
+  "peW": 1000,
+  "sensitivityDb": 92.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HERTZ%20AUDIO"
+}

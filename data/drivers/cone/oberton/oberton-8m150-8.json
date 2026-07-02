@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "8M150",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 68.2,
+  "qts": 0.217,
+  "qes": 0.225,
+  "qms": 6.07,
+  "vasL": 21.62,
+  "sdCm2": 202,
+  "xmaxMm": 3.25,
+  "reOhm": 5.05,
+  "bl": 11.62,
+  "mmsG": 14.07,
+  "peW": 150,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/183-8m150.html"
+}

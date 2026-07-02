@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD-11Fe",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44.4,
+  "fLowHz": 700,
+  "fHighHz": 19000,
+  "minCrossoverHz": 1500,
+  "sensitivityHornDb": 109,
+  "peW": 70,
+  "magnetMaterial": "ferrite",
+  "weightKg": 1.8,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD11FE8/motor-cd-11fe-8-oh/"
+}

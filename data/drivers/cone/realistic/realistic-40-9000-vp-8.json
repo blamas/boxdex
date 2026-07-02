@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Realistic",
+  "model": "40-9000 vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 20.5,
+  "qts": 0.767,
+  "qes": 1.03,
+  "qms": 3,
+  "vasL": 663,
+  "sdCm2": 835,
+  "xmaxMm": 6,
+  "reOhm": 7.4,
+  "bl": 9.1,
+  "mmsG": 88.9,
+  "peW": 200,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=REALISTIC"
+}

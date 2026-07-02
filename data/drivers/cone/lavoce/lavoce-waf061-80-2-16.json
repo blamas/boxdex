@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WAF061.80-16",
+  "sizeInch": 6,
+  "impedanceOhm": 16,
+  "fsHz": 66,
+  "qts": 0.55,
+  "qes": 0.59,
+  "qms": 7.84,
+  "vasL": 7.05,
+  "sdCm2": 132,
+  "xmaxMm": 4.8,
+  "reOhm": 11.4,
+  "bl": 12.77,
+  "mmsG": 20.5,
+  "peW": 150,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://lavocespeakers.com/product/waf061-80-2/"
+}

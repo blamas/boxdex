@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "Colossus 18SB",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.346,
+  "qes": 0.366,
+  "qms": 6.583,
+  "vasL": 199,
+  "sdCm2": 1134,
+  "xmaxMm": 8.25,
+  "reOhm": 5.2,
+  "bl": 24,
+  "mmsG": 177.2,
+  "peW": 1000,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://fane-international.com/downloads/FANE-COLOSSUS-18SB-DS141117.pdf"
+}

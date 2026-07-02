@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Skar Audio",
+  "model": "ZVX-18V2 D2",
+  "sizeInch": 18,
+  "impedanceOhm": 2,
+  "fsHz": 26.1,
+  "qts": 0.472,
+  "qes": 0.52,
+  "qms": 5.1,
+  "vasL": 151.6,
+  "sdCm2": 1164,
+  "xmaxMm": 12.1,
+  "reOhm": 1,
+  "bl": 12.1,
+  "mmsG": 465.9,
+  "peW": 1600,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SKAR%20AUDIO"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SONIC 12 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.469,
+  "qes": 0.49,
+  "qms": 11.2,
+  "vasL": 51,
+  "sdCm2": 511,
+  "xmaxMm": 6.3,
+  "reOhm": 4,
+  "bl": 18.6,
+  "mmsG": 249.4,
+  "peW": 350,
+  "sensitivityDb": 88.1
+}

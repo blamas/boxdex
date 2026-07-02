@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "PRO RIDER 18 1808-8 AL CP",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.55,
+  "qes": 0.579,
+  "qms": 11.14,
+  "vasL": 296.475,
+  "sdCm2": 1260,
+  "xmaxMm": 4.6,
+  "reOhm": 5.6,
+  "bl": 17.9,
+  "mmsG": 146.459,
+  "peW": 600,
+  "sensitivityDb": 95.6
+}

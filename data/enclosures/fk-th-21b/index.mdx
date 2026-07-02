@@ -1,0 +1,57 @@
+---
+name: FK TH 21B
+category: sub
+topology: tapped_horn
+drivers:
+  - pyle-pdw21250-8
+netVolumeL: 650
+dims:
+  wMm: 740
+  hMm: 1020
+  dMm: 1120
+weightKg: 88
+specs:
+  f3Hz: 26
+  sensitivityDb: 105
+  maxSplDb: 137
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-2u.csv
+    count: 2
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-4u.csv
+    count: 4
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-6u.csv
+    count: 6
+measurements:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tribe
+  - raggatek
+  - mental
+connectors:
+  - speakON NL4
+---
+
+21" tapped horn sub with full stacking suite (2/4/6 units).

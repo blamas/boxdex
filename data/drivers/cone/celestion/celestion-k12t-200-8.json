@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "K12T-200",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 61.8,
+  "qts": 0.514,
+  "qes": 0.55,
+  "qms": 7.887,
+  "vasL": 71.7,
+  "sdCm2": 530,
+  "xmaxMm": 1.5,
+  "reOhm": 5.65,
+  "bl": 12.1,
+  "mmsG": 36.4,
+  "peW": 200,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

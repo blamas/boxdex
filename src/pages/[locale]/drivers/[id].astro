@@ -1,0 +1,245 @@
+---
+import { getCollection } from "astro:content";
+import EnclosureList from "../../../components/EnclosureList.astro";
+import Layout from "../../../components/Layout.astro";
+import SpecTable from "../../../components/SpecTable.astro";
+import SubstituteList from "../../../components/SubstituteList.astro";
+import { LOCALES, useLocale } from "../../../i18n";
+import { alignmentFromEbp, ebp, sealedVbL } from "../../../lib/driver";
+import { withUnit } from "../../../lib/format";
+import type { Driver } from "../../../lib/schemas";
+import { allSubstitutes } from "../../../lib/similarity";
+
+export async function getStaticPaths() {
+  const drivers = await getCollection("drivers");
+  const enclosures = await getCollection("enclosures");
+  const horns = await getCollection("horns");
+  const pool = drivers.map((e) => ({ ...e.data, id: e.id }) as Driver);
+  const substituteIndex = allSubstitutes(pool);
+  return LOCALES.flatMap((locale) =>
+    drivers.map((entry) => {
+      const d = entry.data;
+      const exitInch = d.type === "compression" ? d.exitInch : null;
+      return {
+        params: { locale, id: entry.id },
+        props: {
+          entry,
+          substitutes: substituteIndex.get(entry.id) ?? [],
+          usedBy: enclosures
+            .filter((e) => e.data.drivers.some((ref) => ref.id === entry.id))
+            .sort((a, b) => a.data.name.localeCompare(b.data.name)),
+          mates:
+            exitInch === null
+              ? []
+              : horns
+                  .filter((h) => h.data.exitInch === exitInch)
+                  .sort((a, b) =>
+                    `${a.data.brand} ${a.data.model}`.localeCompare(
+                      `${b.data.brand} ${b.data.model}`
+                    )
+                  ),
+        },
+      };
+    })
+  );
+}
+
+const { entry, substitutes, usedBy, mates } = Astro.props;
+const d = entry.data;
+const substituteTarget = { ...d, id: entry.id } as Driver;
+
+const { t, localeBase } = useLocale(Astro.params);
+const sr = t.driverDetail.specRows;
+
+const isCone = d.type === "cone";
+
+const specRows: { label: string; value: string | undefined }[] = isCone
+  ? [
+      { label: sr.nominalSize, value: `${d.sizeInch}"` },
+      { label: sr.impedance, value: withUnit(d.impedanceOhm, "Ω") },
+      { label: sr.fs, value: withUnit(d.fsHz, "Hz") },
+      { label: sr.qts, value: String(d.qts) },
+      { label: sr.qes, value: d.qes?.toString() },
+      { label: sr.qms, value: d.qms?.toString() },
+      { label: sr.vas, value: withUnit(d.vasL, "L") },
+      { label: sr.sd, value: withUnit(d.sdCm2, "cm²") },
+      { label: sr.xmax, value: withUnit(d.xmaxMm, "mm") },
+      { label: sr.re, value: withUnit(d.reOhm, "Ω") },
+      { label: sr.bl, value: withUnit(d.bl, "T·m") },
+      { label: sr.mms, value: withUnit(d.mmsG, "g") },
+      { label: sr.pe, value: withUnit(d.peW, "W") },
+      { label: sr.sensitivity, value: withUnit(d.sensitivityDb, "dB") },
+    ]
+  : [
+      { label: sr.throatExit, value: `${d.exitInch}"` },
+      { label: sr.throat, value: withUnit(d.throatMm, "mm") },
+      { label: sr.voiceCoil, value: withUnit(d.voiceCoilMm, "mm") },
+      { label: sr.impedance, value: withUnit(d.impedanceOhm, "Ω") },
+      { label: sr.usableRange, value: `${d.fLowHz}-${d.fHighHz} Hz` },
+      { label: sr.minCrossover, value: withUnit(d.minCrossoverHz, "Hz") },
+      {
+        label: sr.crossoverSlope,
+        value: d.crossoverSlopeDbOct ? `${d.crossoverSlopeDbOct} dB/oct` : undefined,
+      },
+      { label: sr.sensitivityHorn, value: withUnit(d.sensitivityHornDb, "dB") },
+      { label: sr.fs, value: withUnit(d.fsHz, "Hz") },
+      { label: sr.magnet, value: d.magnetMaterial },
+      { label: sr.weight, value: withUnit(d.weightKg, "kg") },
+      { label: sr.powerAes, value: withUnit(d.peW, "W") },
+    ];
+
+const ebpValue = isCone ? ebp(d.fsHz, d.qes) : undefined;
+const alignment = alignmentFromEbp(ebpValue);
+const vbClosed = isCone ? sealedVbL(d.vasL, d.qts) : undefined;
+
+const headline = isCone
+  ? `${d.sizeInch}" · ${d.impedanceOhm} Ω · ${d.peW} W · ${d.sensitivityDb} dB`
+  : `${d.exitInch}" exit · ${d.impedanceOhm} Ω · ${d.peW} W · ${d.sensitivityHornDb} dB`;
+
+const specHeading = isCone ? t.driverDetail.tsParams : t.driverDetail.compSpecs;
+const description = isCone
+  ? `${t.driverDetail.tsParams} for ${d.brand} ${d.model}`
+  : `${t.driverDetail.compSpecs} for ${d.brand} ${d.model}`;
+---
+
+<Layout title={`${d.brand} ${d.model}`} description={description}>
+  <div>
+    <header class="detail-header">
+      <p class="crumb"><a href={`${localeBase}/drivers`}>← {t.driverDetail.allDrivers}</a></p>
+      <h1>{d.brand} {d.model}</h1>
+      <p class="meta">
+        {headline}
+        {d.datasheetUrl && (
+          <> · <a href={d.datasheetUrl} target="_blank" rel="noopener">datasheet ↗</a></>
+        )}
+      </p>
+    </header>
+
+    <div class="detail-body">
+      <section>
+        <h2>{specHeading}</h2>
+        <SpecTable rows={specRows} />
+      </section>
+
+      {d.type === "compression" && (
+        <section>
+          <h2>{t.driverDetail.mateHorns}</h2>
+          {mates.length > 0 ? (
+            <ul class="horn-links">
+              {mates.map((h) => (
+                <li>
+                  <a href={`${localeBase}/horns/${h.id}`}>{h.data.brand} {h.data.model}</a>
+                  <span class="muted"> · {h.data.coverageHorizontalDeg}°×{h.data.coverageVerticalDeg}°</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p class="muted">{t.driverDetail.noCompatible}</p>
+          )}
+          <p class="provenance-note">
+            Matched on throat exit ({d.exitInch}") only. Verify mounting and crossover against
+            both datasheets.
+          </p>
+        </section>
+      )}
+
+      {isCone && (
+        <section>
+          <h2>{t.driverDetail.alignmentHint}</h2>
+          <table>
+            <tbody>
+              <tr>
+                <th>{t.driverDetail.ebpLabel}</th>
+                <td>
+                  {ebpValue !== undefined
+                    ? <>{ebpValue}{alignment && <span class="align-tag"> · {alignment}</span>}</>
+                    : <span class="muted">needs Qes</span>}
+                </td>
+              </tr>
+              <tr>
+                <th>Sealed Vb (Qtc ≈ 0.71)</th>
+                <td>{vbClosed !== undefined ? `≈ ${vbClosed} L` : <span class="muted">Qts too high</span>}</td>
+              </tr>
+            </tbody>
+          </table>
+          {alignment && <p class="provenance-note">{t.driverDetail.alignmentHints[alignment as keyof typeof t.driverDetail.alignmentHints]}</p>}
+          <p class="provenance-note">
+            Rules of thumb from T/S parameters only. Verify against a real simulation before cutting wood.
+          </p>
+        </section>
+      )}
+
+      <section>
+        <h2>{t.driverDetail.substitutes}</h2>
+        <SubstituteList target={substituteTarget} candidates={substitutes} />
+      </section>
+
+      <section>
+        <h2>{t.driverDetail.enclosures} ({usedBy.length})</h2>
+        {usedBy.length > 0 ? (
+          <EnclosureList items={usedBy} />
+        ) : (
+          <p class="muted">No enclosure in the catalog uses this driver yet.</p>
+        )}
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .detail-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .crumb {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .detail-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  .align-tag {
+    color: var(--accent);
+    text-transform: capitalize;
+  }
+
+  .horn-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+</style>

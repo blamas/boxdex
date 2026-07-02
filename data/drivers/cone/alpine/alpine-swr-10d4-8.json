@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Alpine",
+  "model": "SWR-10D4",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.544,
+  "qes": 0.59,
+  "qms": 7.05,
+  "vasL": 18,
+  "sdCm2": 333,
+  "xmaxMm": 10,
+  "reOhm": 7.6,
+  "bl": 23.5,
+  "mmsG": 213.6,
+  "peW": 1000,
+  "sensitivityDb": 82.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALPINE"
+}

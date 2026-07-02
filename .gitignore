@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Test coverage
+coverage/
+
+# Playwright output
+test-results/
+playwright-report/
+
+# Astro generated types/schemas (schema/*.schema.json is the committed mirror)
+.astro/
+
+# Scraper staging output (bulky binaries: triage into data/ manually)
+scrape-out/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Claude Code local config
+.claude/
+
+# Local scratch notes (never committed)
+todo.md
+BIBLE_IMPORT.md
+
+# Personal scrapers/generators (scripts/ itself is committed project tooling)
+scripts/local/

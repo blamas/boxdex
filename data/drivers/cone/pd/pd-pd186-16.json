@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD186",
+  "sizeInch": 18,
+  "impedanceOhm": 16,
+  "fsHz": 27,
+  "qts": 0.312,
+  "qes": 0.326,
+  "qms": 7.75,
+  "vasL": 353,
+  "sdCm2": 1150,
+  "xmaxMm": 8,
+  "reOhm": 5.5,
+  "bl": 22.94,
+  "mmsG": 184,
+  "peW": 700,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ceramic",
+  "weightKg": 11.75,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=3"
+}

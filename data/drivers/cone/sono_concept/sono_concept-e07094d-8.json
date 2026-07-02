@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sono Concept Plus",
+  "model": "E07094D",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.796,
+  "qes": 0.95,
+  "qms": 4.92,
+  "vasL": 135.3,
+  "sdCm2": 790,
+  "xmaxMm": 6.1,
+  "reOhm": 7.3,
+  "bl": 17.8,
+  "mmsG": 262.1,
+  "peW": 200,
+  "sensitivityDb": 85.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SONO%20CONCEPT%20PLUS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "HX 300",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.47,
+  "qes": 0.53,
+  "qms": 4.4,
+  "vasL": 49.62,
+  "sdCm2": 502,
+  "xmaxMm": 14,
+  "reOhm": 2.82,
+  "bl": 13.57,
+  "mmsG": 167,
+  "peW": 600,
+  "sensitivityDb": 87.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-hx-300/specifications"
+}

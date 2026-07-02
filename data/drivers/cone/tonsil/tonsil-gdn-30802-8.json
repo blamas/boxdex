@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tonsil",
+  "model": "GDN 30/80/2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.26,
+  "qes": 0.291,
+  "qms": 2.47,
+  "vasL": 270,
+  "sdCm2": 485,
+  "xmaxMm": 6,
+  "reOhm": 6.26,
+  "bl": 13,
+  "mmsG": 50,
+  "peW": 80,
+  "sensitivityDb": 93.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/tonsil-gdn-30-80-2/specifications"
+}

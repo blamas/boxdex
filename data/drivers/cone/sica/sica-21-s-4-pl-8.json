@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "21 S 4 PL",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 34.6,
+  "qts": 0.3,
+  "qes": 0.31,
+  "qms": 9.95,
+  "vasL": 255,
+  "sdCm2": 1661.9,
+  "xmaxMm": 5.2,
+  "reOhm": 5.7,
+  "bl": 36.1,
+  "mmsG": 325,
+  "peW": 1200,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z008424.pdf"
+}

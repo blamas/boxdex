@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LII Audio",
+  "model": "CRYSTAL-10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 31.5,
+  "qts": 0.479,
+  "qes": 0.51,
+  "qms": 7.75,
+  "vasL": 256.5,
+  "sdCm2": 356.4,
+  "xmaxMm": 3,
+  "reOhm": 5.76,
+  "bl": 6.3,
+  "mmsG": 17.7,
+  "peW": 20,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LII%20AUDIO"
+}

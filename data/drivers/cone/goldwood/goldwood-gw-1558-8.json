@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Goldwood",
+  "model": "GW-1558",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.628,
+  "qes": 0.756,
+  "qms": 3.7,
+  "vasL": 399.7,
+  "sdCm2": 872.9,
+  "xmaxMm": 2,
+  "reOhm": 5.3,
+  "bl": 9.8,
+  "mmsG": 70.4,
+  "peW": 200,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GOLDWOOD"
+}

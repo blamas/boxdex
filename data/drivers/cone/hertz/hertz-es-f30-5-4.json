@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "ES F30.5",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 38,
+  "qts": 0.6,
+  "qes": 0.69,
+  "qms": 4.44,
+  "vasL": 60,
+  "sdCm2": 514,
+  "xmaxMm": 6,
+  "reOhm": 2.84,
+  "bl": 10.4,
+  "mmsG": 110,
+  "peW": 350,
+  "sensitivityDb": 88.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-es-f30-5/specifications"
+}

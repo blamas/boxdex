@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "G125-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 5.5,
+  "vasL": 70.8,
+  "sdCm2": 527.1,
+  "xmaxMm": 2.5,
+  "reOhm": 5.2,
+  "bl": 14.4,
+  "mmsG": 33,
+  "peW": 200,
+  "sensitivityDb": 101.4
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "6MBX44",
+  "sizeInch": 6.5,
+  "impedanceOhm": 16,
+  "fsHz": 115,
+  "qts": 0.35,
+  "qes": 0.41,
+  "qms": 2.9,
+  "vasL": 4,
+  "sdCm2": 132,
+  "xmaxMm": 3.5,
+  "reOhm": 10.4,
+  "bl": 14.7,
+  "mmsG": 12,
+  "peW": 200,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/6.5/16/6MBX44"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "DIPOLE 10-D16",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25.9,
+  "qts": 0.676,
+  "qes": 0.72,
+  "qms": 11,
+  "vasL": 118,
+  "sdCm2": 345,
+  "xmaxMm": 10.1,
+  "reOhm": 6.15,
+  "bl": 8.6,
+  "mmsG": 53.4,
+  "peW": 100,
+  "sensitivityDb": 87.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

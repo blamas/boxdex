@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15MB606",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.35,
+  "qes": 0.37,
+  "qms": 6.2,
+  "vasL": 223,
+  "sdCm2": 850,
+  "xmaxMm": 4.5,
+  "reOhm": 5,
+  "bl": 15.1,
+  "mmsG": 63,
+  "peW": 400,
+  "sensitivityDb": 101,
+  "magnetMaterial": "ferrite",
+  "weightKg": 6.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15MB606"
+}

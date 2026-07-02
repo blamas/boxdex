@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Volt",
+  "model": "BM2500.4 v2014",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.267,
+  "qes": 0.3,
+  "qms": 2.43,
+  "vasL": 37,
+  "sdCm2": 337,
+  "xmaxMm": 4,
+  "reOhm": 4.8,
+  "bl": 15.6,
+  "mmsG": 53.8,
+  "peW": 200,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOLT"
+}

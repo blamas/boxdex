@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "FW 405 N",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.446,
+  "qes": 0.478,
+  "qms": 6.76,
+  "vasL": 392.5,
+  "sdCm2": 890,
+  "xmaxMm": 7.6,
+  "reOhm": 6.89,
+  "bl": 15.5,
+  "mmsG": 98.3,
+  "peW": 150,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

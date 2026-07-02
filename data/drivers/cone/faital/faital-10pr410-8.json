@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "10PR410",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.23,
+  "qes": 0.23,
+  "qms": 10.5,
+  "vasL": 32,
+  "sdCm2": 345,
+  "xmaxMm": 4.5,
+  "reOhm": 5.4,
+  "mmsG": 36.5,
+  "peW": 300,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 7.5,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101040120"
+}

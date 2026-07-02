@@ -1,0 +1,42 @@
+---
+name: FK Sub Karlsonator
+category: sub
+topology: front_loaded_horn
+topologyVariant: Karlsonator
+drivers:
+  - rcf-l15p400-8
+driverCount: 1
+netVolumeL: 300
+dims:
+  wMm: 700
+  hMm: 1100
+  dMm: 800
+weightKg: 48
+specs:
+  f3Hz: 55
+  sensitivityDb: 104
+  maxSplDb: 132
+  hornCutoffHz: 55
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - tribe
+  - raggatek
+connectors:
+  - speakON NL4
+---
+
+FK Sub Karlsonator: 15" Karlsonator front-loaded horn variant.

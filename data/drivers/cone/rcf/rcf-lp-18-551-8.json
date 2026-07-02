@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LP 18/551",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 21.7,
+  "qts": 0.222,
+  "qes": 0.228,
+  "qms": 7.8,
+  "vasL": 760,
+  "sdCm2": 1007,
+  "xmaxMm": 10,
+  "reOhm": 5.7,
+  "bl": 18.5,
+  "mmsG": 100.6,
+  "peW": 500,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

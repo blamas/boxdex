@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "19RS115",
+  "sizeInch": 19,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.2,
+  "qes": 0.21,
+  "qms": 6.2,
+  "vasL": 197,
+  "sdCm2": 1450,
+  "xmaxMm": 23.5,
+  "reOhm": 4.6,
+  "bl": 42,
+  "mmsG": 447,
+  "peW": 2000,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/19/8/19RS115"
+}

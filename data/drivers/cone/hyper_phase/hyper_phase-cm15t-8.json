@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hyper Phase",
+  "model": "CM15T",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.508,
+  "qes": 0.54,
+  "qms": 8.57,
+  "vasL": 308,
+  "sdCm2": 880,
+  "xmaxMm": 3.5,
+  "reOhm": 6.1,
+  "bl": 13.5,
+  "mmsG": 72.9,
+  "peW": 150,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HYPER%20PHASE"
+}

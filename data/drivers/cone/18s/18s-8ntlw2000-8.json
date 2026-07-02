@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "8NTLW2000",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 71,
+  "qts": 0.21,
+  "qes": 0.21,
+  "qms": 8.1,
+  "vasL": 13,
+  "sdCm2": 227,
+  "xmaxMm": 4.4,
+  "reOhm": 5.2,
+  "bl": 17.5,
+  "mmsG": 28,
+  "peW": 350,
+  "sensitivityDb": 97.5,
+  "weightKg": 1.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/8-0/8/8NTLW2000"
+}

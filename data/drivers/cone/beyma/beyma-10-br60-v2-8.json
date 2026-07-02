@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10\"BR60 V2",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.39,
+  "qes": 0.44,
+  "qms": 3.3,
+  "vasL": 142,
+  "sdCm2": 380,
+  "xmaxMm": 6.5,
+  "reOhm": 6.5,
+  "bl": 10.9,
+  "mmsG": 44,
+  "peW": 100,
+  "sensitivityDb": 92,
+  "weightKg": 2.9,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/210BR60V28/altavoz-10br60-v2-8-oh/"
+}

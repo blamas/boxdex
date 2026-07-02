@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "8 N 2.5 PL",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 77,
+  "qts": 0.3,
+  "qes": 0.33,
+  "qms": 4.21,
+  "vasL": 13.7,
+  "sdCm2": 213.8,
+  "xmaxMm": 3.5,
+  "reOhm": 5.6,
+  "bl": 12.95,
+  "mmsG": 20.3,
+  "peW": 300,
+  "sensitivityDb": 96.4,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z005200-1.pdf"
+}

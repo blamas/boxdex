@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "8PR155",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 85,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 8.8,
+  "vasL": 9.4,
+  "sdCm2": 217,
+  "xmaxMm": 3.57,
+  "reOhm": 5.3,
+  "mmsG": 24.5,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 4.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101030145"
+}

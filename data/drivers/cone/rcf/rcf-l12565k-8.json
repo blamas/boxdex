@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L12/565K",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 63,
+  "qts": 0.56,
+  "qes": 0.58,
+  "qms": 16.6,
+  "vasL": 57,
+  "sdCm2": 530,
+  "xmaxMm": 4,
+  "reOhm": 5.8,
+  "bl": 13.3,
+  "mmsG": 43,
+  "peW": 200,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l12565k"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eclipse",
+  "model": "SW8010 ",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 21,
+  "qts": 0.36,
+  "qes": 0.39,
+  "qms": 5.3,
+  "vasL": 28,
+  "sdCm2": 347,
+  "xmaxMm": 22,
+  "reOhm": 4,
+  "bl": 20,
+  "mmsG": 356.4,
+  "peW": 700,
+  "sensitivityDb": 86,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/eclipse-sw8010/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12MH32",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.19,
+  "qes": 0.2,
+  "qms": 7.2,
+  "vasL": 63,
+  "sdCm2": 522,
+  "xmaxMm": 5,
+  "reOhm": 5.2,
+  "bl": 22.3,
+  "mmsG": 54,
+  "peW": 400,
+  "sensitivityDb": 101,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/12/8/12MH32"
+}

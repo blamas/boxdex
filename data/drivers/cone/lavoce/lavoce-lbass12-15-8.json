@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "LBASS12-15",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.48,
+  "qes": 0.56,
+  "qms": 3.43,
+  "vasL": 160.93,
+  "sdCm2": 535.02,
+  "xmaxMm": 4.7,
+  "reOhm": 5.4,
+  "bl": 10.08,
+  "mmsG": 44.3,
+  "peW": 100,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/lbass12-15/"
+}

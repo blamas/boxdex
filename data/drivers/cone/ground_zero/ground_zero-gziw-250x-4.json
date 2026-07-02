@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZIW 250X",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 30.1,
+  "qts": 0.44,
+  "qes": 0.466,
+  "qms": 7.89,
+  "vasL": 43.8,
+  "sdCm2": 327,
+  "xmaxMm": 7.5,
+  "reOhm": 3.35,
+  "bl": 11.5,
+  "mmsG": 97.2,
+  "peW": 250,
+  "sensitivityDb": 85.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/ground-zero-gziw-250x/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10MCS500",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 70,
+  "qts": 0.366,
+  "qes": 0.38,
+  "qms": 10.1,
+  "vasL": 18.8,
+  "sdCm2": 350,
+  "xmaxMm": 4.4,
+  "reOhm": 5.7,
+  "bl": 17.6,
+  "mmsG": 47.2,
+  "peW": 500,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

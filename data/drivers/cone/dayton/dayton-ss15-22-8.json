@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "SS15-22",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.388,
+  "qes": 0.44,
+  "qms": 3.27,
+  "vasL": 98,
+  "sdCm2": 800,
+  "xmaxMm": 10.3,
+  "reOhm": 5,
+  "bl": 24.8,
+  "mmsG": 318.1,
+  "peW": 1100,
+  "sensitivityDb": 90.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

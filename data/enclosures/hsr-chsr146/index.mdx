@@ -1,0 +1,60 @@
+---
+name: "HSR CHSR146"
+category: sub
+topology: scoop
+drivers:
+  - rcf-lf18g401-8
+driverCount: 1
+netVolumeL: 380
+dims:
+  wMm: 600
+  hMm: 900
+  dMm: 916
+plywoodThicknessMm: 18
+specs:
+  f3Hz: 48
+  fbHz: 45
+  sensitivityDb: 105
+  impedanceNominalOhm: 8
+  powerAesW: 900
+  powerProgramW: 1800
+  maxSplDb: 134
+  recommendedCrossoverHz: 120
+simulations:
+  - driver: [rcf-lf18g401-8]
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u-1w.csv
+    note: "1U single cab, 1W/1m, Hornresp, digitized from plan PDF ±2 dB"
+  - driver: [rcf-lf18g401-8]
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-4u.csv
+    count: 4
+    note: "4U stacked, Hornresp, digitized from plan PDF ±2 dB"
+measurements: []
+plans:
+  - plan.pdf
+author: "HSR sonorisation"
+sourceUrl: "https://hsrsonorisation.fr"
+license: "LicenseRef-Permission"
+licenseNote: "Publicly distributed in La Bible des Caissons (non-commercial free collection), non-commercial use and redistribution permitted"
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+  - frenchcore
+verified: false
+connectors:
+  - speakON NL4
+---
+
+Single 18" scoop horn designed by HSR sonorisation. Trapezoidal open-mouth construction,
+externally 600×900×916 mm (495 L gross), 18 mm Finnish birch plywood. Driver: RCF LF18G401.
+
+Recommended subsonic HP filter: 35 Hz @ 24 dB/oct. Recommended system crossover: 120 Hz @ 24 dB/oct.
+
+Sensitivity: 105 dB/W/m (1U), 109 dB/W/m (4U stacked).
+Max SPL: 134 dB RMS (1U/700W), 144 dB (4U/2800W).
+
+*netVolumeL is estimated from external dims; horn scoop internal volume not independently stated.*

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Conrad",
+  "model": "CPA 10-100",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 56.3,
+  "qts": 0.436,
+  "qes": 0.51,
+  "qms": 3.01,
+  "vasL": 39.4,
+  "sdCm2": 333,
+  "xmaxMm": 2.5,
+  "reOhm": 7.1,
+  "bl": 12.5,
+  "mmsG": 31.5,
+  "peW": 100,
+  "sensitivityDb": 93.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CONRAD"
+}

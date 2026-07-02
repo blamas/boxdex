@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiomobile",
+  "model": "GTS 2110 S4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 28,
+  "qts": 0.59,
+  "qes": 0.686,
+  "qms": 4.2,
+  "vasL": 25.5,
+  "sdCm2": 351,
+  "xmaxMm": 12.2,
+  "reOhm": 3.1,
+  "bl": 10.1,
+  "mmsG": 213,
+  "peW": 400,
+  "sensitivityDb": 81,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audiomobile-gts-2110-s4/specifications"
+}

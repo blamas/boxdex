@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Morel",
+  "model": "ULTIMO 124",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 26,
+  "qts": 0.421,
+  "qes": 0.56,
+  "qms": 1.69,
+  "vasL": 73.8,
+  "sdCm2": 448,
+  "xmaxMm": 14.6,
+  "reOhm": 3.7,
+  "bl": 12.4,
+  "mmsG": 142.9,
+  "peW": 1000,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MOREL"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "HD3020T",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 75,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 110,
+  "peW": 110,
+  "magnetMaterial": "ferrite",
+  "weightKg": 4.9,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/2-0/8/hd3020t"
+}

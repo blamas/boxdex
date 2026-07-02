@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12FX600",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 6.88,
+  "vasL": 44.4,
+  "sdCm2": 538,
+  "xmaxMm": 9.9,
+  "reOhm": 5.3,
+  "mmsG": 100,
+  "peW": 700,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 5.5,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151050125"
+}

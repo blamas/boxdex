@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Boss Audio",
+  "model": "CX10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 36,
+  "qts": 1.193,
+  "qes": 1.384,
+  "qms": 8.6,
+  "vasL": 75.9,
+  "sdCm2": 415,
+  "xmaxMm": 4,
+  "mmsG": 63,
+  "peW": 300,
+  "sensitivityDb": 85.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/boss-audio-cx10/specifications"
+}

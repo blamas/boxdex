@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "SMC 225/ND",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44.4,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1500,
+  "sensitivityHornDb": 108,
+  "peW": 40,
+  "magnetMaterial": "neodymium",
+  "weightKg": 0.7,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1SMC225ND8/motor-smc-225-nd-8-oh/"
+}

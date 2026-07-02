@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "C18-600LF",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.279,
+  "qes": 0.29,
+  "qms": 7.11,
+  "vasL": 201,
+  "sdCm2": 1225,
+  "xmaxMm": 5.3,
+  "reOhm": 5.4,
+  "bl": 28.6,
+  "mmsG": 183.6,
+  "peW": 1200,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

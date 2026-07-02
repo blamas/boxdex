@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10\"WR300",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.35,
+  "qes": 0.39,
+  "qms": 3.9,
+  "vasL": 42,
+  "sdCm2": 350,
+  "xmaxMm": 6,
+  "reOhm": 6.1,
+  "bl": 14.2,
+  "mmsG": 39,
+  "peW": 300,
+  "sensitivityDb": 95,
+  "weightKg": 3.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/110WR308/altavoz-10wr300-8-oh/"
+}

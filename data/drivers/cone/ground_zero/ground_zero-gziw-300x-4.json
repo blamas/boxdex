@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZIW 300X",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 34.9,
+  "qts": 0.69,
+  "qes": 0.768,
+  "qms": 6.82,
+  "vasL": 53.6,
+  "sdCm2": 488,
+  "xmaxMm": 7.5,
+  "reOhm": 3.49,
+  "bl": 11.4,
+  "mmsG": 130.5,
+  "peW": 350,
+  "sensitivityDb": 86.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/ground-zero-gziw-300x/specifications"
+}

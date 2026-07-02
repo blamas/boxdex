@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD 156",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 50.2,
+  "qts": 0.378,
+  "qes": 0.4,
+  "qms": 6.94,
+  "vasL": 120.2,
+  "sdCm2": 800,
+  "xmaxMm": 6.6,
+  "reOhm": 5.74,
+  "bl": 18.4,
+  "mmsG": 75.2,
+  "peW": 650,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

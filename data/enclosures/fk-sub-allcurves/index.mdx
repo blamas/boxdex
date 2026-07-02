@@ -1,0 +1,107 @@
+---
+name: FK Sub AllCurves
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 280
+dims:
+  wMm: 730
+  hMm: 730
+  dMm: 650
+specs:
+  f3Hz: 38
+  fbHz: 42
+  sensitivityDb: 101
+  maxSplDb: 131
+  powerAesW: 1500
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: sim-spl-1u.csv
+    note: 1U SPL sim
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: sim-spl-4u.csv
+    count: 4
+    note: 4U stacked sim
+  - driver:
+      - faital-18hp1060-8
+    kind: phase
+    source: hornresp_sim
+    file: sim-phase-1u.csv
+    note: 1U phase sim
+  - driver:
+      - faital-18hp1060-8
+    kind: impedance
+    source: hornresp_sim
+    file: sim-impedance-1u.csv
+    note: 1U impedance sim
+  - driver:
+      - faital-18hp1060-8
+    kind: group_delay
+    source: hornresp_sim
+    file: sim-group-delay-1u.csv
+    note: 1U group delay sim
+  - driver:
+      - faital-18hp1060-8
+    kind: distortion
+    source: hornresp_sim
+    file: sim-distortion-1u.csv
+    note: 1U distortion sim
+  - driver:
+      - faital-18hp1060-8
+    kind: power_compression
+    source: hornresp_sim
+    file: sim-power-compression-1u.csv
+    note: 1U power compression sim
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-spl-1u.csv
+    note: 1U SPL measured
+  - driver:
+      - faital-18hp1060-8
+    kind: phase
+    source: rew_measured
+    file: meas-phase-1u.csv
+    note: 1U phase measured
+  - driver:
+      - faital-18hp1060-8
+    kind: impedance
+    source: rew_measured
+    file: meas-impedance-1u.csv
+    note: 1U impedance measured
+  - driver:
+      - faital-18hp1060-8
+    kind: group_delay
+    source: rew_measured
+    file: meas-group-delay-1u.csv
+    note: 1U group delay measured
+  - driver:
+      - faital-18hp1060-8
+    kind: distortion
+    source: rew_measured
+    file: meas-distortion-1u.csv
+    note: 1U distortion measured
+  - driver:
+      - faital-18hp1060-8
+    kind: power_compression
+    source: rew_measured
+    file: meas-power-compression-1u.csv
+    note: 1U power compression measured
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+---
+
+FK Sub AllCurves: all 6 curve kinds exercised, both sim and measured. Tests all curve type tabs.

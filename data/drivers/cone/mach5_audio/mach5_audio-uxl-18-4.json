@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Mach 5 Audio",
+  "model": "UXL-18",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 18.6,
+  "qts": 0.282,
+  "qes": 0.29,
+  "qms": 9.7,
+  "vasL": 285.5,
+  "sdCm2": 1029.2,
+  "xmaxMm": 10,
+  "reOhm": 3.2,
+  "bl": 22.2,
+  "mmsG": 380.8,
+  "peW": 600,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MACH%205%20AUDIO"
+}

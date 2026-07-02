@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "ES 250",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 26.9,
+  "qts": 0.54,
+  "qes": 0.582,
+  "qms": 7.5,
+  "vasL": 54,
+  "sdCm2": 349,
+  "xmaxMm": 9,
+  "reOhm": 2.6,
+  "bl": 10.6,
+  "mmsG": 112,
+  "peW": 500,
+  "sensitivityDb": 84.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-es-250/specifications"
+}

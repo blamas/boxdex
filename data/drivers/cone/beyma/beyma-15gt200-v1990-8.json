@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15GT200 v1990",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.236,
+  "qes": 0.273,
+  "qms": 1.75,
+  "vasL": 276,
+  "sdCm2": 880,
+  "xmaxMm": 5,
+  "reOhm": 5.8,
+  "bl": 19.8,
+  "mmsG": 86.2,
+  "peW": 250,
+  "sensitivityDb": 99.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

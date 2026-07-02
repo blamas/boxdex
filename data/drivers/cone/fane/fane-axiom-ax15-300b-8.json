@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "AXIOM AX15/300B",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.352,
+  "qes": 0.37,
+  "qms": 7.37,
+  "vasL": 110,
+  "sdCm2": 839.2,
+  "xmaxMm": 4,
+  "reOhm": 6.5,
+  "bl": 22.6,
+  "mmsG": 94.7,
+  "peW": 300,
+  "sensitivityDb": 98.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

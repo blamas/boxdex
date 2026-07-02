@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cabasse",
+  "model": "30BZ24 vp oriu2",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 37,
+  "qts": 0.543,
+  "qes": 0.59,
+  "qms": 6.82,
+  "vasL": 223,
+  "sdCm2": 530,
+  "xmaxMm": 4,
+  "reOhm": 10.5,
+  "bl": 11.6,
+  "mmsG": 32.7,
+  "peW": 80,
+  "sensitivityDb": 93.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CABASSE"
+}

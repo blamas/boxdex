@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10CL51",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 58,
+  "qts": 0.38,
+  "qes": 0.42,
+  "qms": 3.5,
+  "vasL": 36,
+  "sdCm2": 320,
+  "xmaxMm": 5.5,
+  "reOhm": 5.2,
+  "bl": 11.6,
+  "mmsG": 30.5,
+  "peW": 150,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/10/8/10CL51"
+}

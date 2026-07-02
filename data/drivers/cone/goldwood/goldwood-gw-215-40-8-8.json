@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Goldwood",
+  "model": "GW-215/40/8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 30.5,
+  "qts": 1.087,
+  "qes": 1.377,
+  "qms": 5.151,
+  "vasL": 261.2,
+  "sdCm2": 823.4,
+  "xmaxMm": 3.5,
+  "reOhm": 7.15,
+  "bl": 9.9,
+  "mmsG": 98.9,
+  "peW": 150,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GOLDWOOD"
+}

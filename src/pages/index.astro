@@ -1,0 +1,9 @@
+---
+import { DEFAULT_LOCALE, LOCALES } from "../i18n";
+import { BASE } from "../lib/site";
+---
+<noscript><meta http-equiv="refresh" content={`0;url=${BASE}/${DEFAULT_LOCALE}/`} /></noscript>
+<script is:inline define:vars={{ locales: LOCALES, defaultLocale: DEFAULT_LOCALE, base: BASE }}>
+  const lang = locales.find((l) => navigator.language.startsWith(l)) ?? defaultLocale;
+  window.location.replace(`${base}/${lang}/`);
+</script>

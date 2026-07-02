@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "DS 30.3",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 29,
+  "qts": 0.51,
+  "qes": 0.59,
+  "qms": 3.95,
+  "vasL": 94,
+  "sdCm2": 529,
+  "xmaxMm": 9,
+  "reOhm": 3.43,
+  "bl": 11.6,
+  "mmsG": 127,
+  "peW": 250,
+  "sensitivityDb": 87.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-ds-30-3/specifications"
+}

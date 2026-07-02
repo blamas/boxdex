@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "25F-WBC vp2 Gils",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 35.1,
+  "qts": 0.58,
+  "qes": 0.69,
+  "qms": 3.63,
+  "vasL": 129.6,
+  "sdCm2": 330,
+  "xmaxMm": 4,
+  "reOhm": 10,
+  "bl": 8.8,
+  "mmsG": 24.2,
+  "peW": 60,
+  "sensitivityDb": 90.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

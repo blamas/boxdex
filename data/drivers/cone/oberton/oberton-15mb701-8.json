@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15MB701",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44.24,
+  "qts": 0.268,
+  "qes": 0.274,
+  "qms": 12.03,
+  "vasL": 100.22,
+  "sdCm2": 829.6,
+  "xmaxMm": 9.25,
+  "reOhm": 5.4,
+  "bl": 26.05,
+  "mmsG": 124.1,
+  "peW": 700,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/524-15mb701.html"
+}

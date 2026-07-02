@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W126M",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 24.6,
+  "qts": 0.81,
+  "qes": 0.85,
+  "qms": 15.6,
+  "vasL": 102.099,
+  "sdCm2": 513,
+  "xmaxMm": 11.7,
+  "reOhm": 3.6,
+  "bl": 10.3,
+  "mmsG": 153.9,
+  "peW": 300,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-w126m/specifications"
+}

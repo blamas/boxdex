@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "DIPOLE 15-D4",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 21.7,
+  "qts": 0.938,
+  "qes": 1,
+  "qms": 15.2,
+  "vasL": 623,
+  "sdCm2": 830,
+  "xmaxMm": 9.4,
+  "reOhm": 3.1,
+  "bl": 5.9,
+  "mmsG": 83.4,
+  "peW": 100,
+  "sensitivityDb": 94.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

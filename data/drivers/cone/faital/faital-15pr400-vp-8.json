@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15PR400 vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32.8,
+  "qts": 0.332,
+  "qes": 0.35,
+  "qms": 6.6,
+  "vasL": 263.2,
+  "sdCm2": 804,
+  "xmaxMm": 5.8,
+  "reOhm": 5.3,
+  "bl": 15.9,
+  "mmsG": 81.1,
+  "peW": 400,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101060100"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12\"LEX1300Nd",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 4.2,
+  "vasL": 43,
+  "sdCm2": 550,
+  "xmaxMm": 11,
+  "reOhm": 5,
+  "bl": 26.4,
+  "mmsG": 125,
+  "peW": 1300,
+  "sensitivityDb": 96,
+  "weightKg": 8.3,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/112LEX13ND8/altavoz-12lex1300nd-8-oh/"
+}

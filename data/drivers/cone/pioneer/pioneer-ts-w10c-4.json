@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W10C",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 30.9,
+  "qts": 0.728,
+  "qes": 0.791,
+  "qms": 9.197,
+  "vasL": 50.6867,
+  "sdCm2": 357,
+  "xmaxMm": 6.604,
+  "reOhm": 3.56,
+  "bl": 8.915,
+  "mmsG": 90.8545,
+  "peW": 100,
+  "sensitivityDb": 84.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-w10c/specifications"
+}

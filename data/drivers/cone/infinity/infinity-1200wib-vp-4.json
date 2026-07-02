@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "1200WIB vp",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.789,
+  "qes": 0.94,
+  "qms": 4.92,
+  "vasL": 116,
+  "sdCm2": 510,
+  "xmaxMm": 5.1,
+  "reOhm": 3.5,
+  "bl": 7.3,
+  "mmsG": 65,
+  "peW": 250,
+  "sensitivityDb": 92.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=INFINITY"
+}

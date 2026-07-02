@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "1801-8 LT BW",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 40.2,
+  "qts": 0.61,
+  "qes": 0.63,
+  "qms": 8.4,
+  "vasL": 284.9,
+  "sdCm2": 1240,
+  "xmaxMm": 5,
+  "reOhm": 6.85,
+  "bl": 18,
+  "mmsG": 118,
+  "peW": 350,
+  "sensitivityDb": 96.5
+}

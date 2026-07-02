@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Nirvana",
+  "model": "12AL",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.65,
+  "qes": 0.752,
+  "qms": 4.786,
+  "vasL": 236,
+  "sdCm2": 500,
+  "xmaxMm": 3,
+  "reOhm": 7.2,
+  "bl": 7.8,
+  "mmsG": 27.5,
+  "peW": 30,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20NIRVANA"
+}

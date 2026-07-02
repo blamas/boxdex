@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "NSW6021-6",
+  "sizeInch": 21.5,
+  "impedanceOhm": 4,
+  "fsHz": 29,
+  "qts": 0.304,
+  "qes": 0.31,
+  "qms": 15.35,
+  "vasL": 224.6,
+  "sdCm2": 1642,
+  "xmaxMm": 10.3,
+  "reOhm": 3.8,
+  "bl": 33.6,
+  "mmsG": 506.9,
+  "peW": 2500,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18PW1400FE /S",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 10.2,
+  "vasL": 228.9,
+  "sdCm2": 1255,
+  "xmaxMm": 10,
+  "reOhm": 5.1,
+  "bl": 29,
+  "mmsG": 230,
+  "peW": 1400,
+  "sensitivityDb": 98,
+  "weightKg": 16.9,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/118PW14FES8/altavoz-18pw1400fe-s-8-oh/"
+}

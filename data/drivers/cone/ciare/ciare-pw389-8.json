@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "PW389",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.323,
+  "qes": 0.33,
+  "qms": 15.54,
+  "vasL": 138,
+  "sdCm2": 829.5,
+  "xmaxMm": 4.3,
+  "reOhm": 5.5,
+  "bl": 20.3,
+  "mmsG": 87.4,
+  "peW": 400,
+  "sensitivityDb": 99.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

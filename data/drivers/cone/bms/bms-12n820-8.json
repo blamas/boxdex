@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "12N820",
+  "impedanceOhm": 8,
+  "sizeInch": 12,
+  "fsHz": 37.8,
+  "qts": 0.16,
+  "qes": 0.16,
+  "qms": 5.3,
+  "vasL": 98.7,
+  "sdCm2": 531,
+  "xmaxMm": 4.5,
+  "peW": 800,
+  "sensitivityDb": 98,
+  "reOhm": 5.7,
+  "bl": 24.2,
+  "mmsG": 72
+}

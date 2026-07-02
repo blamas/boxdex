@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "8PR320",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.41,
+  "qes": 0.43,
+  "qms": 8.2,
+  "vasL": 13.1,
+  "sdCm2": 223,
+  "xmaxMm": 7.33,
+  "reOhm": 5.4,
+  "mmsG": 31.7,
+  "peW": 300,
+  "sensitivityDb": 95,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 2.45,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101030210"
+}

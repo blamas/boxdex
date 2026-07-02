@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSF081.82-16",
+  "sizeInch": 8,
+  "impedanceOhm": 16,
+  "fsHz": 81,
+  "qts": 0.44,
+  "qes": 0.5,
+  "qms": 3.7,
+  "vasL": 14.17,
+  "sdCm2": 220,
+  "xmaxMm": 4.5,
+  "reOhm": 11.3,
+  "bl": 14.68,
+  "mmsG": 18.68,
+  "peW": 150,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsf081-82-16/"
+}

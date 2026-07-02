@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "NBASS08-20",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.48,
+  "qes": 0.5,
+  "qms": 9.92,
+  "vasL": 18.4,
+  "sdCm2": 235.1,
+  "xmaxMm": 6.5,
+  "reOhm": 5.2,
+  "bl": 11.33,
+  "mmsG": 35.6,
+  "peW": 200,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://lavocespeakers.com/product/nbass08-20/"
+}

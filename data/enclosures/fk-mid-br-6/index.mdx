@@ -1,0 +1,43 @@
+---
+name: FK Mid BR 6
+category: mid
+topology: bass_reflex
+drivers:
+  - 18s-6nmb420-8
+driverCount: 1
+netVolumeL: 8
+dims:
+  wMm: 220
+  hMm: 340
+  dMm: 200
+weightKg: 5
+specs:
+  f3Hz: 380
+  f3HzHigh: 8000
+  fbHz: 420
+  sensitivityDb: 93
+  maxSplDb: 115
+  recommendedCrossoverHz: 200
+simulations:
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - dub
+connectors:
+  - speakON NL2
+---
+
+FK Mid BR 6: 6.5" bass reflex compact mid enclosure.

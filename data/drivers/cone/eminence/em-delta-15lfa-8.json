@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTA 15LFA",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 39,
+  "qts": 0.48,
+  "qes": 0.52,
+  "qms": 6.3,
+  "vasL": 241,
+  "sdCm2": 873,
+  "xmaxMm": 4.8,
+  "peW": 500,
+  "sensitivityDb": 96,
+  "reOhm": 6.11,
+  "bl": 14.6,
+  "mmsG": 75,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Delta_15LFA.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W255C",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.351,
+  "qes": 0.359,
+  "qms": 15.28,
+  "vasL": 24.9,
+  "sdCm2": 314,
+  "xmaxMm": 6.6,
+  "reOhm": 3,
+  "bl": 14.5,
+  "mmsG": 114.9,
+  "peW": 350,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

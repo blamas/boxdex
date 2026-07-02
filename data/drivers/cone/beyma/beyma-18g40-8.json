@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18G40",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.407,
+  "qes": 0.42,
+  "qms": 12.7,
+  "vasL": 323,
+  "sdCm2": 1300,
+  "xmaxMm": 7,
+  "reOhm": 5.9,
+  "bl": 23,
+  "mmsG": 193.3,
+  "peW": 700,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

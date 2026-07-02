@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "SD-21",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.412,
+  "qes": 0.43,
+  "qms": 9.89,
+  "vasL": 200.6,
+  "sdCm2": 1730,
+  "xmaxMm": 5.7,
+  "reOhm": 5.3,
+  "bl": 31.6,
+  "mmsG": 315.1,
+  "peW": 1000,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

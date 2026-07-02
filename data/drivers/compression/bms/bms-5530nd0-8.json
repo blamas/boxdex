@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "BMS",
+  "model": "5530ND",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44.4,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 113,
+  "peW": 80,
+  "magnetMaterial": "Neodymium",
+  "datasheetUrl": "https://www.bmsspeakers.com/index.php-56.html?id=bms_5530nd0"
+}

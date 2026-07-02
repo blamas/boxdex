@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "33KX",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.733,
+  "qes": 0.84,
+  "qms": 5.77,
+  "vasL": 25,
+  "sdCm2": 491,
+  "xmaxMm": 5,
+  "reOhm": 4.2,
+  "bl": 16.6,
+  "mmsG": 225.1,
+  "peW": 400,
+  "sensitivityDb": 87.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

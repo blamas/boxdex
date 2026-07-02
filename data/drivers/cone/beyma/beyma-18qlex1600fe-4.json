@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18QLEX1600Fe",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 31,
+  "qts": 0.25,
+  "qes": 0.25,
+  "qms": 11.6,
+  "vasL": 177.2,
+  "sdCm2": 1255,
+  "xmaxMm": 13,
+  "reOhm": 3.6,
+  "bl": 30.7,
+  "mmsG": 36,
+  "peW": 1600,
+  "sensitivityDb": 96,
+  "weightKg": 14.6,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/118QLEX16FE4/altavoz-18qlex1600fe-4-oh/"
+}

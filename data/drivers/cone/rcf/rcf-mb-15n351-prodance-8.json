@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "MB 15N351 (prodance)",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 65.5,
+  "qts": 0.307,
+  "qes": 0.32,
+  "qms": 7.48,
+  "vasL": 107,
+  "sdCm2": 855,
+  "xmaxMm": 4.6,
+  "reOhm": 5.73,
+  "bl": 20.4,
+  "mmsG": 56.5,
+  "peW": 650,
+  "sensitivityDb": 103.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

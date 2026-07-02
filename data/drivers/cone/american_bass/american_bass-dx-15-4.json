@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "American Bass",
+  "model": "DX 15",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 30.4,
+  "qts": 0.56,
+  "qes": 0.634,
+  "qms": 4.76,
+  "vasL": 89.6,
+  "sdCm2": 765,
+  "xmaxMm": 15,
+  "reOhm": 3.5,
+  "bl": 16.3,
+  "mmsG": 260,
+  "peW": 500,
+  "sensitivityDb": 90,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/american-bass-dx-15/specifications"
+}

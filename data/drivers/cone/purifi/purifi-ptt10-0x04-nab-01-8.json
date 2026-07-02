@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Purifi Audio",
+  "model": "PTT10.0X04-NAB-01",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.292,
+  "qes": 0.31,
+  "qms": 5.1,
+  "vasL": 113,
+  "sdCm2": 359.7,
+  "xmaxMm": 10.8,
+  "reOhm": 4.6,
+  "bl": 13.8,
+  "mmsG": 101.6,
+  "peW": 200,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PURIFI"
+}

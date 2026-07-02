@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "DSA315-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 24.2,
+  "qts": 0.33,
+  "qes": 0.4,
+  "qms": 1.89,
+  "vasL": 147,
+  "sdCm2": 506.7,
+  "xmaxMm": 5.5,
+  "reOhm": 6,
+  "bl": 15.5,
+  "mmsG": 105.6,
+  "peW": 120,
+  "sensitivityDb": 90.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

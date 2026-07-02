@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "SBP10-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 23.9,
+  "qts": 0.47,
+  "qes": 0.53,
+  "qms": 4.15,
+  "vasL": 68.2,
+  "sdCm2": 346,
+  "xmaxMm": 14,
+  "reOhm": 5.5,
+  "bl": 13,
+  "mmsG": 109.1,
+  "peW": 500,
+  "sensitivityDb": 86.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

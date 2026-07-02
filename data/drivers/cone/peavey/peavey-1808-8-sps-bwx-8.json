@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "1808-8 SPS BWX",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 37.4,
+  "qts": 0.587,
+  "qes": 0.637,
+  "qms": 7.55,
+  "vasL": 368,
+  "sdCm2": 1240,
+  "xmaxMm": 4.6,
+  "reOhm": 6.71,
+  "bl": 16.26,
+  "mmsG": 106.7,
+  "peW": 500,
+  "sensitivityDb": 96.6
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "6PS44",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 71,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 12.5,
+  "vasL": 7,
+  "sdCm2": 132,
+  "xmaxMm": 4.5,
+  "reOhm": 5.3,
+  "bl": 11,
+  "mmsG": 18,
+  "peW": 200,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/6.5/8/6PS44"
+}

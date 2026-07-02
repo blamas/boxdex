@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MTX Audio",
+  "model": "5510-44",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 33.6,
+  "qts": 0.63,
+  "qes": 0.791,
+  "qms": 3.102,
+  "vasL": 29.2,
+  "sdCm2": 380.1,
+  "xmaxMm": 7.2,
+  "reOhm": 1.71,
+  "bl": 8.4,
+  "mmsG": 155.6,
+  "peW": 400,
+  "sensitivityDb": 90.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MTX"
+}

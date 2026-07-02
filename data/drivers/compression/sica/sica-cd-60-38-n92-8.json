@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Sica",
+  "model": "CD 60.38/N92",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 38,
+  "fLowHz": 2000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 107.9,
+  "fsHz": 1100,
+  "peW": 30,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z009484.pdf"
+}

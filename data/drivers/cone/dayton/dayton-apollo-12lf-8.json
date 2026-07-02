@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "APOLLO 12LF",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.211,
+  "qes": 0.22,
+  "qms": 5.19,
+  "vasL": 147.8,
+  "sdCm2": 533,
+  "xmaxMm": 8.3,
+  "reOhm": 6.7,
+  "bl": 21.6,
+  "mmsG": 87.1,
+  "peW": 400,
+  "sensitivityDb": 94.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

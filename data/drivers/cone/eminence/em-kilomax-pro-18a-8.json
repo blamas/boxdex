@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KILOMAX PRO-18A",
+  "impedanceOhm": 8,
+  "sizeInch": 18,
+  "fsHz": 32,
+  "qts": 0.47,
+  "qes": 0.49,
+  "qms": 10.15,
+  "vasL": 331.5,
+  "sdCm2": 1159,
+  "xmaxMm": 10,
+  "peW": 1250,
+  "sensitivityDb": 95.8,
+  "reOhm": 5.07,
+  "bl": 17.2,
+  "mmsG": 143,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kilomax_Pro_18A.pdf"
+}

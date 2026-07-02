@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "21LEX1600/Nd",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.272,
+  "qes": 0.29,
+  "qms": 4.4,
+  "vasL": 394,
+  "sdCm2": 1734,
+  "xmaxMm": 9.3,
+  "reOhm": 5.4,
+  "bl": 32.5,
+  "mmsG": 301.1,
+  "peW": 1600,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

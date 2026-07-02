@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "W 300 AII",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.281,
+  "qes": 0.29,
+  "qms": 9.17,
+  "vasL": 227,
+  "sdCm2": 539,
+  "xmaxMm": 4.6,
+  "reOhm": 7,
+  "bl": 16.6,
+  "mmsG": 72.7,
+  "peW": 50,
+  "sensitivityDb": 93.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

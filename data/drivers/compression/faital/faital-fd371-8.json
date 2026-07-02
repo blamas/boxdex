@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Faital PRO",
+  "model": "FD371",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 37,
+  "fLowHz": 2600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2600,
+  "sensitivityHornDb": 107,
+  "peW": 35,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 1.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Drivers/product_details/index.php?id=502010090"
+}

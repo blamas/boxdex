@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAP Audio",
+  "model": "AB-15 vp GILLES",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.3,
+  "qts": 0.414,
+  "qes": 0.47,
+  "qms": 3.5,
+  "vasL": 152.3,
+  "sdCm2": 855.3,
+  "xmaxMm": 5.5,
+  "reOhm": 6.89,
+  "bl": 20,
+  "mmsG": 110.5,
+  "peW": 400,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAP%20AUDIO"
+}

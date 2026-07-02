@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Blaupunkt",
+  "model": "TSW 250",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.259,
+  "qes": 0.27,
+  "qms": 6.56,
+  "vasL": 67.8,
+  "sdCm2": 344,
+  "xmaxMm": 5.6,
+  "reOhm": 3.71,
+  "bl": 14.1,
+  "mmsG": 85,
+  "peW": 200,
+  "sensitivityDb": 92.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BLAUPUNKT"
+}

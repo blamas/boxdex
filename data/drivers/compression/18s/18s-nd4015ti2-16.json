@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND4015Ti2",
+  "impedanceOhm": 16,
+  "exitInch": 1.5,
+  "voiceCoilMm": 100,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 113,
+  "peW": 160,
+  "magnetMaterial": "neodymium",
+  "weightKg": 3.2,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-5/16/nd4015ti2-16"
+}

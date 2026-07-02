@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Europsonic",
+  "model": "HP30/70",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.582,
+  "qes": 0.777,
+  "qms": 2.322,
+  "vasL": 204.7,
+  "sdCm2": 491,
+  "xmaxMm": 4.3,
+  "reOhm": 7.3,
+  "bl": 9.1,
+  "mmsG": 46.5,
+  "peW": 35,
+  "sensitivityDb": 90.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EUROPSONIC"
+}

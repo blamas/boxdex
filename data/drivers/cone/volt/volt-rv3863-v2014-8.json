@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Volt",
+  "model": "RV3863 v2014",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.343,
+  "qes": 0.38,
+  "qms": 3.5,
+  "vasL": 150,
+  "sdCm2": 760,
+  "xmaxMm": 6.7,
+  "reOhm": 5.6,
+  "bl": 19,
+  "mmsG": 111.6,
+  "peW": 400,
+  "sensitivityDb": 95.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOLT"
+}

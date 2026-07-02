@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peerless",
+  "model": "NE265W-04",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 23.3,
+  "qts": 0.294,
+  "qes": 0.3,
+  "qms": 13.77,
+  "vasL": 72.8,
+  "sdCm2": 330.1,
+  "xmaxMm": 8.8,
+  "reOhm": 2.86,
+  "bl": 11.7,
+  "mmsG": 98,
+  "peW": 190,
+  "sensitivityDb": 91.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEERLESS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "COLOSSUS 18 BASS",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.188,
+  "qes": 0.2,
+  "qms": 3.16,
+  "vasL": 366,
+  "sdCm2": 1200,
+  "xmaxMm": 3.8,
+  "reOhm": 6.1,
+  "bl": 30.9,
+  "mmsG": 178.2,
+  "peW": 200,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

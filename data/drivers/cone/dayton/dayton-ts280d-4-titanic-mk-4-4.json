@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "TS280D-4 TITANIC MK 4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 29.6,
+  "qts": 0.37,
+  "qes": 0.4,
+  "qms": 4.98,
+  "vasL": 27.8,
+  "sdCm2": 343.1,
+  "xmaxMm": 6.4,
+  "reOhm": 3.3,
+  "bl": 16.2,
+  "mmsG": 171.6,
+  "peW": 300,
+  "sensitivityDb": 88.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

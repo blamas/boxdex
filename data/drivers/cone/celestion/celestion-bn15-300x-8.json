@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BN15-300X",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45.9,
+  "qts": 0.603,
+  "qes": 0.705,
+  "qms": 4.162,
+  "vasL": 153.4,
+  "sdCm2": 852,
+  "xmaxMm": 4,
+  "reOhm": 5.7,
+  "bl": 13.6,
+  "mmsG": 79.8,
+  "peW": 300,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

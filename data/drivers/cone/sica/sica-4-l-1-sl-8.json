@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "4 L 1 SL",
+  "sizeInch": 4,
+  "impedanceOhm": 8,
+  "fsHz": 108.3,
+  "qts": 0.63,
+  "qes": 0.78,
+  "qms": 3.15,
+  "vasL": 1.2,
+  "sdCm2": 44.2,
+  "xmaxMm": 2.4,
+  "reOhm": 6,
+  "bl": 5.1,
+  "mmsG": 5,
+  "peW": 60,
+  "sensitivityDb": 86.2,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z001449.pdf"
+}

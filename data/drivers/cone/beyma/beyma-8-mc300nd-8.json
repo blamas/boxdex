@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "8\"MC300Nd",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 62,
+  "qts": 0.22,
+  "qes": 0.24,
+  "qms": 3.8,
+  "vasL": 18,
+  "sdCm2": 220,
+  "xmaxMm": 6,
+  "reOhm": 6.1,
+  "bl": 16,
+  "mmsG": 25,
+  "peW": 300,
+  "sensitivityDb": 96,
+  "weightKg": 1.9,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/108MC30ND8/altavoz-8mc300nd-8-oh/"
+}

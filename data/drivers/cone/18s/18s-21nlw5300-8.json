@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21NLW5300",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 4.7,
+  "vasL": 325,
+  "sdCm2": 1662,
+  "xmaxMm": 15.3,
+  "reOhm": 5.2,
+  "bl": 31,
+  "mmsG": 327,
+  "peW": 1800,
+  "sensitivityDb": 98.5,
+  "magnetMaterial": "neo",
+  "weightKg": 14,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/21-0/8/21nlw5300"
+}

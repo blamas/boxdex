@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Soundstream",
+  "model": "T4-12",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 36.5,
+  "qts": 0.371,
+  "qes": 0.414,
+  "qms": 3.584,
+  "vasL": 29.3,
+  "sdCm2": 521,
+  "xmaxMm": 6.6,
+  "reOhm": 3.2,
+  "bl": 20.9,
+  "mmsG": 246.8,
+  "peW": 900,
+  "sensitivityDb": 91.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SOUNDSTREAM"
+}

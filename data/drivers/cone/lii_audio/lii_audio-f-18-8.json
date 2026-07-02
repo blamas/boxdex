@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LII Audio",
+  "model": "F-18",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38.7,
+  "qts": 0.936,
+  "qes": 0.985,
+  "qms": 18.656,
+  "vasL": 661.8,
+  "sdCm2": 1194.6,
+  "xmaxMm": 3.2,
+  "reOhm": 7.2,
+  "bl": 9.5,
+  "mmsG": 51.2,
+  "peW": 40,
+  "sensitivityDb": 98.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LII%20AUDIO"
+}

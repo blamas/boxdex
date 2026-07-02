@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "LOW RIDER 15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 33.9,
+  "qts": 0.352,
+  "qes": 0.364,
+  "qms": 10.67,
+  "vasL": 155.1,
+  "sdCm2": 840,
+  "xmaxMm": 9.6,
+  "reOhm": 6.21,
+  "bl": 22.73,
+  "mmsG": 142.2,
+  "peW": 800,
+  "sensitivityDb": 94
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12FH500",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 48,
+  "qts": 0.37,
+  "qes": 0.38,
+  "qms": 11,
+  "vasL": 77.4,
+  "sdCm2": 529,
+  "xmaxMm": 7.25,
+  "reOhm": 12.8,
+  "mmsG": 55.5,
+  "peW": 500,
+  "sensitivityDb": 96,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 3.9,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151050102"
+}

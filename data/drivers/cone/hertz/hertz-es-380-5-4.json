@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "ES 380.5",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 32,
+  "qts": 0.9,
+  "qes": 0.97,
+  "qms": 13,
+  "vasL": 98.8,
+  "sdCm2": 811,
+  "xmaxMm": 9,
+  "reOhm": 3.33,
+  "bl": 12.7,
+  "mmsG": 234,
+  "peW": 450,
+  "sensitivityDb": 87.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-es-380-5/specifications"
+}

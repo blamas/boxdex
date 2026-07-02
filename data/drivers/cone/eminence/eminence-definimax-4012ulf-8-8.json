@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DEFINIMAX 4012ULF-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.31,
+  "qes": 0.318,
+  "qms": 12.13,
+  "vasL": 41.342,
+  "sdCm2": 532,
+  "xmaxMm": 6.7,
+  "reOhm": 6.2,
+  "bl": 27.38,
+  "mmsG": 153,
+  "peW": 1200,
+  "sensitivityDb": 91
+}

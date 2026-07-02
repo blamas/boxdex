@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Polk Audio",
+  "model": "DB10 (OLD) ",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 26.7,
+  "qts": 0.376,
+  "qes": 0.409,
+  "qms": 4.91,
+  "vasL": 31.998,
+  "sdCm2": 307,
+  "xmaxMm": 8.7,
+  "reOhm": 3.71,
+  "bl": 15,
+  "mmsG": 148,
+  "peW": 300,
+  "sensitivityDb": 83.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/polk-audio-db10--old-/specifications"
+}

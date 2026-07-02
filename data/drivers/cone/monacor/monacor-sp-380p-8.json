@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-380P",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 3.92,
+  "vasL": 505,
+  "sdCm2": 840,
+  "xmaxMm": 4,
+  "reOhm": 6.1,
+  "bl": 16.9,
+  "mmsG": 93.8,
+  "peW": 250,
+  "sensitivityDb": 96.4
+}

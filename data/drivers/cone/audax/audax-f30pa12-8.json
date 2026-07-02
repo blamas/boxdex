@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "F30PA12",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 78,
+  "qts": 1.566,
+  "qes": 1.93,
+  "qms": 8.3,
+  "vasL": 86,
+  "sdCm2": 670,
+  "xmaxMm": 1,
+  "reOhm": 6.8,
+  "bl": 7.3,
+  "mmsG": 30.5,
+  "peW": 50,
+  "sensitivityDb": 95.9
+}

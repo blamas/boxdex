@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "PW380ND",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 48.8,
+  "qts": 0.34,
+  "qes": 0.35,
+  "qms": 11.73,
+  "vasL": 122,
+  "sdCm2": 850,
+  "xmaxMm": 3.5,
+  "reOhm": 5.9,
+  "bl": 21.4,
+  "mmsG": 88.3,
+  "peW": 250,
+  "sensitivityDb": 99.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

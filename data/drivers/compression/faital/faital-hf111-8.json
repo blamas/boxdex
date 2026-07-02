@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Faital PRO",
+  "model": "HF111",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 37,
+  "fLowHz": 2000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 107,
+  "peW": 40,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 1.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Drivers/product_details/index.php?id=502010305"
+}

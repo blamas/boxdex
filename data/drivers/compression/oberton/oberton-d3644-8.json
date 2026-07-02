@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Oberton",
+  "model": "D3644",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 44,
+  "fLowHz": 1200,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 109,
+  "peW": 40,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-hf-drivers/403-d3644.html"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W2502D2",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 34.7,
+  "qts": 0.659,
+  "qes": 0.69,
+  "qms": 14.73,
+  "vasL": 6.2,
+  "sdCm2": 313.6,
+  "xmaxMm": 6.3,
+  "reOhm": 1.5,
+  "bl": 14.9,
+  "mmsG": 465.4,
+  "peW": 800,
+  "sensitivityDb": 85,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

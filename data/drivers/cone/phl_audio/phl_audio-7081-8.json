@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "7081",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.409,
+  "qes": 0.44,
+  "qms": 5.81,
+  "vasL": 267.6,
+  "sdCm2": 1282,
+  "xmaxMm": 7.5,
+  "reOhm": 5.6,
+  "bl": 22.6,
+  "mmsG": 188.7,
+  "peW": 750,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

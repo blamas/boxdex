@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSF102.00",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.45,
+  "qes": 0.48,
+  "qms": 5.73,
+  "vasL": 34.03,
+  "sdCm2": 350,
+  "xmaxMm": 5.2,
+  "reOhm": 5.2,
+  "bl": 11.62,
+  "mmsG": 30.4,
+  "peW": 175,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsf102-00/"
+}

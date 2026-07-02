@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiobahn",
+  "model": "AW150T",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 30.6,
+  "qts": 0.54,
+  "qes": 0.59,
+  "qms": 5.92,
+  "vasL": 95,
+  "sdCm2": 750,
+  "xmaxMm": 10,
+  "reOhm": 3.2,
+  "bl": 15.4,
+  "mmsG": 227.3,
+  "peW": 800,
+  "sensitivityDb": 88.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audiobahn-aw150t/specifications"
+}

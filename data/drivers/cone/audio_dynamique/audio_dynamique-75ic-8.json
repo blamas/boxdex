@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Dynamique",
+  "model": "75IC",
+  "sizeInch": 31.5,
+  "impedanceOhm": 8,
+  "fsHz": 15.2,
+  "qts": 0.277,
+  "qes": 0.29,
+  "qms": 6.12,
+  "vasL": 4023.2,
+  "sdCm2": 2996,
+  "xmaxMm": 9,
+  "reOhm": 5.99,
+  "bl": 26,
+  "mmsG": 343.8,
+  "peW": 250,
+  "sensitivityDb": 100.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20DYNAMIQUE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Volt",
+  "model": "RV2501",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.332,
+  "qes": 0.37,
+  "qms": 3.19,
+  "vasL": 47,
+  "sdCm2": 330,
+  "xmaxMm": 5,
+  "reOhm": 5.3,
+  "bl": 13.8,
+  "mmsG": 54.1,
+  "peW": 250,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOLT"
+}

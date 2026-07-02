@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Lautsprecher Technik",
+  "model": "MHB18 vp",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33.8,
+  "qts": 1.045,
+  "qes": 1.266,
+  "qms": 5.979,
+  "vasL": 327.9,
+  "sdCm2": 1275.6,
+  "xmaxMm": 6.1,
+  "reOhm": 6.94,
+  "bl": 13.4,
+  "mmsG": 154.4,
+  "peW": 400,
+  "sensitivityDb": 92.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LAUTSPRECHER%20TECHNIK"
+}

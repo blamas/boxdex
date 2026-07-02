@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peerless",
+  "model": "XXLS-830843",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.447,
+  "qes": 0.47,
+  "qms": 9.03,
+  "vasL": 86.7,
+  "sdCm2": 352,
+  "xmaxMm": 10.3,
+  "reOhm": 5.8,
+  "bl": 12.5,
+  "mmsG": 81.2,
+  "peW": 175,
+  "sensitivityDb": 88,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEERLESS"
+}

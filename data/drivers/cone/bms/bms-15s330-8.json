@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "15S330",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 39,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 6.6,
+  "vasL": 152,
+  "sdCm2": 880,
+  "xmaxMm": 8,
+  "peW": 600,
+  "sensitivityDb": 98,
+  "reOhm": 6,
+  "bl": 23,
+  "mmsG": 121
+}

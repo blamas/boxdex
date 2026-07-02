@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "12w150",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.411,
+  "qes": 0.43,
+  "qms": 9.52,
+  "vasL": 74,
+  "sdCm2": 506.7,
+  "xmaxMm": 1.2,
+  "reOhm": 6,
+  "bl": 13.4,
+  "mmsG": 34.2,
+  "peW": 60,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

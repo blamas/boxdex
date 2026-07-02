@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DLS",
+  "model": "ULTIMATE IRIDIUM 12",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 33.8,
+  "qts": 0.386,
+  "qes": 0.43,
+  "qms": 3.77,
+  "vasL": 49.2,
+  "sdCm2": 491,
+  "xmaxMm": 7,
+  "reOhm": 7.3,
+  "bl": 23.4,
+  "mmsG": 152.5,
+  "peW": 600,
+  "sensitivityDb": 88.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DLS"
+}

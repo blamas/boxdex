@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15CXA400Fe",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.419,
+  "qes": 0.43,
+  "qms": 16.4,
+  "vasL": 191,
+  "sdCm2": 880,
+  "xmaxMm": 6,
+  "reOhm": 6.3,
+  "bl": 18.2,
+  "mmsG": 90,
+  "peW": 400,
+  "sensitivityDb": 97.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

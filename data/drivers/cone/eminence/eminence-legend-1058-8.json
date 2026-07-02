@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LEGEND 1058",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 97,
+  "qts": 1.133,
+  "qes": 1.21,
+  "qms": 17.78,
+  "vasL": 26.4,
+  "sdCm2": 344.9,
+  "xmaxMm": 0.5,
+  "reOhm": 7.49,
+  "bl": 8,
+  "mmsG": 17,
+  "peW": 75,
+  "sensitivityDb": 95.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

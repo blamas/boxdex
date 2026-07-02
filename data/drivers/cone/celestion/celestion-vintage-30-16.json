@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "VINTAGE 30",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 75,
+  "qts": 0.531,
+  "qes": 0.56,
+  "qms": 10.2,
+  "vasL": 60,
+  "sdCm2": 530,
+  "xmaxMm": 2.1,
+  "reOhm": 12.9,
+  "bl": 17.9,
+  "mmsG": 29.6,
+  "peW": 60,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

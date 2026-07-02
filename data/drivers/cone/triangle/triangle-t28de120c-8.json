@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Triangle",
+  "model": "T28DE120C",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.327,
+  "qes": 0.35,
+  "qms": 5.07,
+  "vasL": 73.1,
+  "sdCm2": 363.1,
+  "xmaxMm": 6.5,
+  "reOhm": 4.3,
+  "bl": 12.8,
+  "mmsG": 71.1,
+  "peW": 150,
+  "sensitivityDb": 92.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TRIANGLE"
+}

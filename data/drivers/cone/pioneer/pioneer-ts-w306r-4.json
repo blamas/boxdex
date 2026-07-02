@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W306R",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 24.6,
+  "qts": 0.815,
+  "qes": 0.86,
+  "qms": 15.6,
+  "vasL": 102.1,
+  "sdCm2": 515,
+  "xmaxMm": 11.6,
+  "reOhm": 3.6,
+  "bl": 9.9,
+  "mmsG": 152.4,
+  "peW": 350,
+  "sensitivityDb": 87.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

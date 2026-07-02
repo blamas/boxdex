@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "RSS265HF-4 v2022",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 25.6,
+  "qts": 0.452,
+  "qes": 0.53,
+  "qms": 3.06,
+  "vasL": 54,
+  "sdCm2": 356.3,
+  "xmaxMm": 10.5,
+  "reOhm": 3.2,
+  "bl": 11.1,
+  "mmsG": 127.4,
+  "peW": 350,
+  "sensitivityDb": 88.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

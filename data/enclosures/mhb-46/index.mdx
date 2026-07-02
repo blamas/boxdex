@@ -1,0 +1,47 @@
+---
+name: "MHB-46"
+category: sub
+topology: folded_horn
+drivers:
+  - rcf-lf18n401-8
+driverCount: 1
+netVolumeL: 200
+dims:
+  wMm: 600
+  hMm: 960
+  dMm: 750
+plywoodThicknessMm: 18
+revision: "Rev. C II"
+specs:
+  f3Hz: 49
+  sensitivityDb: 105
+  recommendedCrossoverHz: 35
+simulations:
+  - driver: [rcf-lf18n401-8]
+    kind: spl
+    source: catt_sim
+    file: spl-sim.csv
+    note: "CATT Acoustic MHB46RC, 2.83V/1m at 1m, H=0° V=0°, digitized from plan PDF ±2 dB"
+measurements: []
+plans:
+  - plan.pdf
+author: "Marc.O Hornplans"
+sourceUrl: "http://hornplans.free.fr"
+license: "LicenseRef-Permission"
+licenseNote: "Publicly distributed in La Bible des Caissons (non-commercial free collection); original copyright Marc.O Hornplans, non-commercial use only"
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+verified: false
+connectors:
+  - speakON NL4
+---
+
+Single 18" folded horn by Marc.O Hornplans (Rev. C II). Optimised for the RCF LF18N401;
+also compatible with 18Sound 18LW1400, Faital W18N8-1000, 18HP1020, and 18HP1040.
+
+F3 = 49 Hz (single cab), 42 Hz (stack of 4). Sensitivity 105 dB/1W/1m (half-space, 2π).
+Recommended HP filter: 35 Hz, 24 dB/oct Butterworth.
+
+*netVolumeL and dims are estimated from the drawing; horn path volume is not stated.*

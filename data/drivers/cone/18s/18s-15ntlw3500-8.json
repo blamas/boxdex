@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15NTLW3500",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.39,
+  "qes": 0.4,
+  "qms": 8.7,
+  "vasL": 131,
+  "sdCm2": 881,
+  "xmaxMm": 8.3,
+  "reOhm": 5.2,
+  "bl": 19.5,
+  "mmsG": 106,
+  "peW": 900,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neo",
+  "weightKg": 5.1,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15NTLW3500"
+}

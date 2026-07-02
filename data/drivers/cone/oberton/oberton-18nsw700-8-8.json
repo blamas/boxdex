@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18NSW700-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30.5,
+  "qts": 0.243,
+  "qes": 0.25,
+  "qms": 9.24,
+  "vasL": 309,
+  "sdCm2": 1158,
+  "xmaxMm": 7.7,
+  "reOhm": 6.1,
+  "bl": 27.8,
+  "mmsG": 165.9,
+  "peW": 700,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=OBERTON"
+}

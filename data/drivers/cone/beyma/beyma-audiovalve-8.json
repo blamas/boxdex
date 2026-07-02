@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "AUDIOVALVE",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.355,
+  "qes": 0.37,
+  "qms": 8.75,
+  "vasL": 242.2,
+  "sdCm2": 880,
+  "xmaxMm": 4.5,
+  "reOhm": 6.5,
+  "bl": 18.7,
+  "mmsG": 87.6,
+  "peW": 250,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

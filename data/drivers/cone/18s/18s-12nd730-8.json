@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12ND730",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 5.13,
+  "vasL": 90,
+  "sdCm2": 531,
+  "xmaxMm": 6.5,
+  "reOhm": 5.6,
+  "bl": 19.2,
+  "mmsG": 55,
+  "peW": 400,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neo",
+  "weightKg": 3.8,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/8/12ND730"
+}

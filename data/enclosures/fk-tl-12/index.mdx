@@ -1,0 +1,33 @@
+---
+name: FK TL 12
+category: sub
+topology: transmission_line
+drivers:
+  - faital-12pr310-8
+driverCount: 1
+netVolumeL: 130
+dims:
+  wMm: 300
+  hMm: 1200
+  dMm: 400
+specs:
+  f3Hz: 45
+  sensitivityDb: 97
+  powerAesW: 600
+  recommendedCrossoverHz: 120
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U TL, Hornresp
+measurements: []
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - dub
+  - bass_music
+---
+
+FK TL 12: transmission line 12" subwoofer. Tall narrow form factor, low colouration.

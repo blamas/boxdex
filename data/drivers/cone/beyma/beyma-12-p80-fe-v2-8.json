@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12\"P80/Fe V2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.21,
+  "qes": 0.22,
+  "qms": 6.5,
+  "vasL": 61,
+  "sdCm2": 550,
+  "xmaxMm": 7.5,
+  "reOhm": 5,
+  "mmsG": 68,
+  "peW": 700,
+  "sensitivityDb": 99,
+  "weightKg": 11.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/112P80FEV28/altavoz-12p80fe-v2-8-oh/"
+}

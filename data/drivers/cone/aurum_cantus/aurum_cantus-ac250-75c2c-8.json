@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Aurum Cantus",
+  "model": "AC250/75C2C",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.275,
+  "qes": 0.32,
+  "qms": 1.95,
+  "vasL": 193,
+  "sdCm2": 346,
+  "xmaxMm": 8,
+  "reOhm": 7,
+  "bl": 11.5,
+  "mmsG": 41.6,
+  "peW": 250,
+  "sensitivityDb": 91.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AURUM%20CANTUS"
+}

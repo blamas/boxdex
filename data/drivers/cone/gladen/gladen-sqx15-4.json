@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Gladen",
+  "model": "SQX15",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 35.5,
+  "qts": 0.513,
+  "qes": 0.6,
+  "qms": 3.52,
+  "vasL": 80.7,
+  "sdCm2": 830,
+  "xmaxMm": 7,
+  "reOhm": 2.8,
+  "bl": 15.8,
+  "mmsG": 240.5,
+  "peW": 700,
+  "sensitivityDb": 94.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GLADEN"
+}

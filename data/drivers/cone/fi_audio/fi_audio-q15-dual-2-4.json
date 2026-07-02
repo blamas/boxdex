@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FI Audio",
+  "model": "Q15 DUAL 2",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 32.1,
+  "qts": 0.419,
+  "qes": 0.44,
+  "qms": 8.61,
+  "vasL": 75.6,
+  "sdCm2": 810,
+  "xmaxMm": 11.3,
+  "reOhm": 2.8,
+  "bl": 19.6,
+  "mmsG": 299.1,
+  "peW": 1750,
+  "sensitivityDb": 94.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FI"
+}

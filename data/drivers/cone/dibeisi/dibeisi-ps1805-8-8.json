@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dibeisi",
+  "model": "PS1805-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 27.1,
+  "qts": 0.4,
+  "qes": 0.468,
+  "qms": 2.76,
+  "vasL": 473.8,
+  "sdCm2": 1225,
+  "xmaxMm": 7,
+  "reOhm": 6.3,
+  "bl": 18.7,
+  "mmsG": 152.9,
+  "peW": 250,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DIBEISI"
+}

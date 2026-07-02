@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Europsonic",
+  "model": "TS25-180D",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.767,
+  "qes": 0.95,
+  "qms": 3.98,
+  "vasL": 73.5,
+  "sdCm2": 302,
+  "xmaxMm": 4,
+  "reOhm": 7.6,
+  "bl": 8.1,
+  "mmsG": 38.1,
+  "peW": 90,
+  "sensitivityDb": 87,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EUROPSONIC"
+}

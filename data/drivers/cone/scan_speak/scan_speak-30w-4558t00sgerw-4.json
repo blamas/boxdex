@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Scan-Speak",
+  "model": "30W/4558T00SGERW",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 17,
+  "qts": 0.318,
+  "qes": 0.34,
+  "qms": 5.01,
+  "vasL": 197,
+  "sdCm2": 466,
+  "xmaxMm": 12.5,
+  "reOhm": 2.6,
+  "bl": 10.5,
+  "mmsG": 135.4,
+  "peW": 350,
+  "sensitivityDb": 91.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SCAN%20SPEAK"
+}

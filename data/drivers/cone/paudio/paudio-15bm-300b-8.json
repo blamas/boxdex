@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "15BM-300B",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 50.6,
+  "qts": 0.404,
+  "qes": 0.44,
+  "qms": 4.92,
+  "vasL": 113,
+  "sdCm2": 834,
+  "xmaxMm": 3.5,
+  "reOhm": 5.2,
+  "bl": 17.9,
+  "mmsG": 85.3,
+  "peW": 300,
+  "sensitivityDb": 99.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

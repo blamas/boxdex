@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TRUVOX 1525",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.452,
+  "qes": 0.51,
+  "qms": 4,
+  "vasL": 247,
+  "sdCm2": 852,
+  "xmaxMm": 2.5,
+  "reOhm": 5.1,
+  "bl": 12.8,
+  "mmsG": 65.2,
+  "peW": 250,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

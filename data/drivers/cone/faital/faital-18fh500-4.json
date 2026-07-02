@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18FH500",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 28,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 7.2,
+  "vasL": 456.7,
+  "sdCm2": 1207,
+  "xmaxMm": 9.45,
+  "reOhm": 3.3,
+  "mmsG": 143.9,
+  "peW": 600,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 4.6,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151070103"
+}

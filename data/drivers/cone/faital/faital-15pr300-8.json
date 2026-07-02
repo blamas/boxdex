@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15PR300",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.48,
+  "qes": 0.5,
+  "qms": 14,
+  "vasL": 220.1,
+  "sdCm2": 870,
+  "xmaxMm": 5.23,
+  "reOhm": 5.4,
+  "mmsG": 99.2,
+  "peW": 300,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 3.2,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101060097"
+}

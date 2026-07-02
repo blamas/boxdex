@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Alpine",
+  "model": "SWE-1042",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.66,
+  "qes": 0.707,
+  "qms": 9.85,
+  "vasL": 33,
+  "sdCm2": 340,
+  "xmaxMm": 11.7,
+  "reOhm": 3.6,
+  "bl": 11.02,
+  "mmsG": 115.1,
+  "peW": 250,
+  "sensitivityDb": 84.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/alpine-swe-1042/specifications"
+}

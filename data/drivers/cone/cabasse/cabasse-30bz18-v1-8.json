@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cabasse",
+  "model": "30BZ18 v1",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.616,
+  "qes": 0.67,
+  "qms": 7.69,
+  "vasL": 243,
+  "sdCm2": 506,
+  "xmaxMm": 4,
+  "reOhm": 7.08,
+  "bl": 8.3,
+  "mmsG": 28.9,
+  "peW": 80,
+  "sensitivityDb": 94.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CABASSE"
+}

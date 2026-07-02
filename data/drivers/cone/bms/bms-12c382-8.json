@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "12C382",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.285,
+  "qes": 0.3,
+  "qms": 5.6,
+  "vasL": 57,
+  "sdCm2": 487,
+  "xmaxMm": 4.5,
+  "reOhm": 5.8,
+  "bl": 18.6,
+  "mmsG": 54.6,
+  "peW": 500,
+  "sensitivityDb": 97.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BMS"
+}

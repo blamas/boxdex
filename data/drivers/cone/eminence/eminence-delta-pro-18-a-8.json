@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTA PRO 18 A",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 10.38,
+  "vasL": 493.2,
+  "sdCm2": 1188,
+  "xmaxMm": 6.7,
+  "reOhm": 5.3,
+  "bl": 19.9,
+  "mmsG": 150.3,
+  "peW": 500,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

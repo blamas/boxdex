@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18HP1030",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.41,
+  "qes": 0.43,
+  "qms": 11.6,
+  "vasL": 185.5,
+  "sdCm2": 1212,
+  "xmaxMm": 12.45,
+  "reOhm": 5,
+  "mmsG": 228.6,
+  "peW": 1200,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 12.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201070135"
+}

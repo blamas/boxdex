@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "TIW250XS 8 Ohms",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.298,
+  "qes": 0.32,
+  "qms": 4.33,
+  "vasL": 73,
+  "sdCm2": 314,
+  "xmaxMm": 8.1,
+  "reOhm": 5.7,
+  "bl": 13.2,
+  "mmsG": 49.9,
+  "peW": 200,
+  "sensitivityDb": 91.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

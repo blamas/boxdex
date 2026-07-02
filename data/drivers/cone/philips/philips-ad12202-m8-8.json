@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Philips",
+  "model": "AD12202/M8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45.6,
+  "qts": 0.419,
+  "qes": 0.513,
+  "qms": 2.292,
+  "vasL": 138,
+  "sdCm2": 510.7,
+  "xmaxMm": 4,
+  "reOhm": 6.8,
+  "bl": 11.1,
+  "mmsG": 32.3,
+  "peW": 100,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHILIPS"
+}

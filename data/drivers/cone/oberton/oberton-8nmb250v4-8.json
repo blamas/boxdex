@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "8NMB250v4",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 82.03,
+  "qts": 0.258,
+  "qes": 0.269,
+  "qms": 6.379,
+  "vasL": 10.89,
+  "sdCm2": 202,
+  "xmaxMm": 4.5,
+  "reOhm": 5.5,
+  "bl": 14.26,
+  "mmsG": 19.32,
+  "peW": 250,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/492-8nmb250v4.html"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kartesian",
+  "model": "SUB250_VHE",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.355,
+  "qes": 0.374,
+  "qms": 7.15,
+  "vasL": 36.4,
+  "sdCm2": 302,
+  "xmaxMm": 5.5,
+  "reOhm": 4.1,
+  "bl": 14.8,
+  "mmsG": 113.6,
+  "peW": 300,
+  "sensitivityDb": 88.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KARTESIAN"
+}

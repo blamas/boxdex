@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "10 Fe 3 CP",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 7.5,
+  "vasL": 38.6,
+  "sdCm2": 346.4,
+  "xmaxMm": 5,
+  "reOhm": 5.6,
+  "bl": 15.35,
+  "mmsG": 41.4,
+  "peW": 450,
+  "sensitivityDb": 95.9,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z005831.pdf"
+}

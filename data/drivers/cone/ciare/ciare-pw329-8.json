@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "PW329",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.222,
+  "qes": 0.24,
+  "qms": 2.95,
+  "vasL": 65,
+  "sdCm2": 535,
+  "xmaxMm": 2.5,
+  "reOhm": 5.4,
+  "bl": 21,
+  "mmsG": 62.5,
+  "peW": 150,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

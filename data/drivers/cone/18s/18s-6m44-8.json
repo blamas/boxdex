@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "6M44",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 102,
+  "qts": 0.29,
+  "qes": 0.31,
+  "qms": 4.4,
+  "vasL": 3.8,
+  "sdCm2": 132,
+  "xmaxMm": 2.25,
+  "reOhm": 5.3,
+  "bl": 13.4,
+  "mmsG": 16,
+  "peW": 200,
+  "sensitivityDb": 95,
+  "magnetMaterial": "ferrite",
+  "weightKg": 3.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/6-5/8/6m44"
+}

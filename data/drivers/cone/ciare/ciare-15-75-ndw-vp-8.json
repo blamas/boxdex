@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "15.75 NdW vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 37.7,
+  "qts": 0.286,
+  "qes": 0.29,
+  "qms": 18.41,
+  "vasL": 215,
+  "sdCm2": 855.3,
+  "xmaxMm": 5,
+  "reOhm": 5.36,
+  "bl": 19.3,
+  "mmsG": 84.9,
+  "peW": 400,
+  "sensitivityDb": 99.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fountek",
+  "model": "FW300B",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 28.3,
+  "qts": 0.306,
+  "qes": 0.392,
+  "qms": 1.398,
+  "vasL": 127.2,
+  "sdCm2": 514.7,
+  "xmaxMm": 6,
+  "reOhm": 6.8,
+  "bl": 16.9,
+  "mmsG": 92.3,
+  "peW": 300,
+  "sensitivityDb": 91.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOUNTEK"
+}

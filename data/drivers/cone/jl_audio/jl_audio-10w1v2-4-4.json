@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "10W1V2-4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 25.2,
+  "qts": 0.405,
+  "qes": 0.432,
+  "qms": 6.336,
+  "vasL": 50.4601,
+  "sdCm2": 535,
+  "xmaxMm": 9.906,
+  "reOhm": 4.09,
+  "bl": 21.93,
+  "mmsG": 320.7,
+  "peW": 300,
+  "sensitivityDb": 84.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jl-audio-10w1v2-4/specifications"
+}

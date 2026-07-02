@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "5G40Nd/N",
+  "sizeInch": 5,
+  "impedanceOhm": 8,
+  "fsHz": 140,
+  "qts": 0.45,
+  "qes": 0.53,
+  "qms": 2.8,
+  "vasL": 1.4,
+  "sdCm2": 85,
+  "xmaxMm": 3,
+  "reOhm": 6.6,
+  "mmsG": 9,
+  "peW": 100,
+  "sensitivityDb": 92,
+  "weightKg": 1.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/105G4NDN8/altavoz-5g40nd-n-8-oh/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Vifa",
+  "model": "P25WO-00-08",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.278,
+  "qes": 0.3,
+  "qms": 3.7,
+  "vasL": 178,
+  "sdCm2": 346,
+  "xmaxMm": 4,
+  "reOhm": 5.7,
+  "bl": 10.9,
+  "mmsG": 41.5,
+  "peW": 80,
+  "sensitivityDb": 92.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VIFA"
+}

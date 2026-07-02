@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "5140",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.245,
+  "qes": 0.26,
+  "qms": 4.3,
+  "vasL": 180,
+  "sdCm2": 892,
+  "xmaxMm": 5.7,
+  "reOhm": 4.2,
+  "bl": 20.5,
+  "mmsG": 108.7,
+  "peW": 500,
+  "sensitivityDb": 100.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

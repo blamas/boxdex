@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Skar Audio",
+  "model": "EV-10 S4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 50.9,
+  "qts": 0.76,
+  "qes": 0.852,
+  "qms": 7.05,
+  "vasL": 14,
+  "sdCm2": 366,
+  "xmaxMm": 8.5,
+  "reOhm": 3.68,
+  "bl": 13,
+  "mmsG": 122.2,
+  "peW": 150,
+  "sensitivityDb": 85.2,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/skar-ev-10-s4/specifications"
+}

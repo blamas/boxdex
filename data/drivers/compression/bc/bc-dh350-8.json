@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DH350",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 36,
+  "fLowHz": 1000,
+  "fHighHz": 17000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 108,
+  "peW": 15,
+  "weightKg": 0.25,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/8/DH350"
+}

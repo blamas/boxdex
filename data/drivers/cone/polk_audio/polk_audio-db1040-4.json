@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Polk Audio",
+  "model": "DB1040",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.55,
+  "qes": 0.585,
+  "qms": 9.1,
+  "vasL": 28.3,
+  "sdCm2": 350,
+  "xmaxMm": 7.5,
+  "reOhm": 3.5,
+  "bl": 12.9,
+  "mmsG": 126.9,
+  "peW": 270,
+  "sensitivityDb": 85,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/polk-audio-db1040/specifications"
+}

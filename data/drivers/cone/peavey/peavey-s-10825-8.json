@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "S-10825",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 102,
+  "qts": 0.671,
+  "qes": 0.742,
+  "qms": 7,
+  "vasL": 14.6,
+  "sdCm2": 310,
+  "xmaxMm": 2.7,
+  "reOhm": 5.58,
+  "bl": 10.4,
+  "mmsG": 22.5,
+  "peW": 200,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

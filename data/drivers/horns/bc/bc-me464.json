@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "B&C",
+  "model": "ME464",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 80,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 300,
+  "mouthWmm": 538,
+  "mouthHmm": 505,
+  "depthMm": 460,
+  "profile": "oblate_spheroid",
+  "material": "polyurethane",
+  "weightKg": 4.75,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/horn/1.4/0/ME464"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZCK 250SPL",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 45.4,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 9.19,
+  "vasL": 67.9,
+  "sdCm2": 346,
+  "xmaxMm": 12,
+  "reOhm": 3.3,
+  "bl": 8.7,
+  "mmsG": 30.4,
+  "peW": 200,
+  "sensitivityDb": 94.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/ground-zero-gzck-250spl/specifications"
+}

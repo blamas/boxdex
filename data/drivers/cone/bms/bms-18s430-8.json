@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "18S430",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32.9,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 6.8,
+  "vasL": 247,
+  "sdCm2": 1213,
+  "xmaxMm": 7.5,
+  "reOhm": 5,
+  "bl": 24.26,
+  "mmsG": 195,
+  "peW": 600,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/bms-18s430/specifications"
+}

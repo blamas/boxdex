@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD158",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.85,
+  "qts": 0.205,
+  "qes": 0.215,
+  "qms": 6.935,
+  "vasL": 161.94,
+  "sdCm2": 881.41,
+  "xmaxMm": 6.5,
+  "bl": 27.35,
+  "mmsG": 107.905,
+  "peW": 600,
+  "sensitivityDb": 98.5,
+  "magnetMaterial": "ceramic",
+  "weightKg": 11.65,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=48"
+}

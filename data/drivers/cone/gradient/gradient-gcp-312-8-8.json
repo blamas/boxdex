@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Gradient",
+  "model": "GCP 312/8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.395,
+  "qes": 0.489,
+  "qms": 2.064,
+  "vasL": 194,
+  "sdCm2": 460,
+  "xmaxMm": 4.8,
+  "reOhm": 7.16,
+  "bl": 11.7,
+  "mmsG": 57.3,
+  "peW": 100,
+  "sensitivityDb": 90.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GRADIENT"
+}

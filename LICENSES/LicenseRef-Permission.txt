@@ -1,0 +1,24 @@
+Hosted with permission · all rights reserved
+
+This enclosure entry and its files (plans, drawings, photos, simulation and
+measurement data) are the property of the author named in the entry's
+`author` frontmatter field. All rights reserved.
+
+The author has granted Boxdex explicit permission to redistribute these files
+as part of the Boxdex catalog. That permission does not transfer to you. You
+may:
+
+  - download and print the files for personal use, including building the
+    design for yourself.
+
+You may not:
+
+  - redistribute the files, in original or modified form, inside or outside
+    another catalog;
+  - sell the files, or sell cabinets built from them commercially, unless the
+    author says otherwise;
+  - present the design as your own.
+
+The scope and provenance of the permission grant (who, when, what) is
+recorded in the entry's `licenseNote` frontmatter field. For any use beyond
+personal building, contact the original author.

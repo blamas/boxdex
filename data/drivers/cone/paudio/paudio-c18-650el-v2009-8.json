@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "C18-650EL v2009",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.375,
+  "qes": 0.39,
+  "qms": 9.57,
+  "vasL": 158.3,
+  "sdCm2": 1250,
+  "xmaxMm": 5.3,
+  "reOhm": 5.3,
+  "bl": 25.8,
+  "mmsG": 173.1,
+  "peW": 1200,
+  "sensitivityDb": 99.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sony",
+  "model": "XS-L151P5",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 22.2,
+  "qts": 0.46,
+  "qes": 0.5,
+  "qms": 5.65,
+  "vasL": 195.9,
+  "sdCm2": 796,
+  "xmaxMm": 7,
+  "reOhm": 3.15,
+  "bl": 14.4,
+  "mmsG": 235.8,
+  "peW": 400,
+  "sensitivityDb": 88.2,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/sony-xs-l151p5/specifications"
+}

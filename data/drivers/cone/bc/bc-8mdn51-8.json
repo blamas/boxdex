@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "8MDN51",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 70,
+  "qts": 0.2,
+  "qes": 0.21,
+  "qms": 3.7,
+  "vasL": 16,
+  "sdCm2": 220,
+  "xmaxMm": 6,
+  "reOhm": 5.1,
+  "bl": 15.3,
+  "mmsG": 23,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/8/8/8MDN51"
+}

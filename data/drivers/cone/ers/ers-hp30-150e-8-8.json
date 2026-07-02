@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "ERS",
+  "model": "HP30/150E-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 60.4,
+  "qts": 0.715,
+  "qes": 0.991,
+  "qms": 2.566,
+  "vasL": 45.9,
+  "sdCm2": 452,
+  "xmaxMm": 2.8,
+  "reOhm": 6.1,
+  "bl": 10.1,
+  "mmsG": 43.3,
+  "peW": 150,
+  "sensitivityDb": 93.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ERS"
+}

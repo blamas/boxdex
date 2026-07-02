@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12MCS500",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 57,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 7.8,
+  "vasL": 57,
+  "sdCm2": 550,
+  "xmaxMm": 8,
+  "reOhm": 5.6,
+  "bl": 17.6,
+  "mmsG": 59,
+  "peW": 500,
+  "sensitivityDb": 98,
+  "weightKg": 6,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/112MCS508/altavoz-12mcs500-8-oh/"
+}

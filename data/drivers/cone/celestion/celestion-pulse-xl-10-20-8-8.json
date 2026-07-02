@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "PULSE XL 10.20-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 37.5,
+  "qts": 0.459,
+  "qes": 0.493,
+  "qms": 6.678,
+  "vasL": 76.9,
+  "sdCm2": 346.4,
+  "xmaxMm": 8.3,
+  "reOhm": 5.8,
+  "bl": 10.4,
+  "mmsG": 39.4,
+  "peW": 400,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

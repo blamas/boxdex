@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Turbosound",
+  "model": "TS-12W350/8W",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.347,
+  "qes": 0.37,
+  "qms": 5.56,
+  "vasL": 49,
+  "sdCm2": 510,
+  "xmaxMm": 4,
+  "reOhm": 5.7,
+  "bl": 18.2,
+  "mmsG": 62.3,
+  "peW": 350,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TURBOSOUND"
+}

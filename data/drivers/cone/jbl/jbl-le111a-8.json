@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "LE111A",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.175,
+  "qes": 0.18,
+  "qms": 6,
+  "vasL": 101.9,
+  "sdCm2": 316.1,
+  "xmaxMm": 4.8,
+  "reOhm": 5.7,
+  "bl": 16.6,
+  "mmsG": 55.7,
+  "peW": 75,
+  "sensitivityDb": 92.9
+}

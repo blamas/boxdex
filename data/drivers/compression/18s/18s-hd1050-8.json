@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "HD1050",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1400,
+  "sensitivityHornDb": 107,
+  "peW": 50,
+  "magnetMaterial": "ferrite",
+  "weightKg": 1.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-0/8/HD1050"
+}

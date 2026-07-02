@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "VULCANO 3.8 18SWV3.8",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 47.4,
+  "qts": 0.5,
+  "qes": 0.544,
+  "qms": 6.17,
+  "vasL": 100.1,
+  "sdCm2": 1316,
+  "xmaxMm": 11,
+  "reOhm": 2.8,
+  "bl": 20.6,
+  "mmsG": 275,
+  "peW": 1900,
+  "sensitivityDb": 94.8
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "3430",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 57,
+  "qts": 0.271,
+  "qes": 0.29,
+  "qms": 4.2,
+  "vasL": 41,
+  "sdCm2": 356,
+  "xmaxMm": 4.2,
+  "reOhm": 5.6,
+  "bl": 15.3,
+  "mmsG": 33.8,
+  "peW": 250,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

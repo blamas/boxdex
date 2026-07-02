@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Great Plains Audio",
+  "model": "515-8G GPA",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.269,
+  "qes": 0.284,
+  "qms": 5,
+  "vasL": 351.1,
+  "sdCm2": 856,
+  "xmaxMm": 3.5,
+  "reOhm": 6.2,
+  "bl": 16.6,
+  "mmsG": 54.1,
+  "peW": 75,
+  "sensitivityDb": 101.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GREAT%20PLAINS%20AUDIO"
+}

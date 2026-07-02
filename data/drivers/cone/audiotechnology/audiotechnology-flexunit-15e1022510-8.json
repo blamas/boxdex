@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiotechnology",
+  "model": "FLEXUNIT 15E1022510",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 18,
+  "qts": 0.222,
+  "qes": 0.26,
+  "qms": 1.5,
+  "vasL": 600,
+  "sdCm2": 835,
+  "xmaxMm": 8.6,
+  "reOhm": 6,
+  "bl": 18.2,
+  "mmsG": 127.4,
+  "peW": 200,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIOTECHNOLOGY"
+}

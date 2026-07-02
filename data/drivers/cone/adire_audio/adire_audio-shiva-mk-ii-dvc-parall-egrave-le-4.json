@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Adire Audio",
+  "model": "SHIVA MK II - DVC Parall&egrave;le",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 22,
+  "qts": 0.385,
+  "qes": 0.41,
+  "qms": 6.2,
+  "vasL": 158,
+  "sdCm2": 481,
+  "xmaxMm": 14.1,
+  "reOhm": 2.8,
+  "bl": 10.1,
+  "mmsG": 107.4,
+  "peW": 350,
+  "sensitivityDb": 92.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ADIRE%20AUDIO"
+}

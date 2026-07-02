@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "38GPT12 vp2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.9,
+  "qts": 0.469,
+  "qes": 0.551,
+  "qms": 3.17,
+  "vasL": 242.8,
+  "sdCm2": 855.3,
+  "xmaxMm": 5,
+  "reOhm": 5.9,
+  "bl": 13.4,
+  "mmsG": 67.1,
+  "peW": 200,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SELENIUM"
+}

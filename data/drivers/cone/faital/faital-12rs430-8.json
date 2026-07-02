@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12RS430",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.35,
+  "qes": 0.36,
+  "qms": 10,
+  "vasL": 131.2,
+  "sdCm2": 552,
+  "xmaxMm": 13.57,
+  "reOhm": 6.8,
+  "mmsG": 91.3,
+  "peW": 400,
+  "sensitivityDb": 93,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 7,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151050115"
+}

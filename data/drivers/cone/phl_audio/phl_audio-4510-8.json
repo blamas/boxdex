@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "4510",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.307,
+  "qes": 0.34,
+  "qms": 3.2,
+  "vasL": 108,
+  "sdCm2": 538.7,
+  "xmaxMm": 6,
+  "reOhm": 5.5,
+  "bl": 15.2,
+  "mmsG": 54.1,
+  "peW": 300,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

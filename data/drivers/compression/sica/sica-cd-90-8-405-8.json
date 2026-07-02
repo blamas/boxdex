@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Sica",
+  "model": "CD 90.38/405",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 38,
+  "fLowHz": 2000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 105.7,
+  "fsHz": 1000,
+  "peW": 30,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z009487.pdf"
+}

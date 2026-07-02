@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BETA 12CX",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.474,
+  "qes": 0.51,
+  "qms": 6.69,
+  "vasL": 161,
+  "sdCm2": 532.4,
+  "xmaxMm": 3.5,
+  "reOhm": 5.57,
+  "bl": 10,
+  "mmsG": 33.8,
+  "peW": 250,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12WRS400",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.29,
+  "qes": 0.31,
+  "qms": 7.7,
+  "vasL": 91,
+  "sdCm2": 530,
+  "xmaxMm": 6.3,
+  "reOhm": 5.6,
+  "bl": 17.4,
+  "mmsG": 63,
+  "peW": 400,
+  "sensitivityDb": 97,
+  "weightKg": 5.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/112WRS408/altavoz-12wrs400-8-oh/"
+}

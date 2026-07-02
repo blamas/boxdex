@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Stereo Integrity",
+  "model": "HT 18",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 17,
+  "qts": 0.383,
+  "qes": 0.41,
+  "qms": 5.8,
+  "vasL": 411.9,
+  "sdCm2": 1178.4,
+  "xmaxMm": 25.1,
+  "reOhm": 3.5,
+  "bl": 19.4,
+  "mmsG": 414.2,
+  "peW": 2000,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=STEREO%20INTEGRITY"
+}

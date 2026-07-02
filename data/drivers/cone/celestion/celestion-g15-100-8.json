@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "G15-100",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 33.4,
+  "qts": 0.341,
+  "qes": 0.36,
+  "qms": 6.35,
+  "vasL": 253,
+  "sdCm2": 820,
+  "xmaxMm": 3,
+  "reOhm": 7.47,
+  "bl": 19.2,
+  "mmsG": 84.6,
+  "peW": 100,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "21PW1400FE",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.343,
+  "qes": 0.36,
+  "qms": 7.44,
+  "vasL": 401.5,
+  "sdCm2": 1734,
+  "xmaxMm": 10,
+  "reOhm": 5.2,
+  "bl": 28.4,
+  "mmsG": 295.5,
+  "peW": 1400,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

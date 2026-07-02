@@ -1,0 +1,82 @@
+---
+name: "2×10\"+1\" 2-Way Top"
+category: top
+topology: bass_reflex
+drivers:
+  - bc-10plb76-8
+  - bc-10plb76-8
+  - bc-de250-8
+driverCount: 3
+netVolumeL: 52
+dims:
+  hMm: 620
+  wMm: 480
+  dMm: 420
+weightKg: 26
+specs:
+  f3Hz: 72
+  f6Hz: 60
+  fbHz: 68
+  maxSplDb: 135
+  sensitivityDb: 98
+  recommendedPowerW: 800
+  powerAesW: 1600
+  powerProgramW: 3200
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.2
+  coverageAngleDeg: 90
+  hornCutoffHz: 1000
+  recommendedCrossoverHz: 1800
+simulations:
+  # Single-woofer section: useful for driver substitute evaluation
+  - driver: [bc-10plb76-8]
+    kind: spl
+    source: hornresp_sim
+    file: woofer.csv
+    note: "LF section, one driver only, 1W/1m half-space"
+  # Full system: both woofers summed + CD through active XO
+  - driver: [bc-10plb76-8, bc-10plb76-8, bc-de250-8]
+    kind: spl
+    source: hornresp_sim
+    file: spl.csv
+    note: "Full 2-way system, 2× 10PLB76 parallel + DE250, 1W/1m half-space"
+ways: 2
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+recommendedFor:
+  - techno
+  - bass_music
+verified: false
+connectors:
+  - speakON NL4
+sources:
+  - tool: hornresp
+    file: design.txt
+buildComplexity: simple
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+Two 10PLB76-8 woofers in a shared ported chamber, wired in parallel to a 4 Ω load. The
+DE250 1" compression driver is mounted on a 90° waveguide. Active bi-amp required.
+
+The single-woofer sim (`woofer.csv`) models one driver in the full cabinet volume, useful
+for evaluating substitute 10" drivers against the 10PLB76 in the same alignment. The
+combined system sim (`spl.csv`) shows the 3 dB gain from the second woofer and the full
+HF extension through the DE250.
+
+### Crossover
+
+- LF/HF: 1800 Hz LR4 (24 dB/oct); DE250 minimum crossover is 1500 Hz
+- High-pass at 65 Hz to protect woofers near excursion limit
+
+### Wiring
+
+Both woofers in parallel: 8 Ω + 8 Ω → 4 Ω nominal. Verify amp stability at 4 Ω.
+DE250 on a separate 8 Ω channel.

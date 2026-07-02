@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12MB650",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 3.2,
+  "vasL": 90,
+  "sdCm2": 531,
+  "xmaxMm": 5.5,
+  "reOhm": 6,
+  "bl": 19,
+  "mmsG": 48,
+  "peW": 400,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite",
+  "weightKg": 6.8,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/8/12MB650"
+}

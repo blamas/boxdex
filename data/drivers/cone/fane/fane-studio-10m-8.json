@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "STUDIO 10M",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 73,
+  "qts": 0.34,
+  "qes": 0.38,
+  "qms": 3.25,
+  "vasL": 27.2,
+  "sdCm2": 340,
+  "xmaxMm": 3.1,
+  "reOhm": 5.7,
+  "bl": 14,
+  "mmsG": 28.3,
+  "peW": 200,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

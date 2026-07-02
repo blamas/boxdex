@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "EM12-LB600",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 62,
+  "qts": 0.431,
+  "qes": 0.46,
+  "qms": 6.86,
+  "vasL": 39.8,
+  "sdCm2": 531,
+  "xmaxMm": 4,
+  "reOhm": 5.6,
+  "bl": 17.6,
+  "mmsG": 65.5,
+  "peW": 600,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

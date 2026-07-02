@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "40 V1",
+  "sizeInch": 16,
+  "impedanceOhm": 4,
+  "fsHz": 26.8,
+  "qts": 0.459,
+  "qes": 0.51,
+  "qms": 4.6,
+  "vasL": 165.66,
+  "sdCm2": 877,
+  "xmaxMm": 7.5,
+  "reOhm": 3.3,
+  "bl": 15.9,
+  "mmsG": 231.6,
+  "peW": 400,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/focal-40-v1/specifications"
+}

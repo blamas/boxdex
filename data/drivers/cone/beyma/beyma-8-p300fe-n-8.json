@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "8\"P300Fe/N",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 14.3,
+  "vasL": 24.8,
+  "sdCm2": 220,
+  "xmaxMm": 6,
+  "reOhm": 5.2,
+  "mmsG": 25,
+  "peW": 300,
+  "sensitivityDb": 94,
+  "weightKg": 4,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/108P3FEN8/altavoz-8p300fe-n-8-oh/"
+}

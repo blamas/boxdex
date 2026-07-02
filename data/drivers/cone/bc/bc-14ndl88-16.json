@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "14NDL88",
+  "sizeInch": 14,
+  "impedanceOhm": 16,
+  "fsHz": 44,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 10.6,
+  "vasL": 115,
+  "sdCm2": 707,
+  "xmaxMm": 7.5,
+  "reOhm": 11,
+  "bl": 25,
+  "mmsG": 79.5,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/13.5/16/14NDL88"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Bravox",
+  "model": "UXP12D-4",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 32,
+  "qts": 0.496,
+  "qes": 0.57,
+  "qms": 3.8,
+  "vasL": 58,
+  "sdCm2": 518,
+  "xmaxMm": 7.5,
+  "reOhm": 1.65,
+  "bl": 9.7,
+  "mmsG": 160.4,
+  "peW": 400,
+  "sensitivityDb": 94.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BRAVOX"
+}

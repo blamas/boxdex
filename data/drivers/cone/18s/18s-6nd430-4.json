@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "6ND430",
+  "sizeInch": 6.5,
+  "impedanceOhm": 4,
+  "fsHz": 64,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 6.5,
+  "vasL": 12.2,
+  "sdCm2": 133,
+  "xmaxMm": 5,
+  "reOhm": 2.9,
+  "bl": 7.8,
+  "mmsG": 13.9,
+  "peW": 200,
+  "sensitivityDb": 92.5,
+  "magnetMaterial": "neo",
+  "weightKg": 1.25,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/6-5/4/6nd430"
+}

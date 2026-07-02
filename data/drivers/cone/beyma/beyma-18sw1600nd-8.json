@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18SW1600ND",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 11.74,
+  "vasL": 205.7,
+  "sdCm2": 1255,
+  "xmaxMm": 10,
+  "reOhm": 5.5,
+  "bl": 29.4,
+  "mmsG": 265.5,
+  "peW": 1600,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

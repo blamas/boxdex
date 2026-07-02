@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "ALPHA-15A",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 41,
+  "qts": 1.26,
+  "qes": 1.53,
+  "qms": 7.23,
+  "vasL": 260,
+  "sdCm2": 856.3,
+  "xmaxMm": 3.8,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "reOhm": 5.88,
+  "bl": 7.7,
+  "mmsG": 59,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Alpha_15A_cab.pdf"
+}

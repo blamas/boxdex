@@ -1,0 +1,469 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["sub", "kick", "mid", "top"]
+    },
+    "topology": {
+      "type": "string",
+      "enum": [
+        "sealed",
+        "bass_reflex",
+        "bandpass",
+        "tapped_horn",
+        "front_loaded_horn",
+        "folded_horn",
+        "scoop",
+        "transmission_line"
+      ]
+    },
+    "drivers": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection": {
+                "type": "string"
+              }
+            },
+            "required": ["id", "collection"]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "slug": {
+                "type": "string"
+              },
+              "collection": {
+                "type": "string"
+              }
+            },
+            "required": ["slug", "collection"]
+          }
+        ]
+      }
+    },
+    "driverCount": {
+      "default": 1,
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "netVolumeL": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "dims": {
+      "type": "object",
+      "properties": {
+        "hMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "wMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "dMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": ["hMm", "wMm", "dMm"]
+    },
+    "weightKg": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "specs": {
+      "type": "object",
+      "properties": {
+        "f3Hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "f3HzHigh": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "f6Hz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "fbHz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "maxSplDb": {
+          "type": "number"
+        },
+        "maxSplExcursionDb": {
+          "type": "number"
+        },
+        "maxSplThermalDb": {
+          "type": "number"
+        },
+        "sensitivityDb": {
+          "type": "number"
+        },
+        "impedanceMinOhm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "impedanceNominalOhm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "recommendedPowerW": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "powerAesW": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "powerProgramW": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "coverageAngleDeg": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "recommendedCrossoverHz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "hornCutoffHz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "hornMouthCm2": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "hornThroatCm2": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "maxVelocityMs": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": ["f3Hz"]
+    },
+    "simulations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "driver": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "collection": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["id", "collection"]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "slug": {
+                      "type": "string"
+                    },
+                    "collection": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["slug", "collection"]
+                }
+              ]
+            }
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "spl",
+              "spl_stacked",
+              "phase",
+              "impedance",
+              "group_delay",
+              "distortion",
+              "power_compression"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "hornresp_sim",
+              "akabak_sim",
+              "catt_sim",
+              "vituixcad_sim",
+              "winsd_sim",
+              "basta_sim"
+            ]
+          },
+          "file": {
+            "type": "string",
+            "pattern": ".*\\.csv$"
+          },
+          "count": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": ["driver", "kind", "source", "file"]
+      }
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "driver": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "collection": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["id", "collection"]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "slug": {
+                      "type": "string"
+                    },
+                    "collection": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["slug", "collection"]
+                }
+              ]
+            }
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "spl",
+              "spl_stacked",
+              "phase",
+              "impedance",
+              "group_delay",
+              "distortion",
+              "power_compression"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "enum": ["rew_measured", "klippel"]
+          },
+          "file": {
+            "type": "string",
+            "pattern": ".*\\.csv$"
+          },
+          "count": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": ["driver", "kind", "source", "file"]
+      }
+    },
+    "sources": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tool": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": ["tool", "file"]
+      }
+    },
+    "images": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "plans": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": ".*\\.pdf$"
+      }
+    },
+    "author": {
+      "type": "string"
+    },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "ways": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "revision": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string",
+      "enum": [
+        "CC0-1.0",
+        "CC-BY-4.0",
+        "CC-BY-SA-4.0",
+        "CC-BY-NC-4.0",
+        "CC-BY-NC-SA-4.0",
+        "CC-BY-NC-ND-4.0",
+        "LicenseRef-Permission",
+        "LicenseRef-Proprietary"
+      ]
+    },
+    "licenseNote": {
+      "type": "string"
+    },
+    "recommendedFor": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "techno",
+          "tekno",
+          "hardtek",
+          "frenchcore",
+          "hardcore",
+          "acid",
+          "hardstyle",
+          "tribe",
+          "raggatek",
+          "mental",
+          "dub",
+          "psytrance",
+          "breakcore",
+          "bass_music"
+        ]
+      }
+    },
+    "verified": {
+      "default": false,
+      "type": "boolean"
+    },
+    "buildComplexity": {
+      "type": "string",
+      "enum": ["simple", "moderate", "complex"]
+    },
+    "topologyVariant": {
+      "type": "string"
+    },
+    "connectors": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["speakON NL2", "speakON NL4", "speakON NL8", "XLR", "binding post", "jack 6.35mm"]
+      }
+    },
+    "grossVolumeL": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "plywoodThicknessMm": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "sheetCount": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "sheetSizeMm": {
+      "type": "object",
+      "properties": {
+        "wMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "hMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": ["wMm", "hMm"]
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": ["name", "category", "topology", "drivers", "netVolumeL", "dims", "specs", "license"]
+}

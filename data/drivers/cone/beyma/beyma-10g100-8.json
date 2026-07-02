@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10G100",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 56,
+  "qts": 0.21,
+  "qes": 0.234,
+  "qms": 2.07,
+  "vasL": 65,
+  "sdCm2": 370,
+  "xmaxMm": 1.5,
+  "reOhm": 6,
+  "bl": 14.7,
+  "mmsG": 23.8,
+  "peW": 80,
+  "sensitivityDb": 100.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

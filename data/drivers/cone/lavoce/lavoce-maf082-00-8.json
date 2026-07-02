@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "MAF082.00",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 85,
+  "qts": 0.2,
+  "qes": 0.22,
+  "qms": 3.11,
+  "vasL": 11.3,
+  "sdCm2": 220,
+  "xmaxMm": 2.6,
+  "reOhm": 5.7,
+  "bl": 17.2,
+  "mmsG": 21.2,
+  "peW": 200,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/maf082-00/"
+}

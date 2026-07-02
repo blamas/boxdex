@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "12 PNS 4",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 41.7,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 12.63,
+  "vasL": 50.2,
+  "sdCm2": 530.9,
+  "xmaxMm": 9.5,
+  "reOhm": 5.2,
+  "bl": 22.3,
+  "mmsG": 115.9,
+  "peW": 1000,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z007957-1.pdf"
+}

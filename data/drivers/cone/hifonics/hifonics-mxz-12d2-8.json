@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hifonics",
+  "model": "MXZ 12D2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.443,
+  "qes": 0.53,
+  "qms": 2.7,
+  "vasL": 30,
+  "sdCm2": 500,
+  "xmaxMm": 10.3,
+  "reOhm": 4,
+  "bl": 21.3,
+  "mmsG": 307.9,
+  "peW": 1500,
+  "sensitivityDb": 87.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HIFONICS"
+}

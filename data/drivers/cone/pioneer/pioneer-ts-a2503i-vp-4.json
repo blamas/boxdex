@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-A2503i vp",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 41,
+  "qts": 0.579,
+  "qes": 0.63,
+  "qms": 7.19,
+  "vasL": 162,
+  "sdCm2": 506,
+  "xmaxMm": 5,
+  "reOhm": 3.39,
+  "bl": 6.8,
+  "mmsG": 33.4,
+  "peW": 80,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

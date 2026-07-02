@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "SHEFFIELD TVX 1035 8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 49.3,
+  "qts": 0.722,
+  "qes": 0.88,
+  "qms": 4.03,
+  "vasL": 38.7,
+  "sdCm2": 335,
+  "xmaxMm": 3.4,
+  "reOhm": 5.88,
+  "bl": 9.4,
+  "mmsG": 42.4,
+  "peW": 75,
+  "sensitivityDb": 90.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L 18P200KN",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 22.3,
+  "qts": 0.265,
+  "qes": 0.28,
+  "qms": 5,
+  "vasL": 550,
+  "sdCm2": 1041,
+  "xmaxMm": 9,
+  "reOhm": 6.3,
+  "bl": 21.1,
+  "mmsG": 140.7,
+  "peW": 350,
+  "sensitivityDb": 96.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

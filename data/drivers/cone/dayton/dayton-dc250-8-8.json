@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "DC250-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 28.9,
+  "qts": 0.445,
+  "qes": 0.5,
+  "qms": 4.05,
+  "vasL": 111.4,
+  "sdCm2": 343.1,
+  "xmaxMm": 4.5,
+  "reOhm": 6.7,
+  "bl": 10.5,
+  "mmsG": 44.9,
+  "peW": 70,
+  "sensitivityDb": 90.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

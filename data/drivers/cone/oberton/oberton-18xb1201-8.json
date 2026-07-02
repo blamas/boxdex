@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18XB1201",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38.05,
+  "qts": 0.317,
+  "qes": 0.332,
+  "qms": 6.92,
+  "vasL": 159.37,
+  "sdCm2": 1158,
+  "xmaxMm": 10.5,
+  "reOhm": 5.25,
+  "bl": 26.71,
+  "mmsG": 188.94,
+  "peW": 1200,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/512-18xb1201.html"
+}

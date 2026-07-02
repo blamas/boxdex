@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Radian",
+  "model": "CRS1030",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.472,
+  "qes": 0.56,
+  "qms": 3,
+  "vasL": 35.3,
+  "sdCm2": 363,
+  "xmaxMm": 5.5,
+  "reOhm": 5.3,
+  "bl": 11,
+  "mmsG": 31.4,
+  "peW": 500,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RADIAN"
+}

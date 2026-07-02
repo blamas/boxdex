@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15ND940",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.28,
+  "qes": 0.29,
+  "qms": 7.5,
+  "vasL": 174,
+  "sdCm2": 881.4,
+  "xmaxMm": 9.5,
+  "reOhm": 5.4,
+  "bl": 21.9,
+  "mmsG": 108,
+  "peW": 600,
+  "sensitivityDb": 99,
+  "magnetMaterial": "neo",
+  "weightKg": 4.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15ND940"
+}

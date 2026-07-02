@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-495PA",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.286,
+  "qes": 0.3,
+  "qms": 6.22,
+  "vasL": 690,
+  "sdCm2": 1250,
+  "xmaxMm": 4,
+  "reOhm": 6.3,
+  "bl": 20.6,
+  "mmsG": 128.7,
+  "peW": 200,
+  "sensitivityDb": 98.6
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21iD",
+  "sizeInch": 21,
+  "impedanceOhm": 2,
+  "fsHz": 38,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 5.6,
+  "vasL": 143,
+  "sdCm2": 1660,
+  "xmaxMm": 14,
+  "reOhm": 1.3,
+  "bl": 25.2,
+  "mmsG": 489,
+  "peW": 1800,
+  "sensitivityDb": 94.2,
+  "magnetMaterial": "neo",
+  "weightKg": 13.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/21-0/2/21iD"
+}

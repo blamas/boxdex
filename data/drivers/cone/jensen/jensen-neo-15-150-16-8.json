@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "NEO 15-150-16",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 74.8,
+  "qts": 0.673,
+  "qes": 0.72,
+  "qms": 10.3,
+  "vasL": 65.6,
+  "sdCm2": 754.7,
+  "xmaxMm": 2,
+  "reOhm": 5.68,
+  "bl": 14.3,
+  "mmsG": 55.1,
+  "peW": 150,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

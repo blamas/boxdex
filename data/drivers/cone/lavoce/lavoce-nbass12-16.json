@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "NBASS12-30-16",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 48,
+  "qts": 0.34,
+  "qes": 0.35,
+  "qms": 7.98,
+  "vasL": 69.83,
+  "sdCm2": 531,
+  "xmaxMm": 7.3,
+  "reOhm": 12.3,
+  "bl": 25.75,
+  "mmsG": 63.2,
+  "peW": 400,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/nbass12/"
+}

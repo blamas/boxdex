@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "6FE400",
+  "sizeInch": 6,
+  "impedanceOhm": 4,
+  "fsHz": 100,
+  "qts": 0.36,
+  "qes": 0.39,
+  "qms": 3.8,
+  "vasL": 4.9,
+  "sdCm2": 141,
+  "xmaxMm": 4.87,
+  "reOhm": 3.4,
+  "mmsG": 14.2,
+  "peW": 200,
+  "sensitivityDb": 93,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 2.7,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401020121"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "GT4-10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 29.6,
+  "qts": 0.421,
+  "qes": 0.45,
+  "qms": 6.45,
+  "vasL": 36.1,
+  "sdCm2": 346,
+  "xmaxMm": 7.1,
+  "reOhm": 3.63,
+  "bl": 14.2,
+  "mmsG": 134.4,
+  "peW": 250,
+  "sensitivityDb": 88.6
+}

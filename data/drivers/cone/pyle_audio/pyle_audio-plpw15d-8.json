@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pyle Audio",
+  "model": "PLPW15D",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.459,
+  "qes": 0.52,
+  "qms": 3.94,
+  "vasL": 195.7,
+  "sdCm2": 820,
+  "xmaxMm": 8,
+  "reOhm": 6.8,
+  "bl": 18.6,
+  "mmsG": 144.9,
+  "peW": 1000,
+  "sensitivityDb": 92.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PYLE%20AUDIO"
+}

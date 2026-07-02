@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18NSW700",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30.48,
+  "qts": 0.243,
+  "qes": 0.25,
+  "qms": 9.24,
+  "vasL": 309.02,
+  "sdCm2": 1158,
+  "xmaxMm": 14,
+  "reOhm": 6.1,
+  "bl": 26.65,
+  "mmsG": 151.94,
+  "peW": 700,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/485-18nsw700.html"
+}

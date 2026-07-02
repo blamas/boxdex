@@ -1,0 +1,43 @@
+---
+name: FK Sub FullSpecs
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 280
+dims:
+  wMm: 730
+  hMm: 730
+  dMm: 650
+specs:
+  f3Hz: 38
+  f3HzHigh: 200
+  f6Hz: 32
+  fbHz: 42
+  maxSplDb: 131
+  maxSplExcursionDb: 128
+  maxSplThermalDb: 131
+  sensitivityDb: 101
+  impedanceMinOhm: 5.6
+  impedanceNominalOhm: 8
+  recommendedPowerW: 1000
+  powerAesW: 1500
+  powerProgramW: 3000
+  coverageAngleDeg: 360
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U sim
+measurements: []
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+---
+
+FK Sub FullSpecs: every optional spec field populated. Tests that all spec fields render correctly.

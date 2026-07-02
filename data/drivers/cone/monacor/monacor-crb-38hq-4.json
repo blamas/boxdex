@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "CRB-38HQ",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 31,
+  "qts": 0.424,
+  "qes": 0.48,
+  "qms": 3.66,
+  "vasL": 55,
+  "sdCm2": 492,
+  "xmaxMm": 6,
+  "reOhm": 3.3,
+  "bl": 14.8,
+  "mmsG": 162.6,
+  "peW": 300,
+  "sensitivityDb": 91.2
+}

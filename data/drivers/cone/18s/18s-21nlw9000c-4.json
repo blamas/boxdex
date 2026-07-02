@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21NLW9000C",
+  "sizeInch": 21.5,
+  "impedanceOhm": 4,
+  "fsHz": 29,
+  "qts": 0.248,
+  "qes": 0.26,
+  "qms": 5.45,
+  "vasL": 257,
+  "sdCm2": 1662,
+  "xmaxMm": 8.1,
+  "reOhm": 2.7,
+  "bl": 29.3,
+  "mmsG": 453.8,
+  "peW": 1800,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

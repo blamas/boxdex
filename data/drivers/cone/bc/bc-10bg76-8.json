@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10BG76",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.22,
+  "qes": 0.23,
+  "qms": 5.74,
+  "vasL": 16.7,
+  "sdCm2": 320,
+  "xmaxMm": 9.6,
+  "reOhm": 4.1,
+  "bl": 22.4,
+  "mmsG": 91.4,
+  "peW": 500,
+  "sensitivityDb": 91.5,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/10/8/10BG76"
+}

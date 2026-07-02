@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12NMB35",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 54.42,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 7.41,
+  "vasL": 54.29,
+  "sdCm2": 514.7,
+  "xmaxMm": 6.75,
+  "reOhm": 5.5,
+  "bl": 17,
+  "mmsG": 58.28,
+  "peW": 600,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/402-12nmb35.html"
+}

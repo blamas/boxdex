@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "6NMFW",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.34,
+  "qes": 0.35,
+  "qms": 7.5,
+  "vasL": 11,
+  "sdCm2": 154,
+  "xmaxMm": 9,
+  "reOhm": 5.8,
+  "bl": 14,
+  "mmsG": 45,
+  "peW": 200,
+  "sensitivityDb": 87,
+  "weightKg": 3.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/206NMFW8/altavoz-6nmfw-8-oh/"
+}

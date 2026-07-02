@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2240G",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.227,
+  "qes": 0.25,
+  "qms": 2.5,
+  "vasL": 481.4,
+  "sdCm2": 1297.4,
+  "xmaxMm": 5.2,
+  "reOhm": 2.5,
+  "bl": 16.1,
+  "mmsG": 138,
+  "peW": 300,
+  "sensitivityDb": 104.2
+}

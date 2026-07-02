@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD-2514Fe/PK",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 63.5,
+  "fLowHz": 600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 109,
+  "peW": 100,
+  "magnetMaterial": "ferrite",
+  "weightKg": 3.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD2514FEPK8/motor-cd-2514fe-pk-8-oh/"
+}

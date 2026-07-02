@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "PV 118 OEM",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28.8,
+  "qts": 0.375,
+  "qes": 0.391,
+  "qms": 9.29,
+  "vasL": 365.1,
+  "sdCm2": 1260,
+  "xmaxMm": 3.5,
+  "reOhm": 6.3,
+  "bl": 23.3,
+  "mmsG": 186.2,
+  "peW": 150,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

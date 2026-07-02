@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "8RS340",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 6.6,
+  "vasL": 25.5,
+  "sdCm2": 227.8,
+  "xmaxMm": 7.33,
+  "reOhm": 5.3,
+  "mmsG": 40.8,
+  "peW": 300,
+  "sensitivityDb": 91,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 2.5,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101030204"
+}

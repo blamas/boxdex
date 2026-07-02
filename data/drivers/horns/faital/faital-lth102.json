@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Faital PRO",
+  "model": "LTH102",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 1000,
+  "mouthWmm": 235,
+  "mouthHmm": 189,
+  "depthMm": 171.6,
+  "profile": "tractrix",
+  "material": "al",
+  "weightKg": 1.2,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Horns/product_details/index.php?id=903010110"
+}

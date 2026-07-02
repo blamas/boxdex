@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZIW 12XSPL-D2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 32.5,
+  "qts": 0.736,
+  "qes": 0.79,
+  "qms": 10.76,
+  "vasL": 40.4,
+  "sdCm2": 529,
+  "xmaxMm": 7.6,
+  "reOhm": 4.33,
+  "bl": 16.1,
+  "mmsG": 232.9,
+  "peW": 500,
+  "sensitivityDb": 87.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GROUND%20ZERO"
+}

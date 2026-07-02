@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "H1411-08 A26RE4",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24.8,
+  "qts": 0.39,
+  "qes": 0.43,
+  "qms": 3.8,
+  "vasL": 169,
+  "sdCm2": 329,
+  "xmaxMm": 4,
+  "reOhm": 6.3,
+  "bl": 9.2,
+  "mmsG": 37.4,
+  "peW": 80,
+  "sensitivityDb": 89.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/seas-h1411-08-a26re4/specifications"
+}

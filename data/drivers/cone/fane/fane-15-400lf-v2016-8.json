@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "15-400LF v2016",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.573,
+  "qes": 0.62,
+  "qms": 7.6,
+  "vasL": 210,
+  "sdCm2": 855,
+  "xmaxMm": 5,
+  "reOhm": 5.8,
+  "bl": 13.3,
+  "mmsG": 73.5,
+  "peW": 400,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Samy Speaker",
+  "model": "LW1200 v1",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 27.1,
+  "qts": 0.754,
+  "qes": 1.006,
+  "qms": 3.009,
+  "vasL": 159.6,
+  "sdCm2": 517,
+  "xmaxMm": 4.5,
+  "reOhm": 8,
+  "bl": 10.5,
+  "mmsG": 81.1,
+  "peW": 100,
+  "sensitivityDb": 87,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SAMY%20SPEAKER"
+}

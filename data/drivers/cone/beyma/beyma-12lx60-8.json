@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12LX60",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.3,
+  "qes": 0.309,
+  "qms": 9.8,
+  "vasL": 66,
+  "sdCm2": 550,
+  "xmaxMm": 9,
+  "reOhm": 5.5,
+  "bl": 20.92,
+  "mmsG": 93.2,
+  "peW": 700,
+  "sensitivityDb": 93.8
+}

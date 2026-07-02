@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTALITE II 2512",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 44,
+  "qts": 0.406,
+  "qes": 0.45,
+  "qms": 4.17,
+  "vasL": 134.9,
+  "sdCm2": 519.5,
+  "xmaxMm": 4.9,
+  "reOhm": 5.17,
+  "bl": 10.8,
+  "mmsG": 36.7,
+  "peW": 250,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

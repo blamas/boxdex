@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WAN102.50-16",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 76,
+  "qts": 0.43,
+  "qes": 0.47,
+  "qms": 5.37,
+  "vasL": 24.11,
+  "sdCm2": 350,
+  "xmaxMm": 5.5,
+  "reOhm": 11.3,
+  "bl": 18.98,
+  "mmsG": 31.5,
+  "peW": 300,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://lavocespeakers.com/product/wan102-50-16/"
+}

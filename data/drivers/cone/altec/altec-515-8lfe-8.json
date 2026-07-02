@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "515-8LFE",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25.7,
+  "qts": 0.203,
+  "qes": 0.22,
+  "qms": 2.55,
+  "vasL": 547.7,
+  "sdCm2": 823.5,
+  "xmaxMm": 4.3,
+  "reOhm": 5.5,
+  "bl": 16.4,
+  "mmsG": 66.6,
+  "peW": 125,
+  "sensitivityDb": 99.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

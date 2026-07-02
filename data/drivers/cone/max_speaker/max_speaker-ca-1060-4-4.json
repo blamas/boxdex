@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Max Speaker",
+  "model": "CA-1060/4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.307,
+  "qes": 0.32,
+  "qms": 7.8,
+  "vasL": 28.4,
+  "sdCm2": 314,
+  "xmaxMm": 6.1,
+  "reOhm": 2.8,
+  "bl": 14.1,
+  "mmsG": 106.6,
+  "peW": 300,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAX%20SPEAKER"
+}

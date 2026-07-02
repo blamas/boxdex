@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "FTR18-4080F",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.265,
+  "qes": 0.28,
+  "qms": 5.12,
+  "vasL": 383.3,
+  "sdCm2": 1130,
+  "xmaxMm": 6,
+  "reOhm": 5.27,
+  "bl": 22.4,
+  "mmsG": 150.9,
+  "peW": 800,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

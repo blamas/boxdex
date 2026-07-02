@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "S1846 vp1",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36.3,
+  "qts": 0.403,
+  "qes": 0.519,
+  "qms": 1.809,
+  "vasL": 389.4,
+  "sdCm2": 1164.2,
+  "xmaxMm": 8,
+  "reOhm": 6.1,
+  "bl": 15.8,
+  "mmsG": 93.6,
+  "peW": 550,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

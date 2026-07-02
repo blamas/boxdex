@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "B&C",
+  "model": "ME45",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 1000,
+  "mouthWmm": 260,
+  "mouthHmm": 140,
+  "depthMm": 124,
+  "profile": "exponential",
+  "material": "cast aluminium",
+  "weightKg": 0.86,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/horn/1/0/ME45"
+}

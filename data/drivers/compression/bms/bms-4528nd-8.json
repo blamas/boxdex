@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "BMS",
+  "model": "4528ND",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25.4,
+  "fLowHz": 1200,
+  "fHighHz": 30000,
+  "minCrossoverHz": 1800,
+  "sensitivityHornDb": 113,
+  "peW": 25,
+  "magnetMaterial": "Neodymium",
+  "datasheetUrl": "https://www.bmsspeakers.com/index.php-51.html?id=bms_4528nd"
+}

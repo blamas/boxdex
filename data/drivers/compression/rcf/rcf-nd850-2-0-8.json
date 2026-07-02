@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "RCF",
+  "model": "ND850 2.0",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 76,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 500,
+  "sensitivityHornDb": 109,
+  "peW": 110,
+  "magnetMaterial": "neodymium",
+  "weightKg": 2.74,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/nd850-2.0"
+}

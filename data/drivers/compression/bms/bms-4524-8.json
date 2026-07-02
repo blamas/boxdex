@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "BMS",
+  "model": "4524",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25.4,
+  "fLowHz": 1200,
+  "fHighHz": 30000,
+  "minCrossoverHz": 1900,
+  "sensitivityHornDb": 113,
+  "peW": 25,
+  "magnetMaterial": "Ferrite",
+  "datasheetUrl": "https://www.bmsspeakers.com/index.php-101.html?id=bms_4524"
+}

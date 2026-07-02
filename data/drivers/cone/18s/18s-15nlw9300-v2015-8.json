@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15NLW9300 v2015",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.263,
+  "qes": 0.274,
+  "qms": 6.7,
+  "vasL": 170,
+  "sdCm2": 900,
+  "xmaxMm": 7.2,
+  "reOhm": 6,
+  "bl": 24.4,
+  "mmsG": 111.2,
+  "peW": 800,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

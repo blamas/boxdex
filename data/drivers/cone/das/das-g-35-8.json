@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "G-35",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.311,
+  "qes": 0.39,
+  "qms": 1.54,
+  "vasL": 205,
+  "sdCm2": 860,
+  "xmaxMm": 4.5,
+  "reOhm": 6.8,
+  "bl": 20.9,
+  "mmsG": 125.1,
+  "peW": 500,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

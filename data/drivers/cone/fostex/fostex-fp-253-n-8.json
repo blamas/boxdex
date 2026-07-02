@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "FP 253 N",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.429,
+  "qes": 0.45,
+  "qms": 9.03,
+  "vasL": 141,
+  "sdCm2": 330,
+  "xmaxMm": 1.9,
+  "reOhm": 7.2,
+  "bl": 8.6,
+  "mmsG": 20,
+  "peW": 50,
+  "sensitivityDb": 94.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

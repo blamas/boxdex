@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "CRB-12TC vp s&eacute;rie",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.611,
+  "qes": 0.67,
+  "qms": 6.98,
+  "vasL": 75,
+  "sdCm2": 503,
+  "xmaxMm": 4.9,
+  "reOhm": 7.8,
+  "bl": 16.8,
+  "mmsG": 124.6,
+  "peW": 100,
+  "sensitivityDb": 87.3
+}

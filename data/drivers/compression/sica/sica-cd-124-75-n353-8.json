@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Sica",
+  "model": "CD 124.75/N353",
+  "impedanceOhm": 8,
+  "exitInch": 3,
+  "voiceCoilMm": 75,
+  "fLowHz": 1200,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 108.4,
+  "fsHz": 650,
+  "peW": 110,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2023/08/Z009512.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "KAPPA PERFECT 10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 28.4,
+  "qts": 0.419,
+  "qes": 0.44,
+  "qms": 8.83,
+  "vasL": 32.1,
+  "sdCm2": 346,
+  "xmaxMm": 7.1,
+  "reOhm": 4.11,
+  "bl": 16.5,
+  "mmsG": 164.6,
+  "peW": 350,
+  "sensitivityDb": 87.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=INFINITY"
+}

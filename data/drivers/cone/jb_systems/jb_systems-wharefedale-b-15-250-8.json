@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JB Systems",
+  "model": "WHAREFEDALE B-15-250",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49.1,
+  "qts": 0.409,
+  "qes": 0.46,
+  "qms": 3.7,
+  "vasL": 125,
+  "sdCm2": 860,
+  "xmaxMm": 4,
+  "reOhm": 5.5,
+  "bl": 17.9,
+  "mmsG": 87.1,
+  "peW": 250,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JB%20SYSTEMS"
+}

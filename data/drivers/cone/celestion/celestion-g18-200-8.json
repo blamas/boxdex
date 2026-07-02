@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "G18-200",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 29.6,
+  "qts": 0.364,
+  "qes": 0.38,
+  "qms": 8.9,
+  "vasL": 518.5,
+  "sdCm2": 1134.1,
+  "xmaxMm": 5,
+  "reOhm": 7.21,
+  "bl": 18.8,
+  "mmsG": 100.5,
+  "peW": 200,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

@@ -1,0 +1,52 @@
+---
+name: FK Top 12 2W Sealed
+category: top
+topology: sealed
+drivers:
+  - faital-12pr310-8
+  - bms-4545nd-8
+netVolumeL: 50
+dims:
+  wMm: 400
+  hMm: 560
+  dMm: 360
+weightKg: 18
+specs:
+  f3Hz: 65
+  sensitivityDb: 99
+  coverageAngleDeg: 90
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - faital-12pr310-8
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+      - bms-4545nd-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - hardcore
+connectors:
+  - speakON NL4
+ways: 2
+---
+
+2-way 12"+1" sealed top. Faital 12PR310 + BMS 4545ND, xo at 1800 Hz.

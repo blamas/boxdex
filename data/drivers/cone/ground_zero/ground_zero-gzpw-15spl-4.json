@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZPW 15SPL",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 39.1,
+  "qts": 0.247,
+  "qes": 0.26,
+  "qms": 4.83,
+  "vasL": 36.8,
+  "sdCm2": 855,
+  "xmaxMm": 3.8,
+  "reOhm": 2.3,
+  "bl": 31.7,
+  "mmsG": 461.4,
+  "peW": 1000,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GROUND%20ZERO"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "8 Fe 2.5 CP",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 73,
+  "qts": 0.28,
+  "qes": 0.3,
+  "qms": 3.73,
+  "vasL": 15.6,
+  "sdCm2": 213.8,
+  "xmaxMm": 4,
+  "reOhm": 5.5,
+  "bl": 13.01,
+  "mmsG": 19.8,
+  "peW": 300,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2025/07/Z005203.pdf"
+}

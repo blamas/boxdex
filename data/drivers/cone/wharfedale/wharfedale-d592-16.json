@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Wharfedale",
+  "model": "D592",
+  "sizeInch": 18,
+  "impedanceOhm": 16,
+  "fsHz": 35,
+  "qts": 0.547,
+  "qes": 0.59,
+  "qms": 7.54,
+  "vasL": 251,
+  "sdCm2": 1134,
+  "xmaxMm": 6,
+  "reOhm": 8,
+  "bl": 21,
+  "mmsG": 148.5,
+  "peW": 400,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=WHARFEDALE"
+}

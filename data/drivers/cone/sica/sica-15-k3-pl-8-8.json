@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "15 K3 PL-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 8.31,
+  "vasL": 166.1,
+  "sdCm2": 856,
+  "xmaxMm": 6.5,
+  "reOhm": 5.2,
+  "bl": 21.4,
+  "mmsG": 99,
+  "peW": 400,
+  "sensitivityDb": 97.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/sica-15-k3-pl-8/specifications"
+}

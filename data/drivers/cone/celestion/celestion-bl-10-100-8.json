@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BL 10-100",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 70,
+  "qts": 0.608,
+  "qes": 0.66,
+  "qms": 7.64,
+  "vasL": 33,
+  "sdCm2": 335,
+  "xmaxMm": 3.3,
+  "reOhm": 5.8,
+  "bl": 9.8,
+  "mmsG": 24.6,
+  "peW": 100,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

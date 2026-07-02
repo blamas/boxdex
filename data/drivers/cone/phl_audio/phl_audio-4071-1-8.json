@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "4071-1",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47,
+  "qts": 0.245,
+  "qes": 0.26,
+  "qms": 4.14,
+  "vasL": 57.8,
+  "sdCm2": 493,
+  "xmaxMm": 4.7,
+  "reOhm": 5.5,
+  "bl": 20.5,
+  "mmsG": 67.6,
+  "peW": 400,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

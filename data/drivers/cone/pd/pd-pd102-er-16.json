@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD102 ER",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 81.8,
+  "qts": 0.523,
+  "qes": 0.569,
+  "qms": 6.37,
+  "vasL": 26,
+  "sdCm2": 346,
+  "xmaxMm": 5,
+  "reOhm": 6.2,
+  "bl": 11.76,
+  "mmsG": 24,
+  "peW": 100,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ceramic",
+  "weightKg": 3.89,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=11"
+}

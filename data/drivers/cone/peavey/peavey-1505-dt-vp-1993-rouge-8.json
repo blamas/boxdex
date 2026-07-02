@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "1505 DT vp 1993 rouge",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43.6,
+  "qts": 0.318,
+  "qes": 0.361,
+  "qms": 2.696,
+  "vasL": 171.5,
+  "sdCm2": 840,
+  "xmaxMm": 5.1,
+  "reOhm": 5.2,
+  "bl": 17.4,
+  "mmsG": 76.8,
+  "peW": 350,
+  "sensitivityDb": 99.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

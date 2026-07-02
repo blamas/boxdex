@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "BMS",
+  "model": "4596ND",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 88.9,
+  "fLowHz": 200,
+  "fHighHz": 9000,
+  "minCrossoverHz": 300,
+  "sensitivityHornDb": 123,
+  "peW": 150,
+  "magnetMaterial": "Neodymium",
+  "datasheetUrl": "https://www.bmsspeakers.com/index.php-71.html?id=4596nd"
+}

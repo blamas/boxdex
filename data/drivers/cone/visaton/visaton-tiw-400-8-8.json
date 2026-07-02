@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "TIW 400-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.35,
+  "qes": 0.37,
+  "qms": 5.97,
+  "vasL": 300,
+  "sdCm2": 755,
+  "xmaxMm": 27,
+  "reOhm": 5.8,
+  "bl": 17,
+  "mmsG": 120,
+  "peW": 300,
+  "sensitivityDb": 91.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/visaton-tiw-400-8/specifications"
+}

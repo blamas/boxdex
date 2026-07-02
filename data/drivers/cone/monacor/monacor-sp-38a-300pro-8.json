@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-38A/300PRO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.389,
+  "qes": 0.44,
+  "qms": 3.37,
+  "vasL": 135,
+  "sdCm2": 850,
+  "xmaxMm": 2.5,
+  "reOhm": 6,
+  "bl": 18,
+  "mmsG": 76,
+  "peW": 300,
+  "sensitivityDb": 99.1
+}

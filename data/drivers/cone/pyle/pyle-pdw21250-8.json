@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pyle",
+  "model": "PDW21250",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 22.4,
+  "qts": 0.33,
+  "qes": 0.378,
+  "qms": 2.6,
+  "vasL": 703.8,
+  "sdCm2": 1706,
+  "xmaxMm": 9,
+  "reOhm": 6.3,
+  "bl": 26.39,
+  "mmsG": 296.959,
+  "peW": 1000,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pyle-pdw21250/specifications"
+}

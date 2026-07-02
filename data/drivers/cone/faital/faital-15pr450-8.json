@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15PR450",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.35,
+  "qes": 0.37,
+  "qms": 6.9,
+  "vasL": 235.6,
+  "sdCm2": 857,
+  "xmaxMm": 6,
+  "reOhm": 5.1,
+  "mmsG": 90,
+  "peW": 400,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 7.8,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101060095"
+}

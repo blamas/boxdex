@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "GRS",
+  "model": "18PT-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.547,
+  "qes": 0.58,
+  "qms": 9.59,
+  "vasL": 467,
+  "sdCm2": 1234,
+  "xmaxMm": 7.8,
+  "reOhm": 6.9,
+  "bl": 19.4,
+  "mmsG": 218.9,
+  "peW": 350,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GRS"
+}

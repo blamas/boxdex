@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "ACCESS 27A",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 41.3,
+  "qts": 0.48,
+  "qes": 0.54,
+  "qms": 4.35,
+  "vasL": 21.2,
+  "sdCm2": 330.1,
+  "xmaxMm": 5,
+  "reOhm": 2.9,
+  "bl": 12.2,
+  "mmsG": 106.9,
+  "peW": 250,
+  "sensitivityDb": 90.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

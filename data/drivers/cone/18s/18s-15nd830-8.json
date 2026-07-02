@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15ND830",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.32,
+  "qes": 0.35,
+  "qms": 3.9,
+  "vasL": 213,
+  "sdCm2": 850,
+  "xmaxMm": 6.5,
+  "reOhm": 5.7,
+  "bl": 18,
+  "mmsG": 80,
+  "peW": 450,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neo",
+  "weightKg": 4.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15ND830"
+}

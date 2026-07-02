@@ -1,0 +1,31 @@
+---
+name: FK Sealed 15
+category: sub
+topology: sealed
+drivers:
+  - rcf-l15p400-8
+driverCount: 1
+netVolumeL: 120
+dims:
+  wMm: 600
+  hMm: 600
+  dMm: 550
+specs:
+  f3Hz: 52
+  sensitivityDb: 97
+  powerAesW: 750
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U single cab, Hornresp
+measurements: []
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+---
+
+FK Sealed 15: single 15" sealed subwoofer for testing minimal spec coverage.

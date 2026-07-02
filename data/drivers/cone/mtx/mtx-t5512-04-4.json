@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MTX Audio",
+  "model": "T5512-04",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 29.3,
+  "qts": 0.583,
+  "qes": 0.67,
+  "qms": 4.48,
+  "vasL": 66.9,
+  "sdCm2": 545.4,
+  "xmaxMm": 7.3,
+  "reOhm": 3.3,
+  "bl": 12.9,
+  "mmsG": 184.4,
+  "peW": 300,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MTX"
+}

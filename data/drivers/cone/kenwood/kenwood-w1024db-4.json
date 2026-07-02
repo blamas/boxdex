@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "W1024DB",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.567,
+  "qes": 0.59,
+  "qms": 14.85,
+  "vasL": 51.3,
+  "sdCm2": 510,
+  "xmaxMm": 6.9,
+  "reOhm": 3.1,
+  "bl": 13.4,
+  "mmsG": 165.3,
+  "peW": 300,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KENWOOD"
+}

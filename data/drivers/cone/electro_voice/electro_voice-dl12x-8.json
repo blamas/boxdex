@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "DL12X",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 56,
+  "qts": 0.233,
+  "qes": 0.24,
+  "qms": 7.47,
+  "vasL": 77,
+  "sdCm2": 500,
+  "xmaxMm": 4.1,
+  "reOhm": 6,
+  "bl": 18,
+  "mmsG": 36.8,
+  "peW": 300,
+  "sensitivityDb": 100.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELECTROVOICE"
+}

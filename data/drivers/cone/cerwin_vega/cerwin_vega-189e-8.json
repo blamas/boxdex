@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cerwin-Vega",
+  "model": "189E",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30.5,
+  "qts": 0.227,
+  "qes": 0.241,
+  "qms": 3.86,
+  "vasL": 244,
+  "sdCm2": 1065.2,
+  "xmaxMm": 5.2,
+  "reOhm": 5,
+  "bl": 26.6,
+  "mmsG": 177.5,
+  "peW": 400,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CERWIN-VEGA"
+}

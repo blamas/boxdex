@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "IB12HT-4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 16.8,
+  "qts": 0.642,
+  "qes": 0.74,
+  "qms": 4.84,
+  "vasL": 179.5,
+  "sdCm2": 530,
+  "xmaxMm": 18.5,
+  "reOhm": 2.8,
+  "bl": 8.9,
+  "mmsG": 197.3,
+  "peW": 500,
+  "sensitivityDb": 87.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

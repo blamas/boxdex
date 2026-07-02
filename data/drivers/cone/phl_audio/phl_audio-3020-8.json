@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "3020",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.337,
+  "qes": 0.37,
+  "qms": 3.8,
+  "vasL": 41,
+  "sdCm2": 356,
+  "xmaxMm": 4.1,
+  "reOhm": 5.3,
+  "bl": 12.8,
+  "mmsG": 30.5,
+  "peW": 200,
+  "sensitivityDb": 97.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

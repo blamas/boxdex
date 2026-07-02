@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "7201ND",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.355,
+  "qes": 0.38,
+  "qms": 5.5,
+  "vasL": 230,
+  "sdCm2": 1250,
+  "xmaxMm": 8.5,
+  "reOhm": 5.3,
+  "bl": 24.9,
+  "mmsG": 208.7,
+  "peW": 1000,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

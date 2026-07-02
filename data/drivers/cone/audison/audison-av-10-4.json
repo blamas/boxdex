@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audison",
+  "model": "AV 10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 41,
+  "qts": 0.54,
+  "qes": 0.66,
+  "qms": 3,
+  "vasL": 30,
+  "sdCm2": 334,
+  "xmaxMm": 14,
+  "reOhm": 3.7,
+  "bl": 10.7,
+  "mmsG": 80,
+  "peW": 400,
+  "sensitivityDb": 86.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audison-av-10/specifications"
+}

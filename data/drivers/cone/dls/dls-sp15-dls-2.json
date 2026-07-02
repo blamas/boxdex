@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DLS",
+  "model": "SP15 DLS",
+  "sizeInch": 15,
+  "impedanceOhm": 2,
+  "fsHz": 33.2,
+  "qts": 0.323,
+  "qes": 0.35,
+  "qms": 4.22,
+  "vasL": 191.7,
+  "sdCm2": 754.8,
+  "xmaxMm": 8.6,
+  "reOhm": 1.25,
+  "bl": 8.4,
+  "mmsG": 95.7,
+  "peW": 500,
+  "sensitivityDb": 103.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DLS"
+}

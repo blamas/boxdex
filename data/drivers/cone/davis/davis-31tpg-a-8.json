@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Davis",
+  "model": "31TPG-A",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.448,
+  "qes": 0.49,
+  "qms": 5.2,
+  "vasL": 213,
+  "sdCm2": 460,
+  "xmaxMm": 4.5,
+  "reOhm": 6.28,
+  "bl": 8.8,
+  "mmsG": 25.8,
+  "peW": 150,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVIS"
+}

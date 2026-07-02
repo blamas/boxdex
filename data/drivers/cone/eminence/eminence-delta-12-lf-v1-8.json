@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTA 12 LF v1",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.424,
+  "qes": 0.45,
+  "qms": 7.28,
+  "vasL": 95.5,
+  "sdCm2": 506.7,
+  "xmaxMm": 4.6,
+  "reOhm": 6.06,
+  "bl": 13.4,
+  "mmsG": 47.1,
+  "peW": 500,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

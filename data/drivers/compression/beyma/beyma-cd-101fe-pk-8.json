@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD-101Fe/PK",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 28,
+  "fLowHz": 2000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 108,
+  "peW": 40,
+  "magnetMaterial": "ferrite",
+  "weightKg": 0.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD101FEPK8/motor-cd-101fe-pk-8-oh/"
+}

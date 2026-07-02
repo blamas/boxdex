@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "DC200",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 66.5,
+  "qts": 0.607,
+  "qes": 0.91,
+  "qms": 1.82,
+  "vasL": 25.8,
+  "sdCm2": 330.1,
+  "xmaxMm": 1.6,
+  "reOhm": 6.7,
+  "bl": 10.2,
+  "mmsG": 33.9,
+  "peW": 40,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

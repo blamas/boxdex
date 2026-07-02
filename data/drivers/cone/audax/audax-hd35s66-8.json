@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HD35S66",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 18,
+  "qts": 0.217,
+  "qes": 0.23,
+  "qms": 4,
+  "vasL": 735,
+  "sdCm2": 687,
+  "xmaxMm": 5,
+  "reOhm": 5.4,
+  "bl": 13.7,
+  "mmsG": 70.4,
+  "peW": 120,
+  "sensitivityDb": 96.4
+}

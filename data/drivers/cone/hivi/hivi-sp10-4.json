@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "HiVi",
+  "model": "SP10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.573,
+  "qes": 0.65,
+  "qms": 4.83,
+  "vasL": 17.1,
+  "sdCm2": 363,
+  "xmaxMm": 6.7,
+  "reOhm": 3.4,
+  "bl": 16.3,
+  "mmsG": 236.7,
+  "peW": 500,
+  "sensitivityDb": 85.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HIVI"
+}

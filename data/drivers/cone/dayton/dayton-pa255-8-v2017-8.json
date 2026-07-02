@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "PA255-8 v2017",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 50.5,
+  "qts": 0.612,
+  "qes": 0.66,
+  "qms": 8.49,
+  "vasL": 41.2,
+  "sdCm2": 346.4,
+  "xmaxMm": 5,
+  "reOhm": 5.5,
+  "bl": 10.4,
+  "mmsG": 40.6,
+  "peW": 300,
+  "sensitivityDb": 92.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

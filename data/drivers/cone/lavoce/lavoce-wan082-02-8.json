@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WAN082.02",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 80,
+  "qts": 0.23,
+  "qes": 0.25,
+  "qms": 4.88,
+  "vasL": 8.97,
+  "sdCm2": 220,
+  "xmaxMm": 5.8,
+  "reOhm": 5.2,
+  "bl": 17.76,
+  "mmsG": 29.9,
+  "peW": 200,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/wan082-02/"
+}

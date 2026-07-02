@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "McCauley",
+  "model": "6174",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.336,
+  "qes": 0.38,
+  "qms": 2.9,
+  "vasL": 733.4,
+  "sdCm2": 1283.9,
+  "xmaxMm": 15.2,
+  "reOhm": 5.6,
+  "bl": 19.2,
+  "mmsG": 199.5,
+  "peW": 800,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MC%20CAULEY"
+}

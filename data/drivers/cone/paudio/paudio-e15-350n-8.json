@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "E15-350N",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.359,
+  "qes": 0.38,
+  "qms": 6.61,
+  "vasL": 201.4,
+  "sdCm2": 855,
+  "xmaxMm": 5.3,
+  "reOhm": 6.5,
+  "bl": 18.6,
+  "mmsG": 80.6,
+  "peW": 350,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

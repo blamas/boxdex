@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "P-15N",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.8,
+  "qts": 0.254,
+  "qes": 0.26,
+  "qms": 10.41,
+  "vasL": 144.6,
+  "sdCm2": 880,
+  "xmaxMm": 7.5,
+  "reOhm": 5.3,
+  "bl": 24.7,
+  "mmsG": 120.1,
+  "peW": 1000,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

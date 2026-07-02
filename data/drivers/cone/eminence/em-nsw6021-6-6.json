@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "NSW6021-6",
+  "impedanceOhm": 6,
+  "sizeInch": 21,
+  "fsHz": 29,
+  "qts": 0.31,
+  "qes": 0.31,
+  "qms": 15.35,
+  "vasL": 224.58,
+  "sdCm2": 1642,
+  "xmaxMm": 21,
+  "peW": 2500,
+  "sensitivityDb": 97,
+  "reOhm": 3.8,
+  "bl": 33.79,
+  "mmsG": 508,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/NSW6021_6_cab.pdf"
+}

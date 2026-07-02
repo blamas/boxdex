@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "KFC-XW100F",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 38.6,
+  "qts": 0.72,
+  "qes": 0.84,
+  "qms": 5.279,
+  "vasL": 21.05,
+  "sdCm2": 340,
+  "xmaxMm": 7.5,
+  "reOhm": 3,
+  "bl": 10.7,
+  "mmsG": 127,
+  "peW": 250,
+  "sensitivityDb": 83.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/kenwood-kfc-xw100f/specifications"
+}

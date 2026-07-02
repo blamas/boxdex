@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12W500",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 49,
+  "qts": 0.35,
+  "qes": 0.37,
+  "qms": 6.1,
+  "vasL": 101,
+  "sdCm2": 531,
+  "xmaxMm": 4,
+  "reOhm": 2.7,
+  "bl": 9.6,
+  "mmsG": 36.5,
+  "peW": 350,
+  "sensitivityDb": 98.5,
+  "magnetMaterial": "ferrite",
+  "weightKg": 5.2,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/4/12w500"
+}

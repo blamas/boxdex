@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-SW2541D",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 43.5,
+  "qts": 0.95,
+  "qes": 1.04,
+  "qms": 11.3,
+  "vasL": 8.25,
+  "sdCm2": 293,
+  "xmaxMm": 6,
+  "reOhm": 3.6,
+  "bl": 13.7,
+  "mmsG": 197,
+  "peW": 250,
+  "sensitivityDb": 80,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/pioneer-ts-sw2541d/specifications"
+}

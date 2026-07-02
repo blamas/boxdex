@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "CX 10N251",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 72,
+  "qts": 0.237,
+  "qes": 0.25,
+  "qms": 4.5,
+  "vasL": 25,
+  "sdCm2": 350,
+  "xmaxMm": 3,
+  "reOhm": 5.2,
+  "bl": 17.8,
+  "mmsG": 33.6,
+  "peW": 300,
+  "sensitivityDb": 99.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

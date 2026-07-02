@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "T245 vp hgd3869",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 47.8,
+  "qts": 0.355,
+  "qes": 0.375,
+  "qms": 6.509,
+  "vasL": 108.1,
+  "sdCm2": 344,
+  "xmaxMm": 2,
+  "reOhm": 5.63,
+  "bl": 8.8,
+  "mmsG": 17,
+  "peW": 20,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

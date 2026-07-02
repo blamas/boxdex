@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "BMS",
+  "model": "4540ND",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 38.1,
+  "fLowHz": 1200,
+  "fHighHz": 30000,
+  "minCrossoverHz": 1900,
+  "sensitivityHornDb": 114,
+  "peW": 60,
+  "magnetMaterial": "Neodymium",
+  "datasheetUrl": "https://www.bmsspeakers.com/index.php-52.html?id=bms_4540nd"
+}

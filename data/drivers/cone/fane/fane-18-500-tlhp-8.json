@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "18-500 TLHP",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.403,
+  "qes": 0.43,
+  "qms": 6.43,
+  "vasL": 521,
+  "sdCm2": 1178.4,
+  "xmaxMm": 6.3,
+  "reOhm": 5.7,
+  "bl": 16.5,
+  "mmsG": 112.5,
+  "peW": 500,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

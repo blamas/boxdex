@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "Kappa 123WDSSI 2Ohm",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 34.2,
+  "qts": 0.778,
+  "qes": 0.891,
+  "qms": 6.134,
+  "vasL": 58.6153,
+  "sdCm2": 330,
+  "xmaxMm": 10.2,
+  "reOhm": 2.33,
+  "bl": 9.44,
+  "mmsG": 143.8,
+  "peW": 500,
+  "sensitivityDb": 86.0429,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/infinity-kappa-123wdssi-2ohm/specifications"
+}

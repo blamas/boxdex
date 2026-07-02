@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "5FG44",
+  "sizeInch": 5,
+  "impedanceOhm": 16,
+  "fsHz": 70,
+  "qts": 0.39,
+  "qes": 0.4,
+  "qms": 10.5,
+  "vasL": 5.1,
+  "sdCm2": 92,
+  "xmaxMm": 3,
+  "reOhm": 11.1,
+  "bl": 11.6,
+  "mmsG": 12,
+  "peW": 100,
+  "sensitivityDb": 90,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/5/16/5FG44"
+}

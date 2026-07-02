@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15MB601",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40.57,
+  "qts": 0.185,
+  "qes": 0.19,
+  "qms": 7.29,
+  "vasL": 138.98,
+  "sdCm2": 829.6,
+  "xmaxMm": 5.5,
+  "reOhm": 5.15,
+  "bl": 27.1,
+  "mmsG": 106.41,
+  "peW": 600,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/165-15mb601.html"
+}

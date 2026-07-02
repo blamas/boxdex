@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE64TN",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 75,
+  "fLowHz": 1000,
+  "fHighHz": 18000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 107.5,
+  "peW": 110,
+  "weightKg": 3.9,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/2/8/DE64TN"
+}

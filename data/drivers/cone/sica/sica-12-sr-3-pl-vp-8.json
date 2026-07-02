@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "12 SR 3 PL vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 28.7,
+  "qts": 0.317,
+  "qes": 0.33,
+  "qms": 7.9,
+  "vasL": 101.2,
+  "sdCm2": 467.6,
+  "xmaxMm": 7,
+  "reOhm": 5.22,
+  "bl": 16.3,
+  "mmsG": 93.1,
+  "peW": 350,
+  "sensitivityDb": 92.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SICA"
+}

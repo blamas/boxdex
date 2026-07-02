@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "MAGNUM 15 HO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 7.48,
+  "vasL": 241,
+  "sdCm2": 856,
+  "xmaxMm": 4.8,
+  "reOhm": 6.3,
+  "bl": 21.5,
+  "mmsG": 99.1,
+  "peW": 650,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

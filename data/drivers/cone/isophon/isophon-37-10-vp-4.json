@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Isophon",
+  "model": "37/10 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 47.1,
+  "qts": 0.542,
+  "qes": 0.568,
+  "qms": 11.82,
+  "vasL": 142.5,
+  "sdCm2": 572.6,
+  "xmaxMm": 1.8,
+  "reOhm": 2.58,
+  "bl": 7,
+  "mmsG": 36.8,
+  "peW": 17,
+  "sensitivityDb": 101.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ISOPHON"
+}

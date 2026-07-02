@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Siemens",
+  "model": "C 71233-4A-A1",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 70.2,
+  "qts": 0.546,
+  "qes": 0.59,
+  "qms": 7.41,
+  "vasL": 58.6,
+  "sdCm2": 314,
+  "xmaxMm": 4,
+  "reOhm": 13.3,
+  "bl": 11,
+  "mmsG": 12.1,
+  "peW": 80,
+  "sensitivityDb": 95.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SIEMENS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LAB 12 |",
+  "impedanceOhm": 6,
+  "sizeInch": 12,
+  "fsHz": 22,
+  "qts": 0.38,
+  "qes": 0.39,
+  "qms": 13.32,
+  "vasL": 125.2,
+  "sdCm2": 506.7,
+  "xmaxMm": 13,
+  "peW": 400,
+  "sensitivityDb": 89.2,
+  "reOhm": 4.29,
+  "bl": 15,
+  "mmsG": 146,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/LAB_12.pdf"
+}

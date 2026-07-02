@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "OMEGA PRO 18 (Prodance)",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 24.2,
+  "qts": 0.316,
+  "qes": 0.33,
+  "qms": 7.73,
+  "vasL": 581.5,
+  "sdCm2": 1159,
+  "xmaxMm": 4.8,
+  "reOhm": 5.25,
+  "bl": 18.4,
+  "mmsG": 139.8,
+  "peW": 800,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

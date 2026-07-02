@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "IB385-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 21.5,
+  "qts": 0.588,
+  "qes": 0.63,
+  "qms": 8.92,
+  "vasL": 248.9,
+  "sdCm2": 819.4,
+  "xmaxMm": 12.4,
+  "reOhm": 5.2,
+  "bl": 15.2,
+  "mmsG": 207.2,
+  "peW": 350,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

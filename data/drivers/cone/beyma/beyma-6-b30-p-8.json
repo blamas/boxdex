@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "6\"B30/P",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 56,
+  "qts": 0.5,
+  "qes": 0.6,
+  "qms": 3,
+  "vasL": 15.6,
+  "sdCm2": 140,
+  "xmaxMm": 5.5,
+  "reOhm": 5.5,
+  "bl": 6.8,
+  "mmsG": 14,
+  "peW": 50,
+  "sensitivityDb": 90,
+  "weightKg": 1.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/206B30P8/altavoz-6b30-p-8-oh/"
+}

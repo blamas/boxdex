@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "KAPPA PERFECT 10.1",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 28.35,
+  "qts": 0.42,
+  "qes": 0.441,
+  "qms": 8.83,
+  "vasL": 38.511,
+  "sdCm2": 346,
+  "xmaxMm": 14.15,
+  "reOhm": 4.11,
+  "bl": 16.64,
+  "mmsG": 166.71,
+  "peW": 350,
+  "sensitivityDb": 84.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/infinity-kappa-perfect-10-1/specifications"
+}

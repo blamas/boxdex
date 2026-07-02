@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "KFC-W2511",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 60,
+  "qts": 0.84,
+  "qes": 0.931,
+  "qms": 8.6,
+  "vasL": 9.38,
+  "sdCm2": 350,
+  "xmaxMm": 7,
+  "reOhm": 3.9,
+  "bl": 13.9,
+  "mmsG": 123,
+  "peW": 300,
+  "sensitivityDb": 85.2,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/kenwood-kfc-w2511/specifications"
+}

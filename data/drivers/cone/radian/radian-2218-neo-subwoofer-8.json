@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Radian",
+  "model": "2218 NEO SUBWOOFER",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28.9,
+  "qts": 0.219,
+  "qes": 0.238,
+  "qms": 2.76,
+  "vasL": 333,
+  "sdCm2": 1458.1,
+  "xmaxMm": 6.3,
+  "reOhm": 5.5,
+  "bl": 33.7,
+  "mmsG": 271.4,
+  "peW": 800,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RADIAN"
+}

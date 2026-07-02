@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "P1S4-10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.52,
+  "qes": 0.629,
+  "qms": 3,
+  "vasL": 40,
+  "sdCm2": 370,
+  "xmaxMm": 9,
+  "reOhm": 3.6,
+  "bl": 12.14,
+  "mmsG": 136.6,
+  "peW": 250,
+  "sensitivityDb": 84.2,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/rockford-fosgate-p1s4-10/specifications"
+}

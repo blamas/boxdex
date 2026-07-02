@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "BZ300 4 Ohms",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 36,
+  "qts": 0.483,
+  "qes": 0.53,
+  "qms": 5.46,
+  "vasL": 129,
+  "sdCm2": 510,
+  "xmaxMm": 5,
+  "reOhm": 3.9,
+  "bl": 9.6,
+  "mmsG": 55.2,
+  "peW": 350,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "FW800HS",
+  "sizeInch": 31,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.69,
+  "qes": 0.71,
+  "qms": 19.2,
+  "vasL": 1473,
+  "sdCm2": 4015,
+  "xmaxMm": 2.3,
+  "reOhm": 6.6,
+  "bl": 30.3,
+  "mmsG": 629,
+  "peW": 150,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/fostex-fw800hs/specifications"
+}

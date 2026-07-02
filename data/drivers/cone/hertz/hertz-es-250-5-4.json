@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "hertz Hertz Audio",
+  "model": "ES 250.5",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.609,
+  "qes": 0.65,
+  "qms": 9.6,
+  "vasL": 27.7,
+  "sdCm2": 344,
+  "xmaxMm": 6.6,
+  "reOhm": 2.9,
+  "bl": 11,
+  "mmsG": 123.8,
+  "peW": 250,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HERTZ%20AUDIO"
+}

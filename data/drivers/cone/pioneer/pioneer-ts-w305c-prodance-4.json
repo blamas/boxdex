@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W305C (prodance)",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.311,
+  "qes": 0.32,
+  "qms": 11.46,
+  "vasL": 54,
+  "sdCm2": 452.4,
+  "xmaxMm": 6.8,
+  "reOhm": 2.97,
+  "bl": 15.2,
+  "mmsG": 116.3,
+  "peW": 400,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

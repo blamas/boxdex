@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "1550/2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46.2,
+  "qts": 0.294,
+  "qes": 0.3,
+  "qms": 13.87,
+  "vasL": 126,
+  "sdCm2": 908,
+  "xmaxMm": 5.3,
+  "reOhm": 6.6,
+  "bl": 26.4,
+  "mmsG": 108.9,
+  "peW": 600,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

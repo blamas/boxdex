@@ -1,0 +1,146 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../components/Layout.astro";
+import SpecTable from "../../../components/SpecTable.astro";
+import { LOCALES, useLocale } from "../../../i18n";
+import { withUnit } from "../../../lib/format";
+
+export async function getStaticPaths() {
+  const horns = await getCollection("horns");
+  const drivers = await getCollection("drivers");
+  return LOCALES.flatMap((locale) =>
+    horns.map((entry) => ({
+      params: { locale, id: entry.id },
+      props: {
+        entry,
+        compatible: drivers
+          .filter((d) => d.data.type === "compression" && d.data.exitInch === entry.data.exitInch)
+          .sort((a, b) =>
+            `${a.data.brand} ${a.data.model}`.localeCompare(`${b.data.brand} ${b.data.model}`)
+          ),
+      },
+    }))
+  );
+}
+
+const { entry, compatible } = Astro.props;
+const h = entry.data;
+
+const { t, localeBase } = useLocale(Astro.params);
+
+const mouthAreaCm2 = Math.round((h.mouthWmm * h.mouthHmm) / 100);
+
+const specRows: { label: string; value: string | undefined }[] = [
+  { label: "Throat exit", value: `${h.exitInch}"` },
+  { label: "Coverage (H×V)", value: `${h.coverageHorizontalDeg}° × ${h.coverageVerticalDeg}°` },
+  { label: "Directivity", value: h.constantDirectivity ? "constant (CD)" : undefined },
+  { label: "Flare cutoff", value: withUnit(h.cutoffHz, "Hz") },
+  { label: "Mouth", value: `${h.mouthWmm} × ${h.mouthHmm} mm (≈ ${mouthAreaCm2} cm²)` },
+  { label: "Depth", value: withUnit(h.depthMm, "mm") },
+  { label: "Profile", value: h.profile },
+  { label: "Material", value: h.material },
+  { label: "Weight", value: withUnit(h.weightKg, "kg") },
+];
+
+const headline = `${h.exitInch}" exit · ${h.coverageHorizontalDeg}°×${h.coverageVerticalDeg}° · ${h.cutoffHz} Hz`;
+const description = `Horn/waveguide specs for ${h.brand} ${h.model}`;
+---
+
+<Layout title={`${h.brand} ${h.model}`} description={description}>
+  <div class="detail">
+    <header class="detail-header">
+      <p class="crumb"><a href={`${localeBase}/drivers?tab=horn`}>← all horns</a></p>
+      <h1>{h.brand} {h.model}</h1>
+      <p class="meta">
+        {headline}
+        {h.datasheetUrl && (
+          <> · <a href={h.datasheetUrl} target="_blank" rel="noopener">datasheet ↗</a></>
+        )}
+      </p>
+    </header>
+
+    <div class="detail-body">
+      <section>
+        <h2>{t.hornDetail.specifications}</h2>
+        <SpecTable rows={specRows} />
+      </section>
+
+      <section>
+        <h2>{t.hornDetail.compatibleCDs}</h2>
+        {compatible.length > 0 ? (
+          <ul class="driver-links">
+            {compatible.map((d) => (
+              <li>
+                <a href={`${localeBase}/drivers/${d.id}`}>{d.data.brand} {d.data.model}</a>
+                <span class="muted"> · {h.exitInch}" exit</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="muted">{t.hornDetail.noCompatibleCDs}</p>
+        )}
+        <p class="provenance-note">
+          Matched on throat exit ({h.exitInch}") only. Verify mounting (bolt pattern / thread)
+          and crossover against both datasheets before building.
+        </p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .detail {
+    max-width: 720px;
+  }
+
+  .detail-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .crumb {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .detail-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  .driver-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+</style>

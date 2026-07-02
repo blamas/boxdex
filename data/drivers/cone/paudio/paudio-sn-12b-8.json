@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "SN-12B",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48.4,
+  "qts": 0.16,
+  "qes": 0.164,
+  "qms": 6.5,
+  "vasL": 68,
+  "sdCm2": 526,
+  "xmaxMm": 3.5,
+  "reOhm": 5.2,
+  "bl": 24.5,
+  "mmsG": 62.5,
+  "peW": 300,
+  "sensitivityDb": 98.6
+}

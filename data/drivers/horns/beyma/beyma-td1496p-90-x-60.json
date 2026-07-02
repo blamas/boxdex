@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Beyma",
+  "model": "TD1496P 90 x 60",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 800,
+  "mouthWmm": 235,
+  "mouthHmm": 235,
+  "depthMm": 171,
+  "profile": "conical",
+  "material": "reinforced polycarbonate",
+  "weightKg": 1.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/horns/1TD1496P/bocina-pc-td1496p-90-x-60/"
+}

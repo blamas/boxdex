@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BL10-200X",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 73,
+  "qts": 0.48,
+  "qes": 0.56,
+  "qms": 3.6,
+  "vasL": 22.74,
+  "sdCm2": 351,
+  "xmaxMm": 4,
+  "reOhm": 5.8,
+  "bl": 13,
+  "mmsG": 36.6,
+  "peW": 200,
+  "sensitivityDb": 93.8,
+  "datasheetUrl": "https://celestion.com/product/bl10-200x/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JB Systems",
+  "model": "PWX18-600",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.246,
+  "qes": 0.26,
+  "qms": 4.64,
+  "vasL": 225,
+  "sdCm2": 1320,
+  "xmaxMm": 4.6,
+  "reOhm": 6,
+  "bl": 31.6,
+  "mmsG": 171.9,
+  "peW": 600,
+  "sensitivityDb": 100.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JB%20SYSTEMS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Carpower",
+  "model": "SP-382C",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 1.279,
+  "qes": 1.78,
+  "qms": 4.55,
+  "vasL": 320,
+  "sdCm2": 855,
+  "xmaxMm": 3.5,
+  "reOhm": 3.8,
+  "bl": 6,
+  "mmsG": 90.1,
+  "peW": 150,
+  "sensitivityDb": 92.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CARPOWER"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE780TN",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 108,
+  "peW": 110,
+  "weightKg": 1.6,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1.4/8/DE780TN"
+}

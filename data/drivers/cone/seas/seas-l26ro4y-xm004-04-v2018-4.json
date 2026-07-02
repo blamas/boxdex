@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "L26RO4Y-XM004-04 v2018",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 26,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 3.94,
+  "vasL": 40,
+  "sdCm2": 342,
+  "xmaxMm": 6.3,
+  "reOhm": 3.5,
+  "bl": 17.4,
+  "mmsG": 153.6,
+  "peW": 250,
+  "sensitivityDb": 89.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

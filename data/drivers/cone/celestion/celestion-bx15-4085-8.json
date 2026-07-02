@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BX15-4085",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.24,
+  "qes": 0.247,
+  "qms": 8.055,
+  "vasL": 154.1,
+  "sdCm2": 850,
+  "xmaxMm": 3.3,
+  "reOhm": 5.84,
+  "bl": 25.5,
+  "mmsG": 115.3,
+  "peW": 600,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

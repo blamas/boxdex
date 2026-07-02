@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Faital PRO",
+  "model": "HF1460",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 86,
+  "fLowHz": 600,
+  "fHighHz": 18000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 109,
+  "peW": 120,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 2,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Drivers/product_details/index.php?id=502020190"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Phase Linear",
+  "model": "ALIANTE 10 SI",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.504,
+  "qes": 0.62,
+  "qms": 2.68,
+  "vasL": 50.3,
+  "sdCm2": 364,
+  "xmaxMm": 5.8,
+  "reOhm": 4,
+  "bl": 13.1,
+  "mmsG": 193.2,
+  "peW": 100,
+  "sensitivityDb": 84.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHASE%20LINEAR"
+}

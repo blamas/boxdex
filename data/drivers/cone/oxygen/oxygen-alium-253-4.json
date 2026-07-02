@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oxygen",
+  "model": "ALIUM 253",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.64,
+  "qes": 0.7,
+  "qms": 7.44,
+  "vasL": 73.4,
+  "sdCm2": 380,
+  "xmaxMm": 5.7,
+  "reOhm": 3.6,
+  "bl": 8.1,
+  "mmsG": 60.5,
+  "peW": 85,
+  "sensitivityDb": 91.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=OXYGEN"
+}

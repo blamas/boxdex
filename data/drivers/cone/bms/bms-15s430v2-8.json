@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "15S430V2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.8,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 6.6,
+  "vasL": 135,
+  "sdCm2": 897,
+  "xmaxMm": 7.5,
+  "reOhm": 5.1,
+  "bl": 24.96,
+  "mmsG": 132,
+  "peW": 600,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/bms-15s430v2/specifications"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-300PA",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.435,
+  "qes": 0.52,
+  "qms": 2.65,
+  "vasL": 150,
+  "sdCm2": 514,
+  "xmaxMm": 3.3,
+  "reOhm": 6.9,
+  "bl": 11.4,
+  "mmsG": 39.1,
+  "peW": 175,
+  "sensitivityDb": 95.3
+}

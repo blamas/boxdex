@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "TIW300 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 28.9,
+  "qts": 0.32,
+  "qes": 0.358,
+  "qms": 2.971,
+  "vasL": 125,
+  "sdCm2": 510,
+  "xmaxMm": 8.3,
+  "reOhm": 6.05,
+  "bl": 16.5,
+  "mmsG": 88.2,
+  "peW": 300,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

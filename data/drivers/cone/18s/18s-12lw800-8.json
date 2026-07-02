@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12LW800",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 7.6,
+  "vasL": 48,
+  "sdCm2": 531,
+  "xmaxMm": 6.5,
+  "reOhm": 5.6,
+  "bl": 21.3,
+  "mmsG": 76.5,
+  "peW": 500,
+  "sensitivityDb": 96,
+  "magnetMaterial": "ferrite",
+  "weightKg": 8.1,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/8/12LW800"
+}

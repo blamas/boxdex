@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "G45",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.347,
+  "qes": 0.42,
+  "qms": 2,
+  "vasL": 385,
+  "sdCm2": 1164,
+  "xmaxMm": 4.5,
+  "reOhm": 7,
+  "bl": 20.5,
+  "mmsG": 130,
+  "peW": 600,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

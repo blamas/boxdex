@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fusion",
+  "model": "PF-SW100D4",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 45.3,
+  "qts": 0.642,
+  "qes": 0.84,
+  "qms": 2.72,
+  "vasL": 19.3,
+  "sdCm2": 356.3,
+  "xmaxMm": 5.8,
+  "reOhm": 4.18,
+  "bl": 12.7,
+  "mmsG": 113.8,
+  "peW": 500,
+  "sensitivityDb": 88.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FUSION"
+}

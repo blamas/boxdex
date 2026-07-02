@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JB Systems",
+  "model": "PWX12-200",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 59.4,
+  "qts": 0.474,
+  "qes": 0.55,
+  "qms": 3.41,
+  "vasL": 55.5,
+  "sdCm2": 530.9,
+  "xmaxMm": 3.6,
+  "reOhm": 6,
+  "bl": 14.4,
+  "mmsG": 51.2,
+  "peW": 200,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JB%20SYSTEMS"
+}

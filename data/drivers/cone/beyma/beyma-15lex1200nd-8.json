@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15LEX1200Nd",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.3,
+  "qes": 0.32,
+  "qms": 6.2,
+  "vasL": 127,
+  "sdCm2": 880,
+  "xmaxMm": 11,
+  "reOhm": 5.1,
+  "bl": 26.4,
+  "mmsG": 164,
+  "peW": 1200,
+  "sensitivityDb": 97,
+  "weightKg": 8.4,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/115LEX12ND8/altavoz-15lex1200nd-8-oh/"
+}

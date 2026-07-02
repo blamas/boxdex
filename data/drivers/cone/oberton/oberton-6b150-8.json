@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "6B150",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 55.04,
+  "qts": 0.292,
+  "qes": 0.311,
+  "qms": 4.72,
+  "vasL": 14.61,
+  "sdCm2": 127,
+  "xmaxMm": 5.5,
+  "reOhm": 5.6,
+  "bl": 10.11,
+  "mmsG": 16.38,
+  "peW": 150,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/354-6b150.html"
+}

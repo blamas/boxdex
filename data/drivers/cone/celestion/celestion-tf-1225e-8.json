@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TF 1225E",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 60.7,
+  "qts": 0.414,
+  "qes": 0.45,
+  "qms": 5.19,
+  "vasL": 50.8,
+  "sdCm2": 530,
+  "xmaxMm": 3.5,
+  "reOhm": 6.64,
+  "bl": 17.3,
+  "mmsG": 53.3,
+  "peW": 300,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

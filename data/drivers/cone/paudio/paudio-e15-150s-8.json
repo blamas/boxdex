@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "E15-150S",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42.9,
+  "qts": 0.528,
+  "qes": 0.55,
+  "qms": 12.98,
+  "vasL": 245.7,
+  "sdCm2": 830,
+  "xmaxMm": 2.5,
+  "reOhm": 5.2,
+  "bl": 11.7,
+  "mmsG": 54.1,
+  "peW": 150,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

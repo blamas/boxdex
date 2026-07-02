@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Lavoce",
+  "model": "SAN215.30",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 6.2,
+  "vasL": 200,
+  "sdCm2": 1661,
+  "xmaxMm": 14.9,
+  "reOhm": 8,
+  "bl": 46.8,
+  "mmsG": 435,
+  "peW": 2000,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://lavocespeakers.com/product/san215-30/"
+}

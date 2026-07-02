@@ -1,0 +1,41 @@
+---
+name: FK Sub W-Bin
+category: sub
+topology: folded_horn
+topologyVariant: W-bin
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 450
+dims:
+  wMm: 760
+  hMm: 1200
+  dMm: 700
+weightKg: 62
+specs:
+  f3Hz: 40
+  sensitivityDb: 103
+  maxSplDb: 134
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - hardtek
+  - tribe
+connectors:
+  - speakON NL4
+---
+
+FK Sub W-Bin: 18" W-bin folded horn, classic free-party topology.

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Faital PRO",
+  "model": "STH100",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 80,
+  "coverageVerticalDeg": 80,
+  "cutoffHz": 1400,
+  "mouthWmm": 180,
+  "mouthHmm": 120,
+  "depthMm": 85.9,
+  "profile": "tractrix",
+  "material": "al",
+  "weightKg": 0.46,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Horns/product_details/index.php?id=903010100"
+}

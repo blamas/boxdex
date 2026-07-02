@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15TBW100",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.31,
+  "qes": 0.33,
+  "qms": 4.4,
+  "vasL": 96,
+  "sdCm2": 855,
+  "xmaxMm": 12,
+  "reOhm": 5.3,
+  "bl": 26.4,
+  "mmsG": 181,
+  "peW": 1500,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/8/15TBW100"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "TD12X",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 33.9,
+  "qts": 0.284,
+  "qes": 0.314,
+  "qms": 2.93,
+  "vasL": 159.4,
+  "sdCm2": 530,
+  "xmaxMm": 7,
+  "reOhm": 7.2,
+  "bl": 16.3,
+  "mmsG": 54.4,
+  "peW": 500,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

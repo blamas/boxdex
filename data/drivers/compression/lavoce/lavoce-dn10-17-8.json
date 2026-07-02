@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "LaVoce",
+  "model": "DN10.17",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44.4,
+  "fLowHz": 1200,
+  "fHighHz": 18000,
+  "minCrossoverHz": 1600,
+  "sensitivityHornDb": 110,
+  "peW": 55,
+  "datasheetUrl": "https://lavocespeakers.com/product/dn10-17/"
+}

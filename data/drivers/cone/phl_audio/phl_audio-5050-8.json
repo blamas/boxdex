@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "5050",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.254,
+  "qes": 0.27,
+  "qms": 4.3,
+  "vasL": 180,
+  "sdCm2": 882.7,
+  "xmaxMm": 5.9,
+  "reOhm": 5.6,
+  "bl": 23,
+  "mmsG": 106.4,
+  "peW": 500,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

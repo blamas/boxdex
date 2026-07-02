@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "615H",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.603,
+  "qes": 0.65,
+  "qms": 8.3,
+  "vasL": 112,
+  "sdCm2": 818.5,
+  "xmaxMm": 3.7,
+  "reOhm": 5.56,
+  "bl": 14.4,
+  "mmsG": 70.2,
+  "peW": 175,
+  "sensitivityDb": 98.1
+}

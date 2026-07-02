@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "FW 305",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.254,
+  "qes": 0.28,
+  "qms": 2.73,
+  "vasL": 254,
+  "sdCm2": 530.9,
+  "xmaxMm": 4.8,
+  "reOhm": 6.6,
+  "bl": 15.3,
+  "mmsG": 63,
+  "peW": 60,
+  "sensitivityDb": 94.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

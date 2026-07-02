@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "MB 10G251",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 76,
+  "qts": 0.335,
+  "qes": 0.35,
+  "qms": 8,
+  "vasL": 24,
+  "sdCm2": 350,
+  "xmaxMm": 3.5,
+  "reOhm": 5.2,
+  "bl": 14.9,
+  "mmsG": 31.4,
+  "peW": 300,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

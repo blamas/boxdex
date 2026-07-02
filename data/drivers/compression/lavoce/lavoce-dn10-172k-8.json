@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "LaVoce",
+  "model": "DN10.172K",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44.4,
+  "fLowHz": 1200,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1500,
+  "sensitivityHornDb": 110,
+  "peW": 55,
+  "datasheetUrl": "https://lavocespeakers.com/product/dn10-172k/"
+}

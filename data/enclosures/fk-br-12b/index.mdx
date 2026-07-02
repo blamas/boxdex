@@ -1,0 +1,45 @@
+---
+name: FK BR 12B
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+netVolumeL: 95
+dims:
+  wMm: 560
+  hMm: 560
+  dMm: 510
+weightKg: 24
+specs:
+  f3Hz: 46
+  fbHz: 52
+  sensitivityDb: 99
+  recommendedCrossoverHz: 120
+  maxSplDb: 126
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+  - driver:
+      - faital-12pr310-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-4u.csv
+    count: 4
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+connectors:
+  - speakON NL4
+---
+
+12" bass reflex sub variant with 4U stacking simulation.

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12RS550",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 6.9,
+  "vasL": 45.4,
+  "sdCm2": 528,
+  "xmaxMm": 9.25,
+  "reOhm": 5.1,
+  "mmsG": 123,
+  "peW": 500,
+  "sensitivityDb": 93,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 8.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151050120"
+}

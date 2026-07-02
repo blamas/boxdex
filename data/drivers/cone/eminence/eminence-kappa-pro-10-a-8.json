@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPA PRO 10 A",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.196,
+  "qes": 0.2,
+  "qms": 10.1,
+  "vasL": 52.2,
+  "sdCm2": 344.9,
+  "xmaxMm": 3.2,
+  "reOhm": 6.5,
+  "bl": 19,
+  "mmsG": 38.2,
+  "peW": 500,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "400 EXC Ag 14V",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25.4,
+  "qts": 0.23,
+  "qes": 0.236,
+  "qms": 8.36,
+  "vasL": 554.5,
+  "sdCm2": 855.1,
+  "xmaxMm": 5,
+  "reOhm": 5.95,
+  "bl": 17.1,
+  "mmsG": 72.6,
+  "peW": 120,
+  "sensitivityDb": 99.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

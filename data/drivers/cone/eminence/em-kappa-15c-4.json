@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPA 15C",
+  "impedanceOhm": 4,
+  "sizeInch": 15,
+  "fsHz": 31,
+  "qts": 0.25,
+  "qes": 0.25,
+  "qms": 10.14,
+  "vasL": 329.9,
+  "sdCm2": 856.3,
+  "xmaxMm": 2.4,
+  "peW": 450,
+  "sensitivityDb": 98.1,
+  "reOhm": 3.68,
+  "bl": 14.7,
+  "mmsG": 77,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappa_15C.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15BG76",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44,
+  "qts": 0.56,
+  "qes": 0.61,
+  "qms": 6.2,
+  "vasL": 68.4,
+  "sdCm2": 855,
+  "xmaxMm": 9.6,
+  "reOhm": 5.4,
+  "bl": 21.7,
+  "mmsG": 194,
+  "peW": 500,
+  "sensitivityDb": 93.4,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/8/15BG76"
+}

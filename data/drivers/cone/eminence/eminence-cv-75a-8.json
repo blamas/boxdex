@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "CV 75A",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 79,
+  "qts": 0.418,
+  "qes": 0.43,
+  "qms": 15.07,
+  "vasL": 52.5,
+  "sdCm2": 519.5,
+  "xmaxMm": 1.2,
+  "reOhm": 6.89,
+  "bl": 15.3,
+  "mmsG": 29.3,
+  "peW": 75,
+  "sensitivityDb": 100.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

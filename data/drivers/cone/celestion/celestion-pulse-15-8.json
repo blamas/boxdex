@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "PULSE 15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35.7,
+  "qts": 0.431,
+  "qes": 0.474,
+  "qms": 4.75,
+  "vasL": 246.7,
+  "sdCm2": 855,
+  "xmaxMm": 4.8,
+  "reOhm": 5.76,
+  "bl": 15,
+  "mmsG": 82.6,
+  "peW": 400,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

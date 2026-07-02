@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "TVM",
+  "model": "ARA 390-00/8 v1",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.275,
+  "qes": 0.3,
+  "qms": 3.3,
+  "vasL": 313,
+  "sdCm2": 830,
+  "xmaxMm": 5.5,
+  "reOhm": 7.15,
+  "bl": 21.6,
+  "mmsG": 125,
+  "peW": 150,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TVM"
+}

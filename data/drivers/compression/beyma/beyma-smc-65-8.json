@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "SMC/65",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 72.4,
+  "fLowHz": 700,
+  "fHighHz": 18000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 107,
+  "peW": 50,
+  "magnetMaterial": "ferrite",
+  "weightKg": 4.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1SMC658/motor-smc-65-8-oh/"
+}

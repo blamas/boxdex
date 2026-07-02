@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18DS100",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 9.5,
+  "vasL": 155,
+  "sdCm2": 1210,
+  "xmaxMm": 14.5,
+  "reOhm": 4.5,
+  "bl": 30,
+  "mmsG": 278,
+  "peW": 1500,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/18/8/18DS100"
+}

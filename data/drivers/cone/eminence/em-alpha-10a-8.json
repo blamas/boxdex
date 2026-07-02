@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "ALPHA-10A",
+  "impedanceOhm": 8,
+  "sizeInch": 10,
+  "fsHz": 50,
+  "qts": 0.59,
+  "qes": 0.66,
+  "qms": 5.21,
+  "vasL": 82.2,
+  "sdCm2": 355.4,
+  "xmaxMm": 3.2,
+  "peW": 150,
+  "sensitivityDb": 95.6,
+  "reOhm": 5.31,
+  "bl": 7.5,
+  "mmsG": 22,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Alpha_10A.pdf"
+}

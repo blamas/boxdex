@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "6PR110",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 100,
+  "qts": 0.53,
+  "qes": 0.6,
+  "qms": 4.2,
+  "vasL": 5.6,
+  "sdCm2": 137,
+  "xmaxMm": 2.75,
+  "reOhm": 6,
+  "mmsG": 12,
+  "peW": 150,
+  "sensitivityDb": 96,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 2.2,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101020130"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "ECX 690.5",
+  "sizeInch": 69,
+  "impedanceOhm": 4,
+  "fsHz": 59,
+  "qts": 0.73,
+  "qes": 0.91,
+  "qms": 3.7,
+  "vasL": 29,
+  "sdCm2": 232,
+  "xmaxMm": 3.5,
+  "reOhm": 3.3,
+  "bl": 5,
+  "mmsG": 18.8,
+  "peW": 100,
+  "sensitivityDb": 90,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-ecx-690-5/specifications"
+}

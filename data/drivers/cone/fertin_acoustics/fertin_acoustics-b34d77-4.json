@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fertin Acoustics",
+  "model": "B34D77",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 66.6,
+  "qts": 0.324,
+  "qes": 0.36,
+  "qms": 3.22,
+  "vasL": 52.5,
+  "sdCm2": 595,
+  "xmaxMm": 2.5,
+  "reOhm": 3.45,
+  "bl": 14.7,
+  "mmsG": 54,
+  "peW": 200,
+  "sensitivityDb": 102,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FERTIN%20ACOUSTICS"
+}

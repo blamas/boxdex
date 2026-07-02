@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "M115-8A",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.388,
+  "qes": 0.42,
+  "qms": 5.1,
+  "vasL": 225,
+  "sdCm2": 845,
+  "xmaxMm": 5.1,
+  "reOhm": 5.5,
+  "bl": 14.2,
+  "mmsG": 53.3,
+  "peW": 225,
+  "sensitivityDb": 100.8
+}

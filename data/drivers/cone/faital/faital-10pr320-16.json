@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "10PR320",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 50,
+  "qts": 0.38,
+  "qes": 0.43,
+  "qms": 3.3,
+  "vasL": 50.6,
+  "sdCm2": 347,
+  "xmaxMm": 7.27,
+  "reOhm": 11.3,
+  "mmsG": 33.6,
+  "peW": 300,
+  "sensitivityDb": 95,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 2.55,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101040142"
+}

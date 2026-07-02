@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sonido",
+  "model": "SWR-250A",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.419,
+  "qes": 0.49,
+  "qms": 2.9,
+  "vasL": 160,
+  "sdCm2": 325,
+  "xmaxMm": 1.8,
+  "reOhm": 7.4,
+  "bl": 8,
+  "mmsG": 19.1,
+  "peW": 15,
+  "sensitivityDb": 93.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SONIDO"
+}

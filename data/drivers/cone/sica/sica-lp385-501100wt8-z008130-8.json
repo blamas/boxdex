@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "LP385.50/1100WT8(Z008130)",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.65,
+  "qes": 0.74,
+  "qms": 5.5,
+  "vasL": 176.3,
+  "sdCm2": 759,
+  "xmaxMm": 3,
+  "reOhm": 6,
+  "bl": 11.2,
+  "mmsG": 50.9,
+  "peW": 150,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/sica-lp385-50-1100wt8-z008130-/specifications"
+}

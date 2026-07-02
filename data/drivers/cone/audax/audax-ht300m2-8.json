@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HT300M2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 17,
+  "qts": 0.236,
+  "qes": 0.27,
+  "qms": 1.88,
+  "vasL": 927,
+  "sdCm2": 539.5,
+  "xmaxMm": 5,
+  "reOhm": 5.4,
+  "bl": 9.1,
+  "mmsG": 38.6,
+  "peW": 120,
+  "sensitivityDb": 96
+}

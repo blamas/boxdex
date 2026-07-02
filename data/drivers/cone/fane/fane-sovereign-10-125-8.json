@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "SOVEREIGN 10-125",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.488,
+  "qes": 0.56,
+  "qms": 3.8,
+  "vasL": 80.2,
+  "sdCm2": 355.4,
+  "xmaxMm": 5,
+  "reOhm": 6.6,
+  "bl": 9.1,
+  "mmsG": 22.4,
+  "peW": 125,
+  "sensitivityDb": 95.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

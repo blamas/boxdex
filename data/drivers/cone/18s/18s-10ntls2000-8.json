@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10NTLS2000",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 4.9,
+  "vasL": 38,
+  "sdCm2": 346,
+  "xmaxMm": 7.4,
+  "reOhm": 5.2,
+  "bl": 16.7,
+  "mmsG": 47,
+  "peW": 350,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neo",
+  "weightKg": 1.9,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/10-0/8/10NTLW2000"
+}

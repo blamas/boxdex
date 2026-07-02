@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "ATC",
+  "model": "PA75-234 STD LS",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 59,
+  "qts": 0.265,
+  "qes": 0.3,
+  "qms": 2.3,
+  "vasL": 22,
+  "sdCm2": 300,
+  "xmaxMm": 1.9,
+  "reOhm": 5.4,
+  "bl": 16.7,
+  "mmsG": 41.7,
+  "peW": 75,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ATC"
+}

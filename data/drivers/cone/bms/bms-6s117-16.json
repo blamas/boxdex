@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "6S117",
+  "impedanceOhm": 16,
+  "sizeInch": 6,
+  "fsHz": 80,
+  "qts": 0.43,
+  "qes": 0.49,
+  "qms": 3.3,
+  "vasL": 10.4,
+  "sdCm2": 143,
+  "xmaxMm": 5,
+  "peW": 130,
+  "sensitivityDb": 93,
+  "reOhm": 11.4,
+  "bl": 11.3,
+  "mmsG": 11
+}

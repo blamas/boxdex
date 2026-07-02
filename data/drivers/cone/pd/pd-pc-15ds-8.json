@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PD",
+  "model": "PC.15DS",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.401,
+  "qes": 0.424,
+  "qms": 7.247,
+  "vasL": 61.8,
+  "sdCm2": 790,
+  "xmaxMm": 6.9,
+  "reOhm": 7.2,
+  "bl": 28.2,
+  "mmsG": 155.4,
+  "peW": 1200,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

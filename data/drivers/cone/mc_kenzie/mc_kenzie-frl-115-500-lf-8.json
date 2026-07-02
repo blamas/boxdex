@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MC Kenzie",
+  "model": "FRL-115/500-LF",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.227,
+  "qes": 0.256,
+  "qms": 1.99,
+  "vasL": 175,
+  "sdCm2": 907.9,
+  "xmaxMm": 5.4,
+  "reOhm": 5.8,
+  "bl": 26.5,
+  "mmsG": 144.7,
+  "peW": 500,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MC%20KENZIE"
+}

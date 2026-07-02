@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "GT 122",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.35,
+  "qes": 0.364,
+  "qms": 9.3,
+  "vasL": 101,
+  "sdCm2": 532,
+  "xmaxMm": 5.1,
+  "reOhm": 2.95,
+  "bl": 12.4,
+  "mmsG": 91.4,
+  "peW": 140,
+  "sensitivityDb": 96.3
+}

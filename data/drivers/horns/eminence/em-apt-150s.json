@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Eminence",
+  "model": "APT 150S 7.5\" X 4.5\" Horn Flare",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 100,
+  "coverageVerticalDeg": 50,
+  "cutoffHz": 1500,
+  "mouthWmm": 114,
+  "mouthHmm": 191.8,
+  "depthMm": 80.8,
+  "profile": "oblate_spheroid",
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/APT150S.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "C15K",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 73,
+  "qts": 0.856,
+  "qes": 0.91,
+  "qms": 14.39,
+  "vasL": 87.6,
+  "sdCm2": 754.7,
+  "xmaxMm": 1,
+  "reOhm": 6.7,
+  "bl": 12.1,
+  "mmsG": 43.3,
+  "peW": 100,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

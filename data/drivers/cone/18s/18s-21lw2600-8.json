@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21LW2600",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 23.1,
+  "vasL": 333,
+  "sdCm2": 1660,
+  "xmaxMm": 14.6,
+  "reOhm": 5.2,
+  "bl": 32.5,
+  "mmsG": 398,
+  "peW": 1600,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ferrite",
+  "weightKg": 17.1,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/21-0/8/21lw2600"
+}

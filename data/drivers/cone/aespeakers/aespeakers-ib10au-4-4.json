@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "IB10AU-4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 25,
+  "qts": 0.485,
+  "qes": 0.56,
+  "qms": 3.6,
+  "vasL": 68,
+  "sdCm2": 345,
+  "xmaxMm": 15.3,
+  "reOhm": 2.7,
+  "bl": 8.7,
+  "mmsG": 99.4,
+  "peW": 500,
+  "sensitivityDb": 89.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

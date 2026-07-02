@@ -1,0 +1,54 @@
+---
+name: FK Sub HighSPL
+category: sub
+topology: tapped_horn
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 380
+dims:
+  wMm: 620
+  hMm: 980
+  dMm: 900
+weightKg: 58
+specs:
+  f3Hz: 34
+  sensitivityDb: 107
+  maxSplDb: 142
+  maxSplExcursionDb: 138
+  maxSplThermalDb: 142
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-4u.csv
+    count: 4
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-8u.csv
+    count: 8
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - tribe
+connectors:
+  - speakON NL4
+---
+
+FK Sub HighSPL: extreme SPL 18" tapped horn, 107 dB sensitivity, 142 dB peak in 8-cab array.

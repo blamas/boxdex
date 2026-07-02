@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "128-H vp ca2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 21.6,
+  "qts": 0.24,
+  "qes": 0.251,
+  "qms": 5.377,
+  "vasL": 214.6,
+  "sdCm2": 522,
+  "xmaxMm": 7.7,
+  "reOhm": 5.31,
+  "bl": 16.7,
+  "mmsG": 96.8,
+  "peW": 150,
+  "sensitivityDb": 93.1
+}

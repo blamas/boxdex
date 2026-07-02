@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "RCF",
+  "model": "HF950",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 50,
+  "cutoffHz": 400,
+  "mouthWmm": 260,
+  "mouthHmm": 260,
+  "depthMm": 208,
+  "profile": "oblate_spheroid",
+  "material": "structural polyurethane",
+  "weightKg": 1.17,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/hf950"
+}

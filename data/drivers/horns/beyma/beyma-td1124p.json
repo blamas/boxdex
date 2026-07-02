@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Beyma",
+  "model": "TD1124P",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 120,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 1500,
+  "mouthWmm": 139,
+  "mouthHmm": 139,
+  "depthMm": 100,
+  "profile": "conical",
+  "material": "reinforced polycarbonate",
+  "weightKg": 0.3,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/horns/1TD1124P/bocina-pc-td1124p-160-x-160-x-100/"
+}

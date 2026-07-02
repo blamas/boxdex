@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "MB10N305",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.226,
+  "qes": 0.24,
+  "qms": 4,
+  "vasL": 31,
+  "sdCm2": 350,
+  "xmaxMm": 4.6,
+  "reOhm": 5.6,
+  "bl": 18.5,
+  "mmsG": 39,
+  "peW": 500,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

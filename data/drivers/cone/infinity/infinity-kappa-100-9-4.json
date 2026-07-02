@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "KAPPA 100.9",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 33.8,
+  "qts": 0.44,
+  "qes": 0.537,
+  "qms": 2.43,
+  "vasL": 18.05,
+  "sdCm2": 345,
+  "xmaxMm": 17.5,
+  "reOhm": 3.68,
+  "bl": 16.54,
+  "mmsG": 188,
+  "peW": 350,
+  "sensitivityDb": 83,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/infinity-kappa-100-9/specifications"
+}

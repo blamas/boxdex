@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSN102.50",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 76,
+  "qts": 0.39,
+  "qes": 0.43,
+  "qms": 4.85,
+  "vasL": 20.71,
+  "sdCm2": 350,
+  "xmaxMm": 2.9,
+  "reOhm": 4.9,
+  "bl": 14.05,
+  "mmsG": 36.05,
+  "peW": 300,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsn102-50-8/"
+}

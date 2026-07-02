@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "BLACKBASS 10",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 32,
+  "qts": 0.432,
+  "qes": 0.46,
+  "qms": 7.2,
+  "vasL": 30,
+  "sdCm2": 325,
+  "xmaxMm": 6.8,
+  "reOhm": 8,
+  "bl": 20.7,
+  "mmsG": 122.1,
+  "peW": 250,
+  "sensitivityDb": 85.3
+}

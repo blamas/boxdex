@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TF 1018",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 79.8,
+  "qts": 0.527,
+  "qes": 0.624,
+  "qms": 3.381,
+  "vasL": 23.8,
+  "sdCm2": 346.4,
+  "xmaxMm": 2,
+  "reOhm": 5.73,
+  "bl": 11.4,
+  "mmsG": 28.1,
+  "peW": 150,
+  "sensitivityDb": 96.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

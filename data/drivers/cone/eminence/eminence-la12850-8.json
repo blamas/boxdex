@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LA12850",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.312,
+  "qes": 0.32,
+  "qms": 12.73,
+  "vasL": 66.1,
+  "sdCm2": 545.4,
+  "xmaxMm": 5,
+  "reOhm": 5.87,
+  "bl": 20,
+  "mmsG": 75.6,
+  "peW": 800,
+  "sensitivityDb": 96.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

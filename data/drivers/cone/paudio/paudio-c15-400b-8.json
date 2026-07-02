@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "C15-400B",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42.9,
+  "qts": 0.329,
+  "qes": 0.35,
+  "qms": 5.46,
+  "vasL": 177.3,
+  "sdCm2": 829,
+  "xmaxMm": 3.3,
+  "reOhm": 5.3,
+  "bl": 17.5,
+  "mmsG": 74.8,
+  "peW": 400,
+  "sensitivityDb": 99.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

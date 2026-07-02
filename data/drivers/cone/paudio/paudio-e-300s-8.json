@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "E 300S",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.287,
+  "qes": 0.3,
+  "qms": 6.66,
+  "vasL": 228,
+  "sdCm2": 855,
+  "xmaxMm": 4.3,
+  "reOhm": 6.4,
+  "bl": 19.8,
+  "mmsG": 74.9,
+  "peW": 300,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

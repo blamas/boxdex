@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "PUNCH BP 15/250",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 47,
+  "qts": 0.503,
+  "qes": 0.57,
+  "qms": 4.26,
+  "vasL": 133.1,
+  "sdCm2": 754.8,
+  "xmaxMm": 3.4,
+  "reOhm": 6.6,
+  "bl": 15.3,
+  "mmsG": 68.8,
+  "peW": 250,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

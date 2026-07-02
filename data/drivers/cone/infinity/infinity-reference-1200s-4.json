@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "REFERENCE 1200S",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 22.8,
+  "qts": 0.54,
+  "qes": 0.64,
+  "qms": 3.6,
+  "vasL": 97.56,
+  "sdCm2": 503,
+  "xmaxMm": 7.6,
+  "reOhm": 4.2,
+  "bl": 12.9,
+  "mmsG": 177,
+  "peW": 250,
+  "sensitivityDb": 84.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/infinity-reference-1200s/specifications"
+}

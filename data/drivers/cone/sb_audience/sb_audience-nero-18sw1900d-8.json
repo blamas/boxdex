@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "NERO-18SW1900D",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.419,
+  "qes": 0.43,
+  "qms": 15.68,
+  "vasL": 158,
+  "sdCm2": 1256.6,
+  "xmaxMm": 10.8,
+  "reOhm": 5.3,
+  "bl": 28.4,
+  "mmsG": 307,
+  "peW": 1900,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

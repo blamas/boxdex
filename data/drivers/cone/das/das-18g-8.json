@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "18G",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.296,
+  "qes": 0.31,
+  "qms": 6.409,
+  "vasL": 343,
+  "sdCm2": 1164,
+  "xmaxMm": 6,
+  "reOhm": 6.2,
+  "bl": 23.5,
+  "mmsG": 137,
+  "peW": 700,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

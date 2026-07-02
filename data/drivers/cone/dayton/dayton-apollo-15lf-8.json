@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "APOLLO 15LF",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25.5,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 6.7,
+  "vasL": 331,
+  "sdCm2": 837,
+  "xmaxMm": 9.3,
+  "reOhm": 6.4,
+  "bl": 21,
+  "mmsG": 115.6,
+  "peW": 1000,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

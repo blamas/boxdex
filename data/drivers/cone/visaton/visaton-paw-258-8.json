@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "PAW 25/8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 9.59,
+  "vasL": 44,
+  "sdCm2": 353,
+  "xmaxMm": 3.5,
+  "reOhm": 6.74,
+  "bl": 15.6,
+  "mmsG": 37.6,
+  "peW": 300,
+  "sensitivityDb": 94.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/visaton-paw-25-8/specifications"
+}

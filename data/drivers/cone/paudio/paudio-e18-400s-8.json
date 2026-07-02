@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "E18-400S",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.498,
+  "qes": 0.53,
+  "qms": 8.25,
+  "vasL": 284.4,
+  "sdCm2": 1225,
+  "xmaxMm": 5,
+  "reOhm": 6,
+  "bl": 20.1,
+  "mmsG": 172.1,
+  "peW": 400,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

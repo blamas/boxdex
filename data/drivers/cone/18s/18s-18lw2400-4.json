@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18LW2400",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 6.4,
+  "vasL": 235,
+  "sdCm2": 1225,
+  "xmaxMm": 9.5,
+  "reOhm": 2.6,
+  "bl": 18,
+  "mmsG": 200,
+  "peW": 1200,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite",
+  "weightKg": 12.75,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/4/18lw2400"
+}

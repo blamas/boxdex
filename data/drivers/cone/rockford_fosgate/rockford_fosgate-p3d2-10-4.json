@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "P3D2-10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 26.6,
+  "qts": 0.495,
+  "qes": 0.54,
+  "qms": 6,
+  "vasL": 27,
+  "sdCm2": 360,
+  "xmaxMm": 9.4,
+  "reOhm": 3.2,
+  "bl": 15.4,
+  "mmsG": 240.9,
+  "peW": 500,
+  "sensitivityDb": 85.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ROCKFORD%20FOSGATE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LEGEND BP102 4 Ohms",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 34.5,
+  "qts": 0.385,
+  "qes": 0.4,
+  "qms": 10.61,
+  "vasL": 103.8,
+  "sdCm2": 344.9,
+  "xmaxMm": 6.2,
+  "reOhm": 2.7,
+  "bl": 7.1,
+  "mmsG": 34.1,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

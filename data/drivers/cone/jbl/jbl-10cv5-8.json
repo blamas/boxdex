@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "10CV5",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 78,
+  "qts": 1.81,
+  "qes": 2.42,
+  "qms": 7.71,
+  "vasL": 16,
+  "sdCm2": 350,
+  "xmaxMm": 2.5,
+  "reOhm": 6.6,
+  "bl": 7.7,
+  "mmsG": 43.8,
+  "peW": 100,
+  "sensitivityDb": 86.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-10cv5/specifications"
+}

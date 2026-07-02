@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "HX255 GR vp",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 55.3,
+  "qts": 0.569,
+  "qes": 0.671,
+  "qms": 3.752,
+  "vasL": 57.4,
+  "sdCm2": 352,
+  "xmaxMm": 4,
+  "reOhm": 5.27,
+  "bl": 8.3,
+  "mmsG": 25.1,
+  "peW": 100,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

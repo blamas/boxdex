@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "285 GMF vp3",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50.4,
+  "qts": 0.325,
+  "qes": 0.338,
+  "qms": 8.482,
+  "vasL": 154,
+  "sdCm2": 471,
+  "xmaxMm": 3.9,
+  "reOhm": 6.5,
+  "bl": 11.1,
+  "mmsG": 20.2,
+  "peW": 70,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

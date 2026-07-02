@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF 15G302 vp baptiste",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 56.8,
+  "qts": 0.561,
+  "qes": 0.611,
+  "qms": 6.873,
+  "vasL": 87,
+  "sdCm2": 908,
+  "xmaxMm": 6,
+  "reOhm": 6.48,
+  "bl": 19.9,
+  "mmsG": 104.4,
+  "peW": 800,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Philips",
+  "model": "AD5200 vp A",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 36.9,
+  "qts": 0.59,
+  "qes": 0.68,
+  "qms": 4.44,
+  "vasL": 244.9,
+  "sdCm2": 572.6,
+  "xmaxMm": 4.3,
+  "reOhm": 7.8,
+  "bl": 9.6,
+  "mmsG": 35,
+  "peW": 40,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHILIPS"
+}

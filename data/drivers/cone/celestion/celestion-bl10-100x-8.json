@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BL10-100X",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 74.4,
+  "qts": 0.532,
+  "qes": 0.653,
+  "qms": 2.88,
+  "vasL": 25.1,
+  "sdCm2": 346,
+  "xmaxMm": 3.5,
+  "reOhm": 6.67,
+  "bl": 11.98,
+  "mmsG": 28.7,
+  "peW": 100,
+  "sensitivityDb": 93.8,
+  "datasheetUrl": "https://celestion.com/product/bl10-100x/"
+}

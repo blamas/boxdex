@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "FC-185ND01",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.295,
+  "qes": 0.3,
+  "qms": 17.7,
+  "vasL": 203,
+  "sdCm2": 1164,
+  "xmaxMm": 8.9,
+  "reOhm": 5.6,
+  "bl": 29,
+  "mmsG": 217.6,
+  "peW": 1200,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

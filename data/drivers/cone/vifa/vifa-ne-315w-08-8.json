@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Vifa",
+  "model": "NE-315W-08",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.349,
+  "qes": 0.36,
+  "qms": 11.72,
+  "vasL": 161.5,
+  "sdCm2": 506.7,
+  "xmaxMm": 6.4,
+  "reOhm": 6.3,
+  "bl": 17.6,
+  "mmsG": 141.1,
+  "peW": 75,
+  "sensitivityDb": 88.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VIFA"
+}

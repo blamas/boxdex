@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PD",
+  "model": "PD 24603BR",
+  "sizeInch": 25,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 9.92,
+  "vasL": 355,
+  "sdCm2": 2239,
+  "xmaxMm": 7.1,
+  "reOhm": 5.3,
+  "bl": 39.2,
+  "mmsG": 433.8,
+  "peW": 1600,
+  "sensitivityDb": 100.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

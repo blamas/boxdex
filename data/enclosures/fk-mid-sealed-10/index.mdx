@@ -1,0 +1,41 @@
+---
+name: FK Mid Sealed 10
+category: mid
+topology: sealed
+drivers:
+  - eton-11-581-50-hex-8
+driverCount: 1
+netVolumeL: 15
+dims:
+  wMm: 310
+  hMm: 410
+  dMm: 280
+weightKg: 9
+specs:
+  f3Hz: 180
+  f3HzHigh: 5000
+  sensitivityDb: 96
+  maxSplDb: 120
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - eton-11-581-50-hex-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - eton-11-581-50-hex-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+connectors:
+  - speakON NL4
+---
+
+FK Mid Sealed 10: 10" sealed mid enclosure for mid-band coverage.

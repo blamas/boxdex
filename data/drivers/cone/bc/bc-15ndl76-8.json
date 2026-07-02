@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15NDL76",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.22,
+  "qes": 0.24,
+  "qms": 4.5,
+  "vasL": 195,
+  "sdCm2": 855,
+  "xmaxMm": 7,
+  "reOhm": 5.3,
+  "bl": 22.5,
+  "mmsG": 96,
+  "peW": 500,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/8/15NDL76"
+}

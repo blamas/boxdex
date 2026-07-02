@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "W 400 AII",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.313,
+  "qes": 0.32,
+  "qms": 14.94,
+  "vasL": 312.3,
+  "sdCm2": 892,
+  "xmaxMm": 4,
+  "reOhm": 6.8,
+  "bl": 22,
+  "mmsG": 144.7,
+  "peW": 67,
+  "sensitivityDb": 94.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

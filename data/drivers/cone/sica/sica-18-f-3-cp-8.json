@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "18 F 3 CP",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 31.6,
+  "qts": 0.44,
+  "qes": 0.52,
+  "qms": 3.1,
+  "vasL": 321,
+  "sdCm2": 1164.2,
+  "xmaxMm": 6.5,
+  "reOhm": 5.1,
+  "bl": 17.22,
+  "mmsG": 152,
+  "peW": 500,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2025/07/Z008362.pdf"
+}

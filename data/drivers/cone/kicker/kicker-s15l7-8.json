@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kicker",
+  "model": "S15L7",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 26.3,
+  "qts": 0.539,
+  "qes": 0.565,
+  "qms": 11.868,
+  "vasL": 149.1,
+  "sdCm2": 1156,
+  "xmaxMm": 7.3,
+  "reOhm": 7,
+  "bl": 30.7,
+  "mmsG": 460.3,
+  "peW": 500,
+  "sensitivityDb": 89.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KICKER"
+}

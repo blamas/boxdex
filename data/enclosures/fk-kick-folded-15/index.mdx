@@ -1,0 +1,41 @@
+---
+name: FK Kick Folded 15
+category: kick
+topology: folded_horn
+drivers:
+  - rcf-l15p400-8
+driverCount: 1
+netVolumeL: 280
+dims:
+  wMm: 600
+  hMm: 1000
+  dMm: 700
+weightKg: 46
+specs:
+  f3Hz: 58
+  sensitivityDb: 104
+  maxSplDb: 132
+  recommendedCrossoverHz: 200
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+FK Kick Folded 15: 15" folded horn tuned for kick frequencies.

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "UMII18-22 ULTIMAX II DVC",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.53,
+  "qes": 0.67,
+  "qms": 2.53,
+  "vasL": 248.2,
+  "sdCm2": 1184,
+  "xmaxMm": 13.8,
+  "reOhm": 4.2,
+  "bl": 18.9,
+  "mmsG": 414.4,
+  "peW": 1200,
+  "sensitivityDb": 90.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Philips",
+  "model": "AD12100 vp N°2",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 54.2,
+  "qts": 0.505,
+  "qes": 0.57,
+  "qms": 4.45,
+  "vasL": 84.4,
+  "sdCm2": 537.1,
+  "xmaxMm": 3,
+  "reOhm": 3.9,
+  "bl": 9.8,
+  "mmsG": 41.4,
+  "peW": 100,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHILIPS"
+}

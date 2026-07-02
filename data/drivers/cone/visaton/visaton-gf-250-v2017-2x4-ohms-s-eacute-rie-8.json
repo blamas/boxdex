@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "GF 250 v2017 - 2x4 Ohms s&eacute;rie",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.272,
+  "qes": 0.29,
+  "qms": 4.35,
+  "vasL": 134,
+  "sdCm2": 346,
+  "xmaxMm": 9.3,
+  "reOhm": 6.2,
+  "bl": 13.3,
+  "mmsG": 55.1,
+  "peW": 150,
+  "sensitivityDb": 91.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fluxmag",
+  "model": "1201-LB",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 28.9,
+  "qts": 0.163,
+  "qes": 0.17,
+  "qms": 4.1,
+  "vasL": 196.2,
+  "sdCm2": 531,
+  "xmaxMm": 4,
+  "reOhm": 5.13,
+  "bl": 18.3,
+  "mmsG": 61,
+  "peW": 100,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FLUXMAG"
+}

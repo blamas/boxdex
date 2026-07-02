@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "TD15S",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22.8,
+  "qts": 0.371,
+  "qes": 0.41,
+  "qms": 3.87,
+  "vasL": 467,
+  "sdCm2": 855,
+  "xmaxMm": 7,
+  "reOhm": 5.3,
+  "bl": 14.1,
+  "mmsG": 106.9,
+  "peW": 250,
+  "sensitivityDb": 95.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

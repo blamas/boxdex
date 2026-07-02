@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L10/750YK",
+  "sizeInch": 10,
+  "impedanceOhm": 6,
+  "fsHz": 68,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 4.2,
+  "vasL": 26,
+  "sdCm2": 350,
+  "xmaxMm": 2.5,
+  "reOhm": 4.98,
+  "bl": 17.5,
+  "mmsG": 36,
+  "peW": 175,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l10750yk"
+}

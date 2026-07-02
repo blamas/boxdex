@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "KEF",
+  "model": "B139 SP1044",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.373,
+  "qes": 0.4,
+  "qms": 5.5,
+  "vasL": 164,
+  "sdCm2": 354,
+  "xmaxMm": 6,
+  "reOhm": 6.6,
+  "bl": 10.6,
+  "mmsG": 43.4,
+  "peW": 50,
+  "sensitivityDb": 90.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KEF"
+}

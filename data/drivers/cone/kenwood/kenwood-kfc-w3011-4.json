@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "KFC-W3011",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 45,
+  "qts": 1.088,
+  "qes": 1.519,
+  "qms": 3.839,
+  "vasL": 26.6,
+  "sdCm2": 507,
+  "xmaxMm": 11,
+  "reOhm": 3,
+  "bl": 10.1,
+  "mmsG": 171.9,
+  "peW": 400,
+  "sensitivityDb": 83.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/kenwood-kfc-w3011/specifications"
+}

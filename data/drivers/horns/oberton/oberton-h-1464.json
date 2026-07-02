@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Oberton",
+  "model": "H 1464",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 800,
+  "mouthWmm": 236,
+  "mouthHmm": 236,
+  "depthMm": 178,
+  "profile": "oblate_spheroid",
+  "material": "aluminum",
+  "weightKg": 1.9,
+  "datasheetUrl": "https://oberton.com/en/products/horns/254-h-1464.html"
+}

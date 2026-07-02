@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12PR310",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 55,
+  "qts": 0.67,
+  "qes": 0.7,
+  "qms": 12.2,
+  "vasL": 65.1,
+  "sdCm2": 533,
+  "xmaxMm": 4.92,
+  "reOhm": 12.1,
+  "mmsG": 51,
+  "peW": 300,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 4.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101050132"
+}

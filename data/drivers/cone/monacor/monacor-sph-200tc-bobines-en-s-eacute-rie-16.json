@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SPH-200TC bobines en s&eacute;rie",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 28,
+  "qts": 0.239,
+  "qes": 0.249,
+  "qms": 6.19,
+  "vasL": 65,
+  "sdCm2": 420,
+  "xmaxMm": 2.9,
+  "reOhm": 13.6,
+  "bl": 34.4,
+  "mmsG": 122.9,
+  "peW": 60,
+  "sensitivityDb": 87.3
+}

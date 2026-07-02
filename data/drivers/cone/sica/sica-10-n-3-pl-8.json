@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "10 N 3 PL",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 51,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 8.05,
+  "vasL": 40.5,
+  "sdCm2": 346.4,
+  "xmaxMm": 5.5,
+  "reOhm": 5.7,
+  "bl": 15.89,
+  "mmsG": 41,
+  "peW": 400,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z005844.pdf"
+}

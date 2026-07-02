@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "8NW650",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 63,
+  "qts": 0.25,
+  "qes": 0.27,
+  "qms": 3.7,
+  "vasL": 17.8,
+  "sdCm2": 230,
+  "xmaxMm": 5.5,
+  "reOhm": 6.1,
+  "bl": 15.2,
+  "mmsG": 26,
+  "peW": 300,
+  "sensitivityDb": 96,
+  "magnetMaterial": "neo",
+  "weightKg": 2.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/8-0/8/8NW650"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Max Speaker",
+  "model": "PV-1250 4 Ohms",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 21,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 5.9,
+  "vasL": 238,
+  "sdCm2": 531,
+  "xmaxMm": 6,
+  "reOhm": 3.1,
+  "bl": 10.6,
+  "mmsG": 95.4,
+  "peW": 275,
+  "sensitivityDb": 94.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAX%20SPEAKER"
+}

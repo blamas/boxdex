@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15P80/ND",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.214,
+  "qes": 0.22,
+  "qms": 8,
+  "vasL": 217,
+  "sdCm2": 880,
+  "xmaxMm": 7.9,
+  "reOhm": 5.2,
+  "bl": 23.2,
+  "mmsG": 103.4,
+  "peW": 800,
+  "sensitivityDb": 100.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

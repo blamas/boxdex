@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15XL1400",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 38,
+  "qts": 0.3,
+  "qes": 0.31,
+  "qms": 10.3,
+  "vasL": 84.3,
+  "sdCm2": 841,
+  "xmaxMm": 12.92,
+  "reOhm": 3,
+  "mmsG": 205.4,
+  "peW": 1400,
+  "sensitivityDb": 96,
+  "magnetMaterial": "neodymium slug crown",
+  "weightKg": 11.8,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201060151"
+}

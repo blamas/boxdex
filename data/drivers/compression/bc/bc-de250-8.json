@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE250",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "throatMm": 25.4,
+  "voiceCoilMm": 44.4,
+  "fLowHz": 1200,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1500,
+  "crossoverSlopeDbOct": 12,
+  "sensitivityHornDb": 108,
+  "fsHz": 700,
+  "magnetMaterial": "ferrite",
+  "weightKg": 1.45,
+  "peW": 60,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/8/de250"
+}

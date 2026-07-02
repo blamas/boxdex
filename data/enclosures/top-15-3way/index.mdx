@@ -1,0 +1,120 @@
+---
+name: "15\"+6.5\"+1\" 3-Way Top"
+category: top
+topology: bass_reflex
+drivers:
+  - bc-15ds115-8
+  - bc-6ps38-8
+  - bc-de360-8
+driverCount: 3
+netVolumeL: 95
+dims:
+  hMm: 760
+  wMm: 540
+  dMm: 480
+weightKg: 38
+specs:
+  f3Hz: 65
+  f6Hz: 52
+  fbHz: 80
+  maxSplDb: 136
+  sensitivityDb: 101
+  recommendedPowerW: 700
+  powerAesW: 1050
+  powerProgramW: 2100
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.0
+  coverageAngleDeg: 90
+  hornCutoffHz: 1000
+  recommendedCrossoverHz: 2000
+simulations:
+  # Per-section sims: two kick driver options
+  - driver: [bc-15ds115-8]
+    kind: spl
+    source: hornresp_sim
+    file: lf-15ds.csv
+    note: "LF section only, 1W/1m half-space, 15DS115-8"
+  - driver: [bc-15sw115-8]
+    kind: spl
+    source: hornresp_sim
+    file: lf-15sw.csv
+    note: "LF section only, 1W/1m half-space, alternate 15SW115-8 loading"
+  - driver: [bc-6ps38-8]
+    kind: spl
+    source: hornresp_sim
+    file: mid.csv
+    note: "Mid section only, 1W/1m half-space, 6PS38"
+  # Full-system combined sims: all driver combination variants
+  - driver: [bc-15ds115-8, bc-6ps38-8, bc-de360-8]
+    kind: spl
+    source: hornresp_sim
+    file: spl-15ds-de360.csv
+    note: "Full 3-way system, 15DS115 + 6PS38 + DE360, 1W/1m half-space"
+  - driver: [bc-15sw115-8, bc-6ps38-8, bc-de360-8]
+    kind: spl
+    source: hornresp_sim
+    file: spl-15sw-de360.csv
+    note: "Full 3-way system, alternate 15SW115 kick + 6PS38 + DE360, 1W/1m half-space"
+  - driver: [bc-15ds115-8, bc-6ps38-8, bc-de250-8]
+    kind: spl
+    source: hornresp_sim
+    file: spl-15ds-de250.csv
+    note: "Full 3-way system, 15DS115 + 6PS38 + alternate DE250 CD, 1W/1m half-space"
+measurements:
+  - driver: [bc-15ds115-8, bc-6ps38-8, bc-de360-8]
+    kind: spl
+    source: rew_measured
+    file: meas.csv
+    note: "Full 3-way system, 1m on-axis, ground plane, calibrated mic, config A"
+ways: 3
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+recommendedFor:
+  - techno
+  - bass_music
+  - hardtek
+verified: false
+connectors:
+  - speakON NL4
+  - speakON NL8
+sources:
+  - tool: hornresp
+    file: design.txt
+buildComplexity: complex
+sheetCount: 5
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+A fully active 3-way top. The LF section is a ported chamber tuned for either the 15DS115
+or 15SW115, both have identical Vas and Sd; the SW115 goes slightly lower with its lower
+Fs while the DS115 gives marginally more output above 80 Hz. The mid chamber is a sealed
+enclosure for the 6PS38. The HF section mates any 1" exit driver; DE360 or DE250 both fit.
+
+### Driver combinations simulated
+
+Six simulation files cover the per-section and full-system responses for each variant:
+
+| Config | Kick | Mid | CD |
+|--------|------|-----|----|
+| A | 15DS115 | 6PS38 | DE360 |
+| B | 15SW115 | 6PS38 | DE360 |
+| C | 15DS115 | 6PS38 | DE250 |
+
+Per-section sims (lf-15ds, lf-15sw, mid) are useful for evaluating driver substitutions
+in isolation. Full-system sims assume active crossover at 700 Hz LF/mid and 2000 Hz mid/HF.
+
+### Crossover
+
+- LF/mid: 700 Hz LR4 (24 dB/oct)
+- Mid/HF: 2000 Hz LR4 (24 dB/oct); respect DE360 minimum at 1800 Hz (DE250: 1500 Hz)
+- High-pass LF at 60 Hz to protect kick driver
+
+### Wiring
+
+Active tri-amp recommended. Each section is 8 Ω nominal: requires three amp channels.

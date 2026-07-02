@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "T285HF64",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.6,
+  "qes": 0.65,
+  "qms": 7.77,
+  "vasL": 74.6,
+  "sdCm2": 475.3,
+  "xmaxMm": 3.3,
+  "reOhm": 6.62,
+  "bl": 11.2,
+  "mmsG": 35.5,
+  "peW": 70,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

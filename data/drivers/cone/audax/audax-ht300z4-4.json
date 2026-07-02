@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HT300Z4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 25,
+  "qts": 0.288,
+  "qes": 0.3,
+  "qms": 6.9,
+  "vasL": 193,
+  "sdCm2": 514.7,
+  "xmaxMm": 4,
+  "reOhm": 3,
+  "bl": 11.1,
+  "mmsG": 78,
+  "peW": 100,
+  "sensitivityDb": 96.3
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Lautsprecher Technik",
+  "model": "MHB-12",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 38.2,
+  "qts": 1.107,
+  "qes": 1.603,
+  "qms": 3.578,
+  "vasL": 132.7,
+  "sdCm2": 573,
+  "xmaxMm": 5,
+  "reOhm": 7.5,
+  "bl": 8.2,
+  "mmsG": 60.2,
+  "peW": 300,
+  "sensitivityDb": 88.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LAUTSPRECHER%20TECHNIK"
+}

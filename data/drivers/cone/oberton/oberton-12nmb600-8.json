@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12NMB600",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 41.03,
+  "qts": 0.134,
+  "qes": 0.137,
+  "qms": 4.77,
+  "vasL": 70.8,
+  "sdCm2": 514.7,
+  "xmaxMm": 5.25,
+  "reOhm": 5.23,
+  "bl": 27.77,
+  "mmsG": 78.61,
+  "peW": 600,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/127-12nmb600.html"
+}

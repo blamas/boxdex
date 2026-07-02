@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "PRO-15 NEO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34.4,
+  "qts": 0.425,
+  "qes": 0.482,
+  "qms": 3.576,
+  "vasL": 331.6,
+  "sdCm2": 855,
+  "xmaxMm": 2.5,
+  "reOhm": 6,
+  "bl": 13.3,
+  "mmsG": 66.2,
+  "peW": 200,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

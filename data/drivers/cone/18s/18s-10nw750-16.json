@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10NW750",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 52,
+  "qts": 0.36,
+  "qes": 0.4,
+  "qms": 4.36,
+  "vasL": 38,
+  "sdCm2": 346,
+  "xmaxMm": 7.1,
+  "reOhm": 11,
+  "bl": 20,
+  "mmsG": 42,
+  "peW": 450,
+  "sensitivityDb": 94,
+  "magnetMaterial": "neo",
+  "weightKg": 3.8,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/10-0/16/10nw750"
+}

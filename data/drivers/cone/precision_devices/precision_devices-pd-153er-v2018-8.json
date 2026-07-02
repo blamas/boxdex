@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD 153ER v2018",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.215,
+  "qes": 0.22,
+  "qms": 8.65,
+  "vasL": 218.8,
+  "sdCm2": 855.3,
+  "xmaxMm": 5.4,
+  "reOhm": 5.87,
+  "bl": 22.3,
+  "mmsG": 74.2,
+  "peW": 400,
+  "sensitivityDb": 101.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

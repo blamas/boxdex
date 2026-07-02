@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eighteen Sound",
+  "model": "15NCX1000",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 10.4,
+  "vasL": 75,
+  "sdCm2": 881,
+  "xmaxMm": 7.5,
+  "reOhm": 6.3,
+  "bl": 27.5,
+  "mmsG": 110,
+  "peW": 600,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/coaxial/15/8/15NCX1000"
+}

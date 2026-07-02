@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR380T0",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.635,
+  "qes": 0.75,
+  "qms": 4.13,
+  "vasL": 130,
+  "sdCm2": 883.9,
+  "xmaxMm": 3.3,
+  "reOhm": 6,
+  "bl": 14.4,
+  "mmsG": 78.9,
+  "peW": 150,
+  "sensitivityDb": 97.1
+}

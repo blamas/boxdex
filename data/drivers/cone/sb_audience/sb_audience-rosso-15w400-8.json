@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "ROSSO-15W400",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.282,
+  "qes": 0.29,
+  "qms": 10.88,
+  "vasL": 170.1,
+  "sdCm2": 907.9,
+  "xmaxMm": 5.3,
+  "reOhm": 5.2,
+  "bl": 22,
+  "mmsG": 107.5,
+  "peW": 400,
+  "sensitivityDb": 99.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

@@ -1,0 +1,38 @@
+---
+name: FK Top HornFull
+category: mid
+topology: front_loaded_horn
+drivers:
+  - faital-12pr310-8
+driverCount: 1
+netVolumeL: 150
+dims:
+  wMm: 540
+  hMm: 800
+  dMm: 560
+specs:
+  f3Hz: 80
+  sensitivityDb: 104
+  hornCutoffHz: 80
+  hornMouthCm2: 2500
+  hornThroatCm2: 85
+  maxVelocityMs: 35
+  impedanceMinOhm: 5.8
+  maxSplDb: 132
+  powerAesW: 600
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U FLH sim
+measurements: []
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - hardtek
+---
+
+FK Top HornFull: all horn geometry spec fields exercised. Mid FLH with throat, mouth, velocity limits.

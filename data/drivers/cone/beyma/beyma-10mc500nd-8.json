@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10MC500Nd",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 58,
+  "qts": 0.24,
+  "qes": 0.26,
+  "qms": 4.7,
+  "vasL": 29,
+  "sdCm2": 350,
+  "xmaxMm": 8,
+  "reOhm": 5.5,
+  "bl": 18.7,
+  "mmsG": 45,
+  "peW": 500,
+  "sensitivityDb": 97,
+  "weightKg": 3.1,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/110MC50ND8/altavoz-10mc500nd-8-oh/"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "12BM-300B",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.31,
+  "qes": 0.33,
+  "qms": 4.4,
+  "vasL": 81.27,
+  "sdCm2": 550,
+  "xmaxMm": 3.3,
+  "reOhm": 5.5,
+  "bl": 17.1,
+  "mmsG": 58.1,
+  "peW": 300,
+  "sensitivityDb": 96.2
+}

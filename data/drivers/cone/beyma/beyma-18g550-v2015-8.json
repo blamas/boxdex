@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18G550 v2015",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.374,
+  "qes": 0.39,
+  "qms": 8.88,
+  "vasL": 210,
+  "sdCm2": 1200,
+  "xmaxMm": 8.1,
+  "reOhm": 5.3,
+  "bl": 24,
+  "mmsG": 187.9,
+  "peW": 900,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "12W0-8 ",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 23.2,
+  "qts": 0.426,
+  "qes": 0.447,
+  "qms": 9,
+  "vasL": 159.989,
+  "sdCm2": 531,
+  "xmaxMm": 8.636,
+  "reOhm": 6.4,
+  "bl": 15.7,
+  "mmsG": 117.7,
+  "peW": 125,
+  "sensitivityDb": 88.3,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jl-audio-12w0-8/specifications"
+}

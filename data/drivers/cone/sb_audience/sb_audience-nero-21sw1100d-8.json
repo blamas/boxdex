@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "NERO-21SW1100D",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.339,
+  "qes": 0.35,
+  "qms": 10.92,
+  "vasL": 312.6,
+  "sdCm2": 1654.7,
+  "xmaxMm": 8.1,
+  "reOhm": 5.1,
+  "bl": 29.8,
+  "mmsG": 303.7,
+  "peW": 1100,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

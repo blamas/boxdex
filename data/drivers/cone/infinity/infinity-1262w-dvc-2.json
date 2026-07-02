@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "1262W DVC",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 25,
+  "qts": 0.457,
+  "qes": 0.49,
+  "qms": 6.84,
+  "vasL": 80.1,
+  "sdCm2": 531,
+  "xmaxMm": 6.5,
+  "reOhm": 1.8,
+  "bl": 10.7,
+  "mmsG": 199.9,
+  "peW": 300,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=INFINITY"
+}

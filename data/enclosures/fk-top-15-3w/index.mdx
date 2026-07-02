@@ -1,0 +1,63 @@
+---
+name: FK Top 15 3W
+category: top
+topology: bass_reflex
+drivers:
+  - rcf-l15p400-8
+  - 18s-6nmb420-8
+  - faital-hf1000-8
+netVolumeL: 95
+dims:
+  wMm: 540
+  hMm: 760
+  dMm: 480
+weightKg: 36
+specs:
+  f3Hz: 65
+  fbHz: 60
+  sensitivityDb: 101
+  coverageAngleDeg: 75
+  maxSplDb: 135
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-mf.csv
+  - driver:
+      - faital-hf1000-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - rcf-l15p400-8
+      - 18s-6nmb420-8
+      - faital-hf1000-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+      - 18s-6nmb420-8
+      - faital-hf1000-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - tribe
+connectors:
+  - speakON NL4
+ways: 3
+---
+
+3-way PA top. 15" LF + 6.5" MF + 1.4" CD. Crossovers at 500 Hz and 2500 Hz.

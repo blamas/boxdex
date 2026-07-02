@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Celestion",
+  "model": "CDX14-3035",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 500,
+  "sensitivityHornDb": 108,
+  "peW": 120,
+  "magnetMaterial": "ferrite",
+  "datasheetUrl": "https://celestion.com/product/cdx14-3035/"
+}

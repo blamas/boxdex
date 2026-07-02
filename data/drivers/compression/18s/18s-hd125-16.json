@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "HD125",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 25,
+  "fLowHz": 2000,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 109,
+  "peW": 25,
+  "magnetMaterial": "ferrite",
+  "weightKg": 0.8,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-0/16/hd125-16ohm"
+}

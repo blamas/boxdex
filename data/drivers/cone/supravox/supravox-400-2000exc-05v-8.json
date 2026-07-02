@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "400-2000EXC_05V",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 1.011,
+  "qes": 1.082,
+  "qms": 15.349,
+  "vasL": 434,
+  "sdCm2": 855,
+  "xmaxMm": 5,
+  "reOhm": 6.5,
+  "bl": 9.5,
+  "mmsG": 95.7,
+  "peW": 120,
+  "sensitivityDb": 90.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

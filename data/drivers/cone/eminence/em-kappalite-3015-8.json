@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KappaLITE 3015 |",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 45,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 6.7,
+  "vasL": 153,
+  "sdCm2": 856,
+  "xmaxMm": 5.9,
+  "peW": 450,
+  "sensitivityDb": 100.8,
+  "reOhm": 5.27,
+  "bl": 18.6,
+  "mmsG": 84,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappalite_3015.pdf"
+}

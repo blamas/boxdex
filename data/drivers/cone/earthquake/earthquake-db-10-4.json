@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Earthquake Sound",
+  "model": "DB-10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 26,
+  "qts": 0.7,
+  "qes": 0.76,
+  "qms": 8.3,
+  "vasL": 30.5,
+  "sdCm2": 491,
+  "xmaxMm": 19.1,
+  "reOhm": 3.2,
+  "bl": 11.1,
+  "mmsG": 184.6,
+  "peW": 350,
+  "sensitivityDb": 87,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/earthquake-db-10/specifications"
+}

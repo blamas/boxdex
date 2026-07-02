@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15NMB35",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38.93,
+  "qts": 0.335,
+  "qes": 0.348,
+  "qms": 8.88,
+  "vasL": 177.47,
+  "sdCm2": 829.6,
+  "xmaxMm": 6.75,
+  "reOhm": 5.4,
+  "bl": 18.54,
+  "mmsG": 90.52,
+  "peW": 600,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/378-15nmb35.html"
+}

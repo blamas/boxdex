@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "ATC",
+  "model": "PA75-375 BLC",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.332,
+  "qes": 0.407,
+  "qms": 1.8,
+  "vasL": 87,
+  "sdCm2": 820,
+  "xmaxMm": 1.5,
+  "reOhm": 5.4,
+  "bl": 20.8,
+  "mmsG": 97.7,
+  "peW": 75,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ATC"
+}

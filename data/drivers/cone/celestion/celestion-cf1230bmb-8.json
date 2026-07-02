@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "CF1230BMB",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.381,
+  "qes": 0.417,
+  "qms": 4.451,
+  "vasL": 60.7,
+  "sdCm2": 530.9,
+  "xmaxMm": 5.5,
+  "reOhm": 5.84,
+  "bl": 18.4,
+  "mmsG": 89.2,
+  "peW": 350,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

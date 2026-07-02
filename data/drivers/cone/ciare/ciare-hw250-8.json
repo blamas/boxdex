@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "HW250",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.486,
+  "qes": 0.58,
+  "qms": 3,
+  "vasL": 275,
+  "sdCm2": 339,
+  "xmaxMm": 5,
+  "reOhm": 6,
+  "bl": 6.5,
+  "mmsG": 28.1,
+  "peW": 90,
+  "sensitivityDb": 90.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

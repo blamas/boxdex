@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MTX Audio",
+  "model": "T610-44",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 28.4,
+  "qts": 0.484,
+  "qes": 0.52,
+  "qms": 6.94,
+  "vasL": 31.7,
+  "sdCm2": 350,
+  "xmaxMm": 7.8,
+  "reOhm": 6.87,
+  "bl": 20,
+  "mmsG": 170.1,
+  "peW": 300,
+  "sensitivityDb": 84.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MTX"
+}

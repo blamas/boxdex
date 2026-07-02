@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Beyma",
+  "model": "TD1464P 60 x 40",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 800,
+  "mouthWmm": 235,
+  "mouthHmm": 235,
+  "depthMm": 171,
+  "profile": "conical",
+  "material": "reinforced polycarbonate",
+  "weightKg": 1.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/horns/1TD1464P/bocina-pc-td1464p-60-x-40/"
+}

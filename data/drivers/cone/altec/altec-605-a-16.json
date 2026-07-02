@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "605 A",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 30.3,
+  "qts": 0.248,
+  "qes": 0.27,
+  "qms": 3.01,
+  "vasL": 405.8,
+  "sdCm2": 825.8,
+  "xmaxMm": 2.7,
+  "reOhm": 9.3,
+  "bl": 20.6,
+  "mmsG": 65,
+  "peW": 35,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "COMMONWEALTH 12",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.332,
+  "qes": 0.35,
+  "qms": 6.61,
+  "vasL": 90,
+  "sdCm2": 519.5,
+  "xmaxMm": 0.7,
+  "reOhm": 6.34,
+  "bl": 15.6,
+  "mmsG": 42.6,
+  "peW": 225,
+  "sensitivityDb": 98.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

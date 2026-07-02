@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18NLS4000",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.35,
+  "qes": 0.36,
+  "qms": 13.7,
+  "vasL": 168,
+  "sdCm2": 1225,
+  "xmaxMm": 22.3,
+  "reOhm": 2.9,
+  "bl": 24.2,
+  "mmsG": 433,
+  "peW": 1200,
+  "sensitivityDb": 88,
+  "magnetMaterial": "neo",
+  "weightKg": 12,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/4/18NLS4000"
+}

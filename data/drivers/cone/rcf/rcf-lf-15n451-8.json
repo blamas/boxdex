@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF 15N451",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.182,
+  "qes": 0.19,
+  "qms": 4.2,
+  "vasL": 125,
+  "sdCm2": 910,
+  "xmaxMm": 6.6,
+  "reOhm": 5.1,
+  "bl": 33.7,
+  "mmsG": 192,
+  "peW": 1300,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

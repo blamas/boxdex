@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD153 ER",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 39,
+  "qts": 0.222,
+  "qes": 0.234,
+  "qms": 4.45,
+  "vasL": 160,
+  "sdCm2": 830,
+  "xmaxMm": 6.5,
+  "reOhm": 5.7,
+  "bl": 24.55,
+  "mmsG": 101,
+  "peW": 400,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ceramic",
+  "weightKg": 8.14,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=5"
+}

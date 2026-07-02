@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Skytronic",
+  "model": "902.214",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 34.3,
+  "qts": 0.595,
+  "qes": 0.854,
+  "qms": 1.959,
+  "vasL": 70.2,
+  "sdCm2": 346,
+  "xmaxMm": 6.1,
+  "reOhm": 7.2,
+  "bl": 9.7,
+  "mmsG": 51.4,
+  "peW": 125,
+  "sensitivityDb": 87.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SKYTRONIC"
+}

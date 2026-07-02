@@ -1,0 +1,43 @@
+---
+name: FK Top AllConn
+category: top
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+  - bms-4545nd-8
+driverCount: 2
+ways: 2
+netVolumeL: 65
+dims:
+  wMm: 420
+  hMm: 580
+  dMm: 390
+specs:
+  f3Hz: 70
+  sensitivityDb: 99
+  maxSplDb: 128
+  powerAesW: 600
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-12pr310-8
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U combined sim
+measurements: []
+plans: []
+license: CC0-1.0
+connectors:
+  - speakON NL2
+  - speakON NL4
+  - speakON NL8
+  - XLR
+  - binding post
+  - jack 6.35mm
+recommendedFor:
+  - techno
+---
+
+FK Top AllConn: all 6 connector types listed. Tests connector tag rendering.

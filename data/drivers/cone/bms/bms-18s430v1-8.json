@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "18S430V1",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 25.5,
+  "qts": 0.383,
+  "qes": 0.41,
+  "qms": 5.8,
+  "vasL": 288,
+  "sdCm2": 1212,
+  "xmaxMm": 7.5,
+  "reOhm": 5.5,
+  "bl": 24.5,
+  "mmsG": 278.5,
+  "peW": 1200,
+  "sensitivityDb": 94.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BMS"
+}

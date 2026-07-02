@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "COLOSSUS 15-750BMN",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 3.97,
+  "vasL": 127,
+  "sdCm2": 866,
+  "xmaxMm": 5.8,
+  "reOhm": 5.5,
+  "bl": 23.6,
+  "mmsG": 103.5,
+  "peW": 750,
+  "sensitivityDb": 99.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

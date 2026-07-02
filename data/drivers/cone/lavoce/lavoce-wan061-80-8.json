@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WAN061.80",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 6.91,
+  "vasL": 11.18,
+  "sdCm2": 132,
+  "xmaxMm": 5.2,
+  "reOhm": 5.8,
+  "bl": 10.88,
+  "mmsG": 15.5,
+  "peW": 200,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://lavocespeakers.com/product/wan061-80/"
+}

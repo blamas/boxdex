@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "FTX1530",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42.5,
+  "qts": 0.276,
+  "qes": 0.297,
+  "qms": 3.809,
+  "vasL": 172.1,
+  "sdCm2": 855.3,
+  "xmaxMm": 2,
+  "reOhm": 5.36,
+  "bl": 20.1,
+  "mmsG": 83.6,
+  "peW": 400,
+  "sensitivityDb": 100.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DLS",
+  "model": "RW10i",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 28.8,
+  "qts": 0.396,
+  "qes": 0.44,
+  "qms": 3.95,
+  "vasL": 63.3,
+  "sdCm2": 346,
+  "xmaxMm": 9,
+  "reOhm": 1.8,
+  "bl": 7.7,
+  "mmsG": 81,
+  "peW": 250,
+  "sensitivityDb": 93.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DLS"
+}

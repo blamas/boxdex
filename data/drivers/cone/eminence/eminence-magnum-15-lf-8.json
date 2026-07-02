@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "MAGNUM 15 LF",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.457,
+  "qes": 0.48,
+  "qms": 9.45,
+  "vasL": 163,
+  "sdCm2": 856,
+  "xmaxMm": 7.9,
+  "reOhm": 4.95,
+  "bl": 16.7,
+  "mmsG": 116.6,
+  "peW": 700,
+  "sensitivityDb": 96.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "PFXI10.50W",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 58,
+  "qts": 0.374,
+  "qes": 0.41,
+  "qms": 4.3,
+  "vasL": 38.5,
+  "sdCm2": 356,
+  "xmaxMm": 4.4,
+  "reOhm": 5.8,
+  "bl": 13.4,
+  "mmsG": 34.7,
+  "peW": 220,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

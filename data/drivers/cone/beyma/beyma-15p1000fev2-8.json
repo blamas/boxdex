@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15P1000FEV2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.278,
+  "qes": 0.29,
+  "qms": 6.6,
+  "vasL": 100.2,
+  "sdCm2": 855,
+  "xmaxMm": 6.5,
+  "reOhm": 5.3,
+  "bl": 26.6,
+  "mmsG": 146.9,
+  "peW": 1000,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

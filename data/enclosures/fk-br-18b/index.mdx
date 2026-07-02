@@ -1,0 +1,39 @@
+---
+name: FK BR 18B
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-18hp1060-8
+netVolumeL: 300
+dims:
+  wMm: 740
+  hMm: 740
+  dMm: 660
+weightKg: 44
+specs:
+  f3Hz: 36
+  fbHz: 42
+  sensitivityDb: 101
+  maxSplDb: 132
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - frenchcore
+connectors:
+  - speakON NL4
+---
+
+18" bass reflex sub variant B. Lower tuning at 42 Hz.

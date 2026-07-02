@@ -1,0 +1,29 @@
+---
+import DesignSpace from "../../components/DesignSpace.svelte";
+import Layout from "../../components/Layout.astro";
+import { localeStaticPaths, useLocale } from "../../i18n";
+
+export { localeStaticPaths as getStaticPaths };
+
+const { t, localeBase } = useLocale(Astro.params);
+---
+
+<Layout
+  title={t.pages.explore.title}
+  description={t.pages.explore.description}
+  preloadData={["/api/manifest.json"]}
+>
+  <h1>{t.pages.explore.heading}</h1>
+  <p class="subtitle">{t.pages.explore.subtitle}</p>
+  <DesignSpace client:only="svelte" t={t.designSpace} localeBase={localeBase} categoryLabels={t.categoryLabels} axisLabels={t.axisLabels} />
+</Layout>
+
+<style>
+  h1 { margin-bottom: 0.5rem; }
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

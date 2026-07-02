@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15NBX100",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 37,
+  "qts": 0.27,
+  "qes": 0.3,
+  "qms": 4.77,
+  "vasL": 109.6,
+  "sdCm2": 855,
+  "xmaxMm": 10,
+  "reOhm": 3.6,
+  "bl": 22.69,
+  "mmsG": 176,
+  "peW": 1000,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/4/15NBX100"
+}

@@ -1,0 +1,38 @@
+---
+name: FK BR 10
+category: sub
+topology: bass_reflex
+drivers:
+  - eton-11-581-50-hex-8
+netVolumeL: 55
+dims:
+  wMm: 480
+  hMm: 480
+  dMm: 420
+weightKg: 16
+specs:
+  f3Hz: 52
+  fbHz: 58
+  sensitivityDb: 96
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - eton-11-581-50-hex-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - eton-11-581-50-hex-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - acid
+connectors:
+  - speakON NL4
+---
+
+Compact 10" bass reflex sub. Single Eton 11-581/50 HEX 8 Ohm, tuned to 58 Hz.

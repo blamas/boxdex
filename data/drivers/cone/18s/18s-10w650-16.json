@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10W650",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 64,
+  "qts": 0.41,
+  "qes": 0.43,
+  "qms": 8.4,
+  "vasL": 27,
+  "sdCm2": 350,
+  "xmaxMm": 5.7,
+  "reOhm": 10.2,
+  "bl": 19.2,
+  "mmsG": 39,
+  "peW": 250,
+  "sensitivityDb": 96,
+  "magnetMaterial": "ferrite",
+  "weightKg": 4.3,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/10-0/16/10w650"
+}

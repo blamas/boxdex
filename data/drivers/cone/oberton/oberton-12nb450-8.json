@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12NB450",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 46.46,
+  "qts": 0.204,
+  "qes": 0.208,
+  "qms": 10.53,
+  "vasL": 72.57,
+  "sdCm2": 514.7,
+  "xmaxMm": 7.75,
+  "reOhm": 5,
+  "bl": 20.34,
+  "mmsG": 59.82,
+  "peW": 500,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/128-12nb450.html"
+}

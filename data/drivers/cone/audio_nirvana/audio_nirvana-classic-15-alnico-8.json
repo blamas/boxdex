@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Nirvana",
+  "model": "CLASSIC 15 ALNICO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 31.5,
+  "qts": 0.98,
+  "qes": 1.16,
+  "qms": 6.31,
+  "vasL": 384.2,
+  "sdCm2": 851,
+  "xmaxMm": 1,
+  "reOhm": 7.2,
+  "bl": 9.1,
+  "mmsG": 67.5,
+  "peW": 80,
+  "sensitivityDb": 92.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20NIRVANA"
+}

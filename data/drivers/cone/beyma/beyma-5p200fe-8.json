@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "5P200Fe",
+  "sizeInch": 5,
+  "impedanceOhm": 8,
+  "fsHz": 72,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 7.5,
+  "vasL": 5.7,
+  "sdCm2": 95,
+  "xmaxMm": 5.7,
+  "reOhm": 5.2,
+  "mmsG": 10,
+  "peW": 150,
+  "sensitivityDb": 92,
+  "weightKg": 2.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/105P2FE8/altavoz-5p200fe-8-oh/"
+}

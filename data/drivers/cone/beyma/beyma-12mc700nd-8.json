@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12MC700Nd",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 51,
+  "qts": 0.24,
+  "qes": 0.26,
+  "qms": 4.1,
+  "vasL": 58,
+  "sdCm2": 550,
+  "xmaxMm": 7,
+  "reOhm": 5.2,
+  "mmsG": 72,
+  "peW": 700,
+  "sensitivityDb": 99,
+  "weightKg": 3.7,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/112MC70ND8/altavoz-12mc700nd-8-oh/"
+}

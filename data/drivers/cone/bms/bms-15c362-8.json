@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "15C362",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40.7,
+  "qts": 0.28,
+  "qes": 0.3,
+  "qms": 4.28,
+  "vasL": 137.7,
+  "sdCm2": 834,
+  "xmaxMm": 4.5,
+  "reOhm": 5.9,
+  "bl": 23.3,
+  "mmsG": 108.3,
+  "peW": 500,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BMS"
+}

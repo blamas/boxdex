@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DLS",
+  "model": "SP12",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 30.5,
+  "qts": 0.237,
+  "qes": 0.25,
+  "qms": 4.42,
+  "vasL": 98.8,
+  "sdCm2": 452.3,
+  "xmaxMm": 9.1,
+  "reOhm": 1.27,
+  "bl": 8.8,
+  "mmsG": 79.1,
+  "peW": 500,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DLS"
+}

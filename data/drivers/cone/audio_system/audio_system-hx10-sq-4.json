@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio System",
+  "model": "HX10 SQ",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 27.6,
+  "qts": 0.39,
+  "qes": 0.41,
+  "qms": 7.8,
+  "vasL": 31.5,
+  "sdCm2": 327,
+  "xmaxMm": 11.75,
+  "reOhm": 3.2,
+  "bl": 13.77,
+  "mmsG": 140,
+  "peW": 350,
+  "sensitivityDb": 83.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audio-system-hx10-sq/specifications"
+}

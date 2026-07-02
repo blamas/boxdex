@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "CA26RE4X vp1",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 27.3,
+  "qts": 0.317,
+  "qes": 0.34,
+  "qms": 4.69,
+  "vasL": 143,
+  "sdCm2": 350,
+  "xmaxMm": 7.1,
+  "reOhm": 6.1,
+  "bl": 11.2,
+  "mmsG": 40.8,
+  "peW": 80,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

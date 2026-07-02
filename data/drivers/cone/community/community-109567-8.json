@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Community",
+  "model": "109567",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42.4,
+  "qts": 0.95,
+  "qes": 1.14,
+  "qms": 5.71,
+  "vasL": 282.3,
+  "sdCm2": 845,
+  "xmaxMm": 3,
+  "reOhm": 5.11,
+  "bl": 7.7,
+  "mmsG": 50,
+  "peW": 100,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=COMMUNITY"
+}
