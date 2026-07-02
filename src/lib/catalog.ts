@@ -85,9 +85,9 @@ export function driverSortValue(d: Driver, key: string): number | string | undef
   return undefined;
 }
 
-export function hornSortValue(h: Horn, key: string): number | string {
+export function hornSortValue(h: Horn, key: string): number | string | undefined {
   if (key === "mouthCm2") return mouthCm2(h);
-  if (key === "depthMm") return h.depthMm ?? 0;
+  if (key === "depthMm") return h.depthMm;
   if (key === "exitInch") return h.exitInch;
   if (key === "coverageHorizontalDeg") return h.coverageHorizontalDeg;
   if (key === "coverageVerticalDeg") return h.coverageVerticalDeg;
@@ -107,9 +107,16 @@ export function sortDrivers(drivers: Driver[], key: string, asc: boolean): Drive
   });
 }
 
+// Horns missing the sorted value (optional depthMm) go last regardless of direction,
+// matching sortRecords' missing-metric behaviour.
 export function sortHorns(horns: Horn[], key: string, asc: boolean): Horn[] {
   return [...horns].sort((a, b) => {
-    const cmp = compare(hornSortValue(a, key), hornSortValue(b, key));
+    const va = hornSortValue(a, key);
+    const vb = hornSortValue(b, key);
+    if (va === undefined && vb === undefined) return 0;
+    if (va === undefined) return 1;
+    if (vb === undefined) return -1;
+    const cmp = compare(va, vb);
     return asc ? cmp : -cmp;
   });
 }

@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
+  AXIS_FIELDS,
+  axisComboboxItems,
   deriveMetrics,
   type EnclosureFilters,
   filterByCategory,
@@ -92,6 +94,23 @@ describe("metricKeyOf", () => {
   it("rejects unknown or non-axis keys", () => {
     expect(metricKeyOf("nonexistent")).toBeUndefined();
     expect(metricKeyOf("maxSplExcursionDb")).toBeUndefined();
+  });
+});
+
+describe("axisComboboxItems", () => {
+  const axisLabels = Object.fromEntries(
+    AXIS_FIELDS.map((f) => [f.key, `${f.label} (localized)`])
+  ) as Record<string, string>;
+
+  it("maps every axis field to a localized {id,label} item", () => {
+    const items = axisComboboxItems(axisLabels as never);
+    expect(items).toHaveLength(AXIS_FIELDS.length);
+    expect(items[0]).toEqual({ id: "volumeL", label: "Net volume (localized) (L)" });
+  });
+
+  it("falls back to the field's default label when a translation is missing", () => {
+    const items = axisComboboxItems({} as never);
+    expect(items[0]).toEqual({ id: "volumeL", label: "Net volume (L)" });
   });
 });
 

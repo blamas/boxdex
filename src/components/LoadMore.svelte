@@ -1,3 +1,7 @@
+<script module>
+export const ROW_LIMIT = 100;
+</script>
+
 <script lang="ts">
 import { tt } from "../i18n";
 import { getClientTranslations } from "../lib/locale-client";
@@ -5,15 +9,17 @@ import { getClientTranslations } from "../lib/locale-client";
 interface Props {
   remaining: number;
   onmore: () => void;
+  root?: HTMLElement;
 }
 
-const { remaining, onmore }: Props = $props();
+const { remaining, onmore, root }: Props = $props();
 const t = getClientTranslations();
 
 function sentinel(el: HTMLElement) {
-  const io = new IntersectionObserver((entries) => {
-    if (entries.some((e) => e.isIntersecting)) onmore();
-  });
+  const io = new IntersectionObserver(
+    (entries) => { if (entries.some((e) => e.isIntersecting)) onmore(); },
+    { root: root ?? null },
+  );
   io.observe(el);
   return { destroy: () => io.disconnect() };
 }

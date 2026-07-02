@@ -1,4 +1,5 @@
 <script lang="ts">
+import { clickOutside } from "../lib/click-outside";
 import { getClientTranslations } from "../lib/locale-client";
 
 interface Props {
@@ -12,27 +13,14 @@ const { onCsv, onJson, onPrint, disabled = false }: Props = $props();
 const t = getClientTranslations();
 
 let open = $state(false);
-let root: HTMLDivElement | undefined;
 
 function run(fn?: () => void) {
   open = false;
   fn?.();
 }
-
-$effect(() => {
-  if (!open) return;
-  function onClickOutside(e: MouseEvent) {
-    if (root && !root.contains(e.target as Node)) open = false;
-  }
-  const timer = setTimeout(() => document.addEventListener("click", onClickOutside), 0);
-  return () => {
-    clearTimeout(timer);
-    document.removeEventListener("click", onClickOutside);
-  };
-});
 </script>
 
-<div class="export-menu no-print" bind:this={root}>
+<div class="export-menu no-print" use:clickOutside={() => (open = false)}>
   <button class="export-btn" {disabled} onclick={() => (open = !open)} aria-haspopup="menu" aria-expanded={open}>
     {t.exportMenu.export} {open ? "▴" : "▾"}
   </button>

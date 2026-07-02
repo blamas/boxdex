@@ -270,4 +270,5 @@ function optionLabel(d: Driver): string {
   {sanitizeIds}
   {sortPool}
   csvExtra={[{ label: "type", value: (d) => d.type }]}
+  detailHref={(d) => `${localeBase}/drivers/${d.id}`}
 />

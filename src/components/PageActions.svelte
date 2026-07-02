@@ -45,4 +45,12 @@ async function copyLink() {
     border-color: var(--accent);
     color: var(--accent);
   }
+
+  @media (max-width: 640px) {
+    .page-header {
+      position: static;
+      justify-content: flex-start;
+      margin-bottom: 0.75rem;
+    }
+  }
 </style>

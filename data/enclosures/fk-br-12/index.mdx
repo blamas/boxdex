@@ -1,0 +1,38 @@
+---
+name: FK BR 12
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+netVolumeL: 90
+dims:
+  wMm: 550
+  hMm: 550
+  dMm: 500
+weightKg: 22
+specs:
+  f3Hz: 48
+  fbHz: 55
+  sensitivityDb: 99
+  recommendedCrossoverHz: 120
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+Standard 12" bass reflex sub. Faital Pro 12PR310, tuned to 55 Hz.

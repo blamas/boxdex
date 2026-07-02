@@ -1,0 +1,40 @@
+---
+name: FK BR 21
+category: sub
+topology: bass_reflex
+drivers:
+  - pyle-pdw21250-8
+netVolumeL: 500
+dims:
+  wMm: 850
+  hMm: 850
+  dMm: 780
+weightKg: 58
+specs:
+  f3Hz: 32
+  fbHz: 38
+  sensitivityDb: 100
+  maxSplDb: 133
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - tribe
+connectors:
+  - speakON NL4
+---
+
+21" bass reflex sub. Pyle PDW21250, tuned to 38 Hz.

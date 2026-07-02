@@ -7,6 +7,10 @@ dist/
 # Test coverage
 coverage/
 
+# Playwright output
+test-results/
+playwright-report/
+
 # Astro generated types/schemas (schema/*.schema.json is the committed mirror)
 .astro/
 
@@ -32,4 +36,7 @@ Thumbs.db
 
 # Local scratch notes (never committed)
 todo.md
-scripts/
+BIBLE_IMPORT.md
+
+# Personal scrapers/generators (scripts/ itself is committed project tooling)
+scripts/local/

@@ -29,38 +29,35 @@ const horns = defineCollection({
   schema: hornSchema,
 });
 
-const simulation = z
-  .object({
-    driver: z.array(reference("drivers")).min(1),
-    kind: z.enum(CURVE_KINDS),
-    source: z.enum([
-      "hornresp_sim",
-      "akabak_sim",
-      "catt_sim",
-      "vituixcad_sim",
-      "winsd_sim",
-      "basta_sim",
-    ]),
-    file: z.string().endsWith(".csv"),
-    count: z.number().int().positive().default(1),
-    note: z.string().optional(),
-  })
-  .refine((v) => v.count === 1 || v.kind === "spl_stacked", {
-    message: "count > 1 is only valid for kind: spl_stacked",
-  });
+// Simulations and measurements share one entry shape, only the accepted source tools
+// differ. count travels with spl_stacked and nothing else, in both directions.
+const curveEntry = (sources: [string, ...string[]]) =>
+  z
+    .object({
+      driver: z.array(reference("drivers")).min(1),
+      kind: z.enum(CURVE_KINDS),
+      source: z.enum(sources),
+      file: z.string().endsWith(".csv"),
+      count: z.number().int().positive().optional(),
+      note: z.string().optional(),
+    })
+    .refine((v) => v.count === undefined || v.kind === "spl_stacked", {
+      message: "count is only valid for kind: spl_stacked",
+    })
+    .refine((v) => v.kind !== "spl_stacked" || v.count !== undefined, {
+      message: "count is required for kind: spl_stacked",
+    });
 
-const measurement = z
-  .object({
-    driver: z.array(reference("drivers")).min(1),
-    kind: z.enum(CURVE_KINDS),
-    source: z.enum(["rew_measured", "klippel"]),
-    file: z.string().endsWith(".csv"),
-    count: z.number().int().positive().default(1),
-    note: z.string().optional(),
-  })
-  .refine((v) => v.count === 1 || v.kind === "spl_stacked", {
-    message: "count > 1 is only valid for kind: spl_stacked",
-  });
+const simulation = curveEntry([
+  "hornresp_sim",
+  "akabak_sim",
+  "catt_sim",
+  "vituixcad_sim",
+  "winsd_sim",
+  "basta_sim",
+]);
+
+const measurement = curveEntry(["rew_measured", "klippel"]);
 
 // Raw simulation project files (e.g. Hornresp record, AkAbak script) for remixing.
 const designSource = z.object({

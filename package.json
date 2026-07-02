@@ -11,8 +11,11 @@
     "check": "astro check",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
     "knip": "knip",
-    "schema:gen": "astro sync && cp .astro/collections/drivers.schema.json schema/driver.schema.json && cp .astro/collections/enclosures.schema.json schema/enclosure.schema.json && cp .astro/collections/horns.schema.json schema/horn.schema.json && biome format --write schema/"
+    "schema:gen": "astro sync && cp .astro/collections/drivers.schema.json schema/driver.schema.json && cp .astro/collections/enclosures.schema.json schema/enclosure.schema.json && cp .astro/collections/horns.schema.json schema/horn.schema.json && biome format --write schema/",
+    "validate:driver": "node scripts/validate-driver.mjs",
+    "prepare": "git config core.hooksPath .githooks || true"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",
@@ -26,6 +29,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@biomejs/biome": "^2.5.0",
+    "@playwright/test": "1.60.0",
     "@types/node": "^26.0.1",
     "@vitest/coverage-v8": "^4.1.9",
     "knip": "^6.17.1",

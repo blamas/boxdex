@@ -2,29 +2,40 @@
 import { onMount } from "svelte";
 import { type Translations, tt } from "../i18n";
 import { CATEGORIES, type Category } from "../lib/category";
-import { suggestCrossovers, type XoBand } from "../lib/crossover";
-import { SERIES_COLORS, toPairs } from "../lib/csv";
+import { clickOutside } from "../lib/click-outside";
+import { suggestCrossovers, type XoCurve } from "../lib/crossover";
+import { toPairs } from "../lib/csv";
 import { type CurvesResponse, curveEntries, resolveCurveEntry } from "../lib/curves";
+import { SERIES_COLORS } from "../lib/echarts";
 import { fmtHz, fmtOhm, fmtW } from "../lib/format";
 import type { EnclosureRecord } from "../lib/metrics";
 import { BASE } from "../lib/site";
 import {
   AMP_EFFICIENCY,
+  additionalUnitsNeeded,
   CATEGORY_UPPER_HZ,
   type CoverageInputs,
-  calcCoverage,
+  calcCategoryCoverage,
   DEFAULT_CREST_DB,
   decodeStack,
   encodeStack,
   GENERATOR_HEADROOM,
   recommendedGeneratorW,
+  type SlotBand,
   type StackSlot,
   summarizeStack,
   type XoState,
 } from "../lib/stack";
-import { ampChannelW, wiringOptions } from "../lib/wiring";
+import {
+  ampChannelW,
+  divisors,
+  effectiveRating,
+  suggestedChannels,
+  wiringOptions,
+} from "../lib/wiring";
 import Combobox from "./Combobox.svelte";
 import ExportMenu from "./ExportMenu.svelte";
+import InfoTip from "./InfoTip.svelte";
 import PageActions from "./PageActions.svelte";
 import SystemResponse from "./SystemResponse.svelte";
 
@@ -48,22 +59,30 @@ let loading = $state(true);
 let initialized = $state(false);
 let xoApplied = $state(false);
 let xoOverrides = $state<XoState["overrides"]>({});
+let xoGains = $state<XoState["gains"]>({});
 let pickerCat = $state<Category | null>(null);
 let pickerQuery = $state("");
-let pickerEl = $state<HTMLDivElement>();
 
 $effect(() => {
   if (!initialized) return;
-  const encoded = encodeStack(stack, coverage, { applied: xoApplied, overrides: xoOverrides });
+  const encoded = encodeStack(stack, coverage, {
+    applied: xoApplied,
+    overrides: xoOverrides,
+    gains: xoGains,
+  });
   try {
     localStorage.setItem("boxdex-stack", encoded);
   } catch (_) {}
   history.replaceState(null, "", encoded ? `#${encoded}` : location.pathname);
 });
 
+// Slug → record lookup shared by the effect and every derived below, instead of a
+// records.find scan per slot per recompute.
+const recBySlug = $derived(new Map(records.map((r) => [r.slug, r])));
+
 $effect(() => {
   for (const slot of stack) {
-    const rec = records.find((r) => r.slug === slot.slug);
+    const rec = recBySlug.get(slot.slug);
     if (rec?.availableKinds.includes("spl") && !curveCache[slot.slug]) {
       fetch(`${BASE}/api/curves/${slot.slug}.json`)
         .then((r) => r.json())
@@ -83,6 +102,7 @@ onMount(async () => {
     coverage = decoded.cov;
     xoApplied = decoded.xo.applied;
     xoOverrides = decoded.xo.overrides;
+    xoGains = decoded.xo.gains;
   }
 
   const res = await fetch(`${BASE}/api/manifest.json`);
@@ -94,7 +114,7 @@ onMount(async () => {
 
 const resolvedSlots = $derived.by(() =>
   stack.flatMap((slot, i) => {
-    const rec = records.find((r) => r.slug === slot.slug);
+    const rec = recBySlug.get(slot.slug);
     return rec ? [{ i, slot, rec }] : [];
   })
 );
@@ -103,17 +123,51 @@ const summary = $derived(
   summarizeStack(resolvedSlots.map(({ slot, rec }) => ({ qty: slot.qty, rec })))
 );
 
+// Every slot's maxSplDb contribution grouped by category, built once and shared by all
+// coverage rows (id is the slot index, so a slot can find its own entry back).
+const categoryEntries = $derived.by(() => {
+  const map = new Map<Category, { id: number; maxSplDb: number; qty: number }[]>();
+  for (const { i, slot, rec } of resolvedSlots) {
+    if (rec.metrics.maxSplDb === undefined) continue;
+    const list = map.get(rec.category) ?? [];
+    list.push({ id: i, maxSplDb: rec.metrics.maxSplDb, qty: slot.qty });
+    map.set(rec.category, list);
+  }
+  return map;
+});
+
+// Coverage per slot, but headroom/"more needed" honor every other slot already in the
+// same category: two sub models stacked together read the same combined headroom as one
+// model at the equivalent total count would (see calcCategoryCoverage in lib/stack.ts).
 const coverageResults = $derived.by(() =>
   resolvedSlots.map(({ i, slot, rec }) => {
-    const base = calcCoverage(
-      rec.metrics.maxSplDb,
+    const entries = categoryEntries.get(rec.category) ?? [];
+    const targetIndex = entries.findIndex((e) => e.id === i);
+    // Solo reference: what one of this exact box does on its own at distance (no array
+    // gain, no neighbors), the "per cab" figure the combined row is read against.
+    const soloAtD =
+      rec.metrics.maxSplDb !== undefined && coverage.distanceM > 0
+        ? rec.metrics.maxSplDb - 20 * Math.log10(coverage.distanceM)
+        : undefined;
+    const category = calcCategoryCoverage(
       rec.category,
-      slot.qty,
+      entries,
       coverage.distanceM,
       coverage.targetSplDb,
       coverage.crestDb
     );
-    return { i, slot, rec, base };
+    const more =
+      category && category.headroomDb < 0 && targetIndex >= 0
+        ? additionalUnitsNeeded(
+            rec.category,
+            entries,
+            targetIndex,
+            coverage.distanceM,
+            coverage.targetSplDb,
+            coverage.crestDb
+          )
+        : 0;
+    return { i, slot, rec, soloAtD, category, more };
   })
 );
 
@@ -121,7 +175,7 @@ const coverageResults = $derived.by(() =>
 // When a curve is loaded, use its actual frequency range; fall back to manifest specs.
 const crossoverSlots = $derived.by(() =>
   stack.flatMap((slot) => {
-    const rec = records.find((r) => r.slug === slot.slug);
+    const rec = recBySlug.get(slot.slug);
     if (!rec) return [];
     const payload = curveCache[slot.slug];
     if (payload) {
@@ -149,21 +203,11 @@ const crossoverSlots = $derived.by(() =>
   })
 );
 
-// Bands feeding the predicted system response, with per-band quantities and the
-// series styling their slot gets on the chart.
-interface SlotBand {
-  category: Category;
-  qty: number;
-  points: [number, number][];
-  name: string;
-  color: string;
-}
-
 // Iterate `stack` directly (not resolvedSlots) so Svelte 5 tracks slot.curveSelection
 // as a live $state proxy property, derived intermediaries can lose proxy identity.
 const slotBands = $derived.by<SlotBand[]>(() =>
   stack.flatMap((slot, i) => {
-    const rec = records.find((r) => r.slug === slot.slug);
+    const rec = recBySlug.get(slot.slug);
     if (!rec) return [];
     const payload = curveCache[slot.slug];
     if (!payload) return [];
@@ -173,6 +217,7 @@ const slotBands = $derived.by<SlotBand[]>(() =>
     if (!curve) return [];
     return [
       {
+        id: rec.slug,
         category: rec.category,
         qty: slot.qty,
         points: toPairs(curve),
@@ -183,30 +228,37 @@ const slotBands = $derived.by<SlotBand[]>(() =>
   })
 );
 
-const xoSuggestions = $derived(
-  suggestCrossovers(
-    resolvedSlots.map(
-      ({ rec }): XoBand => ({
-        category: rec.category,
-        f3Hz: rec.metrics.f3Hz,
-        recommendedXoHz: rec.recommendedCrossoverHz,
-        minCrossoverHz: rec.minCrossoverHz,
-      })
-    )
-  )
-);
-
-$effect(() => {
-  if (!pickerCat) return;
-  function onClickOutside(e: MouseEvent) {
-    if (pickerEl && !pickerEl.contains(e.target as Node)) pickerCat = null;
+// One curve per unique box *model* in the stack (deduped by slug): cabinet count doesn't
+// affect where two curves cross, and two slots of the same model must produce exactly one
+// pairing, not two competing ones. Same-category models share one band inside
+// suggestCrossovers (see lib/crossover.ts). Only models whose SPL curve has already
+// resolved are included, so xoSuggestions never has a half-loaded pair, no separate
+// loading flag needed for the crossover UI.
+const xoCurves = $derived.by<XoCurve[]>(() => {
+  const seen = new Set<string>();
+  const out: XoCurve[] = [];
+  for (const slot of stack) {
+    if (seen.has(slot.slug)) continue;
+    const rec = recBySlug.get(slot.slug);
+    if (!rec) continue;
+    const payload = curveCache[slot.slug];
+    if (!payload) continue;
+    const entry = resolveCurveEntry(payload, "spl", slot.curveSelection);
+    const curve = entry?.dc.curves.spl;
+    if (!curve || curve.freq.length < 2) continue;
+    seen.add(slot.slug);
+    out.push({
+      id: rec.slug,
+      name: rec.name,
+      category: rec.category,
+      points: toPairs(curve),
+      minCrossoverHz: rec.minCrossoverHz,
+    });
   }
-  const timer = setTimeout(() => document.addEventListener("click", onClickOutside), 0);
-  return () => {
-    clearTimeout(timer);
-    document.removeEventListener("click", onClickOutside);
-  };
+  return out;
 });
+
+const xoSuggestions = $derived(suggestCrossovers(xoCurves));
 
 function togglePicker(cat: Category) {
   pickerCat = pickerCat === cat ? null : cat;
@@ -228,9 +280,17 @@ function changeSlug(idx: number, slug: string) {
   stack[idx] = { slug, qty: stack[idx].qty };
 }
 
+// A channel override only makes sense while it still evenly divides qty; drop it
+// right where qty changes so a stale override can never be read downstream.
+function withQty(slot: StackSlot, qty: number): StackSlot {
+  const channels =
+    slot.channels !== undefined && qty % slot.channels === 0 ? slot.channels : undefined;
+  return { ...slot, qty, channels };
+}
+
 function adjustQty(idx: number, delta: number) {
   const next = [...stack];
-  next[idx] = { ...next[idx], qty: Math.max(1, Math.min(99, next[idx].qty + delta)) };
+  next[idx] = withQty(next[idx], Math.max(1, Math.min(99, next[idx].qty + delta)));
   stack = next;
 }
 
@@ -238,7 +298,7 @@ function setQtyFromInput(idx: number, value: string) {
   const n = Number.parseInt(value, 10);
   if (n >= 1 && n <= 99) {
     const next = [...stack];
-    next[idx] = { ...next[idx], qty: n };
+    next[idx] = withQty(next[idx], n);
     stack = next;
   }
 }
@@ -250,12 +310,6 @@ const curvesLoading = $derived(
   )
 );
 </script>
-
-{#snippet infoTip(text: string)}
-  <button type="button" class="tip" aria-label={text}>
-    ⓘ<span class="tip-bubble">{text}</span>
-  </button>
-{/snippet}
 
 <div class="stack-builder">
   <PageActions>
@@ -311,17 +365,17 @@ const curvesLoading = $derived(
                   {@const entries = curveEntries(curveCache[slot.slug], "spl")}
                   {@const effectiveKey = resolveCurveEntry(curveCache[slot.slug], "spl", slot.curveSelection)?.key ?? ""}
                   {#if entries.length > 1}
-                    <select
-                      class="curve-sel"
+                    <Combobox
+                      items={entries}
+                      getId={(e) => e.key}
+                      getLabel={(e) => e.label}
                       value={effectiveKey}
-                      onchange={(e) => {
-                        stack[i].curveSelection = (e.target as HTMLSelectElement).value;
+                      searchable={false}
+                      compact
+                      onselect={(key) => {
+                        stack[i].curveSelection = key;
                       }}
-                    >
-                      {#each entries as e}
-                        <option value={e.key}>{e.label}</option>
-                      {/each}
-                    </select>
+                    />
                   {/if}
                 {/if}
               </div>
@@ -330,7 +384,7 @@ const curvesLoading = $derived(
         </div>
       {/if}
 
-      <div class="add-area" bind:this={pickerEl}>
+      <div class="add-area" use:clickOutside={() => pickerCat && (pickerCat = null)}>
         <div class="add-row">
           {#each CATEGORIES as cat}
             <button
@@ -390,7 +444,7 @@ const curvesLoading = $derived(
                 <span class="summary-val">{summary.totalTransportM3.toFixed(2)} m³</span>
                 <span class="summary-label">
                   {t.transportVolume}
-                  {@render infoTip(t.transportVolumeTip)}
+                  <InfoTip text={t.transportVolumeTip} />
                 </span>
               </div>
               {#if summary.totalSheets > 0}
@@ -398,7 +452,7 @@ const curvesLoading = $derived(
                   <span class="summary-val">{summary.sheetsMissing ? "~" : ""}{summary.totalSheets}</span>
                   <span class="summary-label">
                     {t.plywoodSheets}
-                    {@render infoTip(tt(t.plywoodTip, { sheetInfo: summary.sheetSizes.length > 0 ? `, assuming ${summary.sheetSizes.join(" / ")} mm sheets` : "" }))}
+                    <InfoTip text={tt(t.plywoodTip, { sheetInfo: summary.sheetSizes.length > 0 ? `, assuming ${summary.sheetSizes.join(" / ")} mm sheets` : "" })} />
                   </span>
                 </div>
               {/if}
@@ -414,7 +468,7 @@ const curvesLoading = $derived(
                     <span class="summary-val">{summary.maxSplPartial ? "~" : ""}{summary.systemMaxSplDb.toFixed(0)} dB</span>
                     <span class="summary-label">
                       {t.maxSplLabel}
-                      {@render infoTip(t.maxSplTip)}
+                      <InfoTip text={t.maxSplTip} />
                     </span>
                   </div>
                 {/if}
@@ -446,14 +500,14 @@ const curvesLoading = $derived(
                   <span class="summary-val">{summary.powerMissing ? "~" : ""}{fmtW(summary.totalPowerAesW * 2)}</span>
                   <span class="summary-label">
                     {t.ampPeak}
-                    {@render infoTip(t.ampPeakTip)}
+                    <InfoTip text={t.ampPeakTip} />
                   </span>
                 </div>
                 <div class="summary-item">
                   <span class="summary-val">{summary.powerMissing ? "~" : ""}{fmtW(Math.round(recommendedGeneratorW(summary.totalPowerAesW)))}</span>
                   <span class="summary-label">
                     {t.minGenerator}
-                    {@render infoTip(tt(t.generatorTip, { efficiency: String(AMP_EFFICIENCY), headroom: String(GENERATOR_HEADROOM) }))}
+                    <InfoTip text={tt(t.generatorTip, { efficiency: String(AMP_EFFICIENCY), headroom: String(GENERATOR_HEADROOM) })} />
                   </span>
                 </div>
               </div>
@@ -465,23 +519,46 @@ const curvesLoading = $derived(
       <section class="section">
         <h2 class="section-title">{t.ampMatching}</h2>
         <div class="cov-results">
-          {#each resolvedSlots as { slot, rec }}
+          {#each resolvedSlots as { i, slot, rec }}
             {@const aesPerCab = rec.powerAesW ?? rec.recommendedPowerW}
-            {@const amp = aesPerCab !== undefined ? ampChannelW(aesPerCab, slot.qty) : undefined}
+            {@const minOhm = rec.metrics.impedanceMinOhm}
+            {@const auto = rec.nominalImpedanceOhm !== undefined
+              ? suggestedChannels(rec.nominalImpedanceOhm, slot.qty, { aesPerCabW: aesPerCab, minOhm })
+              : 1}
+            {@const ch = slot.channels !== undefined && slot.qty % slot.channels === 0 ? slot.channels : auto}
+            {@const qtyPerCh = slot.qty / ch}
+            {@const amp = aesPerCab !== undefined ? ampChannelW(aesPerCab, qtyPerCh) : undefined}
             <div class="cov-row">
               <span class="badge badge-{rec.category}">{rec.category}</span>
               <span class="cov-name">{rec.name} ×{slot.qty}</span>
+              {#if slot.qty > 1}
+                <span class="channel-chips">
+                  {#each divisors(slot.qty) as d}
+                    <button
+                      class="chip {ch === d ? 'chip-active' : ''}"
+                      onclick={() => { stack[i].channels = d === auto ? undefined : d; }}
+                    >{tt(t.channelN, { n: d })}</button>
+                  {/each}
+                  {#if slot.channels !== undefined}
+                    <button class="ch-reset btn-ghost btn-sm" onclick={() => { stack[i].channels = undefined; }}>↺</button>
+                  {/if}
+                </span>
+              {/if}
               {#if rec.nominalImpedanceOhm !== undefined}
                 <span class="amp-wirings">
-                  {#each wiringOptions(rec.nominalImpedanceOhm, slot.qty) as opt}
-                    <span class="wiring-chip wiring-{opt.rating}">{opt.label} · {fmtOhm(opt.loadOhm)} Ω</span>
+                  {#each wiringOptions(rec.nominalImpedanceOhm, qtyPerCh, minOhm) as opt}
+                    <span class="wiring-chip wiring-{effectiveRating(opt)}" title={opt.minLoadOhm !== undefined ? tt(t.worstCaseLoad, { load: fmtOhm(opt.minLoadOhm) }) : undefined}>
+                      {opt.label} · {fmtOhm(opt.loadOhm)} Ω{#if opt.minLoadOhm !== undefined} ({fmtOhm(opt.minLoadOhm)} Ω min){/if}
+                    </span>
                   {/each}
                 </span>
               {:else}
                 <span class="muted">{t.noImpedance}</span>
               {/if}
               {#if amp}
-                <span class="cov-spl">{@html tt(t.ampChannel, { min: fmtW(amp.minW), ideal: `<strong>${fmtW(amp.idealW)}</strong>` })}</span>
+                <span class="cov-spl">
+                  {#if ch > 1}<span class="muted">{tt(t.channelPrefix, { n: ch })}</span> {/if}{@html tt(t.ampChannel, { min: fmtW(amp.minW), ideal: `<strong>${fmtW(amp.idealW)}</strong>` })}
+                </span>
               {:else}
                 <span class="muted">{t.noPower}</span>
               {/if}
@@ -542,21 +619,21 @@ const curvesLoading = $derived(
 
         <div class="cov-results">
           {#each coverageResults as row}
-            {@const { slot, rec } = row}
+            {@const { slot, rec, soloAtD, category, more } = row}
             <div class="cov-row">
               <span class="badge badge-{rec.category}">{rec.category}</span>
               <span class="cov-name">{rec.name} ×{slot.qty}</span>
-              {#if row.base}
-                {@const base = row.base}
+              {#if soloAtD !== undefined && category}
+                {@const gain = category.splAtD - soloAtD}
                 <span class="cov-spl">
-                  {tt(t.splPerCab, { spl: base.splAtD.toFixed(1) })} {#if base.arrayGainDb > 0}{tt(t.arrayGain, { gain: base.arrayGainDb.toFixed(1) })}{/if} → <strong>{base.systemSplAtD.toFixed(1)} dB</strong> {tt(t.at, { d: base.d.toFixed(1) })}
+                  {tt(t.splPerCab, { spl: soloAtD.toFixed(1) })} {#if gain > 0.05}{tt(t.arrayGain, { gain: gain.toFixed(1) })}{/if} → <strong>{category.splAtD.toFixed(1)} dB</strong> {tt(t.at, { d: category.d.toFixed(1) })}
                 </span>
-                {#if base.headroomDb >= 0}
-                  <span class="margin margin-ok">{tt(t.headroomOk, { n: base.headroomDb.toFixed(1) })}</span>
-                {:else if base.headroomDb >= -3}
-                  <span class="margin margin-low">{tt(t.headroomLow, { n: base.headroomDb.toFixed(1) })}</span>
+                {#if category.headroomDb >= 0}
+                  <span class="margin margin-ok">{tt(t.headroomOk, { n: category.headroomDb.toFixed(1) })}</span>
+                {:else if category.headroomDb >= -3}
+                  <span class="margin margin-low">{tt(t.headroomLow, { n: category.headroomDb.toFixed(1) })}</span>
                 {:else}
-                  <span class="margin margin-bad">{tt(t.needMore, { n: base.headroomDb.toFixed(1), need: String(base.nNeeded), more: String(Math.max(0, base.nNeeded - slot.qty)) })}</span>
+                  <span class="margin margin-bad">{tt(t.needMore, { n: category.headroomDb.toFixed(1), need: String(slot.qty + more), more: String(more) })}</span>
                 {/if}
               {:else}
                 <span class="muted">{t.noSpl}</span>
@@ -576,6 +653,7 @@ const curvesLoading = $derived(
             {xoSuggestions}
             bind:xoApplied
             bind:xoOverrides
+            bind:xoGains
             {hasSplData}
             {curvesLoading}
             t={tSystemResponse}
@@ -639,13 +717,6 @@ const curvesLoading = $derived(
   .slot-select {
     flex: 1;
     min-width: 160px;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    color: var(--text);
-    padding: 0.3rem 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    border-radius: 3px;
   }
 
   .remove-btn {
@@ -722,17 +793,6 @@ const curvesLoading = $derived(
     color: var(--muted);
     font-family: var(--font-mono);
     font-size: 0.78rem;
-  }
-
-  .curve-sel {
-    background: var(--bg);
-    border: 1px solid var(--line);
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    padding: 0.15rem 0.3rem;
-    border-radius: 3px;
-    width: fit-content;
   }
 
   .add-area {
@@ -882,47 +942,6 @@ const curvesLoading = $derived(
     color: var(--muted);
   }
 
-  .tip {
-    position: relative;
-    display: inline;
-    padding: 0;
-    background: none;
-    border: none;
-    border-bottom: 1px dotted var(--muted);
-    font: inherit;
-    cursor: help;
-    color: var(--muted);
-    outline: none;
-  }
-
-  .tip-bubble {
-    position: absolute;
-    bottom: calc(100% + 6px);
-    left: 0;
-    z-index: 10;
-    width: max-content;
-    max-width: 260px;
-    padding: 0.5rem 0.6rem;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    color: var(--text);
-    font-size: 0.7rem;
-    line-height: 1.4;
-    text-transform: none;
-    letter-spacing: normal;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.12s;
-  }
-
-  .tip:hover .tip-bubble,
-  .tip:focus-visible .tip-bubble {
-    opacity: 1;
-    visibility: visible;
-  }
-
   .cov-inputs {
     display: flex;
     gap: 1.5rem;
@@ -1015,6 +1034,17 @@ const curvesLoading = $derived(
     font-family: var(--font-mono);
     font-size: 0.72rem;
     color: var(--muted);
+  }
+
+  .channel-chips {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .ch-reset {
+    padding: 0.1rem 0.35rem;
   }
 
   .amp-wirings {

@@ -1,0 +1,47 @@
+---
+name: FK Sub Complex
+category: sub
+topology: tapped_horn
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 380
+dims:
+  wMm: 620
+  hMm: 900
+  dMm: 980
+plywoodThicknessMm: 18
+sheetCount: 5
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+specs:
+  f3Hz: 34
+  sensitivityDb: 103
+  maxSplDb: 133
+  powerAesW: 1500
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U TH sim, Hornresp
+measurements: []
+sources:
+  - tool: Hornresp
+    file: sim.hrp
+    note: Primary Hornresp record
+  - tool: AkAbak
+    file: sim.akb
+    note: Cross-check AkAbak model
+plans: []
+license: CC0-1.0
+buildComplexity: complex
+recommendedFor:
+  - tekno
+  - hardtek
+---
+
+FK Sub Complex: complex build complexity, 5 sheets, dual simulation sources (Hornresp + AkAbak).

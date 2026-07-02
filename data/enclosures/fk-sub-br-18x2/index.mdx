@@ -1,0 +1,46 @@
+---
+name: FK Sub BR 18x2
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-18hp1060-8
+  - faital-18hp1060-8
+driverCount: 2
+netVolumeL: 520
+dims:
+  wMm: 760
+  hMm: 860
+  dMm: 760
+specs:
+  f3Hz: 38
+  fbHz: 42
+  sensitivityDb: 101
+  impedanceNominalOhm: 4
+  maxSplDb: 135
+  powerAesW: 2400
+  powerProgramW: 4800
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U per-driver sim, Hornresp
+measurements:
+  - driver:
+      - faital-18hp1060-8
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-combined-1u.csv
+    note: 1U combined 2x18, REW
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+---
+
+FK Sub BR 18x2: dual 18" bass reflex, Faital Pro 18HP1060 wired parallel (4 Ohm). Per-driver sim, combined measurement.

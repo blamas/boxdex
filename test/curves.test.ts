@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CURVE_KINDS } from "../src/lib/csv";
 import {
+  availSplCounts,
   CURVE_Y_LABELS,
   type CurvesResponse,
   curveEntries,
@@ -12,13 +13,8 @@ import {
 const spl = { freq: [40, 80], value: [110, 120] };
 const impedance = { freq: [40, 80], value: [8, 12] };
 
-function dc(
-  driverId: string,
-  source: string,
-  curves: DriverCurves["curves"],
-  count = 1
-): DriverCurves {
-  return { driverId, count, source, curves };
+function dc(driverId: string, source: string, curves: DriverCurves["curves"]): DriverCurves {
+  return { driverId, source, curves, stacked: {}, notes: {} };
 }
 
 function payload(
@@ -27,6 +23,38 @@ function payload(
 ): CurvesResponse {
   return { slug: "box", name: "Box", simulations, measurements };
 }
+
+describe("availSplCounts", () => {
+  it("returns [1] when only a plain spl curve exists", () => {
+    expect(availSplCounts(dc("d1", "s", { spl }))).toEqual([1]);
+  });
+
+  it("returns stacked counts when no plain spl", () => {
+    const d: DriverCurves = {
+      driverId: "d1",
+      source: "s",
+      curves: {},
+      stacked: { 4: { curve: spl }, 6: { curve: spl } },
+      notes: {},
+    };
+    expect(availSplCounts(d)).toEqual([4, 6]);
+  });
+
+  it("returns [1, ...stacked] when both exist", () => {
+    const d: DriverCurves = {
+      driverId: "d1",
+      source: "s",
+      curves: { spl },
+      stacked: { 4: { curve: spl } },
+      notes: {},
+    };
+    expect(availSplCounts(d)).toEqual([1, 4]);
+  });
+
+  it("returns [] when neither exists", () => {
+    expect(availSplCounts(dc("d1", "s", {}))).toEqual([]);
+  });
+});
 
 describe("CURVE_Y_LABELS", () => {
   it("labels every curve kind", () => {
@@ -58,18 +86,18 @@ describe("curveEntries", () => {
     expect(entries[0].label).toBe("sim · d1");
   });
 
-  it("keys encode prefix, driverId, count, and source", () => {
+  it("keys encode prefix and driverId", () => {
     const p = payload([dc("d1", "hornresp_sim", { spl })], [dc("d1", "rew_measured", { spl })]);
     const entries = curveEntries(p, "spl");
-    expect(entries.find((e) => e.isMeas)?.key).toBe("meas:d1:c1:rew_measured");
-    expect(entries.find((e) => !e.isMeas)?.key).toBe("sim:d1:c1:hornresp_sim");
+    expect(entries.find((e) => e.isMeas)?.key).toBe("meas:d1");
+    expect(entries.find((e) => !e.isMeas)?.key).toBe("sim:d1");
   });
 });
 
 describe("resolveCurveEntry", () => {
   it("selects by key when found", () => {
     const p = payload([dc("d1", "hornresp_sim", { spl })], [dc("d1", "rew_measured", { spl })]);
-    const entry = resolveCurveEntry(p, "spl", "sim:d1:c1:hornresp_sim");
+    const entry = resolveCurveEntry(p, "spl", "sim:d1");
     expect(entry?.isMeas).toBe(false);
   });
 

@@ -1,0 +1,39 @@
+---
+name: FK BR 18
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-18hp1060-8
+netVolumeL: 280
+dims:
+  wMm: 730
+  hMm: 730
+  dMm: 650
+weightKg: 42
+specs:
+  f3Hz: 38
+  fbHz: 44
+  sensitivityDb: 101
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+18" bass reflex sub. Faital Pro 18HP1060, tuned to 44 Hz.

@@ -1,13 +1,13 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import type { Translations } from "../i18n";
-import { SERIES_COLORS } from "../lib/csv";
-import { type EChartsInstance, getActiveTheme } from "../lib/echarts";
+import { type EChartsInstance, getActiveTheme, SERIES_COLORS } from "../lib/echarts";
 import { downloadBlob, jsonString, recordsToCsv } from "../lib/export";
 import { humanize } from "../lib/format";
 import {
   AXIS_FIELDS,
   AXIS_MAP,
+  axisComboboxItems,
   type EnclosureRecord,
   frontierLine,
   type MetricKey,
@@ -16,6 +16,7 @@ import {
 } from "../lib/metrics";
 import { BASE } from "../lib/site";
 import { readParam, writeParams } from "../lib/url-state";
+import Combobox from "./Combobox.svelte";
 import EChart from "./EChart.svelte";
 import ExportMenu from "./ExportMenu.svelte";
 import PageActions from "./PageActions.svelte";
@@ -35,6 +36,13 @@ let yKey = $state<MetricKey>("maxSplDb");
 let colorKey = $state<"topology" | "category">("topology");
 let onlyPareto = $state(false);
 let initialized = $state(false);
+
+const axisItems = $derived(axisComboboxItems(axisLabels));
+
+const colorByItems = $derived([
+  { id: "topology", label: t.topology },
+  { id: "category", label: t.category },
+]);
 
 // Clicking a point opens the enclosure's plan page.
 function onChartInit(chart: EChartsInstance) {
@@ -219,26 +227,44 @@ $effect(() => {
   <div class="controls no-print">
     <label>
       <span>{t.xAxis}</span>
-      <select bind:value={xKey}>
-        {#each AXIS_FIELDS as f}
-          <option value={f.key}>{axisLabels[f.key as keyof typeof axisLabels] ?? f.label} ({f.unit})</option>
-        {/each}
-      </select>
+      <Combobox
+        items={axisItems}
+        getId={(i) => i.id}
+        getLabel={(i) => i.label}
+        value={xKey}
+        searchable={false}
+        onselect={(v) => {
+          const key = metricKeyOf(v);
+          if (key) xKey = key;
+        }}
+      />
     </label>
     <label>
       <span>{t.yAxis}</span>
-      <select bind:value={yKey}>
-        {#each AXIS_FIELDS as f}
-          <option value={f.key}>{axisLabels[f.key as keyof typeof axisLabels] ?? f.label} ({f.unit})</option>
-        {/each}
-      </select>
+      <Combobox
+        items={axisItems}
+        getId={(i) => i.id}
+        getLabel={(i) => i.label}
+        value={yKey}
+        searchable={false}
+        onselect={(v) => {
+          const key = metricKeyOf(v);
+          if (key) yKey = key;
+        }}
+      />
     </label>
     <label>
       <span>{t.colorBy}</span>
-      <select bind:value={colorKey}>
-        <option value="topology">{t.topology}</option>
-        <option value="category">{t.category}</option>
-      </select>
+      <Combobox
+        items={colorByItems}
+        getId={(i) => i.id}
+        getLabel={(i) => i.label}
+        value={colorKey}
+        searchable={false}
+        onselect={(v) => {
+          if (v === "topology" || v === "category") colorKey = v;
+        }}
+      />
     </label>
     <label class="check-label">
       <input type="checkbox" bind:checked={onlyPareto} />

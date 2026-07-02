@@ -80,4 +80,5 @@ function optionLabel(h: Horn): string {
   {tRadar}
   {optionLabel}
   {view}
+  detailHref={(h) => `${localeBase}/horns/${h.id}`}
 />

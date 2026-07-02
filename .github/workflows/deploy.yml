@@ -2,20 +2,21 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref_name }}
   cancel-in-progress: false
 
+env:
+  SITE_AUTH_PASSWORDS: ${{ secrets.SITE_AUTH_PASSWORDS }}
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
@@ -25,11 +26,23 @@ jobs:
           node-version: 26
           cache: npm
 
-      - id: pages
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-
       - name: Install
         run: npm ci
+
+      # `main` deploys to the site root, `develop` to a persistent /dev/ subpath preview.
+      # Both live on the gh-pages branch simultaneously (see target-folder below).
+      - name: Compute per-branch site config
+        id: site
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "base=/boxdex/" >> "$GITHUB_OUTPUT"
+            echo "url=https://blamas.github.io/boxdex/" >> "$GITHUB_OUTPUT"
+            echo "target-folder=." >> "$GITHUB_OUTPUT"
+          else
+            echo "base=/boxdex/dev/" >> "$GITHUB_OUTPUT"
+            echo "url=https://blamas.github.io/boxdex/dev/" >> "$GITHUB_OUTPUT"
+            echo "target-folder=dev" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Compute auth hashes
         if: ${{ env.SITE_AUTH_PASSWORDS != '' }}
@@ -42,29 +55,23 @@ jobs:
             process.stdout.write(hashes.join(','));
           ")
           echo "SITE_AUTH_HASHES=$HASHES" >> $GITHUB_ENV
-        env:
-          SITE_AUTH_PASSWORDS: ${{ secrets.SITE_AUTH_PASSWORDS }}
 
       - name: Build
         run: npm run build
         env:
-          SITE_URL: ${{ steps.pages.outputs.origin }}
-          SITE_BASE: ${{ steps.pages.outputs.base_path }}
+          SITE_URL: ${{ steps.site.outputs.url }}
+          SITE_BASE: ${{ steps.site.outputs.base }}
           SITE_AUTH_HASHES: ${{ env.SITE_AUTH_HASHES }}
 
       - name: Pagefind
         run: npx pagefind --site dist
 
-      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+          folder: dist
+          branch: gh-pages
+          target-folder: ${{ steps.site.outputs.target-folder }}
+          clean-exclude: |
+            dev
+            pr-preview

@@ -7,8 +7,8 @@ enclosures, plus a driver/horn catalogue to design around them.
 
 | Area | Choice |
 |------|--------|
-| Generator | Astro 6 (static) |
-| Interactive islands | Svelte 5 (runes) |
+| Generator | Astro (static) |
+| Interactive islands | Svelte (runes) |
 | Charts | **Apache ECharts**: one library for curve overlays, radar compare and design-space scatter |
 | Search | Pagefind via astro-pagefind |
 | Lint/format | Biome |
@@ -57,14 +57,20 @@ npm run schema:gen   # regenerate schema/*.schema.json after schema edits
 ```
 
 With [mise](https://mise.jdx.dev): `mise run dev|build|test|lint|check|fix|verify`
-(`verify` is the full pre-push gate: lint + type-check + test + build).
+(`verify` is the full pre-push gate: lint + type-check + knip + coverage + build).
 
 ## Deploying to GitHub Pages
 
-`site` is driven by the `SITE_URL` env var at build time (the deploy workflow sets it
-from the Pages origin). For a repo-subpath deployment also set `base` in
-`astro.config.mjs`. The deploy workflow (`.github/workflows/deploy.yml`) builds and
-publishes `dist/` automatically on push to `main`.
+`site` and `base` are driven by the `SITE_URL` / `SITE_BASE` env vars at build time
+(the deploy workflow sets both from the Pages origin and base path, no
+`astro.config.mjs` edit needed for a repo-subpath deployment). The deploy workflow
+(`.github/workflows/deploy.yml`) builds and publishes `dist/` automatically on push to
+`main`.
+
+Optionally set the `SITE_AUTH_PASSWORDS` repo secret (comma-separated plaintext) to
+put the whole site behind a password gate: the workflow hashes each password at build
+time into `SITE_AUTH_HASHES`, no plaintext ever lands in the repo. Leave it unset for
+no gate.
 
 ## Contributing
 
