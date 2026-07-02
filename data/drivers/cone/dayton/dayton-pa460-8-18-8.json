@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "PA460-8 18",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 26.2,
+  "qts": 0.269,
+  "qes": 0.28,
+  "qms": 6.9,
+  "vasL": 473.5,
+  "sdCm2": 1244.1,
+  "xmaxMm": 6,
+  "reOhm": 5.3,
+  "bl": 23,
+  "mmsG": 169.1,
+  "peW": 500,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

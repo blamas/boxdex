@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hartke",
+  "model": "VLF1008",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 68,
+  "qts": 0.965,
+  "qes": 1.114,
+  "qms": 7.218,
+  "vasL": 26.2,
+  "sdCm2": 344,
+  "xmaxMm": 2.1,
+  "reOhm": 6.68,
+  "bl": 9.4,
+  "mmsG": 34.8,
+  "peW": 75,
+  "sensitivityDb": 91.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HARTKE"
+}

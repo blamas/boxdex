@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Orion Audio",
+  "model": "H2 12.4",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 33.9,
+  "qts": 0.61,
+  "qes": 0.66,
+  "qms": 7.2,
+  "vasL": 28.35,
+  "sdCm2": 440,
+  "xmaxMm": 29,
+  "reOhm": 7.4,
+  "bl": 21.6,
+  "mmsG": 214,
+  "peW": 2000,
+  "sensitivityDb": 84.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/orion-h2-12-4/specifications"
+}

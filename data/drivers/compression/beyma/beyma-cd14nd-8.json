@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD14Nd",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 63.5,
+  "fLowHz": 600,
+  "fHighHz": 17000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 108,
+  "peW": 60,
+  "magnetMaterial": "neodymium",
+  "weightKg": 1.9,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD14ND8/motor-cd-14nd-8-oh/"
+}

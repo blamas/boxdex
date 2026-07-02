@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Faital PRO",
+  "model": "HF106",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1300,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1300,
+  "sensitivityHornDb": 110,
+  "peW": 60,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 1.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Drivers/product_details/index.php?id=502010327"
+}

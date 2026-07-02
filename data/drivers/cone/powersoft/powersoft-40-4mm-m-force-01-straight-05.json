@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powersoft",
+  "model": "40''-4MM M-FORCE 01 STRAIGHT",
+  "sizeInch": 39.5,
+  "impedanceOhm": 0.5,
+  "fsHz": 26.8,
+  "qts": 0.247,
+  "qes": 0.253,
+  "qms": 10.008,
+  "vasL": 500,
+  "sdCm2": 5810,
+  "xmaxMm": 5.6,
+  "reOhm": 0.26,
+  "bl": 24,
+  "mmsG": 3345.1,
+  "peW": 5000,
+  "sensitivityDb": 112.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=POWERSOFT"
+}

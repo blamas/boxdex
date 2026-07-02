@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15NDL88",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 6.1,
+  "vasL": 126,
+  "sdCm2": 855,
+  "xmaxMm": 8,
+  "reOhm": 5,
+  "bl": 20.1,
+  "mmsG": 102,
+  "peW": 700,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/8/15NDL88"
+}

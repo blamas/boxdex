@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "F 356",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 46.9,
+  "qts": 0.272,
+  "qes": 0.32,
+  "qms": 1.81,
+  "vasL": 143,
+  "sdCm2": 551.5,
+  "xmaxMm": 2.6,
+  "reOhm": 6.8,
+  "bl": 14.7,
+  "mmsG": 34.4,
+  "peW": 60,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

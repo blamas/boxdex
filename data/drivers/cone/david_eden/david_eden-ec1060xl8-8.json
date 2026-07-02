@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "David Eden",
+  "model": "EC1060XL8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 49.6,
+  "qts": 0.207,
+  "qes": 0.22,
+  "qms": 3.52,
+  "vasL": 55.5,
+  "sdCm2": 350.1,
+  "xmaxMm": 2.4,
+  "reOhm": 5.15,
+  "bl": 15.2,
+  "mmsG": 31.9,
+  "peW": 150,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVID%20EDEN"
+}

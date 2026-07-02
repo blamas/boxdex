@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15G450/N",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 10.5,
+  "vasL": 115,
+  "sdCm2": 880,
+  "xmaxMm": 6.2,
+  "reOhm": 5.7,
+  "bl": 24,
+  "mmsG": 118.1,
+  "peW": 750,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

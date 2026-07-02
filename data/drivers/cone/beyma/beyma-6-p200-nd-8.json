@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "6\"P200/ND",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 56,
+  "qts": 0.29,
+  "qes": 0.32,
+  "qms": 3.7,
+  "vasL": 11.9,
+  "sdCm2": 135,
+  "xmaxMm": 5.5,
+  "reOhm": 5.3,
+  "mmsG": 17,
+  "peW": 200,
+  "sensitivityDb": 92,
+  "weightKg": 1.9,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/106P200ND8/altavoz-6p200nd-8-oh/"
+}

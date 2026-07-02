@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MC Kenzie",
+  "model": "C15.200",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.271,
+  "qes": 0.28,
+  "qms": 8.03,
+  "vasL": 161,
+  "sdCm2": 845,
+  "xmaxMm": 3.8,
+  "reOhm": 6,
+  "bl": 23,
+  "mmsG": 98.4,
+  "peW": 200,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MC%20KENZIE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "CANNABIS REX",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 96,
+  "qts": 0.642,
+  "qes": 0.69,
+  "qms": 9.28,
+  "vasL": 45.5,
+  "sdCm2": 532.4,
+  "xmaxMm": 0.8,
+  "reOhm": 6.56,
+  "bl": 11.7,
+  "mmsG": 24,
+  "peW": 50,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

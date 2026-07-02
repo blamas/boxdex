@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12PH32",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.28,
+  "qes": 0.3,
+  "qms": 4.3,
+  "vasL": 155,
+  "sdCm2": 522,
+  "xmaxMm": 3,
+  "reOhm": 5.8,
+  "bl": 13.3,
+  "mmsG": 35,
+  "peW": 250,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/12/8/12ph32"
+}

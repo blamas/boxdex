@@ -1,0 +1,42 @@
+---
+name: FK Sub BigVol
+category: sub
+topology: front_loaded_horn
+drivers:
+  - pyle-pdw21250-8
+driverCount: 1
+netVolumeL: 1200
+grossVolumeL: 1500
+dims:
+  wMm: 1400
+  hMm: 1800
+  dMm: 1200
+weightKg: 130
+specs:
+  f3Hz: 28
+  sensitivityDb: 104
+  maxSplDb: 137
+  hornCutoffHz: 28
+  hornMouthCm2: 18000
+simulations:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - tribe
+connectors:
+  - speakON NL4
+---
+
+FK Sub BigVol: giant 21" front-loaded horn, 1200 L net volume, 1500 L gross.

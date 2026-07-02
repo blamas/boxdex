@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hartke",
+  "model": "10XL16",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 69.3,
+  "qts": 0.47,
+  "qes": 0.536,
+  "qms": 3.819,
+  "vasL": 27.3,
+  "sdCm2": 344,
+  "xmaxMm": 5,
+  "reOhm": 11.9,
+  "bl": 17.6,
+  "mmsG": 32.1,
+  "peW": 400,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HARTKE"
+}

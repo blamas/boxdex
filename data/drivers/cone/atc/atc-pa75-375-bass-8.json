@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "ATC",
+  "model": "PA75-375 BASS",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.351,
+  "qes": 0.443,
+  "qms": 1.7,
+  "vasL": 155,
+  "sdCm2": 820,
+  "xmaxMm": 2.4,
+  "reOhm": 5.4,
+  "bl": 17,
+  "mmsG": 91.6,
+  "peW": 75,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ATC"
+}

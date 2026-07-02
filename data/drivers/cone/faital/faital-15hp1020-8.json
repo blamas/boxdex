@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15HP1020",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 10.2,
+  "vasL": 126.6,
+  "sdCm2": 822,
+  "xmaxMm": 9,
+  "reOhm": 5.5,
+  "mmsG": 118,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 6.2,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201060110"
+}

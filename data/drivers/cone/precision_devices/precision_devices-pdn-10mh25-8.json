@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PDN 10MH25",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 79.7,
+  "qts": 0.221,
+  "qes": 0.229,
+  "qms": 6.22,
+  "vasL": 18,
+  "sdCm2": 346.4,
+  "xmaxMm": 2.4,
+  "reOhm": 5.87,
+  "bl": 21.8,
+  "mmsG": 37.2,
+  "peW": 300,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

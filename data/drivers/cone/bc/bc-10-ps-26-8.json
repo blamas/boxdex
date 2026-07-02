@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10 PS 26",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.296,
+  "qes": 0.33,
+  "qms": 2.9,
+  "vasL": 38,
+  "sdCm2": 320,
+  "xmaxMm": 5.5,
+  "reOhm": 5.8,
+  "bl": 14,
+  "mmsG": 32.8,
+  "peW": 350,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

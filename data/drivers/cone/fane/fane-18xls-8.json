@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "18XLS",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.407,
+  "qes": 0.42,
+  "qms": 13.61,
+  "vasL": 187,
+  "sdCm2": 1210,
+  "xmaxMm": 9.3,
+  "reOhm": 5.2,
+  "bl": 24.5,
+  "mmsG": 214.5,
+  "peW": 1200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

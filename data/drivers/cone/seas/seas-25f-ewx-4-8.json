@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "25F-EWX-4",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 27.5,
+  "qts": 0.277,
+  "qes": 0.296,
+  "qms": 4.4,
+  "vasL": 92,
+  "sdCm2": 350,
+  "xmaxMm": 2.9,
+  "reOhm": 4,
+  "bl": 12.1,
+  "mmsG": 62.5,
+  "peW": 25,
+  "sensitivityDb": 93.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

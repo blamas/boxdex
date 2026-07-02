@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12CXA400Nd v2018",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.251,
+  "qes": 0.26,
+  "qms": 7.1,
+  "vasL": 88.5,
+  "sdCm2": 550,
+  "xmaxMm": 5.5,
+  "reOhm": 6.6,
+  "bl": 20.7,
+  "mmsG": 59.9,
+  "peW": 400,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

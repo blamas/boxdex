@@ -1,0 +1,74 @@
+---
+name: "15\" Mid Horn"
+category: mid
+topology: front_loaded_horn
+ways: 1
+drivers:
+  - bc-15ds115-8
+driverCount: 1
+netVolumeL: 160
+dims:
+  hMm: 760
+  wMm: 820
+  dMm: 620
+weightKg: 52
+specs:
+  f3Hz: 120
+  maxSplDb: 131
+  # Estimated placeholder values (not measured). See build notes.
+  maxSplExcursionDb: 128
+  maxSplThermalDb: 132
+  sensitivityDb: 104
+  impedanceMinOhm: 6.8
+  recommendedPowerW: 700
+  powerAesW: 700
+  powerProgramW: 1400
+  recommendedCrossoverHz: 1200
+simulations:
+  - driver: [bc-15ds115-8]
+    kind: spl
+    source: hornresp_sim
+    file: spl.csv
+    note: "1W/1m, half-space"
+recommendedFor:
+  - tekno
+  - tribe
+  - bass_music
+author: "Boxdex Sample"
+license: "CC-BY-SA-4.0"
+verified: false
+connectors:
+  - speakON NL4
+images:
+  - render.png
+  - photo-1.jpg
+  - photo-2.jpg
+sources:
+  - tool: hornresp
+    file: design.txt
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+---
+
+## Build notes
+
+**Sample data: values are illustrative, not measured.**
+
+15" front-loaded horn covering the mid band from roughly 120 Hz to 3-4 kHz. Horn loading
+buys ~10 dB efficiency over a direct-radiator midrange at the same power, which is why
+it is common in high-output systems.
+
+### Horn geometry
+
+- Mouth area: ~3600 cm²
+- Throat area: matched to driver Sd
+- Expansion ratio: ~1.3 per section
+- Folded path inside the cabinet to keep depth manageable
+
+### Usage
+
+Cross to a sub or kickbin below (~80-120 Hz) and to a high-frequency horn or top above
+(~1.2 kHz, a 15" cone beams hard past that, whatever the horn does). High-pass at
+100 Hz is strongly recommended to protect the driver.

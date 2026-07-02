@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "McCauley",
+  "model": "6260-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.379,
+  "qes": 0.39,
+  "qms": 13.5,
+  "vasL": 391,
+  "sdCm2": 1280,
+  "xmaxMm": 8,
+  "reOhm": 6,
+  "bl": 22.7,
+  "mmsG": 189.8,
+  "peW": 400,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MC%20CAULEY"
+}

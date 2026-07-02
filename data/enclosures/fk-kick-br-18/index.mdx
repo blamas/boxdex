@@ -1,0 +1,49 @@
+---
+name: FK Kick BR 18
+category: kick
+topology: bass_reflex
+drivers:
+  - selenium-tornado-18sw3a-4
+driverCount: 1
+netVolumeL: 180
+dims:
+  wMm: 600
+  hMm: 700
+  dMm: 620
+specs:
+  f3Hz: 60
+  fbHz: 65
+  sensitivityDb: 101
+  impedanceNominalOhm: 4
+  maxSplDb: 130
+  powerAesW: 900
+  recommendedCrossoverHz: 200
+simulations:
+  - driver:
+      - selenium-tornado-18sw3a-4
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U kick sim
+  - driver:
+      - selenium-tornado-18sw3a-4
+    kind: impedance
+    source: hornresp_sim
+    file: sim-impedance-1u.csv
+    note: 1U impedance sim
+measurements:
+  - driver:
+      - selenium-tornado-18sw3a-4
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+    note: 1U gated, REW
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - hardcore
+  - hardstyle
+---
+
+FK Kick BR 18: 4 Ohm 18" kick bin, bass reflex tuned at 65 Hz. System crossover 200 Hz.

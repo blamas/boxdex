@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "18 PFS 4",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28.7,
+  "qts": 0.37,
+  "qes": 0.41,
+  "qms": 4.31,
+  "vasL": 245.9,
+  "sdCm2": 1164.2,
+  "xmaxMm": 9.5,
+  "reOhm": 5.68,
+  "bl": 24.6,
+  "mmsG": 240.2,
+  "peW": 1200,
+  "sensitivityDb": 95.1,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2026/04/Z008397.pdf"
+}

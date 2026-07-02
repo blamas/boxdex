@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "KAPPA 1200W",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 26.5,
+  "qts": 0.496,
+  "qes": 0.566,
+  "qms": 4,
+  "vasL": 64.47,
+  "sdCm2": 531,
+  "xmaxMm": 12.75,
+  "reOhm": 1.94,
+  "bl": 11.32,
+  "mmsG": 224,
+  "peW": 500,
+  "sensitivityDb": 85.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/infinity-kappa-1200w/specifications"
+}

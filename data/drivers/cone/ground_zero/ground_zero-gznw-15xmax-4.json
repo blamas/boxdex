@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZNW 15XMAX",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 29.5,
+  "qts": 0.329,
+  "qes": 0.352,
+  "qms": 5.13,
+  "vasL": 35.7,
+  "sdCm2": 707.5,
+  "xmaxMm": 10.5,
+  "reOhm": 2,
+  "bl": 24.5,
+  "mmsG": 571.8,
+  "peW": 3000,
+  "sensitivityDb": 92.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GROUND%20ZERO"
+}

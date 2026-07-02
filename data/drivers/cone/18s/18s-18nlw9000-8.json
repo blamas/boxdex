@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18NLW9000",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 7,
+  "vasL": 206,
+  "sdCm2": 1222,
+  "xmaxMm": 14,
+  "reOhm": 5.5,
+  "bl": 28,
+  "mmsG": 218,
+  "peW": 1800,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neo",
+  "weightKg": 12.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/8/18nlw9000"
+}

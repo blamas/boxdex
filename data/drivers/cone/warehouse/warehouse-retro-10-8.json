@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Warehouse Sound",
+  "model": "RETRO 10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 115.6,
+  "qts": 0.601,
+  "qes": 0.66,
+  "qms": 6.72,
+  "vasL": 460.4,
+  "sdCm2": 324.3,
+  "xmaxMm": 3,
+  "reOhm": 6.27,
+  "bl": 2,
+  "mmsG": 0.6,
+  "peW": 60,
+  "sensitivityDb": 113.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=WAREHOUSE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Europsonic",
+  "model": "HPC38/100",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 24.9,
+  "qts": 0.66,
+  "qes": 0.84,
+  "qms": 3.09,
+  "vasL": 425.4,
+  "sdCm2": 855,
+  "xmaxMm": 4.3,
+  "reOhm": 6.2,
+  "bl": 10.7,
+  "mmsG": 98.4,
+  "peW": 50,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EUROPSONIC"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "6251MND",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.293,
+  "qes": 0.31,
+  "qms": 5.5,
+  "vasL": 120,
+  "sdCm2": 871,
+  "xmaxMm": 7.4,
+  "reOhm": 5.3,
+  "bl": 24.9,
+  "mmsG": 147.6,
+  "peW": 1000,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

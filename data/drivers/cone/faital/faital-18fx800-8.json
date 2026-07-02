@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18FX800",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.4,
+  "qes": 0.43,
+  "qms": 6.8,
+  "vasL": 247,
+  "sdCm2": 1213,
+  "xmaxMm": 13.8,
+  "reOhm": 6.2,
+  "mmsG": 182.3,
+  "peW": 1000,
+  "sensitivityDb": 96,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 6,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151070165"
+}

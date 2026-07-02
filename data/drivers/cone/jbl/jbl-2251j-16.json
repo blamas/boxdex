@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2251J",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 61,
+  "qts": 0.2,
+  "qes": 0.21,
+  "qms": 4,
+  "vasL": 28.6,
+  "sdCm2": 310,
+  "xmaxMm": 4.1,
+  "reOhm": 12.65,
+  "bl": 27.2,
+  "mmsG": 32,
+  "peW": 400,
+  "sensitivityDb": 94.9
+}

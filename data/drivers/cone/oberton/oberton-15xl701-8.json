@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15XL701",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45.25,
+  "qts": 0.28,
+  "qes": 0.288,
+  "qms": 10.07,
+  "vasL": 116.99,
+  "sdCm2": 829.6,
+  "xmaxMm": 8.75,
+  "reOhm": 5.3,
+  "bl": 23.07,
+  "mmsG": 101.61,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/516-15xl701.html"
+}

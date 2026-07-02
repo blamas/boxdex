@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD107",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 74.4,
+  "qts": 0.158,
+  "qes": 0.164,
+  "qms": 4.43,
+  "vasL": 20.78,
+  "sdCm2": 346,
+  "xmaxMm": 2.5,
+  "reOhm": 5.5,
+  "bl": 24.21,
+  "mmsG": 37.41,
+  "peW": 300,
+  "sensitivityDb": 99,
+  "weightKg": 7.8,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=13"
+}

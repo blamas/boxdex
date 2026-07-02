@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Yamaha",
+  "model": "JA-3882",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 38.1,
+  "qts": 0.157,
+  "qes": 0.16,
+  "qms": 8.45,
+  "vasL": 253.1,
+  "sdCm2": 829.6,
+  "xmaxMm": 3.1,
+  "reOhm": 13.6,
+  "bl": 36.8,
+  "mmsG": 66.7,
+  "peW": 150,
+  "sensitivityDb": 99.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=YAMAHA"
+}

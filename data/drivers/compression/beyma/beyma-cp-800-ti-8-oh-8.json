@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CP/800/TI 8 OH.",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 101.6,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 500,
+  "sensitivityHornDb": 112,
+  "peW": 100,
+  "magnetMaterial": "ferrite",
+  "weightKg": 10.3,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CP80TI8/motor-cp-800-ti-8-oh/"
+}

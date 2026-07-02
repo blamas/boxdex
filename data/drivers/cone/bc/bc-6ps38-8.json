@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "6PS38",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 75,
+  "qts": 0.3,
+  "qes": 0.31,
+  "qms": 11.7,
+  "vasL": 8,
+  "sdCm2": 132,
+  "xmaxMm": 6,
+  "reOhm": 5.4,
+  "bl": 10.8,
+  "mmsG": 14,
+  "peW": 150,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/6.5/8/6PS38"
+}

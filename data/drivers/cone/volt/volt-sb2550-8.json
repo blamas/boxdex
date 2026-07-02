@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Volt",
+  "model": "SB2550",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 21,
+  "qts": 0.288,
+  "qes": 0.34,
+  "qms": 1.9,
+  "vasL": 111,
+  "sdCm2": 337,
+  "xmaxMm": 10.4,
+  "reOhm": 6,
+  "bl": 13.9,
+  "mmsG": 82.4,
+  "peW": 200,
+  "sensitivityDb": 88,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOLT"
+}

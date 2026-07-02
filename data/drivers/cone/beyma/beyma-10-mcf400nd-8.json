@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10\"MCF400Nd",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 260,
+  "qts": 0.44,
+  "qes": 0.45,
+  "qms": 22,
+  "vasL": 2,
+  "sdCm2": 380,
+  "xmaxMm": 3.5,
+  "reOhm": 5.8,
+  "bl": 28.8,
+  "mmsG": 40,
+  "peW": 400,
+  "sensitivityDb": 102,
+  "weightKg": 6.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/110MCF40ND8/altavoz-10mcf400nd-8-oh/"
+}

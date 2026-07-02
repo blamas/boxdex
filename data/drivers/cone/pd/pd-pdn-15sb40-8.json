@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PD",
+  "model": "PDN 15SB40",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.243,
+  "qes": 0.25,
+  "qms": 8.87,
+  "vasL": 93.2,
+  "sdCm2": 829.6,
+  "xmaxMm": 4.3,
+  "reOhm": 5.2,
+  "bl": 26.2,
+  "mmsG": 104.8,
+  "peW": 600,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

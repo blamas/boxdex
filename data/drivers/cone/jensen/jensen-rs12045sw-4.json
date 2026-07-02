@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "RS12045SW",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 25,
+  "qts": 0.3,
+  "qes": 0.31,
+  "qms": 9.71,
+  "vasL": 220,
+  "sdCm2": 498,
+  "xmaxMm": 11,
+  "reOhm": 3.86,
+  "bl": 11.2,
+  "mmsG": 64,
+  "peW": 250,
+  "sensitivityDb": 95.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

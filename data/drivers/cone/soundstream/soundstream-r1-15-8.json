@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Soundstream",
+  "model": "R1-15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 23.7,
+  "qts": 0.62,
+  "qes": 0.65,
+  "qms": 13.4,
+  "vasL": 136.6,
+  "sdCm2": 823.9,
+  "xmaxMm": 17.2,
+  "reOhm": 6.8,
+  "bl": 22.1,
+  "mmsG": 314.1,
+  "peW": 1300,
+  "sensitivityDb": 87.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SOUNDSTREAM"
+}

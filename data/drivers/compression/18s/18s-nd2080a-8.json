@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND2080A",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 111,
+  "peW": 80,
+  "magnetMaterial": "neodymium",
+  "weightKg": 3.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/2-0/8/ND2080A"
+}

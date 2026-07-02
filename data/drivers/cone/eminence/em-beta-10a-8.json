@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BETA-10A",
+  "impedanceOhm": 8,
+  "sizeInch": 10,
+  "fsHz": 53,
+  "qts": 0.49,
+  "qes": 0.52,
+  "qms": 8.14,
+  "vasL": 60.1,
+  "sdCm2": 344.9,
+  "xmaxMm": 3,
+  "peW": 250,
+  "sensitivityDb": 97,
+  "reOhm": 5.75,
+  "bl": 9.6,
+  "mmsG": 25,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Beta_10A.pdf"
+}

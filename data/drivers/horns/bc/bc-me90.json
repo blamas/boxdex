@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "B&C",
+  "model": "ME90",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 80,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 900,
+  "mouthWmm": 225,
+  "mouthHmm": 270,
+  "depthMm": 138,
+  "profile": "oblate_spheroid",
+  "material": "cast aluminium",
+  "weightKg": 1.45,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/horn/1.4/0/ME90"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "15 LOW MAX",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38.2,
+  "qts": 0.352,
+  "qes": 0.364,
+  "qms": 11.018,
+  "vasL": 125.6,
+  "sdCm2": 840,
+  "xmaxMm": 9.8,
+  "reOhm": 6.1,
+  "bl": 23.4,
+  "mmsG": 136.7,
+  "peW": 1200,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "W250NG",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.876,
+  "qes": 1.1,
+  "qms": 4.3,
+  "vasL": 120,
+  "sdCm2": 360,
+  "xmaxMm": 6.1,
+  "reOhm": 6.7,
+  "bl": 6.3,
+  "mmsG": 28,
+  "peW": 80,
+  "sensitivityDb": 90.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

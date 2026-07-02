@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "320K/C-A",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 82,
+  "qts": 0.59,
+  "qes": 0.61,
+  "qms": 14,
+  "vasL": 52,
+  "sdCm2": 522,
+  "xmaxMm": 2,
+  "reOhm": 12,
+  "bl": 16.8,
+  "mmsG": 28,
+  "peW": 120,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/12/16/320K%2FC-A"
+}

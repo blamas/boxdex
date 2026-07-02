@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "SOVEREIGN PRO 15-600",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.351,
+  "qes": 0.39,
+  "qms": 3.52,
+  "vasL": 201,
+  "sdCm2": 850,
+  "xmaxMm": 6.5,
+  "reOhm": 5.4,
+  "bl": 17.1,
+  "mmsG": 88.4,
+  "peW": 600,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

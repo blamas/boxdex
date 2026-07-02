@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "5240",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.278,
+  "qes": 0.3,
+  "qms": 3.7,
+  "vasL": 116,
+  "sdCm2": 845,
+  "xmaxMm": 4.7,
+  "reOhm": 5.6,
+  "bl": 23.6,
+  "mmsG": 103.3,
+  "peW": 500,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

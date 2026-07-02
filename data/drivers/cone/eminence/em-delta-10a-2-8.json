@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTA-10A-2",
+  "impedanceOhm": 8,
+  "sizeInch": 10,
+  "fsHz": 69.7,
+  "qts": 0.44,
+  "qes": 0.48,
+  "qms": 5.79,
+  "vasL": 29.73,
+  "sdCm2": 344.9,
+  "xmaxMm": 6.39,
+  "peW": 425,
+  "sensitivityDb": 96.7,
+  "reOhm": 5.52,
+  "bl": 12.19,
+  "mmsG": 29.5,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Delta_10A-2.pdf"
+}

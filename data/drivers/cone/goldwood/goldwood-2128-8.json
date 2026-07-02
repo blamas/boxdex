@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Goldwood",
+  "model": "212/8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 1.44,
+  "qes": 1.98,
+  "qms": 5.27,
+  "vasL": 101.6,
+  "sdCm2": 513,
+  "xmaxMm": 2.5,
+  "reOhm": 7,
+  "bl": 7.37,
+  "mmsG": 64.4,
+  "peW": 120,
+  "sensitivityDb": 86.3,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/goldwood-sound-212-8/specifications"
+}

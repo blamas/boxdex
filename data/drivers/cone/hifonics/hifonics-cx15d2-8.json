@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hifonics",
+  "model": "CX15D2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.389,
+  "qes": 0.42,
+  "qms": 5.35,
+  "vasL": 59,
+  "sdCm2": 844,
+  "xmaxMm": 10,
+  "reOhm": 4,
+  "bl": 27.5,
+  "mmsG": 370.9,
+  "peW": 2250,
+  "sensitivityDb": 92.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HIFONICS"
+}

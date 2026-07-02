@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BL15-150",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.593,
+  "qes": 0.66,
+  "qms": 5.8,
+  "vasL": 179.8,
+  "sdCm2": 851,
+  "xmaxMm": 4.3,
+  "reOhm": 5.91,
+  "bl": 12.8,
+  "mmsG": 59.6,
+  "peW": 150,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

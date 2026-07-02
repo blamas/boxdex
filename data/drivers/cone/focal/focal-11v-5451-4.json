@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "11V 5451",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 48.6,
+  "qts": 0.825,
+  "qes": 0.93,
+  "qms": 7.31,
+  "vasL": 39,
+  "sdCm2": 346.4,
+  "xmaxMm": 5.1,
+  "reOhm": 3.04,
+  "bl": 6.8,
+  "mmsG": 46.3,
+  "peW": 175,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Technysound",
+  "model": "TS 30/300 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 44,
+  "qts": 0.929,
+  "qes": 1,
+  "qms": 13,
+  "vasL": 178,
+  "sdCm2": 510,
+  "xmaxMm": 4,
+  "reOhm": 7,
+  "bl": 7.2,
+  "mmsG": 26.8,
+  "peW": 150,
+  "sensitivityDb": 94.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TECHNYSOUND"
+}

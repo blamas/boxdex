@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LTD-12MK2",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 37.9,
+  "qts": 0.485,
+  "qes": 0.51,
+  "qms": 10.04,
+  "vasL": 123.2,
+  "sdCm2": 532.4,
+  "xmaxMm": 5.6,
+  "reOhm": 2.65,
+  "bl": 8.4,
+  "mmsG": 57,
+  "peW": 150,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

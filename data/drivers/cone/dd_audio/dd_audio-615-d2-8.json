@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DD Audio",
+  "model": "615 D2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32.3,
+  "qts": 0.689,
+  "qes": 0.78,
+  "qms": 5.94,
+  "vasL": 81.6,
+  "sdCm2": 856.1,
+  "xmaxMm": 5,
+  "reOhm": 4,
+  "bl": 17.8,
+  "mmsG": 305.7,
+  "peW": 300,
+  "sensitivityDb": 90.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DD%20AUDIO"
+}

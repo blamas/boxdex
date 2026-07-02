@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "1230W",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27.3,
+  "qts": 0.437,
+  "qes": 0.47,
+  "qms": 6.14,
+  "vasL": 78.5,
+  "sdCm2": 532,
+  "xmaxMm": 7.9,
+  "reOhm": 3.4,
+  "bl": 14.6,
+  "mmsG": 172.2,
+  "peW": 300,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=INFINITY"
+}

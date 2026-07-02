@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD-1Nd",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25.4,
+  "fLowHz": 1000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 110,
+  "peW": 20,
+  "magnetMaterial": "neodymium",
+  "weightKg": 0.4,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD1ND8/motor-cd-1nd-8-oh/"
+}

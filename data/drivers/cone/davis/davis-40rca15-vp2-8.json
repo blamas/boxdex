@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Davis",
+  "model": "40RCA15 vp2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 26.6,
+  "qts": 0.309,
+  "qes": 0.33,
+  "qms": 4.88,
+  "vasL": 410,
+  "sdCm2": 804,
+  "xmaxMm": 5,
+  "reOhm": 4.1,
+  "bl": 12.8,
+  "mmsG": 79.1,
+  "peW": 200,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVIS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Vifa",
+  "model": "NE-265W-04",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 23,
+  "qts": 0.294,
+  "qes": 0.3,
+  "qms": 13.8,
+  "vasL": 72.8,
+  "sdCm2": 330.1,
+  "xmaxMm": 8.9,
+  "reOhm": 2.9,
+  "bl": 11.8,
+  "mmsG": 100.4,
+  "peW": 190,
+  "sensitivityDb": 91.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VIFA"
+}

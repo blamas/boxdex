@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15PZB100",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 6.5,
+  "vasL": 110,
+  "sdCm2": 855,
+  "xmaxMm": 8,
+  "reOhm": 5.2,
+  "bl": 25.8,
+  "mmsG": 154,
+  "peW": 700,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/8/15PZB100"
+}

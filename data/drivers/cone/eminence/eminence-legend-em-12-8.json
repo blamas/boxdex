@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LEGEND EM 12",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.279,
+  "qes": 0.29,
+  "qms": 7.39,
+  "vasL": 102.3,
+  "sdCm2": 532.4,
+  "xmaxMm": 1.3,
+  "reOhm": 6.6,
+  "bl": 16.9,
+  "mmsG": 41,
+  "peW": 200,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

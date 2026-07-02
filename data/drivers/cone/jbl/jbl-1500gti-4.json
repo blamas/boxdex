@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "1500GTI ",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 5.8,
+  "vasL": 188.95,
+  "sdCm2": 877,
+  "xmaxMm": 5.46,
+  "reOhm": 2.5,
+  "bl": 13.49,
+  "mmsG": 119.52,
+  "peW": 600,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-1500gti/specifications"
+}

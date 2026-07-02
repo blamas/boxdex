@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "10RS430 v2026",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.301,
+  "qes": 0.31,
+  "qms": 10,
+  "vasL": 61.5,
+  "sdCm2": 344,
+  "xmaxMm": 9.7,
+  "reOhm": 6.8,
+  "bl": 17.2,
+  "mmsG": 66.7,
+  "peW": 400,
+  "sensitivityDb": 90.8,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151040095"
+}

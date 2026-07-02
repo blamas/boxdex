@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD1550",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.21,
+  "qes": 0.22,
+  "qms": 5.55,
+  "vasL": 242,
+  "sdCm2": 890,
+  "xmaxMm": 12,
+  "reOhm": 6.4,
+  "bl": 26.34,
+  "mmsG": 123.4,
+  "peW": 600,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ceramic",
+  "weightKg": 10.9,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=14"
+}

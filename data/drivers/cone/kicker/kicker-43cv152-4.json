@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kicker",
+  "model": "43CV152",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 26.4,
+  "qts": 0.389,
+  "qes": 0.404,
+  "qms": 10.457,
+  "vasL": 121.4,
+  "sdCm2": 839.8,
+  "xmaxMm": 7.5,
+  "reOhm": 3.93,
+  "bl": 21.9,
+  "mmsG": 297.1,
+  "peW": 500,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KICKER"
+}

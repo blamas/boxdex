@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10NDL88",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 61,
+  "qts": 0.25,
+  "qes": 0.26,
+  "qms": 7.3,
+  "vasL": 18.4,
+  "sdCm2": 320,
+  "xmaxMm": 8.1,
+  "reOhm": 5.1,
+  "bl": 20,
+  "mmsG": 53.5,
+  "peW": 700,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/10/8/10NDL88"
+}

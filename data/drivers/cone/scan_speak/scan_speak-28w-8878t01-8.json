@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Scan-Speak",
+  "model": "28W/8878T01",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.312,
+  "qes": 0.33,
+  "qms": 5.81,
+  "vasL": 116,
+  "sdCm2": 363,
+  "xmaxMm": 7.5,
+  "reOhm": 6.3,
+  "bl": 14.8,
+  "mmsG": 83.3,
+  "peW": 200,
+  "sensitivityDb": 88.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SCAN%20SPEAK"
+}

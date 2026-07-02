@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "JCH 1270-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 78,
+  "qts": 1.084,
+  "qes": 1.15,
+  "qms": 19,
+  "vasL": 46.7,
+  "sdCm2": 491,
+  "xmaxMm": 1.5,
+  "reOhm": 5.3,
+  "bl": 8.2,
+  "mmsG": 30.1,
+  "peW": 70,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

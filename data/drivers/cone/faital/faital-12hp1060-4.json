@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12HP1060",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 45,
+  "qts": 0.25,
+  "qes": 0.26,
+  "qms": 12.1,
+  "vasL": 33.8,
+  "sdCm2": 518,
+  "xmaxMm": 12.45,
+  "reOhm": 2.9,
+  "mmsG": 138.7,
+  "peW": 1000,
+  "sensitivityDb": 95,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 6.6,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201050121"
+}

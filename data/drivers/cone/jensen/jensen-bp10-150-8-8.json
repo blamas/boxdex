@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "BP10/150-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 5.93,
+  "vasL": 42.6,
+  "sdCm2": 330.1,
+  "xmaxMm": 2.4,
+  "reOhm": 6.1,
+  "bl": 13.4,
+  "mmsG": 30,
+  "peW": 150,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

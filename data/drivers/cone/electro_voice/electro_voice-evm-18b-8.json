@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "EVM-18B",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.36,
+  "qes": 0.376,
+  "qms": 8.37,
+  "vasL": 516,
+  "sdCm2": 1140,
+  "xmaxMm": 3.3,
+  "reOhm": 5.2,
+  "bl": 15.3,
+  "mmsG": 82.1,
+  "peW": 100,
+  "sensitivityDb": 100.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELECTROVOICE"
+}

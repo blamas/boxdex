@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12 PH 32 (prodance)",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 56.8,
+  "qts": 0.333,
+  "qes": 0.35,
+  "qms": 6.86,
+  "vasL": 92.7,
+  "sdCm2": 530.9,
+  "xmaxMm": 3,
+  "reOhm": 5.7,
+  "bl": 13.9,
+  "mmsG": 33.5,
+  "peW": 250,
+  "sensitivityDb": 100.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

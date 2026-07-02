@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Faital PRO",
+  "model": "HF104",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 37,
+  "fLowHz": 1500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1700,
+  "sensitivityHornDb": 108,
+  "peW": 40,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 0.67,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Drivers/product_details/index.php?id=502010351"
+}

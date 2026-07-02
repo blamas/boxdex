@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Stereo Integrity",
+  "model": "RM-15 15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.498,
+  "qes": 0.55,
+  "qms": 5.3,
+  "vasL": 89.7,
+  "sdCm2": 851,
+  "xmaxMm": 9.7,
+  "reOhm": 6.1,
+  "bl": 26.2,
+  "mmsG": 340.9,
+  "peW": 1000,
+  "sensitivityDb": 89.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=STEREO%20INTEGRITY"
+}

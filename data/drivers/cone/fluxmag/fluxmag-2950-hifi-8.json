@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fluxmag",
+  "model": "2950-Hifi",
+  "sizeInch": 31.5,
+  "impedanceOhm": 8,
+  "fsHz": 24.4,
+  "qts": 0.589,
+  "qes": 0.63,
+  "qms": 8.94,
+  "vasL": 1313,
+  "sdCm2": 3019,
+  "xmaxMm": 5.5,
+  "reOhm": 5.8,
+  "bl": 24.2,
+  "mmsG": 414,
+  "peW": 200,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FLUXMAG"
+}

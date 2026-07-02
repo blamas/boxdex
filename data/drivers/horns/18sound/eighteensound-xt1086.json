@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "18 Sound",
+  "model": "XT1086",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 800,
+  "mouthWmm": 250,
+  "mouthHmm": 165,
+  "depthMm": 110,
+  "profile": "conical",
+  "constantDirectivity": true,
+  "material": "ABS",
+  "weightKg": 0.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-horn/1.0/52/XT1086"
+}

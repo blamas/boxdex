@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD 18BR40",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 10.21,
+  "vasL": 309,
+  "sdCm2": 1134.1,
+  "xmaxMm": 9.3,
+  "reOhm": 5.11,
+  "bl": 21.9,
+  "mmsG": 163.9,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

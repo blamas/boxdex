@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12FW64",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.29,
+  "qes": 0.32,
+  "qms": 3.5,
+  "vasL": 64,
+  "sdCm2": 522,
+  "xmaxMm": 5,
+  "reOhm": 5.2,
+  "bl": 15.5,
+  "mmsG": 47,
+  "peW": 250,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/12/8/12FW64"
+}

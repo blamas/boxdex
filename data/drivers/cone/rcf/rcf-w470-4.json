@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "W470",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 36,
+  "qts": 0.35,
+  "qes": 0.36,
+  "qms": 12.6,
+  "vasL": 201,
+  "sdCm2": 1134.1,
+  "xmaxMm": 6,
+  "reOhm": 3.5,
+  "bl": 19.6,
+  "mmsG": 175.3,
+  "peW": 800,
+  "sensitivityDb": 99.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

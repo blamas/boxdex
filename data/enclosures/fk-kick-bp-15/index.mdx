@@ -1,0 +1,36 @@
+---
+name: FK Kick BP 15
+category: kick
+topology: bandpass
+drivers:
+  - crites_speakers-cw1526-4
+driverCount: 1
+netVolumeL: 130
+dims:
+  wMm: 550
+  hMm: 700
+  dMm: 580
+specs:
+  f3Hz: 55
+  f3HzHigh: 180
+  fbHz: 80
+  sensitivityDb: 100
+  impedanceNominalOhm: 4
+  powerAesW: 500
+  recommendedCrossoverHz: 160
+simulations:
+  - driver:
+      - crites_speakers-cw1526-4
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U bandpass sim
+measurements: []
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - hardcore
+---
+
+FK Kick BP 15: 15" kick bandpass, tuned 55-180 Hz for tight kick transients.

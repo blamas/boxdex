@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE750TN",
+  "impedanceOhm": 16,
+  "exitInch": 2,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 109,
+  "peW": 110,
+  "weightKg": 6.1,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/2/16/DE750TN"
+}

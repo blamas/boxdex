@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "285 T vp2020",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 58.6,
+  "qts": 0.81,
+  "qes": 0.903,
+  "qms": 7.819,
+  "vasL": 134.7,
+  "sdCm2": 452.2,
+  "xmaxMm": 1.8,
+  "reOhm": 5.73,
+  "bl": 6.1,
+  "mmsG": 15.7,
+  "peW": 12,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

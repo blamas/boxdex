@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiotechnology",
+  "model": "15F1022510KAP",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.288,
+  "qes": 0.3,
+  "qms": 6.93,
+  "vasL": 410,
+  "sdCm2": 835,
+  "xmaxMm": 8.5,
+  "reOhm": 6,
+  "bl": 18.6,
+  "mmsG": 124.8,
+  "peW": 200,
+  "sensitivityDb": 94.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIOTECHNOLOGY"
+}

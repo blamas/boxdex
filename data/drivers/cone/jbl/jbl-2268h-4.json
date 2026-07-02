@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2268H",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.36,
+  "qes": 0.39,
+  "qms": 3.8,
+  "vasL": 328,
+  "sdCm2": 1270,
+  "xmaxMm": 25,
+  "reOhm": 4.13,
+  "bl": 19.2,
+  "mmsG": 168,
+  "peW": 800,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-2268h/specifications"
+}

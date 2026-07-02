@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "E155-4",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.2,
+  "qes": 0.22,
+  "qms": 2.2,
+  "vasL": 424.8,
+  "sdCm2": 1140,
+  "xmaxMm": 5.1,
+  "reOhm": 2.5,
+  "bl": 16.1,
+  "mmsG": 120.7,
+  "peW": 300,
+  "sensitivityDb": 104.2
+}

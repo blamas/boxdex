@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12W750",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 55,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 5.8,
+  "vasL": 61,
+  "sdCm2": 531,
+  "xmaxMm": 8,
+  "reOhm": 10.4,
+  "bl": 23.5,
+  "mmsG": 55,
+  "peW": 600,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite",
+  "weightKg": 7.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/16/12w750"
+}

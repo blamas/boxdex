@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "ATS Acoustics",
+  "model": "HG25",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.325,
+  "qes": 0.37,
+  "qms": 2.65,
+  "vasL": 129.3,
+  "sdCm2": 350,
+  "xmaxMm": 4,
+  "reOhm": 5.8,
+  "bl": 10.7,
+  "mmsG": 40,
+  "peW": 150,
+  "sensitivityDb": 92.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ATS"
+}

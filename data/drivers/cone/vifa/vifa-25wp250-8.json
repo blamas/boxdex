@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Vifa",
+  "model": "25WP250",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.298,
+  "qes": 0.3,
+  "qms": 37,
+  "vasL": 178,
+  "sdCm2": 345,
+  "xmaxMm": 8,
+  "reOhm": 5.7,
+  "bl": 10.9,
+  "mmsG": 41.2,
+  "peW": 70,
+  "sensitivityDb": 92.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VIFA"
+}

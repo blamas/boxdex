@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Soundstream",
+  "model": "STEALTH-124",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 29.98,
+  "qts": 0.687,
+  "qes": 0.81,
+  "qms": 4.53,
+  "vasL": 59.5,
+  "sdCm2": 487,
+  "xmaxMm": 13,
+  "reOhm": 7.24,
+  "bl": 16.38,
+  "mmsG": 159.37,
+  "peW": 350,
+  "sensitivityDb": 84.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/soundstream-stealth-124/specifications"
+}

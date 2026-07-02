@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12HP1030",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 45,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 9.4,
+  "vasL": 33.2,
+  "sdCm2": 518,
+  "xmaxMm": 12.45,
+  "reOhm": 2.9,
+  "mmsG": 141,
+  "peW": 1000,
+  "sensitivityDb": 94,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 11.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201050131"
+}

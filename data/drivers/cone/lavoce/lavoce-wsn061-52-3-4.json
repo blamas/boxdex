@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSN061.52-4",
+  "sizeInch": 6,
+  "impedanceOhm": 4,
+  "fsHz": 90,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 5.49,
+  "vasL": 5.15,
+  "sdCm2": 132,
+  "xmaxMm": 4,
+  "reOhm": 3.5,
+  "bl": 8.65,
+  "mmsG": 14.9,
+  "peW": 125,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/wsn061-52-3/"
+}

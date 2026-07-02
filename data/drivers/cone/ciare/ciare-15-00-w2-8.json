@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "15.00 W2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44.2,
+  "qts": 0.413,
+  "qes": 0.42,
+  "qms": 25.6,
+  "vasL": 127,
+  "sdCm2": 855.3,
+  "xmaxMm": 5,
+  "reOhm": 6.12,
+  "bl": 20.6,
+  "mmsG": 104.6,
+  "peW": 500,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

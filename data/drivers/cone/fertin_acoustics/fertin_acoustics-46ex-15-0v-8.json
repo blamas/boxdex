@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fertin Acoustics",
+  "model": "46EX 15.0V",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 22.2,
+  "qts": 0.108,
+  "qes": 0.11,
+  "qms": 5.07,
+  "vasL": 667.7,
+  "sdCm2": 1101.5,
+  "xmaxMm": 3,
+  "reOhm": 5,
+  "bl": 28.8,
+  "mmsG": 131.5,
+  "peW": 100,
+  "sensitivityDb": 102.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FERTIN%20ACOUSTICS"
+}

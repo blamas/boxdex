@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio System",
+  "model": "KRYPTON 12",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 37,
+  "qts": 0.39,
+  "qes": 0.41,
+  "qms": 9.45,
+  "vasL": 30,
+  "sdCm2": 467,
+  "xmaxMm": 17,
+  "reOhm": 2.8,
+  "bl": 17,
+  "mmsG": 191,
+  "peW": 1000,
+  "sensitivityDb": 87.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audio-system-krypton-12/specifications"
+}

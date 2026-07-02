@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "R18/100B",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 50.7,
+  "qts": 0.546,
+  "qes": 0.57,
+  "qms": 13.01,
+  "vasL": 118.1,
+  "sdCm2": 1164,
+  "xmaxMm": 5.9,
+  "reOhm": 6.6,
+  "bl": 24.2,
+  "mmsG": 158.5,
+  "peW": 800,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

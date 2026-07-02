@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "the box",
+  "model": "18LB100-4N",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.227,
+  "qes": 0.256,
+  "qms": 1.99,
+  "vasL": 175,
+  "sdCm2": 908,
+  "xmaxMm": 5.4,
+  "reOhm": 5.8,
+  "bl": 26.5,
+  "mmsG": 144.7,
+  "peW": 800,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.thomann.fr/the_box_18lb100_4n_ersatzspeaker_18.htm"
+}

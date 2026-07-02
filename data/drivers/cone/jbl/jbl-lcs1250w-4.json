@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "LCS1250W",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27.4,
+  "qts": 0.331,
+  "qes": 0.37,
+  "qms": 3.18,
+  "vasL": 109,
+  "sdCm2": 499.4,
+  "xmaxMm": 5.3,
+  "reOhm": 3.45,
+  "bl": 13.2,
+  "mmsG": 108.2,
+  "peW": 120,
+  "sensitivityDb": 93.5
+}

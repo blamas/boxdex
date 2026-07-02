@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10NMBA520",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.23,
+  "qes": 0.24,
+  "qms": 4.2,
+  "vasL": 42,
+  "sdCm2": 350,
+  "xmaxMm": 4,
+  "reOhm": 5,
+  "bl": 14.6,
+  "mmsG": 28,
+  "peW": 300,
+  "sensitivityDb": 100.5,
+  "magnetMaterial": "neo",
+  "weightKg": 3,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/10-0/8/10NMBA520"
+}

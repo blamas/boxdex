@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "CRB-10TC s&eacute;rie",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.527,
+  "qes": 0.58,
+  "qms": 5.82,
+  "vasL": 38,
+  "sdCm2": 330,
+  "xmaxMm": 4.9,
+  "reOhm": 7.8,
+  "bl": 15.9,
+  "mmsG": 88,
+  "peW": 100,
+  "sensitivityDb": 86.2
+}

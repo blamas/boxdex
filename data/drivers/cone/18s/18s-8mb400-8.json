@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "8MB400",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 64,
+  "qts": 0.38,
+  "qes": 0.43,
+  "qms": 3.23,
+  "vasL": 23.9,
+  "sdCm2": 227,
+  "xmaxMm": 5.8,
+  "reOhm": 5,
+  "bl": 9.3,
+  "mmsG": 18,
+  "peW": 280,
+  "sensitivityDb": 95,
+  "magnetMaterial": "ferrite",
+  "weightKg": 3.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/8-0/8/8MB400%20%20"
+}

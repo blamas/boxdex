@@ -1,0 +1,688 @@
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --line: #30363d;
+  --text: #c9d1d9;
+  --muted: #8b949e;
+  --accent: #39ff14;
+  --accent-2: #ffb300;
+  --kick: #a78bfa;
+  --mid: #22d3ee;
+  --meas: #7cb9d8;
+  --sim: #c8956a;
+  --danger: #ef5350;
+  --surface-subtle: color-mix(in srgb, var(--muted) 8%, transparent);
+  --accent-subtle: color-mix(in srgb, var(--accent) 7%, transparent);
+  --line-subtle: #21262d;
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --font-mono: "JetBrains Mono", "Fira Mono", "Cascadia Code", ui-monospace, monospace;
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --panel: #f6f8fa;
+  --line: #d0d7de;
+  --line-subtle: #eaeef2;
+  --text: #1f2328;
+  --muted: #656d76;
+  --accent: #1a7f37;
+  --accent-2: #9a6700;
+  --kick: #7c3aed;
+  --mid: #0e7490;
+  --meas: #2d7a9e;
+  --sim: #9e6a3a;
+  --danger: #cf222e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-mono);
+  color: var(--text);
+  margin-top: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+pre,
+.mono,
+.data {
+  font-family: var(--font-mono);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+th,
+td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+tr:last-child td,
+tr:last-child th {
+  border-bottom: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-sub {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.badge-top {
+  background: color-mix(in srgb, var(--accent-2) 12%, transparent);
+  color: var(--accent-2);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
+}
+
+.badge-kick {
+  background: color-mix(in srgb, var(--kick) 12%, transparent);
+  color: var(--kick);
+  border: 1px solid color-mix(in srgb, var(--kick) 30%, transparent);
+}
+
+.badge-mid {
+  background: color-mix(in srgb, var(--mid) 12%, transparent);
+  color: var(--mid);
+  border: 1px solid color-mix(in srgb, var(--mid) 30%, transparent);
+}
+
+.badge-measured {
+  background: transparent;
+  color: var(--meas);
+  border: 1px solid var(--meas);
+}
+
+.badge-sim {
+  background: transparent;
+  color: var(--sim);
+  border: 1px solid var(--sim);
+}
+
+.badge-verified {
+  background: color-mix(in srgb, var(--accent-2) 12%, transparent);
+  color: var(--accent-2);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+input[type="number"],
+input[type="text"] {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+input:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Combobox: shared by the Svelte Combobox component and the plain-JS header
+   language switcher (which can't be a Svelte island), so both render identical
+   trigger boxes and dropdown lists. */
+.combobox {
+  position: relative;
+  display: block;
+}
+
+.combobox-full {
+  width: 100%;
+}
+
+.combobox-fit {
+  width: fit-content;
+}
+
+.combobox-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 0.3rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.combobox-trigger:hover:not(:disabled) {
+  border-color: var(--muted);
+}
+
+.combobox-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.combobox-trigger.combobox-compact {
+  gap: 0.3rem;
+  padding: 0.15rem 0.3rem;
+  font-size: 0.72rem;
+}
+
+.combobox-value {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.combobox-dim {
+  color: var(--muted);
+}
+
+.combobox-arrow {
+  color: var(--muted);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.combobox-search {
+  display: block;
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-bottom: none;
+  color: var(--text);
+  padding: 0.3rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  border-radius: 3px 3px 0 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.combobox-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 0 0 3px 3px;
+  max-height: min(400px, 50vh);
+  overflow-y: auto;
+}
+
+.combobox-fit .combobox-list {
+  border-radius: 3px;
+  min-width: 100%;
+  width: max-content;
+}
+
+.combobox-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 0.35rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.combobox-list-compact .combobox-item {
+  padding: 0.25rem 0.4rem;
+  font-size: 0.72rem;
+}
+
+.combobox-item:last-child {
+  border-bottom: none;
+}
+
+.combobox-item-active,
+.combobox-item:hover {
+  background: var(--panel);
+  color: var(--accent);
+}
+
+.combobox-item-selected {
+  color: var(--accent);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--text);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition:
+    border-color 0.1s,
+    background 0.1s;
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--accent);
+}
+
+input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 4px;
+  height: 8px;
+  border: 2px solid var(--bg);
+  border-top: none;
+  border-left: none;
+  transform: rotate(42deg);
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+.provenance-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  margin-top: 0.5rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-lg);
+}
+
+/* Skip navigation (visually hidden until focused) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+/* Shared chip toggle (filter buttons) */
+.chip {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition:
+    border-color 0.1s,
+    color 0.1s;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chip-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+/* Ghost button: border-only, transparent background */
+.btn-ghost {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    border-color 0.1s,
+    color 0.1s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-sm {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+/* Advanced filter toggle (shared across Explorer, DriverExplorer, Compare) */
+.advanced-toggle {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: var(--radius-md);
+  padding: 0.3rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition:
+    border-color 0.1s,
+    color 0.1s;
+}
+
+.advanced-toggle:hover,
+.advanced-toggle.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.advanced-toggle-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 2px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.2rem;
+}
+
+/* Filter row container */
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Result count label */
+.result-count {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Segmented tab group (pill border, shared dividers) */
+.tab-group {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tab-group button {
+  background: var(--panel);
+  border: none;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.3rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.tab-group button:last-child {
+  border-right: none;
+}
+
+.tab-group button:hover {
+  color: var(--text);
+}
+
+.tab-group button.active {
+  color: var(--accent);
+  background: var(--bg);
+}
+
+/* Pill tabs: separate bordered buttons with filled active (used in catalog/driver tabs) */
+.tab-pills {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-pills button {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    border-color 0.1s,
+    color 0.1s,
+    background 0.1s;
+}
+
+.tab-pills button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tab-pills button.active {
+  border-color: var(--accent);
+  color: var(--bg);
+  background: var(--accent);
+}
+
+/* Loading skeleton */
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.skeleton {
+  background: var(--line);
+  border-radius: var(--radius-md);
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  :root {
+    /* Scale charts down on narrow viewports so they don't overflow horizontally */
+    --echart-h: clamp(200px, 56vw, 360px);
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Tighten table text on mobile so tables remain readable with overflow scroll */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+}
+
+@media print {
+  /* Force the light palette and keep backgrounds/borders so panel "boxes" render;
+     browsers drop background colours from print by default. */
+  :root {
+    --bg: #ffffff;
+    --panel: #f6f8fa;
+    --line: #d0d7de;
+    --text: #1f2328;
+    --muted: #656d76;
+    --accent: #1a7f37;
+    --accent-2: #9a6700;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide site chrome and any element opted out of printing. Per-page focus (e.g.
+     hiding Compare/Explore controls vs. printing the full Stack page) is driven by
+     .no-print markers in the island components. */
+  header,
+  footer,
+  #theme-toggle,
+  .no-print {
+    /* biome-ignore lint/complexity/noImportantStyles: must beat Svelte component-scoped styles in print */
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: var(--text);
+  }
+
+  /* Avoid splitting panels/charts across page breaks. */
+  section,
+  .box-list,
+  .summary-group,
+  canvas {
+    break-inside: avoid;
+  }
+}

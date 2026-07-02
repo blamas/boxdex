@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LEGEND BP1525",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.479,
+  "qes": 0.5,
+  "qms": 11.21,
+  "vasL": 397,
+  "sdCm2": 856.3,
+  "xmaxMm": 6.2,
+  "reOhm": 6.65,
+  "bl": 13.1,
+  "mmsG": 64,
+  "peW": 350,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

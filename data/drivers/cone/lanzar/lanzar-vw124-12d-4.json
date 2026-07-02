@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Lanzar",
+  "model": "VW124/12D",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 40,
+  "qts": 0.763,
+  "qes": 0.9,
+  "qms": 5,
+  "vasL": 147.4,
+  "sdCm2": 531,
+  "xmaxMm": 10,
+  "reOhm": 3.7,
+  "bl": 6.6,
+  "mmsG": 42.5,
+  "peW": 800,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LANZAR"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oxygen",
+  "model": "AIR2 250",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 36.4,
+  "qts": 0.502,
+  "qes": 0.54,
+  "qms": 7.15,
+  "vasL": 22.4,
+  "sdCm2": 326,
+  "xmaxMm": 5.8,
+  "reOhm": 3.7,
+  "bl": 14.1,
+  "mmsG": 127.2,
+  "peW": 250,
+  "sensitivityDb": 88.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=OXYGEN"
+}

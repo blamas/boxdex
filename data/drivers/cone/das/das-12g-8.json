@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "12G",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.267,
+  "qes": 0.276,
+  "qms": 7.792,
+  "vasL": 148,
+  "sdCm2": 540,
+  "xmaxMm": 6,
+  "reOhm": 6,
+  "bl": 14.1,
+  "mmsG": 30.4,
+  "peW": 700,
+  "sensitivityDb": 101,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

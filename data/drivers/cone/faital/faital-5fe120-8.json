@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "5FE120",
+  "sizeInch": 5,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.48,
+  "qes": 0.51,
+  "qms": 7.4,
+  "vasL": 5.4,
+  "sdCm2": 84,
+  "xmaxMm": 5.25,
+  "reOhm": 5.4,
+  "mmsG": 11,
+  "peW": 80,
+  "sensitivityDb": 88,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 1.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401010110"
+}

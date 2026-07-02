@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Radian",
+  "model": "2218Neo",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.23,
+  "qes": 0.25,
+  "qms": 3.2,
+  "vasL": 312,
+  "sdCm2": 1320,
+  "xmaxMm": 9,
+  "reOhm": 5.4,
+  "bl": 33,
+  "mmsG": 266,
+  "peW": 800,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0111/0324/0254/files/2218-Neo-8_data_sheet.pdf?v=1597379277"
+}

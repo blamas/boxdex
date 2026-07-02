@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "6PR150",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 100,
+  "qts": 0.34,
+  "qes": 0.35,
+  "qms": 8.8,
+  "vasL": 4.9,
+  "sdCm2": 137,
+  "xmaxMm": 2.65,
+  "reOhm": 5.5,
+  "mmsG": 13.5,
+  "peW": 150,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 1.4,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101020110"
+}

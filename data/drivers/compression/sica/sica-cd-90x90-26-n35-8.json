@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Sica",
+  "model": "CD 90x90.26/N35",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25,
+  "fLowHz": 2500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 102.7,
+  "fsHz": 1700,
+  "peW": 15,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2025/02/Z009425.pdf"
+}

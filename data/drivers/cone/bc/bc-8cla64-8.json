@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "8CLA64",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 71,
+  "qts": 0.24,
+  "qes": 0.25,
+  "qms": 7.3,
+  "vasL": 12.5,
+  "sdCm2": 220,
+  "xmaxMm": 5.3,
+  "reOhm": 5.6,
+  "bl": 16.4,
+  "mmsG": 27,
+  "peW": 250,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/8/8/8CLA64"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sphynx",
+  "model": "SP-W15-PRO",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 32,
+  "qts": 0.616,
+  "qes": 0.696,
+  "qms": 5.35,
+  "vasL": 273,
+  "sdCm2": 830,
+  "xmaxMm": 4,
+  "reOhm": 8.53,
+  "bl": 14.7,
+  "mmsG": 87.5,
+  "peW": 150,
+  "sensitivityDb": 92.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SPHYNX"
+}

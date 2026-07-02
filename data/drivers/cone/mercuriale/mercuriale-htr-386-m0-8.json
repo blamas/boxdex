@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Mercuriale",
+  "model": "HTR 386 M0",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 1.255,
+  "qes": 1.82,
+  "qms": 4.04,
+  "vasL": 428.8,
+  "sdCm2": 852,
+  "xmaxMm": 3.6,
+  "reOhm": 6.8,
+  "bl": 6.6,
+  "mmsG": 58.7,
+  "peW": 250,
+  "sensitivityDb": 91.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MERCURIALE"
+}

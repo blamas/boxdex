@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "15W 9753",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42.5,
+  "qts": 0.354,
+  "qes": 0.39,
+  "qms": 3.82,
+  "vasL": 58.5,
+  "sdCm2": 870,
+  "xmaxMm": 2.6,
+  "reOhm": 4.6,
+  "bl": 28.3,
+  "mmsG": 254.3,
+  "peW": 225,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

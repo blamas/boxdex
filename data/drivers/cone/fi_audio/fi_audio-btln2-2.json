@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FI Audio",
+  "model": "BTLN2",
+  "sizeInch": 18,
+  "impedanceOhm": 2,
+  "fsHz": 33.6,
+  "qts": 0.308,
+  "qes": 0.32,
+  "qms": 8.28,
+  "vasL": 133.8,
+  "sdCm2": 1210,
+  "xmaxMm": 10,
+  "reOhm": 1.4,
+  "bl": 17.8,
+  "mmsG": 344.2,
+  "peW": 2500,
+  "sensitivityDb": 101.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FI"
+}

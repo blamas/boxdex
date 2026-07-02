@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-46A/500BS",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.485,
+  "qes": 0.54,
+  "qms": 4.75,
+  "vasL": 250,
+  "sdCm2": 1163,
+  "xmaxMm": 6,
+  "reOhm": 6,
+  "bl": 19.3,
+  "mmsG": 148.2,
+  "peW": 500,
+  "sensitivityDb": 96.6
+}

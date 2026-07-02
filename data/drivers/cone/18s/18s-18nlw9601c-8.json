@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18NLW9601C",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 6.29,
+  "vasL": 99,
+  "sdCm2": 1130,
+  "xmaxMm": 14,
+  "reOhm": 4.7,
+  "bl": 31.7,
+  "mmsG": 275,
+  "peW": 1800,
+  "sensitivityDb": 95,
+  "magnetMaterial": "neo",
+  "weightKg": 12.8,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/8/18NLW9601%20C"
+}

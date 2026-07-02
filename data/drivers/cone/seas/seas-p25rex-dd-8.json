@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "P25REX/DD",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.437,
+  "qes": 0.54,
+  "qms": 2.3,
+  "vasL": 156.8,
+  "sdCm2": 350,
+  "xmaxMm": 6,
+  "reOhm": 6.1,
+  "bl": 8.5,
+  "mmsG": 38.1,
+  "peW": 80,
+  "sensitivityDb": 90.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "B&C",
+  "model": "ME20",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 1500,
+  "mouthWmm": 118,
+  "mouthHmm": 145,
+  "depthMm": 90,
+  "profile": "exponential",
+  "material": "cast aluminium",
+  "weightKg": 0.37,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/horn/1/0/ME20"
+}

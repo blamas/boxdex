@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "1502-8DT",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42.4,
+  "qts": 0.325,
+  "qes": 0.34,
+  "qms": 7.5,
+  "vasL": 205,
+  "sdCm2": 890,
+  "xmaxMm": 2.8,
+  "reOhm": 6.1,
+  "bl": 19.1,
+  "mmsG": 76.3,
+  "peW": 350,
+  "sensitivityDb": 99.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

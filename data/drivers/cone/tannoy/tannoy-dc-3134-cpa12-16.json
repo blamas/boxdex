@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "DC 3134 CPA12",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 37.7,
+  "qts": 0.369,
+  "qes": 0.397,
+  "qms": 5.163,
+  "vasL": 226.7,
+  "sdCm2": 510.7,
+  "xmaxMm": 5,
+  "reOhm": 9.49,
+  "bl": 12.8,
+  "mmsG": 28.8,
+  "peW": 75,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

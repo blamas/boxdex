@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Helix",
+  "model": "HXS 1206",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 25,
+  "qts": 0.337,
+  "qes": 0.36,
+  "qms": 5.35,
+  "vasL": 107,
+  "sdCm2": 510,
+  "xmaxMm": 7,
+  "reOhm": 2.55,
+  "bl": 12.4,
+  "mmsG": 138.1,
+  "peW": 350,
+  "sensitivityDb": 93.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HELIX"
+}

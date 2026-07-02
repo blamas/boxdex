@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "10V 516 (J)",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 22.3,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 6.38,
+  "vasL": 179.79,
+  "sdCm2": 360,
+  "xmaxMm": 3.75,
+  "reOhm": 5.2,
+  "bl": 10.5,
+  "mmsG": 51.4,
+  "peW": 75,
+  "sensitivityDb": 89.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/focal-10v-516--j-/specifications"
+}

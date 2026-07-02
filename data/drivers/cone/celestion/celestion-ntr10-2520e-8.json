@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "NTR10-2520E",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 56,
+  "qts": 0.312,
+  "qes": 0.345,
+  "qms": 3.244,
+  "vasL": 30,
+  "sdCm2": 343,
+  "xmaxMm": 4.75,
+  "reOhm": 5.44,
+  "bl": 15.9,
+  "mmsG": 44.9,
+  "peW": 250,
+  "sensitivityDb": 93.7,
+  "datasheetUrl": "https://celestion.com/product/ntr10-2520e/"
+}

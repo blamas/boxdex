@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TF 1218TC",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 56,
+  "qts": 0.408,
+  "qes": 0.45,
+  "qms": 4.4,
+  "vasL": 80.2,
+  "sdCm2": 530,
+  "xmaxMm": 1.5,
+  "reOhm": 5.75,
+  "bl": 13.4,
+  "mmsG": 39.7,
+  "peW": 100,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

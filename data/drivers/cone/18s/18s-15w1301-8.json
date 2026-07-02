@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15W1301",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.355,
+  "qes": 0.37,
+  "qms": 8.5,
+  "vasL": 123,
+  "sdCm2": 885,
+  "xmaxMm": 6,
+  "reOhm": 5.5,
+  "bl": 21,
+  "mmsG": 98.1,
+  "peW": 800,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

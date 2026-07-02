@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "NTR12-3018D",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 56.4,
+  "qts": 0.295,
+  "qes": 0.33,
+  "qms": 2.74,
+  "vasL": 51.8,
+  "sdCm2": 522,
+  "xmaxMm": 3.9,
+  "reOhm": 5.77,
+  "bl": 19.1,
+  "mmsG": 58.7,
+  "peW": 350,
+  "sensitivityDb": 97.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

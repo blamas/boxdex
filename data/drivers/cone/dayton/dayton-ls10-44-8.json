@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "LS10-44",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 34.3,
+  "qts": 0.431,
+  "qes": 0.47,
+  "qms": 5.15,
+  "vasL": 30.8,
+  "sdCm2": 366.4,
+  "xmaxMm": 5.8,
+  "reOhm": 7.4,
+  "bl": 21.1,
+  "mmsG": 131.6,
+  "peW": 250,
+  "sensitivityDb": 86.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Image Dynamics",
+  "model": "CTX128",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 23.3,
+  "qts": 0.562,
+  "qes": 0.668,
+  "qms": 3.539,
+  "vasL": 131.01,
+  "sdCm2": 545,
+  "xmaxMm": 16,
+  "reOhm": 7.8,
+  "bl": 16.01,
+  "mmsG": 149.91,
+  "peW": 175,
+  "sensitivityDb": 85.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/image-dynamics-ctx128/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MTX Audio",
+  "model": "812",
+  "sizeInch": 12,
+  "impedanceOhm": 32,
+  "fsHz": 35,
+  "qts": 0.422,
+  "qes": 0.46,
+  "qms": 5.12,
+  "vasL": 24.6,
+  "sdCm2": 497.4,
+  "xmaxMm": 10,
+  "reOhm": 20,
+  "bl": 52.8,
+  "mmsG": 291.5,
+  "peW": 1800,
+  "sensitivityDb": 81.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MTX"
+}

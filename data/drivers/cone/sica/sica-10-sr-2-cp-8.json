@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "10 SR 2 CP",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 32.8,
+  "qts": 0.49,
+  "qes": 0.56,
+  "qms": 4.54,
+  "vasL": 73,
+  "sdCm2": 339.8,
+  "xmaxMm": 7,
+  "reOhm": 6.07,
+  "bl": 10.85,
+  "mmsG": 52.5,
+  "peW": 200,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2026/03/Z006007C.pdf"
+}

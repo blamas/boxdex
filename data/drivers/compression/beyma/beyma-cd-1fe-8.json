@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "CD-1Fe",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25.4,
+  "fLowHz": 1000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 109,
+  "peW": 20,
+  "magnetMaterial": "ferrite",
+  "weightKg": 0.8,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1CD1FEM8/motor-cd-1fe-8-oh-emb-mult-9/"
+}

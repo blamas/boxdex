@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "SM115/K vp1",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 27.6,
+  "qts": 0.222,
+  "qes": 0.226,
+  "qms": 11.482,
+  "vasL": 296.7,
+  "sdCm2": 880,
+  "xmaxMm": 8,
+  "reOhm": 5.18,
+  "bl": 22,
+  "mmsG": 121.8,
+  "peW": 500,
+  "sensitivityDb": 98.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

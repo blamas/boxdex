@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "TD10M",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 40.6,
+  "qts": 0.235,
+  "qes": 0.256,
+  "qms": 2.803,
+  "vasL": 59.1,
+  "sdCm2": 345,
+  "xmaxMm": 6,
+  "reOhm": 6.6,
+  "bl": 16.9,
+  "mmsG": 43.5,
+  "peW": 500,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

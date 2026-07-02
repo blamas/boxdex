@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "38WX4",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 28.9,
+  "qts": 0.364,
+  "qes": 0.38,
+  "qms": 8.81,
+  "vasL": 310.4,
+  "sdCm2": 855.3,
+  "xmaxMm": 7.7,
+  "reOhm": 3,
+  "bl": 12,
+  "mmsG": 100.5,
+  "peW": 225,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

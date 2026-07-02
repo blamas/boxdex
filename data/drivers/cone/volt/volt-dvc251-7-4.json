@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Volt",
+  "model": "DVC251.7",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 32,
+  "qts": 0.387,
+  "qes": 0.43,
+  "qms": 3.84,
+  "vasL": 53,
+  "sdCm2": 346,
+  "xmaxMm": 7.8,
+  "reOhm": 2.8,
+  "bl": 10.1,
+  "mmsG": 78.3,
+  "peW": 250,
+  "sensitivityDb": 92.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOLT"
+}

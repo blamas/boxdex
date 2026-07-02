@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Mercuriale",
+  "model": "PAR 465 M0",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.265,
+  "qes": 0.28,
+  "qms": 4.98,
+  "vasL": 251,
+  "sdCm2": 1200,
+  "xmaxMm": 6,
+  "reOhm": 6.8,
+  "bl": 29.8,
+  "mmsG": 166.3,
+  "peW": 600,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MERCURIALE"
+}

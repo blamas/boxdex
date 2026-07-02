@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Adire Audio",
+  "model": "TEMPEST DVC 4 Ohms config",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 18.8,
+  "qts": 0.377,
+  "qes": 0.4,
+  "qms": 6.7,
+  "vasL": 317,
+  "sdCm2": 779,
+  "xmaxMm": 8.2,
+  "reOhm": 3.5,
+  "bl": 14.1,
+  "mmsG": 192.3,
+  "peW": 500,
+  "sensitivityDb": 92.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ADIRE%20AUDIO"
+}

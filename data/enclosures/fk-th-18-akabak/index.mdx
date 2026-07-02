@@ -1,0 +1,39 @@
+---
+name: FK TH 18 AkAbak
+category: sub
+topology: tapped_horn
+drivers:
+  - faital-18hp1060-8
+netVolumeL: 400
+dims:
+  wMm: 640
+  hMm: 920
+  dMm: 1000
+weightKg: 65
+specs:
+  f3Hz: 32
+  sensitivityDb: 104
+  maxSplDb: 134
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: akabak_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - tribe
+  - raggatek
+connectors:
+  - speakON NL4
+---
+
+18" tapped horn simulated with AkAbak. Faital Pro 18HP1060.

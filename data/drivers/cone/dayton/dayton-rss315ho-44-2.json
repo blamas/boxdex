@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "RSS315HO-44",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 20.9,
+  "qts": 0.382,
+  "qes": 0.42,
+  "qms": 4.26,
+  "vasL": 60.1,
+  "sdCm2": 514.7,
+  "xmaxMm": 11.5,
+  "reOhm": 1.7,
+  "bl": 13.8,
+  "mmsG": 358.3,
+  "peW": 700,
+  "sensitivityDb": 89.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

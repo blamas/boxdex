@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15W700",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.3,
+  "qes": 0.33,
+  "qms": 3.8,
+  "vasL": 217,
+  "sdCm2": 850,
+  "xmaxMm": 6.5,
+  "reOhm": 5.7,
+  "bl": 18.4,
+  "mmsG": 80,
+  "peW": 450,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ferrite",
+  "weightKg": 8.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15W700"
+}

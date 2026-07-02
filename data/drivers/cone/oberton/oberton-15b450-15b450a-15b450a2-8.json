@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15B450 / 15B450A / 15B450A2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45.08,
+  "qts": 0.286,
+  "qes": 0.294,
+  "qms": 9.6,
+  "vasL": 146.85,
+  "sdCm2": 829.6,
+  "xmaxMm": 6.75,
+  "reOhm": 5.32,
+  "bl": 20.43,
+  "mmsG": 81.56,
+  "peW": 450,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/169-15b450-15b450a-15b450a2.html"
+}

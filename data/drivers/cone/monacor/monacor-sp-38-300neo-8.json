@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-38/300NEO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.43,
+  "qes": 0.48,
+  "qms": 4.13,
+  "vasL": 265,
+  "sdCm2": 880,
+  "xmaxMm": 3.5,
+  "reOhm": 5.4,
+  "bl": 14.3,
+  "mmsG": 80.1,
+  "peW": 300,
+  "sensitivityDb": 97.8
+}

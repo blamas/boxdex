@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12MB35",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 51.43,
+  "qts": 0.267,
+  "qes": 0.272,
+  "qms": 13.58,
+  "vasL": 50.07,
+  "sdCm2": 514.7,
+  "xmaxMm": 6.75,
+  "reOhm": 5,
+  "bl": 20.5,
+  "mmsG": 70.76,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/386-12mb35.html"
+}

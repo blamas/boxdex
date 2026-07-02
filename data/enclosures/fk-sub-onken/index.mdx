@@ -1,0 +1,41 @@
+---
+name: FK Sub Onken
+category: sub
+topology: bass_reflex
+topologyVariant: Onken
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 280
+dims:
+  wMm: 730
+  hMm: 730
+  dMm: 650
+weightKg: 38
+specs:
+  f3Hz: 40
+  fbHz: 46
+  sensitivityDb: 101
+  maxSplDb: 132
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+connectors:
+  - speakON NL4
+---
+
+FK Sub Onken: 18" Onken-style bass reflex with large slot port.

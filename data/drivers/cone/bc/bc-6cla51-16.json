@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "6CLA51",
+  "sizeInch": 6.5,
+  "impedanceOhm": 16,
+  "fsHz": 89,
+  "qts": 0.41,
+  "qes": 0.46,
+  "qms": 3.9,
+  "vasL": 5.7,
+  "sdCm2": 132,
+  "xmaxMm": 5.5,
+  "reOhm": 9.7,
+  "bl": 12.8,
+  "mmsG": 14,
+  "peW": 250,
+  "sensitivityDb": 93.5,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/6.5/16/6CLA51"
+}

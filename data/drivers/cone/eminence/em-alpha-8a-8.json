@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "ALPHA-8A",
+  "impedanceOhm": 8,
+  "sizeInch": 8,
+  "fsHz": 73,
+  "qts": 0.59,
+  "qes": 0.68,
+  "qms": 4.6,
+  "vasL": 17.7,
+  "sdCm2": 210,
+  "xmaxMm": 3.2,
+  "peW": 125,
+  "sensitivityDb": 94,
+  "reOhm": 5.3,
+  "bl": 7.8,
+  "mmsG": 17,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Alpha_8A.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Lavoce",
+  "model": "SAF184.03",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.32,
+  "qes": 0.35,
+  "qms": 7.2,
+  "vasL": 260,
+  "sdCm2": 1263,
+  "xmaxMm": 13,
+  "reOhm": 5.8,
+  "bl": 28,
+  "mmsG": 245,
+  "peW": 1500,
+  "sensitivityDb": 94.9,
+  "datasheetUrl": "https://lavocespeakers.com/product/saf184-03/"
+}

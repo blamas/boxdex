@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Sica",
+  "model": "CD 120.44/640 POLY",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1600,
+  "sensitivityHornDb": 109,
+  "fsHz": 1000,
+  "peW": 60,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z009491P-1.pdf"
+}

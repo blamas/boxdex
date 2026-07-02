@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "25F-EW",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.354,
+  "qes": 0.39,
+  "qms": 3.8,
+  "vasL": 175,
+  "sdCm2": 350,
+  "xmaxMm": 4,
+  "reOhm": 5.8,
+  "bl": 9.5,
+  "mmsG": 36.8,
+  "peW": 60,
+  "sensitivityDb": 92.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

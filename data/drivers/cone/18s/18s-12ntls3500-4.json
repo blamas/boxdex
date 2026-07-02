@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12NTLS3500",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 41,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 7.8,
+  "vasL": 63,
+  "sdCm2": 531,
+  "xmaxMm": 7.9,
+  "reOhm": 3.1,
+  "bl": 14.5,
+  "mmsG": 92,
+  "peW": 750,
+  "sensitivityDb": 94.5,
+  "magnetMaterial": "neo",
+  "weightKg": 4.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/4/12NTLS3500-4"
+}

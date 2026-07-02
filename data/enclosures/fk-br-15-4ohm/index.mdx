@@ -1,0 +1,39 @@
+---
+name: FK BR 15 4Ohm
+category: sub
+topology: bass_reflex
+drivers:
+  - crites_speakers-cw1526-4
+netVolumeL: 155
+dims:
+  wMm: 640
+  hMm: 640
+  dMm: 540
+weightKg: 30
+specs:
+  f3Hz: 43
+  fbHz: 50
+  sensitivityDb: 99
+  impedanceNominalOhm: 4
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - crites_speakers-cw1526-4
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - crites_speakers-cw1526-4
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - dub
+connectors:
+  - speakON NL4
+---
+
+15" bass reflex, 4 Ohm version using Crites CW1526.

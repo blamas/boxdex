@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Earthquake Sound",
+  "model": "DBXi-15D",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 13.6,
+  "qts": 0.753,
+  "qes": 1.047,
+  "qms": 2.679,
+  "vasL": 142.9,
+  "sdCm2": 890,
+  "xmaxMm": 13.5,
+  "reOhm": 6.6,
+  "bl": 24,
+  "mmsG": 1067.8,
+  "peW": 750,
+  "sensitivityDb": 78.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EARTHQUAKESOUND"
+}

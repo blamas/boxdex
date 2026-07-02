@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "BETA-10B 16-Ohm",
+  "impedanceOhm": 16,
+  "sizeInch": 10,
+  "fsHz": 51.6,
+  "qts": 0.51,
+  "qes": 0.58,
+  "qms": 4.33,
+  "vasL": 61.37,
+  "sdCm2": 344.9,
+  "xmaxMm": 3,
+  "peW": 250,
+  "sensitivityDb": 94.1,
+  "reOhm": 15.1,
+  "bl": 15.14,
+  "mmsG": 25
+}

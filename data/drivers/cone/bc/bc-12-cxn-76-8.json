@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12 CXN 76",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.195,
+  "qes": 0.2,
+  "qms": 8,
+  "vasL": 120,
+  "sdCm2": 522,
+  "xmaxMm": 4,
+  "reOhm": 5,
+  "bl": 17.4,
+  "mmsG": 45.7,
+  "peW": 250,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

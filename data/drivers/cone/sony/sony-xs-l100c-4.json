@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sony",
+  "model": "XS-L100C",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 28.1,
+  "qts": 0.362,
+  "qes": 0.416,
+  "qms": 2.766,
+  "vasL": 104,
+  "sdCm2": 353,
+  "xmaxMm": 6.3,
+  "reOhm": 3.19,
+  "bl": 8.5,
+  "mmsG": 53.9,
+  "peW": 150,
+  "sensitivityDb": 93.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SONY"
+}

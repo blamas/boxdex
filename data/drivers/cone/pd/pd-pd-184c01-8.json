@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PD",
+  "model": "PD 184C01",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.227,
+  "qes": 0.23,
+  "qms": 15.2,
+  "vasL": 337.1,
+  "sdCm2": 1164.2,
+  "xmaxMm": 7.8,
+  "reOhm": 4.81,
+  "bl": 25,
+  "mmsG": 158.6,
+  "peW": 700,
+  "sensitivityDb": 100.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18XB700",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36.1,
+  "qts": 0.304,
+  "qes": 0.314,
+  "qms": 9.26,
+  "vasL": 183.22,
+  "sdCm2": 1110,
+  "xmaxMm": 9,
+  "reOhm": 5.17,
+  "bl": 26.1,
+  "mmsG": 182.62,
+  "peW": 1000,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/161-18xb700.html"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTA 15 LFC",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 38.7,
+  "qts": 0.47,
+  "qes": 0.5,
+  "qms": 7.74,
+  "vasL": 221.6,
+  "sdCm2": 856.3,
+  "xmaxMm": 6,
+  "reOhm": 3.27,
+  "bl": 11.2,
+  "mmsG": 78.4,
+  "peW": 600,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

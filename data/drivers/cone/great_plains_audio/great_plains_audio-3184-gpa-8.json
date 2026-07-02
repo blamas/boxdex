@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Great Plains Audio",
+  "model": "3184 GPA",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.219,
+  "qes": 0.26,
+  "qms": 1.38,
+  "vasL": 690.9,
+  "sdCm2": 1141.9,
+  "xmaxMm": 6.4,
+  "reOhm": 6.5,
+  "bl": 20.9,
+  "mmsG": 116.3,
+  "peW": 300,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GREAT%20PLAINS%20AUDIO"
+}

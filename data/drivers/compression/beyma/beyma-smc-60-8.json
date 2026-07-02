@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "SMC/60",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 72.4,
+  "fLowHz": 500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 109,
+  "peW": 80,
+  "magnetMaterial": "ferrite",
+  "weightKg": 4.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1SMC608R/motor-smc-60-8-oh/"
+}

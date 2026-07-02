@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "FXE 15-4",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40.6,
+  "qts": 0.406,
+  "qes": 0.42,
+  "qms": 12.29,
+  "vasL": 131,
+  "sdCm2": 855,
+  "xmaxMm": 8.4,
+  "reOhm": 5.89,
+  "bl": 20.7,
+  "mmsG": 120.2,
+  "peW": 800,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

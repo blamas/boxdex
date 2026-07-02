@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PD",
+  "model": "PD 102ER",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 81.8,
+  "qts": 0.523,
+  "qes": 0.57,
+  "qms": 6.37,
+  "vasL": 26,
+  "sdCm2": 346,
+  "xmaxMm": 1.3,
+  "reOhm": 6.2,
+  "bl": 11.7,
+  "mmsG": 24.4,
+  "peW": 100,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

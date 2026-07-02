@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "CR10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 96,
+  "qts": 1.435,
+  "qes": 1.66,
+  "qms": 10.56,
+  "vasL": 29.7,
+  "sdCm2": 330,
+  "xmaxMm": 0.8,
+  "reOhm": 6.6,
+  "bl": 5.8,
+  "mmsG": 14.1,
+  "peW": 25,
+  "sensitivityDb": 94.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

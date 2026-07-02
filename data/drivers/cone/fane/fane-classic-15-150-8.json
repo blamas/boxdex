@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "CLASSIC 15-150",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.74,
+  "qes": 0.85,
+  "qms": 5.73,
+  "vasL": 158,
+  "sdCm2": 810,
+  "xmaxMm": 2.5,
+  "reOhm": 6.25,
+  "bl": 12.3,
+  "mmsG": 72.8,
+  "peW": 150,
+  "sensitivityDb": 95.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

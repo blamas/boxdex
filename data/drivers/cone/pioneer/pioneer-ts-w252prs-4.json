@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W252PRS",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 29,
+  "qts": 0.282,
+  "qes": 0.29,
+  "qms": 10.8,
+  "vasL": 30.1,
+  "sdCm2": 340,
+  "xmaxMm": 7,
+  "reOhm": 2.5,
+  "bl": 16,
+  "mmsG": 162.2,
+  "peW": 400,
+  "sensitivityDb": 91.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

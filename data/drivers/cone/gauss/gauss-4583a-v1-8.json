@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Gauss",
+  "model": "4583A v1",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.338,
+  "qes": 0.4,
+  "qms": 2.2,
+  "vasL": 433,
+  "sdCm2": 890,
+  "xmaxMm": 4,
+  "reOhm": 5.5,
+  "bl": 13.9,
+  "mmsG": 77.2,
+  "peW": 150,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GAUSS"
+}

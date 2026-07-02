@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18NXB1600",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32.37,
+  "qts": 0.303,
+  "qes": 0.332,
+  "qms": 5.11,
+  "vasL": 173.11,
+  "sdCm2": 1158,
+  "xmaxMm": 13.5,
+  "reOhm": 5.3,
+  "bl": 29.58,
+  "mmsG": 261.56,
+  "peW": 1600,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/367-18nxb1600.html"
+}

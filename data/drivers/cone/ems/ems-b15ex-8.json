@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "EMS",
+  "model": "B15EX",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.223,
+  "qes": 0.23,
+  "qms": 7.16,
+  "vasL": 791,
+  "sdCm2": 855,
+  "xmaxMm": 7,
+  "reOhm": 6.5,
+  "bl": 16.3,
+  "mmsG": 67.8,
+  "peW": 100,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMS%20SPEAKER"
+}

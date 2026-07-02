@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12NLW9410",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 6.2,
+  "vasL": 55,
+  "sdCm2": 531,
+  "xmaxMm": 11,
+  "reOhm": 4.5,
+  "bl": 21.7,
+  "mmsG": 105,
+  "peW": 1000,
+  "sensitivityDb": 95,
+  "magnetMaterial": "neo",
+  "weightKg": 7.3,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/8/12nlw9410"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "3002 v2010",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 48.6,
+  "qts": 0.436,
+  "qes": 0.46,
+  "qms": 8.32,
+  "vasL": 29,
+  "sdCm2": 360,
+  "xmaxMm": 4,
+  "reOhm": 5.43,
+  "bl": 15.6,
+  "mmsG": 67.1,
+  "peW": 200,
+  "sensitivityDb": 92.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

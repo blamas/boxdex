@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Helix",
+  "model": "W-12 COMPETITION",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 21.4,
+  "qts": 0.3,
+  "qes": 0.33,
+  "qms": 3.6,
+  "vasL": 118.6,
+  "sdCm2": 519,
+  "xmaxMm": 11,
+  "reOhm": 3.2,
+  "bl": 15.1,
+  "mmsG": 174.9,
+  "peW": 350,
+  "sensitivityDb": 87.3,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/helix-w-12-competition/specifications"
+}

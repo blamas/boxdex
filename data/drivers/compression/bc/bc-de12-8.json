@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE12",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 36,
+  "fLowHz": 1500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2200,
+  "sensitivityHornDb": 106,
+  "peW": 25,
+  "weightKg": 1.05,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/8/DE12"
+}

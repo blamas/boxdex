@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "NDH 15-3",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49.8,
+  "qts": 0.296,
+  "qes": 0.3,
+  "qms": 23.77,
+  "vasL": 110.9,
+  "sdCm2": 830,
+  "xmaxMm": 4.3,
+  "reOhm": 6.12,
+  "bl": 23.8,
+  "mmsG": 88.9,
+  "peW": 400,
+  "sensitivityDb": 99.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

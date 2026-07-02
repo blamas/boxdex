@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Siare",
+  "model": "26SPCS",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.382,
+  "qes": 0.45,
+  "qms": 2.55,
+  "vasL": 170,
+  "sdCm2": 270,
+  "xmaxMm": 4,
+  "reOhm": 5.5,
+  "bl": 6.7,
+  "mmsG": 22.5,
+  "peW": 80,
+  "sensitivityDb": 91.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SIARE"
+}

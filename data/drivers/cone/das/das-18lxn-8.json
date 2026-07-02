@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "18LXN",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38.5,
+  "qts": 0.45,
+  "qes": 0.48,
+  "qms": 7.21,
+  "vasL": 213.7,
+  "sdCm2": 1164,
+  "xmaxMm": 8,
+  "reOhm": 6.1,
+  "bl": 21.6,
+  "mmsG": 151.8,
+  "peW": 1000,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

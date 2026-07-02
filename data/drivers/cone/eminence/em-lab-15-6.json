@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LAB 15 |",
+  "impedanceOhm": 6,
+  "sizeInch": 15,
+  "fsHz": 28,
+  "qts": 0.35,
+  "qes": 0.37,
+  "qms": 5.36,
+  "vasL": 103.61,
+  "sdCm2": 823.7,
+  "xmaxMm": 11.8,
+  "peW": 600,
+  "sensitivityDb": 88.5,
+  "reOhm": 4.9,
+  "bl": 26.7,
+  "mmsG": 308,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/LAB_15.pdf"
+}

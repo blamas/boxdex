@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "TRIO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.27,
+  "qes": 0.34,
+  "qms": 1.3,
+  "vasL": 350,
+  "sdCm2": 824.5,
+  "xmaxMm": 5,
+  "reOhm": 4.7,
+  "bl": 14.9,
+  "mmsG": 94.6,
+  "peW": 300,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KENWOOD"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "UM18-22 v2015",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 19.5,
+  "qts": 0.533,
+  "qes": 0.62,
+  "qms": 3.82,
+  "vasL": 212,
+  "sdCm2": 1219,
+  "xmaxMm": 12.6,
+  "reOhm": 4.4,
+  "bl": 23.9,
+  "mmsG": 654.5,
+  "peW": 1000,
+  "sensitivityDb": 88.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

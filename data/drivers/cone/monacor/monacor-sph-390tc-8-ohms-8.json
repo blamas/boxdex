@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SPH-390TC 8 Ohms",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.272,
+  "qes": 0.29,
+  "qms": 4.51,
+  "vasL": 531,
+  "sdCm2": 850,
+  "xmaxMm": 7,
+  "reOhm": 6,
+  "bl": 16.9,
+  "mmsG": 99.8,
+  "peW": 150,
+  "sensitivityDb": 96.1
+}

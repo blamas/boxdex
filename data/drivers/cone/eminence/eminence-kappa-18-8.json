@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPA 18",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 10.38,
+  "vasL": 493.2,
+  "sdCm2": 1188,
+  "xmaxMm": 4.8,
+  "reOhm": 5.3,
+  "bl": 19.1,
+  "mmsG": 129.6,
+  "peW": 500,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

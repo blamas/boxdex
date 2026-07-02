@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15W930",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.22,
+  "qes": 0.23,
+  "qms": 8.78,
+  "vasL": 240,
+  "sdCm2": 850,
+  "xmaxMm": 7.5,
+  "reOhm": 5.5,
+  "bl": 22.1,
+  "mmsG": 97,
+  "peW": 500,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite",
+  "weightKg": 8,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15W930"
+}

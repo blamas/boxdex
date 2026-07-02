@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Mach 5 Audio",
+  "model": "MAC MAH CWA46",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.448,
+  "qes": 0.51,
+  "qms": 3.69,
+  "vasL": 470.3,
+  "sdCm2": 1280,
+  "xmaxMm": 10,
+  "reOhm": 5.5,
+  "bl": 17.6,
+  "mmsG": 169.7,
+  "peW": 500,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MACH%205%20AUDIO"
+}

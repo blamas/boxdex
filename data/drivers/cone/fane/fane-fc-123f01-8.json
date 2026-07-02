@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "FC-123F01",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.235,
+  "qes": 0.249,
+  "qms": 4.32,
+  "vasL": 110,
+  "sdCm2": 530,
+  "xmaxMm": 7.8,
+  "reOhm": 5.4,
+  "bl": 19.1,
+  "mmsG": 78.4,
+  "peW": 500,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

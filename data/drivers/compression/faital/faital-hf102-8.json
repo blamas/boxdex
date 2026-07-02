@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Faital PRO",
+  "model": "HF102",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25,
+  "fLowHz": 1800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2600,
+  "sensitivityHornDb": 107,
+  "peW": 30,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 0.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Drivers/product_details/index.php?id=502010300"
+}

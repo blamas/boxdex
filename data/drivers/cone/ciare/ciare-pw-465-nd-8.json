@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "PW 465 ND",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.39,
+  "qes": 0.4,
+  "qms": 12.1,
+  "vasL": 141.16,
+  "sdCm2": 1089,
+  "xmaxMm": 11.5,
+  "reOhm": 6,
+  "bl": 28.5,
+  "mmsG": 220.3,
+  "peW": 1000,
+  "sensitivityDb": 94.4
+}

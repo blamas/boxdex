@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE550",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 51,
+  "fLowHz": 1000,
+  "fHighHz": 17000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 109,
+  "peW": 70,
+  "weightKg": 1.17,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/16/DE550"
+}

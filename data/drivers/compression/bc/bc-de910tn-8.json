@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE910TN",
+  "impedanceOhm": 8,
+  "exitInch": 1.3,
+  "voiceCoilMm": 75,
+  "fLowHz": 500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 108.5,
+  "peW": 110,
+  "weightKg": 2.4,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1.3/8/DE910TN"
+}

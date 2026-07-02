@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Mivoc",
+  "model": "AWX 184 MKII",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 32,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 6.1,
+  "vasL": 280,
+  "sdCm2": 1232,
+  "xmaxMm": 5.5,
+  "reOhm": 3.5,
+  "bl": 18.5,
+  "mmsG": 188,
+  "peW": 600,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/mivoc-awx-184-mkii/specifications"
+}

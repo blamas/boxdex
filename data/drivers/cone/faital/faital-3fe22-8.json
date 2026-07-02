@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "3FE22",
+  "sizeInch": 3,
+  "impedanceOhm": 8,
+  "fsHz": 110,
+  "qts": 0.47,
+  "qes": 0.52,
+  "qms": 5,
+  "vasL": 1.3,
+  "sdCm2": 33,
+  "xmaxMm": 1.83,
+  "reOhm": 6.2,
+  "mmsG": 2.5,
+  "peW": 20,
+  "sensitivityDb": 91,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 0.24,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401000100"
+}

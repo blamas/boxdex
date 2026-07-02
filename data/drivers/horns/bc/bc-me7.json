@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "B&C",
+  "model": "ME7",
+  "exitInch": 0.75,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 2000,
+  "mouthWmm": 102.7,
+  "mouthHmm": 122,
+  "depthMm": 102,
+  "profile": "exponential",
+  "material": "abs",
+  "weightKg": 0.11,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/horn/0.75/0/ME7"
+}

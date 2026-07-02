@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Resonant Engineering",
+  "model": "XXX 12D1 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.401,
+  "qes": 0.44,
+  "qms": 4.52,
+  "vasL": 56.5,
+  "sdCm2": 480,
+  "xmaxMm": 12.9,
+  "reOhm": 2,
+  "bl": 12.4,
+  "mmsG": 198.6,
+  "peW": 1000,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RESONANT%20ENGINEERING"
+}

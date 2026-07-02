@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15W500",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 50,
+  "qts": 0.52,
+  "qes": 0.55,
+  "qms": 9.64,
+  "vasL": 189,
+  "sdCm2": 850,
+  "xmaxMm": 4,
+  "reOhm": 5.2,
+  "bl": 12.6,
+  "mmsG": 55,
+  "peW": 350,
+  "sensitivityDb": 100.5,
+  "magnetMaterial": "ferrite",
+  "weightKg": 4.3,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15W500"
+}

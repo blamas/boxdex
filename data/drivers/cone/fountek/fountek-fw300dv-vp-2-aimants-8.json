@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fountek",
+  "model": "FW300DV vp 2 aimants",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 46.3,
+  "qts": 0.885,
+  "qes": 1.133,
+  "qms": 4.039,
+  "vasL": 43,
+  "sdCm2": 530.9,
+  "xmaxMm": 4.2,
+  "reOhm": 6.94,
+  "bl": 13.9,
+  "mmsG": 108.5,
+  "peW": 300,
+  "sensitivityDb": 88.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOUNTEK"
+}

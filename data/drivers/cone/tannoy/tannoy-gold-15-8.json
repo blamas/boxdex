@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "GOLD 15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.198,
+  "qes": 0.22,
+  "qms": 2,
+  "vasL": 350,
+  "sdCm2": 770,
+  "xmaxMm": 3,
+  "reOhm": 5.5,
+  "bl": 19.1,
+  "mmsG": 89,
+  "peW": 50,
+  "sensitivityDb": 98.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

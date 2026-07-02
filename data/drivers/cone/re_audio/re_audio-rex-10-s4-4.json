@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RE Audio",
+  "model": "REX 10 S4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 24.35,
+  "qts": 0.45,
+  "qes": 0.492,
+  "qms": 6.1,
+  "vasL": 57.2278,
+  "sdCm2": 366,
+  "xmaxMm": 15,
+  "reOhm": 3.8,
+  "bl": 13,
+  "mmsG": 142.35,
+  "peW": 200,
+  "sensitivityDb": 84.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/re-audio-rex-10-s4/specifications"
+}

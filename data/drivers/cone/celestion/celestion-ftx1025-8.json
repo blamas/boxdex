@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "FTX1025",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 71.5,
+  "qts": 0.44,
+  "qes": 0.523,
+  "qms": 2.788,
+  "vasL": 25.9,
+  "sdCm2": 346,
+  "xmaxMm": 3,
+  "reOhm": 5.42,
+  "bl": 12.2,
+  "mmsG": 32.2,
+  "peW": 300,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

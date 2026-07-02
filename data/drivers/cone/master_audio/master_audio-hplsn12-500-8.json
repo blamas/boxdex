@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Master Audio",
+  "model": "HPLSN12-500",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.283,
+  "qes": 0.3,
+  "qms": 4.9,
+  "vasL": 65,
+  "sdCm2": 564,
+  "xmaxMm": 5,
+  "reOhm": 6.5,
+  "bl": 21.3,
+  "mmsG": 64.3,
+  "peW": 500,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MASTER%20AUDIO"
+}

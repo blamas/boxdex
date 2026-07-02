@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "STX",
+  "model": "W.25.400.8.MCX",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.282,
+  "qes": 0.29,
+  "qms": 9.71,
+  "vasL": 50,
+  "sdCm2": 344,
+  "xmaxMm": 3.5,
+  "reOhm": 5.4,
+  "bl": 13.5,
+  "mmsG": 28.8,
+  "peW": 200,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=STX"
+}

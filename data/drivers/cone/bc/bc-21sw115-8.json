@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "21SW115",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 10.9,
+  "vasL": 318,
+  "sdCm2": 1680,
+  "xmaxMm": 14,
+  "reOhm": 5.4,
+  "bl": 30.1,
+  "mmsG": 342,
+  "peW": 1700,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/21/8/21SW115"
+}

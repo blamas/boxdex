@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sony",
+  "model": "XS-L154P5B",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 25.6,
+  "qts": 0.607,
+  "qes": 0.66,
+  "qms": 7.54,
+  "vasL": 132.4,
+  "sdCm2": 784.3,
+  "xmaxMm": 5.6,
+  "reOhm": 3.91,
+  "bl": 15.5,
+  "mmsG": 251.7,
+  "peW": 400,
+  "sensitivityDb": 90.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SONY"
+}

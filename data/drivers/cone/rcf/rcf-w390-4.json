@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "W390",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 46.4,
+  "qts": 0.299,
+  "qes": 0.31,
+  "qms": 8.38,
+  "vasL": 87.7,
+  "sdCm2": 854.8,
+  "xmaxMm": 6,
+  "reOhm": 3.6,
+  "bl": 21.6,
+  "mmsG": 137.4,
+  "peW": 1000,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

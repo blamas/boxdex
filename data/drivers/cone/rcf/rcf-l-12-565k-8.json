@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L 12/565K",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 63,
+  "qts": 0.56,
+  "qes": 0.58,
+  "qms": 16.6,
+  "vasL": 57,
+  "sdCm2": 530,
+  "xmaxMm": 2.9,
+  "reOhm": 5.8,
+  "bl": 13.2,
+  "mmsG": 44.1,
+  "peW": 100,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

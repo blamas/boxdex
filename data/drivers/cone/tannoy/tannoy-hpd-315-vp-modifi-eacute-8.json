@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "HPD 315 vp modifi&eacute;",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 15.3,
+  "qts": 0.194,
+  "qes": 0.2,
+  "qms": 6.3,
+  "vasL": 513.9,
+  "sdCm2": 550,
+  "xmaxMm": 3,
+  "reOhm": 5.5,
+  "bl": 15.4,
+  "mmsG": 89.3,
+  "peW": 60,
+  "sensitivityDb": 93.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

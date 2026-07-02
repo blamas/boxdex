@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Beyma",
+  "model": "TD/385",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 80,
+  "coverageVerticalDeg": 50,
+  "cutoffHz": 1000,
+  "mouthWmm": 204,
+  "mouthHmm": 202,
+  "depthMm": 120,
+  "profile": "conical",
+  "material": "aluminium",
+  "weightKg": 1.2,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/horns/1TD385/bocina-td-385/"
+}

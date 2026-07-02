@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PDN 15BR40-V2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.2,
+  "qts": 0.376,
+  "qes": 0.39,
+  "qms": 10.77,
+  "vasL": 140.1,
+  "sdCm2": 829.6,
+  "xmaxMm": 8.2,
+  "reOhm": 5.13,
+  "bl": 19.2,
+  "mmsG": 113.4,
+  "peW": 700,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

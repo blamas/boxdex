@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W307D2",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 33.9,
+  "qts": 0.435,
+  "qes": 0.45,
+  "qms": 13.17,
+  "vasL": 42.2,
+  "sdCm2": 460,
+  "xmaxMm": 7.1,
+  "reOhm": 1.5,
+  "bl": 10.5,
+  "mmsG": 154.9,
+  "peW": 400,
+  "sensitivityDb": 94.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

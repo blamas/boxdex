@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DLS",
+  "model": "DLS 1021",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 61,
+  "qts": 0.312,
+  "qes": 0.34,
+  "qms": 3.73,
+  "vasL": 35.5,
+  "sdCm2": 346.4,
+  "xmaxMm": 4,
+  "reOhm": 5.45,
+  "bl": 14.1,
+  "mmsG": 32.3,
+  "peW": 250,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DLS"
+}

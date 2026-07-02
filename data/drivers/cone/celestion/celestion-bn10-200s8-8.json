@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BN10-200S8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 89.4,
+  "qts": 0.352,
+  "qes": 0.38,
+  "qms": 4.82,
+  "vasL": 20.5,
+  "sdCm2": 344,
+  "xmaxMm": 2.5,
+  "reOhm": 5.47,
+  "bl": 14.4,
+  "mmsG": 25.6,
+  "peW": 200,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

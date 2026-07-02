@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "CRESCENDO 15MB",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.232,
+  "qes": 0.242,
+  "qms": 5.51,
+  "vasL": 167,
+  "sdCm2": 820,
+  "xmaxMm": 4.3,
+  "reOhm": 5.6,
+  "bl": 22.2,
+  "mmsG": 81,
+  "peW": 300,
+  "sensitivityDb": 100.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

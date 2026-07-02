@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "AUDIOM 11WX",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 38.5,
+  "qts": 0.375,
+  "qes": 0.44,
+  "qms": 2.55,
+  "vasL": 42.8,
+  "sdCm2": 346.4,
+  "xmaxMm": 3.5,
+  "reOhm": 6.55,
+  "bl": 15.6,
+  "mmsG": 67.2,
+  "peW": 175,
+  "sensitivityDb": 90.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

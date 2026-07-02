@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "B&C",
+  "model": "ME10V3",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 1500,
+  "mouthWmm": 104,
+  "mouthHmm": 130.5,
+  "depthMm": 90,
+  "profile": "conical",
+  "material": "abs",
+  "weightKg": 0.17,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/horn/1/0/ME10V3"
+}

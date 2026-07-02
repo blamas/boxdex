@@ -1,0 +1,43 @@
+---
+name: FK Mid BR 12
+category: mid
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+driverCount: 1
+netVolumeL: 25
+dims:
+  wMm: 360
+  hMm: 500
+  dMm: 330
+weightKg: 14
+specs:
+  f3Hz: 150
+  f3HzHigh: 4000
+  fbHz: 170
+  sensitivityDb: 99
+  maxSplDb: 124
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+FK Mid BR 12: 12" bass reflex mid enclosure tuned to 170 Hz.

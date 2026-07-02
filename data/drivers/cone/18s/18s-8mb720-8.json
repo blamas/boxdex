@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "8MB720",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 108,
+  "qts": 0.32,
+  "qes": 0.35,
+  "qms": 4.6,
+  "vasL": 9,
+  "sdCm2": 227,
+  "xmaxMm": 2.25,
+  "reOhm": 5.2,
+  "bl": 13.4,
+  "mmsG": 18,
+  "peW": 250,
+  "sensitivityDb": 99.5,
+  "magnetMaterial": "ferrite",
+  "weightKg": 4.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/8-0/8/8mb720"
+}

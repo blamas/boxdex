@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Boston Acoustics",
+  "model": "PRO 12 SLF",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 30,
+  "qts": 0.448,
+  "qes": 0.47,
+  "qms": 9.8,
+  "vasL": 84,
+  "sdCm2": 510,
+  "xmaxMm": 6.8,
+  "reOhm": 1.6,
+  "bl": 8.9,
+  "mmsG": 122.2,
+  "peW": 200,
+  "sensitivityDb": 95.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BOSTON"
+}

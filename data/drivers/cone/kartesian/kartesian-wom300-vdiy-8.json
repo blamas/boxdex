@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kartesian",
+  "model": "WOM300_vDIY",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.362,
+  "qes": 0.381,
+  "qms": 7.2,
+  "vasL": 91.7,
+  "sdCm2": 511,
+  "xmaxMm": 6.4,
+  "reOhm": 5.3,
+  "bl": 15.5,
+  "mmsG": 73.9,
+  "peW": 250,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KARTESIAN"
+}

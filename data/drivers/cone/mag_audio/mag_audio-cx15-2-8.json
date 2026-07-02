@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MAG Audio",
+  "model": "CX15-2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38.7,
+  "qts": 0.457,
+  "qes": 0.48,
+  "qms": 9.7,
+  "vasL": 164.5,
+  "sdCm2": 860,
+  "xmaxMm": 4.4,
+  "reOhm": 5.9,
+  "bl": 17.8,
+  "mmsG": 106.6,
+  "peW": 350,
+  "sensitivityDb": 96.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAG%20AUDIO"
+}

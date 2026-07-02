@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD156",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 50.15,
+  "qts": 0.38,
+  "qes": 0.4,
+  "qms": 6.94,
+  "vasL": 120.17,
+  "sdCm2": 800,
+  "xmaxMm": 9.5,
+  "reOhm": 5.74,
+  "mmsG": 92.22,
+  "peW": 650,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ceramic",
+  "weightKg": 11,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=7"
+}

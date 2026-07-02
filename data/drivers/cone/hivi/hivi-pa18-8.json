@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "HiVi",
+  "model": "PA18",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.388,
+  "qes": 0.43,
+  "qms": 3.98,
+  "vasL": 233.1,
+  "sdCm2": 1288,
+  "xmaxMm": 4.9,
+  "reOhm": 5.2,
+  "bl": 21.6,
+  "mmsG": 150.3,
+  "peW": 400,
+  "sensitivityDb": 99.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HIVI"
+}

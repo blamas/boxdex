@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "8NSM64",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 245,
+  "qts": 0.34,
+  "qes": 0.35,
+  "qms": 9.3,
+  "vasL": 1.5,
+  "sdCm2": 220,
+  "xmaxMm": 2,
+  "reOhm": 5.7,
+  "bl": 22,
+  "mmsG": 19,
+  "peW": 250,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/8/8/8NSM64"
+}

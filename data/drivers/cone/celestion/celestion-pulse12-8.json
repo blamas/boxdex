@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "PULSE12",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.42,
+  "qes": 0.49,
+  "qms": 2.7,
+  "vasL": 104.77,
+  "sdCm2": 491,
+  "xmaxMm": 3.8,
+  "reOhm": 6.9,
+  "bl": 12.7,
+  "mmsG": 40.7,
+  "peW": 200,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://celestion.com/product/pulse12/"
+}

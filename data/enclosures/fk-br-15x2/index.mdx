@@ -1,0 +1,42 @@
+---
+name: FK BR 15x2
+category: sub
+topology: bass_reflex
+drivers:
+  - rcf-l15p400-8
+  - rcf-l15p400-8
+driverCount: 2
+netVolumeL: 320
+dims:
+  wMm: 760
+  hMm: 760
+  dMm: 650
+weightKg: 55
+specs:
+  f3Hz: 40
+  fbHz: 46
+  sensitivityDb: 100
+  impedanceNominalOhm: 4
+  maxSplDb: 133
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+connectors:
+  - speakON NL4
+---
+
+Dual 15" bass reflex, two RCF L15P400 in parallel (4 Ohm).

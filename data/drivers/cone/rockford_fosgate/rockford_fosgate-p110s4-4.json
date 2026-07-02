@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "P110S4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.525,
+  "qes": 0.56,
+  "qms": 8.33,
+  "vasL": 44.4,
+  "sdCm2": 360,
+  "xmaxMm": 6.4,
+  "reOhm": 3.3,
+  "bl": 11.3,
+  "mmsG": 115.2,
+  "peW": 150,
+  "sensitivityDb": 89.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ROCKFORD%20FOSGATE"
+}

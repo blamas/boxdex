@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Iconic Speakers",
+  "model": "165-8G",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.265,
+  "qes": 0.28,
+  "qms": 5,
+  "vasL": 363.7,
+  "sdCm2": 855,
+  "xmaxMm": 3.5,
+  "reOhm": 6.2,
+  "bl": 16.4,
+  "mmsG": 52.1,
+  "peW": 75,
+  "sensitivityDb": 101.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ICONICSPKRS"
+}

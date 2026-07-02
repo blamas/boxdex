@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "12\"BR70",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.5,
+  "qes": 0.56,
+  "qms": 4.44,
+  "vasL": 142,
+  "sdCm2": 540,
+  "xmaxMm": 8,
+  "reOhm": 5.6,
+  "bl": 12.1,
+  "peW": 125,
+  "sensitivityDb": 93,
+  "weightKg": 3.6,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/212BR708/altavoz-12br70-8-oh/"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "RCF",
+  "model": "HF96",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 500,
+  "mouthWmm": 205,
+  "mouthHmm": 205,
+  "depthMm": 129,
+  "profile": "oblate_spheroid",
+  "material": "aluminum",
+  "weightKg": 1.43,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/hf96"
+}

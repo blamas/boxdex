@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE7",
+  "impedanceOhm": 16,
+  "exitInch": 0.75,
+  "voiceCoilMm": 25,
+  "fLowHz": 2000,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 109,
+  "peW": 10,
+  "weightKg": 0.17,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/0.75/16/DE7"
+}

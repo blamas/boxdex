@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "18N862",
+  "impedanceOhm": 8,
+  "sizeInch": 18,
+  "fsHz": 25.1,
+  "qts": 0.34,
+  "qes": 0.36,
+  "qms": 6.75,
+  "vasL": 312,
+  "sdCm2": 1219,
+  "xmaxMm": 19,
+  "peW": 1500,
+  "sensitivityDb": 95,
+  "reOhm": 5.56,
+  "bl": 25.52,
+  "mmsG": 267
+}

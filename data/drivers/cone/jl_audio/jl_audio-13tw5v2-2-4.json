@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "13TW5V2-2",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27.6,
+  "qts": 0.526,
+  "qes": 0.553,
+  "qms": 10.692,
+  "vasL": 60.3,
+  "sdCm2": 634,
+  "xmaxMm": 9,
+  "reOhm": 3.51,
+  "bl": 18.5,
+  "mmsG": 310.4,
+  "peW": 600,
+  "sensitivityDb": 89.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JL%20AUDIO"
+}

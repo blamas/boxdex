@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF12Y308",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.22,
+  "qes": 0.23,
+  "qms": 4.6,
+  "vasL": 97,
+  "sdCm2": 500,
+  "xmaxMm": 7,
+  "reOhm": 5.8,
+  "bl": 19,
+  "mmsG": 56,
+  "peW": 450,
+  "sensitivityDb": 97,
+  "weightKg": 7,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf12y308"
+}

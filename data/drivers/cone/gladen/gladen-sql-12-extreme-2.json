@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Gladen",
+  "model": "SQL 12 EXTREME",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 33,
+  "qts": 0.353,
+  "qes": 0.41,
+  "qms": 2.52,
+  "vasL": 36,
+  "sdCm2": 490,
+  "xmaxMm": 9.4,
+  "reOhm": 1.94,
+  "bl": 14.6,
+  "mmsG": 217.5,
+  "peW": 1300,
+  "sensitivityDb": 93.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GLADEN"
+}

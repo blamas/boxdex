@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18B450",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34.38,
+  "qts": 0.342,
+  "qes": 0.357,
+  "qms": 8.03,
+  "vasL": 241.55,
+  "sdCm2": 1110,
+  "xmaxMm": 7.25,
+  "reOhm": 5.29,
+  "bl": 22.12,
+  "mmsG": 152.76,
+  "peW": 500,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/163-18b450.html"
+}

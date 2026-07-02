@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "P1S2-15",
+  "sizeInch": 15,
+  "impedanceOhm": 2,
+  "fsHz": 23,
+  "qts": 0.55,
+  "qes": 0.654,
+  "qms": 3.46,
+  "vasL": 191.5,
+  "sdCm2": 876,
+  "xmaxMm": 9,
+  "reOhm": 1.8,
+  "bl": 10.4,
+  "mmsG": 272.1,
+  "peW": 250,
+  "sensitivityDb": 87.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/rockford-fosgate-p1s2-15/specifications"
+}

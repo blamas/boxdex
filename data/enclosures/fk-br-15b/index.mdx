@@ -1,0 +1,39 @@
+---
+name: FK BR 15B
+category: sub
+topology: bass_reflex
+drivers:
+  - rcf-l15p400-8
+netVolumeL: 175
+dims:
+  wMm: 660
+  hMm: 660
+  dMm: 570
+weightKg: 34
+specs:
+  f3Hz: 40
+  fbHz: 46
+  sensitivityDb: 100
+  maxSplDb: 129
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - frenchcore
+connectors:
+  - speakON NL4
+---
+
+15" bass reflex sub variant B. Lower tuning at 46 Hz.

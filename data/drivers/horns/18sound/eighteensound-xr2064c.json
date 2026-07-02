@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "18 Sound",
+  "model": "XR2064C",
+  "exitInch": 1.97,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 800,
+  "mouthWmm": 240,
+  "mouthHmm": 240,
+  "depthMm": 200,
+  "profile": "oblate_spheroid",
+  "constantDirectivity": true,
+  "material": "composite material",
+  "weightKg": 1.6,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/horn/2-0/0/XR2064C"
+}

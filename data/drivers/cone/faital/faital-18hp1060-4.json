@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18HP1060",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 13.3,
+  "vasL": 184.4,
+  "sdCm2": 1212,
+  "xmaxMm": 12.45,
+  "reOhm": 2.9,
+  "mmsG": 230,
+  "peW": 1200,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 7.3,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201070126"
+}

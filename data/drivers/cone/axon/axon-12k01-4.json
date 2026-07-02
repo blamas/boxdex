@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Axon",
+  "model": "12K01",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 25,
+  "qts": 0.289,
+  "qes": 0.34,
+  "qms": 1.94,
+  "vasL": 191.8,
+  "sdCm2": 499,
+  "xmaxMm": 6.7,
+  "reOhm": 3.2,
+  "bl": 10.4,
+  "mmsG": 73.8,
+  "peW": 125,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AXON"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "OMEGA PRO 15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.345,
+  "qes": 0.36,
+  "qms": 8.57,
+  "vasL": 196,
+  "sdCm2": 856.3,
+  "xmaxMm": 4.8,
+  "reOhm": 4.98,
+  "bl": 17.2,
+  "mmsG": 87.3,
+  "peW": 800,
+  "sensitivityDb": 99.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

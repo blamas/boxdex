@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21LW400",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.234,
+  "qes": 0.24,
+  "qms": 9.32,
+  "vasL": 385,
+  "sdCm2": 1662,
+  "xmaxMm": 9.3,
+  "reOhm": 5,
+  "bl": 34.5,
+  "mmsG": 324.9,
+  "peW": 1600,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

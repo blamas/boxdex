@@ -1,0 +1,41 @@
+---
+name: FK Kick TH 18
+category: kick
+topology: tapped_horn
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 250
+dims:
+  wMm: 560
+  hMm: 800
+  dMm: 750
+weightKg: 48
+specs:
+  f3Hz: 55
+  sensitivityDb: 103
+  maxSplDb: 133
+  recommendedCrossoverHz: 200
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+FK Kick TH 18: 18" tapped horn configured for kick frequencies.

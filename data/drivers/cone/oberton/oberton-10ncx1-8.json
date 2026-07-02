@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "10NCX1",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 68,
+  "qts": 0.41,
+  "qes": 0.428,
+  "qms": 9.96,
+  "vasL": 12,
+  "sdCm2": 344,
+  "xmaxMm": 2.4,
+  "reOhm": 5.35,
+  "bl": 20.1,
+  "mmsG": 76,
+  "peW": 200,
+  "sensitivityDb": 93.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=OBERTON"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L10CX1AK",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 67.9,
+  "qts": 0.59,
+  "qes": 0.69,
+  "qms": 4,
+  "vasL": 33,
+  "sdCm2": 314,
+  "xmaxMm": 3,
+  "reOhm": 5.08,
+  "bl": 8.5,
+  "mmsG": 23,
+  "peW": 60,
+  "sensitivityDb": 93.6,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l10cx1ak"
+}

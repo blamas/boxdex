@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "Kappa Pro 18LF2",
+  "impedanceOhm": 8,
+  "sizeInch": 18,
+  "fsHz": 32,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 10.66,
+  "vasL": 391.61,
+  "sdCm2": 1159,
+  "xmaxMm": 8,
+  "peW": 800,
+  "sensitivityDb": 98,
+  "reOhm": 5.39,
+  "bl": 19.39,
+  "mmsG": 119,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappa_Pro_18LF_8.pdf"
+}

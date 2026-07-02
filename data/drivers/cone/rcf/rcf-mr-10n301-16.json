@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "MR 10N301",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 248,
+  "qts": 0.603,
+  "qes": 0.71,
+  "qms": 4,
+  "vasL": 3.2,
+  "sdCm2": 350,
+  "xmaxMm": 0.9,
+  "reOhm": 11,
+  "bl": 23.1,
+  "mmsG": 22.1,
+  "peW": 300,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

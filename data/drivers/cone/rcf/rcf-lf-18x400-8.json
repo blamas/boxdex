@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF 18X400",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.255,
+  "qes": 0.27,
+  "qms": 4.5,
+  "vasL": 360,
+  "sdCm2": 1231.1,
+  "xmaxMm": 9,
+  "reOhm": 5.1,
+  "bl": 25.2,
+  "mmsG": 190.7,
+  "peW": 1000,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MTX Audio",
+  "model": "T4124A",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 29.3,
+  "qts": 0.549,
+  "qes": 0.59,
+  "qms": 7.97,
+  "vasL": 118.8,
+  "sdCm2": 530,
+  "xmaxMm": 8.4,
+  "reOhm": 3.29,
+  "bl": 10,
+  "mmsG": 97.8,
+  "peW": 200,
+  "sensitivityDb": 92.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MTX"
+}

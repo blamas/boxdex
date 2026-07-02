@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Usher Audio",
+  "model": "15HM Studio",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.28,
+  "qes": 0.29,
+  "qms": 8.1,
+  "vasL": 385,
+  "sdCm2": 902,
+  "xmaxMm": 5.9,
+  "reOhm": 5.2,
+  "bl": 17.7,
+  "mmsG": 102.9,
+  "peW": 150,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=USHER%20AUDIO"
+}

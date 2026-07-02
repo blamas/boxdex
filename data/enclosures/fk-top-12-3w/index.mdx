@@ -1,0 +1,62 @@
+---
+name: FK Top 12 3W
+category: top
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+  - 18s-6nmb420-8
+  - bms-4545nd-8
+netVolumeL: 65
+dims:
+  wMm: 420
+  hMm: 600
+  dMm: 400
+weightKg: 24
+specs:
+  f3Hz: 60
+  fbHz: 56
+  sensitivityDb: 99
+  coverageAngleDeg: 80
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-mf.csv
+  - driver:
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - faital-12pr310-8
+      - 18s-6nmb420-8
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+      - 18s-6nmb420-8
+      - bms-4545nd-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - acid
+  - psytrance
+connectors:
+  - speakON NL4
+ways: 3
+---
+
+3-way top. 12" LF + 6.5" MF + 1" CD. Crossovers at 400 Hz and 3000 Hz.

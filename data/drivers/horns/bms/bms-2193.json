@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "BMS",
+  "model": "2193",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 40,
+  "cutoffHz": 1400,
+  "mouthWmm": 216,
+  "mouthHmm": 112,
+  "depthMm": 70,
+  "profile": "radial",
+  "material": "Fiberglass",
+  "datasheetUrl": "https://www.bmsspeakers.com/index.php-142.html?id=bms_2193"
+}

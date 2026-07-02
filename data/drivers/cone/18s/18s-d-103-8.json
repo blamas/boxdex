@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "D-103",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 40.6,
+  "qts": 0.522,
+  "qes": 0.625,
+  "qms": 3.17,
+  "vasL": 93.7,
+  "sdCm2": 380,
+  "xmaxMm": 6,
+  "reOhm": 7.07,
+  "bl": 9.8,
+  "mmsG": 33.2,
+  "peW": 150,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "XD110",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25,
+  "fLowHz": 2000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 109,
+  "peW": 20,
+  "magnetMaterial": "ferrite",
+  "weightKg": 0.9,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-0/8/XD110%20"
+}

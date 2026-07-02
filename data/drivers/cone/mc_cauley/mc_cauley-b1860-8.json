@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "McCauley",
+  "model": "B1860",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 23.9,
+  "qts": 0.244,
+  "qes": 0.25,
+  "qms": 9.49,
+  "vasL": 723.6,
+  "sdCm2": 1283.2,
+  "xmaxMm": 5.5,
+  "reOhm": 6.2,
+  "bl": 23,
+  "mmsG": 141.5,
+  "peW": 400,
+  "sensitivityDb": 99.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MC%20CAULEY"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "WSF101.82",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 64,
+  "qts": 0.4,
+  "qes": 0.45,
+  "qms": 3.6,
+  "vasL": 41.6,
+  "sdCm2": 363,
+  "xmaxMm": 3.6,
+  "reOhm": 5.6,
+  "bl": 11.7,
+  "mmsG": 27.5,
+  "peW": 150,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LAVOCE"
+}

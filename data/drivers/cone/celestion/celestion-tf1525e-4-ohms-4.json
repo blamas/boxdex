@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TF1525E 4 Ohms",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 49.8,
+  "qts": 0.493,
+  "qes": 0.53,
+  "qms": 7.12,
+  "vasL": 128.2,
+  "sdCm2": 850,
+  "xmaxMm": 3.5,
+  "reOhm": 3.2,
+  "bl": 12.3,
+  "mmsG": 80.7,
+  "peW": 300,
+  "sensitivityDb": 100.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

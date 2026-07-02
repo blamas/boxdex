@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DAS Audio",
+  "model": "15B v2014",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.1,
+  "qts": 0.319,
+  "qes": 0.33,
+  "qms": 9.94,
+  "vasL": 189.5,
+  "sdCm2": 897,
+  "xmaxMm": 4,
+  "reOhm": 6.1,
+  "bl": 21.2,
+  "mmsG": 98.8,
+  "peW": 500,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAS"
+}

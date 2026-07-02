@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "HX 250",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 37,
+  "qts": 0.44,
+  "qes": 0.49,
+  "qms": 4.7,
+  "vasL": 24,
+  "sdCm2": 344,
+  "xmaxMm": 14,
+  "reOhm": 2.8,
+  "bl": 13.2,
+  "mmsG": 129,
+  "peW": 450,
+  "sensitivityDb": 85.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-hx-250/specifications"
+}

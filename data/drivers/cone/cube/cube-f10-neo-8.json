@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cube",
+  "model": "F10 NEO",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.505,
+  "qes": 0.52,
+  "qms": 17.8,
+  "vasL": 127,
+  "sdCm2": 346,
+  "xmaxMm": 5.1,
+  "reOhm": 5.5,
+  "bl": 8.6,
+  "mmsG": 37.2,
+  "peW": 30,
+  "sensitivityDb": 91.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CUBE"
+}

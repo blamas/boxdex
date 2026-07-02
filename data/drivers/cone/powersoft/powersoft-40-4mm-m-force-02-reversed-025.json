@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powersoft",
+  "model": "40''-4MM M-FORCE 02 REVERSED",
+  "sizeInch": 39.5,
+  "impedanceOhm": 0.25,
+  "fsHz": 26.8,
+  "qts": 0.184,
+  "qes": 0.187,
+  "qms": 10.008,
+  "vasL": 500,
+  "sdCm2": 5810,
+  "xmaxMm": 4.7,
+  "reOhm": 0.19,
+  "bl": 23.9,
+  "mmsG": 3345.1,
+  "peW": 5000,
+  "sensitivityDb": 115.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=POWERSOFT"
+}

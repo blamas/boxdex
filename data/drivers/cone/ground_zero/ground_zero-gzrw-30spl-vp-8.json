@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZRW 30SPL vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 33.3,
+  "qts": 0.357,
+  "qes": 0.38,
+  "qms": 5.97,
+  "vasL": 52,
+  "sdCm2": 486.5,
+  "xmaxMm": 9.1,
+  "reOhm": 4,
+  "bl": 17.9,
+  "mmsG": 145.7,
+  "peW": 750,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GROUND%20ZERO"
+}

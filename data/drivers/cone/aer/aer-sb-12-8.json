@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AER",
+  "model": "SB 12",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.349,
+  "qes": 0.37,
+  "qms": 6.24,
+  "vasL": 82,
+  "sdCm2": 530,
+  "xmaxMm": 7.1,
+  "reOhm": 6,
+  "bl": 20.7,
+  "mmsG": 144.6,
+  "peW": 300,
+  "sensitivityDb": 90.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AER"
+}

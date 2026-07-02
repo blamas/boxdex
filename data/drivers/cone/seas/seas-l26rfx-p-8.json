@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SEAS",
+  "model": "L26RFX/P",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 20,
+  "qts": 0.33,
+  "qes": 0.39,
+  "qms": 2.15,
+  "vasL": 171,
+  "sdCm2": 330,
+  "xmaxMm": 7,
+  "reOhm": 6.3,
+  "bl": 10.7,
+  "mmsG": 56.5,
+  "peW": 125,
+  "sensitivityDb": 88.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SEAS"
+}

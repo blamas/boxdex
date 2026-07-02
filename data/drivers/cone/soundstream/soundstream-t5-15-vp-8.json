@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Soundstream",
+  "model": "T5-15 vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 19.7,
+  "qts": 0.336,
+  "qes": 0.371,
+  "qms": 3.6,
+  "vasL": 153.4,
+  "sdCm2": 903.2,
+  "xmaxMm": 12,
+  "reOhm": 4,
+  "bl": 25.5,
+  "mmsG": 484.5,
+  "peW": 1000,
+  "sensitivityDb": 90,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SOUNDSTREAM"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JB Systems",
+  "model": "SP12/200 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42.9,
+  "qts": 1.385,
+  "qes": 1.694,
+  "qms": 7.585,
+  "vasL": 107.3,
+  "sdCm2": 540,
+  "xmaxMm": 3,
+  "reOhm": 7.12,
+  "bl": 7.7,
+  "mmsG": 52.4,
+  "peW": 200,
+  "sensitivityDb": 89.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JB%20SYSTEMS"
+}

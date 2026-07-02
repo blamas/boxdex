@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "LaVoce",
+  "model": "DF10.144LK",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 35,
+  "fLowHz": 1000,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 106,
+  "peW": 35,
+  "datasheetUrl": "https://lavocespeakers.com/product/df10-144lk/"
+}

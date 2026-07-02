@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "8\"BR40/N",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.39,
+  "qes": 0.48,
+  "qms": 2.1,
+  "vasL": 89.1,
+  "sdCm2": 220,
+  "xmaxMm": 6.7,
+  "reOhm": 5.5,
+  "bl": 6.8,
+  "mmsG": 21,
+  "peW": 50,
+  "sensitivityDb": 91,
+  "weightKg": 1.35,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/208BR40N8/altavoz-8br40-n-8-oh/"
+}

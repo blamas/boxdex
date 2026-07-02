@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "PS18-6008 vp",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28.1,
+  "qts": 0.239,
+  "qes": 0.25,
+  "qms": 5.53,
+  "vasL": 354.1,
+  "sdCm2": 1159.2,
+  "xmaxMm": 5.5,
+  "reOhm": 5.12,
+  "bl": 24.9,
+  "mmsG": 171,
+  "peW": 300,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

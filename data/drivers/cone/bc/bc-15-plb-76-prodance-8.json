@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15 PLB 76 (prodance)",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38.7,
+  "qts": 0.259,
+  "qes": 0.27,
+  "qms": 6.23,
+  "vasL": 215,
+  "sdCm2": 855,
+  "xmaxMm": 5,
+  "reOhm": 5.09,
+  "bl": 19.2,
+  "mmsG": 80.5,
+  "peW": 400,
+  "sensitivityDb": 100.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

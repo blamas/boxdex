@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPALITE™ KL3010LF-8",
+  "impedanceOhm": 8,
+  "sizeInch": 10,
+  "fsHz": 45,
+  "qts": 0.31,
+  "qes": 0.33,
+  "qms": 6.95,
+  "vasL": 47.33,
+  "sdCm2": 376.9,
+  "xmaxMm": 8.52,
+  "peW": 450,
+  "sensitivityDb": 92,
+  "reOhm": 7.03,
+  "bl": 17.98,
+  "mmsG": 53,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/KL3010LF_8.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Conrad",
+  "model": "CPA15-400",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34.3,
+  "qts": 0.186,
+  "qes": 0.191,
+  "qms": 7.445,
+  "vasL": 223,
+  "sdCm2": 835,
+  "xmaxMm": 4,
+  "reOhm": 5.5,
+  "bl": 24.2,
+  "mmsG": 94.4,
+  "peW": 400,
+  "sensitivityDb": 100.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CONRAD"
+}

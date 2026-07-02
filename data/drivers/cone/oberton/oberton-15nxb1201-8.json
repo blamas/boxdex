@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15NXB1201",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38.49,
+  "qts": 0.324,
+  "qes": 0.337,
+  "qms": 8.255,
+  "vasL": 111.94,
+  "sdCm2": 829.6,
+  "xmaxMm": 12,
+  "reOhm": 5.3,
+  "bl": 23.62,
+  "mmsG": 146.79,
+  "peW": 1200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/480-15nxb1201.html"
+}

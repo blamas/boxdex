@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "P180/2242",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.48,
+  "qes": 0.51,
+  "qms": 6.33,
+  "vasL": 231.72,
+  "sdCm2": 1281,
+  "xmaxMm": 7,
+  "reOhm": 5.7,
+  "bl": 22,
+  "mmsG": 185.81,
+  "peW": 1000,
+  "sensitivityDb": 95.5
+}

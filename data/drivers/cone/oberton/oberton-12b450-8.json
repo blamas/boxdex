@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12B450",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 46.29,
+  "qts": 0.235,
+  "qes": 0.241,
+  "qms": 9.56,
+  "vasL": 71.75,
+  "sdCm2": 514.7,
+  "xmaxMm": 7.75,
+  "reOhm": 5.07,
+  "bl": 19.31,
+  "mmsG": 60.97,
+  "peW": 450,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/172-12b450.html"
+}

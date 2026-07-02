@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Nirvana",
+  "model": "SUPER CAST FRAME 10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.254,
+  "qes": 0.275,
+  "qms": 3.4,
+  "vasL": 173,
+  "sdCm2": 360,
+  "xmaxMm": 3,
+  "reOhm": 7.2,
+  "bl": 11.3,
+  "mmsG": 23,
+  "peW": 30,
+  "sensitivityDb": 96.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20NIRVANA"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiobahn",
+  "model": "AW120T",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 32.4,
+  "qts": 0.39,
+  "qes": 0.42,
+  "qms": 4.4,
+  "vasL": 45,
+  "sdCm2": 450,
+  "xmaxMm": 9,
+  "reOhm": 3.3,
+  "bl": 15.7,
+  "mmsG": 153.7,
+  "peW": 500,
+  "sensitivityDb": 87.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audiobahn-aw120t/specifications"
+}

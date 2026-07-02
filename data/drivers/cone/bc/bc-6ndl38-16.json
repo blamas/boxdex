@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "6NDL38",
+  "sizeInch": 6.5,
+  "impedanceOhm": 16,
+  "fsHz": 70,
+  "qts": 0.5,
+  "qes": 0.53,
+  "qms": 10.29,
+  "vasL": 8.9,
+  "sdCm2": 132,
+  "xmaxMm": 6,
+  "reOhm": 11.3,
+  "bl": 11.7,
+  "mmsG": 15,
+  "peW": 150,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/6.5/16/6NDL38"
+}

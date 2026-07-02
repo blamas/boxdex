@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Elokance",
+  "model": "12WF540SUB",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 41,
+  "qts": 0.187,
+  "qes": 0.19,
+  "qms": 10.89,
+  "vasL": 79.7,
+  "sdCm2": 517,
+  "xmaxMm": 2.9,
+  "reOhm": 5.8,
+  "bl": 23.6,
+  "mmsG": 70.8,
+  "peW": 140,
+  "sensitivityDb": 98,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELOKANCE"
+}

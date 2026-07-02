@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Volt",
+  "model": "R3813",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.303,
+  "qes": 0.34,
+  "qms": 2.82,
+  "vasL": 191,
+  "sdCm2": 734,
+  "xmaxMm": 4.5,
+  "reOhm": 6.27,
+  "bl": 18.2,
+  "mmsG": 81.8,
+  "peW": 500,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOLT"
+}

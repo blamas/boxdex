@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sphynx",
+  "model": "SP-W10-SQP",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.675,
+  "qes": 0.86,
+  "qms": 3.14,
+  "vasL": 63,
+  "sdCm2": 311.5,
+  "xmaxMm": 3,
+  "reOhm": 7.8,
+  "bl": 9.4,
+  "mmsG": 44.6,
+  "peW": 100,
+  "sensitivityDb": 87.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SPHYNX"
+}

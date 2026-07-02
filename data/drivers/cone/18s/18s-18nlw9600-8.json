@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18NLW9600",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.281,
+  "qes": 0.29,
+  "qms": 8.7,
+  "vasL": 149,
+  "sdCm2": 1143,
+  "xmaxMm": 9,
+  "reOhm": 4.7,
+  "bl": 30.5,
+  "mmsG": 269.3,
+  "peW": 1800,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

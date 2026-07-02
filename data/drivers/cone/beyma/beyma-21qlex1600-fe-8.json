@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "21QLEX1600/Fe",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.281,
+  "qes": 0.3,
+  "qms": 4.5,
+  "vasL": 309,
+  "sdCm2": 1734,
+  "xmaxMm": 8.4,
+  "reOhm": 5.4,
+  "bl": 36.1,
+  "mmsG": 383.9,
+  "peW": 1600,
+  "sensitivityDb": 98.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

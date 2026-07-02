@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sony",
+  "model": "XS-GTR100L",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 40,
+  "qts": 0.56,
+  "qes": 0.637,
+  "qms": 4.65,
+  "vasL": 27,
+  "sdCm2": 367,
+  "xmaxMm": 7.5,
+  "reOhm": 3,
+  "bl": 11.51,
+  "mmsG": 112,
+  "peW": 330,
+  "sensitivityDb": 86.2,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/sony-xs-gtr100l/specifications"
+}

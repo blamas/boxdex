@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "15-3008PS LF",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46.6,
+  "qts": 0.396,
+  "qes": 0.43,
+  "qms": 4.93,
+  "vasL": 130,
+  "sdCm2": 856.3,
+  "xmaxMm": 5.5,
+  "reOhm": 5.6,
+  "bl": 18.8,
+  "mmsG": 92.3,
+  "peW": 500,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

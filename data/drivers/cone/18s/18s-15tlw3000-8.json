@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15TLW3000",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.44,
+  "qes": 0.46,
+  "qms": 10.5,
+  "vasL": 140,
+  "sdCm2": 881,
+  "xmaxMm": 9,
+  "reOhm": 6,
+  "bl": 23.4,
+  "mmsG": 157,
+  "peW": 1500,
+  "sensitivityDb": 95.5,
+  "magnetMaterial": "ferrite",
+  "weightKg": 12.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15TLW3000"
+}

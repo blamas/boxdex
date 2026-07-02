@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "S2-124",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.498,
+  "qes": 0.53,
+  "qms": 8.12,
+  "vasL": 77,
+  "sdCm2": 540,
+  "xmaxMm": 10.7,
+  "reOhm": 3.7,
+  "bl": 14.8,
+  "mmsG": 184.5,
+  "peW": 500,
+  "sensitivityDb": 89.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ROCKFORD%20FOSGATE"
+}

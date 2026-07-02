@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "CANIS MAJOR",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 104.9,
+  "qts": 0.664,
+  "qes": 0.71,
+  "qms": 10.16,
+  "vasL": 34.1,
+  "sdCm2": 532.4,
+  "xmaxMm": 0.8,
+  "reOhm": 6.45,
+  "bl": 12.7,
+  "mmsG": 26.9,
+  "peW": 50,
+  "sensitivityDb": 100.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

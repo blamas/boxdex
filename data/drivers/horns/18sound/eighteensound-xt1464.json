@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "18 Sound",
+  "model": "XT1464",
+  "exitInch": 1.4,
+  "coverageHorizontalDeg": 60,
+  "coverageVerticalDeg": 50,
+  "cutoffHz": 500,
+  "mouthWmm": 380,
+  "mouthHmm": 304,
+  "depthMm": 257,
+  "profile": "conical",
+  "weightKg": 1.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/horn/1-4/0/XT1464"
+}

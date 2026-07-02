@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "8NMB420",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 61,
+  "qts": 0.28,
+  "qes": 0.31,
+  "qms": 4,
+  "vasL": 33,
+  "sdCm2": 230,
+  "xmaxMm": 5.8,
+  "reOhm": 5,
+  "bl": 10,
+  "mmsG": 14.9,
+  "peW": 280,
+  "sensitivityDb": 95,
+  "magnetMaterial": "neo",
+  "weightKg": 1.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/8-0/8/8NMB420"
+}

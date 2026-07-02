@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Accuton",
+  "model": "AUTOSOM",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 19.4,
+  "qts": 0.344,
+  "qes": 0.36,
+  "qms": 7.8,
+  "vasL": 169,
+  "sdCm2": 466,
+  "xmaxMm": 12.5,
+  "reOhm": 2.6,
+  "bl": 10.3,
+  "mmsG": 121.2,
+  "peW": 250,
+  "sensitivityDb": 92.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ACCUTON"
+}

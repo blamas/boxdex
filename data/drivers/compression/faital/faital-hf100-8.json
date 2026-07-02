@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Faital PRO",
+  "model": "HF100",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 25,
+  "fLowHz": 1500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 108,
+  "peW": 30,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 0.83,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Drivers/product_details/index.php?id=502010250"
+}

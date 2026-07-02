@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LII Audio",
+  "model": "FAST-15",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 36.5,
+  "qts": 0.311,
+  "qes": 0.324,
+  "qms": 7.583,
+  "vasL": 366.4,
+  "sdCm2": 938.2,
+  "xmaxMm": 2,
+  "reOhm": 8.18,
+  "bl": 19.3,
+  "mmsG": 64,
+  "peW": 40,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LII%20AUDIO"
+}

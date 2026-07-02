@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "8FG64",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 51,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 10.1,
+  "vasL": 15,
+  "sdCm2": 220,
+  "xmaxMm": 7,
+  "reOhm": 5.8,
+  "bl": 15.8,
+  "mmsG": 41,
+  "peW": 300,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/8/8/8FG64"
+}

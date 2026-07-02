@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "W12GTi MKII",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 31.8,
+  "qts": 0.508,
+  "qes": 0.55,
+  "qms": 6.68,
+  "vasL": 44.8,
+  "sdCm2": 480,
+  "xmaxMm": 9.9,
+  "reOhm": 3.2,
+  "bl": 14.5,
+  "mmsG": 180.4,
+  "peW": 700,
+  "sensitivityDb": 90.1
+}

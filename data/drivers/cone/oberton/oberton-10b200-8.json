@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "10B200",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 48.06,
+  "qts": 0.349,
+  "qes": 0.365,
+  "qms": 7.862,
+  "vasL": 31.94,
+  "sdCm2": 317.3,
+  "xmaxMm": 5.75,
+  "reOhm": 5.3,
+  "bl": 14.69,
+  "mmsG": 49.25,
+  "peW": 200,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/180-10b200.html"
+}

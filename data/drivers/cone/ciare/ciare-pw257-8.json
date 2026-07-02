@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ciare",
+  "model": "PW257",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 57,
+  "qts": 0.299,
+  "qes": 0.33,
+  "qms": 3.2,
+  "vasL": 31,
+  "sdCm2": 353,
+  "xmaxMm": 3.5,
+  "reOhm": 5.21,
+  "bl": 15.8,
+  "mmsG": 43.9,
+  "peW": 400,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CIARE"
+}

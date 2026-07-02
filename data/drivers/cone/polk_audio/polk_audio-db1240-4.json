@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Polk Audio",
+  "model": "DB1240",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.44,
+  "qes": 0.459,
+  "qms": 10.4,
+  "vasL": 71.85,
+  "sdCm2": 520,
+  "xmaxMm": 7.5,
+  "reOhm": 3.5,
+  "bl": 14.7,
+  "mmsG": 150.5,
+  "peW": 360,
+  "sensitivityDb": 88.1,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/polk-audio-db1240/specifications"
+}

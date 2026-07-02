@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21LW1400",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.24,
+  "qes": 0.24,
+  "qms": 9.32,
+  "vasL": 385,
+  "sdCm2": 1660,
+  "xmaxMm": 9.5,
+  "reOhm": 5,
+  "bl": 33.5,
+  "mmsG": 296,
+  "peW": 1000,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ferrite",
+  "weightKg": 17,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/21-0/8/21LW1400"
+}

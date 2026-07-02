@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SPH-315",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.235,
+  "qes": 0.26,
+  "qms": 2.4,
+  "vasL": 330,
+  "sdCm2": 510,
+  "xmaxMm": 4.5,
+  "reOhm": 6.1,
+  "bl": 13.7,
+  "mmsG": 57.8,
+  "peW": 100,
+  "sensitivityDb": 94.5
+}

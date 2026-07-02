@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Carvin",
+  "model": "PS18-8",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.48,
+  "qes": 0.59,
+  "qms": 2.5,
+  "vasL": 531.785,
+  "sdCm2": 1521,
+  "xmaxMm": 6,
+  "reOhm": 5.1,
+  "bl": 15.6,
+  "mmsG": 128,
+  "peW": 500,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/carvin-ps18-8/specifications"
+}

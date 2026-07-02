@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "NBASS10-20",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.39,
+  "qes": 0.42,
+  "qms": 5.52,
+  "vasL": 43.38,
+  "sdCm2": 353,
+  "xmaxMm": 6.6,
+  "reOhm": 5.2,
+  "bl": 12.5,
+  "mmsG": 38.2,
+  "peW": 150,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/nbass10-20/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18SW100",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.38,
+  "qes": 0.4,
+  "qms": 5.9,
+  "vasL": 180,
+  "sdCm2": 1210,
+  "xmaxMm": 12.5,
+  "reOhm": 5.3,
+  "bl": 26.1,
+  "mmsG": 234,
+  "peW": 1500,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/18/8/18SW100"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "RD 30 FU 120-F",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 31.6,
+  "qts": 0.879,
+  "qes": 1.17,
+  "qms": 3.53,
+  "vasL": 206.3,
+  "sdCm2": 490.9,
+  "xmaxMm": 8,
+  "reOhm": 7.29,
+  "bl": 7.2,
+  "mmsG": 41.7,
+  "peW": 150,
+  "sensitivityDb": 89.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KENWOOD"
+}

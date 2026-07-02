@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "LE10H",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.369,
+  "qes": 0.39,
+  "qms": 6.9,
+  "vasL": 76.5,
+  "sdCm2": 316.1,
+  "xmaxMm": 5,
+  "reOhm": 4.8,
+  "bl": 10.4,
+  "mmsG": 42.6,
+  "peW": 60,
+  "sensitivityDb": 92.7
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "6RS140",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 5.8,
+  "vasL": 9.3,
+  "sdCm2": 133,
+  "xmaxMm": 5.6,
+  "reOhm": 5.3,
+  "mmsG": 16,
+  "peW": 200,
+  "sensitivityDb": 93,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 1.2,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101020140"
+}

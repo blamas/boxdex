@@ -1,0 +1,73 @@
+---
+name: FK Top 4W Big
+category: top
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+  - 18s-6nmb420-8
+  - bms-4545nd-8
+  - faital-hf1440-8
+netVolumeL: 120
+dims:
+  wMm: 600
+  hMm: 900
+  dMm: 520
+weightKg: 52
+specs:
+  f3Hz: 45
+  fbHz: 42
+  sensitivityDb: 102
+  coverageAngleDeg: 60
+  maxSplDb: 138
+  recommendedCrossoverHz: 60
+  powerAesW: 2400
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-mf1.csv
+  - driver:
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-mf2.csv
+  - driver:
+      - faital-hf1440-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - faital-12pr310-8
+      - 18s-6nmb420-8
+      - bms-4545nd-8
+      - faital-hf1440-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+      - 18s-6nmb420-8
+      - bms-4545nd-8
+      - faital-hf1440-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - tribe
+  - hardtek
+connectors:
+  - speakON NL8
+ways: 4
+---
+
+Large 4-way PA top. 12" LF + 6.5" MF1 + 1" MF2 + 2" HF. Crossovers at 350/1800/8000 Hz.

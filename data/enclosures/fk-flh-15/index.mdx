@@ -1,0 +1,41 @@
+---
+name: FK FLH 15
+category: sub
+topology: front_loaded_horn
+drivers:
+  - rcf-l15p400-8
+driverCount: 1
+netVolumeL: 300
+dims:
+  wMm: 700
+  hMm: 1100
+  dMm: 800
+specs:
+  f3Hz: 60
+  sensitivityDb: 104
+  hornCutoffHz: 60
+  maxSplDb: 134
+  powerAesW: 750
+  recommendedCrossoverHz: 160
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U FLH, Hornresp
+measurements:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+    note: 1U ground plane, REW
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - hardtek
+---
+
+FK FLH 15: front-loaded horn 15" subwoofer. Horn cutoff 60 Hz.

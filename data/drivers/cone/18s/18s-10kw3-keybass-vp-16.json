@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10KW3 KEYBASS vp",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 71,
+  "qts": 0.473,
+  "qes": 0.5,
+  "qms": 8.8,
+  "vasL": 45.2,
+  "sdCm2": 380,
+  "xmaxMm": 1.5,
+  "reOhm": 8,
+  "bl": 12.7,
+  "mmsG": 22.5,
+  "peW": 100,
+  "sensitivityDb": 97.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

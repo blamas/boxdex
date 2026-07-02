@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "18 Sound",
+  "model": "XT120",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 1500,
+  "mouthWmm": 200,
+  "mouthHmm": 150,
+  "depthMm": 103,
+  "profile": "conical",
+  "material": "injection moulded polyurethane",
+  "weightKg": 350,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/horn/1-0/0/XT120"
+}

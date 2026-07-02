@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HD33S66 vp - AP",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.286,
+  "qes": 0.35,
+  "qms": 1.57,
+  "vasL": 228,
+  "sdCm2": 530,
+  "xmaxMm": 3.5,
+  "reOhm": 7.44,
+  "bl": 15,
+  "mmsG": 64.7,
+  "peW": 150,
+  "sensitivityDb": 92.9
+}

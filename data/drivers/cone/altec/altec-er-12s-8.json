@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "ER-12S",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 70,
+  "qts": 0.251,
+  "qes": 0.26,
+  "qms": 7.02,
+  "vasL": 56.6,
+  "sdCm2": 501.2,
+  "xmaxMm": 2.7,
+  "reOhm": 5.2,
+  "bl": 16.8,
+  "mmsG": 32.1,
+  "peW": 200,
+  "sensitivityDb": 102.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

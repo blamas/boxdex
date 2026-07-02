@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "1030W",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 29.62,
+  "qts": 0.39,
+  "qes": 0.42,
+  "qms": 6.24,
+  "vasL": 35.72,
+  "sdCm2": 355,
+  "xmaxMm": 12.25,
+  "reOhm": 3.48,
+  "bl": 14.96,
+  "mmsG": 143.05,
+  "peW": 250,
+  "sensitivityDb": 88,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/infinity-1030w/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15DS115",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.16,
+  "qes": 0.17,
+  "qms": 4.7,
+  "vasL": 83,
+  "sdCm2": 855,
+  "xmaxMm": 16.5,
+  "reOhm": 3.2,
+  "bl": 33.6,
+  "mmsG": 273,
+  "peW": 1600,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/4/15DS115"
+}

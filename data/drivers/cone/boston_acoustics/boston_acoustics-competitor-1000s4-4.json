@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Boston Acoustics",
+  "model": "COMPETITOR 1000S4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.53,
+  "qes": 0.57,
+  "qms": 7.8,
+  "vasL": 35,
+  "sdCm2": 315,
+  "xmaxMm": 8.5,
+  "reOhm": 3.1,
+  "bl": 10,
+  "mmsG": 86,
+  "peW": 850,
+  "sensitivityDb": 85.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/boston-acoustics-competitor-1000s4/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "5510MNds",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.324,
+  "qes": 0.34,
+  "qms": 6.76,
+  "vasL": 293,
+  "sdCm2": 892,
+  "xmaxMm": 8.7,
+  "reOhm": 6.4,
+  "bl": 19.5,
+  "mmsG": 107.1,
+  "peW": 400,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

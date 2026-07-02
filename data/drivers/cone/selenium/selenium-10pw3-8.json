@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "10PW3",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 73,
+  "qts": 0.654,
+  "qes": 0.73,
+  "qms": 6.32,
+  "vasL": 29,
+  "sdCm2": 350,
+  "xmaxMm": 1.3,
+  "reOhm": 6.3,
+  "bl": 10.6,
+  "mmsG": 28.1,
+  "peW": 150,
+  "sensitivityDb": 94.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SELENIUM"
+}

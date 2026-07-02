@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Clarion",
+  "model": "SRM2591",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 43,
+  "qts": 0.398,
+  "qes": 0.44,
+  "qms": 4.18,
+  "vasL": 31.1,
+  "sdCm2": 343.2,
+  "xmaxMm": 3.5,
+  "reOhm": 3.5,
+  "bl": 12.5,
+  "mmsG": 72.7,
+  "peW": 150,
+  "sensitivityDb": 93.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CLARION"
+}

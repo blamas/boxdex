@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "6FE125",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 61,
+  "qts": 0.55,
+  "qes": 0.6,
+  "qms": 6,
+  "vasL": 15.1,
+  "sdCm2": 149,
+  "xmaxMm": 5.25,
+  "reOhm": 5.4,
+  "mmsG": 14,
+  "peW": 100,
+  "sensitivityDb": 91,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 1.2,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401020106"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Eminence",
+  "model": "ASD 1001",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 33,
+  "fLowHz": 2500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 104.4,
+  "peW": 50,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/ASD1001S.pdf"
+}

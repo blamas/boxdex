@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD152",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 40,
+  "qts": 0.269,
+  "qes": 0.284,
+  "qms": 5.25,
+  "vasL": 170,
+  "sdCm2": 890,
+  "xmaxMm": 5.5,
+  "reOhm": 5.7,
+  "bl": 22.9,
+  "mmsG": 104,
+  "peW": 400,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ceramic",
+  "weightKg": 8.3,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=4"
+}

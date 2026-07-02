@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "CLASSIC KC18-300C",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.384,
+  "qes": 0.42,
+  "qms": 4.5,
+  "vasL": 444,
+  "sdCm2": 1200,
+  "xmaxMm": 5,
+  "reOhm": 6.3,
+  "bl": 17.6,
+  "mmsG": 94,
+  "peW": 300,
+  "sensitivityDb": 99.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

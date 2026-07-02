@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DH450H",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1000,
+  "fHighHz": 18000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 109,
+  "peW": 40,
+  "weightKg": 0.6,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/8/DH450H"
+}

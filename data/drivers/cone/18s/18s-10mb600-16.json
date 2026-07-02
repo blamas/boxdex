@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10MB600",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 64,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 7.06,
+  "vasL": 27.6,
+  "sdCm2": 350,
+  "xmaxMm": 6.5,
+  "reOhm": 11.6,
+  "bl": 22.3,
+  "mmsG": 37,
+  "peW": 450,
+  "sensitivityDb": 98,
+  "weightKg": 7.2,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/10-0/16/10mb600"
+}

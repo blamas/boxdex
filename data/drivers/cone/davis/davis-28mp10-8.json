@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Davis",
+  "model": "28MP10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 1.42,
+  "qes": 2.08,
+  "qms": 4.48,
+  "vasL": 80.1,
+  "sdCm2": 330,
+  "xmaxMm": 3,
+  "reOhm": 5.15,
+  "bl": 4.3,
+  "mmsG": 30.2,
+  "peW": 60,
+  "sensitivityDb": 87.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVIS"
+}

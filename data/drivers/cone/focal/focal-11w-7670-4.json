@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "11W 7670",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 44.6,
+  "qts": 0.45,
+  "qes": 0.48,
+  "qms": 7.31,
+  "vasL": 22.9,
+  "sdCm2": 330,
+  "xmaxMm": 4.2,
+  "reOhm": 3.3,
+  "bl": 12.8,
+  "mmsG": 84.9,
+  "peW": 175,
+  "sensitivityDb": 92.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

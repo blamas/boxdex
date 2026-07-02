@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "4FE42",
+  "sizeInch": 4,
+  "impedanceOhm": 4,
+  "fsHz": 110,
+  "qts": 0.38,
+  "qes": 0.4,
+  "qms": 6.6,
+  "vasL": 1.8,
+  "sdCm2": 50.9,
+  "xmaxMm": 2.83,
+  "reOhm": 3.5,
+  "mmsG": 4.3,
+  "peW": 40,
+  "sensitivityDb": 93,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 0.39,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401005106"
+}

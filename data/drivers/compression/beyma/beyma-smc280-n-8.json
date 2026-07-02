@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Beyma",
+  "model": "SMC280/N",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44.3,
+  "fLowHz": 800,
+  "fHighHz": 18000,
+  "minCrossoverHz": 1500,
+  "sensitivityHornDb": 105,
+  "peW": 50,
+  "magnetMaterial": "ferrite",
+  "weightKg": 1.3,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/compression-driver/1SMC28N8/motor-smc-280-n-8-oh/"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2205H vpjf 11629 110g",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44.3,
+  "qts": 0.286,
+  "qes": 0.33,
+  "qms": 2.14,
+  "vasL": 126.9,
+  "sdCm2": 876.2,
+  "xmaxMm": 2.5,
+  "reOhm": 6.2,
+  "bl": 23.9,
+  "mmsG": 109.3,
+  "peW": 150,
+  "sensitivityDb": 98.3
+}

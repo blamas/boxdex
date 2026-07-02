@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "QU4TRO 12\"",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.357,
+  "qes": 0.37,
+  "qms": 10.5,
+  "vasL": 120.1,
+  "sdCm2": 506,
+  "xmaxMm": 8.7,
+  "reOhm": 3.5,
+  "bl": 12.9,
+  "mmsG": 103.9,
+  "peW": 250,
+  "sensitivityDb": 93.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

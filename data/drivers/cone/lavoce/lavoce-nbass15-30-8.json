@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "NBASS15-30",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.36,
+  "qes": 0.38,
+  "qms": 8.56,
+  "vasL": 143.06,
+  "sdCm2": 855,
+  "xmaxMm": 6.6,
+  "reOhm": 5.1,
+  "bl": 19.2,
+  "mmsG": 102.1,
+  "peW": 400,
+  "sensitivityDb": 98.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/nbass15-30/"
+}

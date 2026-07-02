@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "FTR15 3070C vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 41.4,
+  "qts": 0.382,
+  "qes": 0.429,
+  "qms": 3.51,
+  "vasL": 187.6,
+  "sdCm2": 851,
+  "xmaxMm": 3,
+  "reOhm": 6.7,
+  "bl": 18,
+  "mmsG": 80,
+  "peW": 400,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

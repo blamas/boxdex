@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "10 L 2.5 SL",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.326,
+  "qes": 0.35,
+  "qms": 4.84,
+  "vasL": 43.8,
+  "sdCm2": 330.1,
+  "xmaxMm": 4,
+  "reOhm": 6,
+  "bl": 13.3,
+  "mmsG": 30.3,
+  "peW": 250,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SICA"
+}

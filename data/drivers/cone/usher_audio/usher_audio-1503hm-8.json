@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Usher Audio",
+  "model": "1503HM",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 21,
+  "qts": 0.222,
+  "qes": 0.231,
+  "qms": 5.906,
+  "vasL": 528.8,
+  "sdCm2": 881,
+  "xmaxMm": 5.5,
+  "reOhm": 5.1,
+  "bl": 18.6,
+  "mmsG": 118.2,
+  "peW": 150,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=USHER%20AUDIO"
+}

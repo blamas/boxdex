@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "KAPPA 120.9W",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 27.2,
+  "qts": 0.43,
+  "qes": 0.52,
+  "qms": 2.47,
+  "vasL": 54.4,
+  "sdCm2": 518.8,
+  "xmaxMm": 6.7,
+  "reOhm": 4.3,
+  "bl": 18.3,
+  "mmsG": 237.3,
+  "peW": 350,
+  "sensitivityDb": 87.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=INFINITY"
+}

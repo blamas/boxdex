@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "3182",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 18,
+  "qts": 0.398,
+  "qes": 0.51,
+  "qms": 1.81,
+  "vasL": 991.1,
+  "sdCm2": 1140.6,
+  "xmaxMm": 10.7,
+  "reOhm": 6.4,
+  "bl": 14.3,
+  "mmsG": 143.9,
+  "peW": 180,
+  "sensitivityDb": 93.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

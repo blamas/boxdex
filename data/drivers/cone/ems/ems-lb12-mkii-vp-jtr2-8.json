@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "EMS",
+  "model": "LB12 MKII vp JTR2",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37.7,
+  "qts": 0.548,
+  "qes": 0.606,
+  "qms": 5.699,
+  "vasL": 173.7,
+  "sdCm2": 500,
+  "xmaxMm": 3,
+  "reOhm": 7.85,
+  "bl": 10.5,
+  "mmsG": 36,
+  "peW": 40,
+  "sensitivityDb": 93.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMS%20SPEAKER"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "RCF",
+  "model": "ND2530-T3",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 63,
+  "fLowHz": 700,
+  "fHighHz": 20000,
+  "minCrossoverHz": 700,
+  "sensitivityHornDb": 110,
+  "peW": 90,
+  "magnetMaterial": "neodymium",
+  "weightKg": 2.24,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/nd2530-t3"
+}

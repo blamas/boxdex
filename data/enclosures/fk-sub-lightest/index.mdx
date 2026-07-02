@@ -1,0 +1,40 @@
+---
+name: FK Sub Lightest
+category: sub
+topology: sealed
+drivers:
+  - faital-12pr310-8
+driverCount: 1
+netVolumeL: 40
+dims:
+  wMm: 380
+  hMm: 400
+  dMm: 360
+weightKg: 12
+specs:
+  f3Hz: 52
+  sensitivityDb: 97
+  maxSplDb: 122
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - dub
+  - bass_music
+  - psytrance
+connectors:
+  - speakON NL4
+---
+
+FK Sub Lightest: ultralight 12" sealed sub at 12 kg, portable single-piece system.

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "ATC",
+  "model": "PA50-314 8 STD LS",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 70,
+  "qts": 0.349,
+  "qes": 0.427,
+  "qms": 1.9,
+  "vasL": 43,
+  "sdCm2": 550,
+  "xmaxMm": 1.2,
+  "reOhm": 5.4,
+  "bl": 16.8,
+  "mmsG": 51,
+  "peW": 50,
+  "sensitivityDb": 99.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ATC"
+}

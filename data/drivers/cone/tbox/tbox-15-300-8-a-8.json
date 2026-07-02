@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "the box",
+  "model": "Speaker 15-300/8-A",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 52.6,
+  "qts": 0.64,
+  "qes": 0.67,
+  "qms": 14.08,
+  "vasL": 100.3,
+  "sdCm2": 855,
+  "xmaxMm": 4.6,
+  "reOhm": 5.7,
+  "bl": 16.2,
+  "mmsG": 93.5,
+  "peW": 300,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.thomann.fr/the_box_speaker_153008a.htm"
+}

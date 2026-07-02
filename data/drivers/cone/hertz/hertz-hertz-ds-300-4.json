@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "HERTZ DS 300",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 28,
+  "qts": 0.46,
+  "qes": 0.49,
+  "qms": 6.4,
+  "vasL": 176,
+  "sdCm2": 508,
+  "xmaxMm": 4,
+  "reOhm": 3.5,
+  "bl": 9.1,
+  "mmsG": 66,
+  "peW": 150,
+  "sensitivityDb": 90.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-hertz-ds-300/specifications"
+}

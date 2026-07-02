@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF21X451",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 6.9,
+  "vasL": 385,
+  "sdCm2": 1700,
+  "xmaxMm": 14,
+  "reOhm": 5.4,
+  "bl": 30.5,
+  "mmsG": 355,
+  "peW": 2000,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ceramic",
+  "weightKg": 15.5,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf21x451"
+}

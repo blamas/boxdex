@@ -1,0 +1,33 @@
+---
+import Layout from "../../components/Layout.astro";
+import StackBuilder from "../../components/StackBuilder.svelte";
+import { localeStaticPaths, useLocale } from "../../i18n";
+
+export { localeStaticPaths as getStaticPaths };
+
+const { t } = useLocale(Astro.params);
+---
+
+<Layout
+  title={t.pages.stack.title}
+  description={t.pages.stack.description}
+  preloadData={["/api/manifest.json"]}
+>
+  <h1>{t.pages.stack.heading}</h1>
+  <p class="subtitle">{t.pages.stack.subtitle}</p>
+  <StackBuilder client:only="svelte" t={t.stackBuilder} tSystemResponse={t.systemResponse} />
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+</style>

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18NLW4100",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.34,
+  "qes": 0.35,
+  "qms": 11.2,
+  "vasL": 180,
+  "sdCm2": 1225,
+  "xmaxMm": 15,
+  "reOhm": 4.9,
+  "bl": 29,
+  "mmsG": 307,
+  "peW": 1500,
+  "sensitivityDb": 96.5,
+  "magnetMaterial": "neo",
+  "weightKg": 10,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/8/18NLW4100"
+}

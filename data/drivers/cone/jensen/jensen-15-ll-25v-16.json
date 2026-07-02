@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "15 LL _ 25V",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 46.5,
+  "qts": 0.201,
+  "qes": 0.206,
+  "qms": 8.296,
+  "vasL": 154,
+  "sdCm2": 858.5,
+  "xmaxMm": 2.8,
+  "reOhm": 10.5,
+  "bl": 34.2,
+  "mmsG": 78.5,
+  "peW": 200,
+  "sensitivityDb": 99.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "UMII12-22",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.564,
+  "qes": 0.71,
+  "qms": 2.75,
+  "vasL": 53,
+  "sdCm2": 528,
+  "xmaxMm": 10,
+  "reOhm": 4.2,
+  "bl": 15,
+  "mmsG": 194.4,
+  "peW": 800,
+  "sensitivityDb": 88.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "OB A15 NEO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40.4,
+  "qts": 0.723,
+  "qes": 0.83,
+  "qms": 5.59,
+  "vasL": 234,
+  "sdCm2": 856.5,
+  "xmaxMm": 6,
+  "reOhm": 6.28,
+  "bl": 11.4,
+  "mmsG": 68.2,
+  "peW": 200,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

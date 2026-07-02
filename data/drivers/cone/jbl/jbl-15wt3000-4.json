@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "15WT3000",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 41,
+  "qts": 0.44,
+  "qes": 0.45,
+  "qms": 16.3,
+  "vasL": 76.3,
+  "sdCm2": 814,
+  "xmaxMm": 10.6,
+  "reOhm": 3,
+  "bl": 15.9,
+  "mmsG": 186,
+  "peW": 1500,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jbl-15wt3000/specifications"
+}

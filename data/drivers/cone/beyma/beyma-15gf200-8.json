@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15GF200",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44,
+  "qts": 0.31,
+  "qes": 0.33,
+  "qms": 5.04,
+  "vasL": 191,
+  "sdCm2": 910,
+  "xmaxMm": 3.8,
+  "reOhm": 5.6,
+  "bl": 19.3,
+  "mmsG": 79.5,
+  "peW": 250,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

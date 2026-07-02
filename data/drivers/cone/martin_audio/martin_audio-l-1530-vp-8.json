@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Martin Audio",
+  "model": "L-1530 vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.331,
+  "qes": 0.39,
+  "qms": 2.2,
+  "vasL": 220,
+  "sdCm2": 890,
+  "xmaxMm": 5,
+  "reOhm": 6.5,
+  "bl": 21.1,
+  "mmsG": 142.1,
+  "peW": 250,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MARTIN%20AUDIO"
+}

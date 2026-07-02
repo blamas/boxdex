@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FI Audio",
+  "model": "BTLv3 12",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 33.9,
+  "qts": 0.249,
+  "qes": 0.26,
+  "qms": 6.15,
+  "vasL": 24.9,
+  "sdCm2": 480,
+  "xmaxMm": 9.5,
+  "reOhm": 1.8,
+  "bl": 20.5,
+  "mmsG": 285.9,
+  "peW": 2500,
+  "sensitivityDb": 94.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FI"
+}

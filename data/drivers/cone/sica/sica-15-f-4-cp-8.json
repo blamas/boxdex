@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "15 F 4 CP",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46.4,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 7.73,
+  "vasL": 97,
+  "sdCm2": 855.3,
+  "xmaxMm": 7,
+  "reOhm": 5.1,
+  "bl": 26,
+  "mmsG": 126,
+  "peW": 700,
+  "sensitivityDb": 99.4,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2025/07/Z008321.pdf"
+}

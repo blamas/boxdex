@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Focal",
+  "model": "15PR75-225",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43.5,
+  "qts": 0.351,
+  "qes": 0.365,
+  "qms": 9.18,
+  "vasL": 155,
+  "sdCm2": 855,
+  "xmaxMm": 4.3,
+  "reOhm": 6,
+  "bl": 19.9,
+  "mmsG": 88.5,
+  "peW": 225,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOCAL"
+}

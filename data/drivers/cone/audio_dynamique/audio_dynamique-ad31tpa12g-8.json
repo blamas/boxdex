@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Dynamique",
+  "model": "AD31TPA12G",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37.2,
+  "qts": 0.448,
+  "qes": 0.49,
+  "qms": 5.2,
+  "vasL": 213.6,
+  "sdCm2": 543,
+  "xmaxMm": 5,
+  "reOhm": 5.1,
+  "bl": 9.3,
+  "mmsG": 35.3,
+  "peW": 150,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20DYNAMIQUE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Rockford Fosgate",
+  "model": "P2D4-15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 20.9,
+  "qts": 0.655,
+  "qes": 0.74,
+  "qms": 5.7,
+  "vasL": 219.6,
+  "sdCm2": 894,
+  "xmaxMm": 11.3,
+  "reOhm": 6.4,
+  "bl": 18.3,
+  "mmsG": 295.9,
+  "peW": 400,
+  "sensitivityDb": 87.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ROCKFORD%20FOSGATE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "418-8LF vp CF2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36.3,
+  "qts": 0.254,
+  "qes": 0.288,
+  "qms": 2.139,
+  "vasL": 230.3,
+  "sdCm2": 855.3,
+  "xmaxMm": 1.3,
+  "reOhm": 5.19,
+  "bl": 18.7,
+  "mmsG": 85.4,
+  "peW": 150,
+  "sensitivityDb": 99.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

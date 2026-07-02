@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "8NM610",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 260,
+  "qts": 0.21,
+  "qes": 0.24,
+  "qms": 1.52,
+  "vasL": 1.5,
+  "sdCm2": 220,
+  "xmaxMm": 3,
+  "reOhm": 6.5,
+  "bl": 28.3,
+  "mmsG": 18,
+  "peW": 400,
+  "sensitivityDb": 104,
+  "magnetMaterial": "neo",
+  "weightKg": 4.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/8-0/8/8nm610%208ohm"
+}

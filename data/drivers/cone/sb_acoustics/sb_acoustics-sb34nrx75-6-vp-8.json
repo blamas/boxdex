@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Acoustics",
+  "model": "SB34NRX75-6 vp",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 22.2,
+  "qts": 0.444,
+  "qes": 0.489,
+  "qms": 4.88,
+  "vasL": 240,
+  "sdCm2": 508,
+  "xmaxMm": 11,
+  "reOhm": 4.2,
+  "bl": 9.6,
+  "mmsG": 77.8,
+  "peW": 200,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20ACOUSTICS"
+}

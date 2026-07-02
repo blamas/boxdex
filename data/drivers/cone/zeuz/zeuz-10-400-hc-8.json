@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Zeuz",
+  "model": "10 400 HC",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 43.1,
+  "qts": 0.367,
+  "qes": 0.392,
+  "qms": 5.831,
+  "vasL": 66.1,
+  "sdCm2": 341,
+  "xmaxMm": 2.5,
+  "reOhm": 6.6,
+  "bl": 12.4,
+  "mmsG": 33.7,
+  "peW": 200,
+  "sensitivityDb": 94.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ZEUZ"
+}

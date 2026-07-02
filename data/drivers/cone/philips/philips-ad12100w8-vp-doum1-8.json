@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Philips",
+  "model": "AD12100W8 vp doum1",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 29.9,
+  "qts": 0.413,
+  "qes": 0.44,
+  "qms": 6.61,
+  "vasL": 166,
+  "sdCm2": 510.7,
+  "xmaxMm": 6,
+  "reOhm": 7.16,
+  "bl": 13.8,
+  "mmsG": 62.4,
+  "peW": 100,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHILIPS"
+}

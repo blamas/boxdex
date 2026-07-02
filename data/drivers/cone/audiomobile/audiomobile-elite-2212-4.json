@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiomobile",
+  "model": "ELITE 2212",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 28,
+  "qts": 0.48,
+  "qes": 0.52,
+  "qms": 6.6,
+  "vasL": 59.46,
+  "sdCm2": 524,
+  "xmaxMm": 12.7,
+  "reOhm": 3.3,
+  "bl": 14.5,
+  "mmsG": 186.4,
+  "peW": 600,
+  "sensitivityDb": 85.8,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audiomobile-elite-2212/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cabasse",
+  "model": "30M22",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 31.5,
+  "qts": 0.315,
+  "qes": 0.33,
+  "qms": 6.86,
+  "vasL": 196.1,
+  "sdCm2": 490,
+  "xmaxMm": 8,
+  "reOhm": 4.02,
+  "bl": 10.3,
+  "mmsG": 43.7,
+  "peW": 200,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CABASSE"
+}

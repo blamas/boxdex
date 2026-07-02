@@ -1,0 +1,30 @@
+---
+import CatalogGrid from "../../components/CatalogGrid.svelte";
+import Layout from "../../components/Layout.astro";
+import { localeStaticPaths, useLocale } from "../../i18n";
+
+export { localeStaticPaths as getStaticPaths };
+
+const { t, localeBase } = useLocale(Astro.params);
+---
+
+<Layout
+  title={t.pages.catalog.title}
+  description={t.pages.catalog.description}
+  preloadData={["/api/manifest.json"]}
+>
+  <div class="page-header">
+    <h1>{t.pages.catalog.heading}</h1>
+  </div>
+  <CatalogGrid client:only="svelte" t={t.catalogGrid} localeBase={localeBase} categoryLabels={t.categoryLabels} axisLabels={t.axisLabels} />
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+</style>

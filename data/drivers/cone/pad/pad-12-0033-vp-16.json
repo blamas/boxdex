@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PAD",
+  "model": "12.0033 vp",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 40,
+  "qts": 0.87,
+  "qes": 1.1,
+  "qms": 4.17,
+  "vasL": 53,
+  "sdCm2": 345,
+  "xmaxMm": 4,
+  "reOhm": 8,
+  "bl": 9.5,
+  "mmsG": 49.8,
+  "peW": 100,
+  "sensitivityDb": 86.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PAD"
+}

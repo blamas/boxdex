@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18PW1400/FE",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.273,
+  "qes": 0.28,
+  "qms": 10.23,
+  "vasL": 228.9,
+  "sdCm2": 1255,
+  "xmaxMm": 9.1,
+  "reOhm": 5.05,
+  "bl": 29.4,
+  "mmsG": 238.6,
+  "peW": 1400,
+  "sensitivityDb": 98.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

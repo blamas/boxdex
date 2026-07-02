@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "HiVi",
+  "model": "M12 4 Ohms",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27,
+  "qts": 0.335,
+  "qes": 0.36,
+  "qms": 4.87,
+  "vasL": 81.4,
+  "sdCm2": 515,
+  "xmaxMm": 5.2,
+  "reOhm": 3.4,
+  "bl": 15.9,
+  "mmsG": 158.7,
+  "peW": 150,
+  "sensitivityDb": 92.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HIVI"
+}

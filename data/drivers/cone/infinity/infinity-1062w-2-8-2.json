@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Infinity",
+  "model": "1062W 2-8",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 30.4,
+  "qts": 0.426,
+  "qes": 0.45,
+  "qms": 7.98,
+  "vasL": 33.7,
+  "sdCm2": 363,
+  "xmaxMm": 6.5,
+  "reOhm": 1.8,
+  "bl": 10.7,
+  "mmsG": 150.3,
+  "peW": 275,
+  "sensitivityDb": 91.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=INFINITY"
+}

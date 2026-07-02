@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Klipsch",
+  "model": "K1089-AV",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.216,
+  "qes": 0.22,
+  "qms": 10.99,
+  "vasL": 106.2,
+  "sdCm2": 369.8,
+  "xmaxMm": 4.4,
+  "reOhm": 6.04,
+  "bl": 16,
+  "mmsG": 47.6,
+  "peW": 80,
+  "sensitivityDb": 94.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KLIPSCH"
+}

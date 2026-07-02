@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Acoustics",
+  "model": "SB29NRX75-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 26,
+  "qts": 0.37,
+  "qes": 0.39,
+  "qms": 7.06,
+  "vasL": 85.6,
+  "sdCm2": 311,
+  "xmaxMm": 11,
+  "reOhm": 6.2,
+  "bl": 12.4,
+  "mmsG": 59.4,
+  "peW": 200,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20ACOUSTICS"
+}

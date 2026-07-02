@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "380-2000 LC",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38.7,
+  "qts": 0.568,
+  "qes": 0.631,
+  "qms": 5.73,
+  "vasL": 272.2,
+  "sdCm2": 907.9,
+  "xmaxMm": 5,
+  "reOhm": 5.8,
+  "bl": 12.7,
+  "mmsG": 71.9,
+  "peW": 120,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

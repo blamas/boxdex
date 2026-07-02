@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Eminence",
+  "model": "APT 80S 3.4\" x 3.4\" Horn Flare",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 80,
+  "coverageVerticalDeg": 80,
+  "cutoffHz": 3000,
+  "mouthWmm": 87.4,
+  "mouthHmm": 87.4,
+  "depthMm": 41.1,
+  "profile": "conical",
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/APT80-S.pdf"
+}

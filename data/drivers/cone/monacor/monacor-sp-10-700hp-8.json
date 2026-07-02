@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-10/700HP",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.212,
+  "qes": 0.22,
+  "qms": 6.01,
+  "vasL": 15.7,
+  "sdCm2": 339,
+  "xmaxMm": 3.9,
+  "reOhm": 5.5,
+  "bl": 26.1,
+  "mmsG": 72.4,
+  "peW": 700,
+  "sensitivityDb": 95.5
+}

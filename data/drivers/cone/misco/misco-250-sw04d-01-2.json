@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MISCO",
+  "model": "250-SW04D-01",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 29,
+  "qts": 0.369,
+  "qes": 0.39,
+  "qms": 6.96,
+  "vasL": 39,
+  "sdCm2": 330,
+  "xmaxMm": 4.7,
+  "reOhm": 1.9,
+  "bl": 10.2,
+  "mmsG": 117.9,
+  "peW": 100,
+  "sensitivityDb": 92.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MISCO"
+}

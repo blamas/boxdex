@@ -1,0 +1,58 @@
+---
+name: FK Top 3W
+category: top
+topology: bass_reflex
+drivers:
+  - rcf-l15p400-8
+  - 18s-6nmb420-8
+  - faital-hf1000-8
+driverCount: 3
+ways: 3
+netVolumeL: 95
+dims:
+  wMm: 540
+  hMm: 760
+  dMm: 480
+specs:
+  f3Hz: 65
+  sensitivityDb: 101
+  maxSplDb: 131
+  powerAesW: 1200
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf-1u.csv
+    note: LF section 15" sim
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-mf-1u.csv
+    note: MF section 6.5" sim
+  - driver:
+      - faital-hf1000-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf-1u.csv
+    note: HF section CD 1" sim
+measurements:
+  - driver:
+      - rcf-l15p400-8
+      - 18s-6nmb420-8
+      - faital-hf1000-8
+    kind: spl
+    source: rew_measured
+    file: meas-combined-1u.csv
+    note: Combined 3-way measured
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+---
+
+FK Top 3W: three-way PA top. 15" LF, 6.5" MF, 1" CD HF. Crossovers at 400 and 2000 Hz.

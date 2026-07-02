@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "NSW4018-8",
+  "impedanceOhm": 8,
+  "sizeInch": 18,
+  "fsHz": 36,
+  "qts": 0.38,
+  "qes": 0.39,
+  "qms": 8.46,
+  "vasL": 164.49,
+  "sdCm2": 1217,
+  "xmaxMm": 15.21,
+  "peW": 1600,
+  "sensitivityDb": 96.6,
+  "reOhm": 5.86,
+  "bl": 28.24,
+  "mmsG": 237,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/NSW4018_8_cab.pdf"
+}

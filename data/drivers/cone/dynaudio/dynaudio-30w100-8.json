@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dynaudio",
+  "model": "30W100",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.619,
+  "qes": 0.803,
+  "qms": 2.7,
+  "vasL": 269,
+  "sdCm2": 400,
+  "xmaxMm": 8,
+  "reOhm": 5.85,
+  "bl": 6.3,
+  "mmsG": 36.7,
+  "peW": 450,
+  "sensitivityDb": 90,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DYNAUDIO"
+}

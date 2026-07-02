@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Oberton",
+  "model": "H 960",
+  "exitInch": 1,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 60,
+  "cutoffHz": 850,
+  "mouthWmm": 180,
+  "mouthHmm": 180,
+  "depthMm": 139,
+  "profile": "oblate_spheroid",
+  "material": "PBT-PET",
+  "weightKg": 0.67,
+  "datasheetUrl": "https://oberton.com/en/products/horns/255-h-960.html"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12NBX100",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 40,
+  "qts": 0.22,
+  "qes": 0.23,
+  "qms": 7.05,
+  "vasL": 46.5,
+  "sdCm2": 531,
+  "xmaxMm": 10,
+  "reOhm": 3.6,
+  "bl": 23.04,
+  "mmsG": 133,
+  "peW": 1000,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/12/4/12NBX100"
+}

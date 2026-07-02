@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "5FE100",
+  "sizeInch": 5,
+  "impedanceOhm": 4,
+  "fsHz": 65,
+  "qts": 0.33,
+  "qes": 0.35,
+  "qms": 8.6,
+  "vasL": 6.1,
+  "sdCm2": 84,
+  "xmaxMm": 5.2,
+  "reOhm": 3.1,
+  "mmsG": 9.8,
+  "peW": 80,
+  "sensitivityDb": 87,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 1.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401010101"
+}

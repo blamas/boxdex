@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18IPAL",
+  "sizeInch": 18,
+  "impedanceOhm": 2,
+  "fsHz": 32,
+  "qts": 0.14,
+  "qes": 0.14,
+  "qms": 4.2,
+  "vasL": 164,
+  "sdCm2": 1210,
+  "xmaxMm": 20,
+  "reOhm": 1.3,
+  "bl": 24.5,
+  "mmsG": 330,
+  "peW": 1700,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/18/2/18IPAL"
+}

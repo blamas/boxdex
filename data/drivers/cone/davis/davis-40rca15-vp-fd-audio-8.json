@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Davis",
+  "model": "40RCA15 vp FD AUDIO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22.7,
+  "qts": 0.25,
+  "qes": 0.275,
+  "qms": 2.809,
+  "vasL": 446,
+  "sdCm2": 804,
+  "xmaxMm": 5,
+  "reOhm": 6.1,
+  "bl": 17.8,
+  "mmsG": 99.7,
+  "peW": 200,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVIS"
+}

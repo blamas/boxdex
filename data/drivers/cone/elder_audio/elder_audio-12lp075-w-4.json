@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Elder Audio",
+  "model": "12LP075-W",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 40,
+  "qts": 0.288,
+  "qes": 0.3,
+  "qms": 7.15,
+  "vasL": 58.6,
+  "sdCm2": 490,
+  "xmaxMm": 4,
+  "reOhm": 3.8,
+  "bl": 17,
+  "mmsG": 90.9,
+  "peW": 250,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELDER%20AUDIO"
+}

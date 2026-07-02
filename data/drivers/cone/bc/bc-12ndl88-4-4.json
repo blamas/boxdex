@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "12NDL88-4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 48,
+  "qts": 0.24,
+  "qes": 0.249,
+  "qms": 6.8,
+  "vasL": 57,
+  "sdCm2": 522,
+  "xmaxMm": 8,
+  "reOhm": 3.1,
+  "bl": 16.6,
+  "mmsG": 73.6,
+  "peW": 700,
+  "sensitivityDb": 95.9,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/12/4/12ndl88-4"
+}

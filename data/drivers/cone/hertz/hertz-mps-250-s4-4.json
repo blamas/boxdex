@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "hertz Hertz Audio",
+  "model": "MPS 250 S4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 29,
+  "qts": 0.476,
+  "qes": 0.52,
+  "qms": 5.6,
+  "vasL": 21.2,
+  "sdCm2": 344.7,
+  "xmaxMm": 8.2,
+  "reOhm": 3.3,
+  "bl": 16.5,
+  "mmsG": 236.6,
+  "peW": 500,
+  "sensitivityDb": 85.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=HERTZ%20AUDIO"
+}

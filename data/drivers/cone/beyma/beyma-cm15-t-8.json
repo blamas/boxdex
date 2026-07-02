@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "CM15/T",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.615,
+  "qes": 0.66,
+  "qms": 9.11,
+  "vasL": 293,
+  "sdCm2": 870,
+  "xmaxMm": 3.5,
+  "reOhm": 6.3,
+  "bl": 12.7,
+  "mmsG": 79.3,
+  "peW": 200,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

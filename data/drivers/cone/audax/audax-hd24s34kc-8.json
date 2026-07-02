@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HD24S34KC",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.474,
+  "qes": 0.55,
+  "qms": 3.44,
+  "vasL": 254,
+  "sdCm2": 301,
+  "xmaxMm": 4,
+  "reOhm": 6.4,
+  "bl": 6.2,
+  "mmsG": 22,
+  "peW": 60,
+  "sensitivityDb": 91
+}

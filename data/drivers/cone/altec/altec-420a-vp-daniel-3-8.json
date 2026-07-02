@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "420A vp Daniel 3",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 26.9,
+  "qts": 0.694,
+  "qes": 0.817,
+  "qms": 4.628,
+  "vasL": 393.7,
+  "sdCm2": 855.3,
+  "xmaxMm": 2.8,
+  "reOhm": 4.79,
+  "bl": 9.5,
+  "mmsG": 91,
+  "peW": 25,
+  "sensitivityDb": 93.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

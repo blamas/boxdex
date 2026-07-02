@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "18 NW 100 v2019",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.268,
+  "qes": 0.28,
+  "qms": 6.2,
+  "vasL": 203.5,
+  "sdCm2": 1210,
+  "xmaxMm": 8.3,
+  "reOhm": 3.7,
+  "bl": 26.6,
+  "mmsG": 283.9,
+  "peW": 1200,
+  "sensitivityDb": 98.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

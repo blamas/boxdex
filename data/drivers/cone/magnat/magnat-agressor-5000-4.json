@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Magnat",
+  "model": "AGRESSOR 5000",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 24,
+  "qts": 0.431,
+  "qes": 0.59,
+  "qms": 1.6,
+  "vasL": 324,
+  "sdCm2": 1340,
+  "xmaxMm": 10.6,
+  "reOhm": 2.8,
+  "bl": 15.6,
+  "mmsG": 341.6,
+  "peW": 1000,
+  "sensitivityDb": 95.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAGNAT"
+}

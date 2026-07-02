@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TN1230",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.266,
+  "qes": 0.28,
+  "qms": 5.46,
+  "vasL": 70.3,
+  "sdCm2": 532,
+  "xmaxMm": 3.8,
+  "reOhm": 5.13,
+  "bl": 18.3,
+  "mmsG": 59.6,
+  "peW": 300,
+  "sensitivityDb": 98.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

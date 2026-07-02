@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPA 15 LFA vp1",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40.9,
+  "qts": 0.382,
+  "qes": 0.402,
+  "qms": 7.774,
+  "vasL": 159.1,
+  "sdCm2": 856.3,
+  "xmaxMm": 5.5,
+  "reOhm": 5.61,
+  "bl": 18.7,
+  "mmsG": 98,
+  "peW": 600,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND1030",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 34,
+  "fLowHz": 1800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1800,
+  "sensitivityHornDb": 107,
+  "peW": 30,
+  "magnetMaterial": "neodymium",
+  "weightKg": 0.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-0/8/ND1030"
+}

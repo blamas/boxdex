@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "Kappa Pro-10A",
+  "impedanceOhm": 8,
+  "sizeInch": 10,
+  "fsHz": 46,
+  "qts": 0.2,
+  "qes": 0.2,
+  "qms": 10.1,
+  "vasL": 52.2,
+  "sdCm2": 344.9,
+  "xmaxMm": 3.2,
+  "peW": 500,
+  "sensitivityDb": 97,
+  "reOhm": 6.5,
+  "bl": 18.8,
+  "mmsG": 38,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappa_Pro_10A.pdf"
+}

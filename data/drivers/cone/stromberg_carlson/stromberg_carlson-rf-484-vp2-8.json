@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Stromberg-Carlson",
+  "model": "RF 484 vp2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.598,
+  "qes": 0.76,
+  "qms": 2.798,
+  "vasL": 294.9,
+  "sdCm2": 728.3,
+  "xmaxMm": 4,
+  "reOhm": 7.83,
+  "bl": 11.6,
+  "mmsG": 66.7,
+  "peW": 150,
+  "sensitivityDb": 92.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=STROMBERG-CARLSON"
+}

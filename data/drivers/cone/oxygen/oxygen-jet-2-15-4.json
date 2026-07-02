@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oxygen",
+  "model": "JET 2 15",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 33,
+  "qts": 0.245,
+  "qes": 0.26,
+  "qms": 4.14,
+  "vasL": 178,
+  "sdCm2": 760,
+  "xmaxMm": 11,
+  "reOhm": 2.3,
+  "bl": 13.9,
+  "mmsG": 105.8,
+  "peW": 1200,
+  "sensitivityDb": 101.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=OXYGEN"
+}

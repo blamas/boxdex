@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "12FE330",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.45,
+  "qes": 0.48,
+  "qms": 7,
+  "vasL": 146.7,
+  "sdCm2": 579,
+  "xmaxMm": 8.32,
+  "reOhm": 5.3,
+  "mmsG": 74.2,
+  "peW": 250,
+  "sensitivityDb": 94,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 3.6,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401050015"
+}

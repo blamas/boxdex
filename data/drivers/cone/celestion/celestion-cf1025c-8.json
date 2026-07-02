@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "CF1025C",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 54.8,
+  "qts": 0.265,
+  "qes": 0.299,
+  "qms": 2.338,
+  "vasL": 38.6,
+  "sdCm2": 346.4,
+  "xmaxMm": 2.5,
+  "reOhm": 5.15,
+  "bl": 14.8,
+  "mmsG": 36.7,
+  "peW": 300,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

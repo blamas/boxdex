@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L12P48",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 19.5,
+  "qts": 0.43,
+  "qes": 0.45,
+  "qms": 10,
+  "vasL": 270,
+  "sdCm2": 483,
+  "xmaxMm": 5.5,
+  "reOhm": 5.03,
+  "bl": 10.5,
+  "mmsG": 80.58,
+  "peW": 75,
+  "sensitivityDb": 88.3,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l12p48"
+}

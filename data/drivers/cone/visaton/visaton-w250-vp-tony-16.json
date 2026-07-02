@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "W250 vp Tony",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 45,
+  "qts": 0.781,
+  "qes": 1,
+  "qms": 3.57,
+  "vasL": 135,
+  "sdCm2": 360,
+  "xmaxMm": 6.4,
+  "reOhm": 11,
+  "bl": 7.2,
+  "mmsG": 16.8,
+  "peW": 90,
+  "sensitivityDb": 91.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VISATON"
+}

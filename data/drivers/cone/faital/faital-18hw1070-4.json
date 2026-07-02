@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18HW1070",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 32,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 10.6,
+  "vasL": 191.5,
+  "sdCm2": 1212,
+  "xmaxMm": 13,
+  "reOhm": 3,
+  "mmsG": 265,
+  "peW": 1600,
+  "sensitivityDb": 96,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 14.7,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201070139"
+}

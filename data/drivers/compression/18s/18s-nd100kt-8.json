@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND100KT",
+  "impedanceOhm": 8,
+  "exitInch": 0.75,
+  "voiceCoilMm": 51,
+  "fLowHz": 500,
+  "fHighHz": 5000,
+  "minCrossoverHz": 500,
+  "sensitivityHornDb": 111,
+  "peW": 50,
+  "magnetMaterial": "neodymium",
+  "weightKg": 1.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/0-75/8/ND100KT"
+}

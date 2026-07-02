@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "SSF102.40",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 41,
+  "qts": 0.51,
+  "qes": 0.59,
+  "qms": 3.99,
+  "vasL": 31.91,
+  "sdCm2": 350,
+  "xmaxMm": 8.3,
+  "reOhm": 3,
+  "bl": 10.38,
+  "mmsG": 81.9,
+  "peW": 250,
+  "sensitivityDb": 89,
+  "datasheetUrl": "https://lavocespeakers.com/product/ssf102-40-2/"
+}

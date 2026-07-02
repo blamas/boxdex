@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "DC 2513",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 42.4,
+  "qts": 0.544,
+  "qes": 0.604,
+  "qms": 5.514,
+  "vasL": 58,
+  "sdCm2": 330.1,
+  "xmaxMm": 3,
+  "reOhm": 7.89,
+  "bl": 11.4,
+  "mmsG": 37.1,
+  "peW": 30,
+  "sensitivityDb": 90.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

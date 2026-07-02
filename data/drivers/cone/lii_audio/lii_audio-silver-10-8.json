@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LII Audio",
+  "model": "SILVER-10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 28.3,
+  "qts": 0.312,
+  "qes": 0.321,
+  "qms": 11.173,
+  "vasL": 333.4,
+  "sdCm2": 346.4,
+  "xmaxMm": 3,
+  "reOhm": 7.2,
+  "bl": 8,
+  "mmsG": 16,
+  "peW": 20,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LII%20AUDIO"
+}

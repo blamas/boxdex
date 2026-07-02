@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "SIG270-4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 35,
+  "qts": 0.413,
+  "qes": 0.43,
+  "qms": 10.25,
+  "vasL": 58.3,
+  "sdCm2": 415.5,
+  "xmaxMm": 4.8,
+  "reOhm": 3.85,
+  "bl": 13,
+  "mmsG": 85.8,
+  "peW": 120,
+  "sensitivityDb": 92.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

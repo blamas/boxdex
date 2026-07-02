@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MTX Audio",
+  "model": "RTL12-44 DVC",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 30.4,
+  "qts": 0.761,
+  "qes": 0.876,
+  "qms": 5.804,
+  "vasL": 74,
+  "sdCm2": 530.9,
+  "xmaxMm": 7.1,
+  "reOhm": 2.03,
+  "bl": 8,
+  "mmsG": 146.3,
+  "peW": 250,
+  "sensitivityDb": 91.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MTX"
+}

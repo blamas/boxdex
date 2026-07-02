@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "BM-18LF",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 39.8,
+  "qts": 0.432,
+  "qes": 0.45,
+  "qms": 11.09,
+  "vasL": 169.9,
+  "sdCm2": 1164,
+  "xmaxMm": 5.8,
+  "reOhm": 5.1,
+  "bl": 22.5,
+  "mmsG": 178.8,
+  "peW": 500,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

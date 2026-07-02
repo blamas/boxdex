@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "21 SW 152 v2013",
+  "sizeInch": 21.5,
+  "impedanceOhm": 4,
+  "fsHz": 32,
+  "qts": 0.297,
+  "qes": 0.31,
+  "qms": 7,
+  "vasL": 200,
+  "sdCm2": 1680,
+  "xmaxMm": 7.5,
+  "reOhm": 3,
+  "bl": 30.9,
+  "mmsG": 489.3,
+  "peW": 2000,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B%20et%20C"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18XL1700",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.28,
+  "qes": 0.29,
+  "qms": 10,
+  "vasL": 227,
+  "sdCm2": 1187,
+  "xmaxMm": 16.17,
+  "reOhm": 5.4,
+  "mmsG": 280,
+  "peW": 1600,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 14.9,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201070143"
+}

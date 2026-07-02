@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15\"P80Fe/N",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.18,
+  "qes": 0.19,
+  "qms": 5.5,
+  "vasL": 305,
+  "sdCm2": 880,
+  "xmaxMm": 7.5,
+  "reOhm": 5.3,
+  "bl": 22.1,
+  "mmsG": 88,
+  "peW": 800,
+  "sensitivityDb": 101,
+  "weightKg": 12.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/115P80FEN8/altavoz-15p80fe-n-8-oh/"
+}

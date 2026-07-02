@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "C15-300MB",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.375,
+  "qes": 0.4,
+  "qms": 6.08,
+  "vasL": 199.5,
+  "sdCm2": 855,
+  "xmaxMm": 3.5,
+  "reOhm": 5.3,
+  "bl": 16.1,
+  "mmsG": 73.8,
+  "peW": 300,
+  "sensitivityDb": 99.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

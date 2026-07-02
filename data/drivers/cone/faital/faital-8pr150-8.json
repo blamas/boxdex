@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "8PR150",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 75,
+  "qts": 0.48,
+  "qes": 0.54,
+  "qms": 4.4,
+  "vasL": 16.2,
+  "sdCm2": 233.9,
+  "xmaxMm": 5,
+  "reOhm": 5.8,
+  "mmsG": 21.2,
+  "peW": 250,
+  "sensitivityDb": 94,
+  "magnetMaterial": "neodymium slug",
+  "weightKg": 1.5,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=101030215"
+}

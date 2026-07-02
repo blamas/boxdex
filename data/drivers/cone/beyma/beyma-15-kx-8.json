@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15 KX",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.496,
+  "qes": 0.519,
+  "qms": 11.4,
+  "vasL": 203,
+  "sdCm2": 880,
+  "xmaxMm": 3.5,
+  "reOhm": 5.68,
+  "bl": 14.4,
+  "mmsG": 66.9,
+  "peW": 300,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

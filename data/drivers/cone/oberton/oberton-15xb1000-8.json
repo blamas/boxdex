@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15XB1000",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 37.2,
+  "qts": 0.283,
+  "qes": 0.292,
+  "qms": 9.2,
+  "vasL": 111.02,
+  "sdCm2": 829.6,
+  "xmaxMm": 9,
+  "reOhm": 5.19,
+  "bl": 25.64,
+  "mmsG": 158.39,
+  "peW": 1000,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/514-15xb1000.html"
+}

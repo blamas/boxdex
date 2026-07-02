@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "8NB201",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 70.56,
+  "qts": 0.245,
+  "qes": 0.255,
+  "qms": 5.97,
+  "vasL": 12.54,
+  "sdCm2": 202,
+  "xmaxMm": 5.25,
+  "reOhm": 5.27,
+  "bl": 14.41,
+  "mmsG": 22.67,
+  "peW": 200,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/133-8nb201.html"
+}

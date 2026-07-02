@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HT240T0",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 80,
+  "qts": 0.657,
+  "qes": 0.9,
+  "qms": 2.44,
+  "vasL": 34.3,
+  "sdCm2": 351,
+  "xmaxMm": 1.5,
+  "reOhm": 6.8,
+  "bl": 8.7,
+  "mmsG": 19.9,
+  "peW": 80,
+  "sensitivityDb": 95.6
+}

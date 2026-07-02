@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "7050",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.369,
+  "qes": 0.4,
+  "qms": 4.8,
+  "vasL": 260,
+  "sdCm2": 1280,
+  "xmaxMm": 7.5,
+  "reOhm": 4.5,
+  "bl": 21,
+  "mmsG": 172.7,
+  "peW": 750,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

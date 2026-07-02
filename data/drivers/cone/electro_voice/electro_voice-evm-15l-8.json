@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "EVM-15L",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.238,
+  "qes": 0.25,
+  "qms": 4.96,
+  "vasL": 245,
+  "sdCm2": 855.3,
+  "xmaxMm": 2.9,
+  "reOhm": 5.2,
+  "bl": 18,
+  "mmsG": 57.3,
+  "peW": 100,
+  "sensitivityDb": 102.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELECTROVOICE"
+}

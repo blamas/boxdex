@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD154",
+  "sizeInch": 15,
+  "impedanceOhm": 16,
+  "fsHz": 39,
+  "qts": 0.205,
+  "qes": 0.216,
+  "qms": 4.32,
+  "vasL": 149,
+  "sdCm2": 890,
+  "xmaxMm": 6.5,
+  "reOhm": 6.2,
+  "bl": 29.65,
+  "mmsG": 125,
+  "peW": 500,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ceramic",
+  "weightKg": 11.65,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=6"
+}

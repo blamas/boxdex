@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "15SW1P",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.35,
+  "qes": 0.36,
+  "qms": 12.34,
+  "vasL": 120,
+  "sdCm2": 814,
+  "xmaxMm": 7.9,
+  "reOhm": 5.5,
+  "bl": 21.7,
+  "mmsG": 122.5,
+  "peW": 800,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SELENIUM"
+}

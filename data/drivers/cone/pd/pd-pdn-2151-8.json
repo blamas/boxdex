@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PD",
+  "model": "PDN 2151",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 31.4,
+  "qts": 0.276,
+  "qes": 0.28,
+  "qms": 18.3,
+  "vasL": 303.4,
+  "sdCm2": 1698.2,
+  "xmaxMm": 6.7,
+  "reOhm": 5.35,
+  "bl": 35.9,
+  "mmsG": 341.5,
+  "peW": 1000,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PRECISION%20DEVICES"
+}

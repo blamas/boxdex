@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fostex",
+  "model": "FW 220",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.195,
+  "qes": 0.2,
+  "qms": 8.12,
+  "vasL": 76,
+  "sdCm2": 284,
+  "xmaxMm": 3.7,
+  "reOhm": 6.6,
+  "bl": 16.4,
+  "mmsG": 44.8,
+  "peW": 50,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FOSTEX"
+}

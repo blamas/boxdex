@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "CSS Audio",
+  "model": "Maelstrom 21 DVC by Exodus Audio",
+  "sizeInch": 21.5,
+  "impedanceOhm": 4,
+  "fsHz": 16.3,
+  "qts": 0.389,
+  "qes": 0.44,
+  "qms": 3.38,
+  "vasL": 605,
+  "sdCm2": 1550,
+  "xmaxMm": 16.3,
+  "reOhm": 3.8,
+  "bl": 21.7,
+  "mmsG": 530.7,
+  "peW": 1000,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CSS"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "OMEGA PRO-18A",
+  "impedanceOhm": 8,
+  "sizeInch": 18,
+  "fsHz": 25,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 8.18,
+  "vasL": 548.7,
+  "sdCm2": 1159,
+  "xmaxMm": 4.8,
+  "peW": 800,
+  "sensitivityDb": 97,
+  "reOhm": 5.2,
+  "bl": 18.8,
+  "mmsG": 137,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Omega_Pro_18A.pdf"
+}

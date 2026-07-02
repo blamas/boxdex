@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "15FX600",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.27,
+  "qes": 0.28,
+  "qms": 6.9,
+  "vasL": 128.3,
+  "sdCm2": 864,
+  "xmaxMm": 11.25,
+  "reOhm": 5,
+  "mmsG": 142.5,
+  "peW": 700,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neodymium ring",
+  "weightKg": 5.9,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151060205"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "245 HERITAGE EXC 06V",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 50.4,
+  "qts": 0.44,
+  "qes": 0.506,
+  "qms": 3.37,
+  "vasL": 100,
+  "sdCm2": 330,
+  "xmaxMm": 3.5,
+  "reOhm": 6.5,
+  "bl": 7.9,
+  "mmsG": 15.2,
+  "peW": 50,
+  "sensitivityDb": 96.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

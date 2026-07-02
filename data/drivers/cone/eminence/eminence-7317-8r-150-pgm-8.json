@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "7317 8R 150 PGM",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 51.6,
+  "qts": 0.673,
+  "qes": 0.79,
+  "qms": 4.56,
+  "vasL": 133.1,
+  "sdCm2": 532.4,
+  "xmaxMm": 0.5,
+  "reOhm": 7.1,
+  "bl": 9.1,
+  "mmsG": 28.4,
+  "peW": 50,
+  "sensitivityDb": 96.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,416 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { ClientRouter } from "astro:transitions";
+import Search from "astro-pagefind/components/Search.astro";
+import { DEFAULT_LOCALE, LOCALES, useTranslations } from "../i18n";
+import { AUTH_ENABLED, AUTH_HASHES } from "../lib/auth";
+import { BASE } from "../lib/site";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  // BASE-relative JSON endpoints the page's island fetches on mount; preloaded from
+  // the head so the data downloads in parallel with the island JS instead of after it.
+  preloadData?: string[];
+}
+
+const { title, description = "Open enclosure plans database", preloadData = [] } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
+const t = useTranslations(locale);
+
+// Strip BASE then locale prefix to get the path for the language switcher.
+// Lookahead (?=/|$) prevents matching a locale code that prefixes the next path segment.
+const baselessPath = Astro.url.pathname.startsWith(BASE)
+  ? Astro.url.pathname.slice(BASE.length)
+  : Astro.url.pathname;
+const rawPath = baselessPath.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "/";
+const allLocales = LOCALES.map((l) => ({
+  code: l,
+  url: getRelativeLocaleUrl(l, rawPath),
+}));
+
+function navHref(path: string) {
+  return getRelativeLocaleUrl(locale, path);
+}
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>{title} · Boxdex</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href={`${BASE}/sitemap-index.xml`} />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
+    <meta property="og:title" content={`${title} · Boxdex`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    {preloadData.map((p: string) => <link rel="preload" href={`${BASE}${p}`} as="fetch" crossorigin="anonymous" />)}
+    <ClientRouter />
+    <!-- Apply saved theme before first paint and after each ClientRouter swap -->
+    <script is:inline data-astro-rerun>
+      (function () {
+        try {
+          var t = localStorage.getItem("boxdex-theme");
+          if (t === "light" || (!t && !window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.dataset.theme = "light";
+          }
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body>
+    {AUTH_ENABLED && AUTH_HASHES.length > 0 && (
+      <div id="boxdex-gate" transition:persist style="display:none;position:fixed;inset:0;z-index:9999;background:var(--bg,#111);align-items:center;justify-content:center;">
+        <form id="boxdex-gate-form" style="display:flex;flex-direction:column;gap:1rem;align-items:center;font-family:var(--font-mono,monospace);min-width:18rem;">
+          <p style="margin:0;color:var(--muted,#888);font-size:0.875rem;">This site is under construction.</p>
+          <input id="boxdex-gate-input" type="password" placeholder="Password" autocomplete="current-password"
+            style="width:100%;padding:0.5rem 0.75rem;border:1px solid var(--line,#444);background:var(--panel,#222);color:var(--text,#eee);font-family:inherit;border-radius:4px;font-size:1rem;box-sizing:border-box;" />
+          <button type="submit"
+            style="width:100%;padding:0.5rem;border:1px solid var(--accent,#7aa2f7);background:transparent;color:var(--accent,#7aa2f7);font-family:inherit;border-radius:4px;cursor:pointer;font-size:0.875rem;">Enter</button>
+          <p id="boxdex-gate-error" style="margin:0;color:var(--danger,#ef5350);font-size:0.8rem;min-height:1em;"></p>
+        </form>
+      </div>
+    )}
+    {AUTH_ENABLED && AUTH_HASHES.length > 0 && (
+      <script is:inline define:vars={{ authHashes: AUTH_HASHES }} data-astro-rerun>
+        (function () {
+          var gate = document.getElementById("boxdex-gate");
+          if (!gate) return;
+          var KEY = "boxdex-auth";
+          if (sessionStorage.getItem(KEY) === "1") return;
+          gate.style.display = "flex";
+          var form = document.getElementById("boxdex-gate-form");
+          if (form._boxdexInit) return;
+          form._boxdexInit = true;
+          form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            var pwd = document.getElementById("boxdex-gate-input").value;
+            var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pwd));
+            var hex = Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+            if (authHashes.includes(hex)) {
+              sessionStorage.setItem(KEY, "1");
+              gate.style.display = "none";
+            } else {
+              document.getElementById("boxdex-gate-error").textContent = "Incorrect password.";
+              document.getElementById("boxdex-gate-input").value = "";
+            }
+          });
+        })();
+      </script>
+    )}
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header data-pagefind-ignore transition:persist>
+      <div class="container">
+        <nav>
+          <a class="site-title" href={navHref("/")}>Boxdex</a>
+          <span class="nav-sep">·</span>
+          <div class="nav-links">
+            <a href={navHref("/")}>{t.nav.catalog}</a>
+            <a href={navHref("/compare")}>{t.nav.compare}</a>
+            <a href={navHref("/explore")}>{t.nav.explore}</a>
+            <a href={navHref("/find")}>{t.nav.find}</a>
+            <a href={navHref("/stack")}>{t.nav.stack}</a>
+            <a href={navHref("/drivers")}>{t.nav.drivers}</a>
+          </div>
+          <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+          <div class="search-bar">
+            <Search />
+          </div>
+          <div class="combobox combobox-fit">
+            <button
+              id="locale-trigger"
+              class="combobox-trigger"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-label="Language"
+            >
+              <span class="combobox-value">{locale.toUpperCase()}</span>
+              <span class="combobox-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="locale-list" class="combobox-list" role="listbox" hidden data-base={BASE}>
+              {allLocales.map(({ code }) => (
+                <button
+                  type="button"
+                  class="combobox-item"
+                  class:list={{ "combobox-item-selected": code === locale }}
+                  role="option"
+                  aria-selected={code === locale}
+                  data-locale={code}
+                >{code.toUpperCase()}</button>
+              ))}
+            </div>
+          </div>
+          <a class="help-btn" href={navHref("/help")} aria-label={t.nav.helpLabel} title={t.nav.helpLabel}>?</a>
+          <button id="theme-toggle" aria-label={t.nav.toggleTheme} title={t.nav.toggleTheme}>
+            <span class="icon-dark">◑</span>
+            <span class="icon-light">◐</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <slot />
+    </main>
+
+    <footer data-pagefind-ignore>
+      <div class="container">
+        <p>{t.footer.text}</p>
+      </div>
+    </footer>
+
+    <script>
+      import { initListboxDisclosure } from "../lib/listbox-disclosure";
+
+      const trigger = document.getElementById("locale-trigger");
+      const list = document.getElementById("locale-list");
+      if (trigger && list && !(trigger as HTMLElement & { _boxdexInit?: boolean })._boxdexInit) {
+        (trigger as HTMLElement & { _boxdexInit?: boolean })._boxdexInit = true;
+        const { close } = initListboxDisclosure(trigger, list, {
+          onSelect(item) {
+            const base = list.dataset.base || "";
+            const current = document.documentElement.lang;
+            const pathname = window.location.pathname;
+            const withoutBase = pathname.startsWith(base) ? pathname.slice(base.length) : pathname;
+            const newPath = withoutBase.replace(new RegExp(`^/${current}(?=/|$)`), `/${item.dataset.locale}`);
+            window.location.href = base + newPath + window.location.search;
+          },
+        });
+        document.addEventListener("astro:page-load", close);
+      }
+    </script>
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (btn && !btn._boxdexInit) {
+          btn._boxdexInit = true;
+          btn.addEventListener("click", function () {
+            var html = document.documentElement;
+            var next = html.dataset.theme === "light" ? "dark" : "light";
+            if (next === "dark") {
+              delete html.dataset.theme;
+            } else {
+              html.dataset.theme = "light";
+            }
+            try { localStorage.setItem("boxdex-theme", next); } catch (_) {}
+            document.dispatchEvent(new CustomEvent("boxdex:themechange", { detail: { theme: next } }));
+          });
+        }
+        var tog = document.getElementById("nav-toggle");
+        if (tog && !tog._boxdexInit) {
+          tog._boxdexInit = true;
+          tog.addEventListener("click", function () {
+            var nav = tog.closest("nav");
+            var open = nav.classList.toggle("nav-open");
+            tog.setAttribute("aria-expanded", open ? "true" : "false");
+          });
+          // Close on navigation (ClientRouter swaps page content, header persists)
+          document.addEventListener("astro:page-load", function () {
+            var n = document.querySelector("nav.nav-open");
+            if (n) {
+              n.classList.remove("nav-open");
+              var t = document.getElementById("nav-toggle");
+              if (t) t.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --pf-text: var(--text);
+    --pf-text-secondary: var(--muted);
+    --pf-text-muted: var(--muted);
+    --pf-background: var(--bg);
+    --pf-border: var(--line);
+    --pf-border-focus: var(--accent);
+    --pf-skeleton: var(--panel);
+    --pf-skeleton-shine: var(--line);
+    --pf-hover: var(--panel);
+    --pf-mark: var(--accent);
+    --pf-outline-focus: var(--accent);
+    --pf-font: var(--font-mono);
+  }
+</style>
+
+<style>
+  header {
+    border-bottom: 1px solid var(--line);
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .site-title {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .nav-sep {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .nav-links {
+    margin-right: auto;
+    display: flex;
+    gap: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .nav-links a {
+    color: var(--text);
+  }
+
+  .nav-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .help-btn,
+  #theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--pf-border, var(--line));
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    height: var(--pf-input-height, 36px);
+    width: var(--pf-input-height, 36px);
+    padding: 0;
+    cursor: pointer;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .help-btn:hover,
+  #theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+
+  #locale-trigger {
+    height: var(--pf-input-height, 36px);
+    width: var(--pf-input-height, 36px);
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  #locale-trigger .combobox-value {
+    flex: 0 1 auto;
+  }
+
+  #locale-trigger .combobox-arrow {
+    display: none;
+  }
+
+
+  /* Show the right icon based on current theme */
+  :root:not([data-theme="light"]) .icon-light { display: none; }
+  [data-theme="light"] .icon-dark { display: none; }
+
+  .search-bar {
+    flex: 1;
+    max-width: 20rem;
+    min-width: 10rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  main {
+    padding-top: 0;
+    padding-bottom: 3rem;
+    position: relative;
+  }
+
+  #nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    color: var(--text);
+    font-size: 1rem;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  #nav-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  @media (max-width: 640px) {
+    .nav-sep {
+      display: none;
+    }
+
+    #nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: none;
+      order: 10;
+      width: 100%;
+      gap: 0.75rem 1.25rem;
+      flex-wrap: wrap;
+      margin-right: 0;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    nav.nav-open .nav-links {
+      display: flex;
+    }
+
+    .search-bar {
+      max-width: none;
+      flex: 1 1 8rem;
+    }
+  }
+</style>

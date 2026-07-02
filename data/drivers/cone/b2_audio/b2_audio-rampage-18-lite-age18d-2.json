@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B2 Audio",
+  "model": "RAMPAGE 18 ÉLITE AGE18D",
+  "sizeInch": 15,
+  "impedanceOhm": 2,
+  "fsHz": 26,
+  "qts": 0.344,
+  "qes": 0.36,
+  "qms": 7.875,
+  "vasL": 99,
+  "sdCm2": 678.2,
+  "xmaxMm": 23.5,
+  "reOhm": 1.8,
+  "bl": 14.1,
+  "mmsG": 244,
+  "peW": 4000,
+  "sensitivityDb": 95.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=B2%20AUDIO"
+}

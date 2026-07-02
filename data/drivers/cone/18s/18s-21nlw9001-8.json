@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21NLW9001",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.31,
+  "qes": 0.34,
+  "qms": 4.5,
+  "vasL": 244,
+  "sdCm2": 1662,
+  "xmaxMm": 14,
+  "reOhm": 5.9,
+  "bl": 37,
+  "mmsG": 390,
+  "peW": 1800,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neo",
+  "weightKg": 13.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/21-0/8/21NLW9001"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kenwood",
+  "model": "KFC-WPS1200F",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 24.8,
+  "qts": 0.544,
+  "qes": 0.67,
+  "qms": 2.897,
+  "vasL": 62.685,
+  "sdCm2": 490,
+  "xmaxMm": 8.5,
+  "reOhm": 3.21,
+  "bl": 12.93,
+  "mmsG": 224,
+  "peW": 350,
+  "sensitivityDb": 91,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/kenwood-kfc-wps1200f/specifications"
+}

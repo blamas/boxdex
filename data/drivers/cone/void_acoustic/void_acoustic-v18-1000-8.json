@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Void Acoustic",
+  "model": "V18-1000",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34.5,
+  "qts": 0.216,
+  "qes": 0.222,
+  "qms": 7.635,
+  "vasL": 201.7,
+  "sdCm2": 1230,
+  "xmaxMm": 5.3,
+  "reOhm": 5.5,
+  "bl": 34.6,
+  "mmsG": 223.3,
+  "peW": 1000,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VOID%20ACOUSTIC"
+}

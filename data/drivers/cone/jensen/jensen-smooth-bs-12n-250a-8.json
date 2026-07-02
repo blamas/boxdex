@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "SMOOTH BS 12N/250A",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47,
+  "qts": 0.425,
+  "qes": 0.44,
+  "qms": 12.58,
+  "vasL": 81.3,
+  "sdCm2": 530.9,
+  "xmaxMm": 5.5,
+  "reOhm": 5.5,
+  "bl": 14.3,
+  "mmsG": 55.7,
+  "peW": 250,
+  "sensitivityDb": 96.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

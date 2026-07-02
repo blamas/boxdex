@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "21NLW4100",
+  "sizeInch": 21,
+  "impedanceOhm": 4,
+  "fsHz": 34,
+  "qts": 0.4,
+  "qes": 0.42,
+  "qms": 7.8,
+  "vasL": 219,
+  "sdCm2": 1661,
+  "xmaxMm": 15.2,
+  "reOhm": 2.6,
+  "bl": 22.8,
+  "mmsG": 400,
+  "peW": 1500,
+  "sensitivityDb": 97,
+  "magnetMaterial": "neo",
+  "weightKg": 10.5,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/21-0/4/21nlw4100"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "MAF061.50",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 177,
+  "qts": 0.52,
+  "qes": 0.57,
+  "qms": 5.77,
+  "vasL": 1.9,
+  "sdCm2": 132,
+  "xmaxMm": 3.6,
+  "reOhm": 5.5,
+  "bl": 10.54,
+  "mmsG": 10.4,
+  "peW": 120,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/maf061-50/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Alpine",
+  "model": "SWR-1542D",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.452,
+  "qes": 0.48,
+  "qms": 7.71,
+  "vasL": 100,
+  "sdCm2": 775,
+  "xmaxMm": 10.3,
+  "reOhm": 6.9,
+  "bl": 28.9,
+  "mmsG": 403.2,
+  "peW": 750,
+  "sensitivityDb": 86.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALPINE"
+}

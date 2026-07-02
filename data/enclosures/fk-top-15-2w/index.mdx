@@ -1,0 +1,54 @@
+---
+name: FK Top 15 2W
+category: top
+topology: bass_reflex
+drivers:
+  - rcf-l15p400-8
+  - bms-4545nd-8
+netVolumeL: 75
+dims:
+  wMm: 480
+  hMm: 640
+  dMm: 420
+weightKg: 28
+specs:
+  f3Hz: 55
+  fbHz: 52
+  sensitivityDb: 101
+  coverageAngleDeg: 75
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - rcf-l15p400-8
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+      - bms-4545nd-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - frenchcore
+connectors:
+  - speakON NL4
+ways: 2
+---
+
+2-way 15"+1" bass reflex top. RCF L15P400 + BMS 4545ND, xo at 1200 Hz.

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TF1525E",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 49.8,
+  "qts": 0.5,
+  "qes": 0.53,
+  "qms": 7.12,
+  "vasL": 128.19,
+  "sdCm2": 804,
+  "xmaxMm": 3.5,
+  "reOhm": 6.48,
+  "bl": 17.69,
+  "mmsG": 82.41,
+  "peW": 300,
+  "sensitivityDb": 96.6,
+  "datasheetUrl": "https://celestion.com/product/tf1525e/"
+}

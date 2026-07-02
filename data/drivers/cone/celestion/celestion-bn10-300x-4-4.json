@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "BN10-300X(4)",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 64.2,
+  "qts": 0.43,
+  "qes": 0.494,
+  "qms": 3.33,
+  "vasL": 29.2,
+  "sdCm2": 346,
+  "xmaxMm": 4,
+  "reOhm": 3.02,
+  "bl": 9.39,
+  "mmsG": 35.81,
+  "peW": 150,
+  "sensitivityDb": 93.8,
+  "datasheetUrl": "https://celestion.com/product/bn10-300x-4/"
+}

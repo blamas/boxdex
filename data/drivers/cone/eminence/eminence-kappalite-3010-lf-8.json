@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KAPPALITE 3010 LF",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 38.7,
+  "qts": 0.273,
+  "qes": 0.28,
+  "qms": 11.75,
+  "vasL": 62.4,
+  "sdCm2": 358.4,
+  "xmaxMm": 8.5,
+  "reOhm": 7.2,
+  "bl": 17.5,
+  "mmsG": 48.9,
+  "peW": 550,
+  "sensitivityDb": 93.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

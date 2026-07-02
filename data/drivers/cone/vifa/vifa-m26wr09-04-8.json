@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Vifa",
+  "model": "M26WR09-04",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.28,
+  "qes": 0.31,
+  "qms": 2.9,
+  "vasL": 113,
+  "sdCm2": 337,
+  "xmaxMm": 6.5,
+  "reOhm": 4.5,
+  "bl": 11,
+  "mmsG": 49,
+  "peW": 160,
+  "sensitivityDb": 93,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=VIFA"
+}

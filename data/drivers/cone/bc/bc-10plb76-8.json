@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10PLB76",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 52,
+  "qts": 0.19,
+  "qes": 0.2,
+  "qms": 3.4,
+  "vasL": 31,
+  "sdCm2": 320,
+  "xmaxMm": 6,
+  "reOhm": 4.8,
+  "bl": 18.4,
+  "mmsG": 43,
+  "peW": 400,
+  "sensitivityDb": 95.2,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/10/8/10plb76"
+}

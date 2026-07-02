@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15PS76-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.26,
+  "qes": 0.28,
+  "qms": 5.2,
+  "vasL": 164,
+  "sdCm2": 855,
+  "xmaxMm": 7.5,
+  "reOhm": 5,
+  "bl": 22.1,
+  "mmsG": 106,
+  "peW": 550,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/15/8/15ps76-8"
+}

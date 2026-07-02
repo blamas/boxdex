@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Westra",
+  "model": "SW-300-2808",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.322,
+  "qes": 0.36,
+  "qms": 3.03,
+  "vasL": 209,
+  "sdCm2": 531,
+  "xmaxMm": 9.3,
+  "reOhm": 6.7,
+  "bl": 13.7,
+  "mmsG": 53.2,
+  "peW": 250,
+  "sensitivityDb": 94.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=WESTRA"
+}

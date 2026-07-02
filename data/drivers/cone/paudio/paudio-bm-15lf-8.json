@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "BM-15LF",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 47,
+  "qts": 0.668,
+  "qes": 0.71,
+  "qms": 11.34,
+  "vasL": 123.4,
+  "sdCm2": 829,
+  "xmaxMm": 7.1,
+  "reOhm": 5.1,
+  "bl": 13.8,
+  "mmsG": 89.6,
+  "peW": 500,
+  "sensitivityDb": 96.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12NCX750",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 58,
+  "qts": 0.296,
+  "qes": 0.31,
+  "qms": 6.42,
+  "vasL": 63,
+  "sdCm2": 531,
+  "xmaxMm": 4.6,
+  "reOhm": 5.4,
+  "bl": 17.3,
+  "mmsG": 47.2,
+  "peW": 400,
+  "sensitivityDb": 99.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

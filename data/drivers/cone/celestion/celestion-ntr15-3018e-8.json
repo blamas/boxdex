@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "NTR15-3018E",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.261,
+  "qes": 0.271,
+  "qms": 6.996,
+  "vasL": 223.5,
+  "sdCm2": 852,
+  "xmaxMm": 5,
+  "reOhm": 5.38,
+  "bl": 20.3,
+  "mmsG": 94.1,
+  "peW": 450,
+  "sensitivityDb": 99.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

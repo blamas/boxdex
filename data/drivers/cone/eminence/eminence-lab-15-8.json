@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "LAB 15",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.346,
+  "qes": 0.37,
+  "qms": 5.36,
+  "vasL": 103.6,
+  "sdCm2": 823.7,
+  "xmaxMm": 7.3,
+  "reOhm": 4.9,
+  "bl": 26.3,
+  "mmsG": 296.6,
+  "peW": 600,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "LFP501",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 40,
+  "qts": 0.521,
+  "qes": 0.69,
+  "qms": 2.13,
+  "vasL": 138,
+  "sdCm2": 530,
+  "xmaxMm": 4.5,
+  "reOhm": 5.6,
+  "bl": 9.6,
+  "mmsG": 45.2,
+  "peW": 150,
+  "sensitivityDb": 94.6
+}

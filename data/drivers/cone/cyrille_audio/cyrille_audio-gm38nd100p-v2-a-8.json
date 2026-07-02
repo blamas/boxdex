@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cyrille Audio",
+  "model": "GM38ND100P V2 a",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32.7,
+  "qts": 0.136,
+  "qes": 0.138,
+  "qms": 8.357,
+  "vasL": 257.2,
+  "sdCm2": 881.4,
+  "xmaxMm": 6.5,
+  "reOhm": 4.9,
+  "bl": 27,
+  "mmsG": 100.2,
+  "peW": 800,
+  "sensitivityDb": 102.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CYRILLE-AUDIO"
+}

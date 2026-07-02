@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "GAMMA 10 B",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 64.3,
+  "qts": 0.529,
+  "qes": 0.62,
+  "qms": 3.59,
+  "vasL": 37.6,
+  "sdCm2": 339.7,
+  "xmaxMm": 1.6,
+  "reOhm": 11.62,
+  "bl": 14.1,
+  "mmsG": 26.4,
+  "peW": 300,
+  "sensitivityDb": 92.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND1085",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 1600,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1600,
+  "sensitivityHornDb": 109,
+  "peW": 40,
+  "magnetMaterial": "neodymium",
+  "weightKg": 1.1,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-0/8/ND1085"
+}

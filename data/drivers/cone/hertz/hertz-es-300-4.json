@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Hertz Audio",
+  "model": "ES 300",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 28,
+  "qts": 0.38,
+  "qes": 0.43,
+  "qms": 3.45,
+  "vasL": 89.4,
+  "sdCm2": 548,
+  "xmaxMm": 9,
+  "reOhm": 2.93,
+  "bl": 13.46,
+  "mmsG": 151.2,
+  "peW": 350,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/hertz-es-300/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "HP-15W",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 34,
+  "qts": 0.492,
+  "qes": 0.6,
+  "qms": 2.74,
+  "vasL": 254.3,
+  "sdCm2": 855,
+  "xmaxMm": 3.5,
+  "reOhm": 6,
+  "bl": 13.7,
+  "mmsG": 88.3,
+  "peW": 300,
+  "sensitivityDb": 95.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

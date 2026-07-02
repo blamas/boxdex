@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "10FE400",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 60,
+  "qts": 0.47,
+  "qes": 0.52,
+  "qms": 5.2,
+  "vasL": 35.3,
+  "sdCm2": 362,
+  "xmaxMm": 5.42,
+  "reOhm": 5,
+  "mmsG": 36.5,
+  "peW": 200,
+  "sensitivityDb": 96,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 2.95,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401040103"
+}

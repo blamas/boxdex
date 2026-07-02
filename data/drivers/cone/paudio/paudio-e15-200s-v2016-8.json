@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "E15-200S v2016",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 37.8,
+  "qts": 0.571,
+  "qes": 0.61,
+  "qms": 8.87,
+  "vasL": 202.1,
+  "sdCm2": 830,
+  "xmaxMm": 2.5,
+  "reOhm": 6.3,
+  "bl": 14.4,
+  "mmsG": 84.7,
+  "peW": 200,
+  "sensitivityDb": 95.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

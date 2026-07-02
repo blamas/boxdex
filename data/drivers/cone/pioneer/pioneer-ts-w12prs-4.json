@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W12PRS",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 24,
+  "qts": 0.392,
+  "qes": 0.41,
+  "qms": 9,
+  "vasL": 93,
+  "sdCm2": 456,
+  "xmaxMm": 10.3,
+  "reOhm": 3.6,
+  "bl": 13.5,
+  "mmsG": 137.8,
+  "peW": 300,
+  "sensitivityDb": 90.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

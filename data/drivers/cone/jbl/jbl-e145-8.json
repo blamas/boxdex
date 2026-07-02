@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "E145",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.249,
+  "qes": 0.26,
+  "qms": 6,
+  "vasL": 274.7,
+  "sdCm2": 896.1,
+  "xmaxMm": 4.1,
+  "reOhm": 5.7,
+  "bl": 20.2,
+  "mmsG": 84.7,
+  "peW": 150,
+  "sensitivityDb": 100
+}

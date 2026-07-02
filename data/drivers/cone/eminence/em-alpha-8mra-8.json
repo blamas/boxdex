@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "ALPHA-8MRA",
+  "impedanceOhm": 8,
+  "sizeInch": 8,
+  "fsHz": 514,
+  "qts": 1.42,
+  "qes": 2.08,
+  "qms": 4.48,
+  "vasL": 0.8,
+  "sdCm2": 205.9,
+  "xmaxMm": 1.6,
+  "peW": 125,
+  "sensitivityDb": 100.9,
+  "reOhm": 7.32,
+  "bl": 8.9,
+  "mmsG": 7,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Alpha_8MRA.pdf"
+}

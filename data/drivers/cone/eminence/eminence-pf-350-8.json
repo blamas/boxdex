@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "PF-350",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 63,
+  "qts": 0.418,
+  "qes": 0.44,
+  "qms": 8.48,
+  "vasL": 61.9,
+  "sdCm2": 545.4,
+  "xmaxMm": 0.8,
+  "reOhm": 7.41,
+  "bl": 16.9,
+  "mmsG": 43,
+  "peW": 350,
+  "sensitivityDb": 97.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

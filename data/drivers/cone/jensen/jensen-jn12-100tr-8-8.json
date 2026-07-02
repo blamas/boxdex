@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "JN12-100TR 8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 72.4,
+  "qts": 0.608,
+  "qes": 0.637,
+  "qms": 13.6,
+  "vasL": 48.7,
+  "sdCm2": 490.9,
+  "xmaxMm": 1,
+  "reOhm": 6.94,
+  "bl": 12.9,
+  "mmsG": 33.5,
+  "peW": 100,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

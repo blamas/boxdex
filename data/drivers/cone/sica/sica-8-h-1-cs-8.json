@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "8 H 1 CS",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 49.5,
+  "qts": 0.54,
+  "qes": 0.6,
+  "qms": 5.13,
+  "vasL": 27.8,
+  "sdCm2": 213.8,
+  "xmaxMm": 4,
+  "reOhm": 6.1,
+  "bl": 8.73,
+  "mmsG": 24.1,
+  "peW": 70,
+  "sensitivityDb": 90.7,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2026/02/Z004290C.pdf"
+}

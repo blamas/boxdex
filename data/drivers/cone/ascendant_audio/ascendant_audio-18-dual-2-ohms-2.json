@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ascendant Audio",
+  "model": "18 DUAL 2 Ohms",
+  "sizeInch": 18,
+  "impedanceOhm": 2,
+  "fsHz": 29.7,
+  "qts": 0.302,
+  "qes": 0.32,
+  "qms": 5.43,
+  "vasL": 114.3,
+  "sdCm2": 1210,
+  "xmaxMm": 12.1,
+  "reOhm": 1.35,
+  "bl": 20.1,
+  "mmsG": 515.6,
+  "peW": 4000,
+  "sensitivityDb": 99.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ASCENDANT%20AUDIO"
+}

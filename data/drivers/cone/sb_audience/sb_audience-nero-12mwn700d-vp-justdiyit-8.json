@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "NERO-12MWN700D vp JustDiyIt",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 54.4,
+  "qts": 0.347,
+  "qes": 0.365,
+  "qms": 7.223,
+  "vasL": 53.6,
+  "sdCm2": 543.3,
+  "xmaxMm": 6.2,
+  "reOhm": 5.3,
+  "bl": 18.1,
+  "mmsG": 66.2,
+  "peW": 700,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

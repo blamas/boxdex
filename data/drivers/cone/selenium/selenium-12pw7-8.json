@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "12PW7",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.41,
+  "qes": 0.47,
+  "qms": 3.4,
+  "vasL": 77,
+  "sdCm2": 510,
+  "xmaxMm": 3,
+  "reOhm": 6,
+  "bl": 15.2,
+  "mmsG": 69.1,
+  "peW": 250,
+  "sensitivityDb": 92.7
+}

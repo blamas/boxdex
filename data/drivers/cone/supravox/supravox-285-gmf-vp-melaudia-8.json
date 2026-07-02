@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "285 GMF vp Melaudia",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 59.3,
+  "qts": 0.375,
+  "qes": 0.385,
+  "qms": 14.593,
+  "vasL": 97.4,
+  "sdCm2": 448.8,
+  "xmaxMm": 3.3,
+  "reOhm": 6.5,
+  "bl": 11.5,
+  "mmsG": 20.9,
+  "peW": 70,
+  "sensitivityDb": 100.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

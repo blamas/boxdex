@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "10W7AE-3",
+  "sizeInch": 10,
+  "impedanceOhm": 3,
+  "fsHz": 30.6,
+  "qts": 0.537,
+  "qes": 0.578,
+  "qms": 7.647,
+  "vasL": 36.1,
+  "sdCm2": 386,
+  "xmaxMm": 23,
+  "reOhm": 2.75,
+  "bl": 12.03,
+  "mmsG": 158.2,
+  "peW": 750,
+  "sensitivityDb": 84.4,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jl-audio-10w7ae-3/specifications"
+}

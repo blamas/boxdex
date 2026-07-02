@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15W200 vp2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.253,
+  "qes": 0.27,
+  "qms": 4.1,
+  "vasL": 134,
+  "sdCm2": 850,
+  "xmaxMm": 3.1,
+  "reOhm": 5.5,
+  "bl": 23.3,
+  "mmsG": 94.5,
+  "peW": 200,
+  "sensitivityDb": 100.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

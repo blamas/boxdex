@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/horn.schema.json",
+  "brand": "Beyma",
+  "model": "TD/WL4",
+  "exitInch": 8.19,
+  "coverageHorizontalDeg": 90,
+  "coverageVerticalDeg": 20,
+  "cutoffHz": 1200,
+  "mouthWmm": 174,
+  "mouthHmm": 247,
+  "depthMm": 147,
+  "profile": "conical",
+  "material": "aluminium",
+  "weightKg": 1.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/horns/1TDWL4/bocina-td-wl4/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15NMB601",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 43.25,
+  "qts": 0.174,
+  "qes": 0.178,
+  "qms": 7.22,
+  "vasL": 145.15,
+  "sdCm2": 830,
+  "xmaxMm": 5.25,
+  "reOhm": 5.49,
+  "bl": 27.43,
+  "mmsG": 89.65,
+  "peW": 600,
+  "sensitivityDb": 100,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/517-15nmb601.html"
+}

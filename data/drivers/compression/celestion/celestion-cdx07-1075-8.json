@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Celestion",
+  "model": "CDX07-1075",
+  "impedanceOhm": 8,
+  "exitInch": 0.75,
+  "voiceCoilMm": 25,
+  "fLowHz": 1500,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 109,
+  "peW": 15,
+  "magnetMaterial": "neodymium",
+  "datasheetUrl": "https://celestion.com/product/cdx07-1075/"
+}

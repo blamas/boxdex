@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Visaton",
+  "model": "TIW 360X",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 21,
+  "qts": 0.34,
+  "qes": 0.37,
+  "qms": 3.7,
+  "vasL": 140,
+  "sdCm2": 450,
+  "xmaxMm": 12.5,
+  "reOhm": 6.1,
+  "bl": 15.9,
+  "mmsG": 116,
+  "peW": 300,
+  "sensitivityDb": 87.3,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/visaton-tiw-360x/specifications"
+}

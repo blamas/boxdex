@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "18 Sound",
+  "model": "ND3ST",
+  "impedanceOhm": 8,
+  "exitInch": 1.4,
+  "voiceCoilMm": 75,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 112,
+  "peW": 120,
+  "magnetMaterial": "neodymium",
+  "weightKg": 2.3,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/hf-driver/1-4/8/ND3ST"
+}

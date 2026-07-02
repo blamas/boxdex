@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10MC700ND v2019",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 63,
+  "qts": 0.226,
+  "qes": 0.24,
+  "qms": 3.8,
+  "vasL": 20,
+  "sdCm2": 350,
+  "xmaxMm": 4.2,
+  "reOhm": 5.2,
+  "bl": 21.7,
+  "mmsG": 54.8,
+  "peW": 700,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BEYMA"
+}

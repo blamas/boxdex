@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "LO MAX 18 v2011",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33.5,
+  "qts": 0.321,
+  "qes": 0.33,
+  "qms": 11.15,
+  "vasL": 294.4,
+  "sdCm2": 1197,
+  "xmaxMm": 10.2,
+  "reOhm": 5.4,
+  "bl": 23,
+  "mmsG": 154,
+  "peW": 1200,
+  "sensitivityDb": 98.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

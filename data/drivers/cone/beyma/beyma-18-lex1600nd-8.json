@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18\"LEX1600Nd",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.43,
+  "qes": 0.45,
+  "qms": 11.4,
+  "vasL": 231,
+  "sdCm2": 1255,
+  "xmaxMm": 14.5,
+  "reOhm": 5.8,
+  "bl": 24.5,
+  "mmsG": 229,
+  "peW": 1600,
+  "sensitivityDb": 96,
+  "weightKg": 9.9,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/118LEX16ND8/altavoz-18lex1600-nd-8-oh/"
+}

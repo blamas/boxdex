@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "18\" P1000Fe V2/S",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.32,
+  "qes": 0.33,
+  "qms": 10.5,
+  "vasL": 230,
+  "sdCm2": 1250,
+  "xmaxMm": 8,
+  "reOhm": 5.2,
+  "bl": 26.8,
+  "mmsG": 221,
+  "peW": 1200,
+  "sensitivityDb": 98,
+  "weightKg": 13.5,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/118P10FEV2S8/altavoz-18p1000fev2-s-8-oh/"
+}

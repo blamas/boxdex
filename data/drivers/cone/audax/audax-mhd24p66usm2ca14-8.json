@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "MHD24P66USM2CA14",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 27,
+  "qts": 0.137,
+  "qes": 0.15,
+  "qms": 1.53,
+  "vasL": 157.6,
+  "sdCm2": 370,
+  "xmaxMm": 3.2,
+  "reOhm": 5.9,
+  "bl": 16.8,
+  "mmsG": 42.3,
+  "peW": 150,
+  "sensitivityDb": 96.5
+}

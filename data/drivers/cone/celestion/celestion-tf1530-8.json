@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "TF1530",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.38,
+  "qes": 0.42,
+  "qms": 4.2,
+  "vasL": 141.2,
+  "sdCm2": 843,
+  "xmaxMm": 2,
+  "reOhm": 5.66,
+  "bl": 18.7,
+  "mmsG": 91.85,
+  "peW": 400,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://celestion.com/product/tf1530/"
+}

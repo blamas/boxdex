@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10MB777",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 58,
+  "qts": 0.22,
+  "qes": 0.23,
+  "qms": 5.5,
+  "vasL": 33.4,
+  "sdCm2": 350,
+  "xmaxMm": 6.5,
+  "reOhm": 5.7,
+  "bl": 18.6,
+  "mmsG": 38,
+  "peW": 450,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite",
+  "weightKg": 7.2,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/10-0/8/10mb777"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "5MDN38",
+  "sizeInch": 5,
+  "impedanceOhm": 16,
+  "fsHz": 230,
+  "qts": 0.48,
+  "qes": 0.57,
+  "qms": 3,
+  "vasL": 0.8,
+  "sdCm2": 95,
+  "xmaxMm": 3.5,
+  "reOhm": 11.7,
+  "bl": 15,
+  "mmsG": 8,
+  "peW": 100,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/5/16/5MDN38"
+}

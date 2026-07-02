@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "12ND710",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 53,
+  "qts": 0.29,
+  "qes": 0.31,
+  "qms": 4,
+  "vasL": 85,
+  "sdCm2": 530,
+  "xmaxMm": 5,
+  "reOhm": 9.4,
+  "bl": 20.3,
+  "mmsG": 41,
+  "peW": 450,
+  "sensitivityDb": 101,
+  "magnetMaterial": "neo",
+  "weightKg": 4.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/12-0/16/12nd710%20-%2016%20ohm"
+}

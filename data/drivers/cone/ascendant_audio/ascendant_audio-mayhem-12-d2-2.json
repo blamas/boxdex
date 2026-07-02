@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ascendant Audio",
+  "model": "MAYHEM 12 D2",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 39.7,
+  "qts": 0.267,
+  "qes": 0.28,
+  "qms": 5.68,
+  "vasL": 21.5,
+  "sdCm2": 480,
+  "xmaxMm": 8.5,
+  "reOhm": 1.4,
+  "bl": 17.4,
+  "mmsG": 241.4,
+  "peW": 2500,
+  "sensitivityDb": 96.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ASCENDANT%20AUDIO"
+}

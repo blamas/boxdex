@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "E10-200S v2006",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.337,
+  "qes": 0.402,
+  "qms": 2.085,
+  "vasL": 46.9,
+  "sdCm2": 363,
+  "xmaxMm": 4.1,
+  "reOhm": 6.7,
+  "bl": 14,
+  "mmsG": 35.6,
+  "peW": 200,
+  "sensitivityDb": 95.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

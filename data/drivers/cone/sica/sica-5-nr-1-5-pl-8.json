@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "5 NR 1.5 PL",
+  "sizeInch": 5,
+  "impedanceOhm": 8,
+  "fsHz": 61,
+  "qts": 0.35,
+  "qes": 0.39,
+  "qms": 4.1,
+  "vasL": 7.4,
+  "sdCm2": 78.5,
+  "xmaxMm": 3.5,
+  "reOhm": 5.6,
+  "bl": 6.65,
+  "mmsG": 8,
+  "peW": 130,
+  "sensitivityDb": 90,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z002650-1.pdf"
+}

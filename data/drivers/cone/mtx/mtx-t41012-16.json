@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MTX Audio",
+  "model": "T41012",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 40.1,
+  "qts": 0.744,
+  "qes": 0.8,
+  "qms": 10.68,
+  "vasL": 39.1,
+  "sdCm2": 360,
+  "xmaxMm": 6.2,
+  "reOhm": 9.48,
+  "bl": 14.8,
+  "mmsG": 73.2,
+  "peW": 200,
+  "sensitivityDb": 86.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MTX"
+}

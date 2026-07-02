@@ -1,0 +1,111 @@
+---
+name: FK Sub BigStack
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 280
+dims:
+  wMm: 730
+  hMm: 730
+  dMm: 650
+specs:
+  f3Hz: 38
+  fbHz: 42
+  sensitivityDb: 101
+  maxSplDb: 131
+  powerAesW: 1500
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U stacked sim
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-2u.csv
+    count: 2
+    note: 2U stacked sim
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-4u.csv
+    count: 4
+    note: 4U stacked sim
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-6u.csv
+    count: 6
+    note: 6U stacked sim
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-8u.csv
+    count: 8
+    note: 8U stacked sim
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-12u.csv
+    count: 12
+    note: 12U stacked sim
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+    note: 1U stacked measured
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: rew_measured
+    file: meas-2u.csv
+    count: 2
+    note: 2U stacked measured
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: rew_measured
+    file: meas-4u.csv
+    count: 4
+    note: 4U stacked measured
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: rew_measured
+    file: meas-6u.csv
+    count: 6
+    note: 6U stacked measured
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: rew_measured
+    file: meas-8u.csv
+    count: 8
+    note: 8U stacked measured
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: rew_measured
+    file: meas-12u.csv
+    count: 12
+    note: 12U stacked measured
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+---
+
+FK Sub BigStack: stacking stress test with 1/2/4/6/8/12 counts, both sim and measured.

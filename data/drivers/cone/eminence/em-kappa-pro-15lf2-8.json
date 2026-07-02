@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "Kappa Pro-15LF",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 35,
+  "qts": 0.3,
+  "qes": 0.32,
+  "qms": 7.3,
+  "vasL": 198.8,
+  "sdCm2": 856.3,
+  "xmaxMm": 6.7,
+  "peW": 600,
+  "sensitivityDb": 97.8,
+  "reOhm": 6.5,
+  "bl": 21.6,
+  "mmsG": 102,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappa_Pro_15LF2.pdf"
+}

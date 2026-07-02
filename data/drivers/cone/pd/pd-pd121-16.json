@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD121",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 59,
+  "qts": 0.201,
+  "qes": 0.209,
+  "qms": 4.96,
+  "vasL": 54,
+  "sdCm2": 530,
+  "xmaxMm": 5,
+  "reOhm": 5.7,
+  "bl": 23.36,
+  "mmsG": 54,
+  "peW": 300,
+  "sensitivityDb": 100,
+  "magnetMaterial": "ceramic",
+  "weightKg": 7.8,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=8"
+}

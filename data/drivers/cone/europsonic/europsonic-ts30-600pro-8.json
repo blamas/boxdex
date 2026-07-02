@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Europsonic",
+  "model": "TS30/600PRO",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.782,
+  "qes": 0.93,
+  "qms": 4.93,
+  "vasL": 65.9,
+  "sdCm2": 510,
+  "xmaxMm": 4,
+  "reOhm": 7.3,
+  "bl": 14.7,
+  "mmsG": 136.9,
+  "peW": 300,
+  "sensitivityDb": 86,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EUROPSONIC"
+}

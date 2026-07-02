@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Radian",
+  "model": "5215 B-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 38.7,
+  "qts": 0.316,
+  "qes": 0.35,
+  "qms": 3.24,
+  "vasL": 189.7,
+  "sdCm2": 789,
+  "xmaxMm": 5.5,
+  "reOhm": 6,
+  "bl": 18,
+  "mmsG": 77.8,
+  "peW": 625,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RADIAN"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "SD18-1700EL",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.59,
+  "qes": 0.623,
+  "qms": 11.1,
+  "vasL": 99.72,
+  "sdCm2": 1225,
+  "xmaxMm": 4.8,
+  "reOhm": 5.2,
+  "bl": 25.9,
+  "mmsG": 307.7,
+  "peW": 1700,
+  "sensitivityDb": 92.6
+}

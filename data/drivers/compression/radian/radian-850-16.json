@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Radian",
+  "model": "850",
+  "impedanceOhm": 16,
+  "exitInch": 2,
+  "voiceCoilMm": 76.2,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 700,
+  "sensitivityHornDb": 112,
+  "peW": 100,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0111/0324/0254/files/850PB-data_sheet-300618.pdf?770"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "BMS",
+  "model": "18N862 vp",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 24.8,
+  "qts": 0.383,
+  "qes": 0.4,
+  "qms": 9.09,
+  "vasL": 345.6,
+  "sdCm2": 1219,
+  "xmaxMm": 16.2,
+  "reOhm": 5.56,
+  "bl": 23.2,
+  "mmsG": 247.4,
+  "peW": 1500,
+  "sensitivityDb": 94.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BMS"
+}

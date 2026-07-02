@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Sica",
+  "model": "6 D 1.5 CS",
+  "sizeInch": 6,
+  "impedanceOhm": 8,
+  "fsHz": 108.5,
+  "qts": 0.63,
+  "qes": 0.79,
+  "qms": 3.21,
+  "vasL": 4.4,
+  "sdCm2": 122.7,
+  "xmaxMm": 1.5,
+  "reOhm": 6,
+  "bl": 7.38,
+  "mmsG": 10.4,
+  "peW": 100,
+  "sensitivityDb": 91.7,
+  "datasheetUrl": "https://sica.it/wp-content/uploads/2021/02/Z004002.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "VINTAGE VERSION",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 25.7,
+  "qts": 0.556,
+  "qes": 0.59,
+  "qms": 9.542,
+  "vasL": 134.2,
+  "sdCm2": 504,
+  "xmaxMm": 7.2,
+  "reOhm": 3,
+  "bl": 9.1,
+  "mmsG": 101.8,
+  "peW": 100,
+  "sensitivityDb": 92.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

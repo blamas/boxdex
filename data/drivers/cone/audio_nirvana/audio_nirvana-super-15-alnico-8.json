@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audio Nirvana",
+  "model": "SUPER 15 ALNICO",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 28.6,
+  "qts": 0.954,
+  "qes": 1.266,
+  "qms": 3.869,
+  "vasL": 492.8,
+  "sdCm2": 806.7,
+  "xmaxMm": 1,
+  "reOhm": 7.2,
+  "bl": 7.7,
+  "mmsG": 57.5,
+  "peW": 80,
+  "sensitivityDb": 92,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AUDIO%20NIRVANA"
+}

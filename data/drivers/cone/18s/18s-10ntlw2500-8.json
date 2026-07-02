@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10NTLW2500",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.33,
+  "qes": 0.34,
+  "qms": 11.2,
+  "vasL": 21,
+  "sdCm2": 346.4,
+  "xmaxMm": 7.6,
+  "reOhm": 5,
+  "bl": 17.4,
+  "mmsG": 49,
+  "peW": 500,
+  "sensitivityDb": 96.5,
+  "magnetMaterial": "neo",
+  "weightKg": 3.1,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/10-0/8/10ntlw2500-8"
+}

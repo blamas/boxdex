@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eton",
+  "model": "12-612-C8/62RP",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 28,
+  "qts": 0.319,
+  "qes": 0.34,
+  "qms": 5.16,
+  "vasL": 134,
+  "sdCm2": 515,
+  "xmaxMm": 6.3,
+  "reOhm": 6.2,
+  "bl": 17,
+  "mmsG": 89.6,
+  "peW": 150,
+  "sensitivityDb": 92.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ETON"
+}

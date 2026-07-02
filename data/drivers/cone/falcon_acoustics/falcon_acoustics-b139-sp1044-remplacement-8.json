@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Falcon Acoustics",
+  "model": "B139 SP1044 REMPLACEMENT",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.366,
+  "qes": 0.39,
+  "qms": 6,
+  "vasL": 127,
+  "sdCm2": 354,
+  "xmaxMm": 6,
+  "reOhm": 7.2,
+  "bl": 12.8,
+  "mmsG": 56.1,
+  "peW": 150,
+  "sensitivityDb": 89.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FALCON%20ACOUSTICS"
+}

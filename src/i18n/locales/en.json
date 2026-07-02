@@ -1,0 +1,764 @@
+{
+  "nav": {
+    "catalog": "Catalog",
+    "compare": "Compare",
+    "explore": "Explore",
+    "find": "Find",
+    "stack": "Stack",
+    "drivers": "Drivers",
+    "helpLabel": "Help & glossary",
+    "toggleTheme": "Toggle light/dark theme"
+  },
+  "footer": {
+    "text": "Boxdex: open enclosure plans. All units SI. Data may be simulation or measurement, check provenance badges. Contributions welcome via PR."
+  },
+  "curveLabels": {
+    "spl": "SPL (dB)",
+    "spl_stacked": "SPL stacked (dB)",
+    "phase": "Phase (°)",
+    "impedance": "Impedance (Ω)",
+    "group_delay": "Group delay (ms)",
+    "distortion": "Distortion (%)",
+    "power_compression": "Power compression (dB)"
+  },
+  "categoryLabels": {
+    "sub": "Subwoofer",
+    "kick": "Kick bin",
+    "mid": "Midrange",
+    "top": "Top"
+  },
+  "axisLabels": {
+    "volumeL": "Net volume",
+    "footprintCm2": "Footprint",
+    "heightMm": "Height",
+    "weightKg": "Weight",
+    "f3Hz": "F3 low",
+    "f3HzHigh": "F3 high",
+    "maxSplDb": "Max SPL",
+    "sensitivityDb": "Sensitivity",
+    "outputDensity": "Output density",
+    "outputPerKg": "Output per kg"
+  },
+  "pages": {
+    "catalog": {
+      "title": "Catalog",
+      "description": "Open enclosure plans: catalog of subwoofer and top designs",
+      "heading": "Enclosure Catalog"
+    },
+    "compare": {
+      "title": "Compare",
+      "description": "Overlay frequency response curves for multiple enclosure designs",
+      "heading": "Compare Enclosures",
+      "subtitle": "Overlay SPL, phase, or impedance curves. Select enclosures from the list below."
+    },
+    "explore": {
+      "title": "Explore",
+      "description": "Explore the enclosure design space: volume, SPL, F3, and more",
+      "heading": "Design Space",
+      "subtitle": "Plot any two metrics and find Pareto-optimal designs."
+    },
+    "find": {
+      "title": "Find",
+      "description": "Filter and sort enclosures by F3, SPL, volume, and other constraints",
+      "heading": "Find an Enclosure",
+      "subtitle": "Filter by constraints, sort by any metric."
+    },
+    "stack": {
+      "title": "My Stack",
+      "description": "Build a sound system and calculate coverage.",
+      "heading": "My Stack",
+      "subtitle": "Select enclosures by role, set quantities, and check coverage and crossover."
+    },
+    "help": {
+      "title": "Help",
+      "description": "How to use Boxdex: finding enclosures, comparing builds, planning a rig, plus a full glossary of driver and system terms"
+    },
+    "drivers": {
+      "title": "Drivers",
+      "description": "Browse and compare cone drivers, compression drivers and horns",
+      "heading": "Drivers",
+      "subtitle": "Cone drivers (Thiele-Small parameters), compression drivers (horn/throat specs) and horns (waveguides) in the database. Switch catalog with the tabs, then check up to 4 boxes and click Compare for a side-by-side table and radar chart."
+    },
+    "driversCompare": {
+      "title": "Compare Drivers",
+      "description": "Side-by-side T/S parameter comparison with radar chart",
+      "heading": "Compare Drivers",
+      "subtitle": "T/S parameters side by side. Radar chart normalises each axis to 100 = catalogue maximum."
+    },
+    "hornsCompare": {
+      "title": "Compare Horns",
+      "description": "Horn specification comparison with coverage radar chart",
+      "heading": "Compare Horns",
+      "subtitle": "Horn specs side by side. Radar chart normalises each axis to 100 = catalogue maximum."
+    }
+  },
+  "catalogGrid": {
+    "all": "All",
+    "sort": "Sort",
+    "nameAZ": "Name (A-Z)",
+    "design": "design",
+    "designs": "designs",
+    "emptyState": "No designs in this category yet.",
+    "volume": "Volume",
+    "f3": "F3",
+    "f3High": "F3 high",
+    "maxSpl": "Max SPL",
+    "drivers": "Drivers",
+    "addToStack": "+ stack",
+    "added": "✓ added",
+    "verified": "verified"
+  },
+  "compare": {
+    "search": "Search…",
+    "normalise": "Normalise peak to 0 dB",
+    "advanced": "Advanced",
+    "has": "Has",
+    "driver": "Driver",
+    "allEnclosures": "All enclosures",
+    "freqRange": "Freq range",
+    "minHz": "min Hz",
+    "maxHz": "max Hz",
+    "enclosures": "Enclosures",
+    "loading": "Loading…",
+    "emptyState": "Select at least one box below, or the selected boxes have no {kind} data.",
+    "provenanceNote": "Solid = measured · Dashed = simulated",
+    "available": "{label} available",
+    "missing": "{label} missing",
+    "columns": {
+      "name": "Name",
+      "cat": "Cat.",
+      "topology": "Topology",
+      "source": "Source"
+    }
+  },
+  "explorer": {
+    "category": "Category",
+    "topology": "Topology",
+    "driverSize": "Driver size",
+    "sortBy": "Sort by",
+    "advanced": "Advanced",
+    "driverCount": "Driver count",
+    "f3Min": "F3 min (Hz)",
+    "f3Max": "F3 max (Hz)",
+    "minSpl": "Min SPL (dB)",
+    "volMin": "Vol min (L)",
+    "volMax": "Vol max (L)",
+    "measuredOnly": "Measured only",
+    "hasPlans": "Has plans",
+    "verifiedOnly": "Verified only",
+    "clearN": "Clear {n}",
+    "emptyState": "No enclosures match these constraints. Try loosening a filter.",
+    "enclosure": "enclosure",
+    "enclosures": "enclosures",
+    "found": "found",
+    "all": "All",
+    "plansAvailable": "Plans available",
+    "columns": {
+      "name": "Name",
+      "cat": "Cat",
+      "topology": "Topology",
+      "drivers": "Drivers",
+      "volume": "Vol (L)",
+      "f3": "F3 (Hz)",
+      "maxSpl": "SPL (dB)",
+      "provenance": "Prov.",
+      "plans": "Plans",
+      "tags": "Tags"
+    }
+  },
+  "driverExplorer": {
+    "tabs": {
+      "cone": "Cone drivers",
+      "compression": "Compression drivers",
+      "horn": "Horns"
+    },
+    "brand": "Brand",
+    "size": "Size",
+    "exit": "Exit",
+    "impedance": "Impedance",
+    "profile": "Profile",
+    "maxCutoff": "Max cutoff (Hz)",
+    "advanced": "Advanced",
+    "clearN": "Clear {n}",
+    "all": "All",
+    "driver": "driver",
+    "drivers": "drivers",
+    "horn": "horn",
+    "horns": "horns",
+    "compare": "Compare {n} →",
+    "maxComparers": "Max 4 {type} can be compared at once.",
+    "advancedCone": {
+      "maxFs": "Max Fs (Hz)",
+      "qtsMin": "Qts min",
+      "qtsMax": "Qts max",
+      "minXmax": "Min Xmax (mm)",
+      "minPe": "Min Pe (W)"
+    },
+    "advancedComp": {
+      "maxCrossover": "Max crossover (Hz)",
+      "minSens": "Min sens (dB)"
+    },
+    "columns": {
+      "brandModel": "Brand / Model",
+      "exit": "Exit",
+      "hDeg": "H°",
+      "vDeg": "V°",
+      "cutoffHz": "Cutoff Hz",
+      "mouthCm2": "Mouth cm²",
+      "depthMm": "Depth mm",
+      "profile": "Profile",
+      "size": "Size",
+      "impedanceOhm": "Ω",
+      "fs": "Fs Hz",
+      "qts": "Qts",
+      "ebpTitle": "Efficiency Bandwidth Product = Fs/Qes (<50 sealed, >100 ported)",
+      "ebp": "EBP",
+      "vas": "Vas L",
+      "xmax": "Xmax mm",
+      "pe": "Pe W",
+      "sens": "Sens dB",
+      "vcMm": "VC mm",
+      "lowHz": "Low Hz",
+      "highHz": "High Hz",
+      "minXover": "Min xover",
+      "aesW": "AES W",
+      "ds": "DS"
+    }
+  },
+  "stackBuilder": {
+    "search": "Search…",
+    "loading": "Loading…",
+    "builder": "Builder",
+    "emptyHint": "Pick a category below to add the first enclosure.",
+    "remove": "Remove",
+    "summary": "Summary",
+    "physical": "Physical",
+    "cabinets": "cabinets",
+    "totalWeight": "total weight",
+    "transportVolume": "transport volume",
+    "transportVolumeTip": "Sum of each cabinet's external bounding box, the space the stack takes in the van, before packing losses.",
+    "plywoodSheets": "plywood sheets",
+    "plywoodTip": "Full uncut sheets summed across the plans' cut lists{sheetInfo}. ~ if any plan lacks a sheet count.",
+    "acoustic": "Acoustic",
+    "maxSplLabel": "max SPL @1 m",
+    "maxSplTip": "Power-sum of each band's max SPL plus its array gain (subs +6 dB/doubling, mid/top +3), at 1 m. ~ if any cab lacks a max-SPL figure.",
+    "bandwidth": "bandwidth (Hz)",
+    "powerElectrical": "Power & electrical",
+    "aesContinuous": "AES (continuous)",
+    "programPower": "program power",
+    "ampPeak": "amp peak",
+    "ampPeakTip": "2× AES = +3 dB, the sine / amplifier peak convention, not a music-headroom figure (music crest is ≥6 dB).",
+    "minGenerator": "min generator",
+    "generatorTip": "Continuous AES draw ÷ {efficiency} amp efficiency × {headroom} headroom (run a genset at ≤ ~75 %). Older non-PFC amps draw more reactive power. Derate further.",
+    "ampMatching": "Amplifier matching",
+    "noImpedance": "no nominal impedance data",
+    "noPower": "no power data",
+    "noSpl": "no SPL data",
+    "channelN": "{n}ch",
+    "channelPrefix": "{n} channels ·",
+    "wiringsNote": "Wirings are per channel for the selected split. Amp rating is continuous power into the chosen load: ≥ 1× the cabs' total AES, ideally 2× for clean peaks, a clipping amp kills drivers faster than honest overpowering. Loads shown are nominal: a stated minimum-impedance dip only downgrades the rating when it dips deeper than the 0.8× nominal the IEC spec already allows for.",
+    "worstCaseLoad": "real minimum impedance (worst case): {load} Ω",
+    "coverage": "Coverage",
+    "depthFromStack": "Depth from stack",
+    "targetSpl": "Target SPL",
+    "crestFactor": "Crest factor",
+    "coverageNote": "Array gain: subs +6 dB/doubling (coupled), mid/top +3 dB/doubling (broadband) · −6 dB/distance doubling (point source) · headroom is vs target + {crestDb} dB crest peak · combines every slot sharing that category, not just the row shown",
+    "systemResponse": "System response",
+    "ampChannel": "amp ≥ {min} (ideal {ideal}) per channel",
+    "headroomOk": "+{n} dB headroom",
+    "headroomLow": "{n} dB",
+    "needMore": "{n} dB · need ×{need} (+{more} more)",
+    "splPerCab": "{spl} dB/cab",
+    "arrayGain": "+{gain} array",
+    "at": "at {d} m"
+  },
+  "systemResponse": {
+    "crossovers": "Crossovers",
+    "crossoversTip": "Each box gets its own independent highpass and lowpass corner: suggested from where its band's curve crosses the next band below/above (boxes of the same category share one band and are never crossed between each other), reaching up to one octave past either curve's measured range when needed. If the curves never actually cross even then, the closest they get stands in instead (flagged approximate), so there's always a starting point. Handoffs are raised no lower than a compression driver's protection floor, on both sides of the pair. Edit either corner to match your DSP, out-of-range values warn but are never blocked. LR4 (24 dB/oct), verify with measurements.",
+    "applyToPrediction": "apply to prediction",
+    "resetToSuggested": "Reset to suggested",
+    "resetGain": "Reset gain to 0 dB",
+    "box": "Box",
+    "gain": "gain",
+    "highpass": "highpass",
+    "lowpass": "lowpass",
+    "spectralGap": "spectral gap",
+    "raisedToCdFloor": "raised to CD floor",
+    "extrapolated": "extrapolated, verify",
+    "approximated": "closest approach, not an exact crossing",
+    "spectralBalance": "Spectral balance: subs {tilt} vs tops",
+    "spectralBalanceSuffix": "avg",
+    "loading": "Loading curves…",
+    "noSplYet": "No SPL curves loaded yet.",
+    "noSplAvailable": "No SPL curves available for the selected boxes.",
+    "chartNoteXo": "Bold = predicted system response with ideal LR4 crossovers applied (filtered bands, coherent sum, assumes time-aligned bands). Dashed = filtered individual bands. Derived prediction. Stored curves unchanged.",
+    "chartNoteNoXo": "Bold = predicted system response (per-band curves scaled by array gain, then power-summed). Dashed = individual bands. Derived prediction. Stored curves unchanged.",
+    "systemPredicted": "System (predicted)"
+  },
+  "boxCurves": {
+    "simulation": "Simulation",
+    "measurement": "Measurement",
+    "loading": "Loading…",
+    "failedToLoad": "Failed to load curves: {error}",
+    "noData": "No curve data available for this enclosure.",
+    "noKindCurve": "No {kind} curve for this driver.",
+    "simulationDashed": "simulation (dashed)",
+    "measuredSolid": "measured (solid)"
+  },
+  "designSpace": {
+    "xAxis": "X axis",
+    "yAxis": "Y axis",
+    "colorBy": "Color by",
+    "topology": "Topology",
+    "category": "Category",
+    "paretoOnly": "Pareto frontier only",
+    "loading": "Loading…",
+    "note": "Ringed points are Pareto-optimal, circle = measured, triangle = simulated. Click a point to open its plan.",
+    "provenance": "Provenance"
+  },
+  "radarCompare": {
+    "selectPlaceholder": "select...",
+    "selectPrompt": "Select at least one entry from the dropdown above, or go to the {listLabel} and check boxes to compare.",
+    "model": "Model",
+    "brand": "Brand",
+    "datasheet": "Datasheet",
+    "loading": "Loading…",
+    "link": "↗ link",
+    "remove": "Remove"
+  },
+  "driverCompare": {
+    "addLabel": "Add driver",
+    "backLabel": "← all drivers",
+    "listLabel": "driver list",
+    "axes": {
+      "cone": {
+        "sensitivity": "Sensitivity",
+        "xmax": "Xmax",
+        "power": "Power",
+        "sd": "Sd",
+        "vas": "Vas",
+        "fsInv": "Fs (inv.)"
+      },
+      "compression": {
+        "sensitivity": "Sensitivity",
+        "power": "Power",
+        "topEnd": "Top end",
+        "voiceCoil": "Voice coil",
+        "minXoverInv": "Min xover (inv.)",
+        "lowEndInv": "Low end (inv.)"
+      }
+    },
+    "rows": {
+      "cone": {
+        "size": "Size",
+        "impedance": "Impedance",
+        "fs": "Fs",
+        "qts": "Qts",
+        "qes": "Qes",
+        "qms": "Qms",
+        "vas": "Vas",
+        "sd": "Sd",
+        "xmax": "Xmax",
+        "re": "Re",
+        "bl": "BL",
+        "mms": "Mms",
+        "pe": "Pe",
+        "sensitivity": "Sensitivity"
+      },
+      "compression": {
+        "throatExit": "Throat exit",
+        "throat": "Throat",
+        "voiceCoil": "Voice coil",
+        "impedance": "Impedance",
+        "lowEnd": "Low end",
+        "topEnd": "Top end",
+        "minCrossover": "Min crossover",
+        "crossoverSlope": "Crossover slope",
+        "sensitivityHorn": "Sensitivity (horn)",
+        "fs": "Fs",
+        "magnet": "Magnet",
+        "weight": "Weight",
+        "powerAes": "Power (AES)"
+      }
+    },
+    "noteTemplate": "All axes normalised to 100 = max across {type} drivers in the catalogue. Axes marked \"(inv.)\" are inverted, so a higher score means a lower value (better)."
+  },
+  "hornCompare": {
+    "addLabel": "Add horn",
+    "backLabel": "← all horns",
+    "listLabel": "horn list",
+    "axes": {
+      "coverageH": "Coverage H",
+      "coverageV": "Coverage V",
+      "cutoffInv": "Cutoff (inv.)",
+      "mouth": "Mouth",
+      "depthInv": "Depth (inv.)"
+    },
+    "rows": {
+      "throatExit": "Throat exit",
+      "coverageHV": "Coverage (H×V)",
+      "directivity": "Directivity",
+      "constantDirectivity": "constant (CD)",
+      "flareCutoff": "Flare cutoff",
+      "mouthArea": "Mouth area",
+      "mouthWH": "Mouth (W×H)",
+      "depth": "Depth",
+      "profile": "Profile",
+      "material": "Material",
+      "weight": "Weight"
+    },
+    "note": "All axes normalised to 100 = max across horns in the catalogue. Axes marked \"(inv.)\" are inverted, so a higher score means a lower value (better)."
+  },
+  "pageActions": {
+    "copied": "copied!",
+    "share": "Share"
+  },
+  "exportMenu": {
+    "export": "Export",
+    "csv": "CSV",
+    "json": "JSON",
+    "pdf": "PDF"
+  },
+  "loadMore": {
+    "more": "{n} more…"
+  },
+  "substituteList": {
+    "driver": "Driver",
+    "fit": "Fit",
+    "notes": "Notes",
+    "compare": "Compare",
+    "compareClosest": "Compare the closest {n} against the {model} →",
+    "provenanceNoteCone": "Ranked on parameter similarity only (Qts, Fs, Vas, Xmax, sensitivity). Same nominal size required. A hint, not a simulation, model the swap before cutting or buying.",
+    "provenanceNoteComp": "Ranked on parameter similarity only (crossover floor, range, sensitivity, voice coil). Same throat exit required. A hint, not a simulation, model the swap before cutting or buying.",
+    "emptyCone": "No other {size}\" cone driver in the catalog yet.",
+    "emptyComp": "No other {size}\" exit compression driver in the catalog yet.",
+    "compareTitle": "Compare {model1} vs {model2}"
+  },
+  "enclosureDetail": {
+    "specifications": "Specifications",
+    "driversSection": "Drivers ({n})",
+    "brand": "Brand",
+    "model": "Model",
+    "format": "Format",
+    "impedance": "Impedance",
+    "fs": "Fs",
+    "detail": "Detail",
+    "pe": "Pe",
+    "sensitivity": "Sensitivity",
+    "measurementsSims": "Measurements / Simulations",
+    "images": "Images",
+    "plans": "Plans",
+    "sources": "Sources",
+    "relatedEnclosures": "Also uses these drivers",
+    "downloadPdf": "Download PDF",
+    "by": "by",
+    "rev": "rev",
+    "verified": "verified",
+    "coneDetail": "Qts {qts} · Vas {vas} L · Xmax {xmax} mm",
+    "compDetail": "{fLow}-{fHigh} Hz · xover ≥ {minXo} Hz",
+    "exitSuffix": "\" exit",
+    "specRows": {
+      "topology": "Topology",
+      "ways": "Ways",
+      "buildComplexity": "Build complexity",
+      "netVolume": "Net volume",
+      "grossVolume": "Gross volume",
+      "dimensions": "Dimensions (H×W×D)",
+      "footprint": "Footprint",
+      "weight": "Weight",
+      "f3": "F3",
+      "f6": "F6",
+      "fb": "Fb (port/vent tuning)",
+      "f3High": "F3 high",
+      "maxSpl": "Max SPL",
+      "maxSplExcursion": "Max SPL (excursion-limited)",
+      "maxSplThermal": "Max SPL (thermal-limited)",
+      "sensitivity": "Sensitivity",
+      "impedanceMin": "Impedance minimum",
+      "coverageAngle": "Coverage angle",
+      "recommendedCrossover": "Recommended crossover",
+      "hornCutoff": "Horn cutoff",
+      "hornMouth": "Horn mouth",
+      "hornThroat": "Horn throat",
+      "recommendedPower": "Recommended power",
+      "powerAes": "Power handling (AES)",
+      "powerProgram": "Power handling (program)",
+      "maxPortVelocity": "Max port velocity",
+      "outputDensity": "Output density",
+      "plywoodThickness": "Plywood thickness",
+      "plywoodSheets": "Plywood sheets",
+      "connectors": "Connectors"
+    }
+  },
+  "driverDetail": {
+    "specifications": "Specifications",
+    "allDrivers": "all drivers",
+    "tsParams": "Thiele-Small parameters",
+    "compSpecs": "Compression driver specs",
+    "enclosures": "Used in enclosures",
+    "substitutes": "Substitute candidates",
+    "mateHorns": "Compatible horns (same exit)",
+    "mateCDs": "Compatible compression drivers (same exit)",
+    "alignmentHint": "Alignment hint",
+    "noCompatible": "None in the catalog yet.",
+    "specRows": {
+      "nominalSize": "Nominal size",
+      "impedance": "Impedance",
+      "fs": "Fs",
+      "qts": "Qts",
+      "qes": "Qes",
+      "qms": "Qms",
+      "vas": "Vas",
+      "sd": "Sd",
+      "xmax": "Xmax",
+      "re": "Re",
+      "bl": "Bl",
+      "mms": "Mms",
+      "pe": "Pe",
+      "sensitivity": "Sensitivity",
+      "throatExit": "Throat exit",
+      "throat": "Throat",
+      "voiceCoil": "Voice coil",
+      "usableRange": "Usable range",
+      "minCrossover": "Min crossover",
+      "crossoverSlope": "Crossover slope",
+      "sensitivityHorn": "Sensitivity (on horn)",
+      "magnet": "Magnet",
+      "weight": "Weight",
+      "powerAes": "Power (AES)"
+    },
+    "alignmentHints": {
+      "sealed": "EBP < 50: favours a sealed (closed) alignment.",
+      "flexible": "EBP 50-100: works in either a sealed or ported alignment.",
+      "ported": "EBP > 100: favours a ported (bass-reflex) alignment."
+    },
+    "ebpLabel": "EBP",
+    "sealedVbLabel": "Sealed Vb (closed alignment): {vb} L"
+  },
+  "hornDetail": {
+    "specifications": "Specifications",
+    "compatibleCDs": "Compatible compression drivers (same exit)",
+    "noCompatibleCDs": "No compression drivers with this exit in the catalog.",
+    "compatibleDrivers": "Compatible compression drivers"
+  },
+  "help": {
+    "toc": {
+      "using": "Using the site",
+      "glossary": "Glossary"
+    },
+    "sections": {
+      "using": {
+        "heading": "Using the site",
+        "finding": {
+          "heading": "Finding enclosures",
+          "catalog": {
+            "term": "Catalog",
+            "ariaLabel": "Link to Catalog",
+            "def": "All enclosures as cards. Filter by category (sub · kick · mid · top) to narrow the list. Each card links to the full design page with spec table, curves, plans, and driver info."
+          },
+          "find": {
+            "term": "Find by constraints",
+            "ariaLabel": "Link to Find by constraints",
+            "def": "Filter on hard numbers: F3, max SPL, internal volume, driver size and count, topology, and tags. Sort by any metric including efficiency densities (dB/L, dB/kg) to find the best design for a given constraint."
+          },
+          "explore": {
+            "term": "Design space",
+            "ariaLabel": "Link to Design space",
+            "def": "Scatter plot of any two metrics across the full catalog, with Pareto frontier highlighting. Good for spotting which designs are genuinely best on two axes at once."
+          }
+        },
+        "comparing": {
+          "heading": "Comparing builds",
+          "compareEnclosures": {
+            "term": "Compare enclosures",
+            "ariaLabel": "Link to Compare enclosures",
+            "def": "Overlay response curves (SPL, phase, impedance…) from multiple enclosures. Measurements are prioritised over sims when both exist. Optional peak normalisation lets you compare shapes regardless of absolute level."
+          },
+          "compareDrivers": {
+            "term": "Compare drivers",
+            "ariaLabel": "Link to Compare drivers",
+            "def": "T/S parameters side by side plus a radar chart, up to 4 drivers. Links are shareable via ?ids= in the URL."
+          }
+        },
+        "driversHorns": {
+          "heading": "Drivers & horns",
+          "driverCatalog": {
+            "term": "Driver catalog",
+            "ariaLabel": "Link to Driver catalog",
+            "def": "Cone · compression · horn tabs with filter and sort. Each driver page shows full specs, derived hints (EBP, sealed Vb), and every enclosure in the catalog that uses it."
+          },
+          "substitutes": {
+            "term": "Substitute candidates",
+            "ariaLabel": "Link to Substitute candidates",
+            "def": "Every driver and enclosure page lists drop-in alternatives (same size for cones, same exit for compression drivers), ranked by parametric similarity and tiered close · usable · risky. Flags warn when impedance, power handling, or Xmax regress."
+          },
+          "hornMatching": {
+            "term": "Horn ↔ compression driver matching",
+            "ariaLabel": "Link to Horn matching",
+            "def": "Horn pages list compatible compression drivers and vice-versa, matched on throat exit diameter. No stored link, derived live from the specs."
+          }
+        },
+        "planningRig": {
+          "heading": "Planning a rig",
+          "stackBuilder": {
+            "term": "Stack builder",
+            "ariaLabel": "Link to Stack builder",
+            "def": "Assemble a full rig from catalog boxes with per-line quantities. The state is encoded in the URL so builds are shareable. The summary covers cabinet count, weight, transport volume, plywood sheets, bandwidth, and power-summed max SPL with per-category array gain."
+          },
+          "ampMatching": {
+            "term": "Amplifier matching",
+            "ariaLabel": "Link to Amplifier matching",
+            "def": "For each line, every series/parallel wiring of the cabs is shown with the resulting load rated ok · caution (below 4 Ω) · danger (below 2 Ω) · inefficient (above 16 Ω), plus recommended amp channel sizing."
+          },
+          "crossoverSuggestions": {
+            "term": "Crossover suggestions",
+            "ariaLabel": "Link to Crossover suggestions",
+            "def": "One crossover point per adjacent band pair: the enclosure's stated value when available, otherwise the geometric mean of the overlap range, clamped to compression driver protection floors. Spectral gaps are reported rather than papered over."
+          },
+          "systemResponse": {
+            "term": "Predicted system response",
+            "ariaLabel": "Link to Predicted system response",
+            "def": "Per-band curves plus a composite. The LR4 toggle applies ideal Linkwitz-Riley 4th-order filters at the suggested crossover points and shows the coherent sum."
+          }
+        },
+        "dataProvenance": {
+          "heading": "Data & provenance",
+          "measuredVsSim": {
+            "term": "Measured vs sim badges",
+            "ariaLabel": "Link to Measured vs sim badges",
+            "def": "Every enclosure is marked measured or sim. Measurements come from REW or Klippel; sims from Hornresp or AkAbak. The two are never blended on the same curve."
+          },
+          "exports": {
+            "term": "Exports",
+            "ariaLabel": "Link to Exports",
+            "def": "Compare and stack views export CSV or JSON. The stack also has a print-friendly sheet. Raw data is available via JSON APIs: /api/manifest.json, /api/drivers.json, /api/horns.json, /api/curves/<slug>.json."
+          }
+        }
+      },
+      "glossary": {
+        "heading": "Glossary",
+        "subtitle": "The vocabulary behind the specs: enough to read a datasheet and size a rig.",
+        "driver": {
+          "heading": "Driver parameters",
+          "fs": {
+            "term": "Fs (Hz)",
+            "def": "Free-air resonance of the driver: the frequency where the moving mass and suspension naturally resonate. A driver makes little useful output below Fs in most boxes, a sub driver wants Fs under ~40 Hz."
+          },
+          "qts": {
+            "term": "Qts / Qes / Qms",
+            "def": "How damped the driver's resonance is: Qes is electrical damping (motor strength), Qms mechanical (suspension losses), Qts the combination. Qts is the single most important matching parameter when swapping drivers, a box designed around Qts 0.35 behaves differently with a 0.5 driver."
+          },
+          "vas": {
+            "term": "Vas (L)",
+            "def": "Equivalent compliance volume: the volume of air with the same springiness as the driver's suspension. Together with Qts and Fs it sets the box volume and tuning a driver wants."
+          },
+          "xmax": {
+            "term": "Xmax (mm)",
+            "def": "How far the cone can travel (one way) while the voice coil stays in the magnetic gap. Beyond it output stops rising and distortion climbs fast. Xmax bounds a sub's maximum clean SPL at low frequencies."
+          },
+          "sd": {
+            "term": "Sd (cm²)",
+            "def": "Effective radiating area of the cone. SPL capability at low frequencies is set by Sd × Xmax (displaced volume): two 15″ drivers move roughly as much air as one 21″."
+          },
+          "sensitivity": {
+            "term": "Sensitivity (dB)",
+            "def": "SPL at 1 m for 1 W (2.83 V into 8 Ω) input. 3 dB more sensitivity = same loudness for half the amp power. Horn loading trades box size for sensitivity, which is why scoops and horns rule freeparty rigs."
+          },
+          "ebp": {
+            "term": "EBP",
+            "def": "Efficiency Bandwidth Product: Fs ÷ Qes. A rule of thumb for what loading suits a driver: under 50 favours sealed, over 100 favours ported/horn, in between works either way."
+          },
+          "minCrossover": {
+            "term": "Min crossover (Hz)",
+            "def": "The lowest frequency a compression driver may be crossed at (with the stated slope). Crossing lower sends excursion the diaphragm can't take, this is how tweeters and CDs die at parties. When in doubt, cross higher."
+          }
+        },
+        "system": {
+          "heading": "Box & system figures",
+          "f3": {
+            "term": "F3 / F6 (Hz)",
+            "def": "The frequency where the box's response has fallen 3 dB (or 6 dB) below its average level: the practical lower limit of the cabinet. Lower F3 = deeper bass, usually paid for in box size or sensitivity."
+          },
+          "fb": {
+            "term": "Fb (Hz)",
+            "def": "Port/vent tuning frequency of a ported or horn box. Below Fb the driver unloads, excursion rises fast and Xmax limits output. A subsonic highpass just below Fb protects the drivers."
+          },
+          "maxSpl": {
+            "term": "Max SPL (dB)",
+            "def": "Loudest output at 1 m before a limit is hit. Two independent ceilings: excursion-limited below Fb (cone travel runs out) and thermal-limited above (voice coil heat). The headline figure is whichever applies."
+          },
+          "crestFactor": {
+            "term": "Crest factor (dB)",
+            "def": "Gap between a signal's peaks and its average (RMS) level. Compressed dance music sits around 6 dB; a sine test tone is 3 dB. Your amp must pass the peaks cleanly while the cabs see the average power."
+          },
+          "arrayGain": {
+            "term": "Array gain / coupling",
+            "def": "Stacking cabinets adds output: subs close together couple coherently (+6 dB per doubling, four subs play 12 dB louder than one), while mid/top cabs sum as power (+3 dB per doubling). This is why sub walls work."
+          },
+          "distanceLoss": {
+            "term": "Distance loss",
+            "def": "A point source loses 6 dB per doubling of distance: 130 dB at 1 m is ~104 dB at 20 m. Big stacks and walls behave better than this in their coupled range, but it's the safe planning assumption."
+          },
+          "crossover": {
+            "term": "Crossover / LR4",
+            "def": "The filter splitting the signal between sub, kick, mid and top. LR4 (Linkwitz-Riley 4th order, 24 dB/oct) is the live-sound default: each side is −6 dB at the crossover point and they sum flat when time-aligned."
+          },
+          "provenance": {
+            "term": "Measured vs sim",
+            "def": "Curves here are either simulated (Hornresp/AkAbak prediction) or measured on a real build (REW, Klippel). Sims are honest starting points; measurements are reality. The catalog never blends the two."
+          }
+        },
+        "power": {
+          "heading": "Power & electrical",
+          "aesPower": {
+            "term": "AES / program / peak power",
+            "def": "AES: continuous power the driver survives (2 h noise test). Program: ~2× AES, the music rating. Peak: ~4× AES, instantaneous. Match amps on continuous power into the real load, not the peak number on the sticker."
+          },
+          "impedance": {
+            "term": "Impedance (Ω)",
+            "def": "The electrical load the cabinet presents. Nominal (4/8/16 Ω) is an average, real impedance dips lower with frequency. Halving the load roughly doubles amp power drawn, until the amp runs out of current."
+          },
+          "wiring": {
+            "term": "Series / parallel wiring",
+            "def": "Parallel divides impedance (two 8 Ω cabs = 4 Ω), series adds it (= 16 Ω). Most amps are happy at 4 Ω, good ones at 2 Ω; below that you cook the amp. Underpowering with a clipping amp kills more drivers than honest overpowering."
+          }
+        },
+        "topologies": {
+          "heading": "Topologies",
+          "sealed": {
+            "term": "Sealed",
+            "def": "A closed box: tight, predictable, compact, forgiving of driver substitutions, but the least efficient way to make bass. Rare in freeparty rigs except for infra duty."
+          },
+          "bass_reflex": {
+            "term": "Bass reflex (ported)",
+            "def": "A box with a tuned port that boosts output around Fb. Best extension per litre, easy to build and sim, the default for kicks and tops, common for subs. Watch port velocity (chuffing) at high level."
+          },
+          "bandpass": {
+            "term": "Bandpass",
+            "def": "The driver fires into a chamber and all output leaves through ports: high output over a narrow band, with the box acting as a filter. Loud but one-note if pushed beyond its band; harder to verify without measurements."
+          },
+          "tapped_horn": {
+            "term": "Tapped horn",
+            "def": "A folded horn where both sides of the cone feed the same path. The best SPL per litre and per watt in its passband, but very driver-specific: a tapped horn designed for one driver rarely works with another. Sim before substituting anything."
+          },
+          "front_loaded_horn": {
+            "term": "Front-loaded horn",
+            "def": "A horn in front of the cone (often with a sealed or vented rear chamber): big sensitivity gains and controlled directivity. Needs a large mouth to load low, which is why bass horns are huge or stacked in multiples."
+          },
+          "folded_horn": {
+            "term": "Folded horn",
+            "def": "A horn path folded to fit a transportable box (W-bins and friends). Classic punchy festival kick/bass sound; the fold compromises the top of its range slightly."
+          },
+          "scoop": {
+            "term": "Scoop",
+            "def": "A rear-loaded horn open at the front: the freeparty classic. Cheap to build, forgiving of driver choice and build tolerances, very loud per watt, at the cost of muddier, less controlled bass than a tapped horn or reflex. Walls of scoops are a sound system rite of passage."
+          },
+          "transmission_line": {
+            "term": "Transmission line",
+            "def": "A long damped duct behind the driver, ~quarter-wavelength at tuning: deep, clean extension from a moderate box. More a hi-fi/studio choice than a rig workhorse, big for the SPL they make."
+          }
+        }
+      }
+    }
+  }
+}

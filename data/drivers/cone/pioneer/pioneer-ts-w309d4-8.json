@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W309D4",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37.2,
+  "qts": 0.811,
+  "qes": 0.87,
+  "qms": 11.86,
+  "vasL": 33.8,
+  "sdCm2": 518.8,
+  "xmaxMm": 5.7,
+  "reOhm": 5.8,
+  "bl": 17.8,
+  "mmsG": 204.4,
+  "peW": 400,
+  "sensitivityDb": 86.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

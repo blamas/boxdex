@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "G12T-75 v2026",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 85,
+  "qts": 0.595,
+  "qes": 0.63,
+  "qms": 10.6,
+  "vasL": 61,
+  "sdCm2": 517,
+  "xmaxMm": 2,
+  "reOhm": 6.8,
+  "bl": 11.1,
+  "mmsG": 21.5,
+  "peW": 75,
+  "sensitivityDb": 100.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

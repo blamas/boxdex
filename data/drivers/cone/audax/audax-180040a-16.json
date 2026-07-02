@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "180040A",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 22.4,
+  "qts": 0.392,
+  "qes": 0.41,
+  "qms": 8.71,
+  "vasL": 239.6,
+  "sdCm2": 572,
+  "xmaxMm": 8,
+  "reOhm": 11.3,
+  "bl": 19.4,
+  "mmsG": 96.6,
+  "peW": 150,
+  "sensitivityDb": 88.7
+}

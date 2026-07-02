@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DELTA PRO 15A",
+  "impedanceOhm": 8,
+  "sizeInch": 15,
+  "fsHz": 42,
+  "qts": 0.4,
+  "qes": 0.44,
+  "qms": 4.73,
+  "vasL": 243.5,
+  "sdCm2": 856.3,
+  "xmaxMm": 4.3,
+  "peW": 400,
+  "sensitivityDb": 101.6,
+  "reOhm": 5.71,
+  "bl": 14.5,
+  "mmsG": 61,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Delta_Pro_15A.pdf"
+}

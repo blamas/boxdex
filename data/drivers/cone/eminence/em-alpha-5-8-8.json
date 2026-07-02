@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "ALPHA 5-8",
+  "impedanceOhm": 8,
+  "sizeInch": 5,
+  "fsHz": 87,
+  "qts": 0.54,
+  "qes": 0.56,
+  "qms": 11.81,
+  "vasL": 6.14,
+  "sdCm2": 102.6,
+  "xmaxMm": 5.92,
+  "peW": 125,
+  "sensitivityDb": 89.4,
+  "reOhm": 5,
+  "bl": 6.22,
+  "mmsG": 8,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Alpha_5_8.pdf"
+}

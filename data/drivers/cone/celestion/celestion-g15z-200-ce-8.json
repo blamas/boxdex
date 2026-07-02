@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "G15Z-200 CE",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.497,
+  "qes": 0.54,
+  "qms": 6.25,
+  "vasL": 190.1,
+  "sdCm2": 855.3,
+  "xmaxMm": 4,
+  "reOhm": 5.9,
+  "bl": 14.4,
+  "mmsG": 67.5,
+  "peW": 200,
+  "sensitivityDb": 98.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

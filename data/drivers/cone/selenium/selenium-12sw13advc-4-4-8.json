@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "12SW13ADVC 4+4",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.854,
+  "qes": 0.93,
+  "qms": 10.45,
+  "vasL": 47,
+  "sdCm2": 507,
+  "xmaxMm": 7,
+  "reOhm": 7.7,
+  "bl": 16.5,
+  "mmsG": 141.9,
+  "peW": 600,
+  "sensitivityDb": 86.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SELENIUM"
+}

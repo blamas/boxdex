@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Oberton",
+  "model": "ND100-2",
+  "impedanceOhm": 8,
+  "exitInch": 2,
+  "voiceCoilMm": 100,
+  "fLowHz": 800,
+  "fHighHz": 20000,
+  "minCrossoverHz": 800,
+  "sensitivityHornDb": 112.5,
+  "peW": 125,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-hf-drivers/482-nd100-2.html"
+}

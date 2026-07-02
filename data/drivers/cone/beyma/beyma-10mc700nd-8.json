@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "10MC700Nd",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 63,
+  "qts": 0.22,
+  "qes": 0.24,
+  "qms": 3.8,
+  "vasL": 20,
+  "sdCm2": 350,
+  "xmaxMm": 7,
+  "reOhm": 5.2,
+  "mmsG": 54,
+  "peW": 700,
+  "sensitivityDb": 97,
+  "weightKg": 3.6,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/110MC70ND8/altavoz-10mc700nd-8-oh/"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2043G",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 31,
+  "qts": 0.343,
+  "qes": 0.36,
+  "qms": 7.3,
+  "vasL": 384,
+  "sdCm2": 1270,
+  "xmaxMm": 6.6,
+  "reOhm": 2.7,
+  "bl": 15.1,
+  "mmsG": 155.2,
+  "peW": 350,
+  "sensitivityDb": 101.7
+}

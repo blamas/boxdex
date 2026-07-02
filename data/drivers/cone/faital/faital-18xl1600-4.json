@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18XL1600",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 32,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 8.6,
+  "vasL": 201.1,
+  "sdCm2": 1212,
+  "xmaxMm": 12.92,
+  "reOhm": 3,
+  "mmsG": 252.3,
+  "peW": 1600,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neodymium slug crown",
+  "weightKg": 12.2,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=201070141"
+}

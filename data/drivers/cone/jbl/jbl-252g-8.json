@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "252G",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 23,
+  "qts": 0.25,
+  "qes": 0.26,
+  "qms": 6.3,
+  "vasL": 178,
+  "sdCm2": 530,
+  "xmaxMm": 7,
+  "reOhm": 4.4,
+  "bl": 16.1,
+  "mmsG": 105.9,
+  "peW": 250,
+  "sensitivityDb": 93.8
+}

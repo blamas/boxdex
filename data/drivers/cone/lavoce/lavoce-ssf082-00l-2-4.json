@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "SSF082.00L",
+  "sizeInch": 8,
+  "impedanceOhm": 4,
+  "fsHz": 49,
+  "qts": 0.41,
+  "qes": 0.44,
+  "qms": 7.54,
+  "vasL": 9.93,
+  "sdCm2": 220,
+  "xmaxMm": 10.3,
+  "reOhm": 3.2,
+  "bl": 12.79,
+  "mmsG": 72.5,
+  "peW": 350,
+  "sensitivityDb": 87.5,
+  "datasheetUrl": "https://lavocespeakers.com/product/ssf082-00l-2/"
+}

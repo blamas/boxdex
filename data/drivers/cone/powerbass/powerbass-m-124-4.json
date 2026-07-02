@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powerbass",
+  "model": "M-124",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 29.15,
+  "qts": 0.41,
+  "qes": 0.463,
+  "qms": 3.6,
+  "vasL": 77.3,
+  "sdCm2": 511,
+  "xmaxMm": 9.5,
+  "reOhm": 3.2,
+  "bl": 13.26,
+  "mmsG": 139,
+  "peW": 375,
+  "sensitivityDb": 88,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/powerbass-m-124/specifications"
+}

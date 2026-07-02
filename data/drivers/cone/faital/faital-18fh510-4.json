@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "18FH510",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 13.6,
+  "vasL": 391.4,
+  "sdCm2": 1207,
+  "xmaxMm": 9.45,
+  "reOhm": 3.3,
+  "mmsG": 146.3,
+  "peW": 600,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 8.8,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=151070151"
+}

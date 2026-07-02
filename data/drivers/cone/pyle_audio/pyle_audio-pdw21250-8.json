@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pyle Audio",
+  "model": "PDW21250",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 22.4,
+  "qts": 0.331,
+  "qes": 0.38,
+  "qms": 2.596,
+  "vasL": 703.8,
+  "sdCm2": 1706,
+  "xmaxMm": 9,
+  "reOhm": 6.3,
+  "bl": 26.1,
+  "mmsG": 292.6,
+  "peW": 1000,
+  "sensitivityDb": 96.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PYLE%20AUDIO"
+}

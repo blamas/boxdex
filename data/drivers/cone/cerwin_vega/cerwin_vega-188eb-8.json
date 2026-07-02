@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Cerwin-Vega",
+  "model": "188EB",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.295,
+  "qes": 0.364,
+  "qms": 1.556,
+  "vasL": 200,
+  "sdCm2": 1000,
+  "xmaxMm": 4.4,
+  "reOhm": 6.2,
+  "bl": 20.3,
+  "mmsG": 83.9,
+  "peW": 400,
+  "sensitivityDb": 100.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CERWIN-VEGA"
+}

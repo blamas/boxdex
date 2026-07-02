@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L15P400",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 36,
+  "qts": 0.25,
+  "qes": 0.27,
+  "qms": 7.5,
+  "vasL": 160,
+  "sdCm2": 910,
+  "xmaxMm": 8,
+  "reOhm": 4.9,
+  "bl": 24.8,
+  "mmsG": 150,
+  "peW": 400,
+  "sensitivityDb": 96.3,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l15p400"
+}

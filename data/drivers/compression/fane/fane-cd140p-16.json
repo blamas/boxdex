@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Fane",
+  "model": "CD-140P",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 44,
+  "fLowHz": 2000,
+  "fHighHz": 18000,
+  "minCrossoverHz": 3500,
+  "sensitivityHornDb": 105,
+  "peW": 40,
+  "datasheetUrl": "https://fane-international.com/downloads/FaneCD-140PDatasheet010519.pdf"
+}

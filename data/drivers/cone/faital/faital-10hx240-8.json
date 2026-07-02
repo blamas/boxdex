@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "10HX240",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 65,
+  "qts": 0.275,
+  "qes": 0.3,
+  "qms": 3.3,
+  "vasL": 31.8,
+  "sdCm2": 347,
+  "xmaxMm": 3.5,
+  "reOhm": 5.3,
+  "bl": 15.2,
+  "mmsG": 31.8,
+  "peW": 250,
+  "sensitivityDb": 98.4
+}

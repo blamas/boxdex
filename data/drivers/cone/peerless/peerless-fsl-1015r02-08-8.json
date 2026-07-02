@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peerless",
+  "model": "FSL-1015R02-08",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 68.4,
+  "qts": 0.616,
+  "qes": 0.72,
+  "qms": 4.25,
+  "vasL": 37.7,
+  "sdCm2": 369.8,
+  "xmaxMm": 2.2,
+  "reOhm": 5.47,
+  "bl": 9.5,
+  "mmsG": 27.5,
+  "peW": 75,
+  "sensitivityDb": 95.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEERLESS"
+}

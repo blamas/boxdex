@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "18NLW9400",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.26,
+  "qes": 0.28,
+  "qms": 6.1,
+  "vasL": 268,
+  "sdCm2": 1225,
+  "xmaxMm": 9.5,
+  "reOhm": 5,
+  "bl": 26,
+  "mmsG": 180,
+  "peW": 1200,
+  "sensitivityDb": 98,
+  "magnetMaterial": "neo",
+  "weightKg": 8.7,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/18-0/8/18NLW9400"
+}

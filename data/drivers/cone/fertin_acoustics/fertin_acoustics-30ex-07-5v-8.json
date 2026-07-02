@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fertin Acoustics",
+  "model": "30EX-07.5V",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.304,
+  "qes": 0.32,
+  "qms": 6,
+  "vasL": 76,
+  "sdCm2": 491.1,
+  "xmaxMm": 2.1,
+  "reOhm": 6,
+  "bl": 17.8,
+  "mmsG": 63.9,
+  "peW": 40,
+  "sensitivityDb": 95.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FERTIN%20ACOUSTICS"
+}

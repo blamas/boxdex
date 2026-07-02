@@ -1,0 +1,60 @@
+---
+name: "HSR FAITH118"
+category: sub
+topology: bass_reflex
+drivers:
+  - rcf-lf18x451-8
+driverCount: 1
+netVolumeL: 280
+dims:
+  wMm: 600
+  hMm: 704
+  dMm: 800
+plywoodThicknessMm: 18
+specs:
+  f3Hz: 33
+  fbHz: 35.2
+  sensitivityDb: 98
+  impedanceNominalOhm: 8
+  powerAesW: 1500
+  powerProgramW: 3000
+  maxSplDb: 130
+  recommendedCrossoverHz: 90
+simulations:
+  - driver: [rcf-lf18x451-8]
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u-1w.csv
+    note: "1U single cab, 1W/1m, Hornresp, digitized from plan PDF ±2 dB"
+  - driver: [rcf-lf18x451-8]
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-4u.csv
+    count: 4
+    note: "4U stacked, Hornresp, digitized from plan PDF ±2 dB"
+measurements: []
+plans:
+  - plan.pdf
+author: "HSR sonorisation"
+sourceUrl: "https://hsrsonorisation.fr"
+license: "LicenseRef-Permission"
+licenseNote: "Publicly distributed in La Bible des Caissons (non-commercial free collection), non-commercial use and redistribution permitted"
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+  - frenchcore
+verified: false
+connectors:
+  - speakON NL4
+---
+
+Single 18" front-loaded bass reflex designed by HSR sonorisation. Externally 600×704×800 mm
+(338 L gross), 18 mm Finnish birch plywood. Designed around the RCF LF18X451.
+
+Recommended subsonic HP filter: 29 Hz @ 24 dB/oct. Recommended system crossover: 90 Hz @ 24 dB/oct.
+
+Sensitivity figures per the datasheet: 98 dB/W/m (1U), 103 dB/W/m (4U stacked).
+Max SPL: 130 dB RMS / 141 dB peak at 4U with 6000 W.
+
+*netVolumeL is estimated from external dims; not stated in the plans.*

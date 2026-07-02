@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "MAG Audio",
+  "model": "M 1805",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 37.5,
+  "qts": 0.357,
+  "qes": 0.367,
+  "qms": 13.2,
+  "vasL": 138.5,
+  "sdCm2": 1244,
+  "xmaxMm": 7.1,
+  "reOhm": 5.35,
+  "bl": 31.1,
+  "mmsG": 282.1,
+  "peW": 1200,
+  "sensitivityDb": 96.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MAG%20AUDIO"
+}

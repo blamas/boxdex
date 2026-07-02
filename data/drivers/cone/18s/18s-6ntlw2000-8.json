@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "6NTLW2000",
+  "sizeInch": 6.5,
+  "impedanceOhm": 8,
+  "fsHz": 86,
+  "qts": 0.35,
+  "qes": 0.38,
+  "qms": 5,
+  "vasL": 4.6,
+  "sdCm2": 133,
+  "xmaxMm": 4.9,
+  "reOhm": 5.1,
+  "bl": 11.6,
+  "mmsG": 19,
+  "peW": 320,
+  "sensitivityDb": 93,
+  "magnetMaterial": "neo",
+  "weightKg": 1.2,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/6-5/8/6ntlw2000"
+}

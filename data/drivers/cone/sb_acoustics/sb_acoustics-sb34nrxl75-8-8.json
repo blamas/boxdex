@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Acoustics",
+  "model": "SB34NRXL75-8",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.275,
+  "qes": 0.29,
+  "qms": 5.5,
+  "vasL": 205,
+  "sdCm2": 508,
+  "xmaxMm": 9.6,
+  "reOhm": 6.2,
+  "bl": 16.5,
+  "mmsG": 92.4,
+  "peW": 200,
+  "sensitivityDb": 91.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20ACOUSTICS"
+}

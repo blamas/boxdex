@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "BLACK WIDOW 1205-8",
+  "sizeInch": 12,
+  "impedanceOhm": 5.2,
+  "fsHz": 55.6,
+  "qts": 0.28,
+  "qes": 0.29,
+  "qms": 8.7,
+  "vasL": 69,
+  "sdCm2": 549,
+  "xmaxMm": 4.5,
+  "reOhm": 5.2,
+  "peW": 350,
+  "sensitivityDb": 98
+}

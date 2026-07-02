@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "PHL Audio",
+  "model": "3821",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 54,
+  "qts": 0.183,
+  "qes": 0.19,
+  "qms": 4.8,
+  "vasL": 28,
+  "sdCm2": 356,
+  "xmaxMm": 3.6,
+  "reOhm": 5,
+  "bl": 22.2,
+  "mmsG": 55.1,
+  "peW": 400,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PHL%20AUDIO"
+}

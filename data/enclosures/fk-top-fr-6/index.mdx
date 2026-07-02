@@ -1,0 +1,40 @@
+---
+name: FK Top FR 6
+category: top
+topology: bass_reflex
+drivers:
+  - 18s-6nmb420-8
+driverCount: 1
+netVolumeL: 12
+dims:
+  wMm: 200
+  hMm: 280
+  dMm: 200
+specs:
+  f3Hz: 100
+  f3HzHigh: 20000
+  sensitivityDb: 89
+  maxSplDb: 112
+  powerAesW: 120
+  recommendedCrossoverHz: 150
+simulations:
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U fullrange sim
+measurements:
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+    note: 1U measured
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+---
+
+FK Top FR 6: 6.5" fullrange top, ported. Compact satellite, 100 Hz to 20 kHz.

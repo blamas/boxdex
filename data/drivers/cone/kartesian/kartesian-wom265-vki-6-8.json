@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kartesian",
+  "model": "WOM265_VKI-6",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.344,
+  "qes": 0.37,
+  "qms": 4.8,
+  "vasL": 114.6,
+  "sdCm2": 390,
+  "xmaxMm": 10,
+  "reOhm": 4,
+  "bl": 10.3,
+  "mmsG": 52.4,
+  "peW": 350,
+  "sensitivityDb": 94.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KARTESIAN"
+}

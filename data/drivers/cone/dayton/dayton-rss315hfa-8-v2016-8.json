@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "RSS315HFA-8 v2016",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 22.2,
+  "qts": 0.444,
+  "qes": 0.54,
+  "qms": 2.5,
+  "vasL": 97.2,
+  "sdCm2": 506,
+  "xmaxMm": 11,
+  "reOhm": 6.5,
+  "bl": 17.9,
+  "mmsG": 189.8,
+  "peW": 400,
+  "sensitivityDb": 85.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

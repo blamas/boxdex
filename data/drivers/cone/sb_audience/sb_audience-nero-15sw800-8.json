@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "NERO-15SW800",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 32,
+  "qts": 0.354,
+  "qes": 0.37,
+  "qms": 8.24,
+  "vasL": 128,
+  "sdCm2": 860.5,
+  "xmaxMm": 8.6,
+  "reOhm": 5.2,
+  "bl": 23.8,
+  "mmsG": 200.6,
+  "peW": 800,
+  "sensitivityDb": 94.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

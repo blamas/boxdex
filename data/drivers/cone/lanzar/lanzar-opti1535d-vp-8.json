@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Lanzar",
+  "model": "OPTI1535D vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.587,
+  "qes": 0.702,
+  "qms": 3.587,
+  "vasL": 55.4,
+  "sdCm2": 779,
+  "xmaxMm": 10.4,
+  "reOhm": 4,
+  "bl": 21.5,
+  "mmsG": 432.2,
+  "peW": 1600,
+  "sensitivityDb": 88.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LANZAR"
+}

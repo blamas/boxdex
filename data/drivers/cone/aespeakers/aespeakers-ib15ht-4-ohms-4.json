@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "IB15HT 4 Ohms",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 16,
+  "qts": 0.7,
+  "qes": 0.78,
+  "qms": 6.8,
+  "vasL": 440,
+  "sdCm2": 830,
+  "xmaxMm": 9,
+  "reOhm": 2.7,
+  "bl": 8.7,
+  "mmsG": 217.2,
+  "peW": 300,
+  "sensitivityDb": 90.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

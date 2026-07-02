@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "PRO 10",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 67.7,
+  "qts": 0.395,
+  "qes": 0.456,
+  "qms": 2.85,
+  "vasL": 25.1,
+  "sdCm2": 350,
+  "xmaxMm": 2.5,
+  "reOhm": 5.97,
+  "bl": 14.33,
+  "mmsG": 36.9,
+  "peW": 200,
+  "sensitivityDb": 94.2
+}

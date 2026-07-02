@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Precision Devices",
+  "model": "PD2150",
+  "sizeInch": 21,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.19,
+  "qes": 0.2,
+  "qms": 5.51,
+  "vasL": 628,
+  "sdCm2": 1630,
+  "xmaxMm": 19,
+  "reOhm": 5.48,
+  "bl": 34.28,
+  "mmsG": 305,
+  "peW": 1000,
+  "sensitivityDb": 99,
+  "magnetMaterial": "ceramic",
+  "weightKg": 27.2,
+  "datasheetUrl": "http://www.precisiondevices.co.uk/ShowDetails.asp?id=16"
+}

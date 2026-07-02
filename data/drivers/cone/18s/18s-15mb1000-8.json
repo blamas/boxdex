@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15MB1000",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 48,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 6,
+  "vasL": 132.5,
+  "sdCm2": 850,
+  "xmaxMm": 6,
+  "reOhm": 5.5,
+  "bl": 21,
+  "mmsG": 85,
+  "peW": 850,
+  "sensitivityDb": 98,
+  "magnetMaterial": "ferrite",
+  "weightKg": 11.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15MB1000"
+}

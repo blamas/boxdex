@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "18XB1301DS",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35.7,
+  "qts": 0.302,
+  "qes": 0.316,
+  "qms": 6.79,
+  "vasL": 172.9,
+  "sdCm2": 1158,
+  "xmaxMm": 12,
+  "reOhm": 5.13,
+  "bl": 26.86,
+  "mmsG": 197.95,
+  "peW": 1300,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/408-18xb1301ds.html"
+}

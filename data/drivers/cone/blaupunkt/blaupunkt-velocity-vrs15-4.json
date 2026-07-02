@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Blaupunkt",
+  "model": "VELOCITY VRS15",
+  "sizeInch": 15,
+  "impedanceOhm": 4,
+  "fsHz": 21,
+  "qts": 0.499,
+  "qes": 0.53,
+  "qms": 8.5,
+  "vasL": 291,
+  "sdCm2": 750,
+  "xmaxMm": 7.5,
+  "reOhm": 3.12,
+  "bl": 11,
+  "mmsG": 155.6,
+  "peW": 600,
+  "sensitivityDb": 93.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BLAUPUNKT"
+}

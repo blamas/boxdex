@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "KappaLITE 3012LF",
+  "impedanceOhm": 8,
+  "sizeInch": 12,
+  "fsHz": 37,
+  "qts": 0.32,
+  "qes": 0.34,
+  "qms": 6.94,
+  "vasL": 106.65,
+  "sdCm2": 545.4,
+  "xmaxMm": 9.1,
+  "peW": 450,
+  "sensitivityDb": 95.5,
+  "reOhm": 5.6,
+  "bl": 16.7,
+  "mmsG": 72,
+  "datasheetUrl": "https://cdn.shopify.com/s/files/1/0270/8665/1462/files/Kappalite_3012LF.pdf"
+}

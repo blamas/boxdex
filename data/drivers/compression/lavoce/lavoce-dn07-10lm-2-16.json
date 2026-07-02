@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "LaVoce",
+  "model": "DN07.10LM",
+  "impedanceOhm": 16,
+  "exitInch": 0.75,
+  "voiceCoilMm": 25.4,
+  "fLowHz": 2000,
+  "fHighHz": 18000,
+  "minCrossoverHz": 2500,
+  "sensitivityHornDb": 109,
+  "peW": 10,
+  "datasheetUrl": "https://lavocespeakers.com/product/dn07-10lm-2/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Europsonic",
+  "model": "TS38/300",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.553,
+  "qes": 0.69,
+  "qms": 2.79,
+  "vasL": 608.5,
+  "sdCm2": 855,
+  "xmaxMm": 4.5,
+  "reOhm": 5.4,
+  "bl": 8.4,
+  "mmsG": 47.4,
+  "peW": 150,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EUROPSONIC"
+}

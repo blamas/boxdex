@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powerbass",
+  "model": "L-104D 10",
+  "sizeInch": 10,
+  "impedanceOhm": 2,
+  "fsHz": 31.5,
+  "qts": 0.393,
+  "qes": 0.42,
+  "qms": 6.1,
+  "vasL": 35,
+  "sdCm2": 320.5,
+  "xmaxMm": 8.4,
+  "reOhm": 1.6,
+  "bl": 8.9,
+  "mmsG": 105,
+  "peW": 350,
+  "sensitivityDb": 93.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=POWERBASS"
+}

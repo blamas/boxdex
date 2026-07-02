@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "10CXN64",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 68,
+  "qts": 0.31,
+  "qes": 0.33,
+  "qms": 5.6,
+  "vasL": 23,
+  "sdCm2": 320,
+  "xmaxMm": 5.5,
+  "reOhm": 5.6,
+  "bl": 15.8,
+  "mmsG": 33.5,
+  "peW": 250,
+  "sensitivityDb": 95.2,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-transducer/10/8/10cxn64"
+}

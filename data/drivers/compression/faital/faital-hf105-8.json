@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Faital PRO",
+  "model": "HF105",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 37,
+  "fLowHz": 1400,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1700,
+  "sensitivityHornDb": 107,
+  "peW": 40,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 1.1,
+  "datasheetUrl": "https://faitalpro.com/en/products/HF_Drivers/product_details/index.php?id=502010310"
+}

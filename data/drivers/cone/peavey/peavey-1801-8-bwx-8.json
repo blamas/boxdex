@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Peavey",
+  "model": "1801-8 BWX",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 40.4,
+  "qts": 0.525,
+  "qes": 0.58,
+  "qms": 5.59,
+  "vasL": 284.9,
+  "sdCm2": 1237,
+  "xmaxMm": 5,
+  "reOhm": 6.23,
+  "bl": 17.8,
+  "mmsG": 116.8,
+  "peW": 350,
+  "sensitivityDb": 98.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PEAVEY"
+}

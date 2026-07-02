@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "LaVoce",
+  "model": "SAN184.02",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 38,
+  "qts": 0.406,
+  "qes": 0.42,
+  "qms": 11.9,
+  "vasL": 150,
+  "sdCm2": 1225,
+  "xmaxMm": 7.9,
+  "reOhm": 5.2,
+  "bl": 27,
+  "mmsG": 246,
+  "peW": 1200,
+  "sensitivityDb": 96.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=LAVOCE"
+}

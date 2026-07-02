@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "DEFINIMAX 4015 LF",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.5,
+  "qes": 0.54,
+  "qms": 6.73,
+  "vasL": 115.5,
+  "sdCm2": 872.9,
+  "xmaxMm": 9,
+  "reOhm": 5.04,
+  "bl": 18.1,
+  "mmsG": 132.8,
+  "peW": 1200,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE111",
+  "impedanceOhm": 16,
+  "exitInch": 1,
+  "voiceCoilMm": 36,
+  "fLowHz": 1000,
+  "fHighHz": 17000,
+  "minCrossoverHz": 1200,
+  "sensitivityHornDb": 108.5,
+  "peW": 25,
+  "weightKg": 0.32,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1/16/DE111"
+}

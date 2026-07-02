@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SB Audience",
+  "model": "ROSSO-18SW650",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 31,
+  "qts": 0.418,
+  "qes": 0.44,
+  "qms": 8.32,
+  "vasL": 304.3,
+  "sdCm2": 1256.6,
+  "xmaxMm": 9,
+  "reOhm": 5,
+  "bl": 20.6,
+  "mmsG": 191.7,
+  "peW": 650,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SB%20AUDIENCE"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "12W7AE-3",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 27.2,
+  "qts": 0.482,
+  "qes": 0.514,
+  "qms": 7.807,
+  "vasL": 66,
+  "sdCm2": 541.9,
+  "xmaxMm": 13.7,
+  "reOhm": 2.47,
+  "bl": 13.2,
+  "mmsG": 213.5,
+  "peW": 1000,
+  "sensitivityDb": 91.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JL%20AUDIO"
+}

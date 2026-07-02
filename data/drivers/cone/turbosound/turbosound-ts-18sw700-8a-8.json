@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Turbosound",
+  "model": "TS-18SW700/8A",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.433,
+  "qes": 0.44,
+  "qms": 25.9,
+  "vasL": 250,
+  "sdCm2": 1288,
+  "xmaxMm": 7.5,
+  "reOhm": 5.2,
+  "bl": 22.4,
+  "mmsG": 192.3,
+  "peW": 700,
+  "sensitivityDb": 97.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TURBOSOUND"
+}

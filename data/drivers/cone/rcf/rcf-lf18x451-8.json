@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF18X451",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.28,
+  "qes": 0.29,
+  "qms": 6.7,
+  "vasL": 220,
+  "sdCm2": 1200,
+  "xmaxMm": 14,
+  "reOhm": 5.4,
+  "bl": 30.5,
+  "mmsG": 260,
+  "peW": 1800,
+  "sensitivityDb": 97,
+  "magnetMaterial": "ceramic",
+  "weightKg": 15.2,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf18x451"
+}

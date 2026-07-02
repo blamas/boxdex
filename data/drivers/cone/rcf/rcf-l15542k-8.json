@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "L15/542K",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.36,
+  "qes": 0.375,
+  "qms": 9,
+  "vasL": 146,
+  "sdCm2": 850,
+  "xmaxMm": 4.5,
+  "reOhm": 7.2,
+  "bl": 21.35,
+  "mmsG": 84,
+  "peW": 400,
+  "sensitivityDb": 97.3,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/l15542k"
+}

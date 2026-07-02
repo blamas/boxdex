@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "TVM",
+  "model": "ARN 312-00/4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 22,
+  "qts": 0.289,
+  "qes": 0.33,
+  "qms": 2.3,
+  "vasL": 206,
+  "sdCm2": 530,
+  "xmaxMm": 6.4,
+  "reOhm": 3.5,
+  "bl": 12.1,
+  "mmsG": 100,
+  "peW": 100,
+  "sensitivityDb": 93.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TVM"
+}

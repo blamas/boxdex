@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Davis",
+  "model": "31ST12M v2009",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 22,
+  "qts": 0.39,
+  "qes": 0.51,
+  "qms": 1.65,
+  "vasL": 398,
+  "sdCm2": 567.5,
+  "xmaxMm": 9,
+  "reOhm": 6.97,
+  "bl": 10.6,
+  "mmsG": 59.4,
+  "peW": 100,
+  "sensitivityDb": 91.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAVIS"
+}

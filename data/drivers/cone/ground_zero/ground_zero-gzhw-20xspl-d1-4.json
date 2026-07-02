@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ground Zero",
+  "model": "GZHW 20XSPL-D1",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 38.9,
+  "qts": 0.555,
+  "qes": 0.6,
+  "qms": 7.47,
+  "vasL": 5.2,
+  "sdCm2": 280,
+  "xmaxMm": 5.4,
+  "reOhm": 2.01,
+  "bl": 17,
+  "mmsG": 353.8,
+  "peW": 700,
+  "sensitivityDb": 85.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=GROUND%20ZERO"
+}

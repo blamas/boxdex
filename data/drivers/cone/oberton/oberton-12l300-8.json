@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12L300",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 53.8,
+  "qts": 0.254,
+  "qes": 0.261,
+  "qms": 9.98,
+  "vasL": 79.63,
+  "sdCm2": 514.7,
+  "xmaxMm": 3.25,
+  "reOhm": 5.35,
+  "bl": 16.78,
+  "mmsG": 40.65,
+  "peW": 300,
+  "sensitivityDb": 100.5,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/175-12l300.html"
+}

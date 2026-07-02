@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "EVX-180A",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 29,
+  "qts": 0.27,
+  "qes": 0.29,
+  "qms": 4,
+  "vasL": 416,
+  "sdCm2": 1220,
+  "xmaxMm": 6.4,
+  "reOhm": 5,
+  "bl": 21.8,
+  "mmsG": 151.1,
+  "peW": 600,
+  "sensitivityDb": 99.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELECTROVOICE"
+}

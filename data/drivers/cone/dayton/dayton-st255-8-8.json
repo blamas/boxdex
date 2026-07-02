@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Dayton Audio",
+  "model": "ST255-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 41.1,
+  "qts": 0.31,
+  "qes": 0.32,
+  "qms": 9.94,
+  "vasL": 48.7,
+  "sdCm2": 340,
+  "xmaxMm": 5.5,
+  "reOhm": 6.3,
+  "bl": 15.9,
+  "mmsG": 49.9,
+  "peW": 250,
+  "sensitivityDb": 93.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DAYTON"
+}

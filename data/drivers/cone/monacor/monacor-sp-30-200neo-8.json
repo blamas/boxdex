@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Monacor",
+  "model": "SP-30/200NEO",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 43,
+  "qts": 0.409,
+  "qes": 0.44,
+  "qms": 5.77,
+  "vasL": 98,
+  "sdCm2": 510,
+  "xmaxMm": 2,
+  "reOhm": 5.5,
+  "bl": 13.1,
+  "mmsG": 51,
+  "peW": 200,
+  "sensitivityDb": 96.1
+}

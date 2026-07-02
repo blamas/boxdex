@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JBL",
+  "model": "2150",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.637,
+  "qes": 0.73,
+  "qms": 5,
+  "vasL": 99.1,
+  "sdCm2": 754.2,
+  "xmaxMm": 2,
+  "reOhm": 5.5,
+  "bl": 13.2,
+  "mmsG": 67.4,
+  "peW": 50,
+  "sensitivityDb": 97.1
+}

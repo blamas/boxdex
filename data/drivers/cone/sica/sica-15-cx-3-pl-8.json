@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "15 CX 3 PL",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44.5,
+  "qts": 0.407,
+  "qes": 0.42,
+  "qms": 12.88,
+  "vasL": 152.4,
+  "sdCm2": 855.3,
+  "xmaxMm": 5.5,
+  "reOhm": 5.1,
+  "bl": 17.1,
+  "mmsG": 86.1,
+  "peW": 400,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SICA"
+}

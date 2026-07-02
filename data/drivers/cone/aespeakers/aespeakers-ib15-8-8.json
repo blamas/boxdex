@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "AE Speakers",
+  "model": "IB15-8",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 16,
+  "qts": 0.7,
+  "qes": 0.78,
+  "qms": 6.8,
+  "vasL": 439,
+  "sdCm2": 830,
+  "xmaxMm": 9.3,
+  "reOhm": 5.5,
+  "bl": 12.4,
+  "mmsG": 217.7,
+  "peW": 300,
+  "sensitivityDb": 87.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=AESPEAKERS"
+}

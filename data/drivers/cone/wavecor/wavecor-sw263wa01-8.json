@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Wavecor",
+  "model": "SW263WA01",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 24,
+  "qts": 0.44,
+  "qes": 0.45,
+  "qms": 20,
+  "vasL": 40.5,
+  "sdCm2": 314,
+  "xmaxMm": 8.7,
+  "reOhm": 6.3,
+  "bl": 17.8,
+  "mmsG": 150.1,
+  "peW": 200,
+  "sensitivityDb": 84,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=WAVECOR"
+}

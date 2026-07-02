@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tymphany",
+  "model": "LAT 500-04",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 28,
+  "qts": 0.474,
+  "qes": 0.5,
+  "qms": 9,
+  "vasL": 81,
+  "sdCm2": 525,
+  "xmaxMm": 7.7,
+  "reOhm": 3.1,
+  "bl": 13,
+  "mmsG": 154.1,
+  "peW": 250,
+  "sensitivityDb": 91.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TYMPHANY"
+}

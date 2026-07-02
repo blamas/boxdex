@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Gladen",
+  "model": "RS-X 10",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 35.57,
+  "qts": 0.46,
+  "qes": 0.49,
+  "qms": 6.16,
+  "vasL": 27.8,
+  "sdCm2": 346,
+  "xmaxMm": 10,
+  "reOhm": 3.74,
+  "bl": 13.82,
+  "mmsG": 121.6,
+  "peW": 300,
+  "sensitivityDb": 85.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/gladen-rs-x-10/specifications"
+}

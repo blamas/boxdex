@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "15 BP 2.5 CS",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46.4,
+  "qts": 0.499,
+  "qes": 0.59,
+  "qms": 3.24,
+  "vasL": 167.9,
+  "sdCm2": 754.7,
+  "xmaxMm": 2.5,
+  "reOhm": 6.77,
+  "bl": 13.7,
+  "mmsG": 55.9,
+  "peW": 250,
+  "sensitivityDb": 97.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SICA"
+}

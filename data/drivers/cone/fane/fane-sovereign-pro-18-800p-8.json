@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Fane",
+  "model": "SOVEREIGN PRO 18-800P",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 34.5,
+  "qts": 0.338,
+  "qes": 0.363,
+  "qms": 4.83,
+  "vasL": 264,
+  "sdCm2": 1131,
+  "xmaxMm": 7.5,
+  "reOhm": 6.6,
+  "bl": 23.9,
+  "mmsG": 144.5,
+  "peW": 800,
+  "sensitivityDb": 97.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FANE"
+}

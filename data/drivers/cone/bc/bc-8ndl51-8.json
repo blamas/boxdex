@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "8NDL51",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 66,
+  "qts": 0.37,
+  "qes": 0.41,
+  "qms": 3.6,
+  "vasL": 14,
+  "sdCm2": 220,
+  "xmaxMm": 7,
+  "reOhm": 5.3,
+  "bl": 12.4,
+  "mmsG": 28,
+  "peW": 200,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/8/8/8NDL51"
+}

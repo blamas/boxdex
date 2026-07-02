@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Mercuriale",
+  "model": "PAR 312 M0",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.323,
+  "qes": 0.39,
+  "qms": 1.88,
+  "vasL": 59.9,
+  "sdCm2": 517,
+  "xmaxMm": 3.4,
+  "reOhm": 5.7,
+  "bl": 17.2,
+  "mmsG": 66,
+  "peW": 200,
+  "sensitivityDb": 96,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MERCURIALE"
+}

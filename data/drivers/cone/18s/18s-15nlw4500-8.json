@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15NLW4500",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.26,
+  "qes": 0.27,
+  "qms": 7.8,
+  "vasL": 111,
+  "sdCm2": 881,
+  "xmaxMm": 14.5,
+  "reOhm": 5.4,
+  "bl": 29.7,
+  "mmsG": 201,
+  "peW": 1500,
+  "sensitivityDb": 96.3,
+  "magnetMaterial": "neo",
+  "weightKg": 11.4,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15nlw4500"
+}

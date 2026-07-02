@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Mivoc",
+  "model": "AWM 124",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 30,
+  "qts": 0.251,
+  "qes": 0.26,
+  "qms": 7.5,
+  "vasL": 68,
+  "sdCm2": 507,
+  "xmaxMm": 4.7,
+  "reOhm": 3.1,
+  "bl": 18.3,
+  "mmsG": 149.1,
+  "peW": 220,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=MIVOC"
+}

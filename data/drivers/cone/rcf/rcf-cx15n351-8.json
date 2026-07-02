@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "CX15N351",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 55,
+  "qts": 0.258,
+  "qes": 0.27,
+  "qms": 6,
+  "vasL": 110,
+  "sdCm2": 860,
+  "xmaxMm": 3.8,
+  "reOhm": 5.6,
+  "bl": 23.8,
+  "mmsG": 78.9,
+  "peW": 450,
+  "sensitivityDb": 101.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=RCF"
+}

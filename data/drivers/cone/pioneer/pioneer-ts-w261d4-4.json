@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Pioneer",
+  "model": "TS-W261D4",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 46,
+  "qts": 1.044,
+  "qes": 1.12,
+  "qms": 15.49,
+  "vasL": 17.7,
+  "sdCm2": 344,
+  "xmaxMm": 8.4,
+  "reOhm": 2,
+  "bl": 7.6,
+  "mmsG": 112.2,
+  "peW": 1200,
+  "sensitivityDb": 89.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=PIONEER"
+}

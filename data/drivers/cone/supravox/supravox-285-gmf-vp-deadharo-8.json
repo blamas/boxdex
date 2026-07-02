@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Supravox",
+  "model": "285 GMF vp deadharo",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 37.9,
+  "qts": 0.278,
+  "qes": 0.29,
+  "qms": 6.85,
+  "vasL": 263,
+  "sdCm2": 442.6,
+  "xmaxMm": 4,
+  "reOhm": 5.86,
+  "bl": 9.4,
+  "mmsG": 18.4,
+  "peW": 70,
+  "sensitivityDb": 100.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SUPRAVOX"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Celestion",
+  "model": "GUITARE",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.244,
+  "qes": 0.3,
+  "qms": 1.32,
+  "vasL": 148,
+  "sdCm2": 820,
+  "xmaxMm": 3,
+  "reOhm": 6.7,
+  "bl": 24.1,
+  "mmsG": 106.1,
+  "peW": 200,
+  "sensitivityDb": 97.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=CELESTION"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12B45V",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 47.88,
+  "qts": 0.354,
+  "qes": 0.371,
+  "qms": 7.37,
+  "vasL": 58.51,
+  "sdCm2": 514.7,
+  "xmaxMm": 10.5,
+  "reOhm": 4.9,
+  "bl": 16.65,
+  "mmsG": 69.86,
+  "peW": 450,
+  "sensitivityDb": 94,
+  "datasheetUrl": "https://www.oberton.com/en/products/ferrite-loudspeakers/479-12b45v.html"
+}

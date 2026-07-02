@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Faital PRO",
+  "model": "8FE400",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 100,
+  "qts": 0.53,
+  "qes": 0.58,
+  "qms": 5.3,
+  "vasL": 9.4,
+  "sdCm2": 233,
+  "xmaxMm": 4.77,
+  "reOhm": 5,
+  "mmsG": 20.5,
+  "peW": 200,
+  "sensitivityDb": 96,
+  "magnetMaterial": "ferrite ring",
+  "weightKg": 2.78,
+  "datasheetUrl": "https://faitalpro.com/en/products/LF_Loudspeakers/product_details/index.php?id=401030110"
+}

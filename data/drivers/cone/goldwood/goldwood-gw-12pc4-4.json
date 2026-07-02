@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Goldwood",
+  "model": "GW-12PC/4",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 32.9,
+  "qts": 0.394,
+  "qes": 0.439,
+  "qms": 3.9,
+  "vasL": 73.199,
+  "sdCm2": 488,
+  "xmaxMm": 5,
+  "reOhm": 3.7,
+  "bl": 13.608,
+  "mmsG": 106.824,
+  "peW": 225,
+  "sensitivityDb": 89.6,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/goldwood-sound-gw-12pc-4/specifications"
+}

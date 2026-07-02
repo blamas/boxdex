@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Electro-Voice",
+  "model": "DL15X",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 47.3,
+  "qts": 0.337,
+  "qes": 0.355,
+  "qms": 6.53,
+  "vasL": 136,
+  "sdCm2": 779,
+  "xmaxMm": 4.1,
+  "reOhm": 6.3,
+  "bl": 19.3,
+  "mmsG": 70.7,
+  "peW": 400,
+  "sensitivityDb": 99.1,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ELECTROVOICE"
+}

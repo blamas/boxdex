@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "B&C",
+  "model": "15PS100",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.43,
+  "qes": 0.47,
+  "qms": 6,
+  "vasL": 103,
+  "sdCm2": 855,
+  "xmaxMm": 8,
+  "reOhm": 5.2,
+  "bl": 21.2,
+  "mmsG": 160,
+  "peW": 700,
+  "sensitivityDb": 95,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/lf-driver/15/8/15PS100"
+}

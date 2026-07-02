@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "15NB500",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42.77,
+  "qts": 0.255,
+  "qes": 0.26,
+  "qms": 11.97,
+  "vasL": 121.46,
+  "sdCm2": 829.6,
+  "xmaxMm": 7.25,
+  "reOhm": 5.23,
+  "bl": 24.31,
+  "mmsG": 109.57,
+  "peW": 500,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/123-15nb500.html"
+}

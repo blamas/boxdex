@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Accuton",
+  "model": "AS250-8-552",
+  "sizeInch": 10,
+  "impedanceOhm": 16,
+  "fsHz": 20,
+  "qts": 0.327,
+  "qes": 0.35,
+  "qms": 5,
+  "vasL": 159,
+  "sdCm2": 382,
+  "xmaxMm": 9,
+  "reOhm": 8,
+  "bl": 15.3,
+  "mmsG": 81.5,
+  "peW": 300,
+  "sensitivityDb": 87.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ACCUTON"
+}

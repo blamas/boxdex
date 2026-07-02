@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "GAMMA 15 A2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.301,
+  "qes": 0.32,
+  "qms": 5.13,
+  "vasL": 314.1,
+  "sdCm2": 856.3,
+  "xmaxMm": 3,
+  "reOhm": 5.98,
+  "bl": 17.2,
+  "mmsG": 76.1,
+  "peW": 300,
+  "sensitivityDb": 98.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}

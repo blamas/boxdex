@@ -1,0 +1,43 @@
+---
+name: FK BR 18x2B
+category: sub
+topology: bass_reflex
+drivers:
+  - selenium-tornado-18sw3a-4
+  - selenium-tornado-18sw3a-4
+driverCount: 2
+netVolumeL: 520
+dims:
+  wMm: 760
+  hMm: 860
+  dMm: 760
+weightKg: 65
+specs:
+  f3Hz: 36
+  fbHz: 42
+  sensitivityDb: 101
+  impedanceNominalOhm: 2
+  maxSplDb: 136
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - selenium-tornado-18sw3a-4
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - selenium-tornado-18sw3a-4
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tribe
+  - tekno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+Dual 18" bass reflex, two Selenium Tornado 18SW3A in parallel (2 Ohm).

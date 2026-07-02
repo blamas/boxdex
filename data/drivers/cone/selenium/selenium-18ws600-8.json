@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "18WS600",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 33,
+  "qts": 0.43,
+  "qes": 0.44,
+  "qms": 18.8,
+  "vasL": 375,
+  "sdCm2": 1185,
+  "xmaxMm": 3.8,
+  "reOhm": 6.3,
+  "bl": 19.2,
+  "mmsG": 123.7,
+  "peW": 600,
+  "sensitivityDb": 96.7
+}

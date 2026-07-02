@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SpeaKa",
+  "model": "CPA10-100",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 56.3,
+  "qts": 0.437,
+  "qes": 0.511,
+  "qms": 3.012,
+  "vasL": 39.4,
+  "sdCm2": 333.3,
+  "xmaxMm": 3,
+  "reOhm": 7.1,
+  "bl": 12.5,
+  "mmsG": 31.6,
+  "peW": 100,
+  "sensitivityDb": 93.9,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SPEAKA"
+}

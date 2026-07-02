@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Powerbass",
+  "model": "L-124D 12",
+  "sizeInch": 12,
+  "impedanceOhm": 2,
+  "fsHz": 29,
+  "qts": 0.489,
+  "qes": 0.54,
+  "qms": 5.2,
+  "vasL": 59,
+  "sdCm2": 471,
+  "xmaxMm": 9,
+  "reOhm": 1.6,
+  "bl": 9.3,
+  "mmsG": 158.8,
+  "peW": 400,
+  "sensitivityDb": 93.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=POWERBASS"
+}

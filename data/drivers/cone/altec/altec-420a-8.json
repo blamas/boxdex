@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Altec",
+  "model": "420A",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 22.6,
+  "qts": 0.473,
+  "qes": 0.51,
+  "qms": 6.59,
+  "vasL": 798.5,
+  "sdCm2": 825.8,
+  "xmaxMm": 2.8,
+  "reOhm": 4.6,
+  "bl": 8.7,
+  "mmsG": 59.4,
+  "peW": 25,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ALTEC"
+}

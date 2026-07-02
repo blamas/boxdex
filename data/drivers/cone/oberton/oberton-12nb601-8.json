@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Oberton",
+  "model": "12NB601",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 50.47,
+  "qts": 0.305,
+  "qes": 0.315,
+  "qms": 10.02,
+  "vasL": 38.71,
+  "sdCm2": 514.7,
+  "xmaxMm": 8.75,
+  "reOhm": 5.48,
+  "bl": 22.91,
+  "mmsG": 95.03,
+  "peW": 600,
+  "sensitivityDb": 99,
+  "datasheetUrl": "https://www.oberton.com/en/products/neodymium-loudspeakers/383-12nb601.html"
+}

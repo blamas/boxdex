@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Bose",
+  "model": "38 CM CAR AUDIO vp",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 46,
+  "qts": 0.526,
+  "qes": 0.64,
+  "qms": 2.96,
+  "vasL": 108.8,
+  "sdCm2": 779.3,
+  "xmaxMm": 4.5,
+  "reOhm": 7.2,
+  "bl": 17.5,
+  "mmsG": 93.8,
+  "peW": 250,
+  "sensitivityDb": 94.6,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=BOSE"
+}

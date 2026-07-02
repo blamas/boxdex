@@ -1,0 +1,77 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, develop]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-${{ github.ref_name }}
+  cancel-in-progress: false
+
+env:
+  SITE_AUTH_PASSWORDS: ${{ secrets.SITE_AUTH_PASSWORDS }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 26
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      # `main` deploys to the site root, `develop` to a persistent /dev/ subpath preview.
+      # Both live on the gh-pages branch simultaneously (see target-folder below).
+      - name: Compute per-branch site config
+        id: site
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "base=/boxdex/" >> "$GITHUB_OUTPUT"
+            echo "url=https://blamas.github.io/boxdex/" >> "$GITHUB_OUTPUT"
+            echo "target-folder=." >> "$GITHUB_OUTPUT"
+          else
+            echo "base=/boxdex/dev/" >> "$GITHUB_OUTPUT"
+            echo "url=https://blamas.github.io/boxdex/dev/" >> "$GITHUB_OUTPUT"
+            echo "target-folder=dev" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Compute auth hashes
+        if: ${{ env.SITE_AUTH_PASSWORDS != '' }}
+        run: |
+          HASHES=$(node -e "
+            const crypto = require('crypto');
+            const raw = process.env.SITE_AUTH_PASSWORDS;
+            const hashes = raw.split('\n').map(p => p.trim()).filter(Boolean)
+              .map(p => crypto.createHash('sha256').update(p).digest('hex'));
+            process.stdout.write(hashes.join(','));
+          ")
+          echo "SITE_AUTH_HASHES=$HASHES" >> $GITHUB_ENV
+
+      - name: Build
+        run: npm run build
+        env:
+          SITE_URL: ${{ steps.site.outputs.url }}
+          SITE_BASE: ${{ steps.site.outputs.base }}
+          SITE_AUTH_HASHES: ${{ env.SITE_AUTH_HASHES }}
+
+      - name: Pagefind
+        run: npx pagefind --site dist
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          target-folder: ${{ steps.site.outputs.target-folder }}
+          clean-exclude: |
+            dev
+            pr-preview

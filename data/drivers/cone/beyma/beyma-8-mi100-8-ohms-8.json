@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "8 MI100 8 OHMS",
+  "sizeInch": 8,
+  "impedanceOhm": 8,
+  "fsHz": 90,
+  "qts": 0.45,
+  "qes": 0.48,
+  "qms": 7.5,
+  "vasL": 12,
+  "sdCm2": 220,
+  "xmaxMm": 3,
+  "reOhm": 6,
+  "bl": 11.5,
+  "mmsG": 19,
+  "peW": 250,
+  "sensitivityDb": 96,
+  "weightKg": 3.1,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/108MI1008/altavoz-8mi100-8-oh/"
+}

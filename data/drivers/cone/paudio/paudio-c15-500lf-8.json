@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "P.Audio",
+  "model": "C15-500LF",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39,
+  "qts": 0.261,
+  "qes": 0.28,
+  "qms": 3.76,
+  "vasL": 165,
+  "sdCm2": 855,
+  "xmaxMm": 5,
+  "reOhm": 5.2,
+  "bl": 21.7,
+  "mmsG": 103.4,
+  "peW": 500,
+  "sensitivityDb": 99.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=P%20AUDIO"
+}

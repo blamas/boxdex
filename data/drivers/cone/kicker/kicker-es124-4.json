@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Kicker",
+  "model": "ES124",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 30.4,
+  "qts": 0.549,
+  "qes": 0.575,
+  "qms": 11.99,
+  "vasL": 97.7,
+  "sdCm2": 519,
+  "xmaxMm": 6.2,
+  "reOhm": 3.65,
+  "bl": 11.3,
+  "mmsG": 105.9,
+  "peW": 125,
+  "sensitivityDb": 92.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=KICKER"
+}

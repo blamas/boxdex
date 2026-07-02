@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Tannoy",
+  "model": "DC 3139 D900 SYSTEM",
+  "sizeInch": 12,
+  "impedanceOhm": 16,
+  "fsHz": 35,
+  "qts": 0.368,
+  "qes": 0.421,
+  "qms": 2.892,
+  "vasL": 103.3,
+  "sdCm2": 510.7,
+  "xmaxMm": 3.7,
+  "reOhm": 9.76,
+  "bl": 19.3,
+  "mmsG": 73.2,
+  "peW": 75,
+  "sensitivityDb": 91.3,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=TANNOY"
+}

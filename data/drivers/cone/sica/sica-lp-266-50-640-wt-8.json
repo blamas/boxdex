@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "SICA",
+  "model": "LP 266.50 / 640 WT",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 53,
+  "qts": 0.558,
+  "qes": 0.64,
+  "qms": 4.36,
+  "vasL": 51.4,
+  "sdCm2": 330,
+  "xmaxMm": 3,
+  "reOhm": 6.5,
+  "bl": 9.5,
+  "mmsG": 26.8,
+  "peW": 60,
+  "sensitivityDb": 93.7,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=SICA"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Ardan",
+  "model": "PRO W-38 vp2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 39.5,
+  "qts": 0.51,
+  "qes": 0.545,
+  "qms": 7.994,
+  "vasL": 254.7,
+  "sdCm2": 825.8,
+  "xmaxMm": 4.5,
+  "reOhm": 7.22,
+  "bl": 14.2,
+  "mmsG": 60.9,
+  "peW": 200,
+  "sensitivityDb": 97,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=ARDAN"
+}

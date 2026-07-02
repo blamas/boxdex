@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audiobahn",
+  "model": "AW1051T",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 42.7,
+  "qts": 0.82,
+  "qes": 0.96,
+  "qms": 5.64,
+  "vasL": 19.822,
+  "sdCm2": 330,
+  "xmaxMm": 13,
+  "reOhm": 3,
+  "bl": 8.88,
+  "mmsG": 94,
+  "peW": 300,
+  "sensitivityDb": 83.9,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/audiobahn-aw1051t/specifications"
+}

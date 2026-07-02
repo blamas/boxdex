@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "DD Audio",
+  "model": "DD25118C-D4 vp",
+  "sizeInch": 21.5,
+  "impedanceOhm": 8,
+  "fsHz": 37,
+  "qts": 0.841,
+  "qes": 1.084,
+  "qms": 3.756,
+  "vasL": 103,
+  "sdCm2": 1753.1,
+  "xmaxMm": 4.1,
+  "reOhm": 6.8,
+  "bl": 33.6,
+  "mmsG": 773.5,
+  "peW": 1000,
+  "sensitivityDb": 89.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=DD%20AUDIO"
+}

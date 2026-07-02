@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "6ND410",
+  "sizeInch": 6.5,
+  "impedanceOhm": 16,
+  "fsHz": 149,
+  "qts": 0.48,
+  "qes": 0.55,
+  "qms": 4.14,
+  "vasL": 6.2,
+  "sdCm2": 143,
+  "xmaxMm": 2,
+  "reOhm": 10.6,
+  "bl": 13,
+  "mmsG": 8.8,
+  "peW": 180,
+  "sensitivityDb": 102,
+  "magnetMaterial": "neo",
+  "weightKg": 1.25,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/6-5/16/6nd410%20-%2016ohm"
+}

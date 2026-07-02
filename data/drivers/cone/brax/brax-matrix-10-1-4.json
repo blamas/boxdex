@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Brax",
+  "model": "MATRIX 10.1",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 35.8,
+  "qts": 0.53,
+  "qes": 0.56,
+  "qms": 10.3,
+  "vasL": 35.34,
+  "sdCm2": 346,
+  "xmaxMm": 12.5,
+  "reOhm": 3.6,
+  "bl": 11.6,
+  "mmsG": 95,
+  "peW": 600,
+  "sensitivityDb": 86.5,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/brax-matrix-10-1/specifications"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Alpine",
+  "model": "SWE-1244E",
+  "sizeInch": 12,
+  "impedanceOhm": 4,
+  "fsHz": 31,
+  "qts": 0.53,
+  "qes": 0.631,
+  "qms": 3.3,
+  "vasL": 102.5,
+  "sdCm2": 519,
+  "xmaxMm": 7.5,
+  "reOhm": 3.3,
+  "bl": 10,
+  "mmsG": 98.4,
+  "peW": 200,
+  "sensitivityDb": 88.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/alpine-swe-1244e/specifications"
+}

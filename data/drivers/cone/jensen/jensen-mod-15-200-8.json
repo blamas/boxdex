@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Jensen",
+  "model": "MOD 15-200",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 44.3,
+  "qts": 0.431,
+  "qes": 0.44,
+  "qms": 22.1,
+  "vasL": 190,
+  "sdCm2": 755,
+  "xmaxMm": 2,
+  "reOhm": 6.3,
+  "bl": 14.7,
+  "mmsG": 54.3,
+  "peW": 200,
+  "sensitivityDb": 98.8,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=JENSEN"
+}

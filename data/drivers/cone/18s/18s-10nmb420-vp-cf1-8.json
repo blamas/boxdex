@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "10NMB420 vp CF1",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 84.8,
+  "qts": 0.318,
+  "qes": 0.344,
+  "qms": 4.154,
+  "vasL": 26,
+  "sdCm2": 378.2,
+  "xmaxMm": 3.3,
+  "reOhm": 5.53,
+  "bl": 15.3,
+  "mmsG": 27.2,
+  "peW": 350,
+  "sensitivityDb": 100.2,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=18%20SOUND"
+}

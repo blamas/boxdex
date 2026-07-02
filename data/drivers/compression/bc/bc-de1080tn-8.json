@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "B&C",
+  "model": "DE1080TN",
+  "impedanceOhm": 8,
+  "exitInch": 1.5,
+  "voiceCoilMm": 100,
+  "fLowHz": 500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 1000,
+  "sensitivityHornDb": 109,
+  "peW": 140,
+  "weightKg": 3.4,
+  "datasheetUrl": "https://www.bcspeakers.com/en/products/hf-driver/1.5/8/DE1080TN"
+}

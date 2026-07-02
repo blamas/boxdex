@@ -1,0 +1,43 @@
+---
+name: FK Top Wideband
+category: top
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+driverCount: 1
+ways: 1
+netVolumeL: 35
+dims:
+  wMm: 340
+  hMm: 480
+  dMm: 310
+weightKg: 13
+specs:
+  f3Hz: 40
+  f3HzHigh: 20000
+  sensitivityDb: 97
+  maxSplDb: 121
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - dub
+  - bass_music
+  - psytrance
+connectors:
+  - speakON NL4
+---
+
+FK Top Wideband: fullrange 12" bass reflex, 40 Hz to 20 kHz bandwidth in one driver.

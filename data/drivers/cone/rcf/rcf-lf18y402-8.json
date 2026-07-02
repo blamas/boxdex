@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "RCF",
+  "model": "LF18Y402",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 30,
+  "qts": 0.3,
+  "qes": 0.31,
+  "qms": 7.4,
+  "vasL": 274,
+  "sdCm2": 1200,
+  "xmaxMm": 12,
+  "reOhm": 5.4,
+  "bl": 26.5,
+  "mmsG": 215,
+  "peW": 1200,
+  "sensitivityDb": 97.5,
+  "weightKg": 12.5,
+  "datasheetUrl": "https://www.rcf.it/en/products/product-detail/lf18y402"
+}

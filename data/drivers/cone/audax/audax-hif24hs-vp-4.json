@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "HIF24HS vp",
+  "sizeInch": 10,
+  "impedanceOhm": 4,
+  "fsHz": 67.6,
+  "qts": 0.501,
+  "qes": 0.63,
+  "qms": 2.447,
+  "vasL": 85.3,
+  "sdCm2": 344.7,
+  "xmaxMm": 2.5,
+  "reOhm": 2.72,
+  "bl": 4.5,
+  "mmsG": 10.8,
+  "peW": 30,
+  "sensitivityDb": 102.9
+}

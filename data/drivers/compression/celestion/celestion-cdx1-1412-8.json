@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "compression",
+  "brand": "Celestion",
+  "model": "CDX1-1412",
+  "impedanceOhm": 8,
+  "exitInch": 1,
+  "voiceCoilMm": 35,
+  "fLowHz": 1500,
+  "fHighHz": 20000,
+  "minCrossoverHz": 2000,
+  "sensitivityHornDb": 106,
+  "peW": 35,
+  "magnetMaterial": "neodymium",
+  "datasheetUrl": "https://celestion.com/product/cdx1-1412/"
+}

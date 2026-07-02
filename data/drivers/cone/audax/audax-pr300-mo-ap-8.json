@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Audax",
+  "model": "PR300 MO AP",
+  "sizeInch": 12,
+  "impedanceOhm": 8,
+  "fsHz": 25,
+  "qts": 0.468,
+  "qes": 0.527,
+  "qms": 4.2,
+  "vasL": 457,
+  "sdCm2": 510,
+  "xmaxMm": 4.4,
+  "reOhm": 6.8,
+  "bl": 8.1,
+  "mmsG": 32.3,
+  "peW": 100,
+  "sensitivityDb": 94
+}

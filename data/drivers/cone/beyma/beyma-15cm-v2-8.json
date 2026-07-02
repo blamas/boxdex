@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Beyma",
+  "model": "15CM V2",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 49,
+  "qts": 0.49,
+  "qes": 0.55,
+  "qms": 4.1,
+  "vasL": 104,
+  "sdCm2": 880,
+  "xmaxMm": 7,
+  "reOhm": 6,
+  "bl": 18.8,
+  "mmsG": 106,
+  "peW": 350,
+  "sensitivityDb": 97,
+  "weightKg": 6,
+  "datasheetUrl": "https://www.beyma.com/en/products/c/low-mid-frequency/615CMV28/altavoz-15cmv2-8-oh/"
+}

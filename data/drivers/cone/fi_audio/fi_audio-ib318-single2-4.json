@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "FI Audio",
+  "model": "IB318-SINGLE2",
+  "sizeInch": 18,
+  "impedanceOhm": 4,
+  "fsHz": 22.3,
+  "qts": 0.652,
+  "qes": 0.81,
+  "qms": 3.33,
+  "vasL": 381,
+  "sdCm2": 1210,
+  "xmaxMm": 12.3,
+  "reOhm": 3,
+  "bl": 11.9,
+  "mmsG": 274.4,
+  "peW": 600,
+  "sensitivityDb": 93.4,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=FI"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "JL Audio",
+  "model": "10W1V2-8",
+  "sizeInch": 10,
+  "impedanceOhm": 8,
+  "fsHz": 26.5,
+  "qts": 0.438,
+  "qes": 0.472,
+  "qms": 6.115,
+  "vasL": 49.1009,
+  "sdCm2": 535,
+  "xmaxMm": 9.906,
+  "reOhm": 6.67,
+  "bl": 27.52,
+  "mmsG": 321.6,
+  "peW": 300,
+  "sensitivityDb": 84.7,
+  "datasheetUrl": "https://speakerboxlite.com/subwoofers/jl-audio-10w1v2-8/specifications"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "18 Sound",
+  "model": "15NMB420",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 42,
+  "qts": 0.29,
+  "qes": 0.3,
+  "qms": 6,
+  "vasL": 225,
+  "sdCm2": 900,
+  "xmaxMm": 6.5,
+  "reOhm": 5.6,
+  "bl": 19,
+  "mmsG": 73,
+  "peW": 450,
+  "sensitivityDb": 99,
+  "magnetMaterial": "neo",
+  "weightKg": 3.9,
+  "datasheetUrl": "https://www.eighteensound.it/en/products/lf-driver/15-0/8/15NMB420"
+}

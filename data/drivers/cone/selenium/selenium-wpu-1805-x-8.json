@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Selenium",
+  "model": "WPU 1805-X",
+  "sizeInch": 18,
+  "impedanceOhm": 8,
+  "fsHz": 35,
+  "qts": 0.7,
+  "qes": 0.73,
+  "qms": 21.1,
+  "vasL": 293,
+  "sdCm2": 1174,
+  "xmaxMm": 6.3,
+  "reOhm": 5.6,
+  "bl": 15.3,
+  "mmsG": 147,
+  "peW": 600,
+  "sensitivityDb": 94.2
+}

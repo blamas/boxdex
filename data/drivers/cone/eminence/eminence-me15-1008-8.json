@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../schema/driver.schema.json",
+  "type": "cone",
+  "brand": "Eminence",
+  "model": "ME15-1008",
+  "sizeInch": 15,
+  "impedanceOhm": 8,
+  "fsHz": 45,
+  "qts": 0.592,
+  "qes": 0.75,
+  "qms": 2.81,
+  "vasL": 268.1,
+  "sdCm2": 856.3,
+  "xmaxMm": 0.8,
+  "reOhm": 7.26,
+  "bl": 11.5,
+  "mmsG": 48,
+  "peW": 100,
+  "sensitivityDb": 97.5,
+  "datasheetUrl": "https://www.petoindominique.fr/php/mysql_listehp3.php?marque=EMINENCE"
+}
