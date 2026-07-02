@@ -123,7 +123,13 @@
     "emptyState": "Sélectionnez au moins un caisson ci-dessous, ou les caissons sélectionnés n'ont pas de données {kind}.",
     "provenanceNote": "Plein = mesuré · Pointillé = simulé",
     "available": "{label} disponible",
-    "missing": "{label} absent"
+    "missing": "{label} absent",
+    "columns": {
+      "name": "Nom",
+      "cat": "Cat.",
+      "topology": "Topologie",
+      "source": "Source"
+    }
   },
   "explorer": {
     "category": "Catégorie",
@@ -152,10 +158,11 @@
       "cat": "Cat",
       "topology": "Topologie",
       "drivers": "HP",
-      "volume": "Volume (L)",
+      "volume": "Vol (L)",
       "f3": "F3 (Hz)",
-      "maxSpl": "SPL max (dB)",
-      "provenance": "Provenance",
+      "maxSpl": "SPL max",
+      "provenance": "Prov.",
+      "plans": "Plans",
       "tags": "Tags"
     }
   },
@@ -214,7 +221,8 @@
       "lowHz": "Bas Hz",
       "highHz": "Haut Hz",
       "minXover": "Xover min",
-      "aesW": "AES W"
+      "aesW": "AES W",
+      "ds": "DS"
     }
   },
   "stackBuilder": {
@@ -246,12 +254,15 @@
     "noImpedance": "pas de données d'impédance nominale",
     "noPower": "pas de données de puissance",
     "noSpl": "pas de données SPL",
-    "wiringsNote": "Les câblages placent les caissons de la ligne sur un canal d'ampli (2-4 Ω nécessite un ampli stable à 2 Ω, en dessous de 2 Ω séparer sur plusieurs canaux). La puissance ampli est la puissance continue dans la charge choisie : ≥ 1× le total AES des caissons, idéalement 2× pour les peaks propres, un ampli qui clip tue les HP plus vite qu'un vrai surdimensionnement. Charges nominales uniquement, l'impédance réelle descend plus bas.",
+    "channelN": "{n}ch",
+    "channelPrefix": "{n} canaux ·",
+    "wiringsNote": "Les câblages sont par canal pour la répartition choisie. La puissance ampli est la puissance continue dans la charge choisie : ≥ 1× le total AES des caissons, idéalement 2× pour les peaks propres, un ampli qui clip tue les HP plus vite qu'un vrai surdimensionnement. Les charges affichées sont nominales : une chute d'impédance minimale déclarée ne dégrade l'évaluation que si elle descend plus bas que les 0,8× nominal déjà tolérés par la norme IEC.",
+    "worstCaseLoad": "impédance minimale réelle (pire cas) : {load} Ω",
     "coverage": "Couverture",
     "depthFromStack": "Distance depuis le stack",
     "targetSpl": "SPL cible",
     "crestFactor": "Crest factor",
-    "coverageNote": "Array gain : subs +6 dB/doublement (couplé), mid/top +3 dB/doublement (large bande) · −6 dB/doublement de distance (source ponctuelle) · le headroom est par rapport à la cible + {crestDb} dB de crest peak",
+    "coverageNote": "Array gain : subs +6 dB/doublement (couplé), mid/top +3 dB/doublement (large bande) · −6 dB/doublement de distance (source ponctuelle) · le headroom est par rapport à la cible + {crestDb} dB de crest peak · combine tous les slots de la même catégorie, pas seulement la ligne affichée",
     "systemResponse": "Réponse système",
     "ampChannel": "ampli ≥ {min} (idéal {ideal}) par canal",
     "headroomOk": "+{n} dB headroom",
@@ -263,12 +274,18 @@
   },
   "systemResponse": {
     "crossovers": "Crossovers",
-    "crossoversTip": "Points suggérés : le crossover indiqué du caisson bas quand le plan le précise, sinon la moyenne géométrique de la zone de recouvrement des bandes, jamais en dessous du plancher de protection du HP à compression. Modifiez n'importe quel point pour correspondre à votre DSP, les valeurs hors plage avertissent mais ne sont jamais bloquées. LR4 (24 dB/oct), à vérifier avec des mesures.",
+    "crossoversTip": "Chaque caisson a son propre passe-haut et passe-bas indépendants : suggérés à partir du point où la courbe de sa bande croise celle de la bande en dessous/au-dessus (les caissons de la même catégorie partagent une bande et ne sont jamais croisés entre eux), en allant jusqu'à une octave au-delà de la plage mesurée de l'une ou l'autre courbe si nécessaire. Si les courbes ne se croisent jamais même ainsi, le point le plus proche est utilisé à la place (marqué approximatif), pour toujours avoir un point de départ. Les raccords ne descendent jamais sous le plancher de protection du HP à compression, des deux côtés de la paire. Modifiez l'un ou l'autre pour correspondre à votre DSP, les valeurs hors plage avertissent mais ne sont jamais bloquées. LR4 (24 dB/oct), à vérifier avec des mesures.",
     "applyToPrediction": "appliquer à la prédiction",
     "resetToSuggested": "Réinitialiser à la valeur suggérée",
+    "resetGain": "Réinitialiser le gain à 0 dB",
+    "box": "Caisson",
+    "gain": "gain",
+    "highpass": "passe-haut",
+    "lowpass": "passe-bas",
     "spectralGap": "lacune spectrale",
     "raisedToCdFloor": "relevé au plancher CD",
-    "stated": "indiqué",
+    "extrapolated": "extrapolé, à vérifier",
+    "approximated": "point le plus proche, pas un croisement exact",
     "spectralBalance": "Équilibre spectral : subs {tilt} vs tops",
     "spectralBalanceSuffix": "moy",
     "loading": "Chargement des courbes…",
@@ -302,7 +319,8 @@
   "radarCompare": {
     "selectPlaceholder": "sélectionner...",
     "selectPrompt": "Sélectionnez au moins une entrée dans la liste déroulante ci-dessus, ou allez à {listLabel} et cochez des cases pour comparer.",
-    "parameter": "Paramètre",
+    "model": "Modèle",
+    "brand": "Marque",
     "datasheet": "Fiche technique",
     "loading": "Chargement…",
     "link": "↗ lien",

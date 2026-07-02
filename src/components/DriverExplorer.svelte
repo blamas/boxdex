@@ -2,11 +2,13 @@
 import { onMount } from "svelte";
 import { type Translations, tt } from "../i18n";
 import { filterDrivers, filterHorns, mouthCm2, sortDrivers, sortHorns } from "../lib/catalog";
+import { withAll } from "../lib/combobox-items";
 import { ebp } from "../lib/driver";
 import type { CompressionDriver, ConeDriver, Driver, Horn } from "../lib/schemas";
 import { BASE } from "../lib/site";
 import { readParam } from "../lib/url-state";
-import LoadMore from "./LoadMore.svelte";
+import Combobox from "./Combobox.svelte";
+import LoadMore, { ROW_LIMIT } from "./LoadMore.svelte";
 
 // Tabs select which catalog (and column/filter set) is active. Cone and compression are
 // the two driver branches; horns are a separate collection rendered in the same page.
@@ -23,6 +25,7 @@ let {
 
 let drivers: Driver[] = $state([]);
 let horns: Horn[] = $state([]);
+let loading = $state(true);
 let tab = $state<Tab>("cone");
 let filterBrand = $state("all");
 let filterSize = $state("all"); // size (cone) | exit (compression, horn)
@@ -51,12 +54,16 @@ onMount(async () => {
     sortKey = "exitInch";
   }
 
-  const [dRes, hRes] = await Promise.all([
-    fetch(`${BASE}/api/drivers.json`),
-    fetch(`${BASE}/api/horns.json`),
-  ]);
-  drivers = await dRes.json();
-  horns = await hRes.json();
+  try {
+    const [dRes, hRes] = await Promise.all([
+      fetch(`${BASE}/api/drivers.json`),
+      fetch(`${BASE}/api/horns.json`),
+    ]);
+    drivers = await dRes.json();
+    horns = await hRes.json();
+  } finally {
+    loading = false;
+  }
 });
 
 const isCone = $derived(tab === "cone");
@@ -87,6 +94,14 @@ const exits = $derived(
 );
 const impedances = $derived([...new Set(ofType.map((d) => d.impedanceOhm))].sort((a, b) => a - b));
 const profiles = $derived([...new Set(horns.map((h) => h.profile))].sort());
+
+const brandItems = $derived(withAll(brands, (b) => ({ id: b, label: b }), t.all));
+const sizeItems = $derived(withAll(sizes, (s) => ({ id: String(s), label: `${s}"` }), t.all));
+const exitItems = $derived(withAll(exits, (s) => ({ id: String(s), label: `${s}"` }), t.all));
+const profileItems = $derived(withAll(profiles, (p) => ({ id: p, label: p }), t.all));
+const impedanceItems = $derived(
+  withAll(impedances, (z) => ({ id: String(z), label: `${z} Ω` }), t.all)
+);
 
 const filtered = $derived(
   sortDrivers(
@@ -123,10 +138,10 @@ const filteredHorns = $derived(
 const resultCount = $derived(isHorn ? filteredHorns.length : filtered.length);
 
 // The full catalogue is ~800 rows and growing; rendering everything at once makes the
-// page sluggish. Render in 100-row pages, extended by the infinite-scroll sentinel,
+// page sluggish. Render in ROW_LIMIT-row pages extended by the infinite-scroll sentinel;
 // filters/sort still see everything.
-const ROW_LIMIT = 100;
 let limit = $state(ROW_LIMIT);
+let tableWrap = $state<HTMLElement | undefined>(undefined);
 const visibleDrivers = $derived(filtered.slice(0, limit));
 const visibleHorns = $derived(filteredHorns.slice(0, limit));
 const hiddenCount = $derived(resultCount - (isHorn ? visibleHorns.length : visibleDrivers.length));
@@ -203,7 +218,7 @@ function sortIndicator(key: SortKey) {
 }
 </script>
 
-<div class="type-tabs">
+<div class="tab-pills">
   <button class:active={tab === "cone"} onclick={() => setTab("cone")}>{t.tabs.cone}</button>
   <button class:active={tab === "compression"} onclick={() => setTab("compression")}>
     {t.tabs.compression}
@@ -215,43 +230,52 @@ function sortIndicator(key: SortKey) {
   <div class="filter-row">
     <label>
       {t.brand}
-      <select bind:value={filterBrand}>
-        <option value="all">{t.all}</option>
-        {#each brands as b}
-          <option value={b}>{b}</option>
-        {/each}
-      </select>
+      <Combobox
+        items={brandItems}
+        getId={(i) => i.id}
+        getLabel={(i) => i.label}
+        value={filterBrand}
+        searchable={false}
+        maxVisible={brandItems.length}
+        onselect={(v) => (filterBrand = v)}
+      />
     </label>
     {#if isCone}
       <label>
         {t.size}
-        <select bind:value={filterSize}>
-          <option value="all">{t.all}</option>
-          {#each sizes as s}
-            <option value={s}>{s}"</option>
-          {/each}
-        </select>
+        <Combobox
+          items={sizeItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={filterSize}
+          searchable={false}
+          onselect={(v) => (filterSize = v)}
+        />
       </label>
     {:else}
       <label>
         {t.exit}
-        <select bind:value={filterSize}>
-          <option value="all">{t.all}</option>
-          {#each exits as s}
-            <option value={s}>{s}"</option>
-          {/each}
-        </select>
+        <Combobox
+          items={exitItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={filterSize}
+          searchable={false}
+          onselect={(v) => (filterSize = v)}
+        />
       </label>
     {/if}
     {#if isHorn}
       <label>
         {t.profile}
-        <select bind:value={filterProfile}>
-          <option value="all">{t.all}</option>
-          {#each profiles as p}
-            <option value={p}>{p}</option>
-          {/each}
-        </select>
+        <Combobox
+          items={profileItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={filterProfile}
+          searchable={false}
+          onselect={(v) => (filterProfile = v)}
+        />
       </label>
       <label>
         {t.maxCutoff}
@@ -260,12 +284,14 @@ function sortIndicator(key: SortKey) {
     {:else}
       <label>
         {t.impedance}
-        <select bind:value={filterImpedance}>
-          <option value="all">{t.all}</option>
-          {#each impedances as z}
-            <option value={z}>{z} Ω</option>
-          {/each}
-        </select>
+        <Combobox
+          items={impedanceItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={filterImpedance}
+          searchable={false}
+          onselect={(v) => (filterImpedance = v)}
+        />
       </label>
       <button
         class="advanced-toggle"
@@ -274,12 +300,12 @@ function sortIndicator(key: SortKey) {
       >
         {t.advanced} {showAdvanced ? "▴" : "▾"}
         {#if !showAdvanced && advancedFilterCount > 0}
-          <span class="adv-badge">{advancedFilterCount}</span>
+          <span class="advanced-toggle-count">{advancedFilterCount}</span>
         {/if}
       </button>
     {/if}
     {#if activeFilterCount > 0}
-      <button class="clear-btn" onclick={clearFilters}>
+      <button class="clear-btn btn-ghost" onclick={clearFilters}>
         {tt(t.clearN, { n: activeFilterCount })}
       </button>
     {/if}
@@ -322,10 +348,12 @@ function sortIndicator(key: SortKey) {
   {/if}
 
   <div class="filter-footer">
-    <span class="count">
-      {resultCount}
-      {isHorn ? (resultCount === 1 ? t.horn : t.horns) : (resultCount === 1 ? t.driver : t.drivers)}
-    </span>
+    {#if !loading}
+      <span class="result-count" aria-live="polite" aria-atomic="true">
+        {resultCount}
+        {isHorn ? (resultCount === 1 ? t.horn : t.horns) : (resultCount === 1 ? t.driver : t.drivers)}
+      </span>
+    {/if}
     {#if selected.size > 0}
       <button class="compare-btn" onclick={goCompare}>
         {tt(t.compare, { n: selected.size })}
@@ -334,8 +362,20 @@ function sortIndicator(key: SortKey) {
   </div>
 </div>
 
-<div class="table-wrap">
-  {#if isHorn}
+<div class="table-wrap" bind:this={tableWrap}>
+  {#if loading}
+    <div class="skel-table">
+      {#each { length: 8 } as _}
+        <div class="skel-row-wrap">
+          <div class="skeleton skel-cell skel-cell-wide"></div>
+          <div class="skeleton skel-cell"></div>
+          <div class="skeleton skel-cell"></div>
+          <div class="skeleton skel-cell"></div>
+          <div class="skeleton skel-cell"></div>
+        </div>
+      {/each}
+    </div>
+  {:else if isHorn}
     <table>
       <thead>
         <tr>
@@ -348,6 +388,7 @@ function sortIndicator(key: SortKey) {
           <th class="sortable num" onclick={() => toggleSort("mouthCm2")}>{t.columns.mouthCm2}{sortIndicator("mouthCm2")}</th>
           <th class="sortable num" onclick={() => toggleSort("depthMm")}>{t.columns.depthMm}{sortIndicator("depthMm")}</th>
           <th>{t.columns.profile}</th>
+          <th>{t.columns.ds}</th>
         </tr>
       </thead>
       <tbody>
@@ -362,11 +403,7 @@ function sortIndicator(key: SortKey) {
               />
             </td>
             <td class="name-cell">
-              <span class="brand">{h.brand}</span>
-              <a class="model" href="{localeBase}/horns/{h.id}">{h.model}</a>
-              {#if h.datasheetUrl}
-                <a href={h.datasheetUrl} target="_blank" rel="noopener" class="ds-link">↗</a>
-              {/if}
+              <a class="model" href="{localeBase}/horns/{h.id}"><span class="brand">{h.brand}</span> {h.model}</a>
             </td>
             <td class="num">{h.exitInch}"</td>
             <td class="num">{h.coverageHorizontalDeg}°</td>
@@ -375,6 +412,7 @@ function sortIndicator(key: SortKey) {
             <td class="num">{mouthCm2(h)}</td>
             <td class="num">{h.depthMm ?? ""}</td>
             <td>{h.profile}</td>
+            <td>{#if h.datasheetUrl}<a href={h.datasheetUrl} target="_blank" rel="noopener" class="ds-link">↗</a>{/if}</td>
           </tr>
         {/each}
       </tbody>
@@ -405,6 +443,7 @@ function sortIndicator(key: SortKey) {
             <th class="sortable num" onclick={() => toggleSort("peW")}>{t.columns.aesW}{sortIndicator("peW")}</th>
             <th class="sortable num" onclick={() => toggleSort("sensitivityHornDb")}>{t.columns.sens}{sortIndicator("sensitivityHornDb")}</th>
           {/if}
+          <th>{t.columns.ds}</th>
         </tr>
       </thead>
       <tbody>
@@ -419,11 +458,7 @@ function sortIndicator(key: SortKey) {
               />
             </td>
             <td class="name-cell">
-              <span class="brand">{d.brand}</span>
-              <a class="model" href="{localeBase}/drivers/{d.id}">{d.model}</a>
-              {#if d.datasheetUrl}
-                <a href={d.datasheetUrl} target="_blank" rel="noopener" class="ds-link">↗</a>
-              {/if}
+              <a class="model" href="{localeBase}/drivers/{d.id}"><span class="brand">{d.brand}</span> {d.model}</a>
             </td>
             {#if d.type === "cone"}
               <td class="num">{d.sizeInch}"</td>
@@ -445,46 +480,22 @@ function sortIndicator(key: SortKey) {
               <td class="num">{d.peW}</td>
               <td class="num">{d.sensitivityHornDb}</td>
             {/if}
+            <td>{#if d.datasheetUrl}<a href={d.datasheetUrl} target="_blank" rel="noopener" class="ds-link">↗</a>{/if}</td>
           </tr>
         {/each}
       </tbody>
     </table>
   {/if}
+  <LoadMore remaining={hiddenCount} onmore={() => (limit += ROW_LIMIT)} root={tableWrap} />
 </div>
-
-<LoadMore remaining={hiddenCount} onmore={() => (limit += ROW_LIMIT)} />
 
 {#if selected.size > 0}
   <p class="hint">{tt(t.maxComparers, { type: isHorn ? t.horns : t.drivers })}</p>
 {/if}
 
 <style>
-  .type-tabs {
-    display: flex;
-    gap: 0.5rem;
+  .tab-pills {
     margin-bottom: 1rem;
-  }
-
-  .type-tabs button {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 4px;
-    padding: 0.4rem 0.9rem;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    cursor: pointer;
-  }
-
-  .type-tabs button:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .type-tabs button.active {
-    border-color: var(--accent);
-    color: var(--bg);
-    background: var(--accent);
   }
 
   .filters {
@@ -526,10 +537,6 @@ function sortIndicator(key: SortKey) {
     font-size: 0.875rem;
   }
 
-  .count {
-    color: var(--muted);
-  }
-
   .compare-btn {
     background: var(--accent);
     color: var(--bg);
@@ -551,53 +558,26 @@ function sortIndicator(key: SortKey) {
   }
 
   .advanced-toggle {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 4px;
-    padding: 0.3rem 0.7rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
     align-self: flex-end;
-  }
-
-  .advanced-toggle:hover,
-  .advanced-toggle.active {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .adv-badge {
-    background: var(--accent);
-    color: var(--bg);
-    border-radius: 3px;
-    padding: 0 0.3rem;
-    font-size: 0.7rem;
-    font-weight: 700;
-    line-height: 1.4;
   }
 
   .clear-btn {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 4px;
-    padding: 0.3rem 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
     align-self: flex-end;
-  }
-
-  .clear-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    padding: 0.3rem 0.75rem;
   }
 
   .table-wrap {
     overflow-x: auto;
+    overflow-y: auto;
+    max-height: 65vh;
+    scrollbar-gutter: stable;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: var(--panel);
+    z-index: 1;
   }
 
   th.sortable {
@@ -621,11 +601,7 @@ function sortIndicator(key: SortKey) {
   }
 
   .row-selected td {
-    background: rgba(57, 255, 20, 0.05);
-  }
-
-  :global([data-theme="light"]) .row-selected td {
-    background: rgba(26, 127, 55, 0.06);
+    background: var(--accent-subtle);
   }
 
   .name-cell {
@@ -634,7 +610,6 @@ function sortIndicator(key: SortKey) {
 
   .brand {
     color: var(--muted);
-    margin-right: 0.35rem;
   }
 
   .model {
@@ -645,7 +620,6 @@ function sortIndicator(key: SortKey) {
   .ds-link {
     color: var(--muted);
     font-size: 0.75rem;
-    margin-left: 0.3rem;
     text-decoration: none;
   }
 
@@ -653,10 +627,6 @@ function sortIndicator(key: SortKey) {
     color: var(--accent);
   }
 
-  input[type="checkbox"]:disabled {
-    cursor: not-allowed;
-    opacity: 0.4;
-  }
 
   .hint {
     font-family: var(--font-mono);
@@ -664,4 +634,23 @@ function sortIndicator(key: SortKey) {
     color: var(--muted);
     margin-top: 0.5rem;
   }
+
+  .skel-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .skel-row-wrap {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .skel-cell {
+    flex: 1;
+    height: 0.9rem;
+  }
+  .skel-cell-wide { flex: 3; }
 </style>

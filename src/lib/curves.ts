@@ -3,12 +3,30 @@
 
 import { CURVE_KINDS, type CurveKind, type ParsedCurve } from "./csv";
 
+// Kinds surfaced in the UI — excludes spl_stacked which is accessed via DriverCurves.stacked.
+export const DISPLAY_KINDS = CURVE_KINDS.filter((k) => k !== "spl_stacked");
+
+interface StackedEntry {
+  curve: ParsedCurve;
+  note?: string;
+}
+
 export interface DriverCurves {
   driverId: string;
-  count: number;
-  note?: string;
   source: string;
   curves: Partial<Record<CurveKind, ParsedCurve>>;
+  stacked: Partial<Record<number, StackedEntry>>; // spl_stacked curves by cabinet count
+  notes: Partial<Record<CurveKind, string>>;
+}
+
+// Available SPL count options for a driver entry: [1] if a plain curve exists, then stacked counts.
+export function availSplCounts(dc: DriverCurves): number[] {
+  return [
+    ...(dc.curves.spl ? [1] : []),
+    ...Object.keys(dc.stacked)
+      .map(Number)
+      .sort((a, b) => a - b),
+  ];
 }
 
 export interface CurvesResponse {
@@ -30,42 +48,34 @@ export const CURVE_Y_LABELS: Record<CurveKind, string> = {
 
 // Default view once a box's curves load: prefer measurements over simulations, and
 // the first kind (in CURVE_KINDS order) the group's first driver actually carries.
+// spl_stacked is excluded here because it is handled separately via the stacked map.
 export function initialCurveView(data: CurvesResponse): { tab: "sim" | "meas"; kind: CurveKind } {
   const tab = data.measurements.length > 0 ? "meas" : "sim";
   const group = tab === "meas" ? data.measurements : data.simulations;
-  const kind = CURVE_KINDS.find((k) => group[0]?.curves[k]) ?? "spl";
+  const kind = DISPLAY_KINDS.find((k) => group[0]?.curves[k]) ?? "spl";
   return { tab, kind };
 }
 
 export interface CurveEntry {
-  // Stable selection key encoding driverId, count, source, and optional note.
+  // Stable selection key: "meas:<driverId>" or "sim:<driverId>"
   key: string;
   label: string;
   dc: DriverCurves;
   isMeas: boolean;
 }
 
-function entryKey(prefix: "meas" | "sim", dc: DriverCurves): string {
-  return `${prefix}:${dc.driverId}:c${dc.count}:${dc.source}${dc.note ? `:${dc.note}` : ""}`;
-}
-
-function entryLabel(prefix: "meas" | "sim", dc: DriverCurves): string {
-  const countSuffix = dc.count > 1 ? ` · ${dc.count}×` : "";
-  const noteSuffix = dc.note ? ` · ${dc.note}` : "";
-  return `${prefix} · ${dc.driverId}${countSuffix}${noteSuffix}`;
-}
-
-// All entries for a given kind, measurements first.
+// All entries for a given kind, measurements first. spl_stacked is not surfaced here
+// because StackBuilder never requests it — use DriverCurves.stacked directly for that kind.
 export function curveEntries(payload: CurvesResponse, kind: CurveKind): CurveEntry[] {
   const result: CurveEntry[] = [];
   for (const dc of payload.measurements) {
     if (dc.curves[kind]) {
-      result.push({ key: entryKey("meas", dc), label: entryLabel("meas", dc), dc, isMeas: true });
+      result.push({ key: `meas:${dc.driverId}`, label: `meas · ${dc.driverId}`, dc, isMeas: true });
     }
   }
   for (const dc of payload.simulations) {
     if (dc.curves[kind]) {
-      result.push({ key: entryKey("sim", dc), label: entryLabel("sim", dc), dc, isMeas: false });
+      result.push({ key: `sim:${dc.driverId}`, label: `sim · ${dc.driverId}`, dc, isMeas: false });
     }
   }
   return result;

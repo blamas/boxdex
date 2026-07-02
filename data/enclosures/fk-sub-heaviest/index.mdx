@@ -1,0 +1,45 @@
+---
+name: FK Sub Heaviest
+category: sub
+topology: bass_reflex
+drivers:
+  - pyle-pdw21250-8
+  - pyle-pdw21250-8
+  - pyle-pdw21250-8
+  - pyle-pdw21250-8
+driverCount: 4
+netVolumeL: 1800
+dims:
+  wMm: 1100
+  hMm: 1400
+  dMm: 900
+weightKg: 145
+specs:
+  f3Hz: 32
+  fbHz: 38
+  sensitivityDb: 100
+  maxSplDb: 139
+  impedanceNominalOhm: 2
+simulations:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - tribe
+  - hardtek
+connectors:
+  - speakON NL8
+---
+
+FK Sub Heaviest: four 21" drivers in a single bass reflex cabinet, 145 kg loaded.

@@ -25,14 +25,13 @@ function loadCurves(
     note?: string;
   }[]
 ): DriverCurves[] {
-  // Group entries by driver-id + count + source + note; deterministic across declaration order
+  // Group by sorted driver-id concat; deterministic across declaration order.
+  // spl_stacked curves are routed into dc.stacked[count] instead of dc.curves.
   const map = new Map<string, DriverCurves>();
   for (const entry of entries) {
     const driverId = [...entry.driver.map((d) => d.id)].sort().join("+");
-    const count = entry.count ?? 1;
-    const mapKey = `${driverId}:c${count}:${entry.source}${entry.note ? `:${entry.note}` : ""}`;
-    if (!map.has(mapKey))
-      map.set(mapKey, { driverId, count, note: entry.note, source: entry.source, curves: {} });
+    if (!map.has(driverId))
+      map.set(driverId, { driverId, source: entry.source, curves: {}, stacked: {}, notes: {} });
     const key = `/data/enclosures/${slug}/${entry.file}`;
     const raw = csvFiles[key];
     if (raw == null) continue;
@@ -46,8 +45,16 @@ function loadCurves(
         );
       }
     }
-    // biome-ignore lint/style/noNonNullAssertion: mapKey was set above in this iteration
-    map.get(mapKey)!.curves[entry.kind as CurveKind] = parsed;
+    // biome-ignore lint/style/noNonNullAssertion: key was just set above
+    const dc = map.get(driverId)!;
+    if (entry.kind === "spl_stacked") {
+      // count is guaranteed by schema refine when kind === "spl_stacked"
+      // biome-ignore lint/style/noNonNullAssertion: schema refine ensures count is set
+      dc.stacked[entry.count!] = { curve: parsed, note: entry.note };
+    } else {
+      dc.curves[entry.kind as CurveKind] = parsed;
+      if (entry.note) dc.notes[entry.kind as CurveKind] = entry.note;
+    }
   }
   return [...map.values()];
 }

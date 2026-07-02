@@ -46,9 +46,12 @@
       "!**/.astro",
       "!**/pagefind",
       "!**/node_modules",
-      "!**/scripts",
+      "!**/scripts/local",
       "!**/coverage",
-      "!**/scrape-out"
+      "!**/test-results",
+      "!**/playwright-report",
+      "!**/scrape-out",
+      "!**/.claude"
     ]
   }
 }

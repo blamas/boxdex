@@ -1,0 +1,48 @@
+---
+name: FK Scoop 18
+category: sub
+topology: scoop
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 350
+dims:
+  wMm: 800
+  hMm: 1000
+  dMm: 750
+specs:
+  f3Hz: 48
+  sensitivityDb: 101
+  maxSplDb: 131
+  powerAesW: 1500
+  recommendedCrossoverHz: 120
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U scoop
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-4u.csv
+    count: 4
+    note: 4U scoop array
+  - driver:
+      - faital-18hp1060-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-8u.csv
+    count: 8
+    note: 8U scoop array
+measurements: []
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - hardtek
+---
+
+FK Scoop 18: scoop-loaded 18" subwoofer. Large mouth, suited for outdoor use in arrays.

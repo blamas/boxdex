@@ -11,7 +11,7 @@ export default defineConfig({
   site: process.env.SITE_URL || "http://localhost:4321",
   base: process.env.SITE_BASE || "/",
   output: "static",
-  // When adding a locale: also add it to src/i18n/index.ts + a new src/i18n/<code>.ts.
+  // When adding a locale: also add it to src/i18n/index.ts + a new src/i18n/locales/<code>.json.
   i18n: {
     defaultLocale: "en",
     locales: ["en", "fr"],

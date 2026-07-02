@@ -1,0 +1,49 @@
+---
+name: FK BR 21 Pair
+category: sub
+topology: bass_reflex
+drivers:
+  - pyle-pdw21250-8
+  - pyle-pdw21250-8
+driverCount: 2
+netVolumeL: 1000
+dims:
+  wMm: 850
+  hMm: 1700
+  dMm: 780
+weightKg: 116
+specs:
+  f3Hz: 30
+  fbHz: 36
+  sensitivityDb: 100
+  impedanceNominalOhm: 4
+  maxSplDb: 136
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl_stacked
+    source: hornresp_sim
+    file: spl-2u.csv
+    count: 2
+measurements:
+  - driver:
+      - pyle-pdw21250-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tribe
+  - raggatek
+  - tekno
+connectors:
+  - speakON NL4
+---
+
+Double 21" bass reflex, two Pyle PDW21250 wired in parallel (4 Ohm).

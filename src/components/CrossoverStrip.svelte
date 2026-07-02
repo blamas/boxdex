@@ -1,15 +1,8 @@
 <script lang="ts">
 import type { Category } from "../lib/category";
-import { CATEGORY_UPPER_HZ } from "../lib/stack";
+import type { CrossoverSlot } from "../lib/stack";
 
-interface Slot {
-  category: Category;
-  f3Hz: number;
-  upperHz: number;
-  name: string;
-}
-
-const { slots }: { slots: Slot[] } = $props();
+const { slots }: { slots: CrossoverSlot[] } = $props();
 
 const W = 760;
 const BAR_H = 22;

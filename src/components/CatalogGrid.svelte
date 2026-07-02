@@ -4,15 +4,17 @@ import type { Translations } from "../i18n";
 import { CATEGORY_FILTERS, type CategoryFilter } from "../lib/category";
 import { humanize } from "../lib/format";
 import {
-  AXIS_FIELDS,
+  axisComboboxItems,
   type EnclosureRecord,
   filterByCategory,
   type MetricKey,
+  metricKeyOf,
   sortRecords,
 } from "../lib/metrics";
 import { BASE } from "../lib/site";
 import { decodeStack, encodeStack } from "../lib/stack";
-import LoadMore from "./LoadMore.svelte";
+import Combobox from "./Combobox.svelte";
+import LoadMore, { ROW_LIMIT } from "./LoadMore.svelte";
 
 interface Props {
   t: Translations["catalogGrid"];
@@ -26,21 +28,31 @@ const { t, localeBase, categoryLabels, axisLabels }: Props = $props();
 let records = $state<EnclosureRecord[]>([]);
 let category = $state<CategoryFilter>("all");
 let sortKey = $state<MetricKey | "name">("name");
+let loading = $state(true);
 
 let addedSlugs = $state(new Set<string>());
 
 onMount(async () => {
-  const res = await fetch(`${BASE}/api/manifest.json`);
-  records = await res.json();
+  try {
+    const res = await fetch(`${BASE}/api/manifest.json`);
+    records = await res.json();
+  } finally {
+    loading = false;
+  }
 });
 
+// Dedupe by slug (same behaviour as the enclosure detail page's add button) and carry
+// the decoded xo state through, so adding from the catalog never drops saved crossover
+// overrides or duplicates a slot.
 function addToStack(slug: string, e: MouseEvent) {
   e.preventDefault();
   e.stopPropagation();
   try {
     const raw = localStorage.getItem("boxdex-stack") ?? "";
-    const { state, cov } = decodeStack(raw);
-    localStorage.setItem("boxdex-stack", encodeStack([...state, { slug, qty: 1 }], cov));
+    const { state, cov, xo } = decodeStack(raw);
+    if (!state.some((s) => s.slug === slug)) {
+      localStorage.setItem("boxdex-stack", encodeStack([...state, { slug, qty: 1 }], cov, xo));
+    }
   } catch (_) {}
   addedSlugs = new Set([...addedSlugs, slug]);
   setTimeout(() => {
@@ -50,13 +62,14 @@ function addToStack(slug: string, e: MouseEvent) {
 
 const displayed = $derived.by(() => sortRecords(filterByCategory(records, category), sortKey));
 
-const ROW_LIMIT = 100;
+const sortKeyItems = $derived([{ id: "name", label: t.nameAZ }, ...axisComboboxItems(axisLabels)]);
+
 let limit = $state(ROW_LIMIT);
 const visibleCards = $derived(displayed.slice(0, limit));
 </script>
 
 <div class="catalog-controls">
-  <div class="cat-buttons">
+  <div class="tab-pills">
     {#each CATEGORY_FILTERS as cat}
       <button class:active={category === cat} onclick={() => (category = cat)}>
         {cat === "all" ? t.all : (categoryLabels[cat as keyof typeof categoryLabels] ?? cat)}
@@ -65,17 +78,35 @@ const visibleCards = $derived(displayed.slice(0, limit));
   </div>
   <label class="sort-label">
     <span>{t.sort}</span>
-    <select bind:value={sortKey}>
-      <option value="name">{t.nameAZ}</option>
-      {#each AXIS_FIELDS as f}
-        <option value={f.key}>{axisLabels[f.key as keyof typeof axisLabels] ?? f.label} ({f.unit})</option>
-      {/each}
-    </select>
+    <Combobox
+      items={sortKeyItems}
+      getId={(i) => i.id}
+      getLabel={(i) => i.label}
+      value={sortKey}
+      searchable={false}
+      onselect={(v) => {
+        sortKey = v === "name" ? "name" : (metricKeyOf(v) ?? sortKey);
+      }}
+    />
   </label>
-  <span class="count">{displayed.length} {displayed.length === 1 ? t.design : t.designs}</span>
+  {#if !loading}
+    <span class="count result-count">{displayed.length} {displayed.length === 1 ? t.design : t.designs}</span>
+  {/if}
 </div>
 
-{#if displayed.length === 0}
+{#if loading}
+  <div class="grid">
+    {#each { length: 6 } as _}
+      <div class="card skel-card">
+        <div class="skeleton skel-badge"></div>
+        <div class="skeleton skel-title"></div>
+        <div class="skeleton skel-row"></div>
+        <div class="skeleton skel-row skel-row-short"></div>
+        <div class="skeleton skel-row"></div>
+      </div>
+    {/each}
+  </div>
+{:else if displayed.length === 0}
   <div class="empty-state">{t.emptyState}</div>
 {:else}
   <div class="grid">
@@ -148,33 +179,6 @@ const visibleCards = $derived(displayed.slice(0, limit));
     margin-bottom: 1.5rem;
   }
 
-  .cat-buttons {
-    display: flex;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .cat-buttons button {
-    background: var(--panel);
-    border: none;
-    border-right: 1px solid var(--line);
-    color: var(--muted);
-    padding: 0.35rem 0.85rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-
-  .cat-buttons button:last-child {
-    border-right: none;
-  }
-
-  .cat-buttons button.active {
-    background: var(--bg);
-    color: var(--accent);
-  }
 
   .sort-label {
     display: flex;
@@ -187,9 +191,7 @@ const visibleCards = $derived(displayed.slice(0, limit));
 
   .count {
     margin-left: auto;
-    font-family: var(--font-mono);
     font-size: 0.8rem;
-    color: var(--muted);
   }
 
   .card-link {
@@ -265,7 +267,8 @@ const visibleCards = $derived(displayed.slice(0, limit));
   .tag-list {
     list-style: none;
     padding: 0;
-    margin: 0.75rem 0 0;
+    margin: auto 0 0;
+    padding-top: 0.75rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
@@ -302,4 +305,16 @@ const visibleCards = $derived(displayed.slice(0, limit));
     border-color: var(--accent);
     color: var(--accent);
   }
+
+  .skel-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    min-height: 160px;
+  }
+
+  .skel-badge { height: 1.1rem; width: 4rem; }
+  .skel-title { height: 1.3rem; width: 70%; }
+  .skel-row   { height: 0.85rem; width: 90%; }
+  .skel-row-short { width: 55%; }
 </style>

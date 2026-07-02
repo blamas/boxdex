@@ -1,0 +1,41 @@
+---
+name: FK Sealed 15B
+category: sub
+topology: sealed
+drivers:
+  - rcf-l15p400-8
+netVolumeL: 120
+dims:
+  wMm: 600
+  hMm: 600
+  dMm: 550
+weightKg: 30
+specs:
+  f3Hz: 52
+  sensitivityDb: 97
+  powerAesW: 400
+  powerProgramW: 800
+  maxSplDb: 128
+  recommendedCrossoverHz: 100
+  impedanceNominalOhm: 8
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - dub
+connectors:
+  - speakON NL4
+---
+
+15" sealed sub with full power specs. RCF L15P400, 120 L.

@@ -17,6 +17,8 @@ export default defineConfig({
         "src/lib/site.ts",
         "src/lib/schemas.ts",
         "src/lib/url-state.ts",
+        "src/lib/listbox-disclosure.ts",
+        "src/lib/click-outside.ts",
       ],
       // Regressions below the current bar fail CI.
       thresholds: {

@@ -48,4 +48,4 @@ $effect(() => {
 });
 </script>
 
-<div bind:this={host} style="width:100%;height:{height}px;"></div>
+<div bind:this={host} style="width:100%;height:var(--echart-h,{height}px);"></div>

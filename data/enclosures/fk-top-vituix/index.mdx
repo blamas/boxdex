@@ -1,0 +1,37 @@
+---
+name: FK Top VituixCAD
+category: top
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+  - bms-4545nd-8
+driverCount: 2
+ways: 2
+netVolumeL: 65
+dims:
+  wMm: 420
+  hMm: 580
+  dMm: 390
+specs:
+  f3Hz: 70
+  sensitivityDb: 99
+  maxSplDb: 128
+  powerAesW: 600
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-12pr310-8
+      - bms-4545nd-8
+    kind: spl
+    source: vituixcad_sim
+    file: spl-1u.csv
+    note: Combined 2-way sim, VituixCAD
+measurements: []
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+---
+
+FK Top VituixCAD: two-way top simulated with VituixCAD. 12" LF + 1" CD HF.

@@ -2,9 +2,15 @@
 import { onMount } from "svelte";
 import type { Translations } from "../i18n";
 import { tt } from "../i18n";
-import { CURVE_KINDS, type CurveKind, SERIES_COLORS, toPairs } from "../lib/csv";
-import { type CurvesResponse, initialCurveView } from "../lib/curves";
-import { humanize } from "../lib/format";
+import { CURVE_KINDS, type CurveKind, type ParsedCurve, toPairs } from "../lib/csv";
+import {
+  availSplCounts,
+  type CurvesResponse,
+  DISPLAY_KINDS,
+  initialCurveView,
+} from "../lib/curves";
+import { SERIES_COLORS } from "../lib/echarts";
+
 import { BASE } from "../lib/site";
 import CurveChart from "./CurveChart.svelte";
 
@@ -22,6 +28,7 @@ let error = $state<string | null>(null);
 let activeTab = $state<"sim" | "meas">("sim");
 let activeDriverIdx = $state(0);
 let activeKind = $state<CurveKind>("spl");
+let activeStackCount = $state<number | null>(null);
 
 onMount(async () => {
   try {
@@ -45,15 +52,42 @@ const activeGroup = $derived(
 const activeDriver = $derived(activeGroup[activeDriverIdx] ?? null);
 
 const availableKinds = $derived(
-  activeDriver ? CURVE_KINDS.filter((k) => activeDriver.curves[k]) : []
+  activeDriver
+    ? DISPLAY_KINDS.filter((k) => {
+        if (k === "spl")
+          return !!(activeDriver.curves.spl || Object.keys(activeDriver.stacked).length > 0);
+        return !!activeDriver.curves[k];
+      })
+    : []
+);
+
+// Count options shown under the SPL tab: 1× (plain) if a plain curve exists, then stacked counts.
+const splCounts = $derived(
+  activeKind === "spl" && activeDriver ? availSplCounts(activeDriver) : []
+);
+
+// The resolved count to display: use activeStackCount if valid, else first available.
+const resolvedCount = $derived(
+  activeKind === "spl" && splCounts.length > 0
+    ? activeStackCount !== null && splCounts.includes(activeStackCount)
+      ? activeStackCount
+      : splCounts[0]
+    : null
 );
 
 const series = $derived.by(() => {
   if (!activeDriver) return [];
-  const curve = activeDriver.curves[activeKind];
-  if (!curve) return [];
   const dashed = activeTab === "sim";
   const label = dashed ? `${name} (sim)` : `${name} (meas)`;
+
+  let curve: ParsedCurve | undefined;
+  if (activeKind === "spl" && resolvedCount !== null && resolvedCount > 1) {
+    curve = activeDriver.stacked[resolvedCount]?.curve;
+  } else {
+    curve = activeDriver.curves[activeKind];
+  }
+  if (!curve) return [];
+
   return [
     {
       name: label,
@@ -65,12 +99,30 @@ const series = $derived.by(() => {
   ];
 });
 
+const provenanceNote = $derived(
+  activeDriver
+    ? activeKind === "spl" && resolvedCount !== null && resolvedCount > 1
+      ? (activeDriver.stacked[resolvedCount]?.note ?? null)
+      : (activeDriver.notes[activeKind] ?? null)
+    : null
+);
+
 function switchTab(tab: "sim" | "meas") {
   activeTab = tab;
   activeDriverIdx = 0;
+  activeStackCount = null;
   const group = tab === "meas" ? data?.measurements : data?.simulations;
-  const first = CURVE_KINDS.find((k) => group?.[0]?.curves[k]);
-  if (first) activeKind = first;
+  activeKind = DISPLAY_KINDS.find((k) => group?.[0]?.curves[k]) ?? "spl";
+}
+
+function switchDriver(idx: number) {
+  activeDriverIdx = idx;
+  activeStackCount = null;
+}
+
+function switchKind(kind: CurveKind) {
+  activeKind = kind;
+  activeStackCount = null;
 }
 </script>
 
@@ -83,38 +135,47 @@ function switchTab(tab: "sim" | "meas") {
 {:else}
   <div class="box-curves">
     <div class="controls">
-      {#if data.simulations.length > 0 && data.measurements.length > 0}
-        <div class="tab-group">
-          <button class:active={activeTab === "sim"} onclick={() => switchTab("sim")}>
-            {t.simulation}
-          </button>
+      <div class="tab-group">
+        {#if data.measurements.length > 0}
           <button class:active={activeTab === "meas"} onclick={() => switchTab("meas")}>
             {t.measurement}
           </button>
-        </div>
-      {:else}
-        <span class="source-label">
-          {data.measurements.length > 0 ? t.measurement : t.simulation}
-        </span>
-      {/if}
+        {/if}
+        {#if data.simulations.length > 0}
+          <button class:active={activeTab === "sim"} onclick={() => switchTab("sim")}>
+            {t.simulation}
+          </button>
+        {/if}
+      </div>
 
-      {#if activeGroup.length > 0}
-        <div class="driver-tabs">
+      {#if activeGroup.length > 1}
+        <div class="tab-group">
           {#each activeGroup as dc, i}
-            <button class:active={activeDriverIdx === i} onclick={() => (activeDriverIdx = i)}>
-              {dc.count > 1 ? `${dc.driverId} · ${dc.count}×` : dc.driverId}
+            <button class:active={activeDriverIdx === i} onclick={() => switchDriver(i)}>
+              {dc.driverId}
             </button>
           {/each}
         </div>
       {/if}
 
-      <div class="kind-tabs">
+      <div class="tab-group">
         {#each availableKinds as kind}
-          <button class:active={activeKind === kind} onclick={() => (activeKind = kind)}>
-            {humanize(kind)}
+          <button class:active={activeKind === kind} onclick={() => switchKind(kind)}>
+            {curveLabels[kind]}
           </button>
         {/each}
       </div>
+
+      {#if activeKind === "spl" && splCounts.length > 0}
+        <div class="tab-group">
+          {#each splCounts as cnt}
+            <button
+              class:active={resolvedCount === cnt}
+              onclick={() => (activeStackCount = cnt)}
+            >{cnt}×</button>
+          {/each}
+        </div>
+      {/if}
     </div>
 
     {#if availableKinds.length > 0}
@@ -122,7 +183,7 @@ function switchTab(tab: "sim" | "meas") {
       {#if activeDriver}
         <p class="provenance-note">
           {activeDriver.source} &mdash;
-          {activeTab === "sim" ? t.simulationDashed : t.measuredSolid}{activeDriver.note ? ` · ${activeDriver.note}` : ""}
+          {activeTab === "sim" ? t.simulationDashed : t.measuredSolid}{provenanceNote ? ` · ${provenanceNote}` : ""}
         </p>
       {/if}
     {:else}
@@ -150,45 +211,4 @@ function switchTab(tab: "sim" | "meas") {
     align-items: center;
   }
 
-  .tab-group,
-  .driver-tabs,
-  .kind-tabs {
-    display: flex;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .tab-group button,
-  .driver-tabs button,
-  .kind-tabs button {
-    background: var(--panel);
-    border: none;
-    border-right: 1px solid var(--line);
-    color: var(--muted);
-    padding: 0.3rem 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    text-transform: capitalize;
-  }
-
-  .tab-group button:last-child,
-  .driver-tabs button:last-child,
-  .kind-tabs button:last-child {
-    border-right: none;
-  }
-
-  .tab-group button.active,
-  .driver-tabs button.active,
-  .kind-tabs button.active {
-    color: var(--accent);
-    background: var(--bg);
-  }
-
-  .source-label {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--muted);
-    padding: 0.3rem 0;
-  }
 </style>

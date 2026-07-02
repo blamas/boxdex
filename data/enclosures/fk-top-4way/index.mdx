@@ -1,0 +1,56 @@
+---
+name: FK Top 4W
+category: top
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+  - 18s-6nmb420-8
+  - bms-4545nd-8
+  - faital-hf1440-8
+driverCount: 4
+ways: 4
+netVolumeL: 120
+dims:
+  wMm: 600
+  hMm: 900
+  dMm: 560
+specs:
+  f3Hz: 70
+  sensitivityDb: 100
+  maxSplDb: 130
+  powerAesW: 1500
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf-1u.csv
+    note: LF 12" sim
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-mf-1u.csv
+    note: MF 6.5" sim
+  - driver:
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf1-1u.csv
+    note: HF1 1" CD sim
+  - driver:
+      - faital-hf1440-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf2-1u.csv
+    note: HF2 1.4" CD sim
+measurements: []
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+---
+
+FK Top 4W: four-way PA top. 12" LF, 6.5" MF, dual CD HF. Full-range 70 Hz to 20 kHz.

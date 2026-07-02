@@ -1,0 +1,39 @@
+---
+name: FK Sub SmallVol
+category: sub
+topology: sealed
+drivers:
+  - faital-12pr310-8
+driverCount: 1
+netVolumeL: 28
+dims:
+  wMm: 320
+  hMm: 360
+  dMm: 300
+weightKg: 9
+specs:
+  f3Hz: 68
+  sensitivityDb: 95
+  maxSplDb: 116
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - dub
+  - bass_music
+connectors:
+  - speakON NL2
+---
+
+FK Sub SmallVol: tiny 28 L sealed sub for compact or satellite deployments.

@@ -123,7 +123,13 @@
     "emptyState": "Select at least one box below, or the selected boxes have no {kind} data.",
     "provenanceNote": "Solid = measured · Dashed = simulated",
     "available": "{label} available",
-    "missing": "{label} missing"
+    "missing": "{label} missing",
+    "columns": {
+      "name": "Name",
+      "cat": "Cat.",
+      "topology": "Topology",
+      "source": "Source"
+    }
   },
   "explorer": {
     "category": "Category",
@@ -152,10 +158,11 @@
       "cat": "Cat",
       "topology": "Topology",
       "drivers": "Drivers",
-      "volume": "Volume (L)",
+      "volume": "Vol (L)",
       "f3": "F3 (Hz)",
-      "maxSpl": "Max SPL (dB)",
-      "provenance": "Provenance",
+      "maxSpl": "SPL (dB)",
+      "provenance": "Prov.",
+      "plans": "Plans",
       "tags": "Tags"
     }
   },
@@ -214,7 +221,8 @@
       "lowHz": "Low Hz",
       "highHz": "High Hz",
       "minXover": "Min xover",
-      "aesW": "AES W"
+      "aesW": "AES W",
+      "ds": "DS"
     }
   },
   "stackBuilder": {
@@ -246,12 +254,15 @@
     "noImpedance": "no nominal impedance data",
     "noPower": "no power data",
     "noSpl": "no SPL data",
-    "wiringsNote": "Wirings put the line's cabinets on one amp channel (2-4 Ω needs a 2 Ω-stable amp, below 2 Ω split across channels). Amp rating is continuous power into the chosen load: ≥ 1× the cabs' total AES, ideally 2× for clean peaks, a clipping amp kills drivers faster than honest overpowering. Nominal loads only, real impedance dips lower.",
+    "channelN": "{n}ch",
+    "channelPrefix": "{n} channels ·",
+    "wiringsNote": "Wirings are per channel for the selected split. Amp rating is continuous power into the chosen load: ≥ 1× the cabs' total AES, ideally 2× for clean peaks, a clipping amp kills drivers faster than honest overpowering. Loads shown are nominal: a stated minimum-impedance dip only downgrades the rating when it dips deeper than the 0.8× nominal the IEC spec already allows for.",
+    "worstCaseLoad": "real minimum impedance (worst case): {load} Ω",
     "coverage": "Coverage",
     "depthFromStack": "Depth from stack",
     "targetSpl": "Target SPL",
     "crestFactor": "Crest factor",
-    "coverageNote": "Array gain: subs +6 dB/doubling (coupled), mid/top +3 dB/doubling (broadband) · −6 dB/distance doubling (point source) · headroom is vs target + {crestDb} dB crest peak",
+    "coverageNote": "Array gain: subs +6 dB/doubling (coupled), mid/top +3 dB/doubling (broadband) · −6 dB/distance doubling (point source) · headroom is vs target + {crestDb} dB crest peak · combines every slot sharing that category, not just the row shown",
     "systemResponse": "System response",
     "ampChannel": "amp ≥ {min} (ideal {ideal}) per channel",
     "headroomOk": "+{n} dB headroom",
@@ -263,12 +274,18 @@
   },
   "systemResponse": {
     "crossovers": "Crossovers",
-    "crossoversTip": "Suggested points: the lower box's stated crossover when the plan gives one, else the geometric mean of the bands' usable overlap, never below a compression driver's protection floor. Edit any point to match your DSP, out-of-range values warn but are never blocked. LR4 (24 dB/oct), verify with measurements.",
+    "crossoversTip": "Each box gets its own independent highpass and lowpass corner: suggested from where its band's curve crosses the next band below/above (boxes of the same category share one band and are never crossed between each other), reaching up to one octave past either curve's measured range when needed. If the curves never actually cross even then, the closest they get stands in instead (flagged approximate), so there's always a starting point. Handoffs are raised no lower than a compression driver's protection floor, on both sides of the pair. Edit either corner to match your DSP, out-of-range values warn but are never blocked. LR4 (24 dB/oct), verify with measurements.",
     "applyToPrediction": "apply to prediction",
     "resetToSuggested": "Reset to suggested",
+    "resetGain": "Reset gain to 0 dB",
+    "box": "Box",
+    "gain": "gain",
+    "highpass": "highpass",
+    "lowpass": "lowpass",
     "spectralGap": "spectral gap",
     "raisedToCdFloor": "raised to CD floor",
-    "stated": "stated",
+    "extrapolated": "extrapolated, verify",
+    "approximated": "closest approach, not an exact crossing",
     "spectralBalance": "Spectral balance: subs {tilt} vs tops",
     "spectralBalanceSuffix": "avg",
     "loading": "Loading curves…",
@@ -302,7 +319,8 @@
   "radarCompare": {
     "selectPlaceholder": "select...",
     "selectPrompt": "Select at least one entry from the dropdown above, or go to the {listLabel} and check boxes to compare.",
-    "parameter": "Parameter",
+    "model": "Model",
+    "brand": "Brand",
     "datasheet": "Datasheet",
     "loading": "Loading…",
     "link": "↗ link",

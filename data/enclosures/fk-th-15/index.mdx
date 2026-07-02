@@ -1,0 +1,39 @@
+---
+name: FK TH 15
+category: sub
+topology: tapped_horn
+drivers:
+  - rcf-l15p400-8
+netVolumeL: 280
+dims:
+  wMm: 580
+  hMm: 800
+  dMm: 700
+weightKg: 50
+specs:
+  f3Hz: 40
+  sensitivityDb: 103
+  maxSplDb: 130
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - hardtek
+  - frenchcore
+connectors:
+  - speakON NL4
+---
+
+15" tapped horn sub. RCF L15P400, 280 L loaded volume.

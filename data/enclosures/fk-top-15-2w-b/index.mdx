@@ -1,0 +1,54 @@
+---
+name: FK Top 15 2W B
+category: top
+topology: bass_reflex
+drivers:
+  - rcf-l15p400-8
+  - faital-hf1000-8
+netVolumeL: 80
+dims:
+  wMm: 500
+  hMm: 660
+  dMm: 440
+weightKg: 30
+specs:
+  f3Hz: 55
+  fbHz: 50
+  sensitivityDb: 101
+  coverageAngleDeg: 80
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - faital-hf1000-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - rcf-l15p400-8
+      - faital-hf1000-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+      - faital-hf1000-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+connectors:
+  - speakON NL4
+ways: 2
+---
+
+2-way 15"+1.4" bass reflex top. RCF L15P400 + Faital HF1000, xo at 800 Hz.

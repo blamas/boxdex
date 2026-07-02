@@ -1,0 +1,39 @@
+---
+name: FK Top 10 1W
+category: top
+topology: sealed
+drivers:
+  - eton-11-581-50-hex-8
+netVolumeL: 30
+dims:
+  wMm: 360
+  hMm: 500
+  dMm: 320
+weightKg: 11
+specs:
+  f3Hz: 80
+  sensitivityDb: 95
+  coverageAngleDeg: 90
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - eton-11-581-50-hex-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - eton-11-581-50-hex-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - acid
+connectors:
+  - speakON NL4
+ways: 1
+---
+
+1-way 10" sealed top. Eton 11-581/50 HEX, 30 L.

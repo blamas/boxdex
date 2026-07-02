@@ -1,0 +1,41 @@
+---
+name: FK Kick Sealed 18
+category: kick
+topology: sealed
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 160
+dims:
+  wMm: 580
+  hMm: 620
+  dMm: 540
+weightKg: 30
+specs:
+  f3Hz: 65
+  sensitivityDb: 98
+  maxSplDb: 128
+  recommendedCrossoverHz: 200
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - acid
+connectors:
+  - speakON NL4
+---
+
+FK Kick Sealed 18: 18" sealed enclosure tuned for kick punch.

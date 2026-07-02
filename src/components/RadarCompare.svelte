@@ -1,8 +1,7 @@
 <script lang="ts" generics="T extends CompareItem">
 import { onMount } from "svelte";
 import { type Translations, tt } from "../i18n";
-import { SERIES_COLORS } from "../lib/csv";
-import { getActiveTheme } from "../lib/echarts";
+import { getActiveTheme, SERIES_COLORS } from "../lib/echarts";
 import { downloadBlob, jsonString, toCsv } from "../lib/export";
 import { axisMaxima, type CompareItem, type CompareView, radarValues } from "../lib/radar";
 import { BASE } from "../lib/site";
@@ -30,6 +29,8 @@ interface Props {
   // Optional: re-order the available pool before it hits the combobox.
   // Receives items not yet selected and the anchor (first selected) item.
   sortPool?: (available: T[], anchor: T) => T[];
+  // Optional: produce a detail-page URL for each item; enables the name header link.
+  detailHref?: (item: T) => string;
 }
 
 const {
@@ -45,6 +46,7 @@ const {
   sanitizeIds = (ids, all) => ids.filter((id) => all.some((item) => item.id === id)),
   csvExtra = [],
   sortPool,
+  detailHref,
 }: Props = $props();
 
 let all = $state<T[]>([]);
@@ -144,12 +146,15 @@ function buildRadarOption() {
       axisName: {
         fontFamily: "var(--font-mono)",
         fontSize: 12,
-        color:
-          getComputedStyle(document.documentElement).getPropertyValue("--text").trim() || "#c9d1d9",
+        color: theme.textStyle.color,
       },
-      splitLine: { lineStyle: { color: "rgba(128,128,128,0.2)" } },
+      splitLine: {
+        lineStyle: { color: theme.tooltip.borderColor },
+      },
       splitArea: { show: false },
-      axisLine: { lineStyle: { color: "rgba(128,128,128,0.3)" } },
+      axisLine: {
+        lineStyle: { color: theme.valueAxis.axisLabel.color },
+      },
     },
     series: selected.map((item, i) => ({
       type: "radar" as const,
@@ -190,7 +195,7 @@ function buildRadarOption() {
       onselect={addItem}
     />
   </div>
-  <span class="count">{selected.length}/4</span>
+  <span class="result-count">{selected.length}/4</span>
   <a href={backHref} class="back-link">{backLabel}</a>
 </div>
 
@@ -209,20 +214,28 @@ function buildRadarOption() {
       <table>
         <thead>
           <tr>
-            <th class="param-col">{tRadar.parameter}</th>
+            <th class="param-col">{tRadar.model}</th>
             {#each selected as item, i}
-              <th style="color: {SERIES_COLORS[i % SERIES_COLORS.length]}">
-                {item.model}
-                <button
-                  class="remove-btn no-print"
-                  onclick={() => removeItem(item.id)}
-                  title={tRadar.remove}>×</button
-                >
+              <th class="item-col" style="color: {SERIES_COLORS[i % SERIES_COLORS.length]}">
+                <div class="item-header">
+                  {#if detailHref}
+                    <a class="item-link" href={detailHref(item)}>{item.model}</a>
+                  {:else}
+                    {item.model}
+                  {/if}
+                  <button class="remove-btn no-print" onclick={() => removeItem(item.id)} title={tRadar.remove}>×</button>
+                </div>
               </th>
             {/each}
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td class="param-label">{tRadar.brand}</td>
+            {#each selected as item}
+              <td class="num">{item.brand}</td>
+            {/each}
+          </tr>
           {#each v.rows as row}
             {#if selected.some((item) => row.fmt(item) !== undefined)}
               <tr>
@@ -236,7 +249,7 @@ function buildRadarOption() {
           <tr>
             <td class="param-label">{tRadar.datasheet}</td>
             {#each selected as item}
-              <td>
+              <td class="num">
                 {#if item.datasheetUrl}
                   <a href={item.datasheetUrl} target="_blank" rel="noopener"
                     >{tRadar.link}</a
@@ -275,10 +288,6 @@ function buildRadarOption() {
     color: var(--muted);
   }
 
-  .count {
-    color: var(--muted);
-  }
-
   .back-link {
     margin-left: auto;
     color: var(--muted);
@@ -311,6 +320,18 @@ function buildRadarOption() {
     min-width: 7rem;
   }
 
+  .item-col {
+    text-align: right;
+  }
+
+  .item-link {
+    color: inherit;
+  }
+
+thead {
+    border-bottom: 1px solid var(--line);
+  }
+
   .param-label {
     color: var(--muted);
   }
@@ -320,18 +341,32 @@ function buildRadarOption() {
     font-variant-numeric: tabular-nums;
   }
 
+  .item-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
   .remove-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4rem;
+    height: 1.4rem;
     background: none;
-    border: none;
+    border: 1px solid var(--line);
+    border-radius: 3px;
     color: var(--muted);
-    font-size: 1rem;
-    padding: 0 0.2rem;
-    margin-left: 0.25rem;
-    line-height: 1;
+    font-size: 0.9rem;
+    padding: 0;
     cursor: pointer;
+    line-height: 1;
   }
 
   .remove-btn:hover {
+    border-color: var(--text);
     color: var(--text);
   }
 
@@ -347,14 +382,5 @@ function buildRadarOption() {
     font-family: var(--font-mono);
     margin: 0;
     text-align: center;
-  }
-
-  .empty-state {
-    text-align: center;
-    padding: 3rem;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    border: 1px dashed var(--line);
-    border-radius: 6px;
   }
 </style>

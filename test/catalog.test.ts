@@ -181,12 +181,13 @@ describe("filterHorns / sortHorns", () => {
     expect(ids({ maxCutoff: 500 })).toEqual(["deep"]);
   });
 
-  it("sorts by derived mouth area and treats missing depth as 0", () => {
+  it("sorts by derived mouth area and puts missing depth last in either direction", () => {
     const byMouth = [horn("small", { mouthWmm: 300, mouthHmm: 200 }), horn("big")];
     expect(sortHorns(byMouth, "mouthCm2", true).map((h) => h.id)).toEqual(["small", "big"]);
 
-    const byDepth = [horn("x", { depthMm: 250 }), horn("none")];
-    expect(sortHorns(byDepth, "depthMm", true).map((h) => h.id)).toEqual(["none", "x"]);
+    const byDepth = [horn("none"), horn("x", { depthMm: 250 })];
+    expect(sortHorns(byDepth, "depthMm", true).map((h) => h.id)).toEqual(["x", "none"]);
+    expect(sortHorns(byDepth, "depthMm", false).map((h) => h.id)).toEqual(["x", "none"]);
   });
 
   it("resolves every sortable column, falling back to brand", () => {

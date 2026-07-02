@@ -2,16 +2,19 @@
 import { onMount } from "svelte";
 import { type Translations, tt } from "../i18n";
 import { CATEGORIES, type CategoryFilter } from "../lib/category";
+import { withAll } from "../lib/combobox-items";
 import { humanize } from "../lib/format";
 import {
-  AXIS_FIELDS,
+  axisComboboxItems,
   type EnclosureRecord,
   filterEnclosures,
   type MetricKey,
+  metricKeyOf,
   sortRecords,
 } from "../lib/metrics";
 import { BASE } from "../lib/site";
-import LoadMore from "./LoadMore.svelte";
+import Combobox from "./Combobox.svelte";
+import LoadMore, { ROW_LIMIT } from "./LoadMore.svelte";
 
 let {
   t,
@@ -53,15 +56,33 @@ const allSizes = $derived(
 
 const allTags = $derived([...new Set(records.flatMap((r) => r.recommendedFor))].sort());
 
+const categoryItems = $derived(
+  withAll(CATEGORIES, (c) => ({ id: c, label: c[0].toUpperCase() + c.slice(1) }), t.all)
+);
+
+const topologyItems = $derived(
+  withAll(allTopologies, (topo) => ({ id: topo, label: humanize(topo) }), t.all)
+);
+
+const driverSizeItems = $derived(
+  withAll(allSizes, (s) => ({ id: String(s), label: `${s}"` }), t.all)
+);
+
+const sortKeyItems = $derived(axisComboboxItems(axisLabels));
+
+const driverCountItems = $derived(
+  withAll(["1", "2", "3", "4+"], (v) => ({ id: v, label: `${v}×` }), t.all)
+);
+
 onMount(async () => {
   const res = await fetch(`${BASE}/api/manifest.json`);
   records = await res.json();
 });
 
-// Render in 100-row pages, extended by the infinite-scroll sentinel; the catalog
+// Render in ROW_LIMIT-row pages extended by the infinite-scroll sentinel; the catalog
 // keeps growing and a single huge table render makes the page sluggish.
-const ROW_LIMIT = 100;
 let limit = $state(ROW_LIMIT);
+let tableWrap = $state<HTMLElement | undefined>(undefined);
 
 const results = $derived(
   sortRecords(
@@ -134,38 +155,50 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     <div class="filter-row">
       <label>
         <span>{t.category}</span>
-        <select bind:value={category}>
-          <option value="all">{t.all}</option>
-          {#each CATEGORIES as c}
-            <option value={c}>{c[0].toUpperCase() + c.slice(1)}</option>
-          {/each}
-        </select>
+        <Combobox
+          items={categoryItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={category}
+          searchable={false}
+          onselect={(v) => (category = v as CategoryFilter)}
+        />
       </label>
       <label>
         <span>{t.topology}</span>
-        <select bind:value={topology}>
-          <option value="all">{t.all}</option>
-          {#each allTopologies as topo}
-            <option value={topo}>{humanize(topo)}</option>
-          {/each}
-        </select>
+        <Combobox
+          items={topologyItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={topology}
+          searchable={false}
+          onselect={(v) => (topology = v)}
+        />
       </label>
       <label>
         <span>{t.driverSize}</span>
-        <select bind:value={driverSize}>
-          <option value="all">{t.all}</option>
-          {#each allSizes as s}
-            <option value={s}>{s}"</option>
-          {/each}
-        </select>
+        <Combobox
+          items={driverSizeItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={driverSize}
+          searchable={false}
+          onselect={(v) => (driverSize = v)}
+        />
       </label>
       <label>
         <span>{t.sortBy}</span>
-        <select bind:value={sortKey}>
-          {#each AXIS_FIELDS as f}
-            <option value={f.key}>{axisLabels[f.key as keyof typeof axisLabels] ?? f.label} ({f.unit})</option>
-          {/each}
-        </select>
+        <Combobox
+          items={sortKeyItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={sortKey}
+          searchable={false}
+          onselect={(v) => {
+            const key = metricKeyOf(v);
+            if (key) sortKey = key;
+          }}
+        />
       </label>
       <button
         class="advanced-toggle"
@@ -174,11 +207,11 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
       >
         {t.advanced} {showAdvanced ? "▴" : "▾"}
         {#if !showAdvanced && advancedFilterCount > 0}
-          <span class="adv-badge">{advancedFilterCount}</span>
+          <span class="advanced-toggle-count">{advancedFilterCount}</span>
         {/if}
       </button>
       {#if activeFilterCount > 0}
-        <button class="clear-btn" onclick={clearFilters}>{tt(t.clearN, { n: activeFilterCount })}</button>
+        <button class="clear-btn btn-ghost" onclick={clearFilters}>{tt(t.clearN, { n: activeFilterCount })}</button>
       {/if}
     </div>
 
@@ -186,13 +219,14 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
       <div class="filter-row adv-row">
         <label>
           <span>{t.driverCount}</span>
-          <select bind:value={driverCountFilter}>
-            <option value="all">{t.all}</option>
-            <option value="1">1×</option>
-            <option value="2">2×</option>
-            <option value="3">3×</option>
-            <option value="4+">4+×</option>
-          </select>
+          <Combobox
+            items={driverCountItems}
+            getId={(i) => i.id}
+            getLabel={(i) => i.label}
+            value={driverCountFilter}
+            searchable={false}
+            onselect={(v) => (driverCountFilter = v)}
+          />
         </label>
         <label>
           <span>{t.f3Min}</span>
@@ -243,13 +277,14 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
   {#if results.length === 0}
     <div class="empty-state">{t.emptyState}</div>
   {:else}
-    <p class="count">{results.length} {results.length === 1 ? t.enclosure : t.enclosures} {t.found}</p>
-    <div class="table-wrap">
+    <p class="result-count" aria-live="polite" aria-atomic="true">{results.length} {results.length === 1 ? t.enclosure : t.enclosures} {t.found}</p>
+    <div class="table-wrap" bind:this={tableWrap}>
       <table>
         <thead>
           <tr>
             <th>{t.columns.name}</th>
             <th>{t.columns.cat}</th>
+            <th>{t.columns.plans}</th>
             <th>{t.columns.topology}</th>
             <th>{t.columns.drivers}</th>
             <th>{t.columns.volume}</th>
@@ -265,9 +300,11 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
               <td>
                 <a href="{localeBase}/enclosures/{rec.slug}">{rec.name}</a>
                 {#if rec.verified}<span class="badge badge-verified ml">✓</span>{/if}
-                {#if rec.hasPlans}<span class="plans-icon" title={t.plansAvailable}>📐</span>{/if}
               </td>
               <td><span class="badge badge-{rec.category}">{rec.category}</span></td>
+              <td class="plans-cell">
+                <span class="plans-tick" class:plans-tick-on={rec.hasPlans} title={rec.hasPlans ? t.plansAvailable : ""}>{rec.hasPlans ? "✓" : ""}</span>
+              </td>
               <td class="mono topo-cell">
                 {humanize(rec.topology)}
                 {#if rec.topologyVariant}<span class="muted"> · {rec.topologyVariant}</span>{/if}
@@ -284,20 +321,26 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
               <td>
                 <span class="badge badge-{rec.provenance}">{rec.provenance}</span>
               </td>
-              <td class="tags">
-                {#each rec.recommendedFor as tag}
-                  <span class="tag">{tag}</span>
-                {/each}
+              <td>
+                <div class="tags">
+                  {#each rec.recommendedFor.slice(0, 2) as tag}
+                    <span class="tag">{tag}</span>
+                  {/each}
+                  {#if rec.recommendedFor.length > 2}
+                    <span class="tag tag-more" data-tip={rec.recommendedFor.slice(2).join(", ")}>+{rec.recommendedFor.length - 2}</span>
+                  {/if}
+                </div>
               </td>
             </tr>
           {/each}
         </tbody>
       </table>
+      <LoadMore
+        remaining={results.length - visibleResults.length}
+        onmore={() => (limit += ROW_LIMIT)}
+        root={tableWrap}
+      />
     </div>
-    <LoadMore
-      remaining={results.length - visibleResults.length}
-      onmore={() => (limit += ROW_LIMIT)}
-    />
   {/if}
 </div>
 
@@ -331,33 +374,7 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
   }
 
   .advanced-toggle {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 4px;
-    padding: 0.3rem 0.7rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
     align-self: flex-end;
-  }
-
-  .advanced-toggle:hover,
-  .advanced-toggle.active {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .adv-badge {
-    background: var(--accent);
-    color: var(--bg);
-    border-radius: 3px;
-    padding: 0 0.3rem;
-    font-size: 0.7rem;
-    font-weight: 700;
-    line-height: 1.4;
   }
 
   .filters label {
@@ -379,60 +396,29 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     align-items: center;
   }
 
-  .chip {
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 3px;
-    padding: 0.2rem 0.55rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: border-color 0.1s, color 0.1s;
-  }
-
-  .chip:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .chip-active {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(57, 255, 20, 0.07);
-  }
-
-  :global([data-theme="light"]) .chip-active {
-    background: rgba(26, 127, 55, 0.07);
-  }
-
   .clear-btn {
     align-self: flex-end;
     margin-left: auto;
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    border-radius: 4px;
     padding: 0.3rem 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-
-  .clear-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .count {
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    color: var(--muted);
-    margin: 0;
   }
 
   .table-wrap {
     overflow-x: auto;
+    overflow-y: auto;
+    max-height: 65vh;
+    scrollbar-gutter: stable;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: var(--panel);
+    z-index: 1;
+    white-space: nowrap;
+  }
+
+  table td {
+    vertical-align: top;
   }
 
   .mono {
@@ -452,15 +438,35 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     margin-left: 0.3rem;
   }
 
-  .plans-icon {
+  .plans-cell {
+    text-align: center;
+  }
+
+  .plans-tick {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-family: var(--font-mono);
     font-size: 0.75rem;
-    margin-left: 0.3rem;
-    opacity: 0.6;
+    font-weight: 600;
+    color: transparent;
+    line-height: 1;
+  }
+
+  .plans-tick.plans-tick-on {
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+    color: var(--accent);
+    font-size: 0.85rem;
   }
 
   .tags {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.25rem;
   }
 
@@ -473,5 +479,38 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     border: 1px solid var(--line);
     color: var(--muted);
     white-space: nowrap;
+  }
+
+  .tag-more {
+    opacity: 0.6;
+    position: relative;
+    cursor: default;
+  }
+
+  .tag-more::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 5px);
+    right: 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s;
+    z-index: 10;
+  }
+
+  .tag-more:hover {
+    opacity: 1;
+  }
+
+  .tag-more:hover::after {
+    opacity: 1;
   }
 </style>

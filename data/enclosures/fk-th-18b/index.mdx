@@ -1,0 +1,40 @@
+---
+name: FK TH 18B
+category: sub
+topology: tapped_horn
+drivers:
+  - faital-18hp1060-8
+netVolumeL: 380
+dims:
+  wMm: 620
+  hMm: 900
+  dMm: 980
+weightKg: 62
+specs:
+  f3Hz: 34
+  sensitivityDb: 103
+  maxSplDb: 133
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - hardtek
+  - frenchcore
+  - hardcore
+connectors:
+  - speakON NL4
+---
+
+18" tapped horn sub variant B. Faital Pro 18HP1060, 380 L.

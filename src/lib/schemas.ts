@@ -5,7 +5,7 @@
 // via `npm run schema:gen`; regenerate after any edit here.
 
 import { z } from "astro/zod";
-import taxonomy from "../../data/taxonomy.json";
+import taxonomy from "../../data/taxonomy.json" with { type: "json" };
 
 // Vocabularies sourced from data/taxonomy.json: an array is a closed list (a value
 // outside it is a build error), `null` is free-form (any string). The JSON import loses

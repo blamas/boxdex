@@ -1,0 +1,38 @@
+---
+name: FK Folded 18B
+category: sub
+topology: folded_horn
+drivers:
+  - faital-18hp1060-8
+netVolumeL: 450
+dims:
+  wMm: 760
+  hMm: 1200
+  dMm: 700
+weightKg: 72
+specs:
+  f3Hz: 40
+  sensitivityDb: 103
+  maxSplDb: 133
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - tribe
+connectors:
+  - speakON NL4
+---
+
+18" folded horn sub variant. Faital Pro 18HP1060, 450 L.

@@ -27,75 +27,56 @@ echarts.use([
   CanvasRenderer,
 ]);
 
-export const darkTheme = {
-  backgroundColor: "transparent",
-  textStyle: { color: "#c9d1d9" },
-  title: { textStyle: { color: "#c9d1d9" } },
-  legend: { textStyle: { color: "#c9d1d9" } },
-  categoryAxis: {
-    axisLine: { lineStyle: { color: "#30363d" } },
-    axisTick: { lineStyle: { color: "#30363d" } },
-    axisLabel: { color: "#8b949e" },
-    splitLine: { lineStyle: { color: "#21262d" } },
-  },
-  valueAxis: {
-    axisLine: { lineStyle: { color: "#30363d" } },
-    axisTick: { lineStyle: { color: "#30363d" } },
-    axisLabel: { color: "#8b949e" },
-    splitLine: { lineStyle: { color: "#21262d" } },
-  },
-  logAxis: {
-    axisLine: { lineStyle: { color: "#30363d" } },
-    axisTick: { lineStyle: { color: "#30363d" } },
-    axisLabel: { color: "#8b949e" },
-    splitLine: { lineStyle: { color: "#21262d" } },
-  },
-  tooltip: {
-    backgroundColor: "#161b22",
-    borderColor: "#30363d",
-    textStyle: { color: "#c9d1d9" },
-  },
-};
+export function cssVar(name: string, fallback: string): string {
+  if (typeof document === "undefined") return fallback;
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+}
 
-const lightTheme = {
-  backgroundColor: "transparent",
-  textStyle: { color: "#1f2328" },
-  title: { textStyle: { color: "#1f2328" } },
-  legend: { textStyle: { color: "#1f2328" } },
-  categoryAxis: {
-    axisLine: { lineStyle: { color: "#d0d7de" } },
-    axisTick: { lineStyle: { color: "#d0d7de" } },
-    axisLabel: { color: "#656d76" },
-    splitLine: { lineStyle: { color: "#eaeef2" } },
-  },
-  valueAxis: {
-    axisLine: { lineStyle: { color: "#d0d7de" } },
-    axisTick: { lineStyle: { color: "#d0d7de" } },
-    axisLabel: { color: "#656d76" },
-    splitLine: { lineStyle: { color: "#eaeef2" } },
-  },
-  logAxis: {
-    axisLine: { lineStyle: { color: "#d0d7de" } },
-    axisTick: { lineStyle: { color: "#d0d7de" } },
-    axisLabel: { color: "#656d76" },
-    splitLine: { lineStyle: { color: "#eaeef2" } },
-  },
-  tooltip: {
-    backgroundColor: "#f6f8fa",
-    borderColor: "#d0d7de",
-    textStyle: { color: "#1f2328" },
-  },
-};
+// Fixed palette for multi-series charts (theme accents cover only the first two slots;
+// series counts beyond that need stable, distinguishable colors in both themes).
+export const SERIES_COLORS: string[] = [
+  "#39ff14", // signal-green (accent)
+  "#ffb300", // amber (accent-2)
+  "#4fc3f7", // sky
+  "#ef5350", // red
+  "#ab47bc", // purple
+  "#26a69a", // teal
+  "#ff7043", // deep-orange
+  "#78909c", // blue-grey
+];
 
-const DARK_ACCENT = "#39ff14";
-const LIGHT_ACCENT = "#1a7f37";
+function buildTheme() {
+  const text = cssVar("--text", "#c9d1d9");
+  const line = cssVar("--line", "#30363d");
+  const lineSubtle = cssVar("--line-subtle", "#21262d");
+  const muted = cssVar("--muted", "#8b949e");
+  const panel = cssVar("--panel", "#161b22");
 
-export function getActiveTheme(): { theme: typeof darkTheme; accent: string } {
-  const isLight =
-    typeof document !== "undefined" && document.documentElement.dataset.theme === "light";
-  return isLight
-    ? { theme: lightTheme, accent: LIGHT_ACCENT }
-    : { theme: darkTheme, accent: DARK_ACCENT };
+  const axisStyle = {
+    axisLine: { lineStyle: { color: line } },
+    axisTick: { lineStyle: { color: line } },
+    axisLabel: { color: muted },
+    splitLine: { lineStyle: { color: lineSubtle } },
+  };
+
+  return {
+    backgroundColor: "transparent",
+    textStyle: { color: text },
+    title: { textStyle: { color: text } },
+    legend: { textStyle: { color: text } },
+    categoryAxis: axisStyle,
+    valueAxis: axisStyle,
+    logAxis: axisStyle,
+    tooltip: {
+      backgroundColor: panel,
+      borderColor: line,
+      textStyle: { color: text },
+    },
+  };
+}
+
+export function getActiveTheme(): { theme: ReturnType<typeof buildTheme>; accent: string } {
+  return { theme: buildTheme(), accent: cssVar("--accent", "#39ff14") };
 }
 
 export { echarts };

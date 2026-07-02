@@ -1,0 +1,42 @@
+---
+name: FK Bandpass 18
+category: sub
+topology: bandpass
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 260
+dims:
+  wMm: 700
+  hMm: 700
+  dMm: 700
+specs:
+  f3Hz: 38
+  f3HzHigh: 95
+  fbHz: 50
+  sensitivityDb: 102
+  maxSplDb: 132
+  powerAesW: 1500
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+    note: 1U bandpass, Hornresp
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+    note: 1U gated, REW
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+---
+
+FK Bandpass 18: 18" 4th-order bandpass subwoofer. Sealed rear chamber, vented front chamber tuned at 50 Hz.

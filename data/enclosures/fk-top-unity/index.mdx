@@ -1,0 +1,45 @@
+---
+name: FK Top Unity
+category: top
+topology: front_loaded_horn
+topologyVariant: Unity horn
+drivers:
+  - faital-12pr310-8
+driverCount: 1
+netVolumeL: 50
+dims:
+  wMm: 600
+  hMm: 700
+  dMm: 500
+weightKg: 24
+specs:
+  f3Hz: 80
+  f3HzHigh: 15000
+  sensitivityDb: 105
+  maxSplDb: 128
+  hornCutoffHz: 80
+  coverageAngleDeg: 90
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+FK Top Unity: 12" Unity horn, wide coverage via multiple small horns on a shared throat.

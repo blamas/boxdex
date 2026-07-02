@@ -1,3 +1,4 @@
+import type { Translations } from "../i18n";
 import type { Category, CategoryFilter } from "./category";
 
 export type Provenance = "measured" | "sim";
@@ -52,6 +53,17 @@ export const AXIS_MAP = new Map(AXIS_FIELDS.map((f) => [f.key, f]));
 // Narrow an untrusted string (URL param, select value) to a plottable axis key.
 export function metricKeyOf(s: string): MetricKey | undefined {
   return AXIS_FIELDS.find((f) => f.key === s)?.key;
+}
+
+// Combobox {id,label} items for AXIS_FIELDS, localized via the caller's axisLabels.
+// Shared so axis/sort pickers stay in sync instead of re-deriving this per component.
+export function axisComboboxItems(
+  axisLabels: Translations["axisLabels"]
+): { id: MetricKey; label: string }[] {
+  return AXIS_FIELDS.map((f) => ({
+    id: f.key,
+    label: `${axisLabels[f.key as keyof typeof axisLabels] ?? f.label} (${f.unit})`,
+  }));
 }
 
 export interface EnclosureInput {

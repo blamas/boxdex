@@ -1,0 +1,40 @@
+---
+name: FK Top 6 1W
+category: top
+topology: sealed
+drivers:
+  - 18s-6nmb420-8
+netVolumeL: 8
+dims:
+  wMm: 200
+  hMm: 300
+  dMm: 200
+weightKg: 5
+specs:
+  f3Hz: 150
+  f3HzHigh: 18000
+  sensitivityDb: 90
+  coverageAngleDeg: 120
+  recommendedCrossoverHz: 200
+simulations:
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - 18s-6nmb420-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - acid
+connectors:
+  - speakON NL2
+ways: 1
+---
+
+Compact 6.5" sealed satellite top. 18Sound 6NMB420, 8 L.

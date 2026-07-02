@@ -1,0 +1,55 @@
+---
+name: FK Top 15 2W C
+category: top
+topology: bass_reflex
+drivers:
+  - rcf-l15p400-8
+  - faital-hf1440-8
+netVolumeL: 85
+dims:
+  wMm: 520
+  hMm: 680
+  dMm: 460
+weightKg: 34
+specs:
+  f3Hz: 55
+  fbHz: 50
+  sensitivityDb: 102
+  coverageAngleDeg: 60
+  maxSplDb: 136
+  recommendedCrossoverHz: 80
+simulations:
+  - driver:
+      - rcf-l15p400-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - faital-hf1440-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - rcf-l15p400-8
+      - faital-hf1440-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - rcf-l15p400-8
+      - faital-hf1440-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - tribe
+  - frenchcore
+connectors:
+  - speakON NL4
+ways: 2
+---
+
+Large-format 2-way top. 15" woofer + 2" exit compression driver, xo at 800 Hz.

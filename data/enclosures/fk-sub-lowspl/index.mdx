@@ -1,0 +1,39 @@
+---
+name: FK Sub LowSPL
+category: sub
+topology: sealed
+drivers:
+  - faital-12pr310-8
+driverCount: 1
+netVolumeL: 90
+dims:
+  wMm: 420
+  hMm: 520
+  dMm: 420
+weightKg: 20
+specs:
+  f3Hz: 45
+  sensitivityDb: 91
+  maxSplDb: 118
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - dub
+  - bass_music
+connectors:
+  - speakON NL4
+---
+
+FK Sub LowSPL: compact 12" sealed sub with modest 91 dB sensitivity.

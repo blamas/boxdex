@@ -1,0 +1,55 @@
+---
+name: FK Top 10 2W
+category: top
+topology: bass_reflex
+drivers:
+  - eton-11-581-50-hex-8
+  - bms-4545nd-8
+netVolumeL: 35
+dims:
+  wMm: 360
+  hMm: 520
+  dMm: 320
+weightKg: 14
+specs:
+  f3Hz: 70
+  fbHz: 65
+  sensitivityDb: 97
+  coverageAngleDeg: 90
+  recommendedCrossoverHz: 100
+  recommendedPowerW: 500
+simulations:
+  - driver:
+      - eton-11-581-50-hex-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-lf.csv
+  - driver:
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-hf.csv
+  - driver:
+      - eton-11-581-50-hex-8
+      - bms-4545nd-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - eton-11-581-50-hex-8
+      - bms-4545nd-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - acid
+  - hardstyle
+connectors:
+  - speakON NL4
+ways: 2
+---
+
+2-way 10"+1" bass reflex top. Eton woofer + BMS CD, xo at 2000 Hz.

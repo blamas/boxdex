@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
+  additionalUnitsNeeded,
   arrayGainDb,
   type CoverageInputs,
-  calcCoverage,
+  calcCategoryCoverage,
+  combineCategorySplDb,
   compositeResponse,
   decodeStack,
   encodeStack,
@@ -28,17 +30,95 @@ describe("encodeStack / decodeStack", () => {
     expect(c2).toEqual(cov);
   });
 
-  it("round-trips crossover state (applied flag + per-pair overrides)", () => {
-    const state: StackSlot[] = [{ slug: "tapped-horn-18", qty: 4 }];
+  it("round-trips crossover state (applied flag + per-side overrides + gain trims)", () => {
+    const state: StackSlot[] = [
+      { slug: "tapped-horn-18", qty: 4 },
+      { slug: "top-12-coax", qty: 8 },
+    ];
     const cov: CoverageInputs = { distanceM: 20, targetSplDb: 103, crestDb: 6 };
-    const xo = { applied: true, overrides: { sub: 85, mid: 1400 } };
+    const xo = {
+      applied: true,
+      overrides: { "tapped-horn-18:hi": 85, "top-12-coax:lo": 1400 },
+      gains: { "tapped-horn-18": -3, "top-12-coax": 1.5 },
+    };
     const decoded = decodeStack(encodeStack(state, cov, xo));
     expect(decoded.xo).toEqual(xo);
   });
 
-  it("defaults to no crossover state and ignores junk override keys", () => {
-    expect(decodeStack("a:1,d=20,spl=103,c=6").xo).toEqual({ applied: false, overrides: {} });
-    expect(decodeStack("a:1,xfoo=120,xsub=0").xo.overrides).toEqual({});
+  it("prunes overrides and gains for slugs no longer in the stack", () => {
+    const state: StackSlot[] = [{ slug: "tapped-horn-18", qty: 4 }];
+    const cov: CoverageInputs = { distanceM: 20, targetSplDb: 103, crestDb: 6 };
+    const xo = {
+      applied: true,
+      overrides: { "tapped-horn-18:hi": 85, "removed-box:lo": 1400 },
+      gains: { "tapped-horn-18": -3, "removed-box": 1.5 },
+    };
+    const decoded = decodeStack(encodeStack(state, cov, xo));
+    expect(decoded.xo.overrides).toEqual({ "tapped-horn-18:hi": 85 });
+    expect(decoded.xo.gains).toEqual({ "tapped-horn-18": -3 });
+  });
+
+  it("clamps URL-borne overrides and gains to the UI input bounds", () => {
+    const { xo } = decodeStack("a:1,xa:lo=999999,xa:hi=1,ga=1000,gb=-1000");
+    expect(xo.overrides["a:lo"]).toBe(20000);
+    expect(xo.overrides["a:hi"]).toBe(20);
+    expect(xo.gains.a).toBe(24);
+    expect(xo.gains.b).toBe(-24);
+  });
+
+  it("drops a zero gain trim (no-op, same as not having one)", () => {
+    const state: StackSlot[] = [{ slug: "tapped-horn-18", qty: 4 }];
+    const cov: CoverageInputs = { distanceM: 20, targetSplDb: 103, crestDb: 6 };
+    const xo = { applied: false, overrides: {}, gains: { "tapped-horn-18": 0 } };
+    const decoded = decodeStack(encodeStack(state, cov, xo));
+    expect(decoded.xo.gains).toEqual({});
+  });
+
+  it("round-trips per-slot channel overrides, keeping duplicate-slug slots independent", () => {
+    const state: StackSlot[] = [
+      { slug: "tapped-horn-18", qty: 8, channels: 4 },
+      { slug: "tapped-horn-18", qty: 4, channels: 2 },
+      { slug: "top-12-coax", qty: 4 },
+    ];
+    const cov: CoverageInputs = { distanceM: 20, targetSplDb: 103, crestDb: 6 };
+    const { state: s2 } = decodeStack(encodeStack(state, cov));
+    expect(s2[0].channels).toBe(4);
+    expect(s2[1].channels).toBe(2);
+    expect(s2[2].channels).toBeUndefined();
+  });
+
+  it("round-trips a channel override alongside a curve selection on the same slot", () => {
+    const state: StackSlot[] = [
+      { slug: "bass-reflex-18", qty: 4, channels: 2, curveSelection: "sim:driver-x" },
+    ];
+    const cov: CoverageInputs = { distanceM: 20, targetSplDb: 103, crestDb: 6 };
+    const { state: s2 } = decodeStack(encodeStack(state, cov));
+    expect(s2[0].channels).toBe(2);
+    expect(s2[0].curveSelection).toBe("sim:driver-x");
+  });
+
+  it("defaults to no crossover state for a plain hash", () => {
+    expect(decodeStack("a:1,d=20,spl=103,c=6").xo).toEqual({
+      applied: false,
+      overrides: {},
+      gains: {},
+    });
+  });
+
+  it("accepts an arbitrary id-keyed override (ids are enclosure slugs, not a closed enum)", () => {
+    expect(decodeStack("a:1,xfoo=120").xo.overrides).toEqual({ foo: 120 });
+  });
+
+  it("accepts an arbitrary id-keyed gain trim, including negative and fractional values", () => {
+    expect(decodeStack("a:1,gfoo=-3.5").xo.gains).toEqual({ foo: -3.5 });
+  });
+
+  it("drops a non-positive override", () => {
+    expect(decodeStack("a:1,xsub=0").xo.overrides).toEqual({});
+  });
+
+  it("ignores a non-positive channel override", () => {
+    expect(decodeStack("tapped-horn-18:4:ch0").state[0].channels).toBeUndefined();
   });
 
   it("preserves insertion order", () => {
@@ -67,6 +147,18 @@ describe("encodeStack / decodeStack", () => {
     expect(cov.targetSplDb).toBe(110);
     expect(cov.crestDb).toBe(9);
   });
+
+  it("migrates old curveSelection key format on decode", () => {
+    const { state } = decodeStack(
+      "bass-reflex-18:2:meas:rcf-lf18x451-8:c1:rew_measured,d=20,spl=103,c=6"
+    );
+    expect(state[0].curveSelection).toBe("meas:rcf-lf18x451-8");
+  });
+
+  it("leaves new-format curveSelection unchanged on decode", () => {
+    const { state } = decodeStack("bass-reflex-18:2:meas:rcf-lf18x451-8,d=20,spl=103,c=6");
+    expect(state[0].curveSelection).toBe("meas:rcf-lf18x451-8");
+  });
 });
 
 describe("arrayGainDb", () => {
@@ -86,41 +178,106 @@ describe("arrayGainDb", () => {
   });
 });
 
-describe("calcCoverage", () => {
-  it("adds coherent array gain for subs and meets target at the expected count", () => {
-    // splAtD = 138 - 20*log10(20) = 111.98 dB; +20*log10(8) = +18.06 → 130.04 dB
-    const result = calcCoverage(138, "sub", 8, 20, 130, 0);
-    expect(result).not.toBeNull();
-    expect(result?.splAtD).toBeCloseTo(111.98, 1);
-    expect(result?.arrayGainDb).toBeCloseTo(18.06, 1);
-    expect(result?.systemSplAtD).toBeCloseTo(130.04, 1);
-    expect(result?.headroomDb).toBeCloseTo(0.04, 1);
-    expect(result?.nNeeded).toBe(8);
+describe("combineCategorySplDb", () => {
+  it("matches a single slot's own arrayGainDb", () => {
+    const combined = combineCategorySplDb("sub", [{ maxSplDb: 138, qty: 4 }]);
+    expect(combined).toBeCloseTo(138 + arrayGainDb("sub", 4), 5);
   });
 
-  it("uses broadband gain for tops (10·log10 N)", () => {
-    const result = calcCoverage(138, "top", 4, 20, 110, 0);
-    expect(result?.arrayGainDb).toBeCloseTo(6.02, 1);
+  it("is invariant to how an equal-model total is split across slots", () => {
+    // 8 identical subs as one slot vs. split 4+4 across two slots must combine to the
+    // same category-wide SPL@1m: this is the property a naive per-slot headroom would
+    // miss (see StackBuilder's coverageResults).
+    const asOne = combineCategorySplDb("sub", [{ maxSplDb: 138, qty: 8 }]);
+    const asTwo = combineCategorySplDb("sub", [
+      { maxSplDb: 138, qty: 4 },
+      { maxSplDb: 138, qty: 4 },
+    ]);
+    expect(asTwo).toBeCloseTo(asOne as number, 5);
+  });
+
+  it("weights differing models by their own level, not a naive average", () => {
+    const combined = combineCategorySplDb("top", [
+      { maxSplDb: 130, qty: 1 },
+      { maxSplDb: 100, qty: 1 },
+    ]);
+    // Power-summing 130 and 100 dB is dominated by the louder box, staying just above 130.
+    expect(combined).toBeGreaterThan(130);
+    expect(combined).toBeLessThan(130.1);
+  });
+
+  it("returns undefined for no entries", () => {
+    expect(combineCategorySplDb("sub", [])).toBeUndefined();
+  });
+});
+
+describe("calcCategoryCoverage", () => {
+  it("applies coherent array gain and inverse-square loss for a single sub entry", () => {
+    // SPL@1m = 138 + 20·log10(8) = 156.06; at 20 m: −20·log10(20) = −26.02 → 130.04 dB,
+    // 0.04 dB of headroom over a 130 dB target at zero crest.
+    const combined = calcCategoryCoverage("sub", [{ maxSplDb: 138, qty: 8 }], 20, 130, 0);
+    expect(combined?.splAt1m).toBeCloseTo(156.06, 1);
+    expect(combined?.splAtD).toBeCloseTo(130.04, 1);
+    expect(combined?.headroomDb).toBeCloseTo(0.04, 1);
   });
 
   it("folds crest factor into the required peak / headroom", () => {
-    const noCrest = calcCoverage(138, "sub", 4, 20, 110, 0);
-    const withCrest = calcCoverage(138, "sub", 4, 20, 110, 6);
+    const entries = [{ maxSplDb: 138, qty: 4 }];
+    const noCrest = calcCategoryCoverage("sub", entries, 20, 110, 0);
+    const withCrest = calcCategoryCoverage("sub", entries, 20, 110, 6);
     expect((noCrest?.headroomDb ?? 0) - (withCrest?.headroomDb ?? 0)).toBeCloseTo(6, 5);
     expect(withCrest?.requiredPeakDb).toBe(116);
   });
 
-  it("returns null when maxSplDb is undefined", () => {
-    expect(calcCoverage(undefined, "sub", 1, 20, 103)).toBeNull();
+  it("combines two slots of the same category into one headroom figure", () => {
+    // 4+4 split of the same sub model must read exactly like the 8-cab case above.
+    const combined = calcCategoryCoverage(
+      "sub",
+      [
+        { maxSplDb: 138, qty: 4 },
+        { maxSplDb: 138, qty: 4 },
+      ],
+      20,
+      130,
+      0
+    );
+    expect(combined?.headroomDb).toBeCloseTo(0.04, 1);
+    expect(combined?.totalQty).toBe(8);
   });
 
-  it("returns null for zero distance", () => {
-    expect(calcCoverage(130, "sub", 1, 0, 103)).toBeNull();
+  it("returns null for zero distance or no entries", () => {
+    expect(calcCategoryCoverage("sub", [{ maxSplDb: 138, qty: 4 }], 0, 130)).toBeNull();
+    expect(calcCategoryCoverage("sub", [], 20, 130)).toBeNull();
+  });
+});
+
+describe("additionalUnitsNeeded", () => {
+  it("returns 0 when the category already meets target without this slot's help", () => {
+    const entries = [
+      { maxSplDb: 138, qty: 8 },
+      { maxSplDb: 138, qty: 4 },
+    ];
+    expect(additionalUnitsNeeded("sub", entries, 1, 20, 130, 0)).toBe(0);
   });
 
-  it("returns nNeeded=1 when a single cab already meets the required peak", () => {
-    const result = calcCoverage(138, "sub", 1, 1, 103, 0);
-    expect(result?.nNeeded).toBe(1);
+  it("solves the required total count when it's the only entry in the category", () => {
+    // 138 dB per cab needs 130 + 26.02 = 156.02 dB at 1 m: 8 coupled subs
+    // (+18.06 dB) reach 156.06, 7 (+16.9) don't, so a slot of 4 needs 4 more.
+    const entries = [{ maxSplDb: 138, qty: 4 }];
+    const more = additionalUnitsNeeded("sub", entries, 0, 20, 130, 0);
+    expect(entries[0].qty + more).toBe(8);
+  });
+
+  it("accounts for another slot's contribution before recommending more", () => {
+    // Two slots of 2 subs each (4 total, matching the calcCoverage(138,"sub",4,...) case
+    // which needs 8 total). Growing just one slot by 4 more (to 6) should close the gap,
+    // since 6+2=8 total, matching the known single-slot-of-8 result.
+    const entries = [
+      { maxSplDb: 138, qty: 2 },
+      { maxSplDb: 138, qty: 2 },
+    ];
+    const more = additionalUnitsNeeded("sub", entries, 0, 20, 130, 0);
+    expect(more).toBe(4);
   });
 });
 

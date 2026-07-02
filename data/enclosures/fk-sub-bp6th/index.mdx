@@ -1,0 +1,42 @@
+---
+name: FK Sub BP 6th
+category: sub
+topology: bandpass
+topologyVariant: 6th order
+drivers:
+  - faital-18hp1060-8
+driverCount: 1
+netVolumeL: 260
+dims:
+  wMm: 700
+  hMm: 700
+  dMm: 700
+weightKg: 44
+specs:
+  f3Hz: 38
+  f3HzHigh: 90
+  fbHz: 50
+  sensitivityDb: 102
+  maxSplDb: 132
+simulations:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-18hp1060-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+plans: []
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+connectors:
+  - speakON NL4
+---
+
+FK Sub BP 6th: 18" 6th-order bandpass, dual-ported for extended bandwidth.

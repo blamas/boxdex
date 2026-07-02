@@ -1,0 +1,40 @@
+---
+name: FK Top Midhorn 12
+category: mid
+topology: front_loaded_horn
+drivers:
+  - faital-12pr310-8
+netVolumeL: 80
+dims:
+  wMm: 600
+  hMm: 700
+  dMm: 500
+weightKg: 28
+specs:
+  f3Hz: 200
+  f3HzHigh: 2000
+  sensitivityDb: 104
+  hornCutoffHz: 200
+  coverageAngleDeg: 60
+  recommendedCrossoverHz: 200
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+connectors:
+  - speakON NL4
+---
+
+12" mid-horn. Faital 12PR310, 200-2000 Hz band, 60 degree coverage.

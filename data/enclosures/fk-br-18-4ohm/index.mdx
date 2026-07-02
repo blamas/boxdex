@@ -1,0 +1,39 @@
+---
+name: FK BR 18 4Ohm
+category: sub
+topology: bass_reflex
+drivers:
+  - selenium-tornado-18sw3a-4
+netVolumeL: 260
+dims:
+  wMm: 720
+  hMm: 720
+  dMm: 640
+weightKg: 40
+specs:
+  f3Hz: 40
+  fbHz: 46
+  sensitivityDb: 100
+  impedanceNominalOhm: 4
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - selenium-tornado-18sw3a-4
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+measurements:
+  - driver:
+      - selenium-tornado-18sw3a-4
+    kind: spl
+    source: rew_measured
+    file: meas-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tribe
+connectors:
+  - speakON NL4
+---
+
+18" bass reflex, 4 Ohm. Selenium Tornado 18SW3A.
