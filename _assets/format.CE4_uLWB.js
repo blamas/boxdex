@@ -1,0 +1,1 @@
+function e(e){return e.replace(/_/g,` `)}function t(e){return e>=1e3?`${(e/1e3).toFixed(1)} kW`:`${e} W`}function n(e){return Number.isInteger(e)?String(e):e.toFixed(1)}function r(e){return e>=1e3?`${(e/1e3).toFixed(e%1e3==0?0:1)}k`:`${Math.round(e)}`}export{e as i,n,t as r,r as t};

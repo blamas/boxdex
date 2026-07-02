@@ -1,0 +1,1 @@
+import{t as e}from"./prefetch.BrlC0xif.js";e();

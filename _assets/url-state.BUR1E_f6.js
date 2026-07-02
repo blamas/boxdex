@@ -1,0 +1,1 @@
+function e(e){return new URLSearchParams(window.location.search).get(e)}function t(e){let t=new URLSearchParams;for(let[n,r]of Object.entries(e))r&&t.set(n,r);let n=t.toString();history.replaceState(null,``,n?`?${n}`:window.location.pathname)}export{t as n,e as t};

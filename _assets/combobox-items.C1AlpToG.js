@@ -1,0 +1,1 @@
+function e(e,t,n){return[{id:`all`,label:n},...e.map(t)]}export{e as t};

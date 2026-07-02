@@ -1,0 +1,1 @@
+{"slug":"scoop-18","name":"18\" Scoop Horn","simulations":[{"driverId":"bc-18sw115-8","source":"hornresp_sim","curves":{"spl":{"freq":[20,25,30,35,40,45,50,55,60,65,70,80,100,125,160,200,250,315,400],"value":[-18.4,-10.2,-3.8,2.4,7.6,11.8,14.2,15.6,15.9,15.5,14.8,13.4,11.6,9.4,6.8,3.6,-0.2,-5.1,-11.2]}},"stacked":{},"notes":{"spl":"1W/1m, half-space"}}],"measurements":[]}

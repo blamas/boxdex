@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blamas.github.io/boxdex/sitemap-index.xml
