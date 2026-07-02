@@ -4,6 +4,10 @@ lefthook = "latest"
 
 [settings]
 node.compile = false
+experimental = true
+
+[hooks]
+postinstall = "lefthook install"
 
 [env]
 NODE_ENV = "development"
