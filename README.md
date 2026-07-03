@@ -67,11 +67,6 @@ With [mise](https://mise.jdx.dev): `mise run dev|build|test|lint|check|fix|verif
 (`.github/workflows/deploy.yml`) builds and publishes `dist/` automatically on push to
 `main`.
 
-Optionally set the `SITE_AUTH_PASSWORDS` repo secret (comma-separated plaintext) to
-put the whole site behind a password gate: the workflow hashes each password at build
-time into `SITE_AUTH_HASHES`, no plaintext ever lands in the repo. Leave it unset for
-no gate.
-
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the folder conventions, CSV format, and
