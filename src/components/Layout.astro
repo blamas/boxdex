@@ -3,7 +3,6 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import { ClientRouter } from "astro:transitions";
 import Search from "astro-pagefind/components/Search.astro";
 import { DEFAULT_LOCALE, LOCALES, useTranslations } from "../i18n";
-import { AUTH_ENABLED, AUTH_HASHES } from "../lib/auth";
 import { BASE } from "../lib/site";
 import "../styles/global.css";
 
@@ -70,45 +69,6 @@ function navHref(path: string) {
     </script>
   </head>
   <body>
-    {AUTH_ENABLED && AUTH_HASHES.length > 0 && (
-      <div id="boxdex-gate" transition:persist style="display:none;position:fixed;inset:0;z-index:9999;background:var(--bg,#111);align-items:center;justify-content:center;">
-        <form id="boxdex-gate-form" style="display:flex;flex-direction:column;gap:1rem;align-items:center;font-family:var(--font-mono,monospace);min-width:18rem;">
-          <p style="margin:0;color:var(--muted,#888);font-size:0.875rem;">This site is under construction.</p>
-          <input id="boxdex-gate-input" type="password" placeholder="Password" autocomplete="current-password"
-            style="width:100%;padding:0.5rem 0.75rem;border:1px solid var(--line,#444);background:var(--panel,#222);color:var(--text,#eee);font-family:inherit;border-radius:4px;font-size:1rem;box-sizing:border-box;" />
-          <button type="submit"
-            style="width:100%;padding:0.5rem;border:1px solid var(--accent,#7aa2f7);background:transparent;color:var(--accent,#7aa2f7);font-family:inherit;border-radius:4px;cursor:pointer;font-size:0.875rem;">Enter</button>
-          <p id="boxdex-gate-error" style="margin:0;color:var(--danger,#ef5350);font-size:0.8rem;min-height:1em;"></p>
-        </form>
-      </div>
-    )}
-    {AUTH_ENABLED && AUTH_HASHES.length > 0 && (
-      <script is:inline define:vars={{ authHashes: AUTH_HASHES }} data-astro-rerun>
-        (function () {
-          var gate = document.getElementById("boxdex-gate");
-          if (!gate) return;
-          var KEY = "boxdex-auth";
-          if (sessionStorage.getItem(KEY) === "1") return;
-          gate.style.display = "flex";
-          var form = document.getElementById("boxdex-gate-form");
-          if (form._boxdexInit) return;
-          form._boxdexInit = true;
-          form.addEventListener("submit", async function (e) {
-            e.preventDefault();
-            var pwd = document.getElementById("boxdex-gate-input").value;
-            var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pwd));
-            var hex = Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
-            if (authHashes.includes(hex)) {
-              sessionStorage.setItem(KEY, "1");
-              gate.style.display = "none";
-            } else {
-              document.getElementById("boxdex-gate-error").textContent = "Incorrect password.";
-              document.getElementById("boxdex-gate-input").value = "";
-            }
-          });
-        })();
-      </script>
-    )}
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header data-pagefind-ignore transition:persist>
       <div class="container">

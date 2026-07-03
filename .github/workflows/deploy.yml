@@ -12,9 +12,6 @@ concurrency:
   group: pages-${{ github.ref_name }}
   cancel-in-progress: false
 
-env:
-  SITE_AUTH_PASSWORDS: ${{ secrets.SITE_AUTH_PASSWORDS }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -44,24 +41,11 @@ jobs:
             echo "target-folder=dev" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Compute auth hashes
-        if: ${{ env.SITE_AUTH_PASSWORDS != '' }}
-        run: |
-          HASHES=$(node -e "
-            const crypto = require('crypto');
-            const raw = process.env.SITE_AUTH_PASSWORDS;
-            const hashes = raw.split('\n').map(p => p.trim()).filter(Boolean)
-              .map(p => crypto.createHash('sha256').update(p).digest('hex'));
-            process.stdout.write(hashes.join(','));
-          ")
-          echo "SITE_AUTH_HASHES=$HASHES" >> $GITHUB_ENV
-
       - name: Build
         run: npm run build
         env:
           SITE_URL: ${{ steps.site.outputs.url }}
           SITE_BASE: ${{ steps.site.outputs.base }}
-          SITE_AUTH_HASHES: ${{ env.SITE_AUTH_HASHES }}
 
       - name: Pagefind
         run: npx pagefind --site dist
@@ -74,4 +58,3 @@ jobs:
           target-folder: ${{ steps.site.outputs.target-folder }}
           clean-exclude: |
             dev
-            pr-preview

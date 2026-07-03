@@ -1,8 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
 // Runs against a production build+preview, not `astro dev` (Pagefind search is
-// only available in the built output). No SITE_BASE/SITE_AUTH_HASHES set, so the
-// build is root-based and ungated, matching local dev defaults.
+// only available in the built output). No SITE_BASE set, so the build is
+// root-based, matching local dev defaults.
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: true,
