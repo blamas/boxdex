@@ -90,7 +90,16 @@
       "description": "Horn specification comparison with coverage radar chart",
       "heading": "Compare Horns",
       "subtitle": "Horn specs side by side. Radar chart normalises each axis to 100 = catalogue maximum."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist"
     }
+  },
+  "notFound": {
+    "heading": "Whoops! Where are you going like that?",
+    "message": "This page is off-axis, we can't find it anywhere in the cabinet. Let's get you back on track.",
+    "home": "Back to the catalog"
   },
   "catalogGrid": {
     "all": "All",

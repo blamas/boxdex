@@ -1,0 +1,51 @@
+---
+import Layout from "../components/Layout.astro";
+import { DEFAULT_LOCALE, useTranslations } from "../i18n";
+import { BASE } from "../lib/site";
+
+// Root-level 404 (not under [locale]): Astro emits dist/404.html, which the host
+// serves for any unmatched path. Renders in the default locale, the header still
+// offers the language switcher. Copy lives in the `notFound` translation block.
+const t = useTranslations(DEFAULT_LOCALE);
+const homeHref = `${BASE}/${DEFAULT_LOCALE}/`;
+---
+
+<Layout title={t.pages.notFound.title} description={t.pages.notFound.description}>
+  <section class="notfound">
+    <p class="code">404</p>
+    <h1>{t.notFound.heading}</h1>
+    <p class="message">{t.notFound.message}</p>
+    <a class="home" href={homeHref}>{t.notFound.home}</a>
+  </section>
+</Layout>
+
+<style>
+  .notfound {
+    text-align: center;
+    padding: 3rem 1rem 4rem;
+  }
+
+  .code {
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  .message {
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .home {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+</style>

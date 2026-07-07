@@ -1,5 +1,7 @@
 {
   "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": ["worker/index.ts"],
   "ignore": ["data/**"],
-  "ignoreBinaries": ["pagefind"]
+  "ignoreBinaries": ["pagefind"],
+  "ignoreDependencies": ["@cloudflare/workers-types"]
 }

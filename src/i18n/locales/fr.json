@@ -90,7 +90,16 @@
       "description": "Comparaison des specs de horns avec radar de couverture",
       "heading": "Comparer des horns",
       "subtitle": "Specs de horns côte à côte. Le radar normalise chaque axe à 100 = maximum du catalogue."
+    },
+    "notFound": {
+      "title": "Page introuvable",
+      "description": "La page que vous cherchez n'existe pas"
     }
+  },
+  "notFound": {
+    "heading": "Oups ! Où allez-vous comme ça ?",
+    "message": "Cette page est hors axe, introuvable dans le caisson. On vous ramène en lieu sûr.",
+    "home": "Retour au catalogue"
   },
   "catalogGrid": {
     "all": "Tous",

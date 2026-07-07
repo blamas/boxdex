@@ -1,0 +1,12 @@
+name = "boxdex"
+main = "worker/index.ts"
+compatibility_date = "2025-07-01"
+
+# Served from R2, not Workers assets (dist exceeds the 20k-file asset cap).
+[[r2_buckets]]
+binding = "SITE_BUCKET"
+bucket_name = "boxdex-site"
+
+# Prod default. Previews override to previews/pr-<n> via versions upload --var.
+[vars]
+ASSET_PREFIX = "production"
