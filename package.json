@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "biome check .",
-    "check": "astro check",
+    "check": "astro check && tsc -p worker",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@biomejs/biome": "^2.5.2",
+    "@cloudflare/workers-types": "^5.20260707.1",
     "@playwright/test": "1.61.1",
     "@types/node": "^26.1.0",
     "@vitest/coverage-v8": "^4.1.9",

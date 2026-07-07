@@ -1,0 +1,4 @@
+rules:
+  # deploy.yml passes CF secrets as wrangler-action `with:` inputs, not env.
+  secrets-outside-env:
+    disable: true

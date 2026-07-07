@@ -14,7 +14,7 @@ enclosures, plus a driver/horn catalogue to design around them.
 | Lint/format | Biome |
 | Tests | Vitest (pure logic in `src/lib`, enforced coverage thresholds) |
 | Units | SI only (mm, L, Hz, dB, kg, W, Ω) |
-| Hosting | GitHub Pages |
+| Hosting | Cloudflare (static output on R2, served by a Worker) |
 
 ## Data model
 
@@ -59,13 +59,14 @@ npm run schema:gen   # regenerate schema/*.schema.json after schema edits
 With [mise](https://mise.jdx.dev): `mise run dev|build|test|lint|check|fix|verify`
 (`verify` is the full pre-push gate: lint + type-check + knip + coverage + build).
 
-## Deploying to GitHub Pages
+## Deploying
 
-`site` and `base` are driven by the `SITE_URL` / `SITE_BASE` env vars at build time
-(the deploy workflow sets both from the Pages origin and base path, no
-`astro.config.mjs` edit needed for a repo-subpath deployment). The deploy workflow
-(`.github/workflows/deploy.yml`) builds and publishes `dist/` automatically on push to
-`main`.
+The build is host-agnostic: `site` and `base` come from the `SITE_URL` / `SITE_BASE`
+env vars, and the output is plain static files in `dist/`, so it can be hosted anywhere.
+Production builds in **GitHub Actions**, syncs `dist/` to **Cloudflare R2**, and a small
+Worker (`worker/`) serves the objects. R2 is used instead of Workers static assets because
+the site exceeds the 20,000-file asset cap. Each PR gets a preview served from its own R2
+prefix, with the URL posted as a sticky comment.
 
 ## Contributing
 

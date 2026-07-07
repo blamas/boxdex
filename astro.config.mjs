@@ -4,9 +4,9 @@ import svelte from "@astrojs/svelte";
 import { defineConfig } from "astro/config";
 import pagefind from "astro-pagefind";
 
-// `site` drives canonical URLs and the sitemap; set SITE_URL at build time
-// (the deploy workflow does). Falls back to localhost for dev/preview.
-// Set `base` here (e.g. base: "/boxdex") when deploying to a repo subpath.
+// `site` drives canonical URLs and the sitemap, `base` the path prefix, both from
+// generic env vars so the build stays portable. SITE_URL is the explicit override
+// (production sets it), otherwise localhost. SITE_BASE only for a subpath deployment.
 export default defineConfig({
   site: process.env.SITE_URL || "http://localhost:4321",
   base: process.env.SITE_BASE || "/",
