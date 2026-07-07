@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cacheControl, contentType, resolveKey } from "../worker/resolve";
+import { cacheControl, contentType, notFoundKey, resolveKey } from "../worker/resolve";
 
 describe("resolveKey", () => {
   it("maps the root to the prefix index", () => {
@@ -41,6 +41,24 @@ describe("resolveKey", () => {
       "production/en/drivers/a b/index.html"
     );
     expect(resolveKey("/en/../secret", "production")).toBe("production/en/secret/index.html");
+  });
+});
+
+describe("notFoundKey", () => {
+  it("serves the locale's own 404 under a known locale prefix", () => {
+    expect(notFoundKey("/fr/findd/", "production")).toBe("production/fr/404/index.html");
+    expect(notFoundKey("/en/nope", "production")).toBe("production/en/404/index.html");
+    expect(notFoundKey("/fr", "previews/pr-12")).toBe("previews/pr-12/fr/404/index.html");
+  });
+
+  it("falls back to the root 404 outside a locale prefix", () => {
+    expect(notFoundKey("/whatever/x", "production")).toBe("production/404.html");
+    expect(notFoundKey("/", "production")).toBe("production/404.html");
+  });
+
+  it("does not match a locale code that merely prefixes a segment", () => {
+    expect(notFoundKey("/friend/x", "production")).toBe("production/404.html");
+    expect(notFoundKey("/entry", "production")).toBe("production/404.html");
   });
 });
 
