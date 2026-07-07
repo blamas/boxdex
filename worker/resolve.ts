@@ -58,6 +58,17 @@ export function resolveKey(pathname: string, prefix: string): string {
   return key(prefix, `${path}/index.html`);
 }
 
+// Mirror of the locale list in src/i18n/index.ts (worker/ sits outside the app tsconfig).
+const LOCALES = new Set(["en", "fr"]);
+
+// R2 key of the 404 page for a missed path: the locale's own 404 when the first
+// segment is a known locale, else the root default-locale 404.html.
+export function notFoundKey(pathname: string, prefix: string): string {
+  const first = pathname.replace(/^\/+/, "").split("/", 1)[0];
+  if (LOCALES.has(first)) return key(prefix, `${first}/404/index.html`);
+  return key(prefix, "404.html");
+}
+
 // Known type for the extension, else undefined (pagefind chunks are read as bytes).
 export function contentType(key: string): string | undefined {
   const ext = key.slice(key.lastIndexOf(".") + 1).toLowerCase();

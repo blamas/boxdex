@@ -21,7 +21,13 @@ export default defineConfig({
   // background prerender on Chrome (Speculation Rules API), with silent fallback.
   prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
   experimental: { clientPrerender: true },
-  integrations: [mdx(), svelte(), sitemap(), pagefind()],
+  // The per-locale 404 pages are real routes (/en/404/), keep them out of the sitemap.
+  integrations: [
+    mdx(),
+    svelte(),
+    sitemap({ filter: (page) => !page.endsWith("/404/") }),
+    pagefind(),
+  ],
   build: {
     assets: "_assets",
     inlineStylesheets: "auto",

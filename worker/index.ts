@@ -1,7 +1,7 @@
 // Serves the prerendered site from R2. CI syncs dist under env.ASSET_PREFIX, this Worker
 // maps requests to objects. The add-a-box POST will branch here before the lookup.
 
-import { cacheControl, contentType, resolveKey } from "./resolve";
+import { cacheControl, contentType, notFoundKey, resolveKey } from "./resolve";
 
 interface Env {
   SITE_BUCKET: R2Bucket;
@@ -26,14 +26,20 @@ export default {
     const key = resolveKey(url.pathname, env.ASSET_PREFIX);
 
     let status = 200;
+    let servedKey = key;
     let object = await env.SITE_BUCKET.get(key);
     if (!object) {
       status = 404;
-      object = await env.SITE_BUCKET.get(`${env.ASSET_PREFIX}/404.html`);
+      servedKey = notFoundKey(url.pathname, env.ASSET_PREFIX);
+      object = await env.SITE_BUCKET.get(servedKey);
+      const rootKey = `${env.ASSET_PREFIX}/404.html`;
+      if (!object && servedKey !== rootKey) {
+        servedKey = rootKey;
+        object = await env.SITE_BUCKET.get(rootKey);
+      }
       if (!object) return new Response("Not found", { status: 404 });
     }
 
-    const servedKey = status === 404 ? `${env.ASSET_PREFIX}/404.html` : key;
     const headers = new Headers();
     headers.set(
       "content-type",

@@ -1,0 +1,12 @@
+---
+import NotFound from "../../components/NotFound.astro";
+import { localeStaticPaths, useLocale } from "../../i18n";
+
+export { localeStaticPaths as getStaticPaths };
+
+// Emits dist/<locale>/404/index.html (Astro only special-cases the root /404).
+// The Worker serves it for unmatched paths under a known locale prefix.
+const { locale } = useLocale(Astro.params);
+---
+
+<NotFound locale={locale} />
