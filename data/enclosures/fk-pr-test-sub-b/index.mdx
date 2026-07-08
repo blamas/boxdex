@@ -1,0 +1,36 @@
+---
+name: FK PR Test Sub B
+category: sub
+topology: tapped_horn
+drivers:
+  - faital-15hp1060-8
+netVolumeL: 280
+dims:
+  wMm: 600
+  hMm: 900
+  dMm: 700
+weightKg: 45
+specs:
+  f3Hz: 35
+  fbHz: 42
+  sensitivityDb: 104
+  maxSplDb: 135
+  powerAesW: 600
+  recommendedCrossoverHz: 90
+  hornCutoffHz: 35
+  hornMouthCm2: 1600
+simulations:
+  - driver:
+      - faital-15hp1060-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - tekno
+connectors:
+  - speakON NL4
+---
+
+PR preview test box B: 15" tapped horn. Faital 15HP1060, 35 Hz cutoff.

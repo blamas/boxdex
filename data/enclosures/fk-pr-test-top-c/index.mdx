@@ -1,0 +1,33 @@
+---
+name: FK PR Test Top C
+category: top
+topology: bass_reflex
+drivers:
+  - faital-12pr310-8
+netVolumeL: 60
+dims:
+  wMm: 400
+  hMm: 560
+  dMm: 370
+weightKg: 18
+specs:
+  f3Hz: 70
+  fbHz: 65
+  sensitivityDb: 98
+  coverageAngleDeg: 90
+  recommendedCrossoverHz: 120
+simulations:
+  - driver:
+      - faital-12pr310-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+PR preview test box C: 12" bass reflex top. Faital 12PR310, tuned to 65 Hz.

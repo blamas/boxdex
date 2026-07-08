@@ -1,0 +1,34 @@
+---
+name: FK PR Test Sub A
+category: sub
+topology: bass_reflex
+drivers:
+  - faital-18hp1030-8
+netVolumeL: 200
+dims:
+  wMm: 700
+  hMm: 700
+  dMm: 600
+weightKg: 38
+specs:
+  f3Hz: 40
+  fbHz: 46
+  sensitivityDb: 101
+  maxSplDb: 133
+  powerAesW: 1000
+  recommendedCrossoverHz: 100
+simulations:
+  - driver:
+      - faital-18hp1030-8
+    kind: spl
+    source: hornresp_sim
+    file: spl-1u.csv
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - hardtek
+connectors:
+  - speakON NL4
+---
+
+PR preview test box A: 18" bass reflex. Faital 18HP1030, tuned to 46 Hz.
