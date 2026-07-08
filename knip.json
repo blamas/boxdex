@@ -1,5 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@latest/schema.json",
   "entry": ["worker/index.ts"],
-  "ignore": ["data/**"]
+  "ignore": ["data/**"],
+  "ignoreDependencies": ["wrangler"]
 }
