@@ -38,14 +38,15 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
 
       - name: Sync to R2
-        run: >
-          aws s3 sync dist "s3://boxdex-site/production" --delete
-          --endpoint-url "${{ vars.R2_S3_ENDPOINT }}"
+        uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
+        with:
+          args: sync dist r2:boxdex-site/production --checksum --fast-list --s3-no-check-bucket --transfers 32 --checkers 64
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: auto
-          AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ENDPOINT: ${{ vars.R2_S3_ENDPOINT }}
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
 
       - name: Deploy
         id: deploy
@@ -79,16 +80,31 @@ jobs:
 
       - name: Build
         run: npm run build && npx pagefind --site dist
-
-      - name: Sync to R2
-        run: >
-          aws s3 sync dist "s3://boxdex-site/previews/pr-${{ github.event.pull_request.number }}"
-          --delete --endpoint-url "${{ vars.R2_S3_ENDPOINT }}"
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: auto
-          AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+          SITE_URL: ${{ vars.SITE_URL }}
+
+      - name: Purge stale preview from R2
+        continue-on-error: true
+        uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
+        with:
+          args: purge r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --fast-list --s3-no-check-bucket
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ENDPOINT: ${{ vars.R2_S3_ENDPOINT }}
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+
+      - name: Upload diff to R2
+        uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
+        with:
+          args: copy dist r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --compare-dest r2:boxdex-site/production --checksum --fast-list --s3-no-check-bucket --transfers 32 --checkers 64 -v
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ENDPOINT: ${{ vars.R2_S3_ENDPOINT }}
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
 
       - name: Upload preview version
         id: preview
@@ -138,14 +154,18 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      # continue-on-error: the prefix may not exist (PR closed without a deployed preview).
       - name: Purge preview from R2
-        run: >
-          aws s3 rm "s3://boxdex-site/previews/pr-${{ github.event.pull_request.number }}"
-          --recursive --endpoint-url "${{ vars.R2_S3_ENDPOINT }}"
+        continue-on-error: true
+        uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
+        with:
+          args: purge r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --fast-list --s3-no-check-bucket
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: auto
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ENDPOINT: ${{ vars.R2_S3_ENDPOINT }}
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
 
       - name: Retire comment
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
