@@ -46,10 +46,29 @@ jobs:
           RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
 
+      # check exits non-zero whenever differences exist, which is the normal case for a PR
+      - name: Diff against production
+        continue-on-error: true
+        uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
+        with:
+          args: check dist r2:boxdex-site/production --checksum --fast-list --s3-no-check-bucket --missing-on-dst .preview-new --differ .preview-changed
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ENDPOINT: ${{ vars.R2_S3_ENDPOINT }}
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+
+      - name: Collect upload list
+        run: |
+          test -f .preview-new
+          cat .preview-new .preview-changed 2>/dev/null > .preview-upload
+          echo "$(wc -l < .preview-upload) files to upload"
+
       - name: Upload diff to R2
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: copy dist r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --compare-dest r2:boxdex-site/production --checksum --fast-list --s3-no-check-bucket --transfers 32 --checkers 64 -v --stats-one-line
+          args: copy dist r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --files-from-raw .preview-upload --checksum --fast-list --s3-no-check-bucket --transfers 32 -v --stats-one-line
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare
