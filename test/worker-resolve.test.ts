@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { cacheControl, contentType, notFoundKey, resolveKey } from "../worker/resolve";
+import {
+  cacheControl,
+  contentType,
+  notFoundKey,
+  notFoundKeys,
+  prefixChain,
+  resolveKey,
+} from "../worker/resolve";
 
 describe("resolveKey", () => {
   it("maps the root to the prefix index", () => {
@@ -88,5 +95,37 @@ describe("cacheControl", () => {
 
   it("gives everything else a moderate TTL", () => {
     expect(cacheControl("production/api/x.json")).toBe("public, max-age=3600");
+  });
+});
+
+describe("notFoundKeys", () => {
+  it("dedupes to the single root 404 on production for a non-locale path", () => {
+    expect(notFoundKeys("/nope", ["production"])).toEqual(["production/404.html"]);
+  });
+
+  it("orders locale 404s across the chain before root 404s", () => {
+    expect(notFoundKeys("/en/nope", ["previews/pr-9", "production"])).toEqual([
+      "previews/pr-9/en/404/index.html",
+      "production/en/404/index.html",
+      "previews/pr-9/404.html",
+      "production/404.html",
+    ]);
+  });
+
+  it("dedupes locale-less candidates across the chain", () => {
+    expect(notFoundKeys("/nope", ["previews/pr-9", "production"])).toEqual([
+      "previews/pr-9/404.html",
+      "production/404.html",
+    ]);
+  });
+});
+
+describe("prefixChain", () => {
+  it("returns only itself for the production prefix", () => {
+    expect(prefixChain("production")).toEqual(["production"]);
+  });
+
+  it("returns preview prefix followed by production for a PR prefix", () => {
+    expect(prefixChain("previews/pr-12")).toEqual(["previews/pr-12", "production"]);
   });
 });

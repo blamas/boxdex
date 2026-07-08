@@ -69,6 +69,16 @@ export function notFoundKey(pathname: string, prefix: string): string {
   return key(prefix, "404.html");
 }
 
+// Ordered 404 candidates across a prefix chain: locale 404s first (most specific),
+// then root 404s, deduped for non-locale paths where the two coincide.
+export function notFoundKeys(pathname: string, prefixes: string[]): string[] {
+  const candidates = [
+    ...prefixes.map((p) => notFoundKey(pathname, p)),
+    ...prefixes.map((p) => key(p, "404.html")),
+  ];
+  return [...new Set(candidates)];
+}
+
 // Known type for the extension, else undefined (pagefind chunks are read as bytes).
 export function contentType(key: string): string | undefined {
   const ext = key.slice(key.lastIndexOf(".") + 1).toLowerCase();
@@ -80,4 +90,9 @@ export function cacheControl(key: string): string {
   if (key.includes("/_astro/")) return IMMUTABLE;
   if (key.endsWith(".html")) return REVALIDATE;
   return MODERATE;
+}
+
+// Preview prefixes fall back to production for objects the PR didn't change.
+export function prefixChain(prefix: string): string[] {
+  return prefix === "production" ? [prefix] : [prefix, "production"];
 }

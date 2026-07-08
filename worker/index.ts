@@ -1,7 +1,7 @@
 // Serves the prerendered site from R2. CI syncs dist under env.ASSET_PREFIX, this Worker
 // maps requests to objects. The add-a-box POST will branch here before the lookup.
 
-import { cacheControl, contentType, notFoundKey, resolveKey } from "./resolve";
+import { cacheControl, contentType, notFoundKeys, prefixChain, resolveKey } from "./resolve";
 
 interface Env {
   SITE_BUCKET: R2Bucket;
@@ -23,19 +23,24 @@ export default {
     }
 
     const url = new URL(request.url);
-    const key = resolveKey(url.pathname, env.ASSET_PREFIX);
+    const chain = prefixChain(env.ASSET_PREFIX);
 
     let status = 200;
-    let servedKey = key;
-    let object = await env.SITE_BUCKET.get(key);
+    let servedKey = "";
+    let object: R2ObjectBody | null = null;
+
+    for (const prefix of chain) {
+      servedKey = resolveKey(url.pathname, prefix);
+      object = await env.SITE_BUCKET.get(servedKey);
+      if (object) break;
+    }
+
     if (!object) {
       status = 404;
-      servedKey = notFoundKey(url.pathname, env.ASSET_PREFIX);
-      object = await env.SITE_BUCKET.get(servedKey);
-      const rootKey = `${env.ASSET_PREFIX}/404.html`;
-      if (!object && servedKey !== rootKey) {
-        servedKey = rootKey;
-        object = await env.SITE_BUCKET.get(rootKey);
+      for (const candidate of notFoundKeys(url.pathname, chain)) {
+        servedKey = candidate;
+        object = await env.SITE_BUCKET.get(candidate);
+        if (object) break;
       }
       if (!object) return new Response("Not found", { status: 404 });
     }
@@ -45,7 +50,7 @@ export default {
       "content-type",
       contentType(servedKey) ?? object.httpMetadata?.contentType ?? "application/octet-stream"
     );
-    headers.set("cache-control", status === 404 ? "no-store" : cacheControl(key));
+    headers.set("cache-control", status === 404 ? "no-store" : cacheControl(servedKey));
     if (object.httpEtag) headers.set("etag", object.httpEtag);
 
     // HTML is must-revalidate, so browsers revalidate every navigation: answer with a
