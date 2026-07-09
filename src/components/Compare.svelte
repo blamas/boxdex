@@ -51,31 +51,36 @@ let normalise = $state(false);
 let freqMin = $state<number | "">("");
 let freqMax = $state<number | "">("");
 let loading = $state(true);
+let error = $state<string | null>(null);
 let initialized = $state(false);
 let showAdvanced = $state(false);
 let kindFilter = $state<Kind | "all">("all");
 let categoryFilter = $state("all");
 
 onMount(async () => {
-  const urlSlugs = (readParam("slugs") ?? "").split(",").filter(Boolean);
-  const urlKind = readParam("kind") as Kind | null;
+  try {
+    const urlSlugs = (readParam("slugs") ?? "").split(",").filter(Boolean);
+    const urlKind = readParam("kind");
 
-  const [manifestRes, driversRes] = await Promise.all([
-    fetch(`${BASE}/api/manifest.json`),
-    fetch(`${BASE}/api/drivers.json`),
-  ]);
-  records = await manifestRes.json();
-  driverList = await driversRes.json();
+    const [manifestRes, driversRes] = await Promise.all([
+      fetch(`${BASE}/api/manifest.json`),
+      fetch(`${BASE}/api/drivers.json`),
+    ]);
+    records = await manifestRes.json();
+    driverList = await driversRes.json();
 
-  const validSlugs = records.map((r) => r.slug);
-  selected = urlSlugs.filter((s) => validSlugs.includes(s));
+    const validSlugs = records.map((r) => r.slug);
+    selected = urlSlugs.filter((s) => validSlugs.includes(s));
 
-  if (urlKind && ["spl", "phase", "impedance"].includes(urlKind)) {
-    kind = urlKind;
+    if (urlKind === "spl" || urlKind === "phase" || urlKind === "impedance") {
+      kind = urlKind;
+    }
+  } catch (e) {
+    error = String(e);
+  } finally {
+    loading = false;
+    initialized = true;
   }
-
-  loading = false;
-  initialized = true;
 });
 
 // Sync URL when selection or kind changes
@@ -304,7 +309,9 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
   <hr class="section-rule no-print" />
 
   <div class="box-list no-print">
-    {#if loading}
+    {#if error}
+      <div class="empty-state">{t.failedToLoad}</div>
+    {:else if loading}
       <p class="muted">{t.loading}</p>
     {:else}
       <div class="table-wrap" bind:this={tableWrap}>

@@ -10,3 +10,10 @@ bucket_name = "boxdex-site"
 # Prod default. Previews override to previews/pr-<n> via versions upload --var.
 [vars]
 ASSET_PREFIX = "production"
+
+[placement]
+mode = "smart"
+
+[observability.logs]
+enabled = true
+invocation_logs = true

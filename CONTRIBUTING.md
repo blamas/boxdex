@@ -1,5 +1,11 @@
 # Contributing to Boxdex
 
+Boxdex is a public commons for loudspeaker design: free data, free code, no accounts,
+no tracking. Driver and horn specs go in as CC0. Enclosure entries carry the original designer's
+license (open or proprietary), and that is preserved faithfully; the site never
+re-licenses content or locks it behind payment. There is no company behind this that
+can change those terms.
+
 All content lives under `data/` and is validated at build time: `npm run build` (or
 `mise run verify` for the full gate) tells you exactly what is wrong before you open
 a PR. Controlled vocabularies (topology, license, recommendedFor, connectors, horn
@@ -143,3 +149,67 @@ npm test           # vitest
 npm run lint       # biome
 mise run verify    # everything CI runs: lint + type-check + test + build
 ```
+
+With mise, `mise install` also wires the pre-commit hook (via lefthook) that validates
+driver and enclosure data files when you stage changes under `data/drivers/**` or
+`data/enclosures/**`. You do not need to run the validator manually for routine edits;
+the hook runs `node scripts/validate-driver.mjs <file>` on each staged file.
+
+For a single-file check outside of a commit:
+
+```sh
+node scripts/validate-driver.mjs data/drivers/cone/acme/acme-18w8500.json
+```
+
+## Validating and testing your changes
+
+Before opening a PR, run the full gate:
+
+```sh
+mise run verify
+```
+
+This runs, in order: `lint`, `check` (Astro/Svelte/TS type-check), `knip` (dead-code
+check), `coverage` (Vitest with enforced thresholds), and `build` (production build +
+data validation). CI runs the same sequence; a failure here will fail CI.
+
+For a faster loop while editing data files only:
+
+```sh
+mise run build     # validates all data and catches dangling driver refs
+```
+
+Type-check and lint are not needed for data-only changes, but the build is authoritative.
+
+## Workflow for common changes
+
+### Adding a driver and using it in an enclosure
+
+1. Create the JSON under `data/drivers/<type>/<mfr>/<id>.json`.
+2. Run `node scripts/validate-driver.mjs <file>` to catch schema errors immediately.
+3. Reference `<id>` in the enclosure's `drivers:` frontmatter array.
+4. Run `mise run build` to confirm no dangling references and no schema violations.
+
+### Editing the driver or enclosure schema
+
+1. Edit `src/lib/schemas.ts` (and `src/content.config.ts` if adding a new collection field).
+2. Run `npm run schema:gen` to regenerate `schema/*.schema.json`.
+3. Commit both the schema source and the regenerated mirror. CI fails if the mirrors drift.
+4. Never hand-edit the mirror files.
+
+### Adding a taxonomy value
+
+Edit `data/taxonomy.json` only: no code change needed. If you add a new `topology`
+value, also add a glossary entry at `src/pages/[locale]/glossary.astro` with an anchor
+matching the raw taxonomy value (enclosure pages deep-link to `#<topology>`).
+
+## Pull request checklist
+
+- `mise run verify` passes locally.
+- New driver JSON files pass the single-file validator.
+- `npm run schema:gen` was run and the mirror files are committed if you touched a schema.
+- `license` is set on every new enclosure (no default; a missing license is a build error).
+- `maxSplDb` and acoustic-limit fields are only set when a simulation or measurement backs
+  them up: never estimated or defaulted.
+- All units are SI (mm, L, Hz, dB, kg, W, Ω). No imperial units in data files.
+- New `topology` values have a corresponding glossary entry.

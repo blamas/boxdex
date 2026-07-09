@@ -56,6 +56,7 @@ let coverage = $state<CoverageInputs>({
 });
 let curveCache = $state<Record<string, CurvesResponse>>({});
 let loading = $state(true);
+let error = $state<string | null>(null);
 let initialized = $state(false);
 let xoApplied = $state(false);
 let xoOverrides = $state<XoState["overrides"]>({});
@@ -94,22 +95,27 @@ $effect(() => {
 });
 
 onMount(async () => {
-  const hash = location.hash.slice(1);
-  const saved = hash || localStorage.getItem("boxdex-stack") || "";
-  if (saved) {
-    const decoded = decodeStack(saved);
-    stack = decoded.state;
-    coverage = decoded.cov;
-    xoApplied = decoded.xo.applied;
-    xoOverrides = decoded.xo.overrides;
-    xoGains = decoded.xo.gains;
+  try {
+    const hash = location.hash.slice(1);
+    const saved = hash || localStorage.getItem("boxdex-stack") || "";
+    if (saved) {
+      const decoded = decodeStack(saved);
+      stack = decoded.state;
+      coverage = decoded.cov;
+      xoApplied = decoded.xo.applied;
+      xoOverrides = decoded.xo.overrides;
+      xoGains = decoded.xo.gains;
+    }
+
+    const res = await fetch(`${BASE}/api/manifest.json`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    records = await res.json();
+  } catch (e) {
+    error = String(e);
+  } finally {
+    loading = false;
+    initialized = true;
   }
-
-  const res = await fetch(`${BASE}/api/manifest.json`);
-  records = await res.json();
-
-  loading = false;
-  initialized = true;
 });
 
 const resolvedSlots = $derived.by(() =>
@@ -277,7 +283,8 @@ function removeSlot(idx: number) {
 
 function changeSlug(idx: number, slug: string) {
   if (!slug) return;
-  stack[idx] = { slug, qty: stack[idx].qty };
+  const { qty, channels } = stack[idx];
+  stack[idx] = { slug, qty, channels };
 }
 
 // A channel override only makes sense while it still evenly divides qty; drop it
@@ -316,7 +323,9 @@ const curvesLoading = $derived(
     <ExportMenu onPrint={() => window.print()} />
   </PageActions>
 
-  {#if loading}
+  {#if error}
+    <div class="empty-state">{t.failedToLoad}</div>
+  {:else if loading}
     <p class="muted">{t.loading}</p>
   {:else}
     <section class="section">

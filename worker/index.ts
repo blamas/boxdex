@@ -10,7 +10,13 @@ interface Env {
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    const url = new URL(request.url);
+    const start = Date.now();
+
     if (request.method !== "GET" && request.method !== "HEAD") {
+      console.log(
+        JSON.stringify({ event: "method_not_allowed", method: request.method, path: url.pathname })
+      );
       return new Response("Method Not Allowed", { status: 405, headers: { allow: "GET, HEAD" } });
     }
 
@@ -19,10 +25,14 @@ export default {
     const cache = caches.default;
     if (isProd) {
       const hit = await cache.match(request);
-      if (hit) return hit;
+      if (hit) {
+        console.log(
+          JSON.stringify({ event: "cache_hit", path: url.pathname, ms: Date.now() - start })
+        );
+        return hit;
+      }
     }
 
-    const url = new URL(request.url);
     const chain = prefixChain(env.ASSET_PREFIX);
 
     let status = 200;
@@ -42,7 +52,25 @@ export default {
         object = await env.SITE_BUCKET.get(candidate);
         if (object) break;
       }
-      if (!object) return new Response("Not found", { status: 404 });
+      if (!object) {
+        console.log(
+          JSON.stringify({
+            event: "r2_miss_hard",
+            path: url.pathname,
+            prefix: env.ASSET_PREFIX,
+            ms: Date.now() - start,
+          })
+        );
+        return new Response("Not found", { status: 404 });
+      }
+      console.log(
+        JSON.stringify({
+          event: "r2_404",
+          path: url.pathname,
+          key: servedKey,
+          ms: Date.now() - start,
+        })
+      );
     }
 
     const headers = new Headers();
@@ -53,10 +81,29 @@ export default {
     headers.set("cache-control", status === 404 ? "no-store" : cacheControl(servedKey));
     if (object.httpEtag) headers.set("etag", object.httpEtag);
 
+    // Security headers: applied to all responses. CSP scoped to HTML only.
+    headers.set("x-content-type-options", "nosniff");
+    headers.set("x-frame-options", "SAMEORIGIN");
+    headers.set("referrer-policy", "strict-origin-when-cross-origin");
+    if (servedKey.endsWith(".html")) {
+      headers.set(
+        "content-security-policy",
+        "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+      );
+    }
+
     // HTML is must-revalidate, so browsers revalidate every navigation: answer with a
     // 304 instead of the full body when their etag still matches.
     const ifNoneMatch = request.headers.get("if-none-match");
     if (status === 200 && object.httpEtag && ifNoneMatch?.includes(object.httpEtag)) {
+      console.log(
+        JSON.stringify({
+          event: "not_modified",
+          path: url.pathname,
+          key: servedKey,
+          ms: Date.now() - start,
+        })
+      );
       return new Response(null, { status: 304, headers });
     }
 
@@ -66,6 +113,16 @@ export default {
     if (isProd && status === 200 && request.method === "GET") {
       ctx.waitUntil(cache.put(request, response.clone()));
     }
+
+    console.log(
+      JSON.stringify({
+        event: "served",
+        path: url.pathname,
+        key: servedKey,
+        status,
+        ms: Date.now() - start,
+      })
+    );
     return response;
   },
 };

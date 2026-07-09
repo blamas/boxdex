@@ -26,8 +26,8 @@ describe("resolveKey", () => {
   });
 
   it("passes through a path that already names a file", () => {
-    expect(resolveKey("/_astro/app.a1b2c3.css", "production")).toBe(
-      "production/_astro/app.a1b2c3.css"
+    expect(resolveKey("/_assets/app.a1b2c3.css", "production")).toBe(
+      "production/_assets/app.a1b2c3.css"
     );
     expect(resolveKey("/api/curves/slug.json", "production")).toBe(
       "production/api/curves/slug.json"
@@ -83,8 +83,20 @@ describe("contentType", () => {
 });
 
 describe("cacheControl", () => {
-  it("marks hashed _astro assets immutable", () => {
-    expect(cacheControl("production/_astro/app.a1b2c3.css")).toBe(
+  it("marks hashed _assets immutable", () => {
+    expect(cacheControl("production/_assets/app.a1b2c3.css")).toBe(
+      "public, max-age=31536000, immutable"
+    );
+    expect(cacheControl("production/_assets/CatalogGrid.b4c5d6.js")).toBe(
+      "public, max-age=31536000, immutable"
+    );
+  });
+
+  it("marks pagefind bundles immutable", () => {
+    expect(cacheControl("production/pagefind/pagefind.js")).toBe(
+      "public, max-age=31536000, immutable"
+    );
+    expect(cacheControl("production/pagefind/wasm.en.wasm")).toBe(
       "public, max-age=31536000, immutable"
     );
   });
@@ -94,7 +106,9 @@ describe("cacheControl", () => {
   });
 
   it("gives everything else a moderate TTL", () => {
-    expect(cacheControl("production/api/x.json")).toBe("public, max-age=3600");
+    expect(cacheControl("production/api/x.json")).toBe(
+      "public, max-age=3600, stale-while-revalidate=86400"
+    );
   });
 });
 

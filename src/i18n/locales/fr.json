@@ -10,7 +10,8 @@
     "toggleTheme": "Basculer thème clair/sombre"
   },
   "footer": {
-    "text": "Boxdex : plans de caissons libres. Toutes les unités en SI. Les données peuvent être des simulations ou des mesures, vérifiez les badges de provenance. Contributions bienvenues via PR."
+    "text": "Boxdex : plans de caissons libres. Toutes les unités en SI. Les données peuvent être des simulations ou des mesures, vérifiez les badges de provenance. Contributions bienvenues via PR.",
+    "privacy": "Confidentialité"
   },
   "curveLabels": {
     "spl": "SPL (dB)",
@@ -94,6 +95,10 @@
     "notFound": {
       "title": "Page introuvable",
       "description": "La page que vous cherchez n'existe pas"
+    },
+    "privacy": {
+      "title": "Confidentialité",
+      "description": "Politique de confidentialité de Boxdex : quelles données nous collectons et comment nous les utilisons"
     }
   },
   "notFound": {
@@ -108,6 +113,7 @@
     "design": "design",
     "designs": "designs",
     "emptyState": "Aucun design dans cette catégorie pour l'instant.",
+    "failedToLoad": "Échec du chargement.",
     "volume": "Volume",
     "f3": "F3",
     "f3High": "F3 haut",
@@ -129,6 +135,7 @@
     "maxHz": "max Hz",
     "enclosures": "Caissons",
     "loading": "Chargement…",
+    "failedToLoad": "Échec du chargement.",
     "emptyState": "Sélectionnez au moins un caisson ci-dessous, ou les caissons sélectionnés n'ont pas de données {kind}.",
     "provenanceNote": "Plein = mesuré · Pointillé = simulé",
     "available": "{label} disponible",
@@ -157,6 +164,7 @@
     "verifiedOnly": "Vérifiés uniquement",
     "clearN": "Effacer {n}",
     "emptyState": "Aucun caisson ne correspond à ces critères. Essayez d'assouplir un filtre.",
+    "failedToLoad": "Échec du chargement.",
     "enclosure": "caisson",
     "enclosures": "caissons",
     "found": "trouvé(s)",
@@ -190,6 +198,7 @@
     "advanced": "Avancé",
     "clearN": "Effacer {n}",
     "all": "Tous",
+    "failedToLoad": "Échec du chargement.",
     "driver": "HP",
     "drivers": "HP",
     "horn": "horn",
@@ -237,6 +246,7 @@
   "stackBuilder": {
     "search": "Rechercher…",
     "loading": "Chargement…",
+    "failedToLoad": "Échec du chargement.",
     "builder": "Builder",
     "emptyHint": "Choisissez une catégorie ci-dessous pour ajouter le premier caisson.",
     "remove": "Supprimer",
@@ -322,6 +332,7 @@
     "category": "Catégorie",
     "paretoOnly": "Frontière de Pareto uniquement",
     "loading": "Chargement…",
+    "failedToLoad": "Échec du chargement.",
     "note": "Les points cerclés sont Pareto-optimaux : cercle = mesuré, triangle = simulé. Cliquez sur un point pour ouvrir son plan.",
     "provenance": "Provenance"
   },
@@ -332,6 +343,7 @@
     "brand": "Marque",
     "datasheet": "Fiche technique",
     "loading": "Chargement…",
+    "failedToLoad": "Échec du chargement.",
     "link": "↗ lien",
     "remove": "Supprimer"
   },

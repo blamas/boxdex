@@ -3,7 +3,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import { ClientRouter } from "astro:transitions";
 import Search from "astro-pagefind/components/Search.astro";
 import { DEFAULT_LOCALE, LOCALES, useTranslations } from "../i18n";
-import { BASE } from "../lib/site";
+import { BASE, GIT_REPO_URL } from "../lib/site";
 import "../styles/global.css";
 
 interface Props {
@@ -15,6 +15,8 @@ interface Props {
 }
 
 const { title, description = "Open enclosure plans database", preloadData = [] } = Astro.props;
+
+const cfAnalyticsToken = import.meta.env.CF_ANALYTICS_TOKEN;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
@@ -41,7 +43,6 @@ function navHref(path: string) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{title} · Boxdex</title>
     <meta name="description" content={description} />
@@ -55,7 +56,11 @@ function navHref(path: string) {
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
     {preloadData.map((p: string) => <link rel="preload" href={`${BASE}${p}`} as="fetch" crossorigin="anonymous" />)}
+    <link rel="prefetch" href={`${BASE}/pagefind/pagefind.js`} />
     <ClientRouter />
+    {cfAnalyticsToken && (
+      <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cfAnalyticsToken })}></script>
+    )}
     <!-- Apply saved theme before first paint and after each ClientRouter swap -->
     <script is:inline data-astro-rerun>
       (function () {
@@ -127,7 +132,8 @@ function navHref(path: string) {
 
     <footer data-pagefind-ignore>
       <div class="container">
-        <p>{t.footer.text}</p>
+        <p set:html={t.footer.text.replace("PR", `<a href="${GIT_REPO_URL}" target="_blank" rel="noopener">PR</a>`)} />
+        <p><a href={navHref("/privacy")}>{t.footer.privacy}</a></p>
       </div>
     </footer>
 

@@ -17,9 +17,10 @@ export default defineConfig({
     locales: ["en", "fr"],
     routing: { prefixDefaultLocale: true },
   },
-  // Prefetch links as they enter the viewport; clientPrerender upgrades to full
-  // background prerender on Chrome (Speculation Rules API), with silent fallback.
-  prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
+  // Prefetch on hover; clientPrerender upgrades to full background prerender on Chrome
+  // (Speculation Rules API), with silent fallback. "hover" avoids mass-prefetching
+  // every visible catalog card as the user scrolls.
+  prefetch: { prefetchAll: true, defaultStrategy: "hover" },
   experimental: { clientPrerender: true },
   // The per-locale 404 pages are real routes (/en/404/), keep them out of the sitemap.
   integrations: [
@@ -38,9 +39,6 @@ export default defineConfig({
       warmup: {
         clientFiles: ["./src/lib/echarts.ts", "./src/components/EChart.svelte"],
       },
-    },
-    build: {
-      chunkSizeWarningLimit: 1000,
     },
   },
 });

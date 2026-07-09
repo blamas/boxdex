@@ -29,13 +29,17 @@ let records = $state<EnclosureRecord[]>([]);
 let category = $state<CategoryFilter>("all");
 let sortKey = $state<MetricKey | "name">("name");
 let loading = $state(true);
+let error = $state<string | null>(null);
 
 let addedSlugs = $state(new Set<string>());
 
 onMount(async () => {
   try {
     const res = await fetch(`${BASE}/api/manifest.json`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     records = await res.json();
+  } catch (e) {
+    error = String(e);
   } finally {
     loading = false;
   }
@@ -94,7 +98,9 @@ const visibleCards = $derived(displayed.slice(0, limit));
   {/if}
 </div>
 
-{#if loading}
+{#if error}
+  <div class="empty-state">{t.failedToLoad}</div>
+{:else if loading}
   <div class="grid">
     {#each { length: 6 } as _}
       <div class="card skel-card">
