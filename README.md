@@ -5,7 +5,7 @@
 [![Built with Astro](https://img.shields.io/badge/built%20with-Astro-ff5d01?logo=astro&logoColor=white)](https://astro.build)
 [![Hosted on Cloudflare](https://img.shields.io/badge/hosted%20on-Cloudflare-f38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com)
 
-[![Page views](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/blamas/boxdex/analytics/shields.json&style=for-the-badge&cacheSeconds=86400)](https://github.com/blamas/boxdex/blob/analytics/analytics.json)
+[![Visits](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/blamas/boxdex/analytics/shields.json&style=for-the-badge&cacheSeconds=86400)](https://github.com/blamas/boxdex/blob/analytics/analytics.json)
 [![Top box of the month](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/blamas/boxdex/analytics/shields-top-box.json&style=for-the-badge&cacheSeconds=86400)](https://github.com/blamas/boxdex/blob/analytics/analytics.json)
 
 A free, open, and privacy-respecting reference for sound-system loudspeaker design.

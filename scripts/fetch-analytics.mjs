@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Queries Cloudflare Web Analytics GraphQL API and writes three files:
 //   analytics.json        raw metrics for the last 30 days
-//   shields.json          shields.io endpoint badge (page views)
-//   shields-top-box.json  shields.io endpoint badge (most viewed enclosure)
+//   shields.json          shields.io endpoint badge (visits)
+//   shields-top-box.json  shields.io endpoint badge (most visited enclosure)
 //
 // Required env vars:
 //   CF_API_TOKEN      Cloudflare API token with Account Analytics:Read
@@ -39,8 +39,7 @@ const query = `{
         limit: 1
         orderBy: []
       ) {
-        sum { visits pageViews }
-        uniq { uniques }
+        sum { visits }
       }
       topPages: rumPageloadEventsAdaptiveGroups(
         filter: {
@@ -51,10 +50,9 @@ const query = `{
           ]
         }
         limit: 10
-        orderBy: [{sum_pageViews: DESC}]
-        dimensions: [requestPath]
+        orderBy: [sum_visits_DESC]
       ) {
-        sum { pageViews }
+        sum { visits }
         dimensions { requestPath }
       }
     }
@@ -86,8 +84,6 @@ const totals = account?.totals?.[0];
 const topPages = account?.topPages ?? [];
 
 const visits = totals?.sum?.visits ?? 0;
-const pageViews = totals?.sum?.pageViews ?? 0;
-const uniques = totals?.uniq?.uniques ?? 0;
 
 function fmtNum(n) {
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`;
@@ -102,7 +98,7 @@ const topEnclosurePage = topPages.find((g) => ENCLOSURE_RE.test(g.dimensions.req
 const topSlug = topEnclosurePage
   ? topEnclosurePage.dimensions.requestPath.match(ENCLOSURE_RE)[1]
   : null;
-const topSlugViews = topEnclosurePage?.sum?.pageViews ?? 0;
+const topSlugViews = topEnclosurePage?.sum?.visits ?? 0;
 
 // Resolve the enclosure's display name from the manifest if SITE_URL is available.
 let topBoxName = topSlug;
@@ -121,23 +117,21 @@ if (topSlug && SITE_URL) {
 
 const mapped = topPages.map((g) => ({
   path: g.dimensions.requestPath,
-  pageViews: g.sum.pageViews,
+  visits: g.sum.visits,
 }));
 
 const analytics = {
   period: { start: fmt(start), end: fmt(end) },
   updated_at: new Date().toISOString(),
   visits,
-  pageViews,
-  uniques,
   topPages: mapped,
-  topBox: topSlug ? { slug: topSlug, name: topBoxName, pageViews: topSlugViews } : null,
+  topBox: topSlug ? { slug: topSlug, name: topBoxName, visits: topSlugViews } : null,
 };
 
 const shields = {
   schemaVersion: 1,
-  label: "page views",
-  message: `${fmtNum(pageViews)} / 30d`,
+  label: "visits",
+  message: `${fmtNum(visits)} / 30d`,
   color: "f38020",
 };
 
@@ -145,7 +139,7 @@ const shieldsTopBox = topBoxName
   ? {
       schemaVersion: 1,
       label: "top box of the month",
-      message: `${topBoxName} · ${fmtNum(topSlugViews)} views`,
+      message: `${topBoxName} · ${fmtNum(topSlugViews)} visits`,
       color: "f38020",
     }
   : {
@@ -159,6 +153,4 @@ writeFileSync("analytics.json", `${JSON.stringify(analytics, null, 2)}\n`);
 writeFileSync("shields.json", `${JSON.stringify(shields, null, 2)}\n`);
 writeFileSync("shields-top-box.json", `${JSON.stringify(shieldsTopBox, null, 2)}\n`);
 
-console.log(
-  `visits=${visits} pageViews=${pageViews} uniques=${uniques} topBox=${topSlug ?? "none"}`
-);
+console.log(`visits=${visits} topBox=${topSlug ?? "none"}`);
