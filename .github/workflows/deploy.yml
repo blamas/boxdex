@@ -38,7 +38,7 @@ jobs:
       - name: Sync to R2
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: sync dist r2:boxdex-site/production --checksum --fast-list --s3-no-check-bucket --transfers 32 --checkers 64 -v --stats-one-line
+          args: sync dist r2:boxdex-site/production --checksum --fast-list --s3-no-check-bucket --transfers 128 --checkers 128 -v --stats-one-line
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare

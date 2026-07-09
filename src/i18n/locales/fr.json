@@ -120,7 +120,7 @@
         "intro": "Le site est hébergé sur Cloudflare (R2 + Workers). Pour chaque requête, l'infrastructure Cloudflare enregistre :",
         "logs": ["adresse IP", "ASN et pays", "chaîne user-agent", "URL demandée", "horodatage"],
         "note": "Il s'agit d'une journalisation d'infrastructure standard, gérée par Cloudflare, pas par nous. Nous n'avons pas accès aux logs de requêtes bruts.",
-"mitigationPre": "Pour limiter ce que Cloudflare voit, utilisez un VPN (",
+        "mitigationPre": "Pour limiter ce que Cloudflare voit, utilisez un VPN (",
         "mitigationMid": ") ou",
         "torLinkText": "Tor",
         "mitigationPost": "pour plus d'anonymat.",

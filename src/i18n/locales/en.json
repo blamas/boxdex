@@ -118,9 +118,15 @@
       "cloudflare": {
         "heading": "Cloudflare",
         "intro": "The site is hosted on Cloudflare (R2 + Workers). Per request, Cloudflare's infrastructure logs:",
-        "logs": ["IP address", "ASN and country", "user-agent string", "requested URL", "timestamp"],
+        "logs": [
+          "IP address",
+          "ASN and country",
+          "user-agent string",
+          "requested URL",
+          "timestamp"
+        ],
         "note": "This is standard infrastructure logging, handled by Cloudflare, not by us. We have no access to raw request logs.",
-"mitigationPre": "To limit what Cloudflare sees, use a VPN (",
+        "mitigationPre": "To limit what Cloudflare sees, use a VPN (",
         "mitigationMid": ") or",
         "torLinkText": "Tor",
         "mitigationPost": "for stronger anonymity.",
