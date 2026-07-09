@@ -17,11 +17,42 @@ const { option, height = 380, onInit }: Props = $props();
 let host: HTMLDivElement;
 let chart: EChartsInstance | null = null;
 
+// Deep-merge theme defaults under builder output so builder keys always win but
+// axis/tooltip colors from the theme fill in anything the builder doesn't set.
+function deepMerge(
+  base: Record<string, unknown>,
+  over: Record<string, unknown>
+): Record<string, unknown> {
+  const result: Record<string, unknown> = { ...base };
+  for (const k of Object.keys(over)) {
+    const b = base[k];
+    const o = over[k];
+    result[k] =
+      b &&
+      o &&
+      typeof b === "object" &&
+      typeof o === "object" &&
+      !Array.isArray(b) &&
+      !Array.isArray(o)
+        ? deepMerge(b as Record<string, unknown>, o as Record<string, unknown>)
+        : o;
+  }
+  return result;
+}
+
+function themeOption(): object {
+  return deepMerge(
+    getActiveTheme().theme as Record<string, unknown>,
+    option() as Record<string, unknown>
+  );
+}
+
 function init() {
   chart?.dispose();
-  chart = echarts.init(host, getActiveTheme().theme);
+  // No theme at init: all theming flows through themeOption() on every setOption call.
+  chart = echarts.init(host);
   onInit?.(chart);
-  chart.setOption(option(), { notMerge: true });
+  chart.setOption(themeOption(), { notMerge: true });
 }
 
 onMount(() => {
@@ -30,7 +61,10 @@ onMount(() => {
   const ro = new ResizeObserver(() => chart?.resize());
   ro.observe(host);
 
-  const onThemeChange = () => init();
+  // On theme change: update option in place, no dispose, no canvas flash.
+  const onThemeChange = () => {
+    chart?.setOption(themeOption(), { notMerge: true });
+  };
   document.addEventListener("boxdex:themechange", onThemeChange);
 
   return () => {
@@ -43,8 +77,7 @@ onMount(() => {
 
 // Re-applies whenever reactive state read inside the option builder changes.
 $effect(() => {
-  const opt = option();
-  chart?.setOption(opt, { notMerge: true });
+  chart?.setOption(themeOption(), { notMerge: true });
 });
 </script>
 

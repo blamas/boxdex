@@ -10,7 +10,8 @@
     "toggleTheme": "Toggle light/dark theme"
   },
   "footer": {
-    "text": "Boxdex: open enclosure plans. All units SI. Data may be simulation or measurement, check provenance badges. Contributions welcome via PR."
+    "text": "Boxdex: open enclosure plans. All units SI. Data may be simulation or measurement, check provenance badges. Contributions welcome via PR.",
+    "privacy": "Privacy"
   },
   "curveLabels": {
     "spl": "SPL (dB)",
@@ -94,6 +95,10 @@
     "notFound": {
       "title": "Page not found",
       "description": "The page you are looking for does not exist"
+    },
+    "privacy": {
+      "title": "Privacy",
+      "description": "Boxdex privacy policy: what data we collect and how we use it"
     }
   },
   "notFound": {
@@ -108,6 +113,7 @@
     "design": "design",
     "designs": "designs",
     "emptyState": "No designs in this category yet.",
+    "failedToLoad": "Failed to load data.",
     "volume": "Volume",
     "f3": "F3",
     "f3High": "F3 high",
@@ -129,6 +135,7 @@
     "maxHz": "max Hz",
     "enclosures": "Enclosures",
     "loading": "Loading…",
+    "failedToLoad": "Failed to load data.",
     "emptyState": "Select at least one box below, or the selected boxes have no {kind} data.",
     "provenanceNote": "Solid = measured · Dashed = simulated",
     "available": "{label} available",
@@ -157,6 +164,7 @@
     "verifiedOnly": "Verified only",
     "clearN": "Clear {n}",
     "emptyState": "No enclosures match these constraints. Try loosening a filter.",
+    "failedToLoad": "Failed to load data.",
     "enclosure": "enclosure",
     "enclosures": "enclosures",
     "found": "found",
@@ -190,6 +198,7 @@
     "advanced": "Advanced",
     "clearN": "Clear {n}",
     "all": "All",
+    "failedToLoad": "Failed to load data.",
     "driver": "driver",
     "drivers": "drivers",
     "horn": "horn",
@@ -237,6 +246,7 @@
   "stackBuilder": {
     "search": "Search…",
     "loading": "Loading…",
+    "failedToLoad": "Failed to load data.",
     "builder": "Builder",
     "emptyHint": "Pick a category below to add the first enclosure.",
     "remove": "Remove",
@@ -322,6 +332,7 @@
     "category": "Category",
     "paretoOnly": "Pareto frontier only",
     "loading": "Loading…",
+    "failedToLoad": "Failed to load data.",
     "note": "Ringed points are Pareto-optimal, circle = measured, triangle = simulated. Click a point to open its plan.",
     "provenance": "Provenance"
   },
@@ -332,6 +343,7 @@
     "brand": "Brand",
     "datasheet": "Datasheet",
     "loading": "Loading…",
+    "failedToLoad": "Failed to load data.",
     "link": "↗ link",
     "remove": "Remove"
   },

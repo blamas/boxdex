@@ -36,6 +36,7 @@ let yKey = $state<MetricKey>("maxSplDb");
 let colorKey = $state<"topology" | "category">("topology");
 let onlyPareto = $state(false);
 let initialized = $state(false);
+let error = $state<string | null>(null);
 
 const axisItems = $derived(axisComboboxItems(axisLabels));
 
@@ -53,18 +54,23 @@ function onChartInit(chart: EChartsInstance) {
 }
 
 onMount(async () => {
-  const px = metricKeyOf(readParam("x") ?? "");
-  const py = metricKeyOf(readParam("y") ?? "");
-  const pc = readParam("color");
-  if (px) xKey = px;
-  if (py) yKey = py;
-  if (pc === "topology" || pc === "category") colorKey = pc;
-  if (readParam("pareto") === "1") onlyPareto = true;
+  try {
+    const px = metricKeyOf(readParam("x") ?? "");
+    const py = metricKeyOf(readParam("y") ?? "");
+    const pc = readParam("color");
+    if (px) xKey = px;
+    if (py) yKey = py;
+    if (pc === "topology" || pc === "category") colorKey = pc;
+    if (readParam("pareto") === "1") onlyPareto = true;
 
-  const res = await fetch(`${BASE}/api/manifest.json`);
-  records = await res.json();
-
-  initialized = true;
+    const res = await fetch(`${BASE}/api/manifest.json`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    records = await res.json();
+  } catch (e) {
+    error = String(e);
+  } finally {
+    initialized = true;
+  }
 });
 
 // Records currently plotted: eligible on both axes, optionally pareto-only.
@@ -74,7 +80,8 @@ function exportRecords(): EnclosureRecord[] {
   );
   if (!onlyPareto) return eligible;
   const frontierSet = paretoFront(records, xKey, yKey);
-  return eligible.filter((r) => frontierSet.has(records.indexOf(r)));
+  const recordIndex = new Map(records.map((r, i) => [r, i]));
+  return eligible.filter((r) => frontierSet.has(recordIndex.get(r) ?? -1));
 }
 
 function exportCsv() {
@@ -100,14 +107,13 @@ function buildOption() {
   const xLabel = axisLabels[xKey as keyof typeof axisLabels] ?? xField.label;
   const yLabel = axisLabels[yKey as keyof typeof axisLabels] ?? yField.label;
 
+  const recordIndex = new Map(records.map((r, i) => [r, i]));
   const colorGroups = new Map<string, EnclosureRecord[]>();
   for (const rec of eligible) {
     const key = rec[colorKey];
     if (!colorGroups.has(key)) colorGroups.set(key, []);
-    // biome-ignore lint/style/noNonNullAssertion: key was just set above
-    const arr = colorGroups.get(key)!;
-    if (!onlyPareto || frontierSet.has(records.indexOf(rec))) {
-      arr.push(rec);
+    if (!onlyPareto || frontierSet.has(recordIndex.get(rec) ?? -1)) {
+      colorGroups.get(key)?.push(rec);
     }
   }
 
@@ -272,7 +278,9 @@ $effect(() => {
     </label>
   </div>
 
-  {#if records.length > 0}
+  {#if error}
+    <div class="empty-state">{t.failedToLoad}</div>
+  {:else if records.length > 0}
     <EChart option={buildOption} height={500} onInit={onChartInit} />
   {:else}
     <div class="chart-placeholder">{t.loading}</div>

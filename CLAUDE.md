@@ -109,7 +109,7 @@ data/
 ## UI patterns
 
 ### Design tokens
-All colors, radii, shadows are CSS custom properties in `src/styles/global.css` (`:root` + `[data-theme="light"]`). **Never hardcode hex colors or RGBA in components.** Derive opacity variants with `color-mix(in srgb, var(--token) N%, transparent)` — `--accent-subtle` (7% accent tint) already exists for active chip backgrounds. Shadow: `var(--shadow-md)`. Radii: `--radius-sm` (3px) / `--radius-md` (4px) / `--radius-lg` (6px).
+All colors, radii, shadows are CSS custom properties in `src/styles/global.css` (`:root` + `[data-theme="light"]`). **Never hardcode hex colors or RGBA in components.** Derive opacity variants with `color-mix(in srgb, var(--token) N%, transparent)`: `--accent-subtle` (7% accent tint) already exists for active chip backgrounds. Shadow: `var(--shadow-md)`. Radii: `--radius-sm` (3px) / `--radius-md` (4px) / `--radius-lg` (6px).
 
 ### Global CSS classes (don't redeclare locally)
 These live in `src/styles/global.css` and are available everywhere:
@@ -132,10 +132,10 @@ These live in `src/styles/global.css` and are available everywhere:
 When a component needs one of these patterns: use the global class, keep only the positional/size delta in the component `<style>`.
 
 ### ECharts
-- Import `getActiveTheme` from `src/lib/echarts.ts` — it reads CSS vars at call time and returns `{ theme, accent }`. Never hardcode palette colors.
+- Import `getActiveTheme` from `src/lib/echarts.ts`: it reads CSS vars at call time and returns `{ theme, accent }`. Never hardcode palette colors.
 - `EChart.svelte` owns init/resize/dispose/theme-change. Pass an **option builder function** (re-invoked on theme change); never call `echarts.init` directly in an island.
 - Chart height: the host div uses `style="height:var(--echart-h,{height}px)"`. Override from outside with `--echart-h` CSS var (e.g. the global media query sets it to `clamp(200px,56vw,360px)` on mobile). The `height` prop is the fallback default.
-- ECharts imports go through `src/lib/echarts.ts` only — keeps the bundle tree-shaken.
+- ECharts imports go through `src/lib/echarts.ts` only: keeps the bundle tree-shaken.
 
 ### Loading states
 Islands that fetch on mount show a skeleton while `loading = $state(true)`. Pattern:
@@ -151,14 +151,14 @@ onMount(async () => { ... ; loading = false; });
   <!-- real content -->
 {/if}
 ```
-Skeleton elements use `<div class="skeleton">` with local CSS for width/height/margin. Use `var(--line)` as background (not `var(--panel)` — needs contrast).
+Skeleton elements use `<div class="skeleton">` with local CSS for width/height/margin. Use `var(--line)` as background (not `var(--panel)`, which lacks contrast).
 
 ### Accessibility
 - Dynamic result counts: add `aria-live="polite" aria-atomic="true"` to the element so screen readers announce filter changes.
 - Skip link: `<a href="#main-content" class="skip-link">` before `<header>`; `id="main-content"` on `<main>`.
 
 ### Inline scripts in Layout.astro
-Layout uses `is:inline data-astro-rerun` scripts (re-run on ClientRouter navigation). Guard against double-registration with `if (el && !el._boxdexInit) { el._boxdexInit = true; ... }`. The header/footer use `transition:persist` — Svelte islands cannot be used there. The hamburger nav toggle is part of the same inline script block.
+Layout uses `is:inline data-astro-rerun` scripts (re-run on ClientRouter navigation). Guard against double-registration with `if (el && !el._boxdexInit) { el._boxdexInit = true; ... }`. The header/footer use `transition:persist`: Svelte islands cannot be used there. The hamburger nav toggle is part of the same inline script block.
 
 ### Mobile nav
 At ≤640px the `.nav-links` div is `display:none`; `nav.nav-open .nav-links { display:flex }`. The `#nav-toggle` button (hidden above 640px) toggles `nav-open` and manages `aria-expanded`. An `astro:page-load` listener auto-closes it on ClientRouter navigation.
@@ -170,8 +170,8 @@ At ≤640px the `.nav-links` div is `display:none`; `nav.nav-open .nav-links { d
 - **zod** (bundled by Astro) regenerates `schema/*.schema.json` in draft 2020-12 form, large diffs on `npm run schema:gen` after zod-touching upgrades are expected, just commit them.
 - **Pagefind search markup**: `Search.astro` renders `@pagefind/component-ui`'s `<pagefind-searchbox>` web component, not the classic `pagefind-ui__*` default UI (those class names still show up inside `dist/pagefind/*.js` but aren't what's on the page). Real selectors: input is `input.pf-searchbox-input`, results are `a.pf-searchbox-result` (loading state renders `div.pf-searchbox-result.pf-searchbox-placeholder` skeletons first, first query also pays for WASM init so give it a few seconds).
 - **ECharts** is only loaded on pages whose island renders a chart: `/compare` (`Compare` → `CurveChart`), `/explore` (`DesignSpace`), `/stack` (`StackBuilder` → `SystemResponse` → `CurveChart`), `/enclosures/[slug]` (`BoxCurves` → `CurveChart`), `/drivers/compare` and `/horns/compare` (`RadarCompare`). `/find` (`Explorer.svelte`) is list/filter only and does **not** pull in ECharts. All imports go through `src/lib/echarts.ts` to keep the bundle tree-shaken.
-- **`client:only="svelte"`** on all islands. No SSR for interactive components. Fetches use `BASE` from `src/lib/site.ts` (the canonical export — never re-derive from `import.meta.env` inline). i18n in islands via `getClientTranslations()` from `src/lib/locale-client.ts`.
-- **Routing**: all content pages live under `src/pages/[locale]/`; `src/pages/index.astro` redirects to the default locale. The locale segment is part of every internal link — use `localeBase` (SSR) or `BASE + /[locale]` (client) rather than root-absolute paths.
+- **`client:only="svelte"`** on all islands. No SSR for interactive components. Fetches use `BASE` from `src/lib/site.ts` (the canonical export: never re-derive from `import.meta.env` inline). i18n in islands via `getClientTranslations()` from `src/lib/locale-client.ts`.
+- **Routing**: all content pages live under `src/pages/[locale]/`; `src/pages/index.astro` redirects to the default locale. The locale segment is part of every internal link: use `localeBase` (SSR) or `BASE + /[locale]` (client) rather than root-absolute paths.
 - **`SITE_URL` / `SITE_BASE`**: `astro.config.mjs`'s `site` is `process.env.SITE_URL || localhost` and `base` is `process.env.SITE_BASE || "/"`, host-agnostic by design (no host-specific globals in the config, so the build ports across hosts). Hosting is **Cloudflare, static output served from R2 behind a Worker** (`worker/index.ts`), NOT Workers static assets: the dist is ~24.8k files (5,875 drivers x en+fr = ~11.7k pages + ~12k pagefind fragments) and Workers/Pages static assets cap at 20,000 files per version. R2 has no object cap. Build + deploy run in **GitHub Actions** (`.github/workflows/deploy.yml`): plain-Node `astro build` + pagefind, then rclone (official Docker image, checksum-based, `--fast-list` keeps LIST calls at ~25 per prefix) syncs `dist` to `r2:boxdex-site/production` on `main` deploys or copies only the md5 diff vs `production/` via `--compare-dest` to `previews/pr-<n>` on PR builds (PR builds set `SITE_URL` so HTML page hashes match production, minimising the diff), then `cloudflare/wrangler-action` runs `wrangler deploy` on `main` (prefix `production`) and `wrangler versions upload --var ASSET_PREFIX:previews/pr-<n>` on PRs (preview version URL posted as a sticky PR comment via `actions/github-script`; `retire-preview` purges the R2 prefix and edits the comment on PR close). The Worker (`worker/index.ts`, pure path->key/type/cache helpers in `worker/resolve.ts` with vitest tests) maps each request to an R2 object under `env.ASSET_PREFIX`, resolves directory `index.html`, serves `404.html` on miss, sets Content-Type/Cache-Control, and uses the Cache API (production prefix only, previews bypass it). For previews the Worker tries the preview prefix first and falls back to `production/` for objects the PR did not upload (previews cannot preview deletions). `worker/` is excluded from the app tsconfig and uses `@cloudflare/workers-types` via a triple-slash reference, and is a knip `entry`. The same `main` is where the planned add-a-box POST endpoint lands. Cloudflare's Workers Builds Git integration stays disconnected. Production URL is `boxdex.<subdomain>.workers.dev` (`base` stays `/`, `SITE_URL` from the `SITE_URL` Actions variable). Requires repo secrets `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` + `R2_ACCESS_KEY_ID` + `R2_SECRET_ACCESS_KEY`, Actions variables `SITE_URL` + `R2_S3_ENDPOINT`, the R2 bucket `boxdex-site`, and Preview URLs enabled on the Worker. Cost: reads are metered Worker invocations (100k/day free, Cache API cuts R2 reads), egress + storage free at this scale.
 - **`data/enclosures/fk-*`**: synthetic fixture entries generated by `scripts/local/gen-fake-data.mjs` (local-only script, runs `gen-fk-a-i.mjs` / `gen-fk-j-k.mjs` / `gen-fk-l-o.mjs`) to stress-test catalog UI at scale. Not real products, don't "correct" their specs against datasheets, regenerate with `--force` instead of hand-editing.
 - All units **SI only**: mm, L, Hz, dB, kg, W, Ω. No imperial.

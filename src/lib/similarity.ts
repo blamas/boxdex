@@ -136,13 +136,9 @@ function groupKey(d: Driver): string {
 export function allSubstitutes(pool: Driver[], limit = 10): Map<string, SubstituteCandidate[]> {
   const groups = new Map<string, Driver[]>();
   for (const d of pool) {
-    const key = groupKey(d);
-    let g = groups.get(key);
-    if (!g) {
-      g = [];
-      groups.set(key, g);
-    }
-    g.push(d);
+    const k = groupKey(d);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k)?.push(d);
   }
 
   const result = new Map<string, SubstituteCandidate[]>();

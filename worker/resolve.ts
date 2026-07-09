@@ -27,7 +27,7 @@ const TYPES: Record<string, string> = {
 
 const IMMUTABLE = "public, max-age=31536000, immutable";
 const REVALIDATE = "public, max-age=0, must-revalidate";
-const MODERATE = "public, max-age=3600";
+const MODERATE = "public, max-age=3600, stale-while-revalidate=86400";
 
 function key(prefix: string, path: string): string {
   return `${prefix.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
@@ -43,9 +43,9 @@ export function resolveKey(pathname: string, prefix: string): string {
     // Malformed percent-encoding (bot probes like /%). Use the raw path, it 404s.
     decoded = pathname;
   }
-  let path = decoded.replace(/^\/+/, "");
   // drop . and .. segments
-  path = path
+  const path = decoded
+    .replace(/^\/+/, "")
     .split("/")
     .filter((seg) => seg !== "." && seg !== "..")
     .join("/");
@@ -85,9 +85,9 @@ export function contentType(key: string): string | undefined {
   return TYPES[ext];
 }
 
-// Hashed _astro assets are immutable, HTML revalidates, everything else moderate.
+// Hashed _assets and pagefind bundles are immutable (content-addressed), HTML revalidates.
 export function cacheControl(key: string): string {
-  if (key.includes("/_astro/")) return IMMUTABLE;
+  if (key.includes("/_assets/") || key.includes("/pagefind/")) return IMMUTABLE;
   if (key.endsWith(".html")) return REVALIDATE;
   return MODERATE;
 }

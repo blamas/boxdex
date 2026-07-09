@@ -17,6 +17,7 @@ export default defineConfig({
         "src/lib/site.ts",
         "src/lib/schemas.ts",
         "src/lib/url-state.ts",
+        "src/lib/locale-client.ts",
         "src/lib/listbox-disclosure.ts",
         "src/lib/click-outside.ts",
       ],

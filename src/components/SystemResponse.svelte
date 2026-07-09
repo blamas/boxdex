@@ -187,35 +187,40 @@ const balance = $derived(spectralBalance(activeBands));
 // this same function, so they can never disagree about which state is showing.
 type XoCornerStatus = "gap" | "clamped" | "approximated" | "extrapolated" | "none";
 
-function lowStatus(p: XoPoint): XoCornerStatus {
-  if (p.lowCustom) return "none";
-  if (p.lowGap) return "gap";
-  if (p.clampedToCdMin) return "clamped";
-  if (p.lowApproximated) return "approximated";
-  if (p.lowExtrapolated) return "extrapolated";
-  return "none";
-}
-
-function highStatus(p: XoPoint): XoCornerStatus {
-  if (p.highCustom) return "none";
-  if (p.highGap) return "gap";
-  if (p.highClampedToCdMin) return "clamped";
-  if (p.highApproximated) return "approximated";
-  if (p.highExtrapolated) return "extrapolated";
+function cornerStatus(p: XoPoint, side: XoSide): XoCornerStatus {
+  if (side === "lo") {
+    if (p.lowCustom) return "none";
+    if (p.lowGap) return "gap";
+    if (p.clampedToCdMin) return "clamped";
+    if (p.lowApproximated) return "approximated";
+    if (p.lowExtrapolated) return "extrapolated";
+  } else {
+    if (p.highCustom) return "none";
+    if (p.highGap) return "gap";
+    if (p.highClampedToCdMin) return "clamped";
+    if (p.highApproximated) return "approximated";
+    if (p.highExtrapolated) return "extrapolated";
+  }
   return "none";
 }
 
 // Only explained in the legend when at least one row actually shows it, so a clean stack
 // shows no legend at all.
-const hasAnyGap = $derived(xoPoints.some((p) => lowStatus(p) === "gap" || highStatus(p) === "gap"));
+const hasAnyGap = $derived(
+  xoPoints.some((p) => cornerStatus(p, "lo") === "gap" || cornerStatus(p, "hi") === "gap")
+);
 const hasAnyClamped = $derived(
-  xoPoints.some((p) => lowStatus(p) === "clamped" || highStatus(p) === "clamped")
+  xoPoints.some((p) => cornerStatus(p, "lo") === "clamped" || cornerStatus(p, "hi") === "clamped")
 );
 const hasAnyApproximated = $derived(
-  xoPoints.some((p) => lowStatus(p) === "approximated" || highStatus(p) === "approximated")
+  xoPoints.some(
+    (p) => cornerStatus(p, "lo") === "approximated" || cornerStatus(p, "hi") === "approximated"
+  )
 );
 const hasAnyExtrapolated = $derived(
-  xoPoints.some((p) => lowStatus(p) === "extrapolated" || highStatus(p) === "extrapolated")
+  xoPoints.some(
+    (p) => cornerStatus(p, "lo") === "extrapolated" || cornerStatus(p, "hi") === "extrapolated"
+  )
 );
 </script>
 
@@ -243,8 +248,8 @@ const hasAnyExtrapolated = $derived(
       </thead>
       <tbody>
         {#each xoPoints as p}
-          {@const lowSt = lowStatus(p)}
-          {@const highSt = highStatus(p)}
+          {@const lowSt = cornerStatus(p, "lo")}
+          {@const highSt = cornerStatus(p, "hi")}
           <tr>
             <td class="xo-box-name" style:color={bandColorById.get(p.id)}>{p.name}</td>
             <td>

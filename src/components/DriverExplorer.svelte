@@ -26,6 +26,7 @@ let {
 let drivers: Driver[] = $state([]);
 let horns: Horn[] = $state([]);
 let loading = $state(true);
+let error = $state<string | null>(null);
 let tab = $state<Tab>("cone");
 let filterBrand = $state("all");
 let filterSize = $state("all"); // size (cone) | exit (compression, horn)
@@ -59,8 +60,12 @@ onMount(async () => {
       fetch(`${BASE}/api/drivers.json`),
       fetch(`${BASE}/api/horns.json`),
     ]);
+    if (!dRes.ok) throw new Error(`HTTP ${dRes.status}`);
+    if (!hRes.ok) throw new Error(`HTTP ${hRes.status}`);
     drivers = await dRes.json();
     horns = await hRes.json();
+  } catch (e) {
+    error = String(e);
   } finally {
     loading = false;
   }
@@ -363,7 +368,9 @@ function sortIndicator(key: SortKey) {
 </div>
 
 <div class="table-wrap" bind:this={tableWrap}>
-  {#if loading}
+  {#if error}
+    <div class="empty-state">{t.failedToLoad}</div>
+  {:else if loading}
     <div class="skel-table">
       {#each { length: 8 } as _}
         <div class="skel-row-wrap">

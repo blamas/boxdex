@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { CompressionDriver, ConeDriver, Driver } from "../src/lib/schemas";
-import { allSubstitutes } from "../src/lib/similarity";
+import { allSubstitutes, scoreDriver } from "../src/lib/similarity";
 
 function subs(target: Driver, pool: Driver[], limit = 10) {
   return allSubstitutes([target, ...pool], limit).get(target.id) ?? [];
@@ -114,6 +114,31 @@ describe("subs: compression scoring", () => {
     const [first, second] = subs(target, pool);
     expect(first.driver.id).toBe("lower-floor");
     expect(first.score).toBeLessThan(second.score);
+  });
+});
+
+describe("scoreDriver", () => {
+  it("returns Infinity when types differ", () => {
+    expect(scoreDriver(makeCone("a"), makeCd("b"))).toBe(Infinity);
+  });
+
+  it("returns Infinity when size groups differ (cone)", () => {
+    expect(scoreDriver(makeCone("a"), makeCone("b", { sizeInch: 15 }))).toBe(Infinity);
+  });
+
+  it("returns Infinity when exit groups differ (compression)", () => {
+    expect(scoreDriver(makeCd("a"), makeCd("b", { exitInch: 2 }))).toBe(Infinity);
+  });
+
+  it("returns 0 for an identical compression driver", () => {
+    expect(scoreDriver(makeCd("a"), makeCd("b"))).toBe(0);
+  });
+
+  it("routes compression candidates through compression scoring", () => {
+    const target = makeCd("t");
+    const closer = makeCd("c1", { minCrossoverHz: 600 });
+    const further = makeCd("c2", { minCrossoverHz: 1600 });
+    expect(scoreDriver(target, closer)).toBeLessThan(scoreDriver(target, further));
   });
 });
 
