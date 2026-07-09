@@ -1,6 +1,6 @@
 name = "boxdex"
 main = "worker/index.ts"
-compatibility_date = "2025-07-01"
+compatibility_date = "2026-07-01"
 
 # Served from R2, not Workers assets (dist exceeds the 20k-file asset cap).
 [[r2_buckets]]

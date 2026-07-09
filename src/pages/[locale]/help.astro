@@ -8,6 +8,18 @@ const { t } = useLocale(Astro.params);
 
 const { sections } = t.help;
 const { using, glossary } = sections;
+
+const { learn } = t.pages;
+
+type ResourceEntry = { term: string; url: string; def: string };
+type ResourceSection = { heading: string; [key: string]: ResourceEntry | string };
+
+const furtherSections: [string, ResourceSection][] = [
+  ["further-simulation", learn.simulation as ResourceSection],
+  ["further-measurement", learn.measurement as ResourceSection],
+  ["further-reading", learn.reading as ResourceSection],
+  ["further-community", learn.community as ResourceSection],
+];
 ---
 
 <Layout
@@ -19,6 +31,7 @@ const { using, glossary } = sections;
   <nav class="toc">
     <a href="#using">{t.help.toc.using}</a>
     <a href="#glossary">{t.help.toc.glossary}</a>
+    <a href="#further">{t.help.toc.further}</a>
   </nav>
 
   <section class="help-section" id="using">
@@ -117,6 +130,7 @@ const { using, glossary } = sections;
 
     <nav class="toc toc-glossary">
       <a href={`#${Object.keys(glossary.driver).find((k) => k !== "heading") ?? "fs"}`}>{glossary.driver.heading}</a>
+      <a href={`#${Object.keys(glossary.horns).find((k) => k !== "heading")?.replace(/_/g, "-") ?? "throat-exit"}`}>{glossary.horns.heading}</a>
       <a href={`#${Object.keys(glossary.system).find((k) => k !== "heading") ?? "f3"}`}>{glossary.system.heading}</a>
       <a href={`#${Object.keys(glossary.power).find((k) => k !== "heading") ?? "aes-power"}`}>{glossary.power.heading}</a>
       <a href={`#${Object.keys(glossary.topologies).find((k) => k !== "heading") ?? "sealed"}`}>{glossary.topologies.heading}</a>
@@ -126,6 +140,18 @@ const { using, glossary } = sections;
       <h3>{glossary.driver.heading}</h3>
       <dl>
         {Object.entries(glossary.driver).filter(([k]) => k !== "heading").map(([id, entry]) => (
+          <div class="entry" id={id.replace(/_/g, "-")}>
+            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dd>{(entry as { term: string; def: string }).def}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="glossary-group">
+      <h3>{glossary.horns.heading}</h3>
+      <dl>
+        {Object.entries(glossary.horns).filter(([k]) => k !== "heading").map(([id, entry]) => (
           <div class="entry" id={id.replace(/_/g, "-")}>
             <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
             <dd>{(entry as { term: string; def: string }).def}</dd>
@@ -170,6 +196,28 @@ const { using, glossary } = sections;
       </dl>
     </div>
   </section>
+
+  <section class="help-section" id="further">
+    <h2>{learn.heading}</h2>
+    <p class="section-subtitle">{learn.intro}</p>
+
+    {furtherSections.map(([id, s]) => (
+      <div class="feature-group">
+        <h3>{s.heading}</h3>
+        <dl>
+          {Object.entries(s).filter(([k]) => k !== "heading").map(([, entry]) => {
+            const r = entry as ResourceEntry;
+            return (
+              <div class="entry">
+                <dt><a class="external" href={r.url} target="_blank" rel="noopener noreferrer">{r.term}</a></dt>
+                <dd>{r.def}</dd>
+              </div>
+            );
+          })}
+        </dl>
+      </div>
+    ))}
+  </section>
 </Layout>
 
 <style>
@@ -191,6 +239,7 @@ const { using, glossary } = sections;
     content: "·";
     color: var(--muted);
     padding: 0 0.6rem;
+    display: inline-block;
   }
 
   .toc-glossary {
@@ -253,6 +302,15 @@ const { using, glossary } = sections;
     color: var(--text);
     padding-left: 1rem;
     border-left: 2px solid var(--line);
+  }
+
+  a.external {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a.external:hover {
+    text-decoration: underline;
   }
 
   .anchor {
