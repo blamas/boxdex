@@ -155,8 +155,10 @@ const shieldsTopBox = topBoxName
       color: "lightgrey",
     };
 
-writeFileSync("analytics.json", JSON.stringify(analytics, null, 2) + "\n");
-writeFileSync("shields.json", JSON.stringify(shields, null, 2) + "\n");
-writeFileSync("shields-top-box.json", JSON.stringify(shieldsTopBox, null, 2) + "\n");
+writeFileSync("analytics.json", `${JSON.stringify(analytics, null, 2)}\n`);
+writeFileSync("shields.json", `${JSON.stringify(shields, null, 2)}\n`);
+writeFileSync("shields-top-box.json", `${JSON.stringify(shieldsTopBox, null, 2)}\n`);
 
-console.log(`visits=${visits} pageViews=${pageViews} uniques=${uniques} topBox=${topSlug ?? "none"}`);
+console.log(
+  `visits=${visits} pageViews=${pageViews} uniques=${uniques} topBox=${topSlug ?? "none"}`
+);
