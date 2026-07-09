@@ -41,15 +41,15 @@ const furtherSections: [string, ResourceSection][] = [
       <h3>{using.finding.heading}</h3>
       <dl>
         <div class="entry" id="catalog">
-          <dt>{using.finding.catalog.term} <a class="anchor" href="#catalog" aria-label={using.finding.catalog.ariaLabel}>#</a></dt>
+          <dt>{using.finding.catalog.term}</dt>
           <dd>{using.finding.catalog.def}</dd>
         </div>
         <div class="entry" id="find">
-          <dt>{using.finding.find.term} <a class="anchor" href="#find" aria-label={using.finding.find.ariaLabel}>#</a></dt>
+          <dt>{using.finding.find.term}</dt>
           <dd>{using.finding.find.def}</dd>
         </div>
         <div class="entry" id="explore">
-          <dt>{using.finding.explore.term} <a class="anchor" href="#explore" aria-label={using.finding.explore.ariaLabel}>#</a></dt>
+          <dt>{using.finding.explore.term}</dt>
           <dd>{using.finding.explore.def}</dd>
         </div>
       </dl>
@@ -59,11 +59,11 @@ const furtherSections: [string, ResourceSection][] = [
       <h3>{using.comparing.heading}</h3>
       <dl>
         <div class="entry" id="compare">
-          <dt>{using.comparing.compareEnclosures.term} <a class="anchor" href="#compare" aria-label={using.comparing.compareEnclosures.ariaLabel}>#</a></dt>
+          <dt>{using.comparing.compareEnclosures.term}</dt>
           <dd>{using.comparing.compareEnclosures.def}</dd>
         </div>
         <div class="entry" id="compare-drivers">
-          <dt>{using.comparing.compareDrivers.term} <a class="anchor" href="#compare-drivers" aria-label={using.comparing.compareDrivers.ariaLabel}>#</a></dt>
+          <dt>{using.comparing.compareDrivers.term}</dt>
           <dd>{using.comparing.compareDrivers.def}</dd>
         </div>
       </dl>
@@ -73,15 +73,15 @@ const furtherSections: [string, ResourceSection][] = [
       <h3>{using.driversHorns.heading}</h3>
       <dl>
         <div class="entry" id="drivers">
-          <dt>{using.driversHorns.driverCatalog.term} <a class="anchor" href="#drivers" aria-label={using.driversHorns.driverCatalog.ariaLabel}>#</a></dt>
+          <dt>{using.driversHorns.driverCatalog.term}</dt>
           <dd>{using.driversHorns.driverCatalog.def}</dd>
         </div>
         <div class="entry" id="substitutes">
-          <dt>{using.driversHorns.substitutes.term} <a class="anchor" href="#substitutes" aria-label={using.driversHorns.substitutes.ariaLabel}>#</a></dt>
+          <dt>{using.driversHorns.substitutes.term}</dt>
           <dd>{using.driversHorns.substitutes.def}</dd>
         </div>
         <div class="entry" id="horn-matching">
-          <dt>{using.driversHorns.hornMatching.term} <a class="anchor" href="#horn-matching" aria-label={using.driversHorns.hornMatching.ariaLabel}>#</a></dt>
+          <dt>{using.driversHorns.hornMatching.term}</dt>
           <dd>{using.driversHorns.hornMatching.def}</dd>
         </div>
       </dl>
@@ -91,19 +91,19 @@ const furtherSections: [string, ResourceSection][] = [
       <h3>{using.planningRig.heading}</h3>
       <dl>
         <div class="entry" id="stack">
-          <dt>{using.planningRig.stackBuilder.term} <a class="anchor" href="#stack" aria-label={using.planningRig.stackBuilder.ariaLabel}>#</a></dt>
+          <dt>{using.planningRig.stackBuilder.term}</dt>
           <dd>{using.planningRig.stackBuilder.def}</dd>
         </div>
         <div class="entry" id="amp-matching">
-          <dt>{using.planningRig.ampMatching.term} <a class="anchor" href="#amp-matching" aria-label={using.planningRig.ampMatching.ariaLabel}>#</a></dt>
+          <dt>{using.planningRig.ampMatching.term}</dt>
           <dd>{using.planningRig.ampMatching.def}</dd>
         </div>
         <div class="entry" id="crossover-suggestions">
-          <dt>{using.planningRig.crossoverSuggestions.term} <a class="anchor" href="#crossover-suggestions" aria-label={using.planningRig.crossoverSuggestions.ariaLabel}>#</a></dt>
+          <dt>{using.planningRig.crossoverSuggestions.term}</dt>
           <dd>{using.planningRig.crossoverSuggestions.def}</dd>
         </div>
         <div class="entry" id="system-response">
-          <dt>{using.planningRig.systemResponse.term} <a class="anchor" href="#system-response" aria-label={using.planningRig.systemResponse.ariaLabel}>#</a></dt>
+          <dt>{using.planningRig.systemResponse.term}</dt>
           <dd>{using.planningRig.systemResponse.def}</dd>
         </div>
       </dl>
@@ -113,11 +113,11 @@ const furtherSections: [string, ResourceSection][] = [
       <h3>{using.dataProvenance.heading}</h3>
       <dl>
         <div class="entry" id="provenance-badges">
-          <dt>{using.dataProvenance.measuredVsSim.term} <a class="anchor" href="#provenance-badges" aria-label={using.dataProvenance.measuredVsSim.ariaLabel}>#</a></dt>
+          <dt>{using.dataProvenance.measuredVsSim.term}</dt>
           <dd>{using.dataProvenance.measuredVsSim.def}</dd>
         </div>
         <div class="entry" id="exports">
-          <dt>{using.dataProvenance.exports.term} <a class="anchor" href="#exports" aria-label={using.dataProvenance.exports.ariaLabel}>#</a></dt>
+          <dt>{using.dataProvenance.exports.term}</dt>
           <dd>{using.dataProvenance.exports.def}</dd>
         </div>
       </dl>
@@ -129,67 +129,67 @@ const furtherSections: [string, ResourceSection][] = [
     <p class="section-subtitle">{glossary.subtitle}</p>
 
     <nav class="toc toc-glossary">
-      <a href={`#${Object.keys(glossary.driver).find((k) => k !== "heading") ?? "fs"}`}>{glossary.driver.heading}</a>
-      <a href={`#${Object.keys(glossary.horns).find((k) => k !== "heading")?.replace(/_/g, "-") ?? "throat-exit"}`}>{glossary.horns.heading}</a>
-      <a href={`#${Object.keys(glossary.system).find((k) => k !== "heading") ?? "f3"}`}>{glossary.system.heading}</a>
-      <a href={`#${Object.keys(glossary.power).find((k) => k !== "heading") ?? "aes-power"}`}>{glossary.power.heading}</a>
-      <a href={`#${Object.keys(glossary.topologies).find((k) => k !== "heading") ?? "sealed"}`}>{glossary.topologies.heading}</a>
+      <a href="#glossary-driver">{glossary.driver.heading}</a>
+      <a href="#glossary-horns">{glossary.horns.heading}</a>
+      <a href="#glossary-system">{glossary.system.heading}</a>
+      <a href="#glossary-power">{glossary.power.heading}</a>
+      <a href="#glossary-topologies">{glossary.topologies.heading}</a>
     </nav>
 
-    <div class="glossary-group">
+    <div class="glossary-group" id="glossary-driver">
       <h3>{glossary.driver.heading}</h3>
       <dl>
         {Object.entries(glossary.driver).filter(([k]) => k !== "heading").map(([id, entry]) => (
           <div class="entry" id={id.replace(/_/g, "-")}>
-            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dt>{(entry as { term: string; def: string }).term}</dt>
             <dd>{(entry as { term: string; def: string }).def}</dd>
           </div>
         ))}
       </dl>
     </div>
 
-    <div class="glossary-group">
+    <div class="glossary-group" id="glossary-horns">
       <h3>{glossary.horns.heading}</h3>
       <dl>
         {Object.entries(glossary.horns).filter(([k]) => k !== "heading").map(([id, entry]) => (
           <div class="entry" id={id.replace(/_/g, "-")}>
-            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dt>{(entry as { term: string; def: string }).term}</dt>
             <dd>{(entry as { term: string; def: string }).def}</dd>
           </div>
         ))}
       </dl>
     </div>
 
-    <div class="glossary-group">
+    <div class="glossary-group" id="glossary-system">
       <h3>{glossary.system.heading}</h3>
       <dl>
         {Object.entries(glossary.system).filter(([k]) => k !== "heading").map(([id, entry]) => (
           <div class="entry" id={id.replace(/_/g, "-")}>
-            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dt>{(entry as { term: string; def: string }).term}</dt>
             <dd>{(entry as { term: string; def: string }).def}</dd>
           </div>
         ))}
       </dl>
     </div>
 
-    <div class="glossary-group">
+    <div class="glossary-group" id="glossary-power">
       <h3>{glossary.power.heading}</h3>
       <dl>
         {Object.entries(glossary.power).filter(([k]) => k !== "heading").map(([id, entry]) => (
           <div class="entry" id={id.replace(/_/g, "-")}>
-            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dt>{(entry as { term: string; def: string }).term}</dt>
             <dd>{(entry as { term: string; def: string }).def}</dd>
           </div>
         ))}
       </dl>
     </div>
 
-    <div class="glossary-group">
+    <div class="glossary-group" id="glossary-topologies">
       <h3>{glossary.topologies.heading}</h3>
       <dl>
         {Object.entries(glossary.topologies).filter(([k]) => k !== "heading").map(([id, entry]) => (
           <div class="entry" id={id.replace(/_/g, "-")}>
-            <dt>{(entry as { term: string; def: string }).term} <a class="anchor" href={`#${id.replace(/_/g, "-")}`} aria-label={`Link to ${(entry as { term: string; def: string }).term}`}>#</a></dt>
+            <dt>{(entry as { term: string; def: string }).term}</dt>
             <dd>{(entry as { term: string; def: string }).def}</dd>
           </div>
         ))}
@@ -311,16 +311,5 @@ const furtherSections: [string, ResourceSection][] = [
 
   a.external:hover {
     text-decoration: underline;
-  }
-
-  .anchor {
-    color: var(--line);
-    text-decoration: none;
-    margin-left: 0.25rem;
-  }
-
-  .entry:hover .anchor,
-  .anchor:focus-visible {
-    color: var(--accent);
   }
 </style>
