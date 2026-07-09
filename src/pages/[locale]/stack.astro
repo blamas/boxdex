@@ -5,7 +5,7 @@ import { localeStaticPaths, useLocale } from "../../i18n";
 
 export { localeStaticPaths as getStaticPaths };
 
-const { t } = useLocale(Astro.params);
+const { t, localeBase } = useLocale(Astro.params);
 ---
 
 <Layout
@@ -15,6 +15,10 @@ const { t } = useLocale(Astro.params);
 >
   <h1>{t.pages.stack.heading}</h1>
   <p class="subtitle">{t.pages.stack.subtitle}</p>
+  <p class="notice">
+    {t.pages.stack.notice}
+    {" "}<a href={`${localeBase}/help#further`}>{t.pages.stack.noticeLink}</a>.
+  </p>
   <StackBuilder client:only="svelte" t={t.stackBuilder} tSystemResponse={t.systemResponse} />
 </Layout>
 
@@ -28,6 +32,35 @@ const { t } = useLocale(Astro.params);
     font-family: var(--font-mono);
     font-size: 0.875rem;
     margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .notice {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #ffb347;
+    background: color-mix(in srgb, #ff8c00 10%, transparent);
+    border-left: 3px solid #ff8c00;
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.75rem;
+    margin-top: 0;
     margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  :global([data-theme="light"]) .notice {
+    color: #7a5f00;
+    background: #fff8d6;
+    border-left-color: #e6b800;
+  }
+
+  .notice a {
+    color: #ffe0a0;
+    text-decoration: underline;
+  }
+
+  :global([data-theme="light"]) .notice a {
+    color: #3d2800;
+    font-weight: 700;
   }
 </style>

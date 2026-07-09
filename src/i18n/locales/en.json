@@ -10,8 +10,9 @@
     "toggleTheme": "Toggle light/dark theme"
   },
   "footer": {
-    "text": "Boxdex: open enclosure plans. All units SI. Data may be simulation or measurement, check provenance badges. Contributions welcome via PR.",
-    "privacy": "Privacy"
+    "about": "Values",
+    "privacy": "Privacy",
+    "github": "GitHub"
   },
   "curveLabels": {
     "spl": "SPL (dB)",
@@ -68,7 +69,9 @@
       "title": "My Stack",
       "description": "Build a sound system and calculate coverage.",
       "heading": "My Stack",
-      "subtitle": "Select enclosures by role, set quantities, and check coverage and crossover."
+      "subtitle": "Select enclosures by role, set quantities, and check coverage and crossover.",
+      "notice": "Crossover suggestions, system response, and coverage figures are theoretical estimates derived from simple maths and stored SPL curves, not acoustic simulations. Use this tool to size a rig quickly or as a starting point, then validate with measurements and simulation.",
+      "noticeLink": "Learn more about sound system design and simulation"
     },
     "help": {
       "title": "Help",
@@ -98,7 +101,129 @@
     },
     "privacy": {
       "title": "Privacy",
-      "description": "Boxdex privacy policy: what data we collect and how we use it"
+      "description": "Boxdex privacy policy: what data we collect and how we use it",
+      "introPre": "This page details how the",
+      "introLink": "values we committed to",
+      "introPost": "are implemented in practice: no tracking, no accounts, no cookies.",
+      "noCollection": {
+        "heading": "What we do not collect",
+        "body": "Boxdex is a static site. We do not create user accounts, track your browsing, set cookies, or load third-party tracking scripts (no Google Analytics, no Facebook pixel, no ad networks). No personal data is transmitted to third parties."
+      },
+      "localStorage": {
+        "heading": "Local storage",
+        "bodyPre": "Your theme preference (light/dark) and stack state are saved in your browser's",
+        "codeWord": "localStorage",
+        "bodyPost": ". This data never leaves your device."
+      },
+      "cloudflare": {
+        "heading": "Cloudflare",
+        "intro": "The site is hosted on Cloudflare (R2 + Workers). Per request, Cloudflare's infrastructure logs:",
+        "logs": ["IP address", "ASN and country", "user-agent string", "requested URL", "timestamp"],
+        "note": "This is standard infrastructure logging, handled by Cloudflare, not by us. We have no access to raw request logs.",
+"mitigationPre": "To limit what Cloudflare sees, use a VPN (",
+        "mitigationMid": ") or",
+        "torLinkText": "Tor",
+        "mitigationPost": "for stronger anonymity.",
+        "policyPre": "See",
+        "policyLink": "Cloudflare's privacy policy",
+        "policyPost": "for details."
+      },
+      "analytics": {
+        "heading": "Analytics",
+        "body": "This site uses Cloudflare Web Analytics. It collects aggregated, anonymous statistics (page views, country, browser). No cookies are used, no personally identifiable data is collected.",
+        "tipPre": "To opt out, use a content blocker such as",
+        "tipMid": "or",
+        "tipPost": ". Both block the analytics beacon."
+      },
+      "rights": {
+        "heading": "Your rights (GDPR)",
+        "bodyPre": "We do not store personal data about you. If you have a question, reach us via",
+        "issuesLink": "GitHub Issues",
+        "bodyPost": "."
+      }
+    },
+    "about": {
+      "title": "Values",
+      "description": "What Boxdex stands for: free, open, privacy-respecting sound system reference.",
+      "heading": "Values",
+      "intro": "These are permanent commitments, not features.",
+      "freeOpen": {
+        "heading": "Free and open source",
+        "body": "Everything here is free to access and use. The code is MIT, driver and horn specs are CC0. Enclosure entries carry the original designer's license, open or proprietary, catalogued honestly without exception. No paywall, ever."
+      },
+      "noTracking": {
+        "heading": "No tracking, no accounts, no cookies",
+        "bodyPre": "No accounts means you never sign up, never get profiled. No cookies means no consent banners, no cross-session tracking. The only data your browser stores is localStorage for your theme and stack state, it never leaves your device. No fingerprinting, no third-party trackers.",
+        "analyticsPre": "Anonymised, aggregated statistics are collected via Cloudflare Web Analytics, details on the",
+        "analyticsLink": "privacy page",
+        "analyticsPost": "."
+      },
+      "takeIt": {
+        "heading": "Take it, run it, share it",
+        "forkLink": "Fork the repo",
+        "body": ", run your own instance, build a regional mirror. The code and data are designed to port: no proprietary dependencies, no cloud services you can't replace. Enclosure plan files carry their original designer's license, check it before mirroring those."
+      },
+      "knowledge": {
+        "heading": "Knowledge as protection",
+        "body": "Sound system culture has always lived under threat: gatherings banned, equipment seized, organisers criminalised. It is the people, not the website, who bear that risk. Keeping this knowledge free, open, and widely distributed means builders and organisers are less dependent on any single source that can be taken away. Anyone can have it. Anyone can pass it on."
+      },
+      "community": {
+        "heading": "Collectively built",
+        "body": "The catalog grows through contributions. Submit a design, correct a spec, add curves from a real measurement: every change is a pull request against public data. The format is deliberately simple (JSON specs, CSV curves, MDX build notes) so there are no barriers beyond git."
+      }
+    },
+    "learn": {
+      "title": "Going further",
+      "description": "Resources for sound system design, acoustic simulation, and measurement.",
+      "heading": "Going further",
+      "intro": "Boxdex crossover suggestions and predicted responses are derived estimates, not substitutes for real acoustic simulation and measurement. These resources cover the tools and theory to go further.",
+      "simulation": {
+        "heading": "Simulation",
+        "akabak": {
+          "term": "Akabak",
+          "url": "https://www.randteam.de/",
+          "def": "Free Windows electroacoustic simulation environment (R&D Team / Joerg Panzer). Models horns, waveguides, vented and bandpass boxes. The standard tool for validating crossover points and horn geometries before a build."
+        },
+        "hornresp": {
+          "term": "Hornresp",
+          "url": "http://www.hornresp.net/",
+          "def": "Free lightweight horn and vented/bandpass box simulator (David McBean). Fast T-S parameter workflow, good for early-stage horn geometry exploration and quick SPL/impedance curves."
+        }
+      },
+      "measurement": {
+        "heading": "Measurement",
+        "rew": {
+          "term": "REW — Room EQ Wizard",
+          "url": "https://www.roomeqwizard.com/",
+          "def": "Free cross-platform measurement suite. Captures SPL, impulse response, and transfer functions via a calibrated mic. The standard for validating DSP alignment and crossover settings in the field."
+        },
+        "opensoundmeter": {
+          "term": "Open Sound Meter",
+          "url": "https://opensoundmeter.com/",
+          "def": "Free, open-source measurement app (desktop + iOS/Android). Spectrum, SPL, magnitude, phase, impulse, coherence. Good for quick on-site checks without a full laptop rig."
+        }
+      },
+      "reading": {
+        "heading": "Reading",
+        "mccarthy": {
+          "term": "Sound Systems: Design and Optimization — Bob McCarthy",
+          "url": "https://www.routledge.com/Sound-Systems-Design-and-Optimization-Modern-Techniques-and-Tools-for-Sound-System-Design-and-Alignment/McCarthy/p/book/9780415731010",
+          "def": "The standard professional audio reference for multi-way system alignment, crossover strategy, delay, and equalisation. Written by the director of system optimisation at Meyer Sound. Goes well beyond what any calculator can tell you."
+        }
+      },
+      "community": {
+        "heading": "Communities",
+        "diyaudio": {
+          "term": "diyAudio",
+          "url": "https://www.diyaudio.com/community/",
+          "def": "Large English-speaking DIY audio forum with dedicated subforums for horn speakers, subwoofers, simulation, and driver measurements. Active Hornresp and Akabak discussion threads."
+        },
+        "hornplans": {
+          "term": "HornPlans",
+          "url": "https://hornplans.1fr1.net/",
+          "def": "French-speaking forum specialised in horn loudspeaker design and DIY builds. Discussion threads on Akabak, Hornresp, crossover alignment, and horn geometry."
+        }
+      }
     }
   },
   "notFound": {
@@ -565,7 +690,8 @@
   "help": {
     "toc": {
       "using": "Using the site",
-      "glossary": "Glossary"
+      "glossary": "Glossary",
+      "further": "Going further"
     },
     "sections": {
       "using": {
@@ -683,7 +809,11 @@
           },
           "sensitivity": {
             "term": "Sensitivity (dB)",
-            "def": "SPL at 1 m for 1 W (2.83 V into 8 Ω) input. 3 dB more sensitivity = same loudness for half the amp power. Horn loading trades box size for sensitivity, which is why scoops and horns rule freeparty rigs."
+            "def": "SPL at 1 m for 1 W (2.83 V into 8 Ω) input, measured free-field. Applies to cone drivers. Compression drivers use a separate figure measured on a reference horn (sensitivityHornDb), which is not comparable to a cone's free-field number. 3 dB more sensitivity = same loudness for half the amp power."
+          },
+          "sensitivityCd": {
+            "term": "CD sensitivity (dB)",
+            "def": "SPL of a compression driver at 1 m, measured on the manufacturer's reference horn, not free-field. Typical range: 105–115 dB, versus 95–100 dB for a cone driver. The two figures measure different things (horn-loaded vs free-field) and cannot be compared directly."
           },
           "ebp": {
             "term": "EBP",
@@ -692,6 +822,25 @@
           "minCrossover": {
             "term": "Min crossover (Hz)",
             "def": "The lowest frequency a compression driver may be crossed at (with the stated slope). Crossing lower sends excursion the diaphragm can't take, this is how tweeters and CDs die at parties. When in doubt, cross higher."
+          }
+        },
+        "horns": {
+          "heading": "Horn parameters",
+          "throat_exit": {
+            "term": "Throat exit (in)",
+            "def": "The diameter of the horn's mouth at the driver side, in inches. A compression driver mates a horn when their exit diameters match (1\", 1.4\", and 2\" are the common sizes). Matching is geometric only: verify bolt pattern and crossover range before assuming full compatibility."
+          },
+          "coverage_angle": {
+            "term": "Coverage angle (H×V)",
+            "def": "Horizontal and vertical dispersion of a horn at its nominal frequency, measured at the −6 dB points. A 90°×60° horn is wider than tall: useful in wide rooms or horizontal arrays. Coverage narrows with rising frequency."
+          },
+          "flare_cutoff": {
+            "term": "Flare cutoff (Hz)",
+            "def": "The frequency below which a horn stops providing useful loading and directivity control. Output rolls off steeply below the cutoff. Sets the practical lower limit of the crossover range a horn can handle."
+          },
+          "horn_profile": {
+            "term": "Flare profile",
+            "def": "The mathematical curve of the horn's expanding walls. Conical: straight-walled, widest pattern, simplest to build. Exponential: classical flare, lower cutoff for a given mouth size. Tractrix: gentler impedance transition, common in PA horns. Oblate spheroidal: optimised for constant directivity across frequency. Radial: sector-shaped walls, good pattern control in one plane. Multicell: array of smaller horns, wide coverage, vintage PA look. Diffraction: shallow waveguide plate, very wide coverage from minimal depth."
           }
         },
         "system": {

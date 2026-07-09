@@ -1,0 +1,86 @@
+---
+import Layout from "../../components/Layout.astro";
+import { localeStaticPaths, useLocale } from "../../i18n";
+import { GIT_REPO_URL } from "../../lib/site";
+
+export { localeStaticPaths as getStaticPaths };
+
+const { t, localeBase } = useLocale(Astro.params);
+const a = t.pages.about;
+---
+
+<Layout title={a.title} description={a.description}>
+  <article class="about">
+    <h1>{a.heading}</h1>
+    <p class="intro">{a.intro}</p>
+
+    <section>
+      <h2>{a.freeOpen.heading}</h2>
+      <p>{a.freeOpen.body}</p>
+    </section>
+
+    <section>
+      <h2>{a.noTracking.heading}</h2>
+      <p>{a.noTracking.bodyPre}</p>
+      <p>
+        {a.noTracking.analyticsPre}{" "}
+        <a href={`${localeBase}/privacy`}>{a.noTracking.analyticsLink}</a>{a.noTracking.analyticsPost}
+      </p>
+    </section>
+
+    <section>
+      <h2>{a.takeIt.heading}</h2>
+      <p><a href={GIT_REPO_URL} target="_blank" rel="noopener">{a.takeIt.forkLink}</a>{a.takeIt.body}</p>
+    </section>
+
+    <section>
+      <h2>{a.knowledge.heading}</h2>
+      <p>{a.knowledge.body}</p>
+    </section>
+
+    <section>
+      <h2>{a.community.heading}</h2>
+      <p>{a.community.body}</p>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .about {
+    max-width: 48rem;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+  }
+
+  p {
+    color: var(--text);
+    line-height: 1.7;
+    margin: 0 0 0.5rem;
+  }
+
+  a {
+    color: var(--accent);
+  }
+</style>
