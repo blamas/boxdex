@@ -10,7 +10,7 @@ Accepted
 Apache ECharts ships as a large monolithic package (~1.2 MB unminified). It supports
 tree-shaking by allowing callers to import only the chart types and components they
 use and compose them into a custom `echarts` instance. However, this only works if
-every consumer imports from the same composed instance — if one island imports the
+every consumer imports from the same composed instance: if one island imports the
 full `echarts` bundle and another imports a tree-shaken build, both end up in the
 bundle.
 
@@ -66,7 +66,7 @@ component that calls `echarts.init`; islands pass an option builder function to
   a build error.
 - `EChart.svelte` re-invokes the option builder function on theme change (listening to
   the `data-theme` attribute mutation). Option builders must be pure functions of
-  their inputs and `getActiveTheme()` — they must not cache the theme at construction
+  their inputs and `getActiveTheme()`: they must not cache the theme at construction
   time.
 - ECharts is only bundled on pages that import a component that uses `EChart.svelte`.
   Pages that are list/filter only (e.g. `/find`) do not pull in ECharts at all.

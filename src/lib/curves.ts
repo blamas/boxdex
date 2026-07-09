@@ -3,7 +3,7 @@
 
 import { CURVE_KINDS, type CurveKind, type ParsedCurve } from "./csv";
 
-// Kinds surfaced in the UI — excludes spl_stacked which is accessed via DriverCurves.stacked.
+// Kinds surfaced in the UI: excludes spl_stacked which is accessed via DriverCurves.stacked.
 export const DISPLAY_KINDS = CURVE_KINDS.filter((k) => k !== "spl_stacked");
 
 interface StackedEntry {
@@ -65,7 +65,7 @@ export interface CurveEntry {
 }
 
 // All entries for a given kind, measurements first. spl_stacked is not surfaced here
-// because StackBuilder never requests it — use DriverCurves.stacked directly for that kind.
+// because StackBuilder never requests it: use DriverCurves.stacked directly for that kind.
 export function curveEntries(payload: CurvesResponse, kind: CurveKind): CurveEntry[] {
   const result: CurveEntry[] = [];
   for (const dc of payload.measurements) {

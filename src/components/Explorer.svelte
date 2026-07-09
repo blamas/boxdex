@@ -27,6 +27,7 @@ let {
 } = $props();
 
 let records = $state<EnclosureRecord[]>([]);
+let error = $state<string | null>(null);
 let category = $state<CategoryFilter>("all");
 let topology = $state("all");
 let driverSize = $state("all");
@@ -75,8 +76,13 @@ const driverCountItems = $derived(
 );
 
 onMount(async () => {
-  const res = await fetch(`${BASE}/api/manifest.json`);
-  records = await res.json();
+  try {
+    const res = await fetch(`${BASE}/api/manifest.json`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    records = await res.json();
+  } catch (e) {
+    error = String(e);
+  }
 });
 
 // Render in ROW_LIMIT-row pages extended by the infinite-scroll sentinel; the catalog
@@ -274,7 +280,9 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     {/if}
   </div>
 
-  {#if results.length === 0}
+  {#if error}
+    <div class="empty-state">{t.failedToLoad}</div>
+  {:else if results.length === 0}
     <div class="empty-state">{t.emptyState}</div>
   {:else}
     <p class="result-count" aria-live="polite" aria-atomic="true">{results.length} {results.length === 1 ? t.enclosure : t.enclosures} {t.found}</p>

@@ -1,0 +1,130 @@
+---
+import Layout from "../../components/Layout.astro";
+import { localeStaticPaths, useLocale } from "../../i18n";
+import { GIT_REPO_URL } from "../../lib/site";
+
+export { localeStaticPaths as getStaticPaths };
+
+const { t } = useLocale(Astro.params);
+---
+
+<Layout
+  title={t.pages.privacy.title}
+  description={t.pages.privacy.description}
+>
+  <article class="privacy">
+    <h1>{t.pages.privacy.title}</h1>
+
+    {Astro.currentLocale === "fr" ? (
+      <>
+        <p>Dernière mise à jour : juillet 2025.</p>
+
+        <h2>Ce que nous ne collectons pas</h2>
+        <p>
+          Boxdex est un site statique. Nous ne créons pas de comptes utilisateurs, ne traçons pas votre navigation,
+          ne déposons aucun cookie, et ne transmettons aucune donnée personnelle à des tiers.
+        </p>
+
+        <h2>Stockage local</h2>
+        <p>
+          Votre préférence de thème (clair/sombre) et l'état de votre stack sont enregistrés dans le
+          <code>localStorage</code> de votre navigateur. Ces données ne quittent jamais votre appareil.
+        </p>
+
+        <h2>Cloudflare</h2>
+        <p>
+          Le site est hébergé sur Cloudflare (R2 + Workers). Cloudflare traite les logs d'accès standards
+          (adresse IP, user-agent, URL demandée) dans le cadre de ses services d'infrastructure.
+          Consultez la{" "}
+          <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">politique de confidentialité de Cloudflare</a>{" "}
+          pour les détails.
+        </p>
+
+        <h2>Analyse d'audience (optionnelle)</h2>
+        <p>
+          Si activé, Cloudflare Web Analytics collecte des statistiques agrégées et anonymes (pages vues,
+          pays, navigateur). Aucun cookie n'est utilisé, aucune donnée personnelle identifiable n'est transmise.
+        </p>
+
+        <h2>Vos droits (RGPD)</h2>
+        <p>
+          Nous ne stockons pas de données personnelles vous concernant. Si vous avez une question,
+          contactez-nous via{" "}
+          <a href={`${GIT_REPO_URL}/issues`} target="_blank" rel="noopener">GitHub Issues</a>.
+        </p>
+      </>
+    ) : (
+      <>
+        <p>Last updated: July 2025.</p>
+
+        <h2>What we do not collect</h2>
+        <p>
+          Boxdex is a static site. We do not create user accounts, track your browsing,
+          set any cookies, or transmit personal data to third parties.
+        </p>
+
+        <h2>Local storage</h2>
+        <p>
+          Your theme preference (light/dark) and stack state are saved in your browser's
+          <code>localStorage</code>. This data never leaves your device.
+        </p>
+
+        <h2>Cloudflare</h2>
+        <p>
+          The site is hosted on Cloudflare (R2 + Workers). Cloudflare processes standard access logs
+          (IP address, user-agent, requested URL) as part of its infrastructure services.
+          See{" "}
+          <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's privacy policy</a>{" "}
+          for details.
+        </p>
+
+        <h2>Analytics (optional)</h2>
+        <p>
+          If enabled, Cloudflare Web Analytics collects aggregated, anonymous statistics (page views,
+          country, browser). No cookies are used, no personally identifiable data is collected.
+        </p>
+
+        <h2>Your rights (GDPR)</h2>
+        <p>
+          We do not store personal data about you. If you have a question,
+          reach us via{" "}
+          <a href={`${GIT_REPO_URL}/issues`} target="_blank" rel="noopener">GitHub Issues</a>.
+        </p>
+      </>
+    )}
+  </article>
+</Layout>
+
+<style>
+  .privacy {
+    max-width: 48rem;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+  }
+
+  p {
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    color: var(--muted);
+  }
+
+  a {
+    color: var(--accent);
+  }
+</style>

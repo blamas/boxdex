@@ -50,15 +50,22 @@ const {
 }: Props = $props();
 
 let all = $state<T[]>([]);
+let error = $state<string | null>(null);
 let selectedIds = $state<string[]>([]);
 let initialized = $state(false);
 
 onMount(async () => {
-  const ids = (readParam("ids") ?? "").split(",").filter(Boolean);
-  const res = await fetch(`${BASE}${fetchPath}`);
-  all = await res.json();
-  selectedIds = sanitizeIds(ids, all);
-  initialized = true;
+  try {
+    const ids = (readParam("ids") ?? "").split(",").filter(Boolean);
+    const res = await fetch(`${BASE}${fetchPath}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    all = await res.json();
+    selectedIds = sanitizeIds(ids, all);
+  } catch (e) {
+    error = String(e);
+  } finally {
+    initialized = true;
+  }
 });
 
 // Keep the selection in the URL so the share link is reproducible.
@@ -199,7 +206,9 @@ function buildRadarOption() {
   <a href={backHref} class="back-link">{backLabel}</a>
 </div>
 
-{#if selected.length === 0}
+{#if error}
+  <div class="empty-state">{tRadar.failedToLoad}</div>
+{:else if selected.length === 0}
   <div class="empty-state">
     {#if all.length === 0}
       {tRadar.loading}
