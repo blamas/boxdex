@@ -37,6 +37,7 @@ const p = t.pages.privacy;
       {p.cloudflare.logs.map((item) => <li>{item}</li>)}
     </ul>
     <p>{p.cloudflare.note}</p>
+    <p>{p.cloudflare.why}</p>
     <p>
       {p.cloudflare.mitigationPre}<a href="https://mullvad.net/" target="_blank" rel="noopener">Mullvad</a> · <a href="https://protonvpn.com/" target="_blank" rel="noopener">ProtonVPN</a>{p.cloudflare.mitigationMid}{" "}
       <a href="https://www.torproject.org/" target="_blank" rel="noopener">{p.cloudflare.torLinkText}</a>{" "}
@@ -48,20 +49,15 @@ const p = t.pages.privacy;
       {p.cloudflare.policyPost}
     </p>
 
-    <h2>{p.analytics.heading}</h2>
-    <p>{p.analytics.body}</p>
-    <p>
-      {p.analytics.tipPre}{" "}
-      <a href="https://ublockorigin.com/" target="_blank" rel="noopener">uBlock Origin</a>{" "}
-      {p.analytics.tipMid}{" "}
-      <a href="https://noscript.net/" target="_blank" rel="noopener">NoScript</a>{" "}
-      {p.analytics.tipPost}
-    </p>
-
     <h2>{p.rights.heading}</h2>
     <p>
       {p.rights.bodyPre}{" "}
       <a href={`${GIT_REPO_URL}/issues`} target="_blank" rel="noopener">{p.rights.issuesLink}</a>{p.rights.bodyPost}
+    </p>
+
+    <p class="easter-egg">
+      {p.easterEgg.line1}<br />
+      {p.easterEgg.line2}
     </p>
   </article>
 </Layout>
@@ -81,6 +77,14 @@ const p = t.pages.privacy;
     font-size: 0.875rem;
     margin-top: 0;
     margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .easter-egg {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-top: 2rem;
     line-height: 1.6;
   }
 

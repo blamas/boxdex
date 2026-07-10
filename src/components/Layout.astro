@@ -16,8 +16,6 @@ interface Props {
 
 const { title, description = "Open enclosure plans database", preloadData = [] } = Astro.props;
 
-const cfAnalyticsToken = import.meta.env.CF_ANALYTICS_TOKEN;
-
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
 const t = useTranslations(locale);
@@ -58,9 +56,6 @@ function navHref(path: string) {
     {preloadData.map((p: string) => <link rel="preload" href={`${BASE}${p}`} as="fetch" crossorigin="anonymous" />)}
     <link rel="prefetch" href={`${BASE}/pagefind/pagefind.js`} />
     <ClientRouter />
-    {cfAnalyticsToken && (
-      <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cfAnalyticsToken })}></script>
-    )}
     <!-- Apply saved theme before first paint and after each ClientRouter swap -->
     <script is:inline data-astro-rerun>
       (function () {
@@ -354,6 +349,7 @@ function navHref(path: string) {
   }
 
   main {
+    flex: 1;
     padding-top: 0;
     padding-bottom: 3rem;
     position: relative;

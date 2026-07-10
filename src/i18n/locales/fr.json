@@ -120,6 +120,7 @@
         "intro": "Le site est hébergé sur Cloudflare (R2 + Workers). Pour chaque requête, l'infrastructure Cloudflare enregistre :",
         "logs": ["adresse IP", "ASN et pays", "chaîne user-agent", "URL demandée", "horodatage"],
         "note": "Il s'agit d'une journalisation d'infrastructure standard, gérée par Cloudflare, pas par nous. Nous n'avons pas accès aux logs de requêtes bruts.",
+        "why": "Le compromis se joue surtout sur l'échelle : une grande partie du trafic du web passe désormais par une poignée d'entreprises comme Cloudflare, qui est une société américaine soumise à la juridiction des États-Unis. Nous l'utilisons quand même : le forfait gratuit convient à un projet sans revenus, il encaisse un trafic à une échelle que nous ne pourrions pas gérer sur notre propre infrastructure, et il simplifie l'aspect opérationnel pour un projet mené sur notre temps libre. Héberger un site statique sur une infrastructure edge partagée évite aussi de faire tourner un serveur dédié en continu, ce qui est plus économe en énergie pour un trafic la plupart du temps léger.",
         "mitigationPre": "Pour limiter ce que Cloudflare voit, utilisez un VPN (",
         "mitigationMid": ") ou",
         "torLinkText": "Tor",
@@ -128,18 +129,15 @@
         "policyLink": "politique de confidentialité de Cloudflare",
         "policyPost": "pour les détails."
       },
-      "analytics": {
-        "heading": "Analyse d'audience",
-        "body": "Ce site utilise Cloudflare Web Analytics. Il collecte des statistiques agrégées et anonymes (pages vues, pays, navigateur). Aucun cookie n'est utilisé, aucune donnée personnelle identifiable n'est transmise.",
-        "tipPre": "Pour ne pas être comptabilisé, utilisez un bloqueur de contenu comme",
-        "tipMid": "ou",
-        "tipPost": ". Les deux bloquent le script d'analyse."
-      },
       "rights": {
         "heading": "Vos droits (RGPD)",
         "bodyPre": "Nous ne stockons pas de données personnelles vous concernant. Si vous avez une question, contactez-nous via",
         "issuesLink": "GitHub Issues",
         "bodyPost": "."
+      },
+      "easterEgg": {
+        "line1": "Si vous êtes arrivé jusqu'ici, vous lisez sûrement aussi des datasheets pour le plaisir. Vous êtes des nôtres.",
+        "line2": "On se retrouve dans les issues."
       }
     },
     "about": {
@@ -153,10 +151,7 @@
       },
       "noTracking": {
         "heading": "Pas de suivi, pas de comptes, pas de cookies",
-        "bodyPre": "Pas de comptes signifie que vous ne vous inscrivez jamais, que vous n'êtes jamais profilé. Pas de cookies signifie pas de bannières de consentement, pas de suivi entre sessions. Les seules données stockées par votre navigateur sont localStorage pour votre thème et l'état du stack, elles ne quittent jamais votre appareil. Pas de fingerprinting, pas de trackers tiers.",
-        "analyticsPre": "Des statistiques anonymisées et agrégées sont collectées via Cloudflare Web Analytics, détails sur la",
-        "analyticsLink": "page vie privée",
-        "analyticsPost": "."
+        "bodyPre": "Pas de comptes signifie que vous ne vous inscrivez jamais, que vous n'êtes jamais profilé. Pas de cookies signifie pas de bannières de consentement, pas de suivi entre sessions. Les seules données stockées par votre navigateur sont localStorage pour votre thème et l'état du stack, elles ne quittent jamais votre appareil. Pas de fingerprinting, pas de trackers tiers."
       },
       "takeIt": {
         "heading": "Prenez-le, faites-le tourner, partagez-le",
@@ -169,7 +164,8 @@
       },
       "community": {
         "heading": "Construit collectivement",
-        "body": "Le catalogue grandit par les contributions. Soumettez un design, corrigez une spec, ajoutez des courbes issues d'une vraie mesure : chaque changement est une pull request sur des données publiques. Le format est délibérément simple (specs JSON, courbes CSV, notes MDX) pour qu'il n'y ait pas d'obstacles au-delà de git."
+        "body": "Le catalogue grandit par les contributions. Soumettez un design, corrigez une spec, ajoutez des courbes issues d'une vraie mesure : chaque changement est une pull request sur des données publiques. Le format est délibérément simple (specs JSON, courbes CSV, notes MDX) pour qu'il n'y ait pas d'obstacles au-delà de git.",
+        "why": "Nous hébergeons le dépôt sur GitHub plutôt que sur un serveur git auto-hébergé ou une forge de niche. Un projet qui dépend de contributions extérieures vit ou meurt selon la facilité avec laquelle on peut le trouver et y contribuer. Quitter GitHub est l'un des moyens les plus efficaces de perdre les deux, et de devenir tranquillement un projet mort."
       }
     },
     "learn": {
@@ -188,12 +184,27 @@
           "term": "Hornresp",
           "url": "http://www.hornresp.net/",
           "def": "Simulateur léger gratuit pour horns et caissons bass-reflex/bandpass (David McBean). Workflow rapide avec paramètres T-S, idéal pour explorer la géométrie des horns en amont et obtenir des courbes SPL/impédance rapides."
+        },
+        "vituixcad": {
+          "term": "VituixCAD",
+          "url": "https://kimmosaunisto.net/",
+          "def": "Outil d'ingénierie gratuit pour Windows dédié aux enceintes multi-voies (Kimmo Saunisto). Fusionne les mesures de haut-parleurs en réponses système complètes, conçoit des filtres passifs et actifs, et modélise la directivité. Souvent utilisé avec des données de mesure REW ou ARTA."
+        },
+        "winisd": {
+          "term": "WinISD",
+          "url": "https://www.linearteam.org/",
+          "def": "Simulateur de caisson gratuit pour Windows pour les alignements clos, bass-reflex et bandpass (Linearteam). Portée plus restreinte que Hornresp, des paramètres T-S directement aux courbes d'accord du caisson, souvent le premier outil utilisé pour l'alignement d'un subwoofer."
+        },
+        "unibox": {
+          "term": "Unibox",
+          "url": "http://audio.claub.net/software/kougaard/ubmodel.html",
+          "def": "Outil de modélisation de caisson gratuit sous forme de tableur (Kristian Ougaard), basé sur Microsoft Excel ou OpenOffice. Les mêmes équations T-S que les simulateurs dédiés, utile pour voir et modifier directement les formules."
         }
       },
       "measurement": {
         "heading": "Mesure",
         "rew": {
-          "term": "REW — Room EQ Wizard",
+          "term": "REW · Room EQ Wizard",
           "url": "https://www.roomeqwizard.com/",
           "def": "Suite de mesure gratuite multiplateforme. Capture le SPL, la réponse impulsionnelle et les fonctions de transfert via un micro étalonné. La référence pour valider l'alignement DSP et les réglages de crossover sur site."
         },
@@ -201,14 +212,34 @@
           "term": "Open Sound Meter",
           "url": "https://opensoundmeter.com/",
           "def": "Application de mesure gratuite et open source (desktop + iOS/Android). Spectre, SPL, magnitude, phase, impulsion, cohérence. Pratique pour des vérifications rapides sur site sans ordinateur portable."
+        },
+        "arta": {
+          "term": "ARTA",
+          "url": "https://artalabs.hr/",
+          "def": "Suite de mesure gratuite (réponse impulsionnelle, réponse en fréquence, distorsion, impédance) via une carte son standard. Inclut STEPS pour l'analyse de distorsion par balayage sinusoïdal et LIMP pour l'extraction des paramètres T-S, une référence européenne aux côtés de REW."
+        },
+        "smaart": {
+          "term": "Smaart",
+          "url": "https://www.rationalacoustics.com/pages/smaart-home",
+          "def": "Plateforme d'analyse temps réel bicanale commerciale (Rational Acoustics), la référence de l'industrie du live et de l'installation pour l'alignement système, le réglage des délais et la comparaison de fonction de transfert avec une référence. Payant, mais l'outil que la plupart des techniciens système emportent réellement."
         }
       },
       "reading": {
         "heading": "Lecture",
         "mccarthy": {
-          "term": "Sound Systems: Design and Optimization — Bob McCarthy",
+          "term": "Sound Systems: Design and Optimization · Bob McCarthy",
           "url": "https://www.routledge.com/Sound-Systems-Design-and-Optimization-Modern-Techniques-and-Tools-for-Sound-System-Design-and-Alignment/McCarthy/p/book/9780415731010",
           "def": "La référence professionnelle standard pour l'alignement des systèmes multi-voies, la stratégie de crossover, le délai et l'égalisation. Écrit par le directeur de l'optimisation système chez Meyer Sound. Va bien au-delà de ce que tout calculateur peut vous dire."
+        },
+        "dickason": {
+          "term": "Loudspeaker Design Cookbook · Vance Dickason",
+          "url": "https://cc-webshop.com/products/loudspeaker-design-cookbook",
+          "def": "L'autre référence standard aux côtés de McCarthy, publiée depuis 1978. Couvre en profondeur la théorie des caissons clos et bass-reflex, la conception des haut-parleurs et des filtres, et la construction de caisson, le livre dont proviennent la plupart des formules T-S et d'alignement de caisson."
+        },
+        "murphy": {
+          "term": "Introduction to Loudspeaker Design · John L. Murphy",
+          "url": "https://trueaudio.com/ild_abt1.htm",
+          "def": "Plus court et plus accessible que les deux références précédentes. Solide sur la diffraction, les effets de cavité et le chargement par horn/waveguide en particulier, utile une fois les bases T-S acquises, quand les questions portent sur le pourquoi du comportement mesuré d'un horn."
         }
       },
       "community": {
@@ -222,6 +253,21 @@
           "term": "HornPlans",
           "url": "https://hornplans.1fr1.net/",
           "def": "Forum francophone spécialisé dans la conception et la construction DIY d'enceintes à pavillon. Discussions sur Akabak, Hornresp, l'alignement des crossovers et la géométrie des horns."
+        },
+        "speakerplans": {
+          "term": "Speakerplans.com",
+          "url": "https://forum.speakerplans.com/",
+          "def": "Forum construit autour de plans gratuits de scoops, tapped horns et horns repliés pour PA extérieure et sound systems, la filiation dont descendent la plupart des subs à pavillon de ce site. Moins actif qu'avant, mais l'archive de sujets reste dense."
+        },
+        "lab": {
+          "term": "The LAB, ProSoundWeb",
+          "url": "https://forums.prosoundweb.com/index.php?board=9.0",
+          "def": "Professionnels du live et de la tournée discutant de conception de rig, d'alignement système et de choix de matériel. Moins orienté construction que diyAudio, plus utile pour comprendre comment un système est réellement déployé, réglé et exploité en concert."
+        },
+        "audiofanzine": {
+          "term": "Audiofanzine, forum Sonorisation",
+          "url": "https://fr.audiofanzine.com/sono/forums/",
+          "def": "Forum francophone actif sur la sonorisation. Constructions DIY de caissons, comparatifs de matériel et dépannage PA, en complément du focus horn spécifique de HornPlans."
         }
       }
     }

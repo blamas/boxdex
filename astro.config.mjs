@@ -40,5 +40,9 @@ export default defineConfig({
         clientFiles: ["./src/lib/echarts.ts", "./src/components/EChart.svelte"],
       },
     },
+    build: {
+      // EChart.svelte's lazy chunk is ~650kB
+      chunkSizeWarningLimit: 700,
+    },
   },
 });

@@ -27,7 +27,7 @@ Set these in the GitHub repo settings before any deploy runs.
 
 | Secret | Description |
 |--------|-------------|
-| `CLOUDFLARE_API_TOKEN` | Token with Workers:Edit, R2:Edit, and Account Analytics:Read permissions |
+| `CLOUDFLARE_API_TOKEN` | Token with Workers:Edit and R2:Edit permissions |
 | `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID |
 | `R2_ACCESS_KEY_ID` | R2 S3-compatible access key |
 | `R2_SECRET_ACCESS_KEY` | R2 S3-compatible secret key |
@@ -38,7 +38,6 @@ Set these in the GitHub repo settings before any deploy runs.
 |----------|---------|-------------|
 | `SITE_URL` | `https://boxdex.example.workers.dev` | Canonical production URL; used by Astro for canonical links and Open Graph |
 | `R2_S3_ENDPOINT` | `https://<account-id>.r2.cloudflarestorage.com` | R2 S3 endpoint for rclone |
-| `CF_ANALYTICS_TOKEN` | Web Analytics site tag / beacon token | Used by `analytics.yml` to query the Cloudflare Web Analytics GraphQL API |
 
 ---
 

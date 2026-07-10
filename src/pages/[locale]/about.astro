@@ -5,7 +5,7 @@ import { GIT_REPO_URL } from "../../lib/site";
 
 export { localeStaticPaths as getStaticPaths };
 
-const { t, localeBase } = useLocale(Astro.params);
+const { t } = useLocale(Astro.params);
 const a = t.pages.about;
 ---
 
@@ -22,10 +22,6 @@ const a = t.pages.about;
     <section>
       <h2>{a.noTracking.heading}</h2>
       <p>{a.noTracking.bodyPre}</p>
-      <p>
-        {a.noTracking.analyticsPre}{" "}
-        <a href={`${localeBase}/privacy`}>{a.noTracking.analyticsLink}</a>{a.noTracking.analyticsPost}
-      </p>
     </section>
 
     <section>
@@ -41,6 +37,7 @@ const a = t.pages.about;
     <section>
       <h2>{a.community.heading}</h2>
       <p>{a.community.body}</p>
+      <p>{a.community.why}</p>
     </section>
   </article>
 </Layout>

@@ -126,6 +126,7 @@
           "timestamp"
         ],
         "note": "This is standard infrastructure logging, handled by Cloudflare, not by us. We have no access to raw request logs.",
+        "why": "The tradeoff is more about scale: a lot of the web's traffic now passes through a handful of companies like Cloudflare, and it's a US company subject to US jurisdiction. We use it anyway: the free tier covers a project with no revenue, it handles traffic at a scale we couldn't match on our own infrastructure, and it keeps the operational side simple for something run in spare time. Serving a static site from shared edge infrastructure also avoids running a dedicated server around the clock, which is a more efficient use of energy for what is mostly light traffic.",
         "mitigationPre": "To limit what Cloudflare sees, use a VPN (",
         "mitigationMid": ") or",
         "torLinkText": "Tor",
@@ -134,18 +135,15 @@
         "policyLink": "Cloudflare's privacy policy",
         "policyPost": "for details."
       },
-      "analytics": {
-        "heading": "Analytics",
-        "body": "This site uses Cloudflare Web Analytics. It collects aggregated, anonymous statistics (page views, country, browser). No cookies are used, no personally identifiable data is collected.",
-        "tipPre": "To opt out, use a content blocker such as",
-        "tipMid": "or",
-        "tipPost": ". Both block the analytics beacon."
-      },
       "rights": {
         "heading": "Your rights (GDPR)",
         "bodyPre": "We do not store personal data about you. If you have a question, reach us via",
         "issuesLink": "GitHub Issues",
         "bodyPost": "."
+      },
+      "easterEgg": {
+        "line1": "If you read this far, you probably also read datasheets for fun. You're one of us.",
+        "line2": "See you in the issues."
       }
     },
     "about": {
@@ -159,10 +157,7 @@
       },
       "noTracking": {
         "heading": "No tracking, no accounts, no cookies",
-        "bodyPre": "No accounts means you never sign up, never get profiled. No cookies means no consent banners, no cross-session tracking. The only data your browser stores is localStorage for your theme and stack state, it never leaves your device. No fingerprinting, no third-party trackers.",
-        "analyticsPre": "Anonymised, aggregated statistics are collected via Cloudflare Web Analytics, details on the",
-        "analyticsLink": "privacy page",
-        "analyticsPost": "."
+        "bodyPre": "No accounts means you never sign up, never get profiled. No cookies means no consent banners, no cross-session tracking. The only data your browser stores is localStorage for your theme and stack state, it never leaves your device. No fingerprinting, no third-party trackers."
       },
       "takeIt": {
         "heading": "Take it, run it, share it",
@@ -175,7 +170,8 @@
       },
       "community": {
         "heading": "Collectively built",
-        "body": "The catalog grows through contributions. Submit a design, correct a spec, add curves from a real measurement: every change is a pull request against public data. The format is deliberately simple (JSON specs, CSV curves, MDX build notes) so there are no barriers beyond git."
+        "body": "The catalog grows through contributions. Submit a design, correct a spec, add curves from a real measurement: every change is a pull request against public data. The format is deliberately simple (JSON specs, CSV curves, MDX build notes) so there are no barriers beyond git.",
+        "why": "We host on GitHub rather than a self-hosted git server or a niche forge. A project that depends on outside contributions lives or dies by how easy it is to find and contribute to. Moving off GitHub is one of the most effective ways to lose both, and quietly become a dead project."
       }
     },
     "learn": {
@@ -194,12 +190,27 @@
           "term": "Hornresp",
           "url": "http://www.hornresp.net/",
           "def": "Free lightweight horn and vented/bandpass box simulator (David McBean). Fast T-S parameter workflow, good for early-stage horn geometry exploration and quick SPL/impedance curves."
+        },
+        "vituixcad": {
+          "term": "VituixCAD",
+          "url": "https://kimmosaunisto.net/",
+          "def": "Free Windows engineering tool for multi-way loudspeakers (Kimmo Saunisto). Merges driver measurements into full-system responses, designs passive and active crossovers, and models directivity. Often used alongside REW or ARTA measurement data."
+        },
+        "winisd": {
+          "term": "WinISD",
+          "url": "https://www.linearteam.org/",
+          "def": "Free Windows box simulator for sealed, vented, and bandpass alignments (Linearteam). Narrower scope than Hornresp, T-S parameters straight to box tuning curves, a common first stop for subwoofer alignment."
+        },
+        "unibox": {
+          "term": "Unibox",
+          "url": "http://audio.claub.net/software/kougaard/ubmodel.html",
+          "def": "Free spreadsheet-based box modeling tool (Kristian Ougaard) built on Microsoft Excel or OpenOffice. Same T-S math as the dedicated simulators, useful when you want to see and edit the equations directly."
         }
       },
       "measurement": {
         "heading": "Measurement",
         "rew": {
-          "term": "REW — Room EQ Wizard",
+          "term": "REW · Room EQ Wizard",
           "url": "https://www.roomeqwizard.com/",
           "def": "Free cross-platform measurement suite. Captures SPL, impulse response, and transfer functions via a calibrated mic. The standard for validating DSP alignment and crossover settings in the field."
         },
@@ -207,14 +218,34 @@
           "term": "Open Sound Meter",
           "url": "https://opensoundmeter.com/",
           "def": "Free, open-source measurement app (desktop + iOS/Android). Spectrum, SPL, magnitude, phase, impulse, coherence. Good for quick on-site checks without a full laptop rig."
+        },
+        "arta": {
+          "term": "ARTA",
+          "url": "https://artalabs.hr/",
+          "def": "Free measurement suite (impulse response, frequency response, distortion, impedance) via a standard sound card. Bundles STEPS for stepped-sine distortion analysis and LIMP for T-S parameter extraction, a European standard alongside REW."
+        },
+        "smaart": {
+          "term": "Smaart",
+          "url": "https://www.rationalacoustics.com/pages/smaart-home",
+          "def": "Commercial dual-channel real-time analysis platform (Rational Acoustics), the touring and install industry standard for system alignment, delay setting, and transfer-function comparison against a reference. Not free, but the tool most professional system techs actually carry."
         }
       },
       "reading": {
         "heading": "Reading",
         "mccarthy": {
-          "term": "Sound Systems: Design and Optimization — Bob McCarthy",
+          "term": "Sound Systems: Design and Optimization · Bob McCarthy",
           "url": "https://www.routledge.com/Sound-Systems-Design-and-Optimization-Modern-Techniques-and-Tools-for-Sound-System-Design-and-Alignment/McCarthy/p/book/9780415731010",
           "def": "The standard professional audio reference for multi-way system alignment, crossover strategy, delay, and equalisation. Written by the director of system optimisation at Meyer Sound. Goes well beyond what any calculator can tell you."
+        },
+        "dickason": {
+          "term": "Loudspeaker Design Cookbook · Vance Dickason",
+          "url": "https://cc-webshop.com/products/loudspeaker-design-cookbook",
+          "def": "The other standard reference alongside McCarthy, in print since 1978. Covers closed and vented box theory, driver and crossover design, and cabinet construction in depth, the book most T-S parameters and box-alignment formulas ultimately trace back to."
+        },
+        "murphy": {
+          "term": "Introduction to Loudspeaker Design · John L. Murphy",
+          "url": "https://trueaudio.com/ild_abt1.htm",
+          "def": "Shorter and more approachable than the two references above. Strong on diffraction, cavity effects, and horn/waveguide loading specifically, useful once the basic T-S math is familiar and the questions turn to why a horn measures the way it does."
         }
       },
       "community": {
@@ -228,6 +259,21 @@
           "term": "HornPlans",
           "url": "https://hornplans.1fr1.net/",
           "def": "French-speaking forum specialised in horn loudspeaker design and DIY builds. Discussion threads on Akabak, Hornresp, crossover alignment, and horn geometry."
+        },
+        "speakerplans": {
+          "term": "Speakerplans.com",
+          "url": "https://forum.speakerplans.com/",
+          "def": "Forum built around free scoop, tapped-horn, and folded-horn bass bin plans for outdoor PA and sound system rigs, the lineage most horn-loaded subs on this site descend from. Less active than it once was, but the archive of threads runs deep."
+        },
+        "lab": {
+          "term": "The LAB, ProSoundWeb",
+          "url": "https://forums.prosoundweb.com/index.php?board=9.0",
+          "def": "Live sound and touring professionals discussing rig design, system alignment, and gear choices. Less build-focused than diyAudio, more useful for how a system actually gets deployed, tuned, and run at a gig."
+        },
+        "audiofanzine": {
+          "term": "Audiofanzine, forum Sonorisation",
+          "url": "https://fr.audiofanzine.com/sono/forums/",
+          "def": "Active French-language sound reinforcement forum. DIY subwoofer builds, gear comparisons, and PA troubleshooting alongside HornPlans' horn-specific focus."
         }
       }
     }
