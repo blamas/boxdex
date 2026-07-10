@@ -27,14 +27,14 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
-    "@biomejs/biome": "^2.5.2",
-    "@cloudflare/workers-types": "^5.20260707.1",
+    "@biomejs/biome": "^2.5.3",
+    "@cloudflare/workers-types": "^5.20260710.1",
     "@playwright/test": "1.61.1",
-    "@types/node": "^26.1.0",
-    "@vitest/coverage-v8": "^4.1.9",
-    "knip": "^6.24.0",
+    "@types/node": "^26.1.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "knip": "^6.25.0",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.8",
+    "vitest": "^4.1.10",
     "wrangler": "^4"
   },
   "allowScripts": {
