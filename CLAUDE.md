@@ -39,7 +39,7 @@ irrelevant to a checkout that never commits.
 | Search | Pagefind via `astro-pagefind` (component imports need the `.astro` extension) |
 | Lint/format | Biome |
 | Tests | Vitest |
-| Dead code | knip (`knip.json`; `data/` ignored) |
+| Dead code | knip (`knip.json`) |
 | Node | via mise (`node.compile = false` required on NixOS) |
 
 ## Data model
