@@ -3,6 +3,12 @@ name: Deploy PR
 on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
+    paths-ignore:
+      - "*.md"
+      - "LICENSES/**"
+      - "docs/**"
+      - ".vscode/**"
+      - ".github/**"
 
 concurrency:
   group: deploy-${{ github.ref }}
@@ -20,11 +26,15 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
 
+      # No dependency cache: this job publishes a preview, and a poisoned
+      # npm cache would get shipped straight to R2/Workers.
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: 26
-          cache: npm
+          package-manager-cache: false
 
       - name: Install
         run: npm ci
@@ -87,12 +97,14 @@ jobs:
       - name: Comment preview URL
         if: steps.preview.outputs.deployment-url != ''
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
+        env:
+          DEPLOYMENT_URL: ${{ steps.preview.outputs.deployment-url }}
         with:
           script: |
             const { owner, repo } = context.repo;
             const issue_number = context.issue.number;
             const sha = context.sha;
-            const url = ${{ toJSON(steps.preview.outputs.deployment-url) }};
+            const url = process.env.DEPLOYMENT_URL;
             const marker = "<!-- boxdex-preview -->";
             const commit = `[\`${sha.slice(0, 7)}\`](https://github.com/${owner}/${repo}/commit/${sha})`;
             const updated = new Date().toISOString().replace("T", " ").slice(0, 16) + " UTC";
