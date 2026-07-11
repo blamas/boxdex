@@ -1,9 +1,10 @@
 // Serves the prerendered site from R2. CI syncs dist under env.ASSET_PREFIX, this Worker
 // maps requests to objects. The add-a-box POST will branch here before the lookup.
 
+import { type AddBoxEnv, handleAddBox } from "./add-box";
 import { cacheControl, contentType, notFoundKeys, prefixChain, resolveKey } from "./resolve";
 
-interface Env {
+interface Env extends AddBoxEnv {
   SITE_BUCKET: R2Bucket;
   ASSET_PREFIX: string;
 }
@@ -12,6 +13,12 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     const start = Date.now();
+
+    // First mutating surface: opens a GitHub PR from a submitted box. Branches before the
+    // method gate below (which only permits GET/HEAD for the R2 read path).
+    if (url.pathname === "/api/add-box" && request.method === "POST") {
+      return handleAddBox(request, env);
+    }
 
     if (request.method !== "GET" && request.method !== "HEAD") {
       console.log(
@@ -88,7 +95,7 @@ export default {
     if (servedKey.endsWith(".html")) {
       headers.set(
         "content-security-policy",
-        "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+        "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; font-src 'self'; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'"
       );
     }
 

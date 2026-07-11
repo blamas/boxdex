@@ -38,6 +38,15 @@ Set these in the GitHub repo settings before any deploy runs.
 |----------|---------|-------------|
 | `SITE_URL` | `https://boxdex.example.workers.dev` | Canonical production URL; used by Astro for canonical links and Open Graph |
 | `R2_S3_ENDPOINT` | `https://<account-id>.r2.cloudflarestorage.com` | R2 S3 endpoint for rclone |
+| `PUBLIC_TURNSTILE_SITE_KEY` | `0x4AAA…` | Turnstile site key baked into the contribute island at build time (public by design). Empty until the widget exists: the form then renders without a widget and the endpoint rejects submissions |
+
+The add-a-box endpoint additionally needs two **Worker secrets**, set with
+`wrangler secret put`, never committed and never in GitHub Actions:
+
+| Worker secret | Description |
+|---------------|-------------|
+| `GITHUB_APP_PRIVATE_KEY` | PEM private key of the GitHub App that opens contribution PRs |
+| `TURNSTILE_SECRET` | Turnstile secret key for `siteverify` |
 
 ---
 
@@ -128,12 +137,41 @@ wrangler dev worker/index.ts   # requires local R2 binding or --remote flag
 
 ---
 
-## Adding a write endpoint
+## Add-a-box endpoint (`POST /api/add-box`)
 
-The Worker's `index.ts` handles requests before the R2 lookup. A future write endpoint
-(e.g. the planned add-a-box POST) can branch there by method and path, without any
-change to the serving or preview architecture. See the planned-add-a-box design note in
-[memory](../.config/claude/projects/…/memory/planned-add-a-box-function.md) for context.
+The Worker's only write path: it turns a contribute-form submission into a GitHub PR
+(architecture and rationale in
+[ADR-011](decisions/011-add-a-box-contribution-pipeline.md)). It branches in
+`worker/index.ts` by method and path before the R2 lookup, so the serving and preview
+architecture is untouched. Submissions are production-only: secrets exist only on the
+production Worker, previews and dev render the form but disable submit.
+
+One-time setup, in order:
+
+1. **GitHub App**: register a GitHub App owned by the repo owner, scoped to this
+   repo. Repository permissions: **Contents: Read and write** and **Pull requests:
+   Read and write**. Install it on the repo. Note the **App ID** and, from the
+   installation URL (`…/installations/<id>`), the **Installation ID**. Generate and
+   download a **private key** (PEM).
+2. **Label**: create an `add-a-box` label in the repo. The Worker labels each PR with
+   it, best-effort: a missing label does not fail submissions.
+3. **Turnstile**: create a Turnstile widget in **Managed** mode for the site's
+   hostname. Note the **site key** (public) and **secret key**.
+4. **Non-secret vars** (`wrangler.toml [vars]`, already scaffolded): fill in
+   `GITHUB_APP_ID` and `GITHUB_APP_INSTALLATION_ID` (`GITHUB_REPO_OWNER` /
+   `GITHUB_REPO_NAME` default to the production repo).
+5. **Worker secrets**: `wrangler secret put GITHUB_APP_PRIVATE_KEY` (paste the PEM)
+   and `wrangler secret put TURNSTILE_SECRET`.
+6. **Site key for the island**: set the `PUBLIC_TURNSTILE_SITE_KEY` Actions variable
+   (the deploy workflow passes it into the production build; Astro exposes
+   `PUBLIC_`-prefixed vars to the client, the value is public and safe).
+
+Until these are done the endpoint returns errors but the form still loads and
+previews client-side validation.
+
+The PR itself: branch `contribute/<slug>`, title `Add box: <name>`, commit message
+`feat: add box <name>`, files under `data/enclosures/<slug>/` only. The PR's CI build
+is the schema-correctness gate.
 
 ---
 

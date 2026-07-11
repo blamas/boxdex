@@ -10,6 +10,13 @@ bucket_name = "boxdex-site"
 # Prod default. Previews override to previews/pr-<n> via versions upload --var.
 [vars]
 ASSET_PREFIX = "production"
+# add-a-box: non-secret GitHub App / repo identifiers. Fill APP_ID + INSTALLATION_ID in
+# after registering the App (see docs/deployment.md). Secrets (GITHUB_APP_PRIVATE_KEY,
+# TURNSTILE_SECRET) are set via `wrangler secret put`, never committed here.
+GITHUB_APP_ID = ""
+GITHUB_APP_INSTALLATION_ID = ""
+GITHUB_REPO_OWNER = "blamas"
+GITHUB_REPO_NAME = "boxdex"
 
 [placement]
 mode = "smart"

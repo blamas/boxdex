@@ -6,8 +6,73 @@
     "find": "Find",
     "stack": "Stack",
     "drivers": "Drivers",
+    "contribute": "Contribute",
     "helpLabel": "Help & glossary",
     "toggleTheme": "Toggle light/dark theme"
+  },
+  "contributeBox": {
+    "loading": "Loading drivers…",
+    "failedToLoad": "Could not load the driver catalog.",
+    "prodOnly": "Submissions are only accepted on the live site. You can still fill in the form here to preview validation.",
+    "basics": "Basics",
+    "name": "Name",
+    "category": "Category",
+    "topology": "Topology",
+    "topologyVariant": "Topology variant",
+    "ways": "Ways",
+    "revision": "Revision",
+    "buildComplexity": "Build complexity",
+    "driverCount": "Driver count",
+    "drivers": "Drivers",
+    "addDriver": "Add a driver",
+    "geometry": "Dimensions and volumes",
+    "height": "Height (mm)",
+    "width": "Width (mm)",
+    "depth": "Depth (mm)",
+    "netVolumeL": "Net volume (L)",
+    "grossVolumeL": "Gross volume (L)",
+    "weightKg": "Loaded weight (kg)",
+    "plywoodThicknessMm": "Plywood thickness (mm)",
+    "sheetCount": "Sheet count",
+    "sheetWidth": "Sheet width (mm)",
+    "sheetHeight": "Sheet height (mm)",
+    "specs": "Specifications",
+    "specsHint": "F3 is required. Every other spec is optional: leave it blank if unknown, never fabricate a value.",
+    "f3Hz": "F3 (Hz)",
+    "advancedSpecs": "Advanced specs",
+    "simulations": "Simulations",
+    "measurements": "Measurements",
+    "sources": "Design source files",
+    "add": "Add",
+    "remove": "Remove",
+    "rowDriver": "Driver(s)",
+    "rowKind": "Kind",
+    "rowSource": "Source",
+    "rowNote": "Note",
+    "rowCount": "Stacked count",
+    "rowFile": "CSV file",
+    "sourceTool": "Tool",
+    "sourceFile": "File",
+    "files": "Photos and plans",
+    "imagesLabel": "Images (png, jpg, webp)",
+    "plansLabel": "Plans (pdf)",
+    "recommendedFor": "Recommended for",
+    "connectors": "Connectors",
+    "license": "License",
+    "licenseSelect": "Select a license",
+    "licenseNote": "License note",
+    "author": "Author",
+    "sourceUrl": "Source URL",
+    "notes": "Build notes",
+    "notesPlaceholder": "Free-form notes about the build. Markdown is allowed.",
+    "submit": "Submit box",
+    "submitting": "Submitting…",
+    "successTitle": "Pull request opened",
+    "successBody": "Your box was submitted. A maintainer will review the pull request.",
+    "viewPr": "View pull request",
+    "errorsTitle": "Fix these before submitting:",
+    "serverError": "Submission failed. Please try again.",
+    "none": "(none)"
   },
   "footer": {
     "about": "Values",
@@ -95,6 +160,12 @@
       "heading": "Compare Horns",
       "subtitle": "Horn specs side by side. Radar chart normalises each axis to 100 = catalogue maximum."
     },
+    "contribute": {
+      "title": "Add a Box",
+      "description": "Contribute an open enclosure design to Boxdex",
+      "heading": "Add a Box",
+      "subtitle": "Submit a complete enclosure. On submit we open a pull request for a maintainer to review."
+    },
     "notFound": {
       "title": "Page not found",
       "description": "The page you are looking for does not exist"
@@ -107,13 +178,24 @@
       "introPost": "are implemented in practice: no tracking, no accounts, no cookies.",
       "noCollection": {
         "heading": "What we do not collect",
-        "body": "Boxdex is a static site. We do not create user accounts, track your browsing, set cookies, or load third-party tracking scripts (no Google Analytics, no Facebook pixel, no ad networks). No personal data is transmitted to third parties."
+        "body": "Boxdex is a static site. We do not create user accounts, track your browsing, set cookies, or load third-party tracking scripts (no Google Analytics, no Facebook pixel, no ad networks). Browsing transmits no personal data to third parties. The only exception is the optional contribution form, detailed below."
       },
       "localStorage": {
         "heading": "Local storage",
         "bodyPre": "Your theme preference (light/dark) and stack state are saved in your browser's",
         "codeWord": "localStorage",
         "bodyPost": ". This data never leaves your device."
+      },
+      "contribute": {
+        "heading": "Contributing a box",
+        "optionalBody": "Browsing never sends us anything. The one exception is the optional \"Add a Box\" form: the only page on the site that transmits data, and only when you press submit.",
+        "publicPre": "A submission (box data, build notes, uploaded files, and the optional author field) becomes a public pull request on GitHub. It is visible to anyone and stays in the repository's git history even after edits, so do not include personal information you would not publish yourself. GitHub processes it under",
+        "publicLink": "GitHub's privacy statement",
+        "publicPost": ".",
+        "turnstilePre": "On the live site the form is guarded by",
+        "turnstileLink": "Cloudflare Turnstile",
+        "turnstilePost": ", an anti-bot check and the only third-party script on the site, loaded on that page alone. Cloudflare evaluates technical browser signals to tell humans from bots, and our endpoint forwards your IP address to Cloudflare once to verify the result. Cloudflare's privacy policy below applies.",
+        "storageBody": "We store nothing ourselves: there is no database and the Worker keeps no copy of your submission. The pull request is the only record."
       },
       "cloudflare": {
         "heading": "Cloudflare",
@@ -170,7 +252,7 @@
       },
       "community": {
         "heading": "Collectively built",
-        "body": "The catalog grows through contributions. Submit a design, correct a spec, add curves from a real measurement: every change is a pull request against public data. The format is deliberately simple (JSON specs, CSV curves, MDX build notes) so there are no barriers beyond git.",
+        "body": "The catalog grows through contributions. Submit a design, correct a spec, add curves from a real measurement: every change is a pull request against public data. The format is deliberately simple (JSON specs, CSV curves, MDX build notes) so there are no barriers beyond git. And git itself is optional: the Add a Box form on this site opens the pull request for you.",
         "why": "We host on GitHub rather than a self-hosted git server or a niche forge. A project that depends on outside contributions lives or dies by how easy it is to find and contribute to. Moving off GitHub is one of the most effective ways to lose both, and quietly become a dead project."
       }
     },

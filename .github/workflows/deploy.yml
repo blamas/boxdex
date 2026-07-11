@@ -43,6 +43,9 @@ jobs:
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           GIT_REPO_URL: ${{ vars.GIT_REPO_URL }}
+          # Empty until the Turnstile widget exists: the contribute island then
+          # renders no widget and the endpoint rejects submissions.
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
 
       - name: Sync to R2
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb

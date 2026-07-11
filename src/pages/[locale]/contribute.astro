@@ -1,0 +1,45 @@
+---
+import ContributeBox from "../../components/ContributeBox.svelte";
+import Layout from "../../components/Layout.astro";
+import { localeStaticPaths, useLocale } from "../../i18n";
+
+export { localeStaticPaths as getStaticPaths };
+
+const { t } = useLocale(Astro.params);
+
+// The endpoint is production-only: the island disables submit unless it is running on the
+// production origin. Astro.site is derived from SITE_URL (unset in dev, so submit is off).
+const prodOrigin = Astro.site?.origin ?? "";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
+---
+
+<Layout
+  title={t.pages.contribute.title}
+  description={t.pages.contribute.description}
+  preloadData={["/api/drivers.json"]}
+>
+  <h1>{t.pages.contribute.heading}</h1>
+  <p class="subtitle">{t.pages.contribute.subtitle}</p>
+  <ContributeBox
+    client:only="svelte"
+    t={t.contributeBox}
+    categoryLabels={t.categoryLabels}
+    curveLabels={t.curveLabels}
+    prodOrigin={prodOrigin}
+    turnstileSiteKey={turnstileSiteKey}
+  />
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+</style>
