@@ -5,6 +5,13 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    ignore:
+      # TS7 restructured its package exports (no CJS entry) and Volar-based
+      # tooling (@astrojs/language-server) can't load it: astro check crashes.
+      # Blocked upstream: https://github.com/withastro/astro/issues/17268
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-major
     groups:
       # Astro core + integrations move in lockstep; keep them in one PR.
       astro:
