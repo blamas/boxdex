@@ -1,6 +1,17 @@
 import { expect, test } from "@playwright/test";
 
-const routes = ["/en/find", "/en/explore", "/en/stack", "/en/drivers", "/en/horns/compare"];
+const routes = [
+  "/en/find",
+  "/en/explore",
+  "/en/stack",
+  "/en/drivers",
+  "/en/horns/compare",
+  "/en/compare",
+  "/en/drivers/compare",
+  "/en/about",
+  "/en/help",
+  "/en/privacy",
+];
 
 for (const route of routes) {
   test(`${route} loads without error`, async ({ page }) => {
@@ -19,6 +30,11 @@ test("drivers page deep-links the horn tab via ?tab=horn", async ({ page }) => {
 
 test("enclosure detail page loads", async ({ page }) => {
   await page.goto("/en/enclosures/bass-reflex-18/");
+  await expect(page.locator("main#main-content")).toBeVisible();
+});
+
+test("horn detail page loads", async ({ page }) => {
+  await page.goto("/en/horns/bc-me7/");
   await expect(page.locator("main#main-content")).toBeVisible();
 });
 
