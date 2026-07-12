@@ -13,8 +13,9 @@ async function expectRenderedCanvas(page: Page, scope: string) {
 }
 
 async function addFirstAvailable(page: Page) {
-  await page.locator(".combobox-trigger").click();
-  await page.locator(".combobox-item").first().click();
+  const scope = page.locator(".combobox-wrap");
+  await scope.locator(".combobox-trigger").click();
+  await scope.locator(".combobox-item").first().click();
 }
 
 test("compare page renders a curve chart after selecting an enclosure", async ({ page }) => {
