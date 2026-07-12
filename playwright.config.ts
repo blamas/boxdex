@@ -15,8 +15,7 @@ export default defineConfig({
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
-    // --host so the server also answers on 127.0.0.1: the contribute spec uses that
-    // origin to exercise the island's off-production gate.
+    // --host: the contribute spec uses 127.0.0.1 to exercise the island's off-production gate.
     command: "npm run build && npm run preview -- --port 4321 --host",
     url: "http://localhost:4321",
     reuseExistingServer: !process.env.CI,

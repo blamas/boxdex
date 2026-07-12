@@ -109,11 +109,11 @@ Worker (`worker/`) serves the objects. R2 is used instead of Workers static asse
 the site exceeds the 20,000-file asset cap. Each PR gets a preview served from its own R2
 prefix, with the URL posted as a sticky comment.
 
-The Worker also hosts one **optional** write endpoint, `POST /api/add-box`, which turns
+The Worker also hosts one **optional** write endpoint, `POST /api/box-contribute`, which turns
 the on-site contribution form into a GitHub pull request. It only activates when the
 GitHub App and Turnstile secrets are configured (setup in
 [docs/deployment.md](docs/deployment.md), rationale in
-[ADR-011](docs/decisions/011-add-a-box-contribution-pipeline.md)). Without them, a
+[ADR-011](docs/decisions/011-box-contribute-pipeline.md)). Without them, a
 self-hosted instance serves read-only static content and everything else works.
 
 ## Architecture
@@ -132,7 +132,7 @@ Key decisions are recorded in [`docs/decisions/`](docs/decisions/):
 | [008](docs/decisions/008-url-state-persistence.md) | URL as the only client-side state persistence |
 | [009](docs/decisions/009-echarts-import-gateway.md) | ECharts tree-shaking via a single import gateway |
 | [010](docs/decisions/010-taxonomy-controlled-vocabularies.md) | Taxonomy-driven controlled vocabularies |
-| [011](docs/decisions/011-add-a-box-contribution-pipeline.md) | Add-a-box contribution pipeline (Worker-opened GitHub PRs, optional for self-hosting) |
+| [011](docs/decisions/011-box-contribute-pipeline.md) | Box-contribute pipeline (Worker-opened GitHub PRs, optional for self-hosting) |
 
 ## Contributing
 

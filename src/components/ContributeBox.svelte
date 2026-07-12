@@ -42,8 +42,6 @@ const LICENSES = taxonomy.license;
 const CONNECTORS = taxonomy.connectors;
 const RECOMMENDED_FOR = taxonomy.recommendedFor;
 
-// Numeric geometry/volume fields, each { state key, translation key }. Drives both the
-// input grid and the state shape below (all number | null, null meaning absent).
 const GEOM_FIELDS = [
   { k: "hMm", l: "height" },
   { k: "wMm", l: "width" },
@@ -58,8 +56,7 @@ const GEOM_FIELDS = [
 ] as const;
 type GeomKey = (typeof GEOM_FIELDS)[number]["k"];
 
-// specs.f3Hz is required and shown first. The rest come straight from the schema, so a
-// new spec field appears on the form without touching this file.
+// Pulled from the schema so a new spec field appears on the form without touching this file.
 const ADVANCED_SPECS = Object.keys(enclosureFrontmatterObject.shape.specs.shape).filter(
   (k) => k !== "f3Hz"
 );
@@ -123,8 +120,7 @@ function driverLabel(id: string): string {
   return d ? `${d.brand} ${d.model}` : id;
 }
 
-// Assembly and omission semantics live in lib/contribute.ts (unit tested); here we
-// only swap File objects for their names.
+// Assembly and omission semantics live in lib/contribute.ts; here we only swap Files for names.
 const rowOut = (r: CurveRow): CurveRowState => ({ ...r, file: r.file?.name ?? null });
 const frontmatter = $derived(
   buildFrontmatter({
@@ -151,8 +147,7 @@ const schemaIssues = $derived.by(() => {
     : r.error.issues.map((i) => ({ path: i.path.join("."), message: i.message }));
 });
 
-// File-level checks zod cannot see (extensions, sizes, duplicates): the exact
-// validators the Worker runs, from src/lib/contribute.ts.
+// File-level checks zod cannot see: the same validators from src/lib/contribute.ts the Worker runs.
 const fileIssues = $derived(
   validateUploads(
     frontmatter as EnclosureInput,
@@ -217,15 +212,13 @@ interface TurnstileApi {
 const turnstileApi = () => (window as unknown as { turnstile?: TurnstileApi }).turnstile;
 let turnstileWidgetId: string | undefined;
 
-// Turnstile tokens are single-use: once siteverify has redeemed one, the widget must be
-// re-solved before the next attempt.
+// Turnstile tokens are single-use: the widget must be re-solved before the next attempt.
 function resetTurnstile() {
   turnstileToken = "";
   if (turnstileWidgetId !== undefined) turnstileApi()?.reset(turnstileWidgetId);
 }
 
-// Turnstile is only needed on production (where the endpoint is live). Explicit render
-// after api.js is ready; guarded so a ClientRouter re-mount does not double-register.
+// Guarded so a ClientRouter re-mount does not double-register the widget.
 function loadTurnstile() {
   const render = () => {
     const ts = turnstileApi();
@@ -263,7 +256,7 @@ async function submit() {
     fd.append("payload", JSON.stringify({ frontmatter, body }));
     fd.append("cf-turnstile-response", turnstileToken);
     for (const f of allFiles()) fd.append(f.name, f);
-    const res = await fetch(`${BASE}/api/add-box`, { method: "POST", body: fd });
+    const res = await fetch(`${BASE}/api/box-contribute`, { method: "POST", body: fd });
     if (res.ok) {
       const data = (await res.json()) as { prUrl: string };
       prUrl = data.prUrl;
@@ -273,8 +266,7 @@ async function submit() {
         error?: string;
       };
       serverErrors = data.errors ?? [{ field: "", message: data.error ?? t.serverError }];
-      // 422 is returned before the Worker touches Turnstile; anything else may have
-      // consumed the token.
+      // 422 is returned before the Worker touches Turnstile; anything else may have consumed the token.
       if (res.status !== 422) resetTurnstile();
     }
   } catch {
@@ -594,8 +586,7 @@ async function submit() {
     margin: 0;
   }
 
-  /* .field/.err come from global.css. Text/number inputs are styled globally too;
-     only the bespoke controls need local rules. */
+  /* .field/.err come from global.css; only the bespoke controls need local rules. */
   select,
   textarea,
   input[type="file"] {

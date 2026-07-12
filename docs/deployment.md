@@ -9,7 +9,7 @@ Cloudflare Pages or Workers Builds integration: the Git integration is disconnec
 The fully-static architecture is a deliberate privacy choice: there is no server-side
 session handling, no application database, and no opportunity to log user behaviour
 beyond what Cloudflare's infrastructure captures for any CDN request (IP, user-agent,
-URL). We add nothing on top of that. Future write endpoints (e.g. the planned add-a-box
+URL). We add nothing on top of that. Future write endpoints (e.g. the planned box-contribute
 form) will operate on enclosure metadata only and will not require or store any personal
 data.
 
@@ -40,7 +40,7 @@ Set these in the GitHub repo settings before any deploy runs.
 | `R2_S3_ENDPOINT` | `https://<account-id>.r2.cloudflarestorage.com` | R2 S3 endpoint for rclone |
 | `PUBLIC_TURNSTILE_SITE_KEY` | `0x4AAA…` | Turnstile site key baked into the contribute island at build time (public by design). Empty until the widget exists: the form then renders without a widget and the endpoint rejects submissions |
 
-The add-a-box endpoint additionally needs two **Worker secrets**, set with
+The box-contribute endpoint additionally needs two **Worker secrets**, set with
 `wrangler secret put`, never committed and never in GitHub Actions:
 
 | Worker secret | Description |
@@ -137,11 +137,11 @@ wrangler dev worker/index.ts   # requires local R2 binding or --remote flag
 
 ---
 
-## Add-a-box endpoint (`POST /api/add-box`)
+## Box-contribute endpoint (`POST /api/box-contribute`)
 
 The Worker's only write path: it turns a contribute-form submission into a GitHub PR
 (architecture and rationale in
-[ADR-011](decisions/011-add-a-box-contribution-pipeline.md)). It branches in
+[ADR-011](decisions/011-box-contribute-pipeline.md)). It branches in
 `worker/index.ts` by method and path before the R2 lookup, so the serving and preview
 architecture is untouched. Submissions are production-only: secrets exist only on the
 production Worker, previews and dev render the form but disable submit.
@@ -153,7 +153,7 @@ One-time setup, in order:
    Read and write**. Install it on the repo. Note the **App ID** and, from the
    installation URL (`…/installations/<id>`), the **Installation ID**. Generate and
    download a **private key** (PEM).
-2. **Label**: create an `add-a-box` label in the repo. The Worker labels each PR with
+2. **Label**: create a `box-contribute` label in the repo. The Worker labels each PR with
    it, best-effort: a missing label does not fail submissions.
 3. **Turnstile**: create a Turnstile widget in **Managed** mode for the site's
    hostname. Note the **site key** (public) and **secret key**.

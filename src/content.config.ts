@@ -36,10 +36,7 @@ const horns = defineCollection({
   schema: hornSchema,
 });
 
-// The enclosure frontmatter schema lives in ./lib/schemas so the contribute island can
-// share it. Here we re-declare only the fields that need Astro's content-layer types
-// (reference("drivers") and image()), then re-apply the shared license refinement. All
-// scalar/enum fields come from the shared object, so there is a single source of truth.
+// Extends the shared schema (./lib/schemas) with the fields that need Astro's content-layer types.
 const enclosures = defineCollection({
   loader: glob({
     pattern: "**/index.mdx",

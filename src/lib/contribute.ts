@@ -1,14 +1,9 @@
-// Shared between the contribute island (pre-submit UX) and worker/add-box.ts (the
-// authority): upload caps, filename/extension/size checks and required-field presence.
-// Pure and zod-free at runtime so the Worker bundle stays astro-free. Full schema
-// correctness is still the PR's CI build gate.
+// Shared with worker/box-contribute.ts. Pure and zod-free at runtime so the Worker bundle stays astro-free.
 
 import type { z } from "astro/zod";
 import type { enclosureFrontmatterObject } from "./schemas";
 
-// Derived from the shared schema so field renames surface here at compile time. The
-// input type is what an untrusted submission claims to be, hence Partial plus an index
-// signature for unknown keys (the emitter's allowlist drops those).
+// The input type is what an untrusted submission claims to be, hence Partial plus an index signature.
 export type EnclosureFrontmatterInput = z.input<typeof enclosureFrontmatterObject>;
 export type EnclosureInput = Partial<EnclosureFrontmatterInput> & Record<string, unknown>;
 export type CurveEntryInput = NonNullable<EnclosureFrontmatterInput["simulations"]>[number];
@@ -49,8 +44,6 @@ interface FileRef {
   field: string;
 }
 
-// Every filename the frontmatter points at, with the role that fixes its allowed
-// extension and the field path for error reporting.
 export function referencedFiles(fm: EnclosureInput): FileRef[] {
   const refs: FileRef[] = [];
   for (const name of fm.images ?? []) refs.push({ name, role: "image", field: "images" });
@@ -73,7 +66,6 @@ export function validateUploads(fm: EnclosureInput, uploads: UploadMeta[]): Fiel
   const uploadByName = new Map(uploads.map((u) => [u.name, u]));
   const refNames = new Set(refs.map((r) => r.name));
 
-  // Referenced but not uploaded, plus per-role extension check.
   for (const ref of refs) {
     const upload = uploadByName.get(ref.name);
     if (!upload) {
@@ -104,7 +96,6 @@ export function validateUploads(fm: EnclosureInput, uploads: UploadMeta[]): Fiel
     seen.add(upload.name);
   }
 
-  // Size caps.
   let total = 0;
   for (const upload of uploads) {
     total += upload.size;
@@ -127,8 +118,6 @@ export function validateUploads(fm: EnclosureInput, uploads: UploadMeta[]): Fiel
 
   return errors;
 }
-
-// --- Frontmatter assembly (contribute island) --------------------------------
 
 export interface CurveRowState {
   driver: string[];
@@ -195,16 +184,13 @@ function curveOut(r: CurveRowState): Record<string, unknown> {
     kind: r.kind,
     source: r.source,
     file: r.file ?? "",
-    // A count entered before switching kind away from spl_stacked must not linger
-    // (its input is hidden then, so the zod error would be unclearable).
+    // A stale count from before switching off spl_stacked must not linger (unclearable input).
     count: r.kind === "spl_stacked" ? (r.count ?? undefined) : undefined,
     note: r.note || undefined,
   });
 }
 
-// The object the island validates (client-side zod) and posts. Pure so the omission
-// semantics (empty string/null dropped, driverCount 1 implied, sheet size only as a
-// pair) are unit-testable.
+// Pure so the omission semantics (empty/null dropped, driverCount 1 implied) are unit-testable.
 export function buildFrontmatter(s: ContributeState): Record<string, unknown> {
   const specsObj: Record<string, number> = {};
   if (s.f3Hz !== null) specsObj.f3Hz = s.f3Hz;
@@ -255,8 +241,7 @@ export function buildFrontmatter(s: ContributeState): Record<string, unknown> {
   return fm;
 }
 
-// Lightweight presence/positivity checks. Full type/enum/range/license validation is the
-// CI build gate, not duplicated here.
+// Presence/positivity only, not duplicated here: full validation is the CI build gate.
 export function requiredFieldErrors(fm: EnclosureInput): FieldError[] {
   const errors: FieldError[] = [];
   const req = (cond: boolean, field: string, message: string) => {

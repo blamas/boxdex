@@ -53,7 +53,7 @@ PR previews use a separate `previews/pr-<n>` prefix; the Worker falls back to
 ### GitHub Pages
 - Pros: free, trivial CI integration.
 - Cons: no Cache-Control customisation, no programmatic preview strategy, no
-  Worker layer for future write endpoints (add-a-box). 100 MB repo size cap is
+  Worker layer for future write endpoints (box-contribute). 100 MB repo size cap is
   relevant as the data directory grows.
 - Rejected: insufficient control over caching and no extensibility path.
 
@@ -68,5 +68,5 @@ PR previews use a separate `previews/pr-<n>` prefix; the Worker falls back to
   versions expose a unique preview URL per upload.
 - Cache API is skipped for previews: preview URLs are reused across pushes on the same
   PR, so a cached response from push N would mask push N+1.
-- Future write endpoints (add-a-box form) can branch in `worker/index.ts` before the
+- Future write endpoints (box-contribute form) can branch in `worker/index.ts` before the
   R2 lookup, without changing the serving architecture.

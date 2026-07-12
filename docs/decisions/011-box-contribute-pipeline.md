@@ -1,4 +1,4 @@
-# ADR-011: Add-a-box contribution pipeline (Worker-opened GitHub PRs)
+# ADR-011: Box-contribute pipeline (Worker-opened GitHub PRs)
 
 ## Status
 Accepted
@@ -19,7 +19,7 @@ first secrets.
 
 ## Decision
 A `/[locale]/contribute` Svelte island posts `multipart/form-data` to
-`POST /api/add-box` on the same Worker that serves the site (`worker/add-box.ts`,
+`POST /api/box-contribute` on the same Worker that serves the site (`worker/box-contribute.ts`,
 branched in `worker/index.ts` before the R2 read path). The Worker verifies a
 Cloudflare Turnstile token, runs structural guards only, mints a GitHub App
 installation token, and uses the Git Data API to push a `contribute/<slug>` branch

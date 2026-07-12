@@ -1,8 +1,11 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
-import { type AddBoxEnv, bytesToBase64, handleAddBox } from "../worker/add-box";
+import {
+  type BoxContributeEnv,
+  bytesToBase64,
+  handleBoxContribute,
+} from "../worker/box-contribute";
 
-// handleAddBox end to end against a mocked network: Turnstile siteverify and every
-// GitHub API endpoint are stubbed, the RS256 signing uses a real generated key.
+// End to end against a mocked network: siteverify and every GitHub API call are stubbed.
 
 interface RecordedCall {
   method: string;
@@ -41,7 +44,7 @@ function fetchMock(input: RequestInfo | URL, init?: RequestInit): Promise<Respon
   return jsonRes({ error: `unmocked ${url}` }, 500);
 }
 
-let env: AddBoxEnv;
+let env: BoxContributeEnv;
 
 beforeAll(async () => {
   const kp = (await crypto.subtle.generateKey(
@@ -99,25 +102,25 @@ function makeRequest(
   fd.append("payload", JSON.stringify({ frontmatter: fm, body: "Build notes." }));
   if (token !== null) fd.append("cf-turnstile-response", token);
   for (const [name, content] of Object.entries(files)) fd.append(name, new File([content], name));
-  return new Request("http://localhost/api/add-box", { method: "POST", body: fd });
+  return new Request("http://localhost/api/box-contribute", { method: "POST", body: fd });
 }
 
 const siteverifyCalls = () => calls.filter((c) => c.url.includes("siteverify"));
 
-describe("handleAddBox", () => {
+describe("handleBoxContribute", () => {
   it("rejects oversized bodies with 413 before reading the form", async () => {
     const request = {
       headers: new Headers({ "content-length": String(200 * 1024 * 1024) }),
     } as unknown as Request;
-    const res = await handleAddBox(request, env);
+    const res = await handleBoxContribute(request, env);
     expect(res.status).toBe(413);
   });
 
   it("400s on a missing payload part", async () => {
     const fd = new FormData();
     fd.append("cf-turnstile-response", "tok");
-    const res = await handleAddBox(
-      new Request("http://localhost/api/add-box", { method: "POST", body: fd }),
+    const res = await handleBoxContribute(
+      new Request("http://localhost/api/box-contribute", { method: "POST", body: fd }),
       env
     );
     expect(res.status).toBe(400);
@@ -127,20 +130,20 @@ describe("handleAddBox", () => {
     const fd = new FormData();
     fd.append("payload", "{nope");
     fd.append("cf-turnstile-response", "tok");
-    const res = await handleAddBox(
-      new Request("http://localhost/api/add-box", { method: "POST", body: fd }),
+    const res = await handleBoxContribute(
+      new Request("http://localhost/api/box-contribute", { method: "POST", body: fd }),
       env
     );
     expect(res.status).toBe(400);
   });
 
   it("400s on a missing Turnstile token", async () => {
-    const res = await handleAddBox(makeRequest(validFm(), {}, null), env);
+    const res = await handleBoxContribute(makeRequest(validFm(), {}, null), env);
     expect(res.status).toBe(400);
   });
 
   it("422s on validation errors WITHOUT consuming the Turnstile token", async () => {
-    const res = await handleAddBox(makeRequest({}, {}), env);
+    const res = await handleBoxContribute(makeRequest({}, {}), env);
     expect(res.status).toBe(422);
     const data = (await res.json()) as { errors: { field: string }[] };
     expect(data.errors.map((e) => e.field)).toContain("name");
@@ -150,13 +153,13 @@ describe("handleAddBox", () => {
 
   it("403s when Turnstile verification fails", async () => {
     turnstileOk = false;
-    const res = await handleAddBox(makeRequest(validFm(), {}), env);
+    const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
     expect(res.status).toBe(403);
     expect(siteverifyCalls()).toHaveLength(1);
   });
 
   it("opens a PR on a deduped slug with index.mdx plus uploads, and labels it", async () => {
-    const res = await handleAddBox(
+    const res = await handleBoxContribute(
       makeRequest(validFm({ images: ["a.png"] }), { "a.png": "img-bytes" }),
       env
     );
@@ -183,11 +186,11 @@ describe("handleAddBox", () => {
     expect(contents).toContain("img-bytes");
 
     const label = calls.find((c) => c.url.includes("/labels"));
-    expect(label?.body?.labels).toEqual(["add-a-box"]);
+    expect(label?.body?.labels).toEqual(["box-contribute"]);
   });
 
   it('falls back to the slug "box" when the name has no latin alphanumerics', async () => {
-    const res = await handleAddBox(makeRequest(validFm({ name: "!!!" }), {}), env);
+    const res = await handleBoxContribute(makeRequest(validFm({ name: "!!!" }), {}), env);
     expect(res.status).toBe(200);
     const ref = calls.find((c) => c.url.endsWith("/git/refs"));
     expect(ref?.body?.ref).toBe("refs/heads/contribute/box");
@@ -195,7 +198,7 @@ describe("handleAddBox", () => {
 
   it("502s when a GitHub call fails", async () => {
     failPulls = true;
-    const res = await handleAddBox(makeRequest(validFm(), {}), env);
+    const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
     expect(res.status).toBe(502);
     expect(await res.json()).toEqual({ error: "failed to open pull request" });
   });

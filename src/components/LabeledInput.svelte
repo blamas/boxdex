@@ -1,7 +1,5 @@
 <script lang="ts" generics="T extends string | number | null">
-// One labelled input for text/url/number fields with inline errors. type="number" binds
-// null when empty, so callers omit absent optionals without string parsing. Styling
-// comes from the global .field/.err classes and input rules.
+// type="number" binds null when empty, so callers omit absent optionals without string parsing.
 let {
   label,
   value = $bindable(),

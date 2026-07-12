@@ -17,7 +17,7 @@ import {
   jwtSegment,
   pemToArrayBuffer,
   slugify,
-} from "../worker/add-box";
+} from "../worker/box-contribute";
 
 // A minimal box that satisfies the real content schema, reused across emit/validate tests.
 function validBox(): EnclosureInput {

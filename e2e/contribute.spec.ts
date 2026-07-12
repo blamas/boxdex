@@ -1,17 +1,14 @@
 import { expect, type Page, test } from "@playwright/test";
 
-// A LabeledInput's error spans live inside the <label>, so its accessible name is not
-// stable: locate fields by their exact label span instead of getByLabel.
+// A LabeledInput's error spans live inside the <label>, so getByLabel's accessible name is unstable.
 const field = (page: Page, label: string) =>
   page.locator("label.field").filter({ has: page.getByText(label, { exact: true }) });
 
-// astro.config.mjs falls back `site` to http://localhost:4321, which is exactly the
-// preview origin, so under e2e the island considers itself on production (submit
-// enabled, no Turnstile key baked, endpoint mocked via page.route). Visiting the same
-// server as 127.0.0.1 flips it off-production, covering the gate.
+// localhost:4321 is the fallback `site`, so e2e sees itself as production (submit enabled,
+// endpoint mocked); 127.0.0.1 on the same server flips that off, covering the gate.
 
 test("contribute: full form submits and shows the PR link (endpoint mocked)", async ({ page }) => {
-  await page.route("**/api/add-box", async (route) => {
+  await page.route("**/api/box-contribute", async (route) => {
     await route.fulfill({
       status: 200,
       contentType: "application/json",
@@ -42,8 +39,7 @@ test("contribute: full form submits and shows the PR link (endpoint mocked)", as
   await f3Field.locator("input").fill("38");
   await expect(f3Field.locator(".err")).toHaveCount(0);
 
-  // Driver via the searchable combobox (keyboard: the fixed-position list can sit
-  // outside the viewport, selection must not depend on it being visible).
+  // Keyboard select: the fixed-position list can sit outside the viewport.
   const driversSection = page.locator("section.card", { hasText: "Drivers" }).first();
   await driversSection.locator(".combobox-trigger").click();
   const search = page.locator(".combobox-search");
@@ -60,7 +56,10 @@ test("contribute: full form submits and shows the PR link (endpoint mocked)", as
   await expect(page.locator(".errors")).toHaveCount(0);
   await expect(submit).toBeEnabled();
 
-  const [request] = await Promise.all([page.waitForRequest("**/api/add-box"), submit.click()]);
+  const [request] = await Promise.all([
+    page.waitForRequest("**/api/box-contribute"),
+    submit.click(),
+  ]);
   expect(request.postData()).toContain("My E2E Box");
 
   await expect(page.locator(".success")).toBeVisible();

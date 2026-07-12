@@ -82,15 +82,7 @@ export const hornSchema = z.object({
   datasheetUrl: z.url().optional(),
 });
 
-// Enclosure frontmatter. Shared between build validation (content.config.ts, which
-// re-declares the reference()/image() fields via .extend) and the contribute island's
-// client-side zod. The driver/image fields are plain strings here (ids/filenames): the
-// referential and asset checks are build-only and layered on in content.config.ts.
-
-// Simulations and measurements share one entry shape, only the accepted source tools
-// differ. count travels with spl_stacked and nothing else, in both directions. The
-// driver field is passed in so the build can use reference("drivers") while the shared
-// schema uses plain ids.
+// driver is passed in so the build can use reference("drivers") while this schema uses plain ids.
 export const makeCurveEntry = <D extends z.ZodTypeAny>(driver: D, sources: [string, ...string[]]) =>
   z
     .object({
@@ -128,10 +120,8 @@ const designSource = z.object({
   note: z.string().optional(),
 });
 
-// The un-refined object, exported so content.config.ts can .extend() it (a schema with
-// .superRefine is a ZodEffects and has no .extend). The two license cross-field rules
-// live in licenseSuperRefine so both the shared schema and the extended build schema
-// apply the identical checks.
+// Un-refined so content.config.ts can .extend() it (a schema with .superRefine has no .extend);
+// content.config.ts re-declares drivers/images with reference()/image() for build-time checks.
 export const enclosureFrontmatterObject = z.object({
   name: z.string().min(1),
   category: z.enum(CATEGORIES),
@@ -151,14 +141,12 @@ export const enclosureFrontmatterObject = z.object({
     f6Hz: z.number().positive().optional(),
     fbHz: z.number().positive().optional(),
     maxSplDb: z.number().optional(),
-    // Max SPL is bounded by two independent limits, quote whichever are known.
-    // Below Fb the box is excursion-limited, above it power/thermal-limited.
+    // Two independent limits: below Fb excursion-limited, above it power/thermal-limited.
     maxSplExcursionDb: z.number().optional(),
     maxSplThermalDb: z.number().optional(),
     sensitivityDb: z.number().optional(),
     impedanceMinOhm: z.number().positive().optional(),
-    // Stated nominal load of the whole box (needed when internal multi-driver
-    // wiring makes it underivable from the drivers).
+    // Stated nominal load, for when internal multi-driver wiring makes it underivable.
     impedanceNominalOhm: z.number().positive().optional(),
     recommendedPowerW: z.number().positive().optional(),
     powerAesW: z.number().positive().optional(),
@@ -179,8 +167,7 @@ export const enclosureFrontmatterObject = z.object({
   sourceUrl: z.url().optional(),
   ways: z.number().int().min(1).max(4).optional(),
   revision: z.string().optional(),
-  // No default on purpose: silently labelling a third-party plan would misstate
-  // its rights. LicenseRef-* terms are defined in LICENSES/.
+  // No default on purpose: silently labelling a third-party plan would misstate its rights.
   license: enumOf("license"),
   licenseNote: z.string().optional(),
   recommendedFor: z.array(enumOf("recommendedFor")).default([]),
@@ -194,8 +181,7 @@ export const enclosureFrontmatterObject = z.object({
   sheetSizeMm: z.object({ wMm: z.number().positive(), hMm: z.number().positive() }).optional(),
 });
 
-// Typed structurally (only the three fields it reads) so it applies to both the shared
-// object and content.config.ts's extended variant, whose drivers/images fields differ.
+// Typed structurally so it applies to both the shared object and content.config.ts's extended variant.
 export const licenseSuperRefine = (
   e: { license: string; licenseNote?: string; plans: unknown[] },
   ctx: z.RefinementCtx

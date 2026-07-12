@@ -1,10 +1,10 @@
 // Serves the prerendered site from R2. CI syncs dist under env.ASSET_PREFIX, this Worker
-// maps requests to objects. The add-a-box POST will branch here before the lookup.
+// maps requests to objects. The box-contribute POST will branch here before the lookup.
 
-import { type AddBoxEnv, handleAddBox } from "./add-box";
+import { type BoxContributeEnv, handleBoxContribute } from "./box-contribute";
 import { cacheControl, contentType, notFoundKeys, prefixChain, resolveKey } from "./resolve";
 
-interface Env extends AddBoxEnv {
+interface Env extends BoxContributeEnv {
   SITE_BUCKET: R2Bucket;
   ASSET_PREFIX: string;
 }
@@ -14,10 +14,9 @@ export default {
     const url = new URL(request.url);
     const start = Date.now();
 
-    // First mutating surface: opens a GitHub PR from a submitted box. Branches before the
-    // method gate below (which only permits GET/HEAD for the R2 read path).
-    if (url.pathname === "/api/add-box" && request.method === "POST") {
-      return handleAddBox(request, env);
+    // Branches before the method gate below (which only permits GET/HEAD for the R2 read path).
+    if (url.pathname === "/api/box-contribute" && request.method === "POST") {
+      return handleBoxContribute(request, env);
     }
 
     if (request.method !== "GET" && request.method !== "HEAD") {

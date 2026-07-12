@@ -2,8 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildFrontmatter, type ContributeState } from "../src/lib/contribute";
 import { enclosureFrontmatterSchema } from "../src/lib/schemas";
 
-// Mirrors the contribute island's initial state, with a complete set of required
-// fields so the result passes the real schema unless a test breaks something.
+// Complete set of required fields so the result passes the real schema unless a test breaks it.
 function state(overrides: Partial<ContributeState> = {}): ContributeState {
   return {
     basics: {

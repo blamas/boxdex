@@ -1,11 +1,4 @@
-// Handles POST /api/add-box: structurally validate the submission, verify Turnstile,
-// then open a GitHub PR with the generated index.mdx plus asset files via a GitHub App
-// installation token. Full schema correctness is deferred to the PR's CI build (astro
-// sync), so this file does structural guards only, no runtime zod. The shared pure
-// validators (upload/field checks) live in src/lib/contribute.ts, used by the island
-// too. The pure helpers here (slug, YAML emit, JWT/base64/PEM shaping) are
-// Cloudflare-free and unit tested in test/worker-add-box.test.ts; handleAddBox does
-// the network glue.
+// Structural guards only, no runtime zod: schema correctness is the PR's CI build gate.
 
 import {
   type CurveEntryInput,
@@ -17,7 +10,7 @@ import {
   validateUploads,
 } from "../src/lib/contribute";
 
-export interface AddBoxEnv {
+export interface BoxContributeEnv {
   GITHUB_APP_ID: string;
   GITHUB_APP_INSTALLATION_ID: string;
   GITHUB_REPO_OWNER: string;
@@ -26,12 +19,10 @@ export interface AddBoxEnv {
   TURNSTILE_SECRET: string;
 }
 
-interface AddBoxPayload {
+interface BoxContributePayload {
   frontmatter: EnclosureInput;
   body?: string;
 }
-
-// --- Slug -------------------------------------------------------------------
 
 export function slugify(name: string): string {
   return name
@@ -42,7 +33,6 @@ export function slugify(name: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-// First free slug: base, then base-2, base-3, ... `taken` reports existing directories.
 export function dedupeSlug(slug: string, taken: (candidate: string) => boolean): string {
   if (!taken(slug)) return slug;
   for (let n = 2; ; n++) {
@@ -51,21 +41,17 @@ export function dedupeSlug(slug: string, taken: (candidate: string) => boolean):
   }
 }
 
-// --- YAML emit --------------------------------------------------------------
-
 function isPlainObject(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null && !Array.isArray(v);
 }
 
 function yamlScalar(v: unknown): string {
   if (typeof v === "number" || typeof v === "boolean") return String(v);
-  // JSON string form is a valid YAML double-quoted scalar, and dodges the punctuation
-  // rules cleanly (a stray colon or leading dash in a name never breaks parsing).
+  // JSON string form is a valid YAML double-quoted scalar and dodges quoting edge cases.
   return JSON.stringify(String(v));
 }
 
-// Keys inside specs/dims come from the untrusted payload: quote anything that could
-// change the YAML structure (colons, newlines, leading dashes).
+// Keys come from the untrusted payload: quote anything that could change YAML structure.
 function yamlKey(k: string): string {
   return /^[A-Za-z0-9_-]+$/.test(k) ? k : JSON.stringify(k);
 }
@@ -76,7 +62,6 @@ function dropUndefined<T extends Record<string, unknown>>(obj: T): Partial<T> {
   return out as Partial<T>;
 }
 
-// Block-style YAML for a mapping. Returns lines (no trailing newline).
 function emitMapping(obj: Record<string, unknown>, indent: number): string[] {
   const pad = "  ".repeat(indent);
   const lines: string[] = [];
@@ -106,9 +91,7 @@ function emitMapping(obj: Record<string, unknown>, indent: number): string[] {
   return lines;
 }
 
-// Canonical field order for the emitted frontmatter (mirrors existing index.mdx files).
-// Also the allowlist: keys outside it never reach the YAML (verified is deliberately
-// unlisted, contributions cannot self-verify).
+// Also the allowlist: keys outside it never reach the YAML (verified excluded, contributions can't self-verify).
 const KEY_ORDER = [
   "name",
   "category",
@@ -140,8 +123,7 @@ const KEY_ORDER = [
   "connectors",
 ] as const;
 
-// Compile-time drift guard: a schema field missing from KEY_ORDER (other than
-// verified) would be silently dropped from submissions, so make it a type error.
+// A schema field missing from KEY_ORDER would be silently dropped, so make it a type error.
 type MissingFromKeyOrder = Exclude<
   keyof EnclosureFrontmatterInput,
   (typeof KEY_ORDER)[number] | "verified"
@@ -191,8 +173,6 @@ export function emitFrontmatter(fm: EnclosureInput, body?: string): string {
   return `---\n${yaml}\n---\n\n${bodyBlock}`;
 }
 
-// --- Base64 / PEM / JWT (WebCrypto RS256) -----------------------------------
-
 export function bytesToBase64(bytes: Uint8Array): string {
   let bin = "";
   const chunk = 0x8000;
@@ -233,8 +213,6 @@ export function pemToArrayBuffer(pem: string): ArrayBuffer {
   return buf.buffer;
 }
 
-// --- Impure handler ---------------------------------------------------------
-
 function json(status: number, body: unknown): Response {
   return new Response(JSON.stringify(body), {
     status,
@@ -248,7 +226,7 @@ function ghHeaders(token: string, hasBody: boolean): Record<string, string> {
   const headers: Record<string, string> = {
     authorization: `Bearer ${token}`,
     accept: "application/vnd.github+json",
-    "user-agent": "boxdex-add-box",
+    "user-agent": "boxdex-box-contribute",
     "x-github-api-version": "2022-11-28",
   };
   if (hasBody) headers["content-type"] = "application/json";
@@ -281,7 +259,7 @@ async function verifyTurnstile(secret: string, token: string, ip: string | null)
   return data.success === true;
 }
 
-async function installationToken(env: AddBoxEnv): Promise<string> {
+async function installationToken(env: BoxContributeEnv): Promise<string> {
   const now = Math.floor(Date.now() / 1000);
   const unsigned = `${jwtSegment(jwtHeader())}.${jwtSegment(jwtClaims(env.GITHUB_APP_ID, now))}`;
   const key = await crypto.subtle.importKey(
@@ -307,10 +285,8 @@ async function installationToken(env: AddBoxEnv): Promise<string> {
   return data.token;
 }
 
-// One listing request (data/enclosures is well under the API's 1000-entry page cap),
-// then the pure dedupe. Empty slugs (a name with no latin alphanumerics) fall back to
-// "box" so the branch ref stays valid.
-async function resolveSlug(name: string, token: string, env: AddBoxEnv): Promise<string> {
+// Empty slugs (a name with no latin alphanumerics) fall back to "box" so the branch ref stays valid.
+async function resolveSlug(name: string, token: string, env: BoxContributeEnv): Promise<string> {
   const base = slugify(name) || "box";
   const res = await ghFetch(
     token,
@@ -336,7 +312,7 @@ async function fileBase64(content: Blob | string): Promise<string> {
 }
 
 async function openPr(
-  env: AddBoxEnv,
+  env: BoxContributeEnv,
   token: string,
   slug: string,
   name: string,
@@ -352,8 +328,7 @@ async function openPr(
   if (!commitRes.ok) throw new Error(`base commit: ${commitRes.status}`);
   const baseTree = ((await commitRes.json()) as { tree: { sha: string } }).tree.sha;
 
-  // Blob creations are independent: encode and upload them concurrently, keeping only
-  // the returned SHAs (never all base64 bodies at once).
+  // Blob creations are independent: upload concurrently, never all base64 bodies at once.
   const tree = await Promise.all(
     files.map(async (file) => {
       const blobRes = await ghFetch(token, "POST", `${repo}/git/blobs`, {
@@ -394,8 +369,10 @@ async function openPr(
   if (!prRes.ok) throw new Error(`pull: ${prRes.status}`);
   const pr = (await prRes.json()) as { html_url: string; number: number };
 
-  // Label is best-effort: a missing "add-a-box" label must not fail the submission.
-  await ghFetch(token, "POST", `${repo}/issues/${pr.number}/labels`, { labels: ["add-a-box"] });
+  // Label is best-effort: a missing "box-contribute" label must not fail the submission.
+  await ghFetch(token, "POST", `${repo}/issues/${pr.number}/labels`, {
+    labels: ["box-contribute"],
+  });
 
   return pr.html_url;
 }
@@ -406,7 +383,7 @@ function prBody(slug: string, files: RepoFile[]): string {
     .map((p) => `- ${p}`)
     .join("\n");
   return [
-    "Submitted via the add-a-box form.",
+    "Submitted via the box-contribute form.",
     "",
     `Slug: \`${slug}\``,
     "",
@@ -417,7 +394,10 @@ function prBody(slug: string, files: RepoFile[]): string {
   ].join("\n");
 }
 
-export async function handleAddBox(request: Request, env: AddBoxEnv): Promise<Response> {
+export async function handleBoxContribute(
+  request: Request,
+  env: BoxContributeEnv
+): Promise<Response> {
   // Reject oversized bodies before formData() buffers everything into Worker memory.
   const contentLength = Number(request.headers.get("content-length"));
   if (contentLength > MAX_TOTAL_BYTES + 2 * 1024 * 1024) {
@@ -435,9 +415,9 @@ export async function handleAddBox(request: Request, env: AddBoxEnv): Promise<Re
   if (typeof payloadRaw !== "string") {
     return json(400, { error: "missing payload" });
   }
-  let payload: AddBoxPayload;
+  let payload: BoxContributePayload;
   try {
-    payload = JSON.parse(payloadRaw) as AddBoxPayload;
+    payload = JSON.parse(payloadRaw) as BoxContributePayload;
   } catch {
     return json(400, { error: "payload is not valid JSON" });
   }
@@ -451,8 +431,7 @@ export async function handleAddBox(request: Request, env: AddBoxEnv): Promise<Re
     return json(400, { error: "missing Turnstile token" });
   }
 
-  // Collect file parts (any non-string entry that is not the payload/token). The field
-  // name is the referenced filename the frontmatter points at.
+  // Non-string form entries are uploads, keyed by the filename the frontmatter references.
   const uploads: { name: string; size: number; blob: File }[] = [];
   for (const [k, v] of form.entries()) {
     if (k === "payload" || k === "cf-turnstile-response") continue;
@@ -460,8 +439,7 @@ export async function handleAddBox(request: Request, env: AddBoxEnv): Promise<Re
     uploads.push({ name: k, size: v.size, blob: v });
   }
 
-  // Cheap local validation first: a fixable 422 must not consume the single-use
-  // Turnstile token (siteverify redeems it even when we go on to reject the payload).
+  // Local validation first: a fixable 422 must not consume the single-use Turnstile token.
   const errors = [...requiredFieldErrors(fm), ...validateUploads(fm, uploads)];
   if (errors.length > 0) return json(422, { errors });
 
