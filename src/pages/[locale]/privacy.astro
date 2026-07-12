@@ -13,7 +13,7 @@ const p = t.pages.privacy;
   title={p.title}
   description={p.description}
 >
-  <article class="privacy">
+  <article class="privacy prose">
     <h1>{p.title}</h1>
 
     <p class="intro">
@@ -30,6 +30,18 @@ const p = t.pages.privacy;
       {p.localStorage.bodyPre}{" "}
       <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noopener"><code>{p.localStorage.codeWord}</code></a>{p.localStorage.bodyPost}
     </p>
+
+    <h2>{p.contribute.heading}</h2>
+    <p>{p.contribute.optionalBody}</p>
+    <p>
+      {p.contribute.publicPre}{" "}
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">{p.contribute.publicLink}</a>{p.contribute.publicPost}
+    </p>
+    <p>
+      {p.contribute.turnstilePre}{" "}
+      <a href="https://developers.cloudflare.com/turnstile/" target="_blank" rel="noopener">{p.contribute.turnstileLink}</a>{p.contribute.turnstilePost}
+    </p>
+    <p>{p.contribute.storageBody}</p>
 
     <h2>{p.cloudflare.heading}</h2>
     <p>{p.cloudflare.intro}</p>
@@ -63,10 +75,6 @@ const p = t.pages.privacy;
 </Layout>
 
 <style>
-  .privacy {
-    max-width: 48rem;
-  }
-
   h1 {
     margin-bottom: 0.5rem;
   }

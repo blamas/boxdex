@@ -19,17 +19,22 @@ are CC0. Enclosure entries carry the original designer's license, which may be o
 regardless of their terms. Proprietary entries are metadata and a source link only; no
 plan files are bundled without rights. The site never charges for access to any of it.
 
-**No tracking, no accounts, no cookies.** The site is fully static. There are no user
+**No tracking, no accounts, no cookies.** Browsing is fully static. There are no user
 accounts, no analytics cookies, no fingerprinting scripts, and no third-party trackers.
 The only client-side storage is your browser's `localStorage` for theme preference and
-stack state; it never leaves your device. Cloudflare processes standard infrastructure
+stack state, and it never leaves your device. Cloudflare processes standard infrastructure
 access logs (IP, user-agent, URL) as any CDN does, but we have no access to that data and
-do not add any layer on top of it.
+do not add any layer on top of it. The one exception to "static" is the optional
+Add a Box form: that single page loads Cloudflare Turnstile (anti-bot) on the live site,
+and submitting it turns your entry into a public GitHub pull request. Details on the
+privacy page.
 
 **Take it, run it, share it.** Fork the repo, modify it, host your own instance, build
 a regional mirror, translate it into another language: the code and the driver/horn
 data are yours to use. Sound should be accessible everywhere, not locked inside one
-platform. One caveat: enclosure-specific assets (plan PDFs, photos) each carry the
+platform. The contribution endpoint is optional infrastructure: a self-hosted mirror
+without the GitHub App and Turnstile secrets stays a purely static site, the form simply
+cannot submit. One caveat: enclosure-specific assets (plan PDFs, photos) each carry the
 original designer's license and may not be freely redistributable; check the `license`
 field of each entry before mirroring those files.
 
@@ -104,6 +109,13 @@ Worker (`worker/`) serves the objects. R2 is used instead of Workers static asse
 the site exceeds the 20,000-file asset cap. Each PR gets a preview served from its own R2
 prefix, with the URL posted as a sticky comment.
 
+The Worker also hosts one **optional** write endpoint, `POST /api/box-contribute`, which turns
+the on-site contribution form into a GitHub pull request. It only activates when the
+GitHub App and Turnstile secrets are configured (setup in
+[docs/deployment.md](docs/deployment.md), rationale in
+[ADR-011](docs/decisions/011-box-contribute-pipeline.md)). Without them, a
+self-hosted instance serves read-only static content and everything else works.
+
 ## Architecture
 
 Key decisions are recorded in [`docs/decisions/`](docs/decisions/):
@@ -120,11 +132,13 @@ Key decisions are recorded in [`docs/decisions/`](docs/decisions/):
 | [008](docs/decisions/008-url-state-persistence.md) | URL as the only client-side state persistence |
 | [009](docs/decisions/009-echarts-import-gateway.md) | ECharts tree-shaking via a single import gateway |
 | [010](docs/decisions/010-taxonomy-controlled-vocabularies.md) | Taxonomy-driven controlled vocabularies |
+| [011](docs/decisions/011-box-contribute-pipeline.md) | Box-contribute pipeline (Worker-opened GitHub PRs, optional for self-hosting) |
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for folder conventions, CSV format, metric
-definitions, and the PR checklist.
+definitions, and the PR checklist. To contribute an enclosure without touching the repo,
+use the Add a Box form on the live site: it opens the pull request for you.
 
 Deeper references:
 
