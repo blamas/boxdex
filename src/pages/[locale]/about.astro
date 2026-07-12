@@ -10,7 +10,7 @@ const a = t.pages.about;
 ---
 
 <Layout title={a.title} description={a.description}>
-  <article class="about">
+  <article class="about prose">
     <h1>{a.heading}</h1>
     <p class="intro">{a.intro}</p>
 
@@ -43,10 +43,6 @@ const a = t.pages.about;
 </Layout>
 
 <style>
-  .about {
-    max-width: 48rem;
-  }
-
   h1 {
     margin-bottom: 0.5rem;
   }

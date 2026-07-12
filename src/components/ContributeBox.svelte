@@ -581,7 +581,6 @@ async function submit() {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 720px;
   }
 
   section.card {

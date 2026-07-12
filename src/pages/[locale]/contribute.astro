@@ -18,16 +18,18 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
   description={t.pages.contribute.description}
   preloadData={["/api/drivers.json"]}
 >
-  <h1>{t.pages.contribute.heading}</h1>
-  <p class="subtitle">{t.pages.contribute.subtitle}</p>
-  <ContributeBox
-    client:only="svelte"
-    t={t.contributeBox}
-    categoryLabels={t.categoryLabels}
-    curveLabels={t.curveLabels}
-    prodOrigin={prodOrigin}
-    turnstileSiteKey={turnstileSiteKey}
-  />
+  <div class="prose">
+    <h1>{t.pages.contribute.heading}</h1>
+    <p class="subtitle">{t.pages.contribute.subtitle}</p>
+    <ContributeBox
+      client:only="svelte"
+      t={t.contributeBox}
+      categoryLabels={t.categoryLabels}
+      curveLabels={t.curveLabels}
+      prodOrigin={prodOrigin}
+      turnstileSiteKey={turnstileSiteKey}
+    />
+  </div>
 </Layout>
 
 <style>
