@@ -187,8 +187,14 @@ tr:last-child th {
   padding: 0 1.5rem;
 }
 
+.prose {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
 input[type="number"],
-input[type="text"] {
+input[type="text"],
+input[type="url"] {
   background: var(--panel);
   border: 1px solid var(--line);
   color: var(--text);
@@ -196,6 +202,25 @@ input[type="text"] {
   padding: 0.4rem 0.6rem;
   font-family: var(--font-mono);
   font-size: 0.875rem;
+}
+
+/* Labelled form field: mono label above the control, inline errors below. */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.field > span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.err {
+  color: var(--danger);
+  font-size: 0.75rem;
 }
 
 input:focus {

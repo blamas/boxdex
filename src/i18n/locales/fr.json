@@ -6,8 +6,73 @@
     "find": "Trouver",
     "stack": "Stack",
     "drivers": "HP",
+    "contribute": "Contribuer",
     "helpLabel": "Aide & glossaire",
     "toggleTheme": "Basculer thème clair/sombre"
+  },
+  "contributeBox": {
+    "loading": "Chargement des HP…",
+    "failedToLoad": "Impossible de charger le catalogue de HP.",
+    "prodOnly": "Les soumissions ne sont acceptées que sur le site en ligne. Vous pouvez tout de même remplir le formulaire ici pour prévisualiser la validation.",
+    "basics": "Général",
+    "name": "Nom",
+    "category": "Catégorie",
+    "topology": "Topologie",
+    "topologyVariant": "Variante de topologie",
+    "ways": "Voies",
+    "revision": "Révision",
+    "buildComplexity": "Complexité de fabrication",
+    "driverCount": "Nombre de HP",
+    "drivers": "HP",
+    "addDriver": "Ajouter un HP",
+    "geometry": "Dimensions et volumes",
+    "height": "Hauteur (mm)",
+    "width": "Largeur (mm)",
+    "depth": "Profondeur (mm)",
+    "netVolumeL": "Volume net (L)",
+    "grossVolumeL": "Volume brut (L)",
+    "weightKg": "Poids chargé (kg)",
+    "plywoodThicknessMm": "Épaisseur du CP (mm)",
+    "sheetCount": "Nombre de panneaux",
+    "sheetWidth": "Largeur du panneau (mm)",
+    "sheetHeight": "Hauteur du panneau (mm)",
+    "specs": "Spécifications",
+    "specsHint": "La F3 est obligatoire. Toutes les autres specs sont facultatives : laissez vide si inconnu, n'inventez jamais une valeur.",
+    "f3Hz": "F3 (Hz)",
+    "advancedSpecs": "Specs avancées",
+    "simulations": "Simulations",
+    "measurements": "Mesures",
+    "sources": "Fichiers sources du projet",
+    "add": "Ajouter",
+    "remove": "Retirer",
+    "rowDriver": "HP",
+    "rowKind": "Type",
+    "rowSource": "Source",
+    "rowNote": "Note",
+    "rowCount": "Nombre empilé",
+    "rowFile": "Fichier CSV",
+    "sourceTool": "Outil",
+    "sourceFile": "Fichier",
+    "files": "Photos et plans",
+    "imagesLabel": "Images (png, jpg, webp)",
+    "plansLabel": "Plans (pdf)",
+    "recommendedFor": "Recommandé pour",
+    "connectors": "Connecteurs",
+    "license": "Licence",
+    "licenseSelect": "Choisir une licence",
+    "licenseNote": "Note de licence",
+    "author": "Auteur",
+    "sourceUrl": "URL source",
+    "notes": "Notes de fabrication",
+    "notesPlaceholder": "Notes libres sur la fabrication. Le markdown est autorisé.",
+    "submit": "Soumettre le caisson",
+    "submitting": "Envoi…",
+    "successTitle": "Pull request ouverte",
+    "successBody": "Votre caisson a été soumis. Un mainteneur relira la pull request.",
+    "viewPr": "Voir la pull request",
+    "errorsTitle": "Corrigez ceci avant d'envoyer :",
+    "serverError": "L'envoi a échoué. Veuillez réessayer.",
+    "none": "(aucun)"
   },
   "footer": {
     "about": "Valeurs",
@@ -95,6 +160,12 @@
       "heading": "Comparer des horns",
       "subtitle": "Specs de horns côte à côte. Le radar normalise chaque axe à 100 = maximum du catalogue."
     },
+    "contribute": {
+      "title": "Ajouter un caisson",
+      "description": "Contribuez un plan de caisson libre à Boxdex",
+      "heading": "Ajouter un caisson",
+      "subtitle": "Soumettez un caisson complet. À l'envoi, nous ouvrons une pull request qu'un mainteneur relira."
+    },
     "notFound": {
       "title": "Page introuvable",
       "description": "La page que vous cherchez n'existe pas"
@@ -107,13 +178,24 @@
       "introPost": "sont mises en pratique : pas de suivi, pas de comptes, pas de cookies.",
       "noCollection": {
         "heading": "Ce que nous ne collectons pas",
-        "body": "Boxdex est un site statique. Nous ne créons pas de comptes utilisateurs, ne traçons pas votre navigation, ne déposons aucun cookie, et ne chargeons aucun script de suivi tiers (pas de Google Analytics, pas de pixel Facebook, pas de réseau publicitaire). Aucune donnée personnelle n'est transmise à des tiers."
+        "body": "Boxdex est un site statique. Nous ne créons pas de comptes utilisateurs, ne traçons pas votre navigation, ne déposons aucun cookie, et ne chargeons aucun script de suivi tiers (pas de Google Analytics, pas de pixel Facebook, pas de réseau publicitaire). La navigation ne transmet aucune donnée personnelle à des tiers. La seule exception est le formulaire de contribution facultatif, détaillé ci-dessous."
       },
       "localStorage": {
         "heading": "Stockage local",
         "bodyPre": "Votre préférence de thème (clair/sombre) et l'état de votre stack sont enregistrés dans le",
         "codeWord": "localStorage",
         "bodyPost": "de votre navigateur. Ces données ne quittent jamais votre appareil."
+      },
+      "contribute": {
+        "heading": "Contribuer un caisson",
+        "optionalBody": "La navigation ne nous envoie rien. La seule exception est le formulaire facultatif « Ajouter un caisson » : la seule page du site qui transmet des données, et uniquement quand vous validez l'envoi.",
+        "publicPre": "Une soumission (données du caisson, notes de fabrication, fichiers envoyés et le champ auteur facultatif) devient une pull request publique sur GitHub. Elle est visible par tous et reste dans l'historique git du dépôt même après modification : n'y incluez aucune information personnelle que vous ne publieriez pas vous-même. GitHub la traite selon",
+        "publicLink": "sa politique de confidentialité",
+        "publicPost": ".",
+        "turnstilePre": "Sur le site en ligne, le formulaire est protégé par",
+        "turnstileLink": "Cloudflare Turnstile",
+        "turnstilePost": ", une vérification anti-bot et le seul script tiers du site, chargé sur cette page uniquement. Cloudflare évalue des signaux techniques du navigateur pour distinguer les humains des bots, et notre endpoint transmet une fois votre adresse IP à Cloudflare pour valider le résultat. La politique de confidentialité de Cloudflare ci-dessous s'applique.",
+        "storageBody": "Nous ne stockons rien nous-mêmes : pas de base de données, et le Worker ne garde aucune copie de votre envoi. La pull request est le seul enregistrement."
       },
       "cloudflare": {
         "heading": "Cloudflare",
@@ -164,7 +246,7 @@
       },
       "community": {
         "heading": "Construit collectivement",
-        "body": "Le catalogue grandit par les contributions. Soumettez un design, corrigez une spec, ajoutez des courbes issues d'une vraie mesure : chaque changement est une pull request sur des données publiques. Le format est délibérément simple (specs JSON, courbes CSV, notes MDX) pour qu'il n'y ait pas d'obstacles au-delà de git.",
+        "body": "Le catalogue grandit par les contributions. Soumettez un design, corrigez une spec, ajoutez des courbes issues d'une vraie mesure : chaque changement est une pull request sur des données publiques. Le format est délibérément simple (specs JSON, courbes CSV, notes MDX) pour qu'il n'y ait pas d'obstacles au-delà de git. Et git lui-même est facultatif : le formulaire « Ajouter un caisson » du site ouvre la pull request pour vous.",
         "why": "Nous hébergeons le dépôt sur GitHub plutôt que sur un serveur git auto-hébergé ou une forge de niche. Un projet qui dépend de contributions extérieures vit ou meurt selon la facilité avec laquelle on peut le trouver et y contribuer. Quitter GitHub est l'un des moyens les plus efficaces de perdre les deux, et de devenir tranquillement un projet mort."
       }
     },
