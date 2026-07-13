@@ -25,7 +25,7 @@ The only client-side storage is your browser's `localStorage` for theme preferen
 stack state, and it never leaves your device. Cloudflare processes standard infrastructure
 access logs (IP, user-agent, URL) as any CDN does, but we have no access to that data and
 do not add any layer on top of it. The one exception to "static" is the optional
-Add a Box form: that single page loads Cloudflare Turnstile (anti-bot) on the live site,
+box-contribute form: that single page loads Cloudflare Turnstile (anti-bot) on the live site,
 and submitting it turns your entry into a public GitHub pull request. Details on the
 privacy page.
 
@@ -138,7 +138,7 @@ Key decisions are recorded in [`docs/decisions/`](docs/decisions/):
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for folder conventions, CSV format, metric
 definitions, and the PR checklist. To contribute an enclosure without touching the repo,
-use the Add a Box form on the live site: it opens the pull request for you.
+use the box-contribute form on the live site: it opens the pull request for you.
 
 Deeper references:
 
