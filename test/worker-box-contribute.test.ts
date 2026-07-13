@@ -218,6 +218,54 @@ describe("emitFrontmatter", () => {
     };
     expect(enclosureFrontmatterSchema.safeParse(fm).success).toBe(false);
   });
+
+  it("emits availability and the contact sequence-of-objects", () => {
+    const fm: EnclosureInput = {
+      ...validBox(),
+      availability: "contact",
+      contact: [
+        { channel: "profile", value: "instagram.com/boxbuilder" },
+        { channel: "email", value: "plans@example.com", note: "ask for the 21 inch" },
+      ],
+    };
+    expect(enclosureFrontmatterSchema.safeParse(fm).success).toBe(true);
+    const out = emitFrontmatter(fm);
+    expect(out).toContain('availability: "contact"');
+    expect(out).toContain(
+      'contact:\n  - channel: "profile"\n    value: "instagram.com/boxbuilder"'
+    );
+    expect(out).toContain('note: "ask for the 21 inch"');
+  });
+});
+
+describe("availability dead-end guard", () => {
+  it("rejects contact/commission with no contact channel and no sourceUrl", () => {
+    const fm: EnclosureInput = { ...validBox(), availability: "contact" };
+    expect(enclosureFrontmatterSchema.safeParse(fm).success).toBe(false);
+  });
+
+  it("accepts contact when a sourceUrl points somewhere", () => {
+    const fm: EnclosureInput = {
+      ...validBox(),
+      availability: "contact",
+      sourceUrl: "https://shop.example.com",
+    };
+    expect(enclosureFrontmatterSchema.safeParse(fm).success).toBe(true);
+  });
+
+  it("accepts contact when a contact channel is present", () => {
+    const fm: EnclosureInput = {
+      ...validBox(),
+      availability: "contact",
+      contact: [{ channel: "email", value: "a@b.com" }],
+    };
+    expect(enclosureFrontmatterSchema.safeParse(fm).success).toBe(true);
+  });
+
+  it("does not require a channel for a free box", () => {
+    const fm: EnclosureInput = { ...validBox(), availability: "free" };
+    expect(enclosureFrontmatterSchema.safeParse(fm).success).toBe(true);
+  });
 });
 
 describe("bytesToBase64", () => {

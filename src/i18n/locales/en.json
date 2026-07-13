@@ -63,6 +63,25 @@
     "licenseNote": "License note",
     "author": "Author",
     "sourceUrl": "Source URL",
+    "availabilityTitle": "Availability and contact",
+    "availability": "Availability",
+    "availabilityUnstated": "(unstated)",
+    "availabilityLabels": {
+      "free": "Free download",
+      "paid": "Paid",
+      "contact": "Contact for plans",
+      "commission": "Commission only",
+      "out_of_print": "Out of print"
+    },
+    "contactHint": "How to reach the designer or vendor when the plans are not a free download. Prefer a public URL or email, this is committed to a public repository and stays in its history.",
+    "addContact": "Add contact",
+    "contactChannel": "Channel",
+    "contactValue": "Email or URL",
+    "contactChannels": {
+      "email": "Email",
+      "website": "Website",
+      "profile": "Social profile"
+    },
     "notes": "Build notes",
     "notesPlaceholder": "Free-form notes about the build. Markdown is allowed.",
     "submit": "Submit box",
@@ -729,6 +748,20 @@
     "images": "Images",
     "plans": "Plans",
     "sources": "Sources",
+    "contact": "Contact",
+    "howToGetPlans": "How to get these plans",
+    "availabilityLabels": {
+      "free": "Free download",
+      "paid": "Paid",
+      "contact": "Contact for plans",
+      "commission": "Commission only",
+      "out_of_print": "Out of print"
+    },
+    "contactChannels": {
+      "email": "Email",
+      "website": "Website",
+      "profile": "Social profile"
+    },
     "relatedEnclosures": "Also uses these drivers",
     "downloadPdf": "Download PDF",
     "by": "by",
@@ -1060,6 +1093,29 @@
           "transmission_line": {
             "term": "Transmission line",
             "def": "A long damped duct behind the driver, ~quarter-wavelength at tuning: deep, clean extension from a moderate box. More a hi-fi/studio choice than a rig workhorse, big for the SPL they make."
+          }
+        },
+        "availability": {
+          "heading": "Availability",
+          "free": {
+            "term": "Free download",
+            "def": "Plans are published here or linked freely: download and build."
+          },
+          "paid": {
+            "term": "Paid",
+            "def": "The plans are sold. Buy them from the designer or vendor through the linked source or a listed contact."
+          },
+          "contact": {
+            "term": "Contact for plans",
+            "def": "Not a public download: reach the designer through a listed contact channel to obtain the plans."
+          },
+          "commission": {
+            "term": "Commission only",
+            "def": "Built to order by the designer or shop rather than distributed as plans. Contact them to commission a build."
+          },
+          "out_of_print": {
+            "term": "Out of print",
+            "def": "The design is no longer distributed. Listed for reference, a contact may still help you track down the plans."
           }
         }
       }

@@ -52,6 +52,14 @@ test("contribute: full form submits and shows the PR link (endpoint mocked)", as
     .locator("select")
     .selectOption("CC0-1.0");
 
+  // Availability "contact" trips the dead-end guard until a reachable channel exists, so
+  // adding the contact row both exercises the new section and clears that error.
+  const availability = page.locator("section.card", { hasText: "Availability and contact" });
+  await availability.locator("select").first().selectOption("contact");
+  await availability.getByRole("button", { name: "Add contact", exact: true }).click();
+  await availability.locator(".row.card select").selectOption("profile");
+  await field(page, "Email or URL").locator("input").fill("https://instagram.com/boxbuilder");
+
   // All requirements met: the errors card is gone and submit unlocks.
   await expect(page.locator(".errors")).toHaveCount(0);
   await expect(submit).toBeEnabled();
@@ -61,6 +69,8 @@ test("contribute: full form submits and shows the PR link (endpoint mocked)", as
     submit.click(),
   ]);
   expect(request.postData()).toContain("My E2E Box");
+  expect(request.postData()).toContain("instagram.com/boxbuilder");
+  expect(request.postData()).toContain("profile");
 
   await expect(page.locator(".success")).toBeVisible();
   await expect(page.getByRole("link", { name: "View pull request" })).toHaveAttribute(

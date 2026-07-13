@@ -38,6 +38,8 @@ function state(overrides: Partial<ContributeState> = {}): ContributeState {
     recommendedFor: [],
     connectors: [],
     lic: { license: "CC0-1.0", licenseNote: "", author: "", sourceUrl: "" },
+    availability: "",
+    contact: [],
     ...overrides,
   };
 }
@@ -54,7 +56,23 @@ describe("buildFrontmatter", () => {
     expect(fm).not.toHaveProperty("licenseNote");
     expect(fm).not.toHaveProperty("simulations");
     expect(fm).not.toHaveProperty("images");
+    expect(fm).not.toHaveProperty("availability");
+    expect(fm).not.toHaveProperty("contact");
     expect(fm.specs).toEqual({ f3Hz: 38 });
+  });
+
+  it("emits availability and drops contact rows with an empty value", () => {
+    const fm = buildFrontmatter(
+      state({
+        availability: "paid",
+        contact: [
+          { channel: "profile", value: "instagram.com/boxbuilder", note: "" },
+          { channel: "email", value: "  ", note: "" },
+        ],
+      })
+    );
+    expect(fm).toHaveProperty("availability", "paid");
+    expect(fm.contact).toEqual([{ channel: "profile", value: "instagram.com/boxbuilder" }]);
   });
 
   it("omits driverCount when 1 or unset, keeps it otherwise", () => {

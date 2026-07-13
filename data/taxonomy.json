@@ -17,6 +17,8 @@
     "bass_music"
   ],
   "connectors": ["speakON NL2", "speakON NL4", "speakON NL8", "XLR", "binding post", "jack 6.35mm"],
+  "availability": ["free", "paid", "contact", "commission", "out_of_print"],
+  "contactChannel": ["email", "website", "profile"],
   "topology": [
     "sealed",
     "bass_reflex",

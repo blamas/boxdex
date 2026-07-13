@@ -1,6 +1,7 @@
 // Structural guards only, no runtime zod: schema correctness is the PR's CI build gate.
 
 import {
+  type ContactEntryInput,
   type CurveEntryInput,
   type DesignSourceInput,
   type EnclosureFrontmatterInput,
@@ -121,6 +122,8 @@ const KEY_ORDER = [
   "plans",
   "author",
   "sourceUrl",
+  "availability",
+  "contact",
   "license",
   "licenseNote",
   "recommendedFor",
@@ -149,6 +152,10 @@ function orderSource(s: DesignSourceInput): Record<string, unknown> {
   return dropUndefined({ tool: s.tool, file: s.file, note: s.note });
 }
 
+function orderContact(c: ContactEntryInput): Record<string, unknown> {
+  return dropUndefined({ channel: c.channel, value: c.value, note: c.note });
+}
+
 function orderFields(fm: EnclosureInput): Record<string, unknown> {
   const out: Record<string, unknown> = {};
   for (const k of KEY_ORDER) {
@@ -163,6 +170,8 @@ function orderFields(fm: EnclosureInput): Record<string, unknown> {
       out.measurements = (v as CurveEntryInput[]).map(orderCurve);
     } else if (k === "sources" && Array.isArray(v)) {
       out.sources = (v as DesignSourceInput[]).map(orderSource);
+    } else if (k === "contact" && Array.isArray(v)) {
+      out.contact = (v as ContactEntryInput[]).map(orderContact);
     } else {
       out[k] = v;
     }
