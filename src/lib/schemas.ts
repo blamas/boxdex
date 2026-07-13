@@ -120,6 +120,14 @@ const designSource = z.object({
   note: z.string().optional(),
 });
 
+// How to reach the designer/vendor for a box whose plans are not a free download.
+// `value` is free-form (a handle or URL): the safe href is built at render in lib/contact.ts.
+const contactEntry = z.object({
+  channel: enumOf("contactChannel"),
+  value: z.string().min(1),
+  note: z.string().optional(),
+});
+
 // Un-refined so content.config.ts can .extend() it (a schema with .superRefine has no .extend);
 // content.config.ts re-declares drivers/images with reference()/image() for build-time checks.
 export const enclosureFrontmatterObject = z.object({
@@ -165,6 +173,9 @@ export const enclosureFrontmatterObject = z.object({
   plans: z.array(z.string().endsWith(".pdf")).default([]),
   author: z.string().optional(),
   sourceUrl: z.url().optional(),
+  // How the box is obtained. Optional, no default: absent means unstated (assume the plans speak for themselves).
+  availability: enumOf("availability").optional(),
+  contact: z.array(contactEntry).default([]),
   ways: z.number().int().min(1).max(4).optional(),
   revision: z.string().optional(),
   // No default on purpose: silently labelling a third-party plan would misstate its rights.
@@ -183,7 +194,14 @@ export const enclosureFrontmatterObject = z.object({
 
 // Typed structurally so it applies to both the shared object and content.config.ts's extended variant.
 export const licenseSuperRefine = (
-  e: { license: string; licenseNote?: string; plans: unknown[] },
+  e: {
+    license: string;
+    licenseNote?: string;
+    plans: unknown[];
+    availability?: string;
+    contact?: unknown[];
+    sourceUrl?: string;
+  },
   ctx: z.RefinementCtx
 ) => {
   if (e.license === "LicenseRef-Proprietary" && e.plans.length > 0) {
@@ -200,6 +218,19 @@ export const licenseSuperRefine = (
       path: ["licenseNote"],
       message:
         "LicenseRef-Permission requires licenseNote recording the permission grant (who, when, scope)",
+    });
+  }
+  // A box you must "contact" or "commission" for is a dead end without a way to reach anyone.
+  if (
+    (e.availability === "contact" || e.availability === "commission") &&
+    (e.contact?.length ?? 0) === 0 &&
+    !e.sourceUrl
+  ) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["contact"],
+      message:
+        "availability contact/commission needs at least one contact channel or a sourceUrl to reach",
     });
   }
 };

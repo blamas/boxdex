@@ -63,6 +63,25 @@
     "licenseNote": "Note de licence",
     "author": "Auteur",
     "sourceUrl": "URL source",
+    "availabilityTitle": "Disponibilité et contact",
+    "availability": "Disponibilité",
+    "availabilityUnstated": "(non précisé)",
+    "availabilityLabels": {
+      "free": "Téléchargement libre",
+      "paid": "Payant",
+      "contact": "Contacter pour les plans",
+      "commission": "Sur commande",
+      "out_of_print": "Épuisé"
+    },
+    "contactHint": "Comment joindre le concepteur ou le vendeur quand les plans ne sont pas en téléchargement libre. Préférez une URL publique ou un e-mail : ceci est versé dans un dépôt public et reste dans son historique.",
+    "addContact": "Ajouter un contact",
+    "contactChannel": "Canal",
+    "contactValue": "E-mail ou URL",
+    "contactChannels": {
+      "email": "E-mail",
+      "website": "Site web",
+      "profile": "Profil social"
+    },
     "notes": "Notes de fabrication",
     "notesPlaceholder": "Notes libres sur la fabrication. Le markdown est autorisé.",
     "submit": "Soumettre le caisson",
@@ -723,6 +742,20 @@
     "images": "Images",
     "plans": "Plans",
     "sources": "Sources",
+    "contact": "Contact",
+    "howToGetPlans": "Comment obtenir ces plans",
+    "availabilityLabels": {
+      "free": "Téléchargement libre",
+      "paid": "Payant",
+      "contact": "Contacter pour les plans",
+      "commission": "Sur commande",
+      "out_of_print": "Épuisé"
+    },
+    "contactChannels": {
+      "email": "E-mail",
+      "website": "Site web",
+      "profile": "Profil social"
+    },
     "relatedEnclosures": "Utilise aussi ces HP",
     "downloadPdf": "Télécharger le PDF",
     "by": "par",
@@ -1054,6 +1087,29 @@
           "transmission_line": {
             "term": "Ligne de transmission",
             "def": "Un long conduit amorti derrière le HP, ~quart de longueur d'onde à l'accord : extension profonde et propre dans un caisson modeste. Plus un choix hi-fi/studio qu'un cheval de bataille de sono, grand pour le SPL qu'il produit."
+          }
+        },
+        "availability": {
+          "heading": "Disponibilité",
+          "free": {
+            "term": "Téléchargement libre",
+            "def": "Les plans sont publiés ici ou liés librement : téléchargez et construisez."
+          },
+          "paid": {
+            "term": "Payant",
+            "def": "Les plans sont vendus. Achetez-les auprès du concepteur ou du vendeur via la source liée ou un contact indiqué."
+          },
+          "contact": {
+            "term": "Contacter pour les plans",
+            "def": "Pas de téléchargement public : joignez le concepteur via un canal de contact indiqué pour obtenir les plans."
+          },
+          "commission": {
+            "term": "Sur commande",
+            "def": "Fabriqué à la demande par le concepteur ou l'atelier plutôt que distribué en plans. Contactez-les pour commander une fabrication."
+          },
+          "out_of_print": {
+            "term": "Épuisé",
+            "def": "Le modèle n'est plus distribué. Indiqué pour référence, un contact peut encore vous aider à retrouver les plans."
           }
         }
       }

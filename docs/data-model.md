@@ -158,6 +158,18 @@ Never set this manually.
 - `LicenseRef-Proprietary`: metadata-only entry. `plans` must be empty; link via `sourceUrl`.
 - `LicenseRef-Permission`: requires `licenseNote` recording the grant (who, when, scope).
 
+**`availability`**: optional, no default. How the box is obtained: `free`, `paid`,
+`contact`, `commission`, `out_of_print` (taxonomy `availability`). Absent means unstated.
+The detail page shows it as a badge, highlighted for any non-free value.
+
+**`contact`**: optional array of `{ channel, value, note? }` for reaching the designer
+or vendor when the plans are not a free download. `channel` is the taxonomy
+`contactChannel` (`email`, `website`, `profile`); `value` is an email address or a
+free-form URL (a `profile` is any social-media profile URL). The safe href is built at
+render by `contactHref` in `src/lib/contact.ts` (mailto/https only, a `javascript:`/`data:`
+value renders as plain text). `availability: contact` or `commission` requires at least one `contact` entry or a
+`sourceUrl` (a build error otherwise: "contact me" must point somewhere).
+
 **`weightKg`**: loaded weight: cabinet + all installed drivers.
 
 **`maxSplDb`**: optional headline SPL figure. A box without it is excluded from SPL
@@ -238,7 +250,7 @@ wires each list via `enumOf()` in `src/content.config.ts`; an out-of-list value 
 build error. To add a new valid value, edit the JSON only: no code change needed.
 
 Fields backed by taxonomy arrays: `topology`, `topologyVariant`, `recommendedFor`,
-`connectors`, `license`, `hornProfile`.
+`connectors`, `license`, `availability`, `contactChannel`, `hornProfile`.
 
 When adding a new `topology` value, also add a glossary entry at `/glossary` (the page
 deep-links to `#<topology>`).
