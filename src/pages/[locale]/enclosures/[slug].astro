@@ -5,6 +5,7 @@ import BoxCurves from "../../../components/BoxCurves.svelte";
 import EnclosureList from "../../../components/EnclosureList.astro";
 import Layout from "../../../components/Layout.astro";
 import { LOCALES, tt, useLocale } from "../../../i18n";
+import { contactHref, contactLabel } from "../../../lib/contact";
 import { humanize, withUnit } from "../../../lib/format";
 import { deriveMetrics, provenanceOf } from "../../../lib/metrics";
 
@@ -34,6 +35,18 @@ const metrics = deriveMetrics({
 });
 
 const provenance = provenanceOf(data.measurements);
+
+const availabilityLabels = t.enclosureDetail.availabilityLabels;
+const contactChannels = t.enclosureDetail.contactChannels;
+const availabilityLabel = data.availability
+  ? (availabilityLabels[data.availability as keyof typeof availabilityLabels] ?? data.availability)
+  : undefined;
+// Non-free plans get the prominent "how to get these" framing; a free box just says "contact".
+const nonFree = data.availability != null && data.availability !== "free";
+const contactHeading = nonFree ? t.enclosureDetail.howToGetPlans : t.enclosureDetail.contact;
+// `contact` has a schema default of [], but a stale content cache (schema-only edits in
+// schemas.ts do not always bust it) can leave it undefined on a pre-existing entry.
+const contactList = data.contact ?? [];
 
 const specRows: { label: string; value: string | undefined }[] = [
   {
@@ -147,6 +160,7 @@ const categoryLabel =
         {data.author && <> · {t.enclosureDetail.by} {data.author}</>}
         {data.revision && <> · {t.enclosureDetail.rev} {data.revision}</>}
         · <span class="muted">{data.license}</span>
+        {availabilityLabel && <> · <span class:list={["availability", { "non-free": nonFree }]}>{availabilityLabel}</span></>}
       </p>
       <p class="meta" data-pagefind-filter="category">{data.category}</p>
       {data.recommendedFor.length > 0 && (
@@ -286,6 +300,28 @@ const categoryLabel =
         </section>
       )}
 
+      {contactList.length > 0 && (
+        <section class="plans-section">
+          <h2>{contactHeading}</h2>
+          <ul class="plan-list">
+            {contactList.map((c) => {
+              const href = contactHref(c.channel, c.value);
+              const label = contactLabel(c.value);
+              const channelLabel = contactChannels[c.channel as keyof typeof contactChannels] ?? c.channel;
+              return (
+                <li>
+                  <span class="muted">{channelLabel}:</span>{" "}
+                  {href
+                    ? <a href={href} target="_blank" rel="noopener">{label}</a>
+                    : <span>{label}</span>}
+                  {c.note ? <span class="muted"> · {c.note}</span> : ""}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
       {data.sourceUrl && (
         <p class="source-url">
           Source: <a href={data.sourceUrl} target="_blank" rel="noopener">{data.sourceUrl}</a>
@@ -389,6 +425,15 @@ const categoryLabel =
     color: var(--muted);
     margin: 0.25rem 0;
     text-transform: capitalize;
+  }
+
+  .availability {
+    color: var(--text);
+  }
+
+  .availability.non-free {
+    color: var(--accent);
+    font-weight: 600;
   }
 
   .detail-body {

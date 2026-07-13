@@ -8,6 +8,7 @@ export type EnclosureFrontmatterInput = z.input<typeof enclosureFrontmatterObjec
 export type EnclosureInput = Partial<EnclosureFrontmatterInput> & Record<string, unknown>;
 export type CurveEntryInput = NonNullable<EnclosureFrontmatterInput["simulations"]>[number];
 export type DesignSourceInput = NonNullable<EnclosureFrontmatterInput["sources"]>[number];
+export type ContactEntryInput = NonNullable<EnclosureFrontmatterInput["contact"]>[number];
 
 export interface FieldError {
   field: string;
@@ -134,6 +135,12 @@ interface SourceRowState {
   note: string;
 }
 
+interface ContactRowState {
+  channel: string;
+  value: string;
+  note: string;
+}
+
 export interface ContributeState {
   basics: {
     name: string;
@@ -168,6 +175,8 @@ export interface ContributeState {
   recommendedFor: string[];
   connectors: string[];
   lic: { license: string; licenseNote: string; author: string; sourceUrl: string };
+  availability: string;
+  contact: ContactRowState[];
 }
 
 // Drop empty values so absent optionals stay out of the posted frontmatter.
@@ -223,6 +232,7 @@ export function buildFrontmatter(s: ContributeState): Record<string, unknown> {
       licenseNote: s.lic.licenseNote,
       author: s.lic.author,
       sourceUrl: s.lic.sourceUrl,
+      availability: s.availability,
     }),
   };
 
@@ -234,6 +244,10 @@ export function buildFrontmatter(s: ContributeState): Record<string, unknown> {
   if (s.meas.length) fm.measurements = s.meas.map(curveOut);
   if (s.srcs.length)
     fm.sources = s.srcs.map((x) => clean({ tool: x.tool, file: x.file ?? "", note: x.note }));
+  const contact = s.contact
+    .filter((c) => c.value.trim() !== "")
+    .map((c) => clean({ channel: c.channel, value: c.value.trim(), note: c.note }));
+  if (contact.length) fm.contact = contact;
   if (s.images.length) fm.images = s.images;
   if (s.plans.length) fm.plans = s.plans;
   if (s.recommendedFor.length) fm.recommendedFor = s.recommendedFor;

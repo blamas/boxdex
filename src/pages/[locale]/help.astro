@@ -135,6 +135,7 @@ const furtherSections: [string, ResourceSection][] = [
       <a href="#glossary-system">{glossary.system.heading}</a>
       <a href="#glossary-power">{glossary.power.heading}</a>
       <a href="#glossary-topologies">{glossary.topologies.heading}</a>
+      <a href="#glossary-availability">{glossary.availability.heading}</a>
     </nav>
 
     <div class="glossary-group" id="glossary-driver">
@@ -189,6 +190,18 @@ const furtherSections: [string, ResourceSection][] = [
       <h3>{glossary.topologies.heading}</h3>
       <dl>
         {Object.entries(glossary.topologies).filter(([k]) => k !== "heading").map(([id, entry]) => (
+          <div class="entry" id={id.replace(/_/g, "-")}>
+            <dt>{(entry as { term: string; def: string }).term}</dt>
+            <dd>{(entry as { term: string; def: string }).def}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="glossary-group" id="glossary-availability">
+      <h3>{glossary.availability.heading}</h3>
+      <dl>
+        {Object.entries(glossary.availability).filter(([k]) => k !== "heading").map(([id, entry]) => (
           <div class="entry" id={id.replace(/_/g, "-")}>
             <dt>{(entry as { term: string; def: string }).term}</dt>
             <dd>{(entry as { term: string; def: string }).def}</dd>

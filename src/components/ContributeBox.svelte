@@ -41,6 +41,8 @@ const TOPOLOGIES = taxonomy.topology;
 const LICENSES = taxonomy.license;
 const CONNECTORS = taxonomy.connectors;
 const RECOMMENDED_FOR = taxonomy.recommendedFor;
+const AVAILABILITY = taxonomy.availability;
+const CONTACT_CHANNELS = taxonomy.contactChannel;
 
 const GEOM_FIELDS = [
   { k: "hMm", l: "height" },
@@ -106,6 +108,8 @@ let plans = $state<File[]>([]);
 let recommendedFor = $state<string[]>([]);
 let connectors = $state<string[]>([]);
 let lic = $state({ license: "", licenseNote: "", author: "", sourceUrl: "" });
+let availability = $state("");
+let contact = $state<{ channel: string; value: string; note: string }[]>([]);
 let body = $state("");
 
 let onProd = $state(false);
@@ -137,6 +141,8 @@ const frontmatter = $derived(
     recommendedFor,
     connectors,
     lic,
+    availability,
+    contact,
   })
 );
 
@@ -535,6 +541,40 @@ async function submit() {
           {/each}
         </div>
       </div>
+    </section>
+
+    <section class="card">
+      <div class="row-head">
+        <h2>{t.availabilityTitle}</h2>
+        <button type="button" class="btn-ghost btn-sm" onclick={() => contact.push({ channel: CONTACT_CHANNELS[0], value: "", note: "" })}>{t.addContact}</button>
+      </div>
+      <label class="field">
+        <span>{t.availability}</span>
+        <select bind:value={availability}>
+          <option value="">{t.availabilityUnstated}</option>
+          {#each AVAILABILITY as a}<option value={a}>{t.availabilityLabels[a] ?? a}</option>{/each}
+        </select>
+      </label>
+      <p class="hint">{t.contactHint}</p>
+      {#each contact as row, i}
+        <div class="row card">
+          <div class="row-head">
+            <span class="result-count">#{i + 1}</span>
+            <button type="button" class="btn-ghost btn-sm" onclick={() => contact.splice(i, 1)}>{t.remove}</button>
+          </div>
+          <div class="grid-2">
+            <label class="field">
+              <span>{t.contactChannel}</span>
+              <select bind:value={contact[i].channel}>
+                {#each CONTACT_CHANNELS as c}<option value={c}>{t.contactChannels[c] ?? c}</option>{/each}
+              </select>
+            </label>
+            <LabeledInput label={t.contactValue} bind:value={contact[i].value} />
+          </div>
+          <LabeledInput label={t.rowNote} bind:value={contact[i].note} />
+        </div>
+      {/each}
+      {#each issuesFor("contact") as m}<span class="err">{m}</span>{/each}
     </section>
 
     <section class="card">

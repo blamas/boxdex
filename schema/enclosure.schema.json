@@ -369,6 +369,31 @@
       "type": "string",
       "format": "uri"
     },
+    "availability": {
+      "type": "string",
+      "enum": ["free", "paid", "contact", "commission", "out_of_print"]
+    },
+    "contact": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string",
+            "enum": ["email", "website", "profile"]
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": ["channel", "value"]
+      }
+    },
     "ways": {
       "type": "integer",
       "minimum": 1,
