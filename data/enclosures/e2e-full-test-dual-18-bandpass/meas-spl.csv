@@ -1,0 +1,9 @@
+# test measured curve (REW export placeholder)
+freq,value
+20,78
+40,88
+80,99
+160,104
+320,101
+640,97
+1280,93
