@@ -19,8 +19,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # check/e2e are required status checks on main, so this only actually
-      # merges once CI is green, it doesn't bypass it.
+      # ci / check and ci / e2e are required status checks on main, so this
+      # only actually merges once CI is green, it doesn't bypass it.
       - name: Enable auto-merge for minor/patch updates
         if: steps.metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr merge --auto --squash "$PR_URL"
