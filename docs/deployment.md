@@ -47,6 +47,7 @@ The box-contribute endpoint additionally needs two **Worker secrets**, set with
 |---------------|-------------|
 | `GITHUB_APP_PRIVATE_KEY` | PEM private key of the GitHub App that opens contribution PRs |
 | `TURNSTILE_SECRET` | Turnstile secret key for `siteverify` |
+| `E2E_BYPASS_SECRET` (optional) | If set, a request with header `x-e2e-bypass` matching this value verifies against Cloudflare's documented always-pass Turnstile test secret instead of `TURNSTILE_SECRET`, letting an internal test script drive the real production form without a human solving Turnstile. Unset in normal operation; only needed while running such a test. |
 
 ---
 

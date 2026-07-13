@@ -17,7 +17,11 @@ export interface BoxContributeEnv {
   GITHUB_REPO_NAME: string;
   GITHUB_APP_PRIVATE_KEY: string;
   TURNSTILE_SECRET: string;
+  E2E_BYPASS_SECRET?: string;
 }
+
+// Cloudflare's always-pass test secret, only reachable via the x-e2e-bypass header + secret.
+const TURNSTILE_TEST_SECRET = "1x0000000000000000000000000000000AA";
 
 interface BoxContributePayload {
   frontmatter: EnclosureInput;
@@ -443,8 +447,10 @@ export async function handleBoxContribute(
   const errors = [...requiredFieldErrors(fm), ...validateUploads(fm, uploads)];
   if (errors.length > 0) return json(422, { errors });
 
+  const bypassed =
+    !!env.E2E_BYPASS_SECRET && request.headers.get("x-e2e-bypass") === env.E2E_BYPASS_SECRET;
   const ok = await verifyTurnstile(
-    env.TURNSTILE_SECRET,
+    bypassed ? TURNSTILE_TEST_SECRET : env.TURNSTILE_SECRET,
     turnstileToken,
     request.headers.get("cf-connecting-ip")
   );
