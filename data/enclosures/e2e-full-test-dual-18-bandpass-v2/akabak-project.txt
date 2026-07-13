@@ -1,0 +1,13 @@
+AkAbak 3.0 Project Export
+==========================
+Project: E2E Full Test Dual 18 Bandpass
+System: 2-driver bandpass network
+
+Node1: Voltage Source, 2.83V
+Node2: D1 (18 IPAL), Re=5.2, Le=1.8mH, Bl=24.1, Mms=280g, Cms=0.088mm/N
+Node3: Front sealed chamber, Vb=140L
+Node4: D2 (18iD), Re=5.0, Le=1.7mH, Bl=25.0, Mms=290g, Cms=0.098mm/N
+Node5: Rear vented chamber, Vb=140L, Fb=34Hz, port area 800cm2 length 42cm
+
+Coupling: acoustic, shared internal chamber wall
+Output: SPL @ 1m, half-space, swept 10-2000Hz, 200 points log

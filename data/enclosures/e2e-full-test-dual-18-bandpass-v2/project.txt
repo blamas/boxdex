@@ -1,0 +1,44 @@
+Hornresp Project File
+======================
+Project: E2E Full Test Dual 18 Bandpass
+Date: 2026-07-13
+
+[Driver1]
+Sd=1520 cm2
+Vas=180 L
+Fs=32 Hz
+Qts=0.35
+Qes=0.38
+Qms=5.2
+Bl=24.1 Tm
+Re=5.2 ohm
+Le=1.8 mH
+Xmax=15 mm
+Mms=280 g
+
+[Driver2]
+Sd=1520 cm2
+Vas=175 L
+Fs=30 Hz
+Qts=0.33
+Qes=0.36
+Qms=5.6
+Bl=25.0 Tm
+Re=5.0 ohm
+Le=1.7 mH
+Xmax=16 mm
+Mms=290 g
+
+[Enclosure]
+Type=Dual Chamber Bandpass 6th Order
+Vf (front, sealed)=140 L
+Vr (rear, ported)=140 L
+Fb (rear tuning)=34 Hz
+Port area=800 cm2
+Port length=42 cm
+
+[SimulationSettings]
+Alignment=Vented Rear / Sealed Front
+Half-space (2 pi)
+Input voltage=2.83V @ 1m
+Simulated max input=4000 W (thermal), 4000 W (excursion-limited via Xmax)

@@ -1,0 +1,107 @@
+---
+name: "E2E Full Test Dual 18 Bandpass v2"
+category: "sub"
+topology: "bass_reflex"
+topologyVariant: "dual chamber 6th order"
+buildComplexity: "complex"
+ways: 1
+revision: "test-rev-1"
+driverCount: 2
+drivers:
+  - "bc-18-ipal-2"
+  - "18s-18id-2"
+netVolumeL: 280
+grossVolumeL: 320
+dims:
+  hMm: 900
+  wMm: 650
+  dMm: 750
+weightKg: 85
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2500
+  hMm: 1250
+specs:
+  f3Hz: 32
+  f3HzHigh: 45
+  f6Hz: 28
+  fbHz: 34
+  maxSplDb: 142
+  maxSplExcursionDb: 138
+  maxSplThermalDb: 142
+  sensitivityDb: 99
+  impedanceMinOhm: 2.6
+  impedanceNominalOhm: 4
+  recommendedPowerW: 4000
+  powerAesW: 4000
+  powerProgramW: 8000
+  coverageAngleDeg: 90
+  recommendedCrossoverHz: 120
+  hornCutoffHz: 40
+  hornMouthCm2: 5000
+  hornThroatCm2: 800
+  maxVelocityMs: 18
+simulations:
+  - driver:
+      - "bc-18-ipal-2"
+    kind: "spl_stacked"
+    source: "hornresp_sim"
+    file: "sim-spl.csv"
+    count: 4
+    note: "Hornresp, stacked x4, half-space"
+  - driver:
+      - "18s-18id-2"
+    kind: "impedance"
+    source: "akabak_sim"
+    file: "sim-imp.csv"
+    note: "AkAbak impedance sweep, single driver"
+  - driver:
+      - "bc-18-ipal-2"
+      - "18s-18id-2"
+    kind: "phase"
+    source: "catt_sim"
+    file: "sim-phase.csv"
+    note: "CATT-Acoustic phase, both drivers combined"
+measurements:
+  - driver:
+      - "bc-18-ipal-2"
+    kind: "spl"
+    source: "rew_measured"
+    file: "meas-spl.csv"
+    note: "REW, gated, 2m, ground plane"
+  - driver:
+      - "18s-18id-2"
+    kind: "group_delay"
+    source: "klippel"
+    file: "meas-gd.csv"
+    note: "Klippel near-field group delay"
+sources:
+  - tool: "Hornresp"
+    file: "project.txt"
+    note: "Raw project file for remixing"
+  - tool: "AkAbak"
+    file: "akabak-project.txt"
+    note: "Network model export for the two-chamber coupling"
+images:
+  - "box-front.png"
+  - "box-side.jpg"
+  - "box-detail.jpg"
+plans:
+  - "plans.pdf"
+author: "Boxdex E2E Test"
+sourceUrl: "https://example.com/e2e-full-test"
+license: "CC-BY-4.0"
+recommendedFor:
+  - "hardcore"
+  - "frenchcore"
+  - "tekno"
+  - "hardtek"
+  - "acid"
+connectors:
+  - "speakON NL4"
+  - "speakON NL8"
+  - "binding post"
+---
+
+Full end-to-end coverage test: two drivers, all advanced specs, three simulation rows (spl_stacked/hornresp, impedance/akabak, phase/catt on both drivers), two measurement rows (spl/rew, group_delay/klippel), two design source files, three images, one 2-page plan, 5 recommendedFor tags, 3 connectors. Safe to close.
