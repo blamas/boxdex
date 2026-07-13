@@ -101,8 +101,10 @@ describe("cacheControl", () => {
     );
   });
 
-  it("makes HTML revalidate", () => {
-    expect(cacheControl("production/en/index.html")).toBe("public, max-age=0, must-revalidate");
+  it("gives HTML a short TTL with background revalidation", () => {
+    expect(cacheControl("production/en/index.html")).toBe(
+      "public, max-age=60, stale-while-revalidate=86400"
+    );
   });
 
   it("gives everything else a moderate TTL", () => {

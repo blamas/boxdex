@@ -2,9 +2,51 @@
 name: "FAKE TH118"
 category: sub
 topology: tapped_horn
-drivers:
-  - rcf-lf18x451-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-lf18x451-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+            note: "1U single cab, Hornresp"
+          phase:
+            file: sim-phase-1u.csv
+            note: "1U, Hornresp"
+          impedance:
+            file: sim-impedance-1u.csv
+            note: "1U, Hornresp"
+        stacked:
+          - count: 4
+            file: spl-4u.csv
+            note: "4U stacked, Hornresp"
+          - count: 6
+            file: spl-6u.csv
+            note: "6U stacked, Hornresp"
+    measurements:
+      - id: meas
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
+            note: "1U, gated 10 ms @1m, REW, ground plane"
+          phase:
+            file: meas-phase-1u.csv
+            note: "1U, REW, ground plane"
+          impedance:
+            file: meas-impedance-1u.csv
+            note: "1U, REW"
+        stacked:
+          - count: 4
+            file: meas-4u.csv
+            note: "4U stacked, REW, ground plane"
+          - count: 6
+            file: meas-6u.csv
+            note: "6U stacked, REW, ground plane"
 netVolumeL: 380
 dims:
   wMm: 620
@@ -20,62 +62,6 @@ specs:
   powerProgramW: 3000
   maxSplDb: 133
   recommendedCrossoverHz: 80
-simulations:
-  - driver: [rcf-lf18x451-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-    note: "1U single cab, Hornresp"
-  - driver: [rcf-lf18x451-8]
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-4u.csv
-    count: 4
-    note: "4U stacked, Hornresp"
-  - driver: [rcf-lf18x451-8]
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-6u.csv
-    count: 6
-    note: "6U stacked, Hornresp"
-  - driver: [rcf-lf18x451-8]
-    kind: phase
-    source: hornresp_sim
-    file: sim-phase-1u.csv
-    note: "1U, Hornresp"
-  - driver: [rcf-lf18x451-8]
-    kind: impedance
-    source: hornresp_sim
-    file: sim-impedance-1u.csv
-    note: "1U, Hornresp"
-measurements:
-  - driver: [rcf-lf18x451-8]
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
-    note: "1U, gated 10 ms @1m, REW, ground plane"
-  - driver: [rcf-lf18x451-8]
-    kind: spl_stacked
-    source: rew_measured
-    file: meas-4u.csv
-    count: 4
-    note: "4U stacked, REW, ground plane"
-  - driver: [rcf-lf18x451-8]
-    kind: spl_stacked
-    source: rew_measured
-    file: meas-6u.csv
-    count: 6
-    note: "6U stacked, REW, ground plane"
-  - driver: [rcf-lf18x451-8]
-    kind: phase
-    source: rew_measured
-    file: meas-phase-1u.csv
-    note: "1U, REW, ground plane"
-  - driver: [rcf-lf18x451-8]
-    kind: impedance
-    source: rew_measured
-    file: meas-impedance-1u.csv
-    note: "1U, REW"
 plans: []
 author: "Fake Audio Labs"
 sourceUrl: "https://example.com/fake-th118"

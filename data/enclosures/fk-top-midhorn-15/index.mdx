@@ -2,8 +2,23 @@
 name: FK Top Midhorn 15
 category: mid
 topology: front_loaded_horn
-drivers:
-  - rcf-l15p400-8
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-l15p400-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 120
 dims:
   wMm: 700
@@ -17,18 +32,6 @@ specs:
   hornCutoffHz: 150
   coverageAngleDeg: 60
   recommendedCrossoverHz: 150
-simulations:
-  - driver:
-      - rcf-l15p400-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - rcf-l15p400-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 license: CC0-1.0
 recommendedFor:
   - tribe

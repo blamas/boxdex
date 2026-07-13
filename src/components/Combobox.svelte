@@ -1,3 +1,7 @@
+<script module>
+let comboboxSeq = 0;
+</script>
+
 <script lang="ts" generics="T">
 import { tick } from "svelte";
 import { clickOutside } from "../lib/click-outside";
@@ -38,8 +42,16 @@ let wrapperEl: HTMLDivElement | undefined = $state();
 let activeIdx = $state(-1);
 let listStyle = $state("");
 
+const listboxId = `combobox-${comboboxSeq++}`;
+const activeOptionId = $derived(activeIdx >= 0 ? `${listboxId}-opt-${activeIdx}` : undefined);
+
 const selectedItem = $derived(value ? items.find((i) => getId(i) === value) : undefined);
 const selectedLabel = $derived(selectedItem ? getLabel(selectedItem) : "");
+// role="combobox" doesn't allow name-from-content per the accname spec, so the trigger's
+// visible text (which mirrors this) isn't picked up as its accessible name without aria-label.
+const triggerLabel = $derived(
+  selectedLabel || (emptyLabel !== undefined && value === "" ? emptyLabel : placeholder)
+);
 
 const matchedItems = $derived.by(() => {
   const q = query.trim().toLowerCase();
@@ -159,6 +171,7 @@ function onTriggerKeydown(e: KeyboardEvent) {
     class:combobox-list-compact={compact}
     style={listStyle}
     bind:this={listEl}
+    id={listboxId}
     role="listbox"
   >
     {#each displayItems as item, idx}
@@ -166,7 +179,9 @@ function onTriggerKeydown(e: KeyboardEvent) {
         class="combobox-item"
         class:combobox-item-active={activeIdx === idx}
         class:combobox-item-selected={item.id === value}
+        id={`${listboxId}-opt-${idx}`}
         role="option"
+        tabindex="-1"
         aria-selected={item.id === value}
         onmouseenter={() => { activeIdx = idx; }}
         onmousedown={(e) => e.preventDefault()}
@@ -189,6 +204,10 @@ function onTriggerKeydown(e: KeyboardEvent) {
       bind:value={query}
       class="combobox-search"
       type="text"
+      role="combobox"
+      aria-controls={listboxId}
+      aria-expanded={open}
+      aria-activedescendant={activeOptionId}
       {placeholder}
       onkeydown={onListKeydown}
       autocomplete="off"
@@ -200,8 +219,12 @@ function onTriggerKeydown(e: KeyboardEvent) {
       class="combobox-trigger"
       class:combobox-compact={compact}
       {disabled}
+      role="combobox"
+      aria-label={triggerLabel}
       aria-haspopup="listbox"
+      aria-controls={open && !searchable ? listboxId : undefined}
       aria-expanded={open}
+      aria-activedescendant={!searchable ? activeOptionId : undefined}
       onclick={toggleDropdown}
       onkeydown={onTriggerKeydown}
     >

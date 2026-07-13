@@ -7,7 +7,7 @@ node.compile = false
 experimental = true
 
 [hooks]
-postinstall = "lefthook install"
+postinstall = "lefthook install && npm run wrangler:types"
 
 [env]
 NODE_ENV = "development"
@@ -57,15 +57,7 @@ run = "npm run knip"
 description = "Detect unused files, exports and dependencies"
 
 [tasks.e2e]
-run = '''
-#!/usr/bin/env bash
-set -euo pipefail
-if command -v nixos-version >/dev/null 2>&1 || [ -f /etc/NIXOS ]; then
-  # non-FHS Chromium can't run here, use the Nix-packaged one instead
-  export PLAYWRIGHT_BROWSERS_PATH="$(nix-shell -p playwright-driver.browsers --run 'echo $buildInputs')"
-fi
-npm run test:e2e
-'''
+run = "npm run test:e2e"
 description = "Run Playwright E2E suite against a production build+preview"
 
 [tasks.validate-data]

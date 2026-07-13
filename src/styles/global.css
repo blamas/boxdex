@@ -11,7 +11,9 @@
   --meas: #7cb9d8;
   --sim: #c8956a;
   --danger: #ef5350;
-  --surface-subtle: color-mix(in srgb, var(--muted) 8%, transparent);
+  /* 5%, not 8%: at 8% a --muted-on-this-bg text pairing (e.g. .tag) fell to 4.46:1,
+     just under the 4.5:1 WCAG AA text threshold against --panel in light theme. */
+  --surface-subtle: color-mix(in srgb, var(--muted) 5%, transparent);
   --accent-subtle: color-mix(in srgb, var(--accent) 7%, transparent);
   --line-subtle: #21262d;
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
@@ -30,11 +32,15 @@
   --text: #1f2328;
   --muted: #656d76;
   --accent: #1a7f37;
-  --accent-2: #9a6700;
+  /* Darkened ~10% from the raw brand gold (#9a6700): at full brightness it fell under
+     4.5:1 as badge text against --panel, WCAG AA needs 4.5:1 for this text size. */
+  --accent-2: #8b5d00;
   --kick: #7c3aed;
   --mid: #0e7490;
-  --meas: #2d7a9e;
-  --sim: #9e6a3a;
+  /* Darkened ~5%/8% from #2d7a9e / #9e6a3a for the same reason: badge-measured and
+     badge-sim render as bare text (no background tint) directly on --panel. */
+  --meas: #2b7496;
+  --sim: #916235;
   --danger: #cf222e;
 }
 
@@ -121,26 +127,29 @@ tr:last-child th {
   letter-spacing: 0.05em;
 }
 
+/* 4% tint (not the usual --accent-subtle 7%): in light theme, badge text sits directly
+   on this background, so a stronger tint was cutting the 4.5:1 WCAG AA text contrast
+   margin too close (down to ~4.2:1 for some accents against --panel). */
 .badge-sub {
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
   color: var(--accent);
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .badge-top {
-  background: color-mix(in srgb, var(--accent-2) 12%, transparent);
+  background: color-mix(in srgb, var(--accent-2) 4%, transparent);
   color: var(--accent-2);
   border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
 }
 
 .badge-kick {
-  background: color-mix(in srgb, var(--kick) 12%, transparent);
+  background: color-mix(in srgb, var(--kick) 4%, transparent);
   color: var(--kick);
   border: 1px solid color-mix(in srgb, var(--kick) 30%, transparent);
 }
 
 .badge-mid {
-  background: color-mix(in srgb, var(--mid) 12%, transparent);
+  background: color-mix(in srgb, var(--mid) 4%, transparent);
   color: var(--mid);
   border: 1px solid color-mix(in srgb, var(--mid) 30%, transparent);
 }
@@ -158,7 +167,7 @@ tr:last-child th {
 }
 
 .badge-verified {
-  background: color-mix(in srgb, var(--accent-2) 12%, transparent);
+  background: color-mix(in srgb, var(--accent-2) 4%, transparent);
   color: var(--accent-2);
   border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
 }
@@ -221,6 +230,18 @@ input[type="url"] {
 .err {
   color: var(--danger);
   font-size: 0.75rem;
+}
+
+/* Required field left empty vs filled with a value that still fails validation: distinct
+   colors so an unfilled required field is spottable without reading the error text below it. */
+input.field-missing,
+select.field-missing {
+  border-color: var(--danger);
+}
+
+input.field-invalid,
+select.field-invalid {
+  border-color: var(--accent-2);
 }
 
 input:focus {
@@ -437,6 +458,26 @@ button {
   font-family: var(--font-mono);
   border: 1px dashed var(--line);
   border-radius: var(--radius-lg);
+}
+
+/* --accent and --muted are near-identical luminance in light theme: an inline link
+   needs underline to stay distinguishable from surrounding muted text (WCAG 1.4.1). */
+.empty-state a {
+  text-decoration: underline;
+}
+
+/* Visually hidden but still announced by screen readers (e.g. table header text for
+   icon-only columns) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Skip navigation (visually hidden until focused) */

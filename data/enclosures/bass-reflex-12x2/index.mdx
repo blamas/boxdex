@@ -2,9 +2,18 @@
 name: "Dual 12\" Bass Reflex"
 category: sub
 topology: bass_reflex
-drivers:
-  - bc-12nbx100-8
-driverCount: 2
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-12nbx100-8
+        qty: 2
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space, 2× driver in parallel"
 netVolumeL: 180
 dims:
   hMm: 820
@@ -23,12 +32,6 @@ specs:
   impedanceNominalOhm: 4
   impedanceMinOhm: 3.4
   recommendedCrossoverHz: 100
-simulations:
-  - driver: [bc-12nbx100-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space, 2× driver in parallel"
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"
 buildComplexity: simple

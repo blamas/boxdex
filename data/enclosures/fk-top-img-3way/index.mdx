@@ -2,11 +2,21 @@
 name: FK Top Img 3W
 category: top
 topology: bass_reflex
-drivers:
-  - rcf-l15p400-8
-  - 18s-6nmb420-8
-  - faital-hf1000-8
-driverCount: 3
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-l15p400-8
+        qty: 1
+      - driver: 18s-6nmb420-8
+        qty: 1
+      - driver: faital-hf1000-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
 ways: 3
 netVolumeL: 95
 dims:
@@ -20,15 +30,6 @@ specs:
   sensitivityDb: 101
   maxSplDb: 130
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - rcf-l15p400-8
-      - 18s-6nmb420-8
-      - faital-hf1000-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements: []
 images:
   - render.png
   - photo-1.jpg

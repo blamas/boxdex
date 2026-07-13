@@ -2,9 +2,18 @@
 name: "MHB-46"
 category: sub
 topology: folded_horn
-drivers:
-  - rcf-lf18n401-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-lf18n401-8
+        qty: 1
+    simulations:
+      - id: spl-sim
+        source: catt_sim
+        curves:
+          spl:
+            file: spl-sim.csv
+            note: "CATT Acoustic MHB46RC, 2.83V/1m at 1m, H=0° V=0°, digitized from plan PDF ±2 dB"
 netVolumeL: 200
 dims:
   wMm: 600
@@ -16,13 +25,6 @@ specs:
   f3Hz: 49
   sensitivityDb: 105
   recommendedCrossoverHz: 35
-simulations:
-  - driver: [rcf-lf18n401-8]
-    kind: spl
-    source: catt_sim
-    file: spl-sim.csv
-    note: "CATT Acoustic MHB46RC, 2.83V/1m at 1m, H=0° V=0°, digitized from plan PDF ±2 dB"
-measurements: []
 plans:
   - plan.pdf
 author: "Marc.O Hornplans"

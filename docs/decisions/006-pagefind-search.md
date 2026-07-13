@@ -22,7 +22,7 @@ Requirements:
 Use Pagefind via the `astro-pagefind` integration. Pagefind runs after `astro build`
 to crawl `dist/` and generate a binary index under `dist/pagefind/`. The
 `<pagefind-searchbox>` web component (`@pagefind/component-ui`) fetches the WASM
-runtime and index shards on first use; subsequent queries are in-memory.
+runtime and index shards on first use. Subsequent queries are in-memory.
 
 ## Alternatives Considered
 
@@ -42,7 +42,7 @@ runtime and index shards on first use; subsequent queries are in-memory.
 
 ### No search (rely on browser Ctrl+F)
 - Pros: zero implementation cost.
-- Cons: Ctrl+F only searches the current page; finding a specific driver across 5,875+
+- Cons: Ctrl+F only searches the current page, finding a specific driver across 5,875+
   entries is not viable.
 - Rejected: search is a core navigation requirement at this catalog size.
 

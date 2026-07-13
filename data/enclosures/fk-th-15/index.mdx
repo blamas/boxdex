@@ -2,8 +2,23 @@
 name: FK TH 15
 category: sub
 topology: tapped_horn
-drivers:
-  - rcf-l15p400-8
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-l15p400-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 280
 dims:
   wMm: 580
@@ -15,18 +30,6 @@ specs:
   sensitivityDb: 103
   maxSplDb: 130
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - rcf-l15p400-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - rcf-l15p400-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 license: CC0-1.0
 recommendedFor:
   - tekno

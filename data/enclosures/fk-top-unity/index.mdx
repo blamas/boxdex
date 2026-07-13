@@ -3,9 +3,23 @@ name: FK Top Unity
 category: top
 topology: front_loaded_horn
 topologyVariant: Unity horn
-drivers:
-  - faital-12pr310-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-12pr310-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 50
 dims:
   wMm: 600
@@ -20,18 +34,6 @@ specs:
   hornCutoffHz: 80
   coverageAngleDeg: 90
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - faital-12pr310-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - faital-12pr310-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 plans: []
 license: CC0-1.0
 recommendedFor:

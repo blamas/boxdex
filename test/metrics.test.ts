@@ -3,6 +3,7 @@ import {
   AXIS_FIELDS,
   axisComboboxItems,
   deriveMetrics,
+  driverFormatParts,
   type EnclosureFilters,
   filterByCategory,
   filterEnclosures,
@@ -13,6 +14,35 @@ import {
   sortRecords,
 } from "../src/lib/metrics";
 import { makeMetrics, makeRecord } from "./fixtures";
+
+describe("driverFormatParts", () => {
+  it("returns empty when no entry carries a size or exit (caller falls back to driverCount)", () => {
+    expect(driverFormatParts(makeRecord({ slug: "x", primaryDrivers: [{ qty: 2 }] }))).toEqual([]);
+  });
+
+  it("aggregates cone quantities per size, sorted ascending", () => {
+    const rec = makeRecord({
+      slug: "x",
+      primaryDrivers: [
+        { qty: 2, sizeInch: 15 },
+        { qty: 1, sizeInch: 12 },
+        { qty: 1, sizeInch: 15 },
+      ],
+    });
+    expect(driverFormatParts(rec)).toEqual(['1×12"', '3×15"']);
+  });
+
+  it("keeps compression-driver quantities instead of assuming one per exit", () => {
+    const rec = makeRecord({
+      slug: "x",
+      primaryDrivers: [
+        { qty: 1, sizeInch: 12 },
+        { qty: 2, exitInch: 1.4 },
+      ],
+    });
+    expect(driverFormatParts(rec)).toEqual(['1×12"', '2×1.4"']);
+  });
+});
 
 describe("filterByCategory", () => {
   const records = [

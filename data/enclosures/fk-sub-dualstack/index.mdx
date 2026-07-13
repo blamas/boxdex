@@ -2,10 +2,31 @@
 name: FK Sub DualStack
 category: sub
 topology: bass_reflex
-drivers:
-  - faital-18hp1060-8
-  - faital-18hp1060-8
-driverCount: 2
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18hp1060-8
+        qty: 2
+    simulations:
+      - id: spl-drv-a
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-drv-a.csv
+            note: "Driver A position"
+      - id: spl-drv-b
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-drv-b.csv
+            note: "Driver B position"
+    measurements:
+      - id: meas-combined
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-combined.csv
+            note: "Combined A+B, gated 10 ms @1m"
 netVolumeL: 520
 dims:
   wMm: 760
@@ -18,27 +39,6 @@ specs:
   sensitivityDb: 101
   maxSplDb: 135
   impedanceNominalOhm: 4
-simulations:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-drv-a.csv
-    note: Driver A position
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-drv-b.csv
-    note: Driver B position
-measurements:
-  - driver:
-      - faital-18hp1060-8
-      - faital-18hp1060-8
-    kind: spl
-    source: rew_measured
-    file: meas-combined.csv
-    note: Combined A+B, gated 10 ms @1m
 plans: []
 license: CC0-1.0
 recommendedFor:

@@ -41,7 +41,7 @@ correct locale 404 page.
 
 ### Single locale (English only, no i18n)
 - Pros: eliminates all locale routing complexity.
-- Cons: French is an active locale with translated UI strings; removing it would
+- Cons: French is an active locale with translated UI strings, removing it would
   drop existing translated content.
 - Rejected: not viable given existing French content.
 

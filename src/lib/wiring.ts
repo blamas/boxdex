@@ -49,7 +49,6 @@ export function effectiveRating(o: WiringOption): LoadRating {
   return o.minRating ?? o.rating;
 }
 
-// Integer divisors of n in ascending order.
 export function divisors(n: number): number[] {
   const d: number[] = [];
   for (let i = 1; i <= n; i++) if (n % i === 0) d.push(i);

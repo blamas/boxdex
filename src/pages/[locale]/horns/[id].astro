@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import EnclosureList from "../../../components/EnclosureList.astro";
 import Layout from "../../../components/Layout.astro";
 import SpecTable from "../../../components/SpecTable.astro";
 import { LOCALES, useLocale } from "../../../i18n";
@@ -8,6 +9,7 @@ import { withUnit } from "../../../lib/format";
 export async function getStaticPaths() {
   const horns = await getCollection("horns");
   const drivers = await getCollection("drivers");
+  const enclosures = await getCollection("enclosures");
   return LOCALES.flatMap((locale) =>
     horns.map((entry) => ({
       params: { locale, id: entry.id },
@@ -18,12 +20,17 @@ export async function getStaticPaths() {
           .sort((a, b) =>
             `${a.data.brand} ${a.data.model}`.localeCompare(`${b.data.brand} ${b.data.model}`)
           ),
+        usedBy: enclosures
+          .filter((e) =>
+            e.data.driverProfiles.some((p) => p.drivers.some((x) => x.horn?.id === entry.id))
+          )
+          .sort((a, b) => a.data.name.localeCompare(b.data.name)),
       },
     }))
   );
 }
 
-const { entry, compatible } = Astro.props;
+const { entry, compatible, usedBy } = Astro.props;
 const h = entry.data;
 
 const { t, localeBase } = useLocale(Astro.params);
@@ -84,6 +91,15 @@ const description = `Horn/waveguide specs for ${h.brand} ${h.model}`;
           and crossover against both datasheets before building.
         </p>
       </section>
+
+      <section>
+        <h2>{t.hornDetail.usedIn} ({usedBy.length})</h2>
+        {usedBy.length > 0 ? (
+          <EnclosureList items={usedBy} />
+        ) : (
+          <p class="muted">{t.hornDetail.noUsedIn}</p>
+        )}
+      </section>
     </div>
   </div>
 </Layout>
@@ -121,6 +137,12 @@ const description = `Horn/waveguide specs for ${h.brand} ${h.model}`;
     font-size: 0.875rem;
     color: var(--muted);
     margin: 0;
+  }
+
+  /* --accent and --muted are near-identical luminance in light theme: underline keeps
+     the datasheet link distinguishable from the surrounding muted text (WCAG 1.4.1). */
+  .meta a {
+    text-decoration: underline;
   }
 
   .detail-body {

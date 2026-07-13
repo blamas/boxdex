@@ -2,11 +2,28 @@
 name: "2×10\"+1\" 2-Way Top"
 category: top
 topology: bass_reflex
-drivers:
-  - bc-10plb76-8
-  - bc-10plb76-8
-  - bc-de250-8
-driverCount: 3
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-10plb76-8
+        qty: 2
+      - driver: bc-de250-8
+        qty: 1
+    simulations:
+      # Single-woofer section: useful for driver substitute evaluation
+      - id: woofer
+        source: hornresp_sim
+        curves:
+          spl:
+            file: woofer.csv
+            note: "LF section, one driver only, 1W/1m half-space"
+      # Full system: both woofers summed + CD through active XO
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "Full 2-way system, 2× 10PLB76 parallel + DE250, 1W/1m half-space"
 netVolumeL: 52
 dims:
   hMm: 620
@@ -27,19 +44,6 @@ specs:
   coverageAngleDeg: 90
   hornCutoffHz: 1000
   recommendedCrossoverHz: 1800
-simulations:
-  # Single-woofer section: useful for driver substitute evaluation
-  - driver: [bc-10plb76-8]
-    kind: spl
-    source: hornresp_sim
-    file: woofer.csv
-    note: "LF section, one driver only, 1W/1m half-space"
-  # Full system: both woofers summed + CD through active XO
-  - driver: [bc-10plb76-8, bc-10plb76-8, bc-de250-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "Full 2-way system, 2× 10PLB76 parallel + DE250, 1W/1m half-space"
 ways: 2
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"

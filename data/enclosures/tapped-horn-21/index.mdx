@@ -2,9 +2,22 @@
 name: "21\" Tapped Horn"
 category: sub
 topology: tapped_horn
-drivers:
-  - bc-21ds115-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-21ds115-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space"
+          phase:
+            file: phase.csv
+          impedance:
+            file: impedance.csv
 netVolumeL: 280
 dims:
   hMm: 1120
@@ -21,20 +34,6 @@ specs:
   powerProgramW: 3400
   impedanceMinOhm: 4.9
   recommendedCrossoverHz: 85
-simulations:
-  - driver: [bc-21ds115-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space"
-  - driver: [bc-21ds115-8]
-    kind: impedance
-    source: hornresp_sim
-    file: impedance.csv
-  - driver: [bc-21ds115-8]
-    kind: phase
-    source: hornresp_sim
-    file: phase.csv
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"
 buildComplexity: complex

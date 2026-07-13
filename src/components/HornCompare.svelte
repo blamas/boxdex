@@ -15,15 +15,15 @@ let {
   localeBase: string;
 } = $props();
 
-const AXES: RadarAxis<Horn>[] = [
+const AXES: RadarAxis<Horn>[] = $derived([
   { label: t.axes.coverageH, unit: "°", invert: false, get: (h) => h.coverageHorizontalDeg },
   { label: t.axes.coverageV, unit: "°", invert: false, get: (h) => h.coverageVerticalDeg },
   { label: t.axes.cutoffInv, unit: "Hz", invert: true, get: (h) => h.cutoffHz },
   { label: t.axes.mouth, unit: "cm²", invert: false, get: (h) => mouthCm2(h) },
   { label: t.axes.depthInv, unit: "mm", invert: true, get: (h) => h.depthMm },
-];
+]);
 
-const ROWS: CompareRow<Horn>[] = [
+const ROWS: CompareRow<Horn>[] = $derived([
   { label: t.rows.throatExit, num: (h) => h.exitInch, fmt: (h) => `${h.exitInch}"` },
   {
     label: t.rows.coverageHV,
@@ -54,7 +54,7 @@ const ROWS: CompareRow<Horn>[] = [
     num: (h) => h.weightKg,
     fmt: (h) => (h.weightKg !== undefined ? `${h.weightKg} kg` : undefined),
   },
-];
+]);
 
 function view(_selected: Horn[], all: Horn[]): CompareView<Horn> {
   return {

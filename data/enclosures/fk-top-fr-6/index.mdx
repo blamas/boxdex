@@ -2,9 +2,25 @@
 name: FK Top FR 6
 category: top
 topology: bass_reflex
-drivers:
-  - 18s-6nmb420-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-6nmb420-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+            note: "1U fullrange sim"
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
+            note: "1U measured"
 netVolumeL: 12
 dims:
   wMm: 200
@@ -17,20 +33,6 @@ specs:
   maxSplDb: 112
   powerAesW: 120
   recommendedCrossoverHz: 150
-simulations:
-  - driver:
-      - 18s-6nmb420-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-    note: 1U fullrange sim
-measurements:
-  - driver:
-      - 18s-6nmb420-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
-    note: 1U measured
 plans: []
 license: CC0-1.0
 recommendedFor:

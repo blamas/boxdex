@@ -89,7 +89,7 @@ function validFm(overrides: Record<string, unknown> = {}): Record<string, unknow
     name: "FK BR 18",
     category: "sub",
     topology: "bass_reflex",
-    drivers: ["faital-18hp1060-8"],
+    driverProfiles: [{ id: "default", drivers: [{ driver: "faital-18hp1060-8", qty: 1 }] }],
     netVolumeL: 280,
     dims: { hMm: 730, wMm: 730, dMm: 650 },
     specs: { f3Hz: 38 },
@@ -209,7 +209,12 @@ describe("handleBoxContribute", () => {
     const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
     expect(res.status).toBe(409);
     expect(await res.json()).toEqual({
-      error: "a submission with this name is already pending review, please retry",
+      errors: [
+        {
+          field: "",
+          message: "a submission with this name is already pending review, please retry",
+        },
+      ],
     });
   });
 
@@ -224,6 +229,45 @@ describe("handleBoxContribute", () => {
     failPulls = true;
     const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
     expect(res.status).toBe(502);
-    expect(await res.json()).toEqual({ error: "failed to open pull request" });
+    expect(await res.json()).toEqual({
+      errors: [{ field: "", message: "failed to open pull request" }],
+    });
+  });
+
+  it("does not fail the submission when the best-effort label call throws", async () => {
+    const base = fetchMock;
+    vi.stubGlobal("fetch", (input: RequestInfo | URL, init?: RequestInit) => {
+      if (String(input).includes("/labels")) return Promise.reject(new Error("network blip"));
+      return base(input, init);
+    });
+    const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ prUrl: "https://github.com/blamas/boxdex/pull/7" });
+  });
+
+  it("returns the existing PR instead of opening a duplicate on a retried submission", async () => {
+    const fd = new FormData();
+    fd.append("payload", JSON.stringify({ frontmatter: validFm(), body: "Build notes." }));
+    fd.append("cf-turnstile-response", "tok");
+    fd.append("submissionId", "retry-abc");
+    vi.stubGlobal("fetch", (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input);
+      if (url.includes("/pulls?state=open")) {
+        return jsonRes([
+          {
+            html_url: "https://github.com/blamas/boxdex/pull/9",
+            body: "Submitted via the box-contribute form.\n\n<!-- submission-id: retry-abc -->",
+          },
+        ]);
+      }
+      return fetchMock(input, init);
+    });
+    const res = await handleBoxContribute(
+      new Request("http://localhost/api/box-contribute", { method: "POST", body: fd }),
+      env
+    );
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ prUrl: "https://github.com/blamas/boxdex/pull/9" });
+    expect(calls.some((c) => c.url.endsWith("/git/refs"))).toBe(false);
   });
 });

@@ -2,10 +2,20 @@
 name: "12\"+1\" 2-Way Top"
 category: top
 topology: bass_reflex
-drivers:
-  - bc-12ndl76-8
-  - bc-de250-8
-driverCount: 2
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-12ndl76-8
+        qty: 1
+      - driver: bc-de250-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space, full system through the passive crossover"
 netVolumeL: 48
 dims:
   hMm: 600
@@ -26,12 +36,6 @@ specs:
   impedanceMinOhm: 6.5
   coverageAngleDeg: 90
   hornCutoffHz: 800
-simulations:
-  - driver: [bc-12ndl76-8, bc-de250-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space, full system through the passive crossover"
 ways: 2
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"

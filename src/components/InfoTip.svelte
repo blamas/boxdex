@@ -3,7 +3,7 @@ const { text }: { text: string } = $props();
 </script>
 
 <button type="button" class="tip" aria-label={text}>
-  ⓘ<span class="tip-bubble">{text}</span>
+  ⓘ<span class="tip-bubble" aria-hidden="true">{text}</span>
 </button>
 
 <style>

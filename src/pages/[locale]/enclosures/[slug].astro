@@ -34,7 +34,7 @@ const metrics = deriveMetrics({
   specs: data.specs,
 });
 
-const provenance = provenanceOf(data.measurements);
+const provenance = provenanceOf(data.driverProfiles.flatMap((p) => p.measurements));
 
 const availabilityLabels = t.enclosureDetail.availabilityLabels;
 const contactChannels = t.enclosureDetail.contactChannels;
@@ -98,12 +98,31 @@ const specRows: { label: string; value: string | undefined }[] = [
   },
 ];
 
-const driverEntries = await Promise.all(data.drivers.map((ref) => getEntry("drivers", ref.id)));
-
+// One resolved drivers table per profile, each row carrying its qty and (optional) cataloged
+// horn alongside the driver entry.
+const driverProfileTables = await Promise.all(
+  data.driverProfiles.map(async (p) => ({
+    id: p.id,
+    rows: await Promise.all(
+      p.drivers.map(async (e) => ({
+        entry: await getEntry("drivers", e.driver.id),
+        qty: e.qty,
+        horn: e.horn ? await getEntry("horns", e.horn.id) : undefined,
+      }))
+    ),
+  }))
+);
 const allEnclosures = await getCollection("enclosures");
-const thisDriverIds = new Set(data.drivers.map((ref) => ref.id));
+// Union across every declared profile: a related box may only share a driver in an alternate build.
+const thisDriverIds = new Set(
+  data.driverProfiles.flatMap((p) => p.drivers.map((e) => e.driver.id))
+);
 const relatedEnclosures = allEnclosures
-  .filter((e) => e.id !== entry.id && e.data.drivers.some((ref) => thisDriverIds.has(ref.id)))
+  .filter(
+    (e) =>
+      e.id !== entry.id &&
+      e.data.driverProfiles.some((p) => p.drivers.some((x) => thisDriverIds.has(x.driver.id)))
+  )
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
 const allPdfGlob = import.meta.glob("/data/enclosures/**/*.pdf", {
@@ -130,7 +149,9 @@ const sourceFiles = data.sources.map((s) => {
 
 const heroImage = data.images[0];
 const galleryImages = data.images.slice(1);
-const hasCurves = data.measurements.length > 0 || data.simulations.length > 0;
+const hasCurves = data.driverProfiles.some(
+  (p) => p.measurements.length > 0 || p.simulations.length > 0
+);
 const categoryLabel =
   t.categoryLabels[data.category as keyof typeof t.categoryLabels] ?? data.category;
 ---
@@ -175,6 +196,7 @@ const categoryLabel =
           widths={[400, 800, 1200]}
           sizes="(max-width: 900px) 100vw, 900px"
           loading="eager"
+          fetchpriority="high"
           class="hero-img"
         />
       )}
@@ -186,55 +208,72 @@ const categoryLabel =
         <table>
           <tbody>
             {specRows.map(({ label, value }) => value != null && (
-              <tr><th>{label}</th><td>{value}</td></tr>
+              <tr><th scope="row">{label}</th><td>{value}</td></tr>
             ))}
           </tbody>
         </table>
       </section>
 
       <section class="drivers-section">
-        <h2>{tt(t.enclosureDetail.driversSection, { n: data.driverCount })}</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>{t.enclosureDetail.model}</th>
-              <th>{t.enclosureDetail.format}</th>
-              <th>{t.enclosureDetail.impedance}</th>
-              <th>{t.enclosureDetail.fs}</th>
-              <th>{t.enclosureDetail.detail}</th>
-              <th>{t.enclosureDetail.pe}</th>
-              <th>{t.enclosureDetail.sensitivity}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {driverEntries.map((d) => d && (
-              <tr>
-                <td>
-                  <a href={`${localeBase}/drivers/${d.id}`}>{d.data.brand} {d.data.model}</a>
-                </td>
-                {d.data.type === "cone" ? (
-                  <>
-                    <td>{d.data.sizeInch}"</td>
-                    <td>{d.data.impedanceOhm} Ω</td>
-                    <td>{d.data.fsHz} Hz</td>
-                    <td>{tt(t.enclosureDetail.coneDetail, { qts: d.data.qts, vas: d.data.vasL, xmax: d.data.xmaxMm })}</td>
-                    <td>{d.data.peW} W</td>
-                    <td>{d.data.sensitivityDb} dB</td>
-                  </>
-                ) : (
-                  <>
-                    <td>{d.data.exitInch}"{t.enclosureDetail.exitSuffix}</td>
-                    <td>{d.data.impedanceOhm} Ω</td>
-                    <td>{d.data.fsHz ? `${d.data.fsHz} Hz` : ""}</td>
-                    <td>{tt(t.enclosureDetail.compDetail, { fLow: d.data.fLowHz, fHigh: d.data.fHighHz, minXo: d.data.minCrossoverHz })}</td>
-                    <td>{d.data.peW} W</td>
-                    <td>{d.data.sensitivityHornDb} dB</td>
-                  </>
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <h2>{t.enclosureDetail.driversSection}</h2>
+        {driverProfileTables.map((profile) => (
+          <div class="driver-profile-table">
+            <h3>
+              {tt(t.enclosureDetail.profileHeading, {
+                id: profile.id,
+                n: profile.rows.reduce((sum, r) => sum + r.qty, 0),
+              })}
+            </h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>{t.enclosureDetail.model}</th>
+                  <th>{t.enclosureDetail.qty}</th>
+                  <th>{t.enclosureDetail.format}</th>
+                  <th>{t.enclosureDetail.impedance}</th>
+                  <th>{t.enclosureDetail.fs}</th>
+                  <th>{t.enclosureDetail.detail}</th>
+                  <th>{t.enclosureDetail.pe}</th>
+                  <th>{t.enclosureDetail.sensitivity}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {profile.rows.map(({ entry: d, qty, horn }) => d && (
+                  <tr>
+                    <td>
+                      <a href={`${localeBase}/drivers/${d.id}`}>{d.data.brand} {d.data.model}</a>
+                      {horn && (
+                        <div class="muted horn-link">
+                          {t.enclosureDetail.viaHorn} <a href={`${localeBase}/horns/${horn.id}`}>{horn.data.brand} {horn.data.model}</a>
+                        </div>
+                      )}
+                    </td>
+                    <td>{qty}×</td>
+                    {d.data.type === "cone" ? (
+                      <>
+                        <td>{d.data.sizeInch}"</td>
+                        <td>{d.data.impedanceOhm} Ω</td>
+                        <td>{d.data.fsHz} Hz</td>
+                        <td>{tt(t.enclosureDetail.coneDetail, { qts: d.data.qts, vas: d.data.vasL, xmax: d.data.xmaxMm })}</td>
+                        <td>{d.data.peW} W</td>
+                        <td>{d.data.sensitivityDb} dB</td>
+                      </>
+                    ) : (
+                      <>
+                        <td>{d.data.exitInch}"{t.enclosureDetail.exitSuffix}</td>
+                        <td>{d.data.impedanceOhm} Ω</td>
+                        <td>{d.data.fsHz ? `${d.data.fsHz} Hz` : ""}</td>
+                        <td>{tt(t.enclosureDetail.compDetail, { fLow: d.data.fLowHz, fHigh: d.data.fHighHz, minXo: d.data.minCrossoverHz })}</td>
+                        <td>{d.data.peW} W</td>
+                        <td>{d.data.sensitivityHornDb} dB</td>
+                      </>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
       </section>
 
       {hasCurves && (
@@ -248,10 +287,10 @@ const categoryLabel =
         <section class="images-section">
           <h2>{t.enclosureDetail.images}</h2>
           <div class="image-gallery">
-            {galleryImages.map((img) => (
+            {galleryImages.map((img, i) => (
               <Image
                 src={img}
-                alt={data.name}
+                alt={tt(t.enclosureDetail.photoAlt, { name: data.name, n: i + 2 })}
                 widths={[400, 800, 1200]}
                 sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
                 loading="lazy"
@@ -419,12 +458,33 @@ const categoryLabel =
     margin-bottom: 1rem;
   }
 
+  .driver-profile-table h3 {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .driver-profile-table + .driver-profile-table {
+    margin-top: 1.5rem;
+  }
+
+  .horn-link {
+    font-size: 0.8rem;
+    margin-top: 0.15rem;
+  }
+
   .meta {
     font-family: var(--font-mono);
     font-size: 0.875rem;
     color: var(--muted);
     margin: 0.25rem 0;
     text-transform: capitalize;
+  }
+
+  /* --accent and --muted are near-identical luminance in light theme: underline keeps
+     the topology link distinguishable from the surrounding muted text (WCAG 1.4.1). */
+  .meta a {
+    text-decoration: underline;
   }
 
   .availability {

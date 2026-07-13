@@ -26,7 +26,9 @@ const TYPES: Record<string, string> = {
 };
 
 const IMMUTABLE = "public, max-age=31536000, immutable";
-const REVALIDATE = "public, max-age=0, must-revalidate";
+// HTML changes only on redeploy: a short freshness window lets the edge/browser serve it
+// instantly and revalidate in the background, deploys still propagate within ~1 min.
+const HTML = "public, max-age=60, stale-while-revalidate=86400";
 const MODERATE = "public, max-age=3600, stale-while-revalidate=86400";
 
 function key(prefix: string, path: string): string {
@@ -43,7 +45,6 @@ export function resolveKey(pathname: string, prefix: string): string {
     // Malformed percent-encoding (bot probes like /%). Use the raw path, it 404s.
     decoded = pathname;
   }
-  // drop . and .. segments
   const path = decoded
     .replace(/^\/+/, "")
     .split("/")
@@ -85,10 +86,10 @@ export function contentType(key: string): string | undefined {
   return TYPES[ext];
 }
 
-// Hashed _assets and pagefind bundles are immutable (content-addressed), HTML revalidates.
+// Hashed _assets and pagefind bundles are immutable (content-addressed), HTML gets a short TTL.
 export function cacheControl(key: string): string {
   if (key.includes("/_assets/") || key.includes("/pagefind/")) return IMMUTABLE;
-  if (key.endsWith(".html")) return REVALIDATE;
+  if (key.endsWith(".html")) return HTML;
   return MODERATE;
 }
 

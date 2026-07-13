@@ -2,10 +2,18 @@
 name: "2×18\" Bass Reflex"
 category: sub
 topology: bass_reflex
-drivers:
-  - bc-18sw115-8
-  - bc-18sw115-8
-driverCount: 2
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-18sw115-8
+        qty: 2
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space, two drivers summed"
 netVolumeL: 300
 dims:
   hMm: 900
@@ -24,12 +32,6 @@ specs:
   impedanceNominalOhm: 4
   impedanceMinOhm: 3.5
   recommendedCrossoverHz: 100
-simulations:
-  - driver: [bc-18sw115-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space, two drivers summed"
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"
 recommendedFor:

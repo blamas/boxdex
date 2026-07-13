@@ -2,9 +2,22 @@
 name: "HSR CHSR146"
 category: sub
 topology: scoop
-drivers:
-  - rcf-lf18g401-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-lf18g401-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u-1w.csv
+            note: "1U single cab, 1W/1m, Hornresp, digitized from plan PDF ±2 dB"
+        stacked:
+          - count: 4
+            file: spl-4u.csv
+            note: "4U stacked, Hornresp, digitized from plan PDF ±2 dB"
 netVolumeL: 380
 dims:
   wMm: 600
@@ -20,19 +33,6 @@ specs:
   powerProgramW: 1800
   maxSplDb: 134
   recommendedCrossoverHz: 120
-simulations:
-  - driver: [rcf-lf18g401-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u-1w.csv
-    note: "1U single cab, 1W/1m, Hornresp, digitized from plan PDF ±2 dB"
-  - driver: [rcf-lf18g401-8]
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-4u.csv
-    count: 4
-    note: "4U stacked, Hornresp, digitized from plan PDF ±2 dB"
-measurements: []
 plans:
   - plan.pdf
 author: "HSR sonorisation"

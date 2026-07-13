@@ -2,9 +2,18 @@
 name: "18\" Scoop Horn"
 category: sub
 topology: scoop
-drivers:
-  - bc-18sw115-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-18sw115-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space"
 netVolumeL: 210
 dims:
   hMm: 840
@@ -26,12 +35,6 @@ specs:
   powerProgramW: 3400
   impedanceMinOhm: 5.6
   recommendedCrossoverHz: 100
-simulations:
-  - driver: [bc-18sw115-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space"
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"
 buildComplexity: moderate

@@ -48,6 +48,6 @@ interactive islands, loaded with `client:only="svelte"`.
   references.
 - No SSR for islands (`client:only`): the initial page render shows no interactive
   content until hydration. Acceptable because the static HTML already shows the full
-  enclosure/driver data; islands add filter/compare/chart capabilities on top.
+  enclosure/driver data, islands add filter/compare/chart capabilities on top.
 - ECharts must not be initialised inside an island directly; `EChart.svelte` owns the
   lifecycle (init, resize, theme change, dispose). See ADR-005.

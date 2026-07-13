@@ -8,14 +8,15 @@ import {
   availSplCounts,
   type CurvesResponse,
   curveEntries,
+  curveLabel,
   type DriverCurves,
   resolveCurveEntry,
 } from "../lib/curves";
-import { SERIES_COLORS } from "../lib/echarts";
 import { curveSeriesToCsv, downloadBlob, jsonString } from "../lib/export";
 import { humanize } from "../lib/format";
 import type { EnclosureRecord } from "../lib/metrics";
-import type { Driver } from "../lib/schemas";
+import { SERIES_COLORS } from "../lib/palette";
+import type { DriverOption } from "../lib/schemas";
 import { BASE } from "../lib/site";
 import { readParam, writeParams } from "../lib/url-state";
 import Combobox from "./Combobox.svelte";
@@ -35,7 +36,7 @@ interface Props {
 const { t, curveLabels }: Props = $props();
 
 let records = $state<EnclosureRecord[]>([]);
-let driverList = $state<Driver[]>([]);
+let driverList = $state<DriverOption[]>([]);
 let driverFilter = $state("all");
 let selected = $state<string[]>([]);
 let cache = $state<Record<string, CurvesResponse>>({});
@@ -64,8 +65,10 @@ onMount(async () => {
 
     const [manifestRes, driversRes] = await Promise.all([
       fetch(`${BASE}/api/manifest.json`),
-      fetch(`${BASE}/api/drivers.json`),
+      fetch(`${BASE}/api/driver-options.json`),
     ]);
+    if (!manifestRes.ok) throw new Error(`HTTP ${manifestRes.status}`);
+    if (!driversRes.ok) throw new Error(`HTTP ${driversRes.status}`);
     records = await manifestRes.json();
     driverList = await driversRes.json();
 
@@ -92,15 +95,22 @@ $effect(() => {
   });
 });
 
+// Non-reactive: guards against a re-run re-fetching a slug whose request is still in flight.
+const pendingCurves = new Set<string>();
 $effect(() => {
   for (const slug of selected) {
-    if (!cache[slug]) {
-      fetch(`${BASE}/api/curves/${slug}.json`)
-        .then((r) => r.json())
-        .then((d: CurvesResponse) => {
-          cache = { ...cache, [slug]: d };
-        });
-    }
+    if (cache[slug] || pendingCurves.has(slug)) continue;
+    pendingCurves.add(slug);
+    fetch(`${BASE}/api/curves/${slug}.json`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((d: CurvesResponse) => {
+        cache = { ...cache, [slug]: d };
+      })
+      .catch(() => {})
+      .finally(() => pendingCurves.delete(slug));
   }
 });
 
@@ -136,7 +146,7 @@ const series = $derived.by(() => {
 
     const dashed = !isMeas;
     const provenance = isMeas ? "meas" : "sim";
-    const label = `${payload.name} (${provenance} · ${dc.driverId}${countSuffix})`;
+    const label = `${payload.name} (${provenance} · ${curveLabel(dc)}${countSuffix})`;
     const values = kind === "spl" && normalise ? normalisePeak(curve.value) : curve.value;
 
     let pairs = toPairs({ freq: curve.freq, value: values });
@@ -190,13 +200,14 @@ const filteredRecords = $derived(
     .filter((r) => kindFilter === "all" || r.availableKinds.includes(kindFilter))
 );
 
-let limit = $state(ROW_LIMIT);
+// Writable $derived: filtering resets the limit, but a LoadMore override survives until the
+// next actual filter change (same idiom as Explorer's sortKey). The unused arg exists only to
+// make the dependency on filteredRecords.length explicit.
+function resetLimit(_filteredCount: number): number {
+  return ROW_LIMIT;
+}
+let limit: number = $derived(resetLimit(filteredRecords.length));
 let tableWrap = $state<HTMLElement | undefined>(undefined);
-
-$effect(() => {
-  filteredRecords.length;
-  limit = ROW_LIMIT;
-});
 
 // Selected items are always pinned at the top so they remain visible regardless of limit.
 const displayedRecords = $derived.by(() => {
@@ -257,6 +268,7 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
           <button
             class="chip"
             class:chip-active={categoryFilter === cat}
+            aria-pressed={categoryFilter === cat}
             onclick={() => { categoryFilter = categoryFilter === cat ? "all" : cat; }}
           >{cat}</button>
         {/each}
@@ -266,6 +278,7 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
           <button
             class="chip"
             class:chip-active={kindFilter === k}
+            aria-pressed={kindFilter === k}
             onclick={() => { kindFilter = kindFilter === k ? "all" : k; }}
           >{KIND_LABELS[k]}</button>
         {/each}
@@ -312,13 +325,22 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
     {#if error}
       <div class="empty-state">{t.failedToLoad}</div>
     {:else if loading}
-      <p class="muted">{t.loading}</p>
+      <div class="skel-table" aria-hidden="true">
+        {#each { length: 6 } as _}
+          <div class="skel-row-wrap">
+            <div class="skeleton skel-cell skel-cell-wide"></div>
+            <div class="skeleton skel-cell"></div>
+            <div class="skeleton skel-cell"></div>
+            <div class="skeleton skel-cell"></div>
+          </div>
+        {/each}
+      </div>
     {:else}
       <div class="table-wrap" bind:this={tableWrap}>
         <table>
           <thead>
             <tr>
-              <th class="check-col"></th>
+              <th class="check-col"><span class="sr-only">{t.columns.select}</span></th>
               <th class="name-col">{t.columns.name}</th>
               <th class="cat-col">{t.columns.cat}</th>
               <th class="topo-col">{t.columns.topology}</th>
@@ -335,6 +357,7 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
                 <td class="check-col">
                   <input
                     type="checkbox"
+                    aria-label={tt(t.selectRow, { name: rec.name })}
                     checked={isSelected}
                     onchange={() => toggleSelect(rec.slug)}
                   />
@@ -384,13 +407,17 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
                   {/if}
                 </td>
                 {#each ALL_KINDS as k}
+                  {@const has = rec.availableKinds.includes(k)}
+                  {@const label = has ? tt(t.available, { label: KIND_LABELS[k] }) : tt(t.missing, { label: KIND_LABELS[k] })}
                   <td class="kind-col">
                     <span
                       class="kind-dot"
-                      class:kind-dot-active={rec.availableKinds.includes(k)}
-                      class:kind-dot-current={k === kind && rec.availableKinds.includes(k)}
-                      title={rec.availableKinds.includes(k) ? tt(t.available, { label: KIND_LABELS[k] }) : tt(t.missing, { label: KIND_LABELS[k] })}
-                    >{rec.availableKinds.includes(k) ? "●" : "○"}</span>
+                      class:kind-dot-active={has}
+                      class:kind-dot-current={k === kind && has}
+                      role="img"
+                      aria-label={label}
+                      title={label}
+                    >{has ? "●" : "○"}</span>
                   </td>
                 {/each}
               </tr>
@@ -615,5 +642,27 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
   .muted {
     color: var(--muted);
     font-size: 0.8rem;
+  }
+
+  .skel-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .skel-row-wrap {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .skel-cell {
+    flex: 1;
+    height: 0.9rem;
+  }
+
+  .skel-cell-wide {
+    flex: 3;
   }
 </style>

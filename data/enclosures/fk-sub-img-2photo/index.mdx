@@ -2,9 +2,17 @@
 name: FK Sub Img2Photo
 category: sub
 topology: bass_reflex
-drivers:
-  - faital-18hp1060-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18hp1060-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
 netVolumeL: 290
 dims:
   wMm: 740
@@ -16,13 +24,6 @@ specs:
   fbHz: 48
   sensitivityDb: 100
   maxSplDb: 131
-simulations:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements: []
 images:
   - render.png
   - photo-1.jpg

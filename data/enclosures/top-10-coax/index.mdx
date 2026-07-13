@@ -2,9 +2,18 @@
 name: "10\" Coaxial Top"
 category: top
 topology: bass_reflex
-drivers:
-  - bc-10cxn64-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-10cxn64-8
+        qty: 1
+    measurements:
+      - id: spl
+        source: rew_measured
+        curves:
+          spl:
+            file: spl.csv
+            note: "1m on-axis, ground plane, calibrated mic"
 netVolumeL: 25
 dims:
   hMm: 460
@@ -22,12 +31,6 @@ specs:
   powerProgramW: 500
   impedanceMinOhm: 6.3
   coverageAngleDeg: 90
-measurements:
-  - driver: [bc-10cxn64-8]
-    kind: spl
-    source: rew_measured
-    file: spl.csv
-    note: "1m on-axis, ground plane, calibrated mic"
 ways: 2
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"

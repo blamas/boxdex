@@ -8,7 +8,8 @@
     "drivers": "Drivers",
     "contribute": "Contribute",
     "helpLabel": "Help & glossary",
-    "toggleTheme": "Toggle light/dark theme"
+    "toggleTheme": "Toggle light/dark theme",
+    "ariaLabel": "Main navigation"
   },
   "contributeBox": {
     "loading": "Loading drivers…",
@@ -22,9 +23,17 @@
     "ways": "Ways",
     "revision": "Revision",
     "buildComplexity": "Build complexity",
-    "driverCount": "Driver count",
     "drivers": "Drivers",
     "addDriver": "Add a driver",
+    "profileName": "Profile name",
+    "addProfile": "Add profile",
+    "removeProfile": "Remove profile",
+    "profilesHint": "Most boxes need only one profile. Add another only if the box itself can be built two different ways, e.g. 2× driver X + driver Y in one version, 2× driver P in another.",
+    "untitledProfile": "(untitled profile)",
+    "profileSummary": "{drivers} driver(s) · {sims} simulation(s) · {meas} measurement(s)",
+    "driverQty": "Quantity",
+    "horn": "Horn (optional)",
+    "hornHint": "Only if this compression driver is loaded by a specific cataloged horn. Leave unset for a custom or uncataloged horn.",
     "geometry": "Dimensions and volumes",
     "height": "Height (mm)",
     "width": "Width (mm)",
@@ -42,14 +51,20 @@
     "advancedSpecs": "Advanced specs",
     "simulations": "Simulations",
     "measurements": "Measurements",
+    "curvesHint": "One curve set is one simulation run or measurement session: add a file for each curve kind it covers.",
     "sources": "Design source files",
     "add": "Add",
     "remove": "Remove",
-    "rowDriver": "Driver(s)",
-    "rowKind": "Kind",
+    "rowId": "Curve id",
+    "rowIdHint": "Short label distinguishing this curve set from others in the same profile (e.g. \"full-system\", \"lf-only\").",
+    "untitledCurveSet": "(untitled)",
+    "noCurvesYet": "no curves yet",
+    "addKindEntry": "Add",
+    "addStackedCount": "Add stacked count",
     "rowSource": "Source",
     "rowNote": "Note",
     "rowCount": "Stacked count",
+    "rowCountHint": "How many identical cabinets this SPL curve already sums (array gain), not the number of driver models.",
     "rowFile": "CSV file",
     "sourceTool": "Tool",
     "sourceFile": "File",
@@ -91,7 +106,35 @@
     "viewPr": "View pull request",
     "errorsTitle": "Fix these before submitting:",
     "serverError": "Submission failed. Please try again.",
-    "none": "(none)"
+    "none": "(none)",
+    "validation": {
+      "required": "This field is required",
+      "notANumber": "Enter a valid number",
+      "mustBePositive": "Must be greater than 0",
+      "mustBeAtLeast": "Must be at least {min}",
+      "mustBeAtMost": "Must be at most {max}",
+      "tooShort": "Must be at least {min} characters",
+      "tooLong": "Must be at most {max} characters",
+      "invalidUrl": "Must be a valid URL",
+      "invalidSelection": "Invalid selection",
+      "invalid": "Invalid value",
+      "duplicateProfileId": "Duplicate profile id \"{id}\"",
+      "duplicateCurveId": "Duplicate curve set id \"{id}\"",
+      "curveSetEmpty": "This curve set needs at least one kind of curve or a stacked entry",
+      "stackedMissingBase": "A stacked entry needs a plain SPL (1x) entry in the same curve set",
+      "duplicateStackedCount": "Duplicate stacked count {count}",
+      "proprietaryPlans": "Proprietary entries are metadata-only: remove the plan file(s) and link the source instead",
+      "licenseNoteRequired": "This license requires a note recording the permission grant (who, when, scope)",
+      "contactRequired": "Add a contact channel or a source URL so this box can be reached",
+      "fileMissing": "No uploaded file named \"{name}\"",
+      "fileWrongType": "\"{name}\" must be one of: {types}",
+      "fileNotReferenced": "Uploaded file \"{name}\" is not referenced anywhere in the form",
+      "fileDuplicateName": "Duplicate filename \"{name}\"",
+      "fileBadName": "Invalid filename \"{name}\": use a plain name without folders or \"..\"",
+      "fileTooLarge": "\"{name}\" exceeds the {mb} MB per-file limit",
+      "totalTooLarge": "Total upload size exceeds the {mb} MB limit",
+      "tooManyImages": "At most {max} images"
+    }
   },
   "footer": {
     "about": "Values",
@@ -422,8 +465,10 @@
       "name": "Name",
       "cat": "Cat.",
       "topology": "Topology",
-      "source": "Source"
-    }
+      "source": "Source",
+      "select": "Select"
+    },
+    "selectRow": "Select {name}"
   },
   "explorer": {
     "category": "Category",
@@ -518,8 +563,10 @@
       "highHz": "High Hz",
       "minXover": "Min xover",
       "aesW": "AES W",
-      "ds": "DS"
-    }
+      "ds": "DS",
+      "select": "Select"
+    },
+    "selectRow": "Select {name}"
   },
   "stackBuilder": {
     "search": "Search…",
@@ -552,6 +599,7 @@
     "noPower": "no power data",
     "noSpl": "no SPL data",
     "channelN": "{n}ch",
+    "resetChannels": "Reset to suggested channels",
     "channelPrefix": "{n} channels ·",
     "wiringsNote": "Wirings are per channel for the selected split. Amp rating is continuous power into the chosen load: ≥ 1× the cabs' total AES, ideally 2× for clean peaks, a clipping amp kills drivers faster than honest overpowering. Loads shown are nominal: a stated minimum-impedance dip only downgrades the rating when it dips deeper than the 0.8× nominal the IEC spec already allows for.",
     "worstCaseLoad": "real minimum impedance (worst case): {load} Ω",
@@ -623,7 +671,8 @@
     "loading": "Loading…",
     "failedToLoad": "Failed to load data.",
     "link": "↗ link",
-    "remove": "Remove"
+    "remove": "Remove",
+    "removeItem": "Remove {name}"
   },
   "driverCompare": {
     "addLabel": "Add driver",
@@ -735,9 +784,12 @@
   },
   "enclosureDetail": {
     "specifications": "Specifications",
-    "driversSection": "Drivers ({n})",
+    "driversSection": "Driver profiles",
+    "profileHeading": "Profile: {id} ({n})",
+    "viaHorn": "via",
     "brand": "Brand",
     "model": "Model",
+    "qty": "Qty",
     "format": "Format",
     "impedance": "Impedance",
     "fs": "Fs",
@@ -746,6 +798,7 @@
     "sensitivity": "Sensitivity",
     "measurementsSims": "Measurements / Simulations",
     "images": "Images",
+    "photoAlt": "{name}, photo {n}",
     "plans": "Plans",
     "sources": "Sources",
     "contact": "Contact",
@@ -788,6 +841,7 @@
       "maxSplThermal": "Max SPL (thermal-limited)",
       "sensitivity": "Sensitivity",
       "impedanceMin": "Impedance minimum",
+      "impedanceNominal": "Impedance nominal",
       "coverageAngle": "Coverage angle",
       "recommendedCrossover": "Recommended crossover",
       "hornCutoff": "Horn cutoff",
@@ -852,13 +906,16 @@
     "specifications": "Specifications",
     "compatibleCDs": "Compatible compression drivers (same exit)",
     "noCompatibleCDs": "No compression drivers with this exit in the catalog.",
-    "compatibleDrivers": "Compatible compression drivers"
+    "compatibleDrivers": "Compatible compression drivers",
+    "usedIn": "Used in these enclosures",
+    "noUsedIn": "No enclosure in the catalog uses this horn yet."
   },
   "help": {
     "toc": {
       "using": "Using the site",
       "glossary": "Glossary",
-      "further": "Going further"
+      "further": "Going further",
+      "ariaLabel": "Page sections"
     },
     "sections": {
       "using": {
@@ -952,6 +1009,7 @@
       "glossary": {
         "heading": "Glossary",
         "subtitle": "The vocabulary behind the specs: enough to read a datasheet and size a rig.",
+        "tocLabel": "Glossary sections",
         "driver": {
           "heading": "Driver parameters",
           "fs": {

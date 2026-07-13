@@ -16,7 +16,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
 <Layout
   title={t.pages.contribute.title}
   description={t.pages.contribute.description}
-  preloadData={["/api/drivers.json"]}
+  preloadData={["/api/driver-options.json"]}
 >
   <div class="prose">
     <h1>{t.pages.contribute.heading}</h1>
@@ -26,6 +26,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
       t={t.contributeBox}
       categoryLabels={t.categoryLabels}
       curveLabels={t.curveLabels}
+      specLabels={t.enclosureDetail.specRows}
       prodOrigin={prodOrigin}
       turnstileSiteKey={turnstileSiteKey}
     />

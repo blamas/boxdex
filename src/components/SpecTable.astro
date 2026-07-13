@@ -14,7 +14,7 @@ const { rows } = Astro.props;
 <table>
   <tbody>
     {rows.map(({ label, value }) => value != null && (
-      <tr><th>{label}</th><td>{value}</td></tr>
+      <tr><th scope="row">{label}</th><td>{value}</td></tr>
     ))}
   </tbody>
 </table>

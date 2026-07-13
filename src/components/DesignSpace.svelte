@@ -1,7 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import type { Translations } from "../i18n";
-import { type EChartsInstance, getActiveTheme, SERIES_COLORS } from "../lib/echarts";
+import { type EChartsInstance, getActiveTheme } from "../lib/echarts";
 import { downloadBlob, jsonString, recordsToCsv } from "../lib/export";
 import { humanize } from "../lib/format";
 import {
@@ -14,6 +14,7 @@ import {
   metricKeyOf,
   paretoFront,
 } from "../lib/metrics";
+import { SERIES_COLORS } from "../lib/palette";
 import { BASE } from "../lib/site";
 import { readParam, writeParams } from "../lib/url-state";
 import Combobox from "./Combobox.svelte";
@@ -283,7 +284,7 @@ $effect(() => {
   {:else if records.length > 0}
     <EChart option={buildOption} height={500} onInit={onChartInit} />
   {:else}
-    <div class="chart-placeholder">{t.loading}</div>
+    <div class="chart-placeholder skeleton" aria-hidden="true"></div>
   {/if}
 
   <p class="note">{t.note}</p>

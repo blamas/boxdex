@@ -2,8 +2,30 @@
 name: FK TH 21B
 category: sub
 topology: tapped_horn
-drivers:
-  - pyle-pdw21250-8
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pyle-pdw21250-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+        stacked:
+          - count: 2
+            file: spl-2u.csv
+          - count: 4
+            file: spl-4u.csv
+          - count: 6
+            file: spl-6u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 650
 dims:
   wMm: 740
@@ -15,36 +37,6 @@ specs:
   sensitivityDb: 105
   maxSplDb: 137
   recommendedCrossoverHz: 80
-simulations:
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-2u.csv
-    count: 2
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-4u.csv
-    count: 4
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-6u.csv
-    count: 6
-measurements:
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 license: CC0-1.0
 recommendedFor:
   - tribe

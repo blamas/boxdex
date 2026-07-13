@@ -2,13 +2,13 @@ import { defineCollection, reference } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import {
+  driverProfile,
+  driverProfileSuperRefine,
   driverSchema,
+  enclosureDriverEntry,
   enclosureFrontmatterObject,
   hornSchema,
   licenseSuperRefine,
-  MEAS_SOURCES,
-  makeCurveEntry,
-  SIM_SOURCES,
 } from "./lib/schemas";
 
 // Driver and horn schemas live in src/lib/schemas.ts so islands can share the inferred
@@ -46,16 +46,26 @@ const enclosures = defineCollection({
   schema: ({ image }) =>
     enclosureFrontmatterObject
       .extend({
-        drivers: z.array(reference("drivers")).min(1),
+        driverProfiles: z
+          .array(
+            driverProfile.extend({
+              drivers: z
+                .array(
+                  enclosureDriverEntry.extend({
+                    driver: reference("drivers"),
+                    horn: reference("horns").optional(),
+                  })
+                )
+                .min(1),
+            })
+          )
+          .min(1),
         images: z.array(image()).default([]),
-        simulations: z
-          .array(makeCurveEntry(z.array(reference("drivers")).min(1), SIM_SOURCES))
-          .default([]),
-        measurements: z
-          .array(makeCurveEntry(z.array(reference("drivers")).min(1), MEAS_SOURCES))
-          .default([]),
       })
-      .superRefine(licenseSuperRefine),
+      .superRefine((e, ctx) => {
+        licenseSuperRefine(e, ctx);
+        driverProfileSuperRefine(e, ctx);
+      }),
 });
 
 export const collections = { drivers, enclosures, horns };

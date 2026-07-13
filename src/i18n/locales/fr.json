@@ -8,7 +8,8 @@
     "drivers": "HP",
     "contribute": "Contribuer",
     "helpLabel": "Aide & glossaire",
-    "toggleTheme": "Basculer thème clair/sombre"
+    "toggleTheme": "Basculer thème clair/sombre",
+    "ariaLabel": "Navigation principale"
   },
   "contributeBox": {
     "loading": "Chargement des HP…",
@@ -22,9 +23,17 @@
     "ways": "Voies",
     "revision": "Révision",
     "buildComplexity": "Complexité de fabrication",
-    "driverCount": "Nombre de HP",
     "drivers": "HP",
     "addDriver": "Ajouter un HP",
+    "profileName": "Nom du profil",
+    "addProfile": "Ajouter un profil",
+    "removeProfile": "Retirer le profil",
+    "profilesHint": "La plupart des caissons n'ont besoin que d'un seul profil. N'en ajoutez un autre que si le caisson peut être monté de deux façons différentes, ex. 2× HP X + HP Y dans une version, 2× HP P dans une autre.",
+    "untitledProfile": "(profil sans nom)",
+    "profileSummary": "{drivers} HP · {sims} simulation(s) · {meas} mesure(s)",
+    "driverQty": "Quantité",
+    "horn": "Pavillon (facultatif)",
+    "hornHint": "Uniquement si ce HP à compression est chargé par un pavillon précis du catalogue. Laissez vide pour un pavillon sur mesure ou hors catalogue.",
     "geometry": "Dimensions et volumes",
     "height": "Hauteur (mm)",
     "width": "Largeur (mm)",
@@ -42,14 +51,20 @@
     "advancedSpecs": "Specs avancées",
     "simulations": "Simulations",
     "measurements": "Mesures",
+    "curvesHint": "Un ensemble de courbes, c'est une session de simulation ou de mesure : ajoutez un fichier pour chaque type de courbe couvert.",
     "sources": "Fichiers sources du projet",
     "add": "Ajouter",
     "remove": "Retirer",
-    "rowDriver": "HP",
-    "rowKind": "Type",
+    "rowId": "Identifiant de la courbe",
+    "rowIdHint": "Court label distinguant cet ensemble de courbes des autres du même profil (ex. « full-system », « lf-only »).",
+    "untitledCurveSet": "(sans nom)",
+    "noCurvesYet": "aucune courbe",
+    "addKindEntry": "Ajouter",
+    "addStackedCount": "Ajouter un comptage empilé",
     "rowSource": "Source",
     "rowNote": "Note",
     "rowCount": "Nombre empilé",
+    "rowCountHint": "Combien de caissons identiques cette courbe SPL additionne déjà (gain d'array), pas le nombre de modèles de HP.",
     "rowFile": "Fichier CSV",
     "sourceTool": "Outil",
     "sourceFile": "Fichier",
@@ -91,7 +106,35 @@
     "viewPr": "Voir la pull request",
     "errorsTitle": "Corrigez ceci avant d'envoyer :",
     "serverError": "L'envoi a échoué. Veuillez réessayer.",
-    "none": "(aucun)"
+    "none": "(aucun)",
+    "validation": {
+      "required": "Ce champ est obligatoire",
+      "notANumber": "Saisissez un nombre valide",
+      "mustBePositive": "Doit être supérieur à 0",
+      "mustBeAtLeast": "Doit être au moins {min}",
+      "mustBeAtMost": "Doit être au plus {max}",
+      "tooShort": "Doit contenir au moins {min} caractères",
+      "tooLong": "Doit contenir au plus {max} caractères",
+      "invalidUrl": "Doit être une URL valide",
+      "invalidSelection": "Sélection invalide",
+      "invalid": "Valeur invalide",
+      "duplicateProfileId": "Identifiant de profil en double : \"{id}\"",
+      "duplicateCurveId": "Identifiant d'ensemble de courbes en double « {id} »",
+      "curveSetEmpty": "Cet ensemble de courbes doit avoir au moins un type de courbe ou une entrée empilée",
+      "stackedMissingBase": "Une entrée empilée nécessite une entrée SPL simple (1x) dans le même ensemble de courbes",
+      "duplicateStackedCount": "Comptage empilé en double {count}",
+      "proprietaryPlans": "Les entrées propriétaires sont uniquement des métadonnées : retirez le(s) fichier(s) de plan et indiquez plutôt l'URL source",
+      "licenseNoteRequired": "Cette licence nécessite une note précisant l'autorisation accordée (qui, quand, portée)",
+      "contactRequired": "Ajoutez un canal de contact ou une URL source pour pouvoir joindre ce caisson",
+      "fileMissing": "Aucun fichier envoyé nommé « {name} »",
+      "fileWrongType": "« {name} » doit être de type : {types}",
+      "fileNotReferenced": "Le fichier envoyé « {name} » n'est référencé nulle part dans le formulaire",
+      "fileDuplicateName": "Nom de fichier en double : « {name} »",
+      "fileBadName": "Nom de fichier invalide « {name} » : utilisez un nom simple, sans dossier ni « .. »",
+      "fileTooLarge": "« {name} » dépasse la limite de {mb} Mo par fichier",
+      "totalTooLarge": "La taille totale envoyée dépasse la limite de {mb} Mo",
+      "tooManyImages": "{max} images maximum"
+    }
   },
   "footer": {
     "about": "Valeurs",
@@ -416,8 +459,10 @@
       "name": "Nom",
       "cat": "Cat.",
       "topology": "Topologie",
-      "source": "Source"
-    }
+      "source": "Source",
+      "select": "Sélectionner"
+    },
+    "selectRow": "Sélectionner {name}"
   },
   "explorer": {
     "category": "Catégorie",
@@ -512,8 +557,10 @@
       "highHz": "Haut Hz",
       "minXover": "Xover min",
       "aesW": "AES W",
-      "ds": "DS"
-    }
+      "ds": "DS",
+      "select": "Sélectionner"
+    },
+    "selectRow": "Sélectionner {name}"
   },
   "stackBuilder": {
     "search": "Rechercher…",
@@ -546,6 +593,7 @@
     "noPower": "pas de données de puissance",
     "noSpl": "pas de données SPL",
     "channelN": "{n}ch",
+    "resetChannels": "Réinitialiser aux canaux suggérés",
     "channelPrefix": "{n} canaux ·",
     "wiringsNote": "Les câblages sont par canal pour la répartition choisie. La puissance ampli est la puissance continue dans la charge choisie : ≥ 1× le total AES des caissons, idéalement 2× pour les peaks propres, un ampli qui clip tue les HP plus vite qu'un vrai surdimensionnement. Les charges affichées sont nominales : une chute d'impédance minimale déclarée ne dégrade l'évaluation que si elle descend plus bas que les 0,8× nominal déjà tolérés par la norme IEC.",
     "worstCaseLoad": "impédance minimale réelle (pire cas) : {load} Ω",
@@ -617,7 +665,8 @@
     "loading": "Chargement…",
     "failedToLoad": "Échec du chargement.",
     "link": "↗ lien",
-    "remove": "Supprimer"
+    "remove": "Supprimer",
+    "removeItem": "Supprimer {name}"
   },
   "driverCompare": {
     "addLabel": "Ajouter un HP",
@@ -729,9 +778,12 @@
   },
   "enclosureDetail": {
     "specifications": "Spécifications",
-    "driversSection": "Haut-parleurs ({n})",
+    "driversSection": "Profils de HP",
+    "profileHeading": "Profil : {id} ({n})",
+    "viaHorn": "via",
     "brand": "Marque",
     "model": "Modèle",
+    "qty": "Qté",
     "format": "Format",
     "impedance": "Impédance",
     "fs": "Fs",
@@ -740,6 +792,7 @@
     "sensitivity": "Sensibilité",
     "measurementsSims": "Mesures / Simulations",
     "images": "Images",
+    "photoAlt": "{name}, photo {n}",
     "plans": "Plans",
     "sources": "Sources",
     "contact": "Contact",
@@ -782,6 +835,7 @@
       "maxSplThermal": "SPL max (limité thermiquement)",
       "sensitivity": "Sensibilité",
       "impedanceMin": "Impédance minimum",
+      "impedanceNominal": "Impédance nominale",
       "coverageAngle": "Angle de couverture",
       "recommendedCrossover": "Crossover recommandé",
       "hornCutoff": "Horn cutoff",
@@ -846,13 +900,16 @@
     "specifications": "Spécifications",
     "compatibleCDs": "HP à compression compatibles (même exit)",
     "noCompatibleCDs": "Aucun HP à compression avec cet exit dans le catalogue.",
-    "compatibleDrivers": "HP à compression compatibles"
+    "compatibleDrivers": "HP à compression compatibles",
+    "usedIn": "Utilisé dans ces caissons",
+    "noUsedIn": "Aucun caisson du catalogue n'utilise ce pavillon pour l'instant."
   },
   "help": {
     "toc": {
       "using": "Utiliser le site",
       "glossary": "Glossaire",
-      "further": "Aller plus loin"
+      "further": "Aller plus loin",
+      "ariaLabel": "Sections de la page"
     },
     "sections": {
       "using": {
@@ -946,6 +1003,7 @@
       "glossary": {
         "heading": "Glossaire",
         "subtitle": "Le vocabulaire derrière les specs : de quoi lire une fiche technique et dimensionner une sono.",
+        "tocLabel": "Sections du glossaire",
         "driver": {
           "heading": "Paramètres de HP",
           "fs": {

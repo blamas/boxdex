@@ -2,9 +2,21 @@
 name: FK Sub Klippel
 category: sub
 topology: sealed
-drivers:
-  - faital-18hp1060-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18hp1060-8
+        qty: 1
+    measurements:
+      - id: klippel
+        source: klippel
+        curves:
+          spl:
+            file: klippel-spl.csv
+            note: "Klippel SPL"
+          impedance:
+            file: klippel-impedance.csv
+            note: "Klippel impedance"
 netVolumeL: 200
 dims:
   wMm: 700
@@ -15,20 +27,6 @@ specs:
   sensitivityDb: 100
   maxSplDb: 130
   powerAesW: 1500
-simulations: []
-measurements:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: klippel
-    file: klippel-spl.csv
-    note: Klippel SPL
-  - driver:
-      - faital-18hp1060-8
-    kind: impedance
-    source: klippel
-    file: klippel-impedance.csv
-    note: Klippel impedance
 plans: []
 license: CC0-1.0
 recommendedFor:

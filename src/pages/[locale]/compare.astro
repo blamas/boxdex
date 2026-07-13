@@ -11,7 +11,7 @@ const { t } = useLocale(Astro.params);
 <Layout
   title={t.pages.compare.title}
   description={t.pages.compare.description}
-  preloadData={["/api/manifest.json", "/api/drivers.json"]}
+  preloadData={["/api/manifest.json", "/api/driver-options.json"]}
 >
   <h1>{t.pages.compare.heading}</h1>
   <p class="subtitle">{t.pages.compare.subtitle}</p>

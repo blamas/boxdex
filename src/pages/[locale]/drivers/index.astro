@@ -15,7 +15,9 @@ const { t, localeBase } = useLocale(Astro.params);
 >
   <h1>{t.pages.drivers.heading}</h1>
   <p class="subtitle" set:html={t.pages.drivers.subtitle} />
-  <DriverExplorer client:only="svelte" t={t.driverExplorer} localeBase={localeBase} />
+  <div class="island-reserve">
+    <DriverExplorer client:only="svelte" t={t.driverExplorer} localeBase={localeBase} />
+  </div>
 </Layout>
 
 <style>
@@ -28,5 +30,10 @@ const { t, localeBase } = useLocale(Astro.params);
     font-family: var(--font-mono);
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
+  }
+
+  /* Reserve height so the client:only island hydrating in doesn't shift the page (CLS). */
+  .island-reserve {
+    min-height: 70vh;
   }
 </style>

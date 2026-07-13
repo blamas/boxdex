@@ -32,7 +32,7 @@ component that calls `echarts.init`; islands pass an option builder function to
 ## Alternatives Considered
 
 ### Import the full ECharts bundle
-- Pros: no gateway module to maintain; any chart type works anywhere.
+- Pros: no gateway module to maintain, any chart type works anywhere.
 - Cons: the full bundle is ~500 kB minified + gzipped. Tree-shaking it to only line,
   radar, and scatter reduces this substantially. For a reference site where chart
   pages are not the landing page, loading 500 kB of JS on every page is wasteful.

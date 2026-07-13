@@ -2,9 +2,18 @@
 name: "12\" Coaxial Top"
 category: top
 topology: bass_reflex
-drivers:
-  - bc-12cxn76-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-12cxn76-8
+        qty: 1
+    measurements:
+      - id: spl
+        source: rew_measured
+        curves:
+          spl:
+            file: spl.csv
+            note: "1m on-axis, anechoic, ground plane"
 netVolumeL: 45
 dims:
   hMm: 560
@@ -21,12 +30,6 @@ specs:
   powerAesW: 500
   powerProgramW: 1000
   impedanceMinOhm: 6.6
-measurements:
-  - driver: [bc-12cxn76-8]
-    kind: spl
-    source: rew_measured
-    file: spl.csv
-    note: "1m on-axis, anechoic, ground plane"
 ways: 2
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"

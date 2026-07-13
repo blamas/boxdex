@@ -2,11 +2,41 @@
 name: FK Top 3W
 category: top
 topology: bass_reflex
-drivers:
-  - rcf-l15p400-8
-  - 18s-6nmb420-8
-  - faital-hf1000-8
-driverCount: 3
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-l15p400-8
+        qty: 1
+      - driver: 18s-6nmb420-8
+        qty: 1
+      - driver: faital-hf1000-8
+        qty: 1
+    simulations:
+      - id: spl-lf-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-lf-1u.csv
+            note: "LF section 15\" sim"
+      - id: spl-mf-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-mf-1u.csv
+            note: "MF section 6.5\" sim"
+      - id: spl-hf-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-hf-1u.csv
+            note: "HF section CD 1\" sim"
+    measurements:
+      - id: meas-combined-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-combined-1u.csv
+            note: "Combined 3-way measured"
 ways: 3
 netVolumeL: 95
 dims:
@@ -19,34 +49,6 @@ specs:
   maxSplDb: 131
   powerAesW: 1200
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - rcf-l15p400-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-lf-1u.csv
-    note: LF section 15" sim
-  - driver:
-      - 18s-6nmb420-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-mf-1u.csv
-    note: MF section 6.5" sim
-  - driver:
-      - faital-hf1000-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-hf-1u.csv
-    note: HF section CD 1" sim
-measurements:
-  - driver:
-      - rcf-l15p400-8
-      - 18s-6nmb420-8
-      - faital-hf1000-8
-    kind: spl
-    source: rew_measured
-    file: meas-combined-1u.csv
-    note: Combined 3-way measured
 plans: []
 license: CC0-1.0
 recommendedFor:

@@ -3,9 +3,18 @@ name: "15\" Mid Horn"
 category: mid
 topology: front_loaded_horn
 ways: 1
-drivers:
-  - bc-15ds115-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-15ds115-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space"
 netVolumeL: 160
 dims:
   hMm: 760
@@ -24,12 +33,6 @@ specs:
   powerAesW: 700
   powerProgramW: 1400
   recommendedCrossoverHz: 1200
-simulations:
-  - driver: [bc-15ds115-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space"
 recommendedFor:
   - tekno
   - tribe

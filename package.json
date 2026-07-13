@@ -14,7 +14,8 @@
     "test:e2e": "playwright test",
     "knip": "knip",
     "schema:gen": "astro sync && cp .astro/collections/drivers.schema.json schema/driver.schema.json && cp .astro/collections/enclosures.schema.json schema/enclosure.schema.json && cp .astro/collections/horns.schema.json schema/horn.schema.json && biome format --write schema/",
-    "validate:driver": "node scripts/validate-driver.mjs"
+    "validate:driver": "node scripts/validate-driver.mjs",
+    "wrangler:types": "wrangler types worker/worker-configuration.d.ts --include-runtime=false --strict-vars=false"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.2",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@axe-core/playwright": "^4.12.1",
     "@biomejs/biome": "^2.5.3",
     "@cloudflare/workers-types": "^5.20260710.1",
     "@playwright/test": "1.61.1",

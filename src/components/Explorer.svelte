@@ -27,6 +27,7 @@ let {
 } = $props();
 
 let records = $state<EnclosureRecord[]>([]);
+let loading = $state(true);
 let error = $state<string | null>(null);
 let category = $state<CategoryFilter>("all");
 let topology = $state("all");
@@ -41,13 +42,11 @@ let driverCountFilter = $state("all");
 let hasMeasurementsOnly = $state(false);
 let hasPlansOnly = $state(false);
 let verifiedOnly = $state(false);
-// Default sort: tops rank better by HF extension; everything else by volume.
+// Default sort: tops rank better by HF extension; everything else by volume. A writable
+// $derived: switching category resets it, but the sort combobox can still override in between
+// (Svelte discards the override the next time `category` actually changes).
 const defaultSortKey = (cat: CategoryFilter): MetricKey => (cat === "top" ? "f3HzHigh" : "volumeL");
-let sortKey = $state<MetricKey>(defaultSortKey("all"));
-
-$effect(() => {
-  sortKey = defaultSortKey(category);
-});
+let sortKey: MetricKey = $derived(defaultSortKey(category));
 
 const allTopologies = $derived([...new Set(records.map((r) => r.topology))].sort());
 
@@ -82,6 +81,8 @@ onMount(async () => {
     records = await res.json();
   } catch (e) {
     error = String(e);
+  } finally {
+    loading = false;
   }
 });
 
@@ -257,9 +258,9 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
       </div>
 
       <div class="filter-row adv-row chips-row">
-        <button class="chip" class:chip-active={hasMeasurementsOnly} onclick={() => (hasMeasurementsOnly = !hasMeasurementsOnly)}>{t.measuredOnly}</button>
-        <button class="chip" class:chip-active={hasPlansOnly} onclick={() => (hasPlansOnly = !hasPlansOnly)}>{t.hasPlans}</button>
-        <button class="chip" class:chip-active={verifiedOnly} onclick={() => (verifiedOnly = !verifiedOnly)}>{t.verifiedOnly}</button>
+        <button class="chip" class:chip-active={hasMeasurementsOnly} aria-pressed={hasMeasurementsOnly} onclick={() => (hasMeasurementsOnly = !hasMeasurementsOnly)}>{t.measuredOnly}</button>
+        <button class="chip" class:chip-active={hasPlansOnly} aria-pressed={hasPlansOnly} onclick={() => (hasPlansOnly = !hasPlansOnly)}>{t.hasPlans}</button>
+        <button class="chip" class:chip-active={verifiedOnly} aria-pressed={verifiedOnly} onclick={() => (verifiedOnly = !verifiedOnly)}>{t.verifiedOnly}</button>
       </div>
 
       {#if allTags.length > 0}
@@ -268,6 +269,7 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
             <button
               class="chip"
               class:chip-active={selectedTags.includes(tag)}
+              aria-pressed={selectedTags.includes(tag)}
               onclick={() => {
                 selectedTags = selectedTags.includes(tag)
                   ? selectedTags.filter((x) => x !== tag)
@@ -282,6 +284,34 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
 
   {#if error}
     <div class="empty-state">{t.failedToLoad}</div>
+  {:else if loading}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>{t.columns.name}</th>
+            <th>{t.columns.cat}</th>
+            <th>{t.columns.plans}</th>
+            <th>{t.columns.topology}</th>
+            <th>{t.columns.drivers}</th>
+            <th>{t.columns.volume}</th>
+            <th>{t.columns.f3}</th>
+            <th>{t.columns.maxSpl}</th>
+            <th>{t.columns.provenance}</th>
+            <th>{t.columns.tags}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {#each { length: 8 } as _}
+            <tr>
+              {#each { length: 10 } as _}
+                <td><div class="skeleton skel-cell"></div></td>
+              {/each}
+            </tr>
+          {/each}
+        </tbody>
+      </table>
+    </div>
   {:else if results.length === 0}
     <div class="empty-state">{t.emptyState}</div>
   {:else}
@@ -335,7 +365,12 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
                     <span class="tag">{tag}</span>
                   {/each}
                   {#if rec.recommendedFor.length > 2}
-                    <span class="tag tag-more" data-tip={rec.recommendedFor.slice(2).join(", ")}>+{rec.recommendedFor.length - 2}</span>
+                    <button
+                      type="button"
+                      class="tag tag-more"
+                      data-tip={rec.recommendedFor.slice(2).join(", ")}
+                      aria-label={rec.recommendedFor.slice(2).join(", ")}
+                    >+{rec.recommendedFor.length - 2}</button>
                   {/if}
                 </div>
               </td>
@@ -489,10 +524,14 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     white-space: nowrap;
   }
 
+  /* No opacity dimming: it blended the already-tuned .tag text toward the page
+     background and dropped contrast to ~2.3:1. Renders identically to a plain .tag. */
   .tag-more {
-    opacity: 0.6;
     position: relative;
     cursor: default;
+    font: inherit;
+    appearance: none;
+    margin: 0;
   }
 
   .tag-more::after {
@@ -514,11 +553,13 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     z-index: 10;
   }
 
-  .tag-more:hover {
+  .tag-more:hover::after,
+  .tag-more:focus-visible::after {
     opacity: 1;
   }
 
-  .tag-more:hover::after {
-    opacity: 1;
+  .skel-cell {
+    height: 1rem;
+    width: 100%;
   }
 </style>

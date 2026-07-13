@@ -124,33 +124,65 @@ A significantly different build (different tuning, different driver, altered geo
 gets a new slug so existing links stay stable. Minor corrections to the same design use
 `revision:` on the same slug.
 
+Numeric fields (dimensions, volumes, frequencies, SPL, power, impedance, …) all carry
+`min`/`max` bounds in the zod schema. These block impossible or fat-fingered values (a
+negative dimension, an extra zero, a port faster than the speed of sound), not
+implausible ones: the bounds are deliberately far outside anything in the real
+catalog, not a "typical" range.
+
 ### Key frontmatter invariants
 
-**`drivers`**: array of driver ids. A dangling reference is a build error.
-
-**`driverCount`**: total driver count (may be > `drivers.length` for multi-driver
-configs where the same driver is used multiple times).
-
-**`simulations` / `measurements`**: same shape:
+**`driverProfiles`**: array of ≥1 buildable driver line-ups for the box, each with its
+own id and its own curve data:
 
 ```yaml
-simulations:
-  - driver: [id]          # array; use [id1, id2] when one file covers combined response
-    kind: spl             # spl | spl_stacked | phase | impedance | group_delay | …
-    source: hornresp_sim  # see allowed sources below
-    file: spl.csv
-    note: "optional free-form context"
+driverProfiles:
+  - id: default            # unique among this box's own profiles
+    drivers:
+      - driver: bc-18ds115-8  # driver id, dangling reference is a build error
+        qty: 2                # always explicit, including qty: 1
+        horn: bc-me45          # optional: only for compression-driver entries using a cataloged horn
+    simulations:
+      - id: spl-1u            # unique within this profile's own simulations array
+        source: hornresp_sim  # see allowed sources below
+        curves:
+          spl:
+            file: spl-1u.csv
+            note: "optional free-form context"
+          phase:
+            file: phase-1u.csv
+        stacked:               # SPL-only, needs curves.spl in the same set as its 1x base
+          - count: 4
+            file: spl-4u.csv
+    measurements: []
 ```
 
-`driver[0]` is the key used by the curves API. Each entry is 1-to-1 with one CSV file.
+Most boxes have exactly one profile (conventionally `id: default`). A box that's
+buildable with more than one driver combination (e.g. an alternate LF driver, or an
+alternate compression driver on the same horn) declares one profile per combination,
+each with its own `simulations`/`measurements`: nesting is the link between a curve
+and the driver combination it describes, so unlike an id-based cross-reference it can
+never dangle or mismatch. Profile ids only need to be unique within their own box.
+
+**One curve set** (an entry in `simulations` or `measurements`) is everything
+describing one simulation run or one measurement session: `id` (unique within that
+profile's own `simulations` or `measurements` array, `simulations` and `measurements`
+are checked separately so the two arrays may reuse the same id), `source`, a `curves`
+map keyed by kind (`spl`, `phase`, `impedance`, `group_delay`, `distortion`,
+`power_compression`, each `{ file, note? }`), and an optional `stacked` array for
+SPL-only array-gain variants (`{ count, file, note? }`). A curve set needs at least
+one `curves` entry or a `stacked` entry (build error otherwise). A `stacked` entry
+requires a plain `curves.spl` entry in the same curve set, there being nothing to
+compare "4x" against without a 1x base. Duplicate `stacked` counts within one curve
+set are a build error. This is the curves API's grouping key (see below).
 
 | Field | Allowed `source` values |
 |-------|------------------------|
 | `simulations` | `hornresp_sim`, `akabak_sim`, `catt_sim`, `vituixcad_sim`, `winsd_sim`, `basta_sim` |
 | `measurements` | `rew_measured`, `klippel` |
 
-**`provenance`**: derived: `"measured"` when `measurements` is non-empty, else `"sim"`.
-Never set this manually.
+**`provenance`**: derived: `"measured"` when any profile has `measurements.length > 0`
+(union across `driverProfiles`), else `"sim"`. Never set this manually.
 
 **`license`**: required, no default. SPDX CC id or `LicenseRef-Permission` /
 `LicenseRef-Proprietary`. See [LICENSE.md](../LICENSE.md) for the full list.
@@ -173,7 +205,7 @@ value renders as plain text). `availability: contact` or `commission` requires a
 **`weightKg`**: loaded weight: cabinet + all installed drivers.
 
 **`maxSplDb`**: optional headline SPL figure. A box without it is excluded from SPL
-sorts and plots; it is never guessed or defaulted. Only set it when a simulation or
+sorts and plots, it is never guessed or defaulted. Only set it when a simulation or
 measurement backs it up.
 
 ### Acoustic-limit fields
@@ -208,21 +240,25 @@ Each enclosure exposes a JSON endpoint at `/api/curves/<slug>.json`:
 {
   "slug": "tapped-horn-18",
   "name": "18\" Tapped Horn",
+  "driverProfiles": [{ "id": "default" }],
   "simulations": [
     {
-      "driverId": "bc-18ds115-8",
+      "id": "spl-1u",
+      "driverProfile": "default",
       "source": "hornresp_sim",
       "curves": {
         "spl": { "freq": [20, 25, …], "value": [95.2, 98.1, …] }
-      }
+      },
+      "stacked": {},
+      "notes": {}
     }
   ],
   "measurements": []
 }
 ```
 
-`pickCurve` in `src/lib/curves.ts` selects measurement data when available, falling back
-to simulation. Curves are discrete points; they are never interpolated or resampled.
+`resolveCurveEntry` in `src/lib/curves.ts` selects measurement data when available, falling
+back to simulation. Curves are discrete points, they are never interpolated or resampled.
 
 ---
 

@@ -2,9 +2,23 @@
 name: FK Kick Scoop 18
 category: kick
 topology: scoop
-drivers:
-  - selenium-tornado-18sw3a-4
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: selenium-tornado-18sw3a-4
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 220
 dims:
   wMm: 700
@@ -17,18 +31,6 @@ specs:
   maxSplDb: 130
   recommendedCrossoverHz: 200
   impedanceNominalOhm: 4
-simulations:
-  - driver:
-      - selenium-tornado-18sw3a-4
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - selenium-tornado-18sw3a-4
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 plans: []
 license: CC0-1.0
 recommendedFor:

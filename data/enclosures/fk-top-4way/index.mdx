@@ -2,12 +2,42 @@
 name: FK Top 4W
 category: top
 topology: bass_reflex
-drivers:
-  - faital-12pr310-8
-  - 18s-6nmb420-8
-  - bms-4545nd-8
-  - faital-hf1440-8
-driverCount: 4
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-12pr310-8
+        qty: 1
+      - driver: 18s-6nmb420-8
+        qty: 1
+      - driver: bms-4545nd-8
+        qty: 1
+      - driver: faital-hf1440-8
+        qty: 1
+    simulations:
+      - id: spl-lf-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-lf-1u.csv
+            note: "LF 12\" sim"
+      - id: spl-mf-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-mf-1u.csv
+            note: "MF 6.5\" sim"
+      - id: spl-hf1-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-hf1-1u.csv
+            note: "HF1 1\" CD sim"
+      - id: spl-hf2-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-hf2-1u.csv
+            note: "HF2 1.4\" CD sim"
 ways: 4
 netVolumeL: 120
 dims:
@@ -20,32 +50,6 @@ specs:
   maxSplDb: 130
   powerAesW: 1500
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - faital-12pr310-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-lf-1u.csv
-    note: LF 12" sim
-  - driver:
-      - 18s-6nmb420-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-mf-1u.csv
-    note: MF 6.5" sim
-  - driver:
-      - bms-4545nd-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-hf1-1u.csv
-    note: HF1 1" CD sim
-  - driver:
-      - faital-hf1440-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-hf2-1u.csv
-    note: HF2 1.4" CD sim
-measurements: []
 plans: []
 license: CC0-1.0
 recommendedFor:

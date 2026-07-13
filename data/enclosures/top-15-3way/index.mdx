@@ -2,11 +2,80 @@
 name: "15\"+6.5\"+1\" 3-Way Top"
 category: top
 topology: bass_reflex
-drivers:
-  - bc-15ds115-8
-  - bc-6ps38-8
-  - bc-de360-8
-driverCount: 3
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-15ds115-8
+        qty: 1
+      - driver: bc-6ps38-8
+        qty: 1
+      - driver: bc-de360-8
+        qty: 1
+        horn: bc-me45
+    simulations:
+      # Per-section sims: two kick driver options
+      - id: lf-15ds
+        source: hornresp_sim
+        curves:
+          spl:
+            file: lf-15ds.csv
+            note: "LF section only, 1W/1m half-space, 15DS115-8"
+      - id: mid
+        source: hornresp_sim
+        curves:
+          spl:
+            file: mid.csv
+            note: "Mid section only, 1W/1m half-space, 6PS38"
+      # Full-system combined sim
+      - id: spl-15ds-de360
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-15ds-de360.csv
+            note: "Full 3-way system, 15DS115 + 6PS38 + DE360, 1W/1m half-space"
+    measurements:
+      - id: meas
+        source: rew_measured
+        curves:
+          spl:
+            file: meas.csv
+            note: "Full 3-way system, 1m on-axis, ground plane, calibrated mic, config A"
+  - id: alt-15sw
+    drivers:
+      - driver: bc-15sw115-8
+        qty: 1
+      - driver: bc-6ps38-8
+        qty: 1
+      - driver: bc-de360-8
+        qty: 1
+    simulations:
+      - id: lf-15sw
+        source: hornresp_sim
+        curves:
+          spl:
+            file: lf-15sw.csv
+            note: "LF section only, 1W/1m half-space, alternate 15SW115-8 loading"
+      - id: spl-15sw-de360
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-15sw-de360.csv
+            note: "Full 3-way system, alternate 15SW115 kick + 6PS38 + DE360, 1W/1m half-space"
+  - id: alt-de250
+    drivers:
+      - driver: bc-15ds115-8
+        qty: 1
+      - driver: bc-6ps38-8
+        qty: 1
+      - driver: bc-de250-8
+        qty: 1
+    simulations:
+      - id: spl-15ds-de250
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-15ds-de250.csv
+            note: "Full 3-way system, 15DS115 + 6PS38 + alternate DE250 CD, 1W/1m half-space"
 netVolumeL: 95
 dims:
   hMm: 760
@@ -27,45 +96,6 @@ specs:
   coverageAngleDeg: 90
   hornCutoffHz: 1000
   recommendedCrossoverHz: 2000
-simulations:
-  # Per-section sims: two kick driver options
-  - driver: [bc-15ds115-8]
-    kind: spl
-    source: hornresp_sim
-    file: lf-15ds.csv
-    note: "LF section only, 1W/1m half-space, 15DS115-8"
-  - driver: [bc-15sw115-8]
-    kind: spl
-    source: hornresp_sim
-    file: lf-15sw.csv
-    note: "LF section only, 1W/1m half-space, alternate 15SW115-8 loading"
-  - driver: [bc-6ps38-8]
-    kind: spl
-    source: hornresp_sim
-    file: mid.csv
-    note: "Mid section only, 1W/1m half-space, 6PS38"
-  # Full-system combined sims: all driver combination variants
-  - driver: [bc-15ds115-8, bc-6ps38-8, bc-de360-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl-15ds-de360.csv
-    note: "Full 3-way system, 15DS115 + 6PS38 + DE360, 1W/1m half-space"
-  - driver: [bc-15sw115-8, bc-6ps38-8, bc-de360-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl-15sw-de360.csv
-    note: "Full 3-way system, alternate 15SW115 kick + 6PS38 + DE360, 1W/1m half-space"
-  - driver: [bc-15ds115-8, bc-6ps38-8, bc-de250-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl-15ds-de250.csv
-    note: "Full 3-way system, 15DS115 + 6PS38 + alternate DE250 CD, 1W/1m half-space"
-measurements:
-  - driver: [bc-15ds115-8, bc-6ps38-8, bc-de360-8]
-    kind: spl
-    source: rew_measured
-    file: meas.csv
-    note: "Full 3-way system, 1m on-axis, ground plane, calibrated mic, config A"
 ways: 3
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"

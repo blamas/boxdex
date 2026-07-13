@@ -2,9 +2,23 @@
 name: FK Top Wideband
 category: top
 topology: bass_reflex
-drivers:
-  - faital-12pr310-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-12pr310-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 ways: 1
 netVolumeL: 35
 dims:
@@ -18,18 +32,6 @@ specs:
   sensitivityDb: 97
   maxSplDb: 121
   recommendedCrossoverHz: 80
-simulations:
-  - driver:
-      - faital-12pr310-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - faital-12pr310-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 plans: []
 license: CC0-1.0
 recommendedFor:

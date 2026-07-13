@@ -1,8 +1,9 @@
 <script lang="ts" generics="T extends CompareItem">
 import { onMount } from "svelte";
 import { type Translations, tt } from "../i18n";
-import { getActiveTheme, SERIES_COLORS } from "../lib/echarts";
+import { getActiveTheme } from "../lib/echarts";
 import { downloadBlob, jsonString, toCsv } from "../lib/export";
+import { SERIES_COLORS } from "../lib/palette";
 import { axisMaxima, type CompareItem, type CompareView, radarValues } from "../lib/radar";
 import { BASE } from "../lib/site";
 import { readParam, writeParams } from "../lib/url-state";
@@ -232,7 +233,7 @@ function buildRadarOption() {
                   {:else}
                     {item.model}
                   {/if}
-                  <button class="remove-btn no-print" onclick={() => removeItem(item.id)} title={tRadar.remove}>×</button>
+                  <button class="remove-btn no-print" onclick={() => removeItem(item.id)} title={tRadar.remove} aria-label={tt(tRadar.removeItem, { name: item.model })}>×</button>
                 </div>
               </th>
             {/each}
