@@ -1,0 +1,25 @@
+{
+  "name": "Boxdex",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "onCreateCommand": "bash .devcontainer/onCreate.sh",
+  "updateContentCommand": "bash .devcontainer/updateContent.sh",
+  "remoteEnv": {
+    "PATH": "${containerEnv:HOME}/.local/share/mise/shims:${containerEnv:HOME}/.local/bin:${containerEnv:PATH}"
+  },
+  "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro dev/preview",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["biomejs.biome", "svelte.svelte-vscode", "astro-build.astro-vscode"],
+      "settings": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}

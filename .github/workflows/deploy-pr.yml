@@ -9,6 +9,7 @@ on:
       - "docs/**"
       - ".vscode/**"
       - ".github/**"
+      - ".devcontainer/**"
 
 concurrency:
   group: deploy-${{ github.ref }}
