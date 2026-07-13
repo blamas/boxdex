@@ -1,33 +1,38 @@
 name: Deploy PR
 
+# deploy-pr is gated on CI succeeding, via workflow_run. retire-preview is
+# unaffected, cleanup doesn't need to wait on CI.
 on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
   pull_request:
-    types: [opened, synchronize, reopened, closed]
-    paths-ignore:
-      - "*.md"
-      - "LICENSES/**"
-      - "docs/**"
-      - ".vscode/**"
-      - ".github/**"
-      - ".devcontainer/**"
+    types: [closed]
 
 concurrency:
-  group: deploy-${{ github.ref }}
+  group: deploy-pr-${{ github.event.workflow_run.pull_requests[0].number || github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
   deploy-pr:
     if: >-
-      github.event.action != 'closed'
-      && github.event.pull_request.head.repo.full_name == github.repository
-      && github.actor != 'dependabot[bot]'
+      github.event_name == 'workflow_run'
+      && github.event.workflow_run.event == 'pull_request'
+      && github.event.workflow_run.conclusion == 'success'
+      && github.event.workflow_run.head_repository.full_name == github.repository
+      && github.event.workflow_run.actor.login != 'dependabot[bot]'
+      && github.event.workflow_run.pull_requests[0] != null
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
+    env:
+      PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
+          ref: ${{ github.event.workflow_run.head_sha }}
           persist-credentials: false
 
       # No dependency cache: this job publishes a preview, and a poisoned
@@ -49,7 +54,7 @@ jobs:
         continue-on-error: true
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: purge r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --fast-list --s3-no-check-bucket
+          args: purge r2:boxdex-site/previews/pr-${{ env.PR_NUMBER }} --fast-list --s3-no-check-bucket
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare
@@ -79,7 +84,7 @@ jobs:
       - name: Upload diff to R2
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: copy dist r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --files-from-raw .preview-upload --checksum --fast-list --s3-no-check-bucket --transfers 128 --checkers 128 -v --stats-one-line
+          args: copy dist r2:boxdex-site/previews/pr-${{ env.PR_NUMBER }} --files-from-raw .preview-upload --checksum --fast-list --s3-no-check-bucket --transfers 128 --checkers 128 -v --stats-one-line
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare
@@ -93,7 +98,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: versions upload --var ASSET_PREFIX:previews/pr-${{ github.event.pull_request.number }}
+          command: versions upload --var ASSET_PREFIX:previews/pr-${{ env.PR_NUMBER }}
 
       - name: Comment preview URL
         if: steps.preview.outputs.deployment-url != ''
@@ -103,8 +108,8 @@ jobs:
         with:
           script: |
             const { owner, repo } = context.repo;
-            const issue_number = context.issue.number;
-            const sha = context.sha;
+            const issue_number = Number(process.env.PR_NUMBER);
+            const sha = process.env.HEAD_SHA;
             const url = process.env.DEPLOYMENT_URL;
             const marker = "<!-- boxdex-preview -->";
             const commit = `[\`${sha.slice(0, 7)}\`](https://github.com/${owner}/${repo}/commit/${sha})`;
