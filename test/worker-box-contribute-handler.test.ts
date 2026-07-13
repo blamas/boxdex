@@ -16,6 +16,8 @@ interface RecordedCall {
 let calls: RecordedCall[] = [];
 let turnstileOk = true;
 let failPulls = false;
+let matchingRefs: { ref: string }[] = [];
+let refConflict = false;
 
 function jsonRes(obj: unknown, status = 200): Promise<Response> {
   return Promise.resolve(new Response(JSON.stringify(obj), { status }));
@@ -29,12 +31,13 @@ function fetchMock(input: RequestInfo | URL, init?: RequestInit): Promise<Respon
   if (url.includes("siteverify")) return jsonRes({ success: turnstileOk });
   if (url.includes("/access_tokens")) return jsonRes({ token: "install-token" });
   if (url.endsWith("/contents/data/enclosures")) return jsonRes([{ name: "fk-br-18" }]);
+  if (url.endsWith("/git/matching-refs/heads/contribute/")) return jsonRes(matchingRefs);
   if (url.includes("/git/ref/heads/main")) return jsonRes({ object: { sha: "base-sha" } });
   if (url.includes("/git/commits/base-sha")) return jsonRes({ tree: { sha: "base-tree" } });
   if (url.endsWith("/git/blobs")) return jsonRes({ sha: `blob-${calls.length}` });
   if (url.endsWith("/git/trees")) return jsonRes({ sha: "new-tree" });
   if (url.endsWith("/git/commits")) return jsonRes({ sha: "new-commit" });
-  if (url.endsWith("/git/refs")) return jsonRes({});
+  if (url.endsWith("/git/refs")) return refConflict ? jsonRes({}, 422) : jsonRes({});
   if (url.endsWith("/pulls")) {
     return failPulls
       ? jsonRes({}, 500)
@@ -72,6 +75,8 @@ beforeEach(() => {
   calls = [];
   turnstileOk = true;
   failPulls = false;
+  matchingRefs = [];
+  refConflict = false;
   vi.stubGlobal("fetch", fetchMock);
 });
 
@@ -187,6 +192,25 @@ describe("handleBoxContribute", () => {
 
     const label = calls.find((c) => c.url.includes("/labels"));
     expect(label?.body?.labels).toEqual(["box-contribute"]);
+  });
+
+  it("dedupes the slug against a branch left over from a still-open prior PR", async () => {
+    // fk-br-18 is free in data/enclosures (nothing merged), but a prior submission's
+    // branch for the same name is still around because its PR was never merged.
+    matchingRefs = [{ ref: "refs/heads/contribute/fk-br-18" }];
+    const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
+    expect(res.status).toBe(200);
+    const ref = calls.find((c) => c.url.endsWith("/git/refs"));
+    expect(ref?.body?.ref).toBe("refs/heads/contribute/fk-br-18-2");
+  });
+
+  it("409s with a retry-able message when ref creation still races to an existing branch", async () => {
+    refConflict = true;
+    const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
+    expect(res.status).toBe(409);
+    expect(await res.json()).toEqual({
+      error: "a submission with this name is already pending review, please retry",
+    });
   });
 
   it('falls back to the slug "box" when the name has no latin alphanumerics', async () => {

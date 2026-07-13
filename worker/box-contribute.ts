@@ -290,16 +290,29 @@ async function installationToken(env: BoxContributeEnv): Promise<string> {
 }
 
 // Empty slugs (a name with no latin alphanumerics) fall back to "box" so the branch ref stays valid.
+// Dedupes against both merged content (data/enclosures/<slug> on main) and any branch already
+// named contribute/<slug>, the latter is what a still-open prior PR for the same name leaves
+// behind, and colliding with it fails ref creation in openPr with a 422.
 async function resolveSlug(name: string, token: string, env: BoxContributeEnv): Promise<string> {
   const base = slugify(name) || "box";
-  const res = await ghFetch(
-    token,
-    "GET",
-    `/repos/${env.GITHUB_REPO_OWNER}/${env.GITHUB_REPO_NAME}/contents/data/enclosures`
-  );
-  const entries = res.ok ? ((await res.json()) as { name: string }[]) : [];
-  const taken = new Set(entries.map((e) => e.name));
+  const repo = `/repos/${env.GITHUB_REPO_OWNER}/${env.GITHUB_REPO_NAME}`;
+  const [dirRes, refsRes] = await Promise.all([
+    ghFetch(token, "GET", `${repo}/contents/data/enclosures`),
+    ghFetch(token, "GET", `${repo}/git/matching-refs/heads/contribute/`),
+  ]);
+  const entries = dirRes.ok ? ((await dirRes.json()) as { name: string }[]) : [];
+  const refs = refsRes.ok ? ((await refsRes.json()) as { ref: string }[]) : [];
+  const taken = new Set([
+    ...entries.map((e) => e.name),
+    ...refs.map((r) => r.ref.replace(/^refs\/heads\/contribute\//, "")),
+  ]);
   return dedupeSlug(base, (s) => taken.has(s));
+}
+
+class BranchExistsError extends Error {
+  constructor(branch: string) {
+    super(`branch already exists: ${branch}`);
+  }
 }
 
 interface RepoFile {
@@ -362,6 +375,9 @@ async function openPr(
     ref: `refs/heads/${branch}`,
     sha: newCommitSha,
   });
+  // 422 here almost always means the branch already exists, resolveSlug already dedupes against
+  // it, so this is the residual case of two submissions racing to the same slug concurrently.
+  if (refCreateRes.status === 422) throw new BranchExistsError(branch);
   if (!refCreateRes.ok) throw new Error(`ref: ${refCreateRes.status}`);
 
   const prRes = await ghFetch(token, "POST", `${repo}/pulls`, {
@@ -469,6 +485,11 @@ export async function handleBoxContribute(
     return json(200, { prUrl });
   } catch (e) {
     console.log(JSON.stringify({ event: "add_box_error", message: String(e) }));
+    if (e instanceof BranchExistsError) {
+      return json(409, {
+        error: "a submission with this name is already pending review, please retry",
+      });
+    }
     return json(502, { error: "failed to open pull request" });
   }
 }
