@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened, closed]
 
 concurrency:
-  group: deploy-${{ github.ref }}
+  group: deploy-pr-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
@@ -44,11 +44,27 @@ jobs:
         env:
           SITE_URL: ${{ vars.SITE_URL }}
 
+      - name: Set preview metadata
+        id: meta
+        env:
+          SHA: ${{ github.event.pull_request.head.sha }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          scheme="${SITE_URL%%://*}"
+          host="${SITE_URL#*://}"
+          {
+            echo "sha_short=${SHA:0:7}"
+            echo "preview_url=${scheme}://pr-${PR}-${host}"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Purge stale preview from R2
         continue-on-error: true
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: purge r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --fast-list --s3-no-check-bucket
+          args: >-
+            purge r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }}
+            --fast-list --s3-no-check-bucket
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare
@@ -61,7 +77,10 @@ jobs:
         continue-on-error: true
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: check dist r2:boxdex-site/production --checksum --fast-list --s3-no-check-bucket --checkers 128 --missing-on-dst .preview-new --differ .preview-changed
+          args: >-
+            check dist r2:boxdex-site/production
+            --checksum --fast-list --s3-no-check-bucket --checkers 128
+            --missing-on-dst .preview-new --differ .preview-changed
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare
@@ -78,7 +97,12 @@ jobs:
       - name: Upload diff to R2
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: copy dist r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --files-from-raw .preview-upload --checksum --fast-list --s3-no-check-bucket --transfers 128 --checkers 128 -v --stats-one-line
+          args: >-
+            copy dist r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }}
+            --files-from-raw .preview-upload
+            --checksum --fast-list --s3-no-check-bucket
+            --transfers 128 --checkers 128
+            -v --stats-one-line
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare
@@ -92,13 +116,18 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: versions upload --var ASSET_PREFIX:previews/pr-${{ github.event.pull_request.number }}
+          command: >-
+            versions upload
+            --var ASSET_PREFIX:previews/pr-${{ github.event.pull_request.number }}
+            --tag pr-${{ github.event.pull_request.number }}
+            --message "PR #${{ github.event.pull_request.number }} @ ${{ steps.meta.outputs.sha_short }}"
+            --preview-alias pr-${{ github.event.pull_request.number }}
 
       - name: Comment preview URL
         if: steps.preview.outputs.deployment-url != ''
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
-          DEPLOYMENT_URL: ${{ steps.preview.outputs.deployment-url }}
+          DEPLOYMENT_URL: ${{ steps.meta.outputs.preview_url }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         with:
           script: |
@@ -140,7 +169,9 @@ jobs:
         continue-on-error: true
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: purge r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }} --fast-list --s3-no-check-bucket
+          args: >-
+            purge r2:boxdex-site/previews/pr-${{ github.event.pull_request.number }}
+            --fast-list --s3-no-check-bucket
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare

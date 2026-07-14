@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-${{ github.ref }}
+  group: deploy-prod-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -44,10 +44,18 @@ jobs:
           GIT_REPO_URL: ${{ vars.GIT_REPO_URL }}
           PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
 
+      - name: Set deploy metadata
+        id: meta
+        run: echo "sha_short=${GITHUB_SHA:0:7}" >> "$GITHUB_OUTPUT"
+
       - name: Sync to R2
         uses: docker://rclone/rclone:1.74.3@sha256:623378ad0ff3ebd5cebf77720843c0e02edfe46e2d5b5ac6bed54c6371780dfb
         with:
-          args: sync dist r2:boxdex-site/production --checksum --fast-list --s3-no-check-bucket --transfers 128 --checkers 128 -v --stats-one-line
+          args: >-
+            sync dist r2:boxdex-site/production
+            --checksum --fast-list --s3-no-check-bucket
+            --transfers 128 --checkers 128
+            -v --stats-one-line
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare
@@ -61,4 +69,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
+          command: >-
+            deploy
+            --tag main
+            --message "main @ ${{ steps.meta.outputs.sha_short }}"
