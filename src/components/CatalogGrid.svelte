@@ -5,6 +5,7 @@ import { CATEGORY_FILTERS, type CategoryFilter } from "../lib/category";
 import { humanize } from "../lib/format";
 import {
   axisComboboxItems,
+  driverFormatParts,
   type EnclosureRecord,
   filterByCategory,
   type MetricKey,
@@ -151,15 +152,11 @@ const visibleCards = $derived(displayed.slice(0, limit));
           {/if}
           <dt>{t.drivers}</dt>
           <dd>
-            {#if rec.driverSizes.length === 0 && rec.compressionExits.length === 0}
-              {rec.driverCount}
-            {:else}
-              {@const coneCount = rec.driverCount - rec.compressionExits.length}
-              {@const parts = [
-                ...(coneCount > 0 && rec.driverSizes.length > 0 ? [`${coneCount}×${rec.driverSizes.map((s) => `${s}"`).join("+")}`] : []),
-                ...rec.compressionExits.map((e) => `1×${e}"`),
-              ]}
+            {#if rec.primaryDrivers.some((d) => d.sizeInch !== undefined || d.exitInch !== undefined)}
+              {@const parts = driverFormatParts(rec)}
               <span class="driver-size">{parts.join(" + ")}</span>
+            {:else}
+              {rec.driverCount}
             {/if}
           </dd>
         </dl>

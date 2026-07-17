@@ -2,9 +2,17 @@
 name: FK Kick Img
 category: kick
 topology: bass_reflex
-drivers:
-  - selenium-tornado-18sw3a-4
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: selenium-tornado-18sw3a-4
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
 netVolumeL: 120
 dims:
   wMm: 560
@@ -17,13 +25,6 @@ specs:
   sensitivityDb: 101
   maxSplDb: 130
   recommendedCrossoverHz: 200
-simulations:
-  - driver:
-      - selenium-tornado-18sw3a-4
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements: []
 images:
   - render.png
   - photo-1.jpg

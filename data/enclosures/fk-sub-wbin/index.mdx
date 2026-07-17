@@ -3,9 +3,23 @@ name: FK Sub W-Bin
 category: sub
 topology: folded_horn
 topologyVariant: W-bin
-drivers:
-  - faital-18hp1060-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18hp1060-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 450
 dims:
   wMm: 760
@@ -16,18 +30,6 @@ specs:
   f3Hz: 40
   sensitivityDb: 103
   maxSplDb: 134
-simulations:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 plans: []
 license: CC0-1.0
 recommendedFor:

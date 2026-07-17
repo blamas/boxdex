@@ -29,6 +29,7 @@ export function makeRecord(partial: Partial<EnclosureRecord> & { slug: string })
     topology: "sealed",
     topologyVariant: undefined,
     driverCount: 1,
+    primaryDrivers: [],
     drivers: [],
     driverSizes: [],
     compressionExits: [],

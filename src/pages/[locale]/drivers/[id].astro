@@ -26,7 +26,9 @@ export async function getStaticPaths() {
           entry,
           substitutes: substituteIndex.get(entry.id) ?? [],
           usedBy: enclosures
-            .filter((e) => e.data.drivers.some((ref) => ref.id === entry.id))
+            .filter((e) =>
+              e.data.driverProfiles.some((p) => p.drivers.some((x) => x.driver.id === entry.id))
+            )
             .sort((a, b) => a.data.name.localeCompare(b.data.name)),
           mates:
             exitInch === null
@@ -215,6 +217,12 @@ const description = isCone
     font-size: 0.875rem;
     color: var(--muted);
     margin: 0;
+  }
+
+  /* --accent and --muted are near-identical luminance in light theme: underline keeps
+     the datasheet link distinguishable from the surrounding muted text (WCAG 1.4.1). */
+  .meta a {
+    text-decoration: underline;
   }
 
   .detail-body {

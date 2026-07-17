@@ -24,9 +24,23 @@ minor edits use `revision:` on the same slug.
 name: "18\" Tapped Horn"
 category: sub          # sub | kick | mid | top
 topology: tapped_horn  # closed list: data/taxonomy.json → topology
-drivers:
-  - bc-18ds115-8       # driver id = bare filename under data/drivers/
-driverCount: 1
+driverProfiles:
+  - id: default             # unique among this box's own profiles
+    drivers:
+      - driver: bc-18ds115-8  # driver id = bare filename under data/drivers/
+        qty: 1                 # always explicit, including qty: 1
+    simulations:
+      - id: spl-1u             # unique within this profile's own simulations array
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+    # measurements:                     # use this for rew_measured / klippel data
+    #   - id: meas-1u
+    #     source: rew_measured
+    #     curves:
+    #       spl:
+    #         file: spl_meas.csv
 netVolumeL: 230
 dims:
   hMm: 1020
@@ -35,16 +49,6 @@ dims:
 specs:
   f3Hz: 35
   maxSplDb: 138        # optional: only set if you have a sim or measurement
-simulations:
-  - driver: [bc-18ds115-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-# measurements:                     # use this for rew_measured / klippel data
-#   - driver: [bc-18ds115-8]
-#     kind: spl
-#     source: rew_measured
-#     file: spl_meas.csv
 license: CC-BY-SA-4.0  # required, closed list: data/taxonomy.json → license
 ---
 
@@ -95,23 +99,46 @@ The same rule applies to the acoustic-limit and power fields (`maxSplExcursionDb
 `maxSplThermalDb`, `powerAesW`, `powerProgramW`, `impedanceMinOhm`): factual or absent,
 never derived.
 
+### Driver profiles
+
+`driverProfiles:` is an array of ≥1 buildable driver line-ups for the box. Most boxes
+have exactly one, conventionally `id: default`. A box that's buildable with more than
+one driver combination (an alternate LF driver, an alternate compression driver on the
+same horn, …) declares one profile per combination, each with its own `drivers`,
+`simulations`, and `measurements`. Profile ids only need to be unique within their own
+box.
+
+Each entry in a profile's `drivers:` array is `{ driver, qty, horn? }`: `driver` must
+reference an existing driver id (a dangling reference fails the build), `qty` is
+always explicit (including `qty: 1`), and `horn` is only set for a compression-driver
+entry using a cataloged horn.
+
 ### Simulations vs measurements
 
 Use `simulations:` for software data (HornResp, AkAbak) and `measurements:` for
-real-world data (REW, Klippel). Each entry is **1-to-1 with a driver**. The `driver`
-field is required and must reference an existing driver id.
+real-world data (REW, Klippel), nested under the `driverProfiles[]` entry they
+describe. Each curve set is one simulation run or one measurement session: `{ id,
+source, curves: { spl?, phase?, impedance?, group_delay?, distortion?,
+power_compression? }, stacked? }`, where each `curves` entry is `{ file, note? }`.
+`id` only needs to be unique within that profile's own `simulations` or
+`measurements` array. A curve set needs at least one `curves` entry or a `stacked`
+entry.
+
+`stacked` is SPL-only (array gain from N identical cabinets is well-defined; the other
+kinds are single-unit driver properties): each entry is `{ count, file, note? }` and
+requires a plain `curves.spl` entry in the same curve set to compare against.
 
 | Field | Allowed `source` values |
 |-------|------------------------|
 | `simulations` | `hornresp_sim`, `akabak_sim`, `catt_sim`, `vituixcad_sim`, `winsd_sim`, `basta_sim` |
 | `measurements` | `rew_measured`, `klippel` |
 
-Each simulation or measurement entry accepts an optional `note:` field for free-form context (e.g. `"digitized from PDF, ±2 dB accuracy"`).
+Each `curves`/`stacked` entry accepts an optional `note:` field for free-form context (e.g. `"digitized from PDF, ±2 dB accuracy"`).
 
 ### Provenance
 
-`provenance` is derived automatically: `"measured"` when `measurements` is non-empty,
-`"sim"` otherwise.
+`provenance` is derived automatically: `"measured"` when any profile has a non-empty
+`measurements`, `"sim"` otherwise.
 
 This is shown as solid (measured) vs. dashed (sim) lines and circle vs. triangle symbols.
 
@@ -120,8 +147,8 @@ This is shown as solid (measured) vs. dashed (sim) lines and circle vs. triangle
 Create `data/drivers/<type>/<manufacturer>/<id>.json` where `<type>` is `cone` or
 `compression`: the two have disjoint spec sets, discriminated on the required `type`
 field. The folders are organisational only: the **id is the bare filename** and must
-match the `drivers:` reference in any enclosure that uses it. A dangling reference
-fails the build.
+match a `driver:` reference in some `driverProfiles[].drivers[]` entry of any
+enclosure that uses it. A dangling reference fails the build.
 
 See `schema/driver.schema.json` for the full schema with descriptions (most editors
 pick it up automatically).
@@ -187,7 +214,7 @@ Type-check and lint are not needed for data-only changes, but the build is autho
 
 1. Create the JSON under `data/drivers/<type>/<mfr>/<id>.json`.
 2. Run `node scripts/validate-driver.mjs <file>` to catch schema errors immediately.
-3. Reference `<id>` in the enclosure's `drivers:` frontmatter array.
+3. Reference `<id>` as a `driver:` in the enclosure's `driverProfiles[].drivers[]` array.
 4. Run `mise run build` to confirm no dangling references and no schema violations.
 
 ### Editing the driver or enclosure schema

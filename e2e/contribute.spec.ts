@@ -45,7 +45,7 @@ test("contribute: full form submits and shows the PR link (endpoint mocked)", as
   const search = page.locator(".combobox-search");
   await search.press("ArrowDown");
   await search.press("Enter");
-  await expect(driversSection.locator(".chip-active")).toHaveCount(1);
+  await expect(driversSection.locator(".driver-row-label")).toHaveCount(1);
 
   await page
     .locator("section.card", { hasText: "License" })
@@ -86,39 +86,57 @@ test("contribute: off the production origin submit stays gated", async ({ page }
   await expect(page.locator(".submit")).toBeDisabled();
 });
 
-test("contribute: driver chips remove and re-flag the drivers field", async ({ page }) => {
+test("contribute: driver rows remove and re-flag the profile's drivers field", async ({ page }) => {
   await page.goto("/en/contribute");
+
+  // The default profile starts with no drivers: its drivers array is flagged.
+  const errorPaths = page.locator(".errors code");
+  await expect(errorPaths.filter({ hasText: /^driverProfiles\.0\.drivers$/ })).toHaveCount(1);
 
   const driversSection = page.locator("section.card", { hasText: "Drivers" }).first();
   await driversSection.locator(".combobox-trigger").click();
   const search = page.locator(".combobox-search");
   await search.press("ArrowDown");
   await search.press("Enter");
-  await expect(driversSection.locator(".chip-active")).toHaveCount(1);
+  await expect(driversSection.locator(".driver-row-label")).toHaveCount(1);
+  await expect(errorPaths.filter({ hasText: /^driverProfiles\.0\.drivers$/ })).toHaveCount(0);
 
-  const errorPaths = page.locator(".errors code");
-  await expect(errorPaths.filter({ hasText: /^drivers$/ })).toHaveCount(0);
-
-  await driversSection.locator(".chip-x").click();
-  await expect(driversSection.locator(".chip-active")).toHaveCount(0);
-  await expect(errorPaths.filter({ hasText: /^drivers$/ })).toHaveCount(1);
+  // The driver row's own Remove button ("Remove profile" is a different accessible name).
+  await driversSection.getByRole("button", { name: "Remove", exact: true }).click();
+  await expect(driversSection.locator(".driver-row-label")).toHaveCount(0);
+  await expect(errorPaths.filter({ hasText: /^driverProfiles\.0\.drivers$/ })).toHaveCount(1);
 });
 
-test("contribute: simulation rows add, expose stacked count, and remove", async ({ page }) => {
+test("contribute: simulation curve sets add a kind entry, a stacked count, and remove", async ({
+  page,
+}) => {
   await page.goto("/en/contribute");
 
-  const sims = page.locator("section.card", { hasText: "Simulations" }).first();
-  await sims.getByRole("button", { name: "Add", exact: true }).click();
-  await expect(sims.locator(".row.card")).toHaveCount(1);
+  // Curve sets live nested inside the (single, default) driver profile card, one level below
+  // the "Drivers" section: scope to the profile card via its "Simulations" sub-heading, then to
+  // the curve-set row itself via its "Source" field (kind-entry/stacked rows don't have one).
+  const driversSection = page.locator("section.card", { hasText: "Drivers" }).first();
+  const profileCard = driversSection.locator(".row.card").filter({ hasText: "Simulations" });
+  const simsHead = profileCard.locator(".row-head").filter({ hasText: "Simulations" });
 
-  // The stacked-count input only exists for kind spl_stacked.
-  const row = sims.locator(".row.card");
-  await expect(row.getByLabel("Stacked count")).toHaveCount(0);
-  await row.locator("select").first().selectOption("spl_stacked");
-  await expect(row.getByLabel("Stacked count")).toBeVisible();
+  await simsHead.getByRole("button", { name: "Add", exact: true }).click();
+  const curveSetRow = profileCard.locator(".row.card").filter({ hasText: "Source" });
+  await expect(curveSetRow).toHaveCount(1);
 
-  await row.getByRole("button", { name: "Remove", exact: true }).click();
-  await expect(sims.locator(".row.card")).toHaveCount(0);
+  // No kind entries or stacked counts yet: adding one of each exposes its own file/count field.
+  await expect(curveSetRow.locator('input[type="file"]')).toHaveCount(0);
+  await expect(curveSetRow.getByLabel("Stacked count")).toHaveCount(0);
+
+  await curveSetRow.getByRole("button", { name: "Add SPL (dB)", exact: true }).click();
+  await expect(curveSetRow.locator('input[type="file"]')).toHaveCount(1);
+
+  await curveSetRow.getByRole("button", { name: "Add stacked count", exact: true }).click();
+  await expect(curveSetRow.getByLabel("Stacked count")).toBeVisible();
+  await expect(curveSetRow.locator('input[type="file"]')).toHaveCount(2);
+
+  // The curve set's own Remove button is the first one rendered, ahead of its nested rows'.
+  await curveSetRow.getByRole("button", { name: "Remove", exact: true }).first().click();
+  await expect(profileCard.locator(".row.card").filter({ hasText: "Source" })).toHaveCount(0);
 });
 
 test("contribute: localised French page renders", async ({ page }) => {

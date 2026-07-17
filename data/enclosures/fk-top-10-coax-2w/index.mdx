@@ -2,9 +2,35 @@
 name: FK Top 10 Coax 2W
 category: top
 topology: sealed
-drivers:
-  - eton-11-581-50-hex-8
-  - bms-4545nd-8
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eton-11-581-50-hex-8
+        qty: 1
+      - driver: bms-4545nd-8
+        qty: 1
+    simulations:
+      - id: spl-lf
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-lf.csv
+      - id: spl-hf
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-hf.csv
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 28
 dims:
   wMm: 340
@@ -16,30 +42,6 @@ specs:
   sensitivityDb: 96
   coverageAngleDeg: 60
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - eton-11-581-50-hex-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-lf.csv
-  - driver:
-      - bms-4545nd-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-hf.csv
-  - driver:
-      - eton-11-581-50-hex-8
-      - bms-4545nd-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - eton-11-581-50-hex-8
-      - bms-4545nd-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 license: CC0-1.0
 recommendedFor:
   - techno

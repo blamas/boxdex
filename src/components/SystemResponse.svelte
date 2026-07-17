@@ -240,10 +240,10 @@ const hasAnyExtrapolated = $derived(
     <table class="xo-table">
       <thead>
         <tr>
-          <th>{t.box}</th>
-          <th>{t.highpass}</th>
-          <th>{t.lowpass}</th>
-          <th>{t.gain}</th>
+          <th scope="col">{t.box}</th>
+          <th scope="col">{t.highpass}</th>
+          <th scope="col">{t.lowpass}</th>
+          <th scope="col">{t.gain}</th>
         </tr>
       </thead>
       <tbody>
@@ -251,7 +251,7 @@ const hasAnyExtrapolated = $derived(
           {@const lowSt = cornerStatus(p, "lo")}
           {@const highSt = cornerStatus(p, "hi")}
           <tr>
-            <td class="xo-box-name" style:color={bandColorById.get(p.id)}>{p.name}</td>
+            <th scope="row" class="xo-box-name" style:color={bandColorById.get(p.id)}>{p.name}</th>
             <td>
               <span
                 class="xo-chip"
@@ -268,6 +268,7 @@ const hasAnyExtrapolated = $derived(
                   max={XO_FC_MAX_HZ}
                   value={p.lowHz ?? ""}
                   placeholder=""
+                  aria-label={`${p.name} ${t.highpass}`}
                   onchange={(e) => setXoOverride(p.id, "lo", (e.target as HTMLInputElement).value)}
                 />
                 Hz
@@ -278,6 +279,7 @@ const hasAnyExtrapolated = $derived(
                 tabindex={p.lowCustom ? 0 : -1}
                 onclick={() => clearXoOverride(p.id, "lo")}
                 title={t.resetToSuggested}
+                aria-label={t.resetToSuggested}
               >↺</button>
             </td>
             <td>
@@ -296,6 +298,7 @@ const hasAnyExtrapolated = $derived(
                   max={XO_FC_MAX_HZ}
                   value={p.highHz ?? ""}
                   placeholder=""
+                  aria-label={`${p.name} ${t.lowpass}`}
                   onchange={(e) => setXoOverride(p.id, "hi", (e.target as HTMLInputElement).value)}
                 />
                 Hz
@@ -306,6 +309,7 @@ const hasAnyExtrapolated = $derived(
                 tabindex={p.highCustom ? 0 : -1}
                 onclick={() => clearXoOverride(p.id, "hi")}
                 title={t.resetToSuggested}
+                aria-label={t.resetToSuggested}
               >↺</button>
             </td>
             <td>
@@ -317,6 +321,7 @@ const hasAnyExtrapolated = $derived(
                   min={XO_GAIN_MIN_DB}
                   max={XO_GAIN_MAX_DB}
                   value={xoGains[p.id] ?? 0}
+                  aria-label={`${p.name} ${t.gain}`}
                   onchange={(e) => setGain(p.id, (e.target as HTMLInputElement).value)}
                 />
                 dB
@@ -327,6 +332,7 @@ const hasAnyExtrapolated = $derived(
                 tabindex={xoGains[p.id] ? 0 : -1}
                 onclick={() => clearGain(p.id)}
                 title={t.resetGain}
+                aria-label={t.resetGain}
               >↺</button>
             </td>
           </tr>
@@ -438,8 +444,15 @@ const hasAnyExtrapolated = $derived(
     border-bottom: none;
   }
 
+  /* This th (scope=row, the box name) sits in the same header row-style cell as the
+     uppercase/muted .xo-table th column headers, reset back to a normal data-cell look. */
   .xo-box-name {
+    padding: 0.45rem 0.6rem 0.45rem 0;
     font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--text);
     white-space: nowrap;
   }
 

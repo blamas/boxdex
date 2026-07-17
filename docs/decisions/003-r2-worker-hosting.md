@@ -33,7 +33,7 @@ PR previews use a separate `previews/pr-<n>` prefix; the Worker falls back to
 
 ### Cloudflare Pages
 - Pros: zero-config Git integration, automatic preview deployments.
-- Cons: 20,000-file cap per deployment; cannot be raised. The pagefind index alone
+- Cons: 20,000-file cap per deployment, cannot be raised. The pagefind index alone
   pushes the build past this limit. Pages' Git integration would also bypass the
   rclone checksum sync, uploading all files on every deploy.
 - Rejected: hard file cap makes it non-viable for this build size.
@@ -58,7 +58,7 @@ PR previews use a separate `previews/pr-<n>` prefix; the Worker falls back to
 - Rejected: insufficient control over caching and no extensibility path.
 
 ## Consequences
-- The Worker is the only serving layer; it must handle `HEAD`, conditional GET, correct
+- The Worker is the only serving layer, it must handle `HEAD`, conditional GET, correct
   Content-Type, and cache seeding. `worker/resolve.ts` keeps the pure path-to-key
   logic free of Cloudflare types so it can be unit-tested in Vitest.
 - Production deploys run rclone `sync` (checksum, deletes removed files). PR deploys

@@ -12,7 +12,8 @@ interface StackedEntry {
 }
 
 export interface DriverCurves {
-  driverId: string;
+  id: string;
+  driverProfile: string;
   source: string;
   curves: Partial<Record<CurveKind, ParsedCurve>>;
   stacked: Partial<Record<number, StackedEntry>>; // spl_stacked curves by cabinet count
@@ -34,6 +35,20 @@ export interface CurvesResponse {
   name: string;
   simulations: DriverCurves[];
   measurements: DriverCurves[];
+  driverProfiles: { id: string }[];
+}
+
+// Human label for a curve entry: always profile-prefixed (even when there's only one profile,
+// it just reads "default · ...") plus its own authored id, since one profile can still own
+// several curve entries (an isolated section's curve vs. a combined full-system curve).
+export function curveLabel(dc: DriverCurves): string {
+  return `${dc.driverProfile} · ${dc.id}`;
+}
+
+// Keep only the DriverCurves entries belonging to a given profile, for a profile switcher over
+// a sim/meas group.
+export function curvesForProfile(dcs: DriverCurves[], profileId: string): DriverCurves[] {
+  return dcs.filter((dc) => dc.driverProfile === profileId);
 }
 
 export const CURVE_Y_LABELS: Record<CurveKind, string> = {
@@ -46,18 +61,34 @@ export const CURVE_Y_LABELS: Record<CurveKind, string> = {
   power_compression: "Power compression (dB)",
 };
 
-// Default view once a box's curves load: prefer measurements over simulations, and
-// the first kind (in CURVE_KINDS order) the group's first driver actually carries.
-// spl_stacked is excluded here because it is handled separately via the stacked map.
-export function initialCurveView(data: CurvesResponse): { tab: "sim" | "meas"; kind: CurveKind } {
-  const tab = data.measurements.length > 0 ? "meas" : "sim";
-  const group = tab === "meas" ? data.measurements : data.simulations;
-  const kind = DISPLAY_KINDS.find((k) => group[0]?.curves[k]) ?? "spl";
+// First kind (in CURVE_KINDS order) the group's first entry actually carries.
+// spl_stacked is excluded because it is handled separately via the stacked map.
+export function firstAvailableKind(group: DriverCurves[]): CurveKind {
+  return DISPLAY_KINDS.find((k) => group[0]?.curves[k]) ?? "spl";
+}
+
+// Default view once a box's curves load: prefer measurements over simulations, and the first
+// kind the group's first entry carries. When a profileId is given (multi-profile boxes), the
+// choice is scoped to that profile's own curves, so the initial tab/kind can't point at a
+// group the profile switcher will filter down to empty.
+export function initialCurveView(
+  data: CurvesResponse,
+  profileId?: string
+): { tab: "sim" | "meas"; kind: CurveKind } {
+  const scope = (dcs: DriverCurves[]) =>
+    profileId !== undefined && data.driverProfiles.length > 1
+      ? curvesForProfile(dcs, profileId)
+      : dcs;
+  const meas = scope(data.measurements);
+  const tab = meas.length > 0 ? "meas" : "sim";
+  const kind = firstAvailableKind(tab === "meas" ? meas : scope(data.simulations));
   return { tab, kind };
 }
 
 export interface CurveEntry {
-  // Stable selection key: "meas:<driverId>" or "sim:<driverId>"
+  // Stable selection key: "meas:<driverProfile>:<id>" or "sim:<driverProfile>:<id>". The
+  // profile segment matters because a curve-set id is only unique within its own profile: two
+  // different profiles can legitimately both name a curve-set "full-system".
   key: string;
   label: string;
   dc: DriverCurves;
@@ -70,12 +101,22 @@ export function curveEntries(payload: CurvesResponse, kind: CurveKind): CurveEnt
   const result: CurveEntry[] = [];
   for (const dc of payload.measurements) {
     if (dc.curves[kind]) {
-      result.push({ key: `meas:${dc.driverId}`, label: `meas · ${dc.driverId}`, dc, isMeas: true });
+      result.push({
+        key: `meas:${dc.driverProfile}:${dc.id}`,
+        label: `meas · ${curveLabel(dc)}`,
+        dc,
+        isMeas: true,
+      });
     }
   }
   for (const dc of payload.simulations) {
     if (dc.curves[kind]) {
-      result.push({ key: `sim:${dc.driverId}`, label: `sim · ${dc.driverId}`, dc, isMeas: false });
+      result.push({
+        key: `sim:${dc.driverProfile}:${dc.id}`,
+        label: `sim · ${curveLabel(dc)}`,
+        dc,
+        isMeas: false,
+      });
     }
   }
   return result;

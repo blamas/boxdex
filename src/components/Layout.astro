@@ -72,7 +72,7 @@ function navHref(path: string) {
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header data-pagefind-ignore transition:persist>
       <div class="container">
-        <nav>
+        <nav aria-label={t.nav.ariaLabel}>
           <a class="site-title" href={navHref("/")}>Boxdex</a>
           <span class="nav-sep">·</span>
           <div class="nav-links">

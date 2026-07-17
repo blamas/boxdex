@@ -2,9 +2,28 @@
 name: FK Sub HighSPL
 category: sub
 topology: tapped_horn
-drivers:
-  - faital-18hp1060-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18hp1060-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+        stacked:
+          - count: 4
+            file: spl-4u.csv
+          - count: 8
+            file: spl-8u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 380
 dims:
   wMm: 620
@@ -17,30 +36,6 @@ specs:
   maxSplDb: 142
   maxSplExcursionDb: 138
   maxSplThermalDb: 142
-simulations:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-  - driver:
-      - faital-18hp1060-8
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-4u.csv
-    count: 4
-  - driver:
-      - faital-18hp1060-8
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-8u.csv
-    count: 8
-measurements:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 plans: []
 license: CC0-1.0
 recommendedFor:

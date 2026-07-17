@@ -2,9 +2,17 @@
 name: FK Mid Img
 category: mid
 topology: bass_reflex
-drivers:
-  - faital-12pr310-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-12pr310-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
 netVolumeL: 30
 dims:
   wMm: 350
@@ -17,13 +25,6 @@ specs:
   sensitivityDb: 99
   maxSplDb: 122
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - faital-12pr310-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements: []
 images:
   - render.png
 plans: []

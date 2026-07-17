@@ -6,9 +6,9 @@ import { clickOutside } from "../lib/click-outside";
 import { suggestCrossovers, type XoCurve } from "../lib/crossover";
 import { toPairs } from "../lib/csv";
 import { type CurvesResponse, curveEntries, resolveCurveEntry } from "../lib/curves";
-import { SERIES_COLORS } from "../lib/echarts";
 import { fmtHz, fmtOhm, fmtW } from "../lib/format";
 import type { EnclosureRecord } from "../lib/metrics";
+import { SERIES_COLORS } from "../lib/palette";
 import { BASE } from "../lib/site";
 import {
   AMP_EFFICIENCY,
@@ -81,16 +81,28 @@ $effect(() => {
 // records.find scan per slot per recompute.
 const recBySlug = $derived(new Map(records.map((r) => [r.slug, r])));
 
+// Non-reactive: guards against a re-run re-fetching a slug whose request is still in flight.
+const pendingCurves = new Set<string>();
 $effect(() => {
   for (const slot of stack) {
     const rec = recBySlug.get(slot.slug);
-    if (rec?.availableKinds.includes("spl") && !curveCache[slot.slug]) {
-      fetch(`${BASE}/api/curves/${slot.slug}.json`)
-        .then((r) => r.json())
-        .then((d: CurvesResponse) => {
-          curveCache = { ...curveCache, [slot.slug]: d };
-        });
-    }
+    if (
+      !rec?.availableKinds.includes("spl") ||
+      curveCache[slot.slug] ||
+      pendingCurves.has(slot.slug)
+    )
+      continue;
+    pendingCurves.add(slot.slug);
+    fetch(`${BASE}/api/curves/${slot.slug}.json`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((d: CurvesResponse) => {
+        curveCache = { ...curveCache, [slot.slug]: d };
+      })
+      .catch(() => {})
+      .finally(() => pendingCurves.delete(slot.slug));
   }
 });
 
@@ -177,8 +189,8 @@ const coverageResults = $derived.by(() =>
   })
 );
 
-// Iterate stack directly so slot.curveSelection is tracked as a live $state property.
-// When a curve is loaded, use its actual frequency range; fall back to manifest specs.
+// Iterate `stack` directly (not resolvedSlots): a derived intermediary can lose the $state
+// proxy identity, so slot.curveSelection would stop being tracked. Same reason as slotBands.
 const crossoverSlots = $derived.by(() =>
   stack.flatMap((slot) => {
     const rec = recBySlug.get(slot.slug);
@@ -209,8 +221,7 @@ const crossoverSlots = $derived.by(() =>
   })
 );
 
-// Iterate `stack` directly (not resolvedSlots) so Svelte 5 tracks slot.curveSelection
-// as a live $state proxy property, derived intermediaries can lose proxy identity.
+// Iterate `stack` directly, see crossoverSlots above for the proxy-identity reason.
 const slotBands = $derived.by<SlotBand[]>(() =>
   stack.flatMap((slot, i) => {
     const rec = recBySlug.get(slot.slug);
@@ -326,7 +337,17 @@ const curvesLoading = $derived(
   {#if error}
     <div class="empty-state">{t.failedToLoad}</div>
   {:else if loading}
-    <p class="muted">{t.loading}</p>
+    <section class="section" aria-hidden="true">
+      <div class="skeleton skel-title"></div>
+      <div class="slots">
+        {#each { length: 2 } as _}
+          <div class="slot skel-slot">
+            <div class="skeleton skel-row"></div>
+            <div class="skeleton skel-row skel-row-short"></div>
+          </div>
+        {/each}
+      </div>
+    </section>
   {:else}
     <section class="section">
       <h2 class="section-title">{t.builder}</h2>
@@ -349,7 +370,7 @@ const curvesLoading = $derived(
                     onselect={(slug) => changeSlug(i, slug)}
                   />
                 </div>
-                <button class="remove-btn" onclick={() => removeSlot(i)} title={t.remove}>×</button>
+                <button class="remove-btn" onclick={() => removeSlot(i)} title={t.remove} aria-label={t.remove}>×</button>
               </div>
               <div class="slot-row slot-controls">
                 <div class="qty-control">
@@ -545,11 +566,17 @@ const curvesLoading = $derived(
                   {#each divisors(slot.qty) as d}
                     <button
                       class="chip {ch === d ? 'chip-active' : ''}"
+                      aria-pressed={ch === d}
                       onclick={() => { stack[i].channels = d === auto ? undefined : d; }}
                     >{tt(t.channelN, { n: d })}</button>
                   {/each}
                   {#if slot.channels !== undefined}
-                    <button class="ch-reset btn-ghost btn-sm" onclick={() => { stack[i].channels = undefined; }}>↺</button>
+                    <button
+                      class="ch-reset btn-ghost btn-sm"
+                      aria-label={t.resetChannels}
+                      title={t.resetChannels}
+                      onclick={() => { stack[i].channels = undefined; }}
+                    >↺</button>
                   {/if}
                 </span>
               {/if}
@@ -700,6 +727,28 @@ const curvesLoading = $derived(
     margin: 0 0 0.75rem;
   }
 
+  .skel-title {
+    height: 1rem;
+    width: 6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .skel-slot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .skel-row {
+    height: 2rem;
+    width: 100%;
+  }
+
+  .skel-row-short {
+    width: 40%;
+  }
+
   .slots {
     display: flex;
     flex-direction: column;
@@ -814,14 +863,20 @@ const curvesLoading = $derived(
     flex-wrap: wrap;
   }
 
+  /* Idle state drops the badge's own tinted background/border instead of dimming via
+     opacity: opacity blends the (already WCAG-tuned) text toward the page background
+     too, which was pulling contrast down to ~2.5:1. Text stays at full badge color. */
   .add-cat-btn {
     cursor: pointer;
-    opacity: 0.65;
-    transition: opacity 0.1s, box-shadow 0.1s;
+    background: transparent;
+    border-color: var(--line);
+    transition: background 0.1s, border-color 0.1s, box-shadow 0.1s;
   }
 
-  .add-cat-btn:hover:not(:disabled) {
-    opacity: 1;
+  .add-cat-btn:hover:not(:disabled),
+  .add-cat-active {
+    background: color-mix(in srgb, currentColor 4%, transparent);
+    border-color: color-mix(in srgb, currentColor 30%, transparent);
   }
 
   .add-cat-btn:disabled {
@@ -830,7 +885,6 @@ const curvesLoading = $derived(
   }
 
   .add-cat-active {
-    opacity: 1;
     box-shadow: 0 0 0 1px currentColor;
   }
 

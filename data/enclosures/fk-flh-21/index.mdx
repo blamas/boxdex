@@ -2,8 +2,23 @@
 name: FK FLH 21
 category: sub
 topology: front_loaded_horn
-drivers:
-  - pyle-pdw21250-8
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pyle-pdw21250-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 600
 dims:
   wMm: 900
@@ -16,18 +31,6 @@ specs:
   hornCutoffHz: 35
   maxSplDb: 136
   recommendedCrossoverHz: 80
-simulations:
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 license: CC0-1.0
 recommendedFor:
   - tribe

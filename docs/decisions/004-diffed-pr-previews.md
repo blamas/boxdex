@@ -54,7 +54,7 @@ On every PR push:
   diffed, every HTML file would appear changed and the diffed strategy would degrade
   to a full upload.
 - PR previews cannot preview deletions: removed pages still exist in `production/` and
-  the Worker falls back to them. This is an acceptable limitation; deletion previews
+  the Worker falls back to them. This is an acceptable limitation, deletion previews
   would require either uploading a tombstone object or a full sync.
 - The `rclone check` step exits non-zero whenever differences exist (normal for any
   PR), so it runs with `continue-on-error: true`. A missing `.preview-new` file (no

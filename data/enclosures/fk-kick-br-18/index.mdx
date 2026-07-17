@@ -2,9 +2,28 @@
 name: FK Kick BR 18
 category: kick
 topology: bass_reflex
-drivers:
-  - selenium-tornado-18sw3a-4
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: selenium-tornado-18sw3a-4
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+            note: "1U kick sim"
+          impedance:
+            file: sim-impedance-1u.csv
+            note: "1U impedance sim"
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
+            note: "1U gated, REW"
 netVolumeL: 180
 dims:
   wMm: 600
@@ -18,26 +37,6 @@ specs:
   maxSplDb: 130
   powerAesW: 900
   recommendedCrossoverHz: 200
-simulations:
-  - driver:
-      - selenium-tornado-18sw3a-4
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-    note: 1U kick sim
-  - driver:
-      - selenium-tornado-18sw3a-4
-    kind: impedance
-    source: hornresp_sim
-    file: sim-impedance-1u.csv
-    note: 1U impedance sim
-measurements:
-  - driver:
-      - selenium-tornado-18sw3a-4
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
-    note: 1U gated, REW
 plans: []
 license: CC0-1.0
 recommendedFor:

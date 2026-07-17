@@ -1,6 +1,7 @@
 import { getCollection } from "astro:content";
+import type { APIRoute } from "astro";
 
-export async function GET() {
+export const GET: APIRoute = async () => {
   const entries = await getCollection("horns");
   const horns = entries
     .map((e) => ({ id: e.id, ...e.data }))
@@ -11,4 +12,4 @@ export async function GET() {
         a.brand.localeCompare(b.brand)
     );
   return Response.json(horns);
-}
+};

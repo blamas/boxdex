@@ -2,9 +2,22 @@
 name: FK Folded 18
 category: sub
 topology: folded_horn
-drivers:
-  - faital-18hp1060-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18hp1060-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+            note: "1U single cab"
+        stacked:
+          - count: 4
+            file: spl-4u.csv
+            note: "4U stacked"
 netVolumeL: 450
 dims:
   wMm: 760
@@ -16,21 +29,6 @@ specs:
   maxSplDb: 134
   powerAesW: 1500
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-    note: 1U single cab
-  - driver:
-      - faital-18hp1060-8
-    kind: spl_stacked
-    source: hornresp_sim
-    file: spl-4u.csv
-    count: 4
-    note: 4U stacked
-measurements: []
 plans: []
 license: CC0-1.0
 recommendedFor:

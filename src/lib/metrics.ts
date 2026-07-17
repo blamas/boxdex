@@ -117,6 +117,10 @@ export interface EnclosureRecord {
   topology: string;
   topologyVariant: string | undefined;
   driverCount: number;
+  // Primary-profile driver entries with real quantities, for display. driverSizes and
+  // compressionExits below stay a union across every profile (search facets), so they must
+  // not be recombined with counts: an alternate build's size would inherit the primary's qty.
+  primaryDrivers: { qty: number; sizeInch?: number; exitInch?: number }[];
   drivers: string[];
   driverSizes: number[];
   compressionExits: number[];
@@ -142,6 +146,22 @@ export interface EnclosureRecord {
   sheetCount: number | undefined;
   sheetSizeMm: { wMm: number; hMm: number } | undefined;
   metrics: DerivedMetrics;
+}
+
+// Catalog-card driver summary, e.g. ["2×15\"", "1×1.4\""]: primary-profile entries aggregated
+// by size (cones) then exit (compression drivers), each with its real quantity. Empty when the
+// record carries no size/exit info, callers fall back to the bare driverCount.
+export function driverFormatParts(rec: EnclosureRecord): string[] {
+  const bySize = new Map<number, number>();
+  const byExit = new Map<number, number>();
+  for (const d of rec.primaryDrivers) {
+    if (d.sizeInch !== undefined) bySize.set(d.sizeInch, (bySize.get(d.sizeInch) ?? 0) + d.qty);
+    else if (d.exitInch !== undefined)
+      byExit.set(d.exitInch, (byExit.get(d.exitInch) ?? 0) + d.qty);
+  }
+  const fmt = (m: Map<number, number>) =>
+    [...m].sort((a, b) => a[0] - b[0]).map(([inch, qty]) => `${qty}×${inch}"`);
+  return [...fmt(bySize), ...fmt(byExit)];
 }
 
 export function filterByCategory(

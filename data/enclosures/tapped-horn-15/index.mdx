@@ -2,9 +2,18 @@
 name: "15\" Tapped Horn"
 category: sub
 topology: tapped_horn
-drivers:
-  - bc-15ds115-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-15ds115-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space"
 netVolumeL: 120
 dims:
   hMm: 880
@@ -21,12 +30,6 @@ specs:
   powerProgramW: 1400
   impedanceMinOhm: 5.5
   recommendedCrossoverHz: 95
-simulations:
-  - driver: [bc-15ds115-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space"
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"
 recommendedFor:

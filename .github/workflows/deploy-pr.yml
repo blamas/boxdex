@@ -19,6 +19,8 @@ jobs:
 
   deploy-pr:
     needs: ci
+    # contribute/* PRs (intra-repo, bot-authored) preview too: the Worker sanitizes the MDX
+    # body so a build can't execute submitted content, and MAX_OPEN_CONTRIB_PRS caps the volume.
     if: >-
       success()
       && needs.ci.outputs.relevant == 'true'

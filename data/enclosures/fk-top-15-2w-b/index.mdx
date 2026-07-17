@@ -2,9 +2,35 @@
 name: FK Top 15 2W B
 category: top
 topology: bass_reflex
-drivers:
-  - rcf-l15p400-8
-  - faital-hf1000-8
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-l15p400-8
+        qty: 1
+      - driver: faital-hf1000-8
+        qty: 1
+    simulations:
+      - id: spl-lf
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-lf.csv
+      - id: spl-hf
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-hf.csv
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 80
 dims:
   wMm: 500
@@ -17,30 +43,6 @@ specs:
   sensitivityDb: 101
   coverageAngleDeg: 80
   recommendedCrossoverHz: 80
-simulations:
-  - driver:
-      - rcf-l15p400-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-lf.csv
-  - driver:
-      - faital-hf1000-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-hf.csv
-  - driver:
-      - rcf-l15p400-8
-      - faital-hf1000-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - rcf-l15p400-8
-      - faital-hf1000-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 license: CC0-1.0
 recommendedFor:
   - techno

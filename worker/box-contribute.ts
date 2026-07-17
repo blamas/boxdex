@@ -1,28 +1,47 @@
 // Structural guards only, no runtime zod: schema correctness is the PR's CI build gate.
 
 import {
+  type BoxContributeError,
+  type BoxContributeSuccess,
   type ContactEntryInput,
   type CurveEntryInput,
   type DesignSourceInput,
+  type DriverProfileInput,
   type EnclosureFrontmatterInput,
   type EnclosureInput,
   MAX_TOTAL_BYTES,
   requiredFieldErrors,
+  sanitizeMdxBody,
   validateUploads,
 } from "../src/lib/contribute";
 
-export interface BoxContributeEnv {
-  GITHUB_APP_ID: string;
-  GITHUB_APP_INSTALLATION_ID: string;
-  GITHUB_REPO_OWNER: string;
-  GITHUB_REPO_NAME: string;
+// GITHUB_APP_ID / INSTALLATION_ID / REPO_OWNER / REPO_NAME / ASSET_PREFIX are wrangler.toml
+// [vars], typed from the generated global `Env` (worker/worker-configuration.d.ts, regenerate
+// with `npm run wrangler:types`) so a rename there is a tsc error here instead of silent
+// runtime drift. Only the true `wrangler secret put` values are hand-declared, wrangler.toml
+// doesn't know about those.
+interface BoxContributeSecrets {
   GITHUB_APP_PRIVATE_KEY: string;
   TURNSTILE_SECRET: string;
   E2E_BYPASS_SECRET?: string;
 }
 
+export type BoxContributeEnv = BoxContributeSecrets &
+  Pick<
+    Env,
+    "GITHUB_APP_ID" | "GITHUB_APP_INSTALLATION_ID" | "GITHUB_REPO_OWNER" | "GITHUB_REPO_NAME"
+  > & {
+    // Optional here (unlike the runtime Env, where wrangler.toml always sets a default):
+    // BoxContributeEnv is also the type test fixtures build by hand, and most contribute tests
+    // never touch ASSET_PREFIX-gated behavior (the Turnstile e2e bypass).
+    ASSET_PREFIX?: Env["ASSET_PREFIX"];
+  };
+
 // Cloudflare's always-pass test secret, only reachable via the x-e2e-bypass header + secret.
 const TURNSTILE_TEST_SECRET = "1x0000000000000000000000000000000AA";
+
+// Caps the standing unreviewed backlog (and its preview-build CI cost) from farmed submissions.
+const MAX_OPEN_CONTRIB_PRS = 50;
 
 interface BoxContributePayload {
   frontmatter: EnclosureInput;
@@ -105,8 +124,7 @@ const KEY_ORDER = [
   "buildComplexity",
   "ways",
   "revision",
-  "driverCount",
-  "drivers",
+  "driverProfiles",
   "netVolumeL",
   "grossVolumeL",
   "dims",
@@ -115,8 +133,6 @@ const KEY_ORDER = [
   "sheetCount",
   "sheetSizeMm",
   "specs",
-  "simulations",
-  "measurements",
   "sources",
   "images",
   "plans",
@@ -137,14 +153,36 @@ type MissingFromKeyOrder = Exclude<
 >;
 const _keyOrderComplete: MissingFromKeyOrder extends never ? true : MissingFromKeyOrder = true;
 
-function orderCurve(c: CurveEntryInput): Record<string, unknown> {
+function orderCurveSet(cs: CurveEntryInput): Record<string, unknown> {
+  const curvesIn = (cs.curves ?? {}) as Record<string, { file: string; note?: string } | undefined>;
+  const curves: Record<string, unknown> = {};
+  for (const [kind, entry] of Object.entries(curvesIn)) {
+    if (!entry) continue;
+    curves[kind] = dropUndefined({ file: entry.file, note: entry.note });
+  }
   return dropUndefined({
-    driver: c.driver,
-    kind: c.kind,
-    source: c.source,
-    file: c.file,
-    count: c.count,
-    note: c.note,
+    id: cs.id,
+    source: cs.source,
+    curves: Object.keys(curves).length ? curves : undefined,
+    stacked: cs.stacked?.length
+      ? cs.stacked.map((s) => dropUndefined({ count: s.count, file: s.file, note: s.note }))
+      : undefined,
+  });
+}
+
+// Readable key order for one profile: id, drivers, then its own curve sets (reordered the same
+// way top-level simulations/measurements used to be, before they moved under driverProfiles).
+// Every nested object is projected through an explicit field list, same as orderCurveSet and
+// orderSource: KEY_ORDER only allowlists top-level keys, so a passthrough here would let
+// arbitrary payload keys reach the committed YAML.
+function orderDriverProfile(p: DriverProfileInput): Record<string, unknown> {
+  return dropUndefined({
+    id: p.id,
+    drivers: Array.isArray(p.drivers)
+      ? p.drivers.map((d) => dropUndefined({ driver: d.driver, qty: d.qty, horn: d.horn }))
+      : undefined,
+    simulations: p.simulations?.length ? p.simulations.map(orderCurveSet) : undefined,
+    measurements: p.measurements?.length ? p.measurements.map(orderCurveSet) : undefined,
   });
 }
 
@@ -164,10 +202,8 @@ function orderFields(fm: EnclosureInput): Record<string, unknown> {
     if (Array.isArray(v) && v.length === 0) continue;
     if (k === "specs" && isPlainObject(v)) {
       out.specs = dropUndefined(v);
-    } else if (k === "simulations" && Array.isArray(v)) {
-      out.simulations = (v as CurveEntryInput[]).map(orderCurve);
-    } else if (k === "measurements" && Array.isArray(v)) {
-      out.measurements = (v as CurveEntryInput[]).map(orderCurve);
+    } else if (k === "driverProfiles" && Array.isArray(v)) {
+      out.driverProfiles = (v as DriverProfileInput[]).map(orderDriverProfile);
     } else if (k === "sources" && Array.isArray(v)) {
       out.sources = (v as DesignSourceInput[]).map(orderSource);
     } else if (k === "contact" && Array.isArray(v)) {
@@ -181,7 +217,7 @@ function orderFields(fm: EnclosureInput): Record<string, unknown> {
 
 export function emitFrontmatter(fm: EnclosureInput, body?: string): string {
   const yaml = emitMapping(orderFields(fm), 0).join("\n");
-  const trimmed = (body ?? "").trim();
+  const trimmed = sanitizeMdxBody((body ?? "").trim());
   const bodyBlock = trimmed ? `${trimmed}\n` : "";
   return `---\n${yaml}\n---\n\n${bodyBlock}`;
 }
@@ -226,11 +262,17 @@ export function pemToArrayBuffer(pem: string): ArrayBuffer {
   return buf.buffer;
 }
 
-function json(status: number, body: unknown): Response {
+function json(status: number, body: BoxContributeSuccess | BoxContributeError): Response {
   return new Response(JSON.stringify(body), {
     status,
     headers: { "content-type": "application/json; charset=utf-8" },
   });
+}
+
+// Every non-2xx response uses this single shape ({ errors }), never the ad hoc { error } some
+// endpoints used to return: one contract for the client to parse regardless of failure cause.
+function errorJson(status: number, message: string): Response {
+  return json(status, { errors: [{ field: "", message }] });
 }
 
 const GH_API = "https://api.github.com";
@@ -302,15 +344,21 @@ async function installationToken(env: BoxContributeEnv): Promise<string> {
 // Dedupes against both merged content (data/enclosures/<slug> on main) and any branch already
 // named contribute/<slug>, the latter is what a still-open prior PR for the same name leaves
 // behind, and colliding with it fails ref creation in openPr with a 422.
-async function resolveSlug(name: string, token: string, env: BoxContributeEnv): Promise<string> {
+export async function resolveSlug(
+  name: string,
+  token: string,
+  env: BoxContributeEnv
+): Promise<string> {
   const base = slugify(name) || "box";
   const repo = `/repos/${env.GITHUB_REPO_OWNER}/${env.GITHUB_REPO_NAME}`;
   const [dirRes, refsRes] = await Promise.all([
     ghFetch(token, "GET", `${repo}/contents/data/enclosures`),
-    ghFetch(token, "GET", `${repo}/git/matching-refs/heads/contribute/`),
+    // per_page=100: matching-refs defaults to 30, too low for the cap.
+    ghFetch(token, "GET", `${repo}/git/matching-refs/heads/contribute/?per_page=100`),
   ]);
   const entries = dirRes.ok ? ((await dirRes.json()) as { name: string }[]) : [];
   const refs = refsRes.ok ? ((await refsRes.json()) as { ref: string }[]) : [];
+  if (refs.length >= MAX_OPEN_CONTRIB_PRS) throw new TooManyOpenError(refs.length);
   const taken = new Set([
     ...entries.map((e) => e.name),
     ...refs.map((r) => r.ref.replace(/^refs\/heads\/contribute\//, "")),
@@ -321,6 +369,12 @@ async function resolveSlug(name: string, token: string, env: BoxContributeEnv): 
 class BranchExistsError extends Error {
   constructor(branch: string) {
     super(`branch already exists: ${branch}`);
+  }
+}
+
+export class TooManyOpenError extends Error {
+  constructor(open: number) {
+    super(`too many open contribute PRs: ${open}`);
   }
 }
 
@@ -337,12 +391,35 @@ async function fileBase64(content: Blob | string): Promise<string> {
   return bytesToBase64(bytes);
 }
 
+// Invisible in GitHub's rendered PR body, present in the raw text findExistingSubmission reads
+// back: lets a client retry (after a dropped response, a false 502, ...) get the same PR back
+// instead of opening a duplicate.
+function submissionMarker(submissionId: string): string {
+  return `<!-- submission-id: ${submissionId} -->`;
+}
+
+// Best-effort dedup against a retried submission: search open PRs for this attempt's marker
+// before creating a new branch/commit/PR. A failed lookup (network blip) just falls through to
+// a normal create, same residual-risk shape as resolveSlug's own concurrent-slug race.
+async function findExistingSubmission(
+  token: string,
+  env: BoxContributeEnv,
+  submissionId: string
+): Promise<string | undefined> {
+  const repo = `/repos/${env.GITHUB_REPO_OWNER}/${env.GITHUB_REPO_NAME}`;
+  const res = await ghFetch(token, "GET", `${repo}/pulls?state=open&per_page=100`);
+  if (!res.ok) return undefined;
+  const prs = (await res.json()) as { html_url: string; body: string | null }[];
+  return prs.find((pr) => pr.body?.includes(submissionMarker(submissionId)))?.html_url;
+}
+
 async function openPr(
   env: BoxContributeEnv,
   token: string,
   slug: string,
   name: string,
-  files: RepoFile[]
+  files: RepoFile[],
+  submissionId?: string
 ): Promise<string> {
   const repo = `/repos/${env.GITHUB_REPO_OWNER}/${env.GITHUB_REPO_NAME}`;
 
@@ -393,20 +470,25 @@ async function openPr(
     title: `Add box: ${name}`,
     head: branch,
     base: "main",
-    body: prBody(slug, files),
+    body: prBody(slug, files, submissionId),
   });
   if (!prRes.ok) throw new Error(`pull: ${prRes.status}`);
   const pr = (await prRes.json()) as { html_url: string; number: number };
 
-  // Label is best-effort: a missing "box-contribute" label must not fail the submission.
-  await ghFetch(token, "POST", `${repo}/issues/${pr.number}/labels`, {
-    labels: ["box-contribute"],
-  });
+  // Label is best-effort: a missing "box-contribute" label must not fail (or 502-retry) a
+  // submission whose branch, commit, and PR already exist.
+  try {
+    await ghFetch(token, "POST", `${repo}/issues/${pr.number}/labels`, {
+      labels: ["box-contribute"],
+    });
+  } catch {
+    // ignored, see comment above
+  }
 
   return pr.html_url;
 }
 
-function prBody(slug: string, files: RepoFile[]): string {
+function prBody(slug: string, files: RepoFile[], submissionId?: string): string {
   const assets = files
     .map((f) => f.path.replace(`data/enclosures/${slug}/`, ""))
     .map((p) => `- ${p}`)
@@ -420,6 +502,7 @@ function prBody(slug: string, files: RepoFile[]): string {
     assets,
     "",
     "The CI build validates the frontmatter against the content schema.",
+    ...(submissionId ? ["", submissionMarker(submissionId)] : []),
   ].join("\n");
 }
 
@@ -427,43 +510,50 @@ export async function handleBoxContribute(
   request: Request,
   env: BoxContributeEnv
 ): Promise<Response> {
-  // Reject oversized bodies before formData() buffers everything into Worker memory.
+  // Fast-reject when a declared length already exceeds the cap. A missing/garbage header
+  // just skips this: validateUploads re-sums the parsed sizes as the real authority.
   const contentLength = Number(request.headers.get("content-length"));
-  if (contentLength > MAX_TOTAL_BYTES + 2 * 1024 * 1024) {
-    return json(413, { error: "request too large" });
+  if (Number.isFinite(contentLength) && contentLength > MAX_TOTAL_BYTES + 2 * 1024 * 1024) {
+    return errorJson(413, "request too large");
   }
 
   let form: FormData;
   try {
     form = await request.formData();
   } catch {
-    return json(400, { error: "expected multipart/form-data" });
+    return errorJson(400, "expected multipart/form-data");
   }
 
   const payloadRaw = form.get("payload");
   if (typeof payloadRaw !== "string") {
-    return json(400, { error: "missing payload" });
+    return errorJson(400, "missing payload");
   }
   let payload: BoxContributePayload;
   try {
     payload = JSON.parse(payloadRaw) as BoxContributePayload;
   } catch {
-    return json(400, { error: "payload is not valid JSON" });
+    return errorJson(400, "payload is not valid JSON");
   }
   const fm = payload.frontmatter;
   if (!fm || typeof fm !== "object") {
-    return json(400, { error: "payload.frontmatter missing" });
+    return errorJson(400, "payload.frontmatter missing");
   }
 
   const turnstileToken = form.get("cf-turnstile-response");
   if (typeof turnstileToken !== "string" || turnstileToken.length === 0) {
-    return json(400, { error: "missing Turnstile token" });
+    return errorJson(400, "missing Turnstile token");
   }
+
+  // Set by the client once per submit-attempt sequence, reused across retries of the same
+  // attempt so a dropped response or a false 502 doesn't open a duplicate PR.
+  const submissionIdRaw = form.get("submissionId");
+  const submissionId =
+    typeof submissionIdRaw === "string" && submissionIdRaw.length > 0 ? submissionIdRaw : undefined;
 
   // Non-string form entries are uploads, keyed by the filename the frontmatter references.
   const uploads: { name: string; size: number; blob: File }[] = [];
   for (const [k, v] of form.entries()) {
-    if (k === "payload" || k === "cf-turnstile-response") continue;
+    if (k === "payload" || k === "cf-turnstile-response" || k === "submissionId") continue;
     if (typeof v === "string") continue;
     uploads.push({ name: k, size: v.size, blob: v });
   }
@@ -472,17 +562,26 @@ export async function handleBoxContribute(
   const errors = [...requiredFieldErrors(fm), ...validateUploads(fm, uploads)];
   if (errors.length > 0) return json(422, { errors });
 
+  // Never honor the CAPTCHA bypass on production, even if the secret is somehow set there.
   const bypassed =
-    !!env.E2E_BYPASS_SECRET && request.headers.get("x-e2e-bypass") === env.E2E_BYPASS_SECRET;
+    env.ASSET_PREFIX !== "production" &&
+    !!env.E2E_BYPASS_SECRET &&
+    request.headers.get("x-e2e-bypass") === env.E2E_BYPASS_SECRET;
   const ok = await verifyTurnstile(
     bypassed ? TURNSTILE_TEST_SECRET : env.TURNSTILE_SECRET,
     turnstileToken,
     request.headers.get("cf-connecting-ip")
   );
-  if (!ok) return json(403, { error: "Turnstile verification failed" });
+  if (!ok) return errorJson(403, "Turnstile verification failed");
 
   try {
     const token = await installationToken(env);
+
+    if (submissionId) {
+      const existing = await findExistingSubmission(token, env, submissionId);
+      if (existing) return json(200, { prUrl: existing });
+    }
+
     const slug = await resolveSlug(fm.name ?? "box", token, env);
 
     const files: RepoFile[] = [
@@ -490,15 +589,16 @@ export async function handleBoxContribute(
       ...uploads.map((u) => ({ path: `data/enclosures/${slug}/${u.name}`, content: u.blob })),
     ];
 
-    const prUrl = await openPr(env, token, slug, fm.name ?? slug, files);
+    const prUrl = await openPr(env, token, slug, fm.name ?? slug, files, submissionId);
     return json(200, { prUrl });
   } catch (e) {
     console.log(JSON.stringify({ event: "add_box_error", message: String(e) }));
     if (e instanceof BranchExistsError) {
-      return json(409, {
-        error: "a submission with this name is already pending review, please retry",
-      });
+      return errorJson(409, "a submission with this name is already pending review, please retry");
     }
-    return json(502, { error: "failed to open pull request" });
+    if (e instanceof TooManyOpenError) {
+      return errorJson(429, "too many submissions are pending review, please try again later");
+    }
+    return errorJson(502, "failed to open pull request");
   }
 }

@@ -2,10 +2,19 @@
 name: FK Top Img 2W
 category: top
 topology: bass_reflex
-drivers:
-  - faital-12pr310-8
-  - bms-4545nd-8
-driverCount: 2
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-12pr310-8
+        qty: 1
+      - driver: bms-4545nd-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
 ways: 2
 netVolumeL: 65
 dims:
@@ -19,14 +28,6 @@ specs:
   sensitivityDb: 99
   maxSplDb: 127
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - faital-12pr310-8
-      - bms-4545nd-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements: []
 images:
   - render.png
   - photo-1.jpg

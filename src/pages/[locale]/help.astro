@@ -29,7 +29,7 @@ const furtherSections: [string, ResourceSection][] = [
   <div class="prose">
   <h1>{t.pages.help.title}</h1>
 
-  <nav class="toc">
+  <nav class="toc" aria-label={t.help.toc.ariaLabel}>
     <a href="#using">{t.help.toc.using}</a>
     <a href="#glossary">{t.help.toc.glossary}</a>
     <a href="#further">{t.help.toc.further}</a>
@@ -129,7 +129,7 @@ const furtherSections: [string, ResourceSection][] = [
     <h2>{glossary.heading}</h2>
     <p class="section-subtitle">{glossary.subtitle}</p>
 
-    <nav class="toc toc-glossary">
+    <nav class="toc toc-glossary" aria-label={glossary.tocLabel}>
       <a href="#glossary-driver">{glossary.driver.heading}</a>
       <a href="#glossary-horns">{glossary.horns.heading}</a>
       <a href="#glossary-system">{glossary.system.heading}</a>

@@ -2,11 +2,41 @@
 name: FK Top AltDrv
 category: top
 topology: bass_reflex
-drivers:
-  - rcf-l15p400-8
-  - faital-12pr310-8
-  - bms-4545nd-8
-driverCount: 2
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: rcf-l15p400-8
+        qty: 1
+      - driver: faital-12pr310-8
+        qty: 1
+      - driver: bms-4545nd-8
+        qty: 1
+    simulations:
+      - id: spl-lf-a-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-lf-a-1u.csv
+            note: "LF option A: 15\" sim"
+      - id: spl-lf-b-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-lf-b-1u.csv
+            note: "LF option B: 12\" sim"
+    measurements:
+      - id: meas-combined-a-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-combined-a-1u.csv
+            note: "Combined with option A measured"
+      - id: meas-combined-b-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-combined-b-1u.csv
+            note: "Combined with option B measured"
 ways: 2
 netVolumeL: 80
 dims:
@@ -19,34 +49,6 @@ specs:
   maxSplDb: 129
   powerAesW: 900
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - rcf-l15p400-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-lf-a-1u.csv
-    note: 'LF option A: 15" sim'
-  - driver:
-      - faital-12pr310-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-lf-b-1u.csv
-    note: 'LF option B: 12" sim'
-measurements:
-  - driver:
-      - rcf-l15p400-8
-      - bms-4545nd-8
-    kind: spl
-    source: rew_measured
-    file: meas-combined-a-1u.csv
-    note: Combined with option A measured
-  - driver:
-      - faital-12pr310-8
-      - bms-4545nd-8
-    kind: spl
-    source: rew_measured
-    file: meas-combined-b-1u.csv
-    note: Combined with option B measured
 plans: []
 license: CC0-1.0
 recommendedFor:

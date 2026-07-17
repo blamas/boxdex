@@ -2,12 +2,23 @@
 name: FK Sub Heaviest
 category: sub
 topology: bass_reflex
-drivers:
-  - pyle-pdw21250-8
-  - pyle-pdw21250-8
-  - pyle-pdw21250-8
-  - pyle-pdw21250-8
-driverCount: 4
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pyle-pdw21250-8
+        qty: 4
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
+    measurements:
+      - id: meas-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-1u.csv
 netVolumeL: 1800
 dims:
   wMm: 1100
@@ -20,18 +31,6 @@ specs:
   sensitivityDb: 100
   maxSplDb: 139
   impedanceNominalOhm: 2
-simulations:
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements:
-  - driver:
-      - pyle-pdw21250-8
-    kind: spl
-    source: rew_measured
-    file: meas-1u.csv
 plans: []
 license: CC0-1.0
 recommendedFor:

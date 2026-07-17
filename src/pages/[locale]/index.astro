@@ -16,7 +16,9 @@ const { t, localeBase } = useLocale(Astro.params);
   <div class="page-header">
     <h1>{t.pages.catalog.heading}</h1>
   </div>
-  <CatalogGrid client:only="svelte" t={t.catalogGrid} localeBase={localeBase} categoryLabels={t.categoryLabels} axisLabels={t.axisLabels} />
+  <div class="island-reserve">
+    <CatalogGrid client:only="svelte" t={t.catalogGrid} localeBase={localeBase} categoryLabels={t.categoryLabels} axisLabels={t.axisLabels} />
+  </div>
 </Layout>
 
 <style>
@@ -26,5 +28,10 @@ const { t, localeBase } = useLocale(Astro.params);
 
   h1 {
     margin-bottom: 0.5rem;
+  }
+
+  /* Reserve height so the client:only island hydrating in doesn't shift the page (CLS). */
+  .island-reserve {
+    min-height: 70vh;
   }
 </style>

@@ -1,21 +1,31 @@
 <script lang="ts">
-import { onMount } from "svelte";
+import { onMount, setContext } from "svelte";
 import taxonomy from "../../data/taxonomy.json";
 import type { Translations } from "../i18n";
+import { tt } from "../i18n";
 import { CATEGORIES } from "../lib/category";
 import {
+  type BoxContributeError,
+  type BoxContributeSuccess,
   buildFrontmatter,
-  type CurveRowState,
+  type CurveSetState,
   type EnclosureInput,
+  type NonStackedKind,
   ROLE_EXT,
   validateUploads,
 } from "../lib/contribute";
+import {
+  CONTRIBUTE_VALIDATION_CONTEXT,
+  translateFileIssue,
+  translateZodIssue,
+} from "../lib/contribute-i18n";
 import { CURVE_KINDS } from "../lib/csv";
 import {
   BUILD_COMPLEXITIES,
-  type Driver,
+  type DriverOption,
   enclosureFrontmatterObject,
   enclosureFrontmatterSchema,
+  type Horn,
   MEAS_SOURCES,
   SIM_SOURCES,
 } from "../lib/schemas";
@@ -27,15 +37,25 @@ let {
   t,
   categoryLabels,
   curveLabels,
+  specLabels,
   prodOrigin,
   turnstileSiteKey,
 }: {
   t: Translations["contributeBox"];
   categoryLabels: Translations["categoryLabels"];
   curveLabels: Translations["curveLabels"];
+  specLabels: Translations["enclosureDetail"]["specRows"];
   prodOrigin: string;
   turnstileSiteKey: string;
 } = $props();
+
+// LabeledInput reads this to localize its own "not a valid number" native-validity message.
+// Wrapped in a getter so it tracks `t` if the prop is ever reassigned, not just its initial value.
+setContext(CONTRIBUTE_VALIDATION_CONTEXT, {
+  get validation() {
+    return t.validation;
+  },
+});
 
 const TOPOLOGIES = taxonomy.topology;
 const LICENSES = taxonomy.license;
@@ -58,26 +78,146 @@ const GEOM_FIELDS = [
 ] as const;
 type GeomKey = (typeof GEOM_FIELDS)[number]["k"];
 
+// Maps a geometry form field to its path in the built frontmatter, for per-field zod errors.
+const GEOM_FIELD_PATH: Record<GeomKey, string> = {
+  hMm: "dims.hMm",
+  wMm: "dims.wMm",
+  dMm: "dims.dMm",
+  netVolumeL: "netVolumeL",
+  grossVolumeL: "grossVolumeL",
+  weightKg: "weightKg",
+  plywoodThicknessMm: "plywoodThicknessMm",
+  sheetCount: "sheetCount",
+  sheetW: "sheetSizeMm.wMm",
+  sheetH: "sheetSizeMm.hMm",
+};
+
+// Bounds read straight off enclosureFrontmatterObject's .min()/.max() checks, so the number
+// input's native min/max hint (spinner clamping, mobile keyboard) can never drift from the
+// zod-driven error text. Optionals are unwrapped until the ZodNumber underneath.
+function numBounds(schema: unknown): { min?: number; max?: number } {
+  let s = schema as {
+    unwrap?: () => unknown;
+    minValue?: number | null;
+    maxValue?: number | null;
+  };
+  while (typeof s.unwrap === "function") s = s.unwrap() as typeof s;
+  return { min: s.minValue ?? undefined, max: s.maxValue ?? undefined };
+}
+
+// Walk a dotted frontmatter path ("sheetSizeMm.wMm") down the schema's shapes.
+function schemaAt(path: string): unknown {
+  let node: unknown = enclosureFrontmatterObject;
+  for (const seg of path.split(".")) {
+    let n = node as { unwrap?: () => unknown; shape?: Record<string, unknown> };
+    while (typeof n.unwrap === "function") n = n.unwrap() as typeof n;
+    node = n.shape?.[seg];
+  }
+  return node;
+}
+
+const GEOM_FIELD_BOUNDS = Object.fromEntries(
+  GEOM_FIELDS.map((f) => [f.k, numBounds(schemaAt(GEOM_FIELD_PATH[f.k]))])
+) as Record<GeomKey, { min?: number; max?: number }>;
+
 // Pulled from the schema so a new spec field appears on the form without touching this file.
 const ADVANCED_SPECS = Object.keys(enclosureFrontmatterObject.shape.specs.shape).filter(
   (k) => k !== "f3Hz"
 );
 
-interface CurveRow {
-  driver: string[];
-  kind: string;
-  source: string;
+// Reuse the catalog's spec labels (enclosureDetail.specRows): schema key -> specRows key.
+const SPEC_LABEL_KEY: Record<string, keyof Translations["enclosureDetail"]["specRows"]> = {
+  f3HzHigh: "f3High",
+  f6Hz: "f6",
+  fbHz: "fb",
+  maxSplDb: "maxSpl",
+  maxSplExcursionDb: "maxSplExcursion",
+  maxSplThermalDb: "maxSplThermal",
+  sensitivityDb: "sensitivity",
+  impedanceMinOhm: "impedanceMin",
+  impedanceNominalOhm: "impedanceNominal",
+  recommendedPowerW: "recommendedPower",
+  powerAesW: "powerAes",
+  powerProgramW: "powerProgram",
+  coverageAngleDeg: "coverageAngle",
+  recommendedCrossoverHz: "recommendedCrossover",
+  hornCutoffHz: "hornCutoff",
+  hornMouthCm2: "hornMouth",
+  hornThroatCm2: "hornThroat",
+  maxVelocityMs: "maxPortVelocity",
+};
+function specLabel(k: string): string {
+  const lk = SPEC_LABEL_KEY[k];
+  return (lk && specLabels[lk]) || k;
+}
+
+// Same derivation for specs.*: every spec key's bounds come from the schema itself.
+const SPEC_BOUNDS: Record<string, { min?: number; max?: number }> = Object.fromEntries(
+  Object.entries(enclosureFrontmatterObject.shape.specs.shape).map(([k, s]) => [k, numBounds(s)])
+);
+
+// File-based mirror of CurveKindEntryState/StackedEntryState/CurveSetState (lib/contribute.ts):
+// the form holds File objects until submission, converted to filenames by curveSetRowOut.
+// `expanded` is UI-only (collapsible disclosure state), dropped by curveSetRowOut.
+interface CurveKindEntryRow {
+  file: File | null;
   note: string;
+}
+interface StackedEntryRow {
   count: number | null;
   file: File | null;
+  note: string;
 }
+interface CurveSetRow {
+  id: string;
+  source: string;
+  expanded: boolean;
+  curves: Partial<Record<NonStackedKind, CurveKindEntryRow>>;
+  stacked: StackedEntryRow[];
+}
+const NON_STACKED_KINDS = CURVE_KINDS.filter((k) => k !== "spl_stacked") as NonStackedKind[];
+
+function newCurveSet(source: string): CurveSetRow {
+  return { id: "", source, expanded: true, curves: {}, stacked: [] };
+}
+
+// Local mirror of DriverProfileState (lib/contribute.ts) plus UI-only `expanded`: kept local
+// rather than added to the shared type since that type is also the buildFrontmatter/test wire shape.
+interface DriverEntryRow {
+  id: string;
+  qty: number | null;
+  horn: string | null;
+}
+interface DriverProfileRow {
+  id: string;
+  expanded: boolean;
+  drivers: DriverEntryRow[];
+  simulations: CurveSetRow[];
+  measurements: CurveSetRow[];
+}
+
+function curveSetRowOut(cs: CurveSetRow): CurveSetState {
+  const curves: CurveSetState["curves"] = {};
+  for (const [kind, entry] of Object.entries(cs.curves)) {
+    if (!entry) continue;
+    curves[kind as NonStackedKind] = { file: entry.file?.name ?? null, note: entry.note };
+  }
+  return {
+    id: cs.id,
+    source: cs.source,
+    curves,
+    stacked: cs.stacked.map((s) => ({ count: s.count, file: s.file?.name ?? null, note: s.note })),
+  };
+}
+
 interface SourceRow {
   tool: string;
   file: File | null;
   note: string;
 }
 
-let drivers = $state<Driver[]>([]);
+let drivers = $state<DriverOption[]>([]);
+let horns = $state<Horn[]>([]);
 let loading = $state(true);
 let error = $state<string | null>(null);
 
@@ -89,9 +229,13 @@ let basics = $state({
   ways: null as number | null,
   revision: "",
   buildComplexity: "",
-  driverCount: null as number | null,
 });
-let driverIds = $state<string[]>([]);
+// Most boxes need only one profile: pre-fill "default" so the common case needs no typing.
+// Starts expanded since it's the only thing in the section. Newly-added profiles also start
+// expanded (you're about to fill them in). Collapsing is a manual per-profile choice otherwise.
+let driverProfiles = $state<DriverProfileRow[]>([
+  { id: "default", expanded: true, drivers: [], simulations: [], measurements: [] },
+]);
 let geom = $state<Record<GeomKey, number | null>>(
   Object.fromEntries(GEOM_FIELDS.map((f) => [f.k, null])) as Record<GeomKey, number | null>
 );
@@ -99,9 +243,6 @@ let f3Hz = $state<number | null>(null);
 let specs = $state<Record<string, number | null>>(
   Object.fromEntries(ADVANCED_SPECS.map((k) => [k, null]))
 );
-let showAdvancedSpecs = $state(false);
-let sims = $state<CurveRow[]>([]);
-let meas = $state<CurveRow[]>([]);
 let srcs = $state<SourceRow[]>([]);
 let images = $state<File[]>([]);
 let plans = $state<File[]>([]);
@@ -118,23 +259,58 @@ let turnstileEl: HTMLDivElement | undefined = $state();
 let submitting = $state(false);
 let serverErrors = $state<{ field: string; message: string }[]>([]);
 let prUrl = $state<string | null>(null);
+// One id per submit-attempt sequence: reused across retries so a dropped response or a
+// transient server error can't open a duplicate PR for the same attempt.
+const submissionId = crypto.randomUUID();
 
 function driverLabel(id: string): string {
   const d = drivers.find((x) => x.id === id);
   return d ? `${d.brand} ${d.model}` : id;
 }
 
+function addDriverEntry(pi: number, id: string) {
+  if (id && !driverProfiles[pi].drivers.some((de) => de.id === id)) {
+    driverProfiles[pi].drivers.push({ id, qty: 1, horn: null });
+  }
+}
+
+// Only compression drivers pair with a cataloged horn.
+function isCompression(id: string): boolean {
+  return drivers.find((d) => d.id === id)?.type === "compression";
+}
+
+// One-line summaries shown on the collapsed disclosure header, so a profile/curve-set collapsed
+// out of the way is still identifiable without expanding it.
+function profileSummary(p: DriverProfileRow): string {
+  const driverCount = p.drivers.reduce((sum, e) => sum + (e.qty ?? 0), 0);
+  return tt(t.profileSummary, {
+    drivers: driverCount,
+    sims: p.simulations.length,
+    meas: p.measurements.length,
+  });
+}
+
+function curveSetSummary(cs: CurveSetRow): string {
+  const label = cs.id || t.untitledCurveSet;
+  const kinds = NON_STACKED_KINDS.filter((k) => cs.curves[k]).map((k) => curveLabels[k] ?? k);
+  if (cs.stacked.length)
+    kinds.push(`${curveLabels.spl_stacked ?? "spl_stacked"} ×${cs.stacked.length}`);
+  return `${label} · ${cs.source} · ${kinds.length ? kinds.join(", ") : t.noCurvesYet}`;
+}
+
 // Assembly and omission semantics live in lib/contribute.ts; here we only swap Files for names.
-const rowOut = (r: CurveRow): CurveRowState => ({ ...r, file: r.file?.name ?? null });
 const frontmatter = $derived(
   buildFrontmatter({
     basics,
-    driverIds,
+    driverProfiles: driverProfiles.map((p) => ({
+      id: p.id,
+      drivers: p.drivers,
+      simulations: p.simulations.map(curveSetRowOut),
+      measurements: p.measurements.map(curveSetRowOut),
+    })),
     geom,
     f3Hz,
     specs,
-    sims: sims.map(rowOut),
-    meas: meas.map(rowOut),
     srcs: srcs.map((s) => ({ tool: s.tool, file: s.file?.name ?? null, note: s.note })),
     images: images.map((f) => f.name),
     plans: plans.map((f) => f.name),
@@ -150,7 +326,10 @@ const schemaIssues = $derived.by(() => {
   const r = enclosureFrontmatterSchema.safeParse(frontmatter);
   return r.success
     ? []
-    : r.error.issues.map((i) => ({ path: i.path.join("."), message: i.message }));
+    : r.error.issues.map((i) => ({
+        path: i.path.join("."),
+        message: translateZodIssue(i, t.validation),
+      }));
 });
 
 // File-level checks zod cannot see: the same validators from src/lib/contribute.ts the Worker runs.
@@ -158,7 +337,7 @@ const fileIssues = $derived(
   validateUploads(
     frontmatter as EnclosureInput,
     allFiles().map((f) => ({ name: f.name, size: f.size }))
-  ).map((e) => ({ path: e.field, message: e.message }))
+  ).map((e) => ({ path: e.field, message: translateFileIssue(e, t.validation) }))
 );
 
 const issues = $derived([...schemaIssues, ...fileIssues]);
@@ -171,38 +350,41 @@ const canSubmit = $derived(
   onProd && !submitting && issues.length === 0 && (turnstileSiteKey === "" || turnstileToken !== "")
 );
 
-function allFiles(): File[] {
+function curveSetFiles(cs: CurveSetRow): (File | null)[] {
   return [
-    ...images,
-    ...plans,
-    ...sims.map((r) => r.file),
-    ...meas.map((r) => r.file),
-    ...srcs.map((r) => r.file),
-  ].filter((f): f is File => f !== null);
+    ...Object.values(cs.curves).map((e) => e?.file ?? null),
+    ...cs.stacked.map((s) => s.file),
+  ];
+}
+
+function allFiles(): File[] {
+  const curveFiles = driverProfiles.flatMap((p) =>
+    [...p.simulations, ...p.measurements].flatMap(curveSetFiles)
+  );
+  return [...images, ...plans, ...curveFiles, ...srcs.map((r) => r.file)].filter(
+    (f): f is File => f !== null
+  );
 }
 
 function toggle(list: string[], value: string): string[] {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 }
 
-function addDriverTo(ids: string[], id: string): string[] {
-  return id && !ids.includes(id) ? [...ids, id] : ids;
-}
-
 function pickFiles(e: Event): File[] {
   return Array.from((e.target as HTMLInputElement).files ?? []);
-}
-
-function newCurve(source: string): CurveRow {
-  return { driver: [], kind: "spl", source, note: "", count: null, file: null };
 }
 
 onMount(async () => {
   onProd = !!prodOrigin && window.location.origin === prodOrigin;
   try {
-    const res = await fetch(`${BASE}/api/drivers.json`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    drivers = await res.json();
+    const [driversRes, hornsRes] = await Promise.all([
+      fetch(`${BASE}/api/driver-options.json`),
+      fetch(`${BASE}/api/horns.json`),
+    ]);
+    if (!driversRes.ok) throw new Error(`HTTP ${driversRes.status}`);
+    if (!hornsRes.ok) throw new Error(`HTTP ${hornsRes.status}`);
+    drivers = await driversRes.json();
+    horns = await hornsRes.json();
   } catch (e) {
     error = String(e);
   } finally {
@@ -261,17 +443,15 @@ async function submit() {
     const fd = new FormData();
     fd.append("payload", JSON.stringify({ frontmatter, body }));
     fd.append("cf-turnstile-response", turnstileToken);
+    fd.append("submissionId", submissionId);
     for (const f of allFiles()) fd.append(f.name, f);
     const res = await fetch(`${BASE}/api/box-contribute`, { method: "POST", body: fd });
     if (res.ok) {
-      const data = (await res.json()) as { prUrl: string };
+      const data = (await res.json()) as BoxContributeSuccess;
       prUrl = data.prUrl;
     } else {
-      const data = (await res.json().catch(() => ({}))) as {
-        errors?: { field: string; message: string }[];
-        error?: string;
-      };
-      serverErrors = data.errors ?? [{ field: "", message: data.error ?? t.serverError }];
+      const data = (await res.json().catch(() => ({ errors: [] }))) as BoxContributeError;
+      serverErrors = data.errors.length ? data.errors : [{ field: "", message: t.serverError }];
       // 422 is returned before the Worker touches Turnstile; anything else may have consumed the token.
       if (res.status !== 422) resetTurnstile();
     }
@@ -284,83 +464,127 @@ async function submit() {
 }
 </script>
 
-{#snippet driverPicker(ids: string[], onchange: (ids: string[]) => void)}
-  <div class="driver-picker">
-    {#if ids.length}
-      <div class="chips">
-        {#each ids as id}
-          <span class="chip chip-active">
-            {driverLabel(id)}
-            <button
-              type="button"
-              class="chip-x"
-              aria-label={t.remove}
-              onclick={() => onchange(ids.filter((x) => x !== id))}>×</button
-            >
-          </span>
-        {/each}
-      </div>
-    {/if}
-    <Combobox
-      items={drivers.filter((d) => !ids.includes(d.id))}
-      getId={(d) => d.id}
-      getLabel={(d) => `${d.brand} ${d.model}`}
-      placeholder={t.addDriver}
-      value=""
-      onselect={(id) => onchange(addDriverTo(ids, id))}
-    />
-  </div>
-{/snippet}
-
-{#snippet curveRows(rows: CurveRow[], sources: readonly string[])}
-  <!-- rows is a deep $state proxy: in-place mutation (splice included) is reactive. -->
-  {#each rows as row, i}
+{#snippet curveSetRows(sets: CurveSetRow[], sources: readonly string[], basePath: string)}
+  <!-- sets is a deep $state proxy: in-place mutation (splice included) is reactive. -->
+  {#each sets as cs, ci}
     <div class="row card">
       <div class="row-head">
-        <span class="result-count">#{i + 1}</span>
-        <button type="button" class="btn-ghost btn-sm" onclick={() => rows.splice(i, 1)}>
+        <button
+          type="button"
+          class="disclosure-toggle"
+          aria-expanded={cs.expanded}
+          onclick={() => {
+            sets[ci].expanded = !sets[ci].expanded;
+          }}
+        >
+          <span class="disclosure-arrow" aria-hidden="true">{cs.expanded ? "▾" : "▸"}</span>
+          <span>{curveSetSummary(cs)}</span>
+        </button>
+        <button type="button" class="btn-ghost btn-sm" onclick={() => sets.splice(ci, 1)}>
           {t.remove}
         </button>
       </div>
-      <label class="field">
-        <span>{t.rowDriver}</span>
-        {@render driverPicker(row.driver, (d) => {
-          rows[i].driver = d;
-        })}
-      </label>
+      {#if cs.expanded}
       <div class="grid-2">
-        <label class="field">
-          <span>{t.rowKind}</span>
-          <select bind:value={rows[i].kind}>
-            {#each CURVE_KINDS as k}
-              <option value={k}>{curveLabels[k] ?? k}</option>
-            {/each}
-          </select>
-        </label>
+        <LabeledInput
+          label={t.rowId}
+          bind:value={sets[ci].id}
+          errors={issuesFor(`${basePath}.${ci}.id`)}
+        />
         <label class="field">
           <span>{t.rowSource}</span>
-          <select bind:value={rows[i].source}>
+          <select bind:value={sets[ci].source}>
             {#each sources as s}
               <option value={s}>{s}</option>
             {/each}
           </select>
         </label>
       </div>
-      {#if row.kind === "spl_stacked"}
-        <LabeledInput type="number" label={t.rowCount} min={1} bind:value={rows[i].count} />
+      {#if !cs.id}<p class="hint">{t.rowIdHint}</p>{/if}
+
+      {#each NON_STACKED_KINDS as kind}
+        {@const entry = cs.curves[kind]}
+        {#if entry}
+          <div class="row card kind-entry">
+            <div class="row-head">
+              <span class="driver-row-label">{curveLabels[kind] ?? kind}</span>
+              <button
+                type="button"
+                class="btn-ghost btn-sm"
+                onclick={() => {
+                  delete sets[ci].curves[kind];
+                }}
+              >{t.remove}</button>
+            </div>
+            <label class="field">
+              <span>{t.rowFile}</span>
+              <input
+                type="file"
+                accept=".csv"
+                onchange={(e) => {
+                  const f = pickFiles(e)[0] ?? null;
+                  // biome-ignore lint/style/noNonNullAssertion: entry existing is this block's condition
+                  sets[ci].curves[kind]!.file = f;
+                }}
+              />
+              {#if entry.file}<span class="filename">{entry.file.name}</span>{/if}
+              {#each issuesFor(`${basePath}.${ci}.curves.${kind}.file`) as m}<span class="err">{m}</span>{/each}
+            </label>
+            <LabeledInput label={t.rowNote} bind:value={entry.note} />
+          </div>
+        {/if}
+      {/each}
+      <div class="chips">
+        {#each NON_STACKED_KINDS.filter((k) => !cs.curves[k]) as kind}
+          <button
+            type="button"
+            class="chip"
+            onclick={() => {
+              sets[ci].curves[kind] = { file: null, note: "" };
+            }}
+          >{t.addKindEntry} {curveLabels[kind] ?? kind}</button>
+        {/each}
+      </div>
+
+      {#each cs.stacked as stacked, si}
+        <div class="row card kind-entry">
+          <div class="row-head">
+            <span class="driver-row-label">{curveLabels.spl_stacked ?? "spl_stacked"} #{si + 1}</span>
+            <button
+              type="button"
+              class="btn-ghost btn-sm"
+              onclick={() => sets[ci].stacked.splice(si, 1)}
+            >{t.remove}</button>
+          </div>
+          <LabeledInput
+            type="number"
+            label={t.rowCount}
+            min={1}
+            bind:value={stacked.count}
+            errors={issuesFor(`${basePath}.${ci}.stacked.${si}.count`)}
+          />
+          <p class="hint">{t.rowCountHint}</p>
+          <label class="field">
+            <span>{t.rowFile}</span>
+            <input
+              type="file"
+              accept=".csv"
+              onchange={(e) => {
+                sets[ci].stacked[si].file = pickFiles(e)[0] ?? null;
+              }}
+            />
+            {#if stacked.file}<span class="filename">{stacked.file.name}</span>{/if}
+            {#each issuesFor(`${basePath}.${ci}.stacked.${si}.file`) as m}<span class="err">{m}</span>{/each}
+          </label>
+          <LabeledInput label={t.rowNote} bind:value={stacked.note} />
+        </div>
+      {/each}
+      <button
+        type="button"
+        class="btn-ghost btn-sm"
+        onclick={() => sets[ci].stacked.push({ count: null, file: null, note: "" })}
+      >{t.addStackedCount}</button>
       {/if}
-      <label class="field">
-        <span>{t.rowFile}</span>
-        <input
-          type="file"
-          accept=".csv"
-          onchange={(e) => {
-            rows[i].file = pickFiles(e)[0] ?? null;
-          }}
-        />
-        {#if row.file}<span class="filename">{row.file.name}</span>{/if}
-      </label>
-      <LabeledInput label={t.rowNote} bind:value={rows[i].note} />
     </div>
   {/each}
 {/snippet}
@@ -368,7 +592,15 @@ async function submit() {
 {#if error}
   <div class="empty-state">{t.failedToLoad}</div>
 {:else if loading}
-  <p class="muted">{t.loading}</p>
+  <div class="contribute" aria-hidden="true">
+    {#each { length: 3 } as _}
+      <section class="card">
+        <div class="skeleton skel-heading"></div>
+        <div class="skeleton skel-field"></div>
+        <div class="skeleton skel-field"></div>
+      </section>
+    {/each}
+  </div>
 {:else if prUrl}
   <div class="card success">
     <h2>{t.successTitle}</h2>
@@ -383,7 +615,13 @@ async function submit() {
 
     <section class="card">
       <h2>{t.basics}</h2>
-      <LabeledInput label={t.name} bind:value={basics.name} errors={issuesFor("name")} />
+      <LabeledInput
+        label={t.name}
+        bind:value={basics.name}
+        minlength={3}
+        maxlength={120}
+        errors={issuesFor("name")}
+      />
       <div class="grid-2">
         <label class="field">
           <span>{t.category}</span>
@@ -407,66 +645,182 @@ async function submit() {
         </label>
         <LabeledInput type="number" label={t.ways} min={1} max={4} bind:value={basics.ways} />
         <LabeledInput label={t.revision} bind:value={basics.revision} />
-        <LabeledInput type="number" label={t.driverCount} min={1} bind:value={basics.driverCount} />
+      </div>
+      <div class="field">
+        <span>{t.recommendedFor}</span>
+        <div class="chips">
+          {#each RECOMMENDED_FOR as r}
+            <button type="button" class="chip" class:chip-active={recommendedFor.includes(r)} aria-pressed={recommendedFor.includes(r)} onclick={() => { recommendedFor = toggle(recommendedFor, r); }}>{r}</button>
+          {/each}
+        </div>
       </div>
     </section>
 
     <section class="card">
-      <h2>{t.drivers}</h2>
-      {@render driverPicker(driverIds, (d) => {
-        driverIds = d;
-      })}
-      {#each issuesFor("drivers") as m}<span class="err">{m}</span>{/each}
+      <div class="row-head">
+        <h2>{t.drivers}</h2>
+        <button
+          type="button"
+          class="btn-ghost btn-sm"
+          onclick={() =>
+            driverProfiles.push({
+              id: "",
+              expanded: true,
+              drivers: [],
+              simulations: [],
+              measurements: [],
+            })}
+        >{t.addProfile}</button>
+      </div>
+      {#if driverProfiles.length === 1}<p class="hint">{t.profilesHint}</p>{/if}
+      {#each driverProfiles as profile, pi}
+        <div class="row card">
+          <div class="row-head">
+            <button
+              type="button"
+              class="disclosure-toggle"
+              aria-expanded={profile.expanded}
+              onclick={() => {
+                driverProfiles[pi].expanded = !driverProfiles[pi].expanded;
+              }}
+            >
+              <span class="disclosure-arrow" aria-hidden="true">{profile.expanded ? "▾" : "▸"}</span>
+              <span>{profile.id || t.untitledProfile} · {profileSummary(profile)}</span>
+            </button>
+            {#if driverProfiles.length > 1}
+              <button
+                type="button"
+                class="btn-ghost btn-sm"
+                onclick={() => driverProfiles.splice(pi, 1)}
+              >{t.removeProfile}</button>
+            {/if}
+          </div>
+          {#if profile.expanded}
+          <LabeledInput
+            label={t.profileName}
+            bind:value={driverProfiles[pi].id}
+            errors={issuesFor(`driverProfiles.${pi}.id`)}
+          />
+          {#each profile.drivers as de, di}
+            <div class="row card">
+              <div class="row-head">
+                <span class="driver-row-label">{driverLabel(de.id)}</span>
+                <button
+                  type="button"
+                  class="btn-ghost btn-sm"
+                  onclick={() => driverProfiles[pi].drivers.splice(di, 1)}
+                >{t.remove}</button>
+              </div>
+              <LabeledInput
+                type="number"
+                label={t.driverQty}
+                min={1}
+                bind:value={driverProfiles[pi].drivers[di].qty}
+                errors={issuesFor(`driverProfiles.${pi}.drivers.${di}.qty`)}
+              />
+              {#if isCompression(de.id)}
+                <label class="field">
+                  <span>{t.horn}</span>
+                  <Combobox
+                    items={horns}
+                    getId={(h) => h.id}
+                    getLabel={(h) => `${h.brand} ${h.model}`}
+                    emptyLabel={t.none}
+                    value={de.horn ?? ""}
+                    onselect={(id) => {
+                      driverProfiles[pi].drivers[di].horn = id || null;
+                    }}
+                  />
+                </label>
+                <p class="hint">{t.hornHint}</p>
+              {/if}
+            </div>
+          {/each}
+          <Combobox
+            items={drivers.filter((d) => !profile.drivers.some((de) => de.id === d.id))}
+            getId={(d) => d.id}
+            getLabel={(d) => `${d.brand} ${d.model}`}
+            placeholder={t.addDriver}
+            value=""
+            onselect={(id) => addDriverEntry(pi, id)}
+          />
+          {#each issuesFor(`driverProfiles.${pi}.drivers`) as m}<span class="err">{m}</span>{/each}
+
+          <div class="row-head">
+            <h3>{t.simulations}</h3>
+            <button
+              type="button"
+              class="btn-ghost btn-sm"
+              onclick={() => driverProfiles[pi].simulations.push(newCurveSet(SIM_SOURCES[0]))}
+            >{t.add}</button>
+          </div>
+          {#if profile.simulations.length === 0}<p class="hint">{t.curvesHint}</p>{/if}
+          {@render curveSetRows(driverProfiles[pi].simulations, SIM_SOURCES, `driverProfiles.${pi}.simulations`)}
+
+          <div class="row-head">
+            <h3>{t.measurements}</h3>
+            <button
+              type="button"
+              class="btn-ghost btn-sm"
+              onclick={() => driverProfiles[pi].measurements.push(newCurveSet(MEAS_SOURCES[0]))}
+            >{t.add}</button>
+          </div>
+          {#if profile.measurements.length === 0}<p class="hint">{t.curvesHint}</p>{/if}
+          {@render curveSetRows(driverProfiles[pi].measurements, MEAS_SOURCES, `driverProfiles.${pi}.measurements`)}
+          {/if}
+        </div>
+      {/each}
+      {#each issuesFor("driverProfiles") as m}<span class="err">{m}</span>{/each}
     </section>
 
     <section class="card">
       <h2>{t.geometry}</h2>
       <div class="grid-3">
         {#each GEOM_FIELDS as f}
-          <LabeledInput type="number" label={t[f.l]} bind:value={geom[f.k]} />
+          <LabeledInput
+            type="number"
+            label={t[f.l]}
+            bind:value={geom[f.k]}
+            min={GEOM_FIELD_BOUNDS[f.k].min}
+            max={GEOM_FIELD_BOUNDS[f.k].max}
+            errors={issuesFor(GEOM_FIELD_PATH[f.k])}
+          />
         {/each}
       </div>
-      {#each issuesFor("dims") as m}<span class="err">{m}</span>{/each}
-      {#each issuesFor("netVolumeL") as m}<span class="err">{m}</span>{/each}
     </section>
 
     <section class="card">
       <h2>{t.specs}</h2>
       <p class="hint">{t.specsHint}</p>
-      <LabeledInput type="number" label={t.f3Hz} bind:value={f3Hz} errors={issuesFor("specs.f3Hz")} />
-      <button
-        type="button"
-        class="advanced-toggle"
-        aria-expanded={showAdvancedSpecs}
-        onclick={() => {
-          showAdvancedSpecs = !showAdvancedSpecs;
-        }}
-      >
-        {t.advancedSpecs}
-      </button>
-      {#if showAdvancedSpecs}
-        <div class="grid-3">
-          {#each ADVANCED_SPECS as k}
-            <LabeledInput type="number" label={k} bind:value={specs[k]} />
+      <LabeledInput
+        type="number"
+        label={t.f3Hz}
+        bind:value={f3Hz}
+        min={SPEC_BOUNDS.f3Hz.min}
+        max={SPEC_BOUNDS.f3Hz.max}
+        errors={issuesFor("specs.f3Hz")}
+      />
+      <h3>{t.advancedSpecs}</h3>
+      <div class="grid-3">
+        {#each ADVANCED_SPECS as k}
+          <LabeledInput
+            type="number"
+            label={specLabel(k)}
+            bind:value={specs[k]}
+            min={SPEC_BOUNDS[k]?.min}
+            max={SPEC_BOUNDS[k]?.max}
+            errors={issuesFor(`specs.${k}`)}
+          />
+        {/each}
+      </div>
+      <div class="field">
+        <span>{t.connectors}</span>
+        <div class="chips">
+          {#each CONNECTORS as c}
+            <button type="button" class="chip" class:chip-active={connectors.includes(c)} aria-pressed={connectors.includes(c)} onclick={() => { connectors = toggle(connectors, c); }}>{c}</button>
           {/each}
         </div>
-      {/if}
-    </section>
-
-    <section class="card">
-      <div class="row-head">
-        <h2>{t.simulations}</h2>
-        <button type="button" class="btn-ghost btn-sm" onclick={() => sims.push(newCurve(SIM_SOURCES[0]))}>{t.add}</button>
       </div>
-      {@render curveRows(sims, SIM_SOURCES)}
-    </section>
-
-    <section class="card">
-      <div class="row-head">
-        <h2>{t.measurements}</h2>
-        <button type="button" class="btn-ghost btn-sm" onclick={() => meas.push(newCurve(MEAS_SOURCES[0]))}>{t.add}</button>
-      </div>
-      {@render curveRows(meas, MEAS_SOURCES)}
     </section>
 
     <section class="card">
@@ -514,7 +868,11 @@ async function submit() {
       <h2>{t.license}</h2>
       <label class="field">
         <span>{t.license}</span>
-        <select bind:value={lic.license}>
+        <select
+          bind:value={lic.license}
+          class:field-missing={issuesFor("license").length > 0 && !lic.license}
+          class:field-invalid={issuesFor("license").length > 0 && !!lic.license}
+        >
           <option value="">{t.licenseSelect}</option>
           {#each LICENSES as l}<option value={l}>{l}</option>{/each}
         </select>
@@ -524,22 +882,6 @@ async function submit() {
       <div class="grid-2">
         <LabeledInput label={t.author} bind:value={lic.author} />
         <LabeledInput label={t.sourceUrl} type="url" bind:value={lic.sourceUrl} errors={issuesFor("sourceUrl")} />
-      </div>
-      <div class="field">
-        <span>{t.recommendedFor}</span>
-        <div class="chips">
-          {#each RECOMMENDED_FOR as r}
-            <button type="button" class="chip" class:chip-active={recommendedFor.includes(r)} onclick={() => { recommendedFor = toggle(recommendedFor, r); }}>{r}</button>
-          {/each}
-        </div>
-      </div>
-      <div class="field">
-        <span>{t.connectors}</span>
-        <div class="chips">
-          {#each CONNECTORS as c}
-            <button type="button" class="chip" class:chip-active={connectors.includes(c)} onclick={() => { connectors = toggle(connectors, c); }}>{c}</button>
-          {/each}
-        </div>
       </div>
     </section>
 
@@ -579,7 +921,10 @@ async function submit() {
 
     <section class="card">
       <h2>{t.notes}</h2>
-      <textarea rows="6" bind:value={body} placeholder={t.notesPlaceholder}></textarea>
+      <label class="field">
+        <span class="sr-only">{t.notes}</span>
+        <textarea rows="6" bind:value={body} placeholder={t.notesPlaceholder}></textarea>
+      </label>
     </section>
 
     {#if issues.length}
@@ -621,9 +966,25 @@ async function submit() {
     gap: 0.75rem;
   }
 
+  .skel-heading {
+    height: 1rem;
+    width: 8rem;
+  }
+
+  .skel-field {
+    height: 2.2rem;
+    width: 100%;
+  }
+
   h2 {
     font-size: 1rem;
     margin: 0;
+  }
+
+  h3 {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0.25rem 0 0;
   }
 
   /* .field/.err come from global.css; only the bespoke controls need local rules. */
@@ -651,7 +1012,16 @@ async function submit() {
   }
 
   .row {
-    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Global .card:hover highlights the border on accent, meant for clickable catalog cards.
+     These nested cards are static form panels, and :hover matches every ancestor of whatever's
+     under the cursor, so without this every card up the nesting chain would light up at once. */
+  .card:hover {
+    border-color: var(--line);
   }
 
   .row-head {
@@ -661,25 +1031,50 @@ async function submit() {
     gap: 0.5rem;
   }
 
-  .chips {
+  .disclosure-toggle {
+    flex: 1;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .chip-x {
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
     background: none;
     border: none;
     color: inherit;
+    font: inherit;
+    text-align: left;
     cursor: pointer;
-    padding: 0 0 0 0.3rem;
-    font-size: 1rem;
-    line-height: 1;
+    padding: 0;
   }
 
-  .driver-picker {
+  .disclosure-toggle span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .disclosure-toggle:hover {
+    color: var(--accent);
+  }
+
+  .disclosure-arrow {
+    flex: none;
+    color: var(--muted);
+    font-size: 0.7rem;
+  }
+
+  /* Leaf-level entries (one kind's file+note, or one stacked count): lighter chrome than a
+     top-level .card so nesting reads as "inside this curve set" rather than another peer card. */
+  .kind-entry {
+    background: none;
+    border: none;
+    border-left: 2px solid var(--line);
+    border-radius: 0;
+    padding: 0.5rem 0 0.5rem 0.75rem;
+  }
+
+  .chips {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 0.4rem;
   }
 

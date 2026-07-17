@@ -2,9 +2,20 @@
 name: "15\" Bass Reflex"
 category: sub
 topology: bass_reflex
-drivers:
-  - bc-15sw115-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-15sw115-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space"
+          impedance:
+            file: impedance.csv
 netVolumeL: 120
 dims:
   hMm: 800
@@ -22,16 +33,6 @@ specs:
   powerProgramW: 3400
   impedanceMinOhm: 5.8
   recommendedCrossoverHz: 110
-simulations:
-  - driver: [bc-15sw115-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space"
-  - driver: [bc-15sw115-8]
-    kind: impedance
-    source: hornresp_sim
-    file: impedance.csv
 author: "Boxdex Sample"
 license: "CC-BY-SA-4.0"
 buildComplexity: simple

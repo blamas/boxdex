@@ -2,8 +2,17 @@
 name: FK FLH 18
 category: sub
 topology: front_loaded_horn
-drivers:
-  - faital-18hp1060-8
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18hp1060-8
+        qty: 1
+    simulations:
+      - id: spl-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-1u.csv
 netVolumeL: 350
 dims:
   wMm: 760
@@ -15,13 +24,6 @@ specs:
   sensitivityDb: 104
   hornCutoffHz: 40
   recommendedCrossoverHz: 120
-simulations:
-  - driver:
-      - faital-18hp1060-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-1u.csv
-measurements: []
 license: CC0-1.0
 recommendedFor:
   - tekno

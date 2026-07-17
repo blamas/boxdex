@@ -2,9 +2,18 @@
 name: "18\" Kickbin Bandpass"
 category: kick
 topology: bandpass
-drivers:
-  - bc-18ds115-8
-driverCount: 1
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-18ds115-8
+        qty: 1
+    simulations:
+      - id: spl
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl.csv
+            note: "1W/1m, half-space, bandpass response"
 netVolumeL: 90
 dims:
   hMm: 680
@@ -22,12 +31,6 @@ specs:
   powerProgramW: 2000
   impedanceMinOhm: 6.2
   recommendedCrossoverHz: 160
-simulations:
-  - driver: [bc-18ds115-8]
-    kind: spl
-    source: hornresp_sim
-    file: spl.csv
-    note: "1W/1m, half-space, bandpass response"
 recommendedFor:
   - tekno
   - tribe

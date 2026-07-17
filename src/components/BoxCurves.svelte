@@ -6,10 +6,14 @@ import { CURVE_KINDS, type CurveKind, type ParsedCurve, toPairs } from "../lib/c
 import {
   availSplCounts,
   type CurvesResponse,
+  curveLabel,
+  curvesForProfile,
   DISPLAY_KINDS,
+  type DriverCurves,
+  firstAvailableKind,
   initialCurveView,
 } from "../lib/curves";
-import { SERIES_COLORS } from "../lib/echarts";
+import { SERIES_COLORS } from "../lib/palette";
 
 import { BASE } from "../lib/site";
 import CurveChart from "./CurveChart.svelte";
@@ -26,6 +30,7 @@ let { slug, name, t, curveLabels }: Props = $props();
 let data = $state<CurvesResponse | null>(null);
 let error = $state<string | null>(null);
 let activeTab = $state<"sim" | "meas">("sim");
+let activeProfileId = $state("");
 let activeDriverIdx = $state(0);
 let activeKind = $state<CurveKind>("spl");
 let activeStackCount = $state<number | null>(null);
@@ -36,7 +41,8 @@ onMount(async () => {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
     if (data) {
-      const initial = initialCurveView(data);
+      activeProfileId = data.driverProfiles[0]?.id ?? "";
+      const initial = initialCurveView(data, activeProfileId);
       activeTab = initial.tab;
       activeKind = initial.kind;
     }
@@ -45,9 +51,14 @@ onMount(async () => {
   }
 });
 
-const activeGroup = $derived(
-  data ? (activeTab === "meas" ? data.measurements : data.simulations) : []
-);
+// Single-profile boxes skip filtering entirely (every curve trivially belongs to it already).
+function groupFor(tab: "sim" | "meas", profileId: string): DriverCurves[] {
+  if (!data) return [];
+  const raw = tab === "meas" ? data.measurements : data.simulations;
+  return data.driverProfiles.length > 1 ? curvesForProfile(raw, profileId) : raw;
+}
+
+const activeGroup = $derived(groupFor(activeTab, activeProfileId));
 
 const activeDriver = $derived(activeGroup[activeDriverIdx] ?? null);
 
@@ -111,8 +122,24 @@ function switchTab(tab: "sim" | "meas") {
   activeTab = tab;
   activeDriverIdx = 0;
   activeStackCount = null;
-  const group = tab === "meas" ? data?.measurements : data?.simulations;
-  activeKind = DISPLAY_KINDS.find((k) => group?.[0]?.curves[k]) ?? "spl";
+  activeKind = firstAvailableKind(groupFor(tab, activeProfileId));
+}
+
+function switchProfile(id: string) {
+  activeProfileId = id;
+  activeDriverIdx = 0;
+  activeStackCount = null;
+  // The current tab may have no curves for the newly selected profile (e.g. an alt profile
+  // with only simulations): keep the active tab if it still has data, else fall back to
+  // whichever tab does.
+  const measGroup = groupFor("meas", id);
+  const simGroup = groupFor("sim", id);
+  if (activeTab === "meas" && measGroup.length === 0 && simGroup.length > 0) {
+    activeTab = "sim";
+  } else if (activeTab === "sim" && simGroup.length === 0 && measGroup.length > 0) {
+    activeTab = "meas";
+  }
+  activeKind = firstAvailableKind(activeTab === "meas" ? measGroup : simGroup);
 }
 
 function switchDriver(idx: number) {
@@ -129,12 +156,30 @@ function switchKind(kind: CurveKind) {
 {#if error}
   <div class="empty-state">{tt(t.failedToLoad, { error })}</div>
 {:else if !data}
-  <div class="empty-state">{t.loading}</div>
+  <div class="box-curves" aria-hidden="true">
+    <div class="controls">
+      <div class="skeleton skel-pill"></div>
+      <div class="skeleton skel-pill skel-pill-narrow"></div>
+      <div class="skeleton skel-pill"></div>
+    </div>
+    <div class="skeleton skel-chart"></div>
+  </div>
 {:else if data.simulations.length === 0 && data.measurements.length === 0}
   <div class="empty-state">{t.noData}</div>
 {:else}
   <div class="box-curves">
     <div class="controls">
+      {#if data.driverProfiles.length > 1}
+        <div class="tab-pills">
+          {#each data.driverProfiles as profile}
+            <button
+              class:active={activeProfileId === profile.id}
+              onclick={() => switchProfile(profile.id)}
+            >{profile.id}</button>
+          {/each}
+        </div>
+      {/if}
+
       <div class="tab-group">
         {#if data.measurements.length > 0}
           <button class:active={activeTab === "meas"} onclick={() => switchTab("meas")}>
@@ -152,7 +197,7 @@ function switchKind(kind: CurveKind) {
         <div class="tab-group">
           {#each activeGroup as dc, i}
             <button class:active={activeDriverIdx === i} onclick={() => switchDriver(i)}>
-              {dc.driverId}
+              {curveLabel(dc)}
             </button>
           {/each}
         </div>
@@ -211,4 +256,17 @@ function switchKind(kind: CurveKind) {
     align-items: center;
   }
 
+  .skel-pill {
+    height: 1.8rem;
+    width: 9rem;
+    border-radius: 4px;
+  }
+
+  .skel-pill-narrow {
+    width: 6rem;
+  }
+
+  .skel-chart {
+    height: 360px;
+  }
 </style>

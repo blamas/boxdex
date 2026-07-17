@@ -221,6 +221,11 @@ function sortIndicator(key: SortKey) {
   if (sortKey !== key) return "";
   return sortAsc ? " ↑" : " ↓";
 }
+
+function ariaSort(key: SortKey): "ascending" | "descending" | "none" {
+  if (sortKey !== key) return "none";
+  return sortAsc ? "ascending" : "descending";
+}
 </script>
 
 <div class="tab-pills">
@@ -386,14 +391,28 @@ function sortIndicator(key: SortKey) {
     <table>
       <thead>
         <tr>
-          <th class="check-col"></th>
-          <th class="sortable" onclick={() => toggleSort("brand")}>{t.columns.brandModel}{sortIndicator("brand")}</th>
-          <th class="sortable num" onclick={() => toggleSort("exitInch")}>{t.columns.exit}{sortIndicator("exitInch")}</th>
-          <th class="sortable num" onclick={() => toggleSort("coverageHorizontalDeg")}>{t.columns.hDeg}{sortIndicator("coverageHorizontalDeg")}</th>
-          <th class="sortable num" onclick={() => toggleSort("coverageVerticalDeg")}>{t.columns.vDeg}{sortIndicator("coverageVerticalDeg")}</th>
-          <th class="sortable num" onclick={() => toggleSort("cutoffHz")}>{t.columns.cutoffHz}{sortIndicator("cutoffHz")}</th>
-          <th class="sortable num" onclick={() => toggleSort("mouthCm2")}>{t.columns.mouthCm2}{sortIndicator("mouthCm2")}</th>
-          <th class="sortable num" onclick={() => toggleSort("depthMm")}>{t.columns.depthMm}{sortIndicator("depthMm")}</th>
+          <th class="check-col"><span class="sr-only">{t.columns.select}</span></th>
+          <th class="sortable" aria-sort={ariaSort("brand")}>
+            <button type="button" onclick={() => toggleSort("brand")}>{t.columns.brandModel}{sortIndicator("brand")}</button>
+          </th>
+          <th class="sortable num" aria-sort={ariaSort("exitInch")}>
+            <button type="button" onclick={() => toggleSort("exitInch")}>{t.columns.exit}{sortIndicator("exitInch")}</button>
+          </th>
+          <th class="sortable num" aria-sort={ariaSort("coverageHorizontalDeg")}>
+            <button type="button" onclick={() => toggleSort("coverageHorizontalDeg")}>{t.columns.hDeg}{sortIndicator("coverageHorizontalDeg")}</button>
+          </th>
+          <th class="sortable num" aria-sort={ariaSort("coverageVerticalDeg")}>
+            <button type="button" onclick={() => toggleSort("coverageVerticalDeg")}>{t.columns.vDeg}{sortIndicator("coverageVerticalDeg")}</button>
+          </th>
+          <th class="sortable num" aria-sort={ariaSort("cutoffHz")}>
+            <button type="button" onclick={() => toggleSort("cutoffHz")}>{t.columns.cutoffHz}{sortIndicator("cutoffHz")}</button>
+          </th>
+          <th class="sortable num" aria-sort={ariaSort("mouthCm2")}>
+            <button type="button" onclick={() => toggleSort("mouthCm2")}>{t.columns.mouthCm2}{sortIndicator("mouthCm2")}</button>
+          </th>
+          <th class="sortable num" aria-sort={ariaSort("depthMm")}>
+            <button type="button" onclick={() => toggleSort("depthMm")}>{t.columns.depthMm}{sortIndicator("depthMm")}</button>
+          </th>
           <th>{t.columns.profile}</th>
           <th>{t.columns.ds}</th>
         </tr>
@@ -404,6 +423,7 @@ function sortIndicator(key: SortKey) {
             <td class="check-col">
               <input
                 type="checkbox"
+                aria-label={tt(t.selectRow, { name: `${h.brand} ${h.model}` })}
                 checked={selected.has(h.id)}
                 disabled={!selected.has(h.id) && selected.size >= 4}
                 onchange={() => toggleSelect(h.id)}
@@ -428,27 +448,61 @@ function sortIndicator(key: SortKey) {
     <table>
       <thead>
         <tr>
-          <th class="check-col"></th>
-          <th class="sortable" onclick={() => toggleSort("brand")}>{t.columns.brandModel}{sortIndicator("brand")}</th>
+          <th class="check-col"><span class="sr-only">{t.columns.select}</span></th>
+          <th class="sortable" aria-sort={ariaSort("brand")}>
+            <button type="button" onclick={() => toggleSort("brand")}>{t.columns.brandModel}{sortIndicator("brand")}</button>
+          </th>
           {#if isCone}
-            <th class="sortable num" onclick={() => toggleSort("sizeInch")}>{t.columns.size}{sortIndicator("sizeInch")}</th>
-            <th class="sortable num" onclick={() => toggleSort("impedanceOhm")}>{t.columns.impedanceOhm}{sortIndicator("impedanceOhm")}</th>
-            <th class="sortable num" onclick={() => toggleSort("fsHz")}>{t.columns.fs}{sortIndicator("fsHz")}</th>
-            <th class="sortable num" onclick={() => toggleSort("qts")}>{t.columns.qts}{sortIndicator("qts")}</th>
+            <th class="sortable num" aria-sort={ariaSort("sizeInch")}>
+              <button type="button" onclick={() => toggleSort("sizeInch")}>{t.columns.size}{sortIndicator("sizeInch")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("impedanceOhm")}>
+              <button type="button" onclick={() => toggleSort("impedanceOhm")}>{t.columns.impedanceOhm}{sortIndicator("impedanceOhm")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("fsHz")}>
+              <button type="button" onclick={() => toggleSort("fsHz")}>{t.columns.fs}{sortIndicator("fsHz")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("qts")}>
+              <button type="button" onclick={() => toggleSort("qts")}>{t.columns.qts}{sortIndicator("qts")}</button>
+            </th>
             <th class="num" title={t.columns.ebpTitle}>{t.columns.ebp}</th>
-            <th class="sortable num" onclick={() => toggleSort("vasL")}>{t.columns.vas}{sortIndicator("vasL")}</th>
-            <th class="sortable num" onclick={() => toggleSort("xmaxMm")}>{t.columns.xmax}{sortIndicator("xmaxMm")}</th>
-            <th class="sortable num" onclick={() => toggleSort("peW")}>{t.columns.pe}{sortIndicator("peW")}</th>
-            <th class="sortable num" onclick={() => toggleSort("sensitivityDb")}>{t.columns.sens}{sortIndicator("sensitivityDb")}</th>
+            <th class="sortable num" aria-sort={ariaSort("vasL")}>
+              <button type="button" onclick={() => toggleSort("vasL")}>{t.columns.vas}{sortIndicator("vasL")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("xmaxMm")}>
+              <button type="button" onclick={() => toggleSort("xmaxMm")}>{t.columns.xmax}{sortIndicator("xmaxMm")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("peW")}>
+              <button type="button" onclick={() => toggleSort("peW")}>{t.columns.pe}{sortIndicator("peW")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("sensitivityDb")}>
+              <button type="button" onclick={() => toggleSort("sensitivityDb")}>{t.columns.sens}{sortIndicator("sensitivityDb")}</button>
+            </th>
           {:else}
-            <th class="sortable num" onclick={() => toggleSort("exitInch")}>{t.columns.exit}{sortIndicator("exitInch")}</th>
-            <th class="sortable num" onclick={() => toggleSort("impedanceOhm")}>{t.columns.impedanceOhm}{sortIndicator("impedanceOhm")}</th>
-            <th class="sortable num" onclick={() => toggleSort("voiceCoilMm")}>{t.columns.vcMm}{sortIndicator("voiceCoilMm")}</th>
-            <th class="sortable num" onclick={() => toggleSort("fLowHz")}>{t.columns.lowHz}{sortIndicator("fLowHz")}</th>
-            <th class="sortable num" onclick={() => toggleSort("fHighHz")}>{t.columns.highHz}{sortIndicator("fHighHz")}</th>
-            <th class="sortable num" onclick={() => toggleSort("minCrossoverHz")}>{t.columns.minXover}{sortIndicator("minCrossoverHz")}</th>
-            <th class="sortable num" onclick={() => toggleSort("peW")}>{t.columns.aesW}{sortIndicator("peW")}</th>
-            <th class="sortable num" onclick={() => toggleSort("sensitivityHornDb")}>{t.columns.sens}{sortIndicator("sensitivityHornDb")}</th>
+            <th class="sortable num" aria-sort={ariaSort("exitInch")}>
+              <button type="button" onclick={() => toggleSort("exitInch")}>{t.columns.exit}{sortIndicator("exitInch")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("impedanceOhm")}>
+              <button type="button" onclick={() => toggleSort("impedanceOhm")}>{t.columns.impedanceOhm}{sortIndicator("impedanceOhm")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("voiceCoilMm")}>
+              <button type="button" onclick={() => toggleSort("voiceCoilMm")}>{t.columns.vcMm}{sortIndicator("voiceCoilMm")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("fLowHz")}>
+              <button type="button" onclick={() => toggleSort("fLowHz")}>{t.columns.lowHz}{sortIndicator("fLowHz")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("fHighHz")}>
+              <button type="button" onclick={() => toggleSort("fHighHz")}>{t.columns.highHz}{sortIndicator("fHighHz")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("minCrossoverHz")}>
+              <button type="button" onclick={() => toggleSort("minCrossoverHz")}>{t.columns.minXover}{sortIndicator("minCrossoverHz")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("peW")}>
+              <button type="button" onclick={() => toggleSort("peW")}>{t.columns.aesW}{sortIndicator("peW")}</button>
+            </th>
+            <th class="sortable num" aria-sort={ariaSort("sensitivityHornDb")}>
+              <button type="button" onclick={() => toggleSort("sensitivityHornDb")}>{t.columns.sens}{sortIndicator("sensitivityHornDb")}</button>
+            </th>
           {/if}
           <th>{t.columns.ds}</th>
         </tr>
@@ -459,6 +513,7 @@ function sortIndicator(key: SortKey) {
             <td class="check-col">
               <input
                 type="checkbox"
+                aria-label={tt(t.selectRow, { name: `${d.brand} ${d.model}` })}
                 checked={selected.has(d.id)}
                 disabled={!selected.has(d.id) && selected.size >= 4}
                 onchange={() => toggleSelect(d.id)}
@@ -588,13 +643,24 @@ function sortIndicator(key: SortKey) {
   }
 
   th.sortable {
+    white-space: nowrap;
+  }
+
+  th.sortable button {
+    all: unset;
     cursor: pointer;
     user-select: none;
     white-space: nowrap;
   }
 
-  th.sortable:hover {
+  th.sortable button:hover,
+  th.sortable button:focus-visible {
     color: var(--text);
+  }
+
+  th.sortable button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   .check-col {

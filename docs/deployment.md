@@ -47,7 +47,7 @@ The box-contribute endpoint additionally needs two **Worker secrets**, set with
 |---------------|-------------|
 | `GITHUB_APP_PRIVATE_KEY` | PEM private key of the GitHub App that opens contribution PRs |
 | `TURNSTILE_SECRET` | Turnstile secret key for `siteverify` |
-| `E2E_BYPASS_SECRET` (optional) | If set, a request with header `x-e2e-bypass` matching this value verifies against Cloudflare's documented always-pass Turnstile test secret instead of `TURNSTILE_SECRET`, letting an internal test script drive the real production form without a human solving Turnstile. Unset in normal operation; only needed while running such a test. |
+| `E2E_BYPASS_SECRET` (optional) | If set, a request with header `x-e2e-bypass` matching this value verifies against Cloudflare's documented always-pass Turnstile test secret instead of `TURNSTILE_SECRET`, letting an internal test script drive the real production form without a human solving Turnstile. Unset in normal operation, only needed while running such a test. It never takes effect when `ASSET_PREFIX` is `production`. |
 
 ---
 
@@ -164,7 +164,7 @@ One-time setup, in order:
 5. **Worker secrets**: `wrangler secret put GITHUB_APP_PRIVATE_KEY` (paste the PEM)
    and `wrangler secret put TURNSTILE_SECRET`.
 6. **Site key for the island**: set the `PUBLIC_TURNSTILE_SITE_KEY` Actions variable
-   (the deploy workflow passes it into the production build; Astro exposes
+   (the deploy workflow passes it into the production build, Astro exposes
    `PUBLIC_`-prefixed vars to the client, the value is public and safe).
 
 Until these are done the endpoint returns errors but the form still loads and
@@ -173,6 +173,14 @@ previews client-side validation.
 The PR itself: branch `contribute/<slug>`, title `Add box: <name>`, commit message
 `feat: add box <name>`, files under `data/enclosures/<slug>/` only. The PR's CI build
 is the schema-correctness gate.
+
+**Abuse hardening**: the committed MDX body is sanitized (`sanitizeMdxBody`) so a submission
+cannot execute at build time, which is what makes it safe to let `contribute/*` PRs build
+previews. Volume is bounded by three gates: Turnstile (server-verified, single-use tokens),
+a duplicate-slug 409, and `MAX_OPEN_CONTRIB_PRS` (rejects with 429 once the open-contribute
+backlog hits the cap). The site runs on `*.workers.dev`, so zone-level WAF rate-limiting is
+not available: if per-IP throttling is wanted later, use the Workers rate-limit binding keyed
+on `cf-connecting-ip`, not a WAF rule.
 
 ---
 
@@ -183,6 +191,6 @@ At current scale:
 - **Worker invocations**: 100k/day free; Cache API cuts R2 reads for production.
 - **R2 storage and egress**: free at this scale (egress from R2 to Workers is always free).
 - **R2 Class A operations** (writes): the checksum-based sync means only changed files
-  are written per deploy; unchanged chunks cost nothing.
+  are written per deploy, unchanged chunks cost nothing.
 - **R2 Class B operations** (reads): each uncached Worker invocation reads one object.
   Cache API keeps this low for production traffic.

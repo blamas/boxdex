@@ -149,23 +149,17 @@ function scanForCrossing(
   return undefined;
 }
 
-// First frequency (scanning low→high) where two curves' own SPL values are equal, or the
-// closest they ever get to it, so there's always a starting point.
+// First frequency where the two curves' own SPL values are equal, or the closest approach.
 //
-// When the curves already share real data, the search spans that plus up to
-// EXTRAPOLATION_OCTAVES further, extending only the low curve past its own edge, the
-// natural "does the box above eventually overtake it" question, matched against the high
-// curve's own real data. Deliberately not symmetric: also extrapolating the high curve
-// backward here would pit the low curve's unrelated far-low behavior (its own subsonic
-// rolloff, say) against a guess, which found real, misleading crossings in testing rather
-// than a meaningful handoff.
+// When the curves share real data, the search extends only the LOW curve past its own edge
+// (the "does the box above eventually overtake it" question), matched against the high
+// curve's real data. Deliberately asymmetric: extrapolating the high curve backward here
+// pits the low curve's unrelated far-low behavior (subsonic rolloff) against a guess, which
+// found misleading crossings in testing rather than a real handoff. When the curves share no
+// real data, that bias is gone, so both get a bounded symmetric reach to bridge the gap.
 //
-// When the curves don't share any real data at all, there's no such bias to worry about
-// (each curve's data simply stops right where the gap begins), so both get a bounded,
-// symmetric chance to reach toward each other and bridge a small gap.
-//
-// Only undefined when the curves are too far apart to reach at all (in frequency, or in
-// level: see MAX_APPROX_DIFF_DB), even with that extrapolation: never invented past that.
+// undefined only when they're too far apart to reach at all (frequency, or MAX_APPROX_DIFF_DB
+// in level), never invented past that.
 export function findCrossingHz(
   lowPoints: [number, number][],
   highPoints: [number, number][]

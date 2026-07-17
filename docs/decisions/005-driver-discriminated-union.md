@@ -27,13 +27,13 @@ every driver JSON file. Files live under `data/drivers/cone/` or
 folder is not part of the identity.
 
 Islands receive the inferred `Driver` type from `src/lib/schemas.ts` via type-only
-imports; zod never reaches a browser bundle.
+imports, zod never reaches a browser bundle.
 
 ## Alternatives Considered
 
 ### Single flat schema with all fields optional
 - Pros: simpler schema, one type everywhere.
-- Cons: any field is valid on any driver; a CD sensitivity value silently accepted on a
+- Cons: any field is valid on any driver, a CD sensitivity value silently accepted on a
   cone driver would corrupt SPL calculations. TypeScript would have no way to narrow
   which fields are present. EBP hints and Vb calculations would need defensive checks
   throughout.
@@ -41,8 +41,8 @@ imports; zod never reaches a browser bundle.
   contributor discipline.
 
 ### Two separate Astro content collections (`drivers-cone`, `drivers-compression`)
-- Pros: each collection has its own schema; no union type needed.
-- Cons: enclosure frontmatter references drivers by id; with two collections the
+- Pros: each collection has its own schema, no union type needed.
+- Cons: enclosure frontmatter references drivers by id, with two collections the
   reference resolution would need to search both, and the UI's "all drivers" catalog
   view would need to merge and sort two separate collections. The union type is cleaner.
 - Rejected: the discriminated union gives the same type safety in one collection with
@@ -51,7 +51,7 @@ imports; zod never reaches a browser bundle.
 ### Horns as a third driver variant
 - The horn/waveguide catalogue is physically stored under `data/drivers/horns/` but is
   its own Astro collection excluded from the drivers glob (`pattern: ["cone/**",
-  "compression/**"]`). Horns are not transducers; they mate with compression drivers
+  "compression/**"]`). Horns are not transducers, they mate with compression drivers
   via `exitInch` throat match. Treating them as a third driver variant would conflate
   two different domain concepts.
 - Rejected: horns are a separate catalogue, not a driver type.
@@ -67,4 +67,4 @@ imports; zod never reaches a browser bundle.
   collection glob pattern both need updating.
 - `minCrossoverHz` on compression drivers is the CD's protection floor. For multi-way
   enclosures with internal crossovers, this floor does not constrain the system
-  crossover; it is baked into the `EnclosureRecord` only for all-compression boxes.
+  crossover, it is baked into the `EnclosureRecord` only for all-compression boxes.

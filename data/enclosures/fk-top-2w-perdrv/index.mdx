@@ -2,10 +2,33 @@
 name: FK Top 2W PerDrv
 category: top
 topology: bass_reflex
-drivers:
-  - faital-12pr310-8
-  - bms-4545nd-8
-driverCount: 2
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-12pr310-8
+        qty: 1
+      - driver: bms-4545nd-8
+        qty: 1
+    simulations:
+      - id: spl-lf-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-lf-1u.csv
+            note: "LF section sim"
+      - id: spl-hf-1u
+        source: hornresp_sim
+        curves:
+          spl:
+            file: spl-hf-1u.csv
+            note: "HF section sim"
+    measurements:
+      - id: meas-combined-1u
+        source: rew_measured
+        curves:
+          spl:
+            file: meas-combined-1u.csv
+            note: "Combined 2-way measured"
 ways: 2
 netVolumeL: 65
 dims:
@@ -18,27 +41,6 @@ specs:
   maxSplDb: 128
   powerAesW: 600
   recommendedCrossoverHz: 100
-simulations:
-  - driver:
-      - faital-12pr310-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-lf-1u.csv
-    note: LF section sim
-  - driver:
-      - bms-4545nd-8
-    kind: spl
-    source: hornresp_sim
-    file: spl-hf-1u.csv
-    note: HF section sim
-measurements:
-  - driver:
-      - faital-12pr310-8
-      - bms-4545nd-8
-    kind: spl
-    source: rew_measured
-    file: meas-combined-1u.csv
-    note: Combined 2-way measured
 plans: []
 license: CC0-1.0
 recommendedFor:

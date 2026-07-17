@@ -1,6 +1,7 @@
 import { getCollection } from "astro:content";
+import type { APIRoute } from "astro";
 
-export async function GET() {
+export const GET: APIRoute = async () => {
   const entries = await getCollection("drivers");
   // Group cones first (sorted by size), then compression drivers (sorted by exit).
   const drivers = entries
@@ -16,4 +17,4 @@ export async function GET() {
       return 0;
     });
   return Response.json(drivers);
-}
+};

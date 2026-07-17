@@ -36,7 +36,7 @@ becomes valid in enclosure frontmatter immediately.
   (`npm run schema:gen`), and a commit that touches `src/`. Contributors adding
   content must understand the schema code. The enum values are duplicated between the
   zod schema and any place that renders them (filter chips, display labels).
-- Rejected: vocabulary additions are data changes, not code changes; conflating the
+- Rejected: vocabulary additions are data changes, not code changes, conflating the
   two raises the barrier for content contributors.
 
 ### Separate TypeScript file of const arrays
@@ -47,7 +47,7 @@ becomes valid in enclosure frontmatter immediately.
 - Rejected: same contributor friction as the hardcoded approach.
 
 ### Derive vocabularies from existing data (scan `data/` at build time)
-- Pros: no manual taxonomy file; adding a new topology is implicit from the first
+- Pros: no manual taxonomy file, adding a new topology is implicit from the first
   enclosure that uses it.
 - Cons: the first use of a new value would succeed silently even if misspelled.
   The vocabulary becomes open by default (any string is valid until two entries
@@ -57,7 +57,7 @@ becomes valid in enclosure frontmatter immediately.
 
 ## Consequences
 - `data/taxonomy.json` is the single source of truth for all closed enums. Adding a
-  value there is sufficient; no code change needed.
+  value there is sufficient, no code change needed.
 - The JSON import loses TypeScript literal types, so `enumOf()` casts to
   `[string, ...string[]]` to satisfy `z.enum`'s non-empty tuple requirement. The
   type of fields using `enumOf()` is `string` in TypeScript, not a narrow literal

@@ -88,6 +88,12 @@ const p = t.pages.privacy;
     line-height: 1.6;
   }
 
+  /* --accent and --muted are near-identical luminance in light theme: underline keeps
+     the inline link distinguishable from the surrounding muted text (WCAG 1.4.1). */
+  .intro a {
+    text-decoration: underline;
+  }
+
   .easter-egg {
     color: var(--muted);
     font-family: var(--font-mono);

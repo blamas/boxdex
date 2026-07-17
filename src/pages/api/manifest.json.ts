@@ -33,36 +33,58 @@ export const GET: APIRoute = async () => {
       specs: data.specs,
     });
 
+    // First profile is the box's reference/canonical build: scalar per-build facts (count,
+    // impedance, crossover floor) are derived from it. Other profiles are alternates, valid
+    // but not what the catalog's numeric facets describe.
+    const primary = data.driverProfiles[0];
+    const driverCount = primary.drivers.reduce((sum, e) => sum + e.qty, 0);
+
     // Nominal load: stated, or the driver's nominal for a single-driver box. Multi-driver
     // internal wiring is unknown, left undefined rather than guessed.
     const nominalImpedanceOhm =
       data.specs.impedanceNominalOhm ??
-      (data.driverCount === 1 && data.drivers.length === 1
-        ? driverImpedanceMap.get(data.drivers[0].id)
-        : undefined);
+      (driverCount === 1 ? driverImpedanceMap.get(primary.drivers[0].driver.id) : undefined);
 
     // A CD's protection floor only constrains the *system* crossover into the box
     // when the CD is what the crossover feeds, i.e. an all-compression box. In a
     // multi-way box with cones, the internal crossover already protects the CD.
-    const allCompression = data.drivers.every((ref) => driverMinXoMap.has(ref.id));
+    const allCompression = primary.drivers.every((e) => driverMinXoMap.has(e.driver.id));
     const cdFloors = allCompression
-      ? data.drivers
-          .map((ref) => driverMinXoMap.get(ref.id))
+      ? primary.drivers
+          .map((e) => driverMinXoMap.get(e.driver.id))
           .filter((v): v is number => v !== undefined)
       : [];
 
+    // Display entries keep their real qty (a size/exit facet carries no count). undefined
+    // size/exit fields drop out of the JSON at stringify time.
+    const primaryDrivers = primary.drivers.map((e) => ({
+      qty: e.qty,
+      sizeInch: driverSizeMap.get(e.driver.id),
+      exitInch: compressionExitMap.get(e.driver.id),
+    }));
+
+    // Curve sets live under each profile now: union across all of them, same rationale as the
+    // driver-membership facets above.
+    const allSimSets = data.driverProfiles.flatMap((p) => p.simulations);
+    const allMeasSets = data.driverProfiles.flatMap((p) => p.measurements);
+
+    // Membership facets (which drivers/sizes/exits this box can use) union across every
+    // declared profile, so faceted search finds a box even when a size/driver is only
+    // available in an alternate build, not just the primary one.
+    const allDriverRefs = data.driverProfiles.flatMap((p) => p.drivers);
+
     const driverSizes = [
       ...new Set(
-        data.drivers
-          .map((ref) => driverSizeMap.get(ref.id))
+        allDriverRefs
+          .map((e) => driverSizeMap.get(e.driver.id))
           .filter((s): s is number => s !== undefined)
       ),
     ].sort((a, b) => a - b);
 
     const compressionExits = [
       ...new Set(
-        data.drivers
-          .map((ref) => compressionExitMap.get(ref.id))
+        allDriverRefs
+          .map((e) => compressionExitMap.get(e.driver.id))
           .filter((s): s is number => s !== undefined)
       ),
     ].sort((a, b) => a - b);
@@ -73,22 +95,25 @@ export const GET: APIRoute = async () => {
       category: data.category,
       topology: data.topology,
       topologyVariant: data.topologyVariant,
-      driverCount: data.driverCount,
-      drivers: data.drivers.map((ref) => ref.id),
+      driverCount,
+      primaryDrivers,
+      drivers: [...new Set(allDriverRefs.map((e) => e.driver.id))],
       driverSizes,
       compressionExits,
       ways: data.ways,
       recommendedFor: data.recommendedFor,
       verified: data.verified,
-      provenance: provenanceOf(data.measurements),
+      provenance: provenanceOf(allMeasSets),
       buildComplexity: data.buildComplexity,
       hasPlans: data.plans.length > 0,
-      hasMeasurements: data.measurements.length > 0,
+      hasMeasurements: allMeasSets.length > 0,
       availableKinds: [
-        ...new Set([
-          ...data.simulations.map((s) => s.kind),
-          ...data.measurements.map((m) => m.kind),
-        ]),
+        ...new Set(
+          [...allSimSets, ...allMeasSets].flatMap((cs) => [
+            ...Object.keys(cs.curves),
+            ...(cs.stacked?.length ? ["spl_stacked"] : []),
+          ])
+        ),
       ],
       recommendedCrossoverHz: data.specs.recommendedCrossoverHz,
       coverageAngleDeg: data.specs.coverageAngleDeg,

@@ -44,14 +44,14 @@ at build time. Interactive components are Svelte islands hydrated client-side
 
 ### 11ty (pure static)
 - Pros: extremely lightweight, no JS runtime.
-- Cons: no first-class island system; adding Svelte or React components requires custom
+- Cons: no first-class island system, adding Svelte or React components requires custom
   build glue. Zod integration for content validation would be manual.
 - Rejected: content validation and island hydration are first-class requirements.
 
 ## Consequences
 - Every content change (add a driver, edit an enclosure) requires a full rebuild and
   deploy to become visible. Acceptable given the contributor model.
-- No server-side personalisation is possible. Acceptable; the site is intentionally
+- No server-side personalisation is possible. Acceptable, the site is intentionally
   public and stateless.
 - Build failures from bad data references are caught before any user sees the site.
 - `SITE_URL` and `SITE_BASE` are injected at build time, keeping the output

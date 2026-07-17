@@ -87,7 +87,7 @@ const regions = $derived.by(() => {
 
 {#if slots.length > 0}
   <div class="strip">
-    <svg viewBox="0 0 {W} {svgHeight}" width="100%" aria-label="Frequency range strip">
+    <svg viewBox="0 0 {W} {svgHeight}" width={W} height={svgHeight} aria-label="Frequency range strip">
       {#each regions as r}
         <rect
           x={r.x}
@@ -154,6 +154,12 @@ const regions = $derived.by(() => {
 <style>
   .strip {
     width: 100%;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .strip svg {
+    display: block;
+    min-width: 480px;
   }
 </style>
