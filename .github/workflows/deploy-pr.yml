@@ -8,9 +8,13 @@ concurrency:
   group: deploy-pr-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
+permissions: {}
+
 jobs:
   ci:
     if: github.event.action != 'closed'
+    permissions:
+      contents: read
     uses: ./.github/workflows/ci.yml
 
   deploy-pr:
