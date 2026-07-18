@@ -41,7 +41,7 @@ const { text }: { text: string } = $props();
     box-shadow: var(--shadow-md);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.12s;
+    transition: opacity var(--transition-fast);
   }
 
   .tip:hover .tip-bubble,

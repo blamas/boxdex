@@ -31,6 +31,7 @@ let tab = $state<Tab>("cone");
 let filterBrand = $state("all");
 let filterSize = $state("all"); // size (cone) | exit (compression, horn)
 let filterImpedance = $state("all");
+let nameFilter = $state("");
 // cone advanced
 let maxFs = $state<number | "">("");
 let minQts = $state<number | "">("");
@@ -114,6 +115,7 @@ const filtered = $derived(
       brand: filterBrand,
       size: filterSize,
       impedance: filterImpedance,
+      name: nameFilter,
       maxFs,
       minQts,
       maxQts,
@@ -133,6 +135,7 @@ const filteredHorns = $derived(
       brand: filterBrand,
       exit: filterSize,
       profile: filterProfile,
+      name: nameFilter,
       maxCutoff,
     }),
     sortKey,
@@ -151,27 +154,33 @@ const visibleDrivers = $derived(filtered.slice(0, limit));
 const visibleHorns = $derived(filteredHorns.slice(0, limit));
 const hiddenCount = $derived(resultCount - (isHorn ? visibleHorns.length : visibleDrivers.length));
 
-const advancedFilterCount = $derived(
-  isCone
-    ? (maxFs !== "" ? 1 : 0) +
+const typeAdvancedFilterCount = $derived(
+  isHorn
+    ? 0
+    : isCone
+      ? (maxFs !== "" ? 1 : 0) +
         (minQts !== "" ? 1 : 0) +
         (maxQts !== "" ? 1 : 0) +
         (minXmax !== "" ? 1 : 0) +
         (minPe !== "" ? 1 : 0)
-    : (maxCrossover !== "" ? 1 : 0) + (minSens !== "" ? 1 : 0)
+      : (maxCrossover !== "" ? 1 : 0) + (minSens !== "" ? 1 : 0)
 );
+
+const advancedFilterCount = $derived((nameFilter !== "" ? 1 : 0) + typeAdvancedFilterCount);
 
 const activeFilterCount = $derived(
   (filterBrand !== "all" ? 1 : 0) +
     (filterSize !== "all" ? 1 : 0) +
     (filterImpedance !== "all" ? 1 : 0) +
-    (isHorn ? (filterProfile !== "all" ? 1 : 0) + (maxCutoff !== "" ? 1 : 0) : advancedFilterCount)
+    (isHorn ? (filterProfile !== "all" ? 1 : 0) + (maxCutoff !== "" ? 1 : 0) : 0) +
+    advancedFilterCount
 );
 
 function clearFilters() {
   filterBrand = "all";
   filterSize = "all";
   filterImpedance = "all";
+  nameFilter = "";
   maxFs = "";
   minQts = "";
   maxQts = "";
@@ -303,23 +312,34 @@ function ariaSort(key: SortKey): "ascending" | "descending" | "none" {
           onselect={(v) => (filterImpedance = v)}
         />
       </label>
-      <button
-        class="advanced-toggle"
-        class:active={showAdvanced}
-        onclick={() => (showAdvanced = !showAdvanced)}
-      >
-        {t.advanced} {showAdvanced ? "▴" : "▾"}
-        {#if !showAdvanced && advancedFilterCount > 0}
-          <span class="advanced-toggle-count">{advancedFilterCount}</span>
-        {/if}
-      </button>
     {/if}
+    <button
+      class="advanced-toggle"
+      class:active={showAdvanced}
+      onclick={() => (showAdvanced = !showAdvanced)}
+    >
+      {t.advanced} {showAdvanced ? "▴" : "▾"}
+      {#if !showAdvanced && advancedFilterCount > 0}
+        <span class="advanced-toggle-count">{advancedFilterCount}</span>
+      {/if}
+    </button>
     {#if activeFilterCount > 0}
       <button class="clear-btn btn-ghost" onclick={clearFilters}>
         {tt(t.clearN, { n: activeFilterCount })}
       </button>
     {/if}
   </div>
+
+  {#if showAdvanced}
+    <div class="filter-row adv-row">
+      <input
+        type="text"
+        class="name-filter-input"
+        placeholder={t.search}
+        bind:value={nameFilter}
+      />
+    </div>
+  {/if}
 
   {#if showAdvanced && !isHorn}
     <div class="filter-row adv-row">
@@ -578,6 +598,11 @@ function ariaSort(key: SortKey): "ascending" | "descending" | "none" {
     flex-wrap: wrap;
   }
 
+  .filter-row:not(.adv-row) + .filter-row.adv-row {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line);
+  }
+
   .filter-row label {
     display: flex;
     flex-direction: column;
@@ -589,6 +614,13 @@ function ariaSort(key: SortKey): "ascending" | "descending" | "none" {
 
   .filter-row input[type="number"] {
     width: 100px;
+  }
+
+  .adv-row input.name-filter-input {
+    width: 100%;
+    max-width: 440px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
   }
 
   .filter-footer {
@@ -614,10 +646,6 @@ function ariaSort(key: SortKey): "ascending" | "descending" | "none" {
     opacity: 0.85;
   }
 
-  .adv-row {
-    padding-top: 0.5rem;
-    border-top: 1px solid var(--line);
-  }
 
   .advanced-toggle {
     align-self: flex-end;

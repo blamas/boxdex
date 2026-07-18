@@ -296,7 +296,7 @@ const visibleCards = $derived(displayed.slice(0, limit));
     padding: 0.2rem 0.6rem;
     border-radius: 3px;
     cursor: pointer;
-    transition: border-color 0.1s, color 0.1s;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
   }
 
   .add-btn:hover {

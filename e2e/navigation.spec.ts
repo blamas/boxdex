@@ -28,34 +28,35 @@ test("drivers page deep-links the horn tab via ?tab=horn", async ({ page }) => {
   await expect(page.getByRole("button", { name: /horn/i })).toHaveClass(/active/);
 });
 
-test("enclosure detail page loads", async ({ page }) => {
-  await page.goto("/en/enclosures/bass-reflex-18/");
+// Data-agnostic: discover a real enclosure from the catalog rather than hardcoding a
+// slug, so regenerating the (synthetic) enclosure data never breaks navigation E2E.
+// The specific merged-curve-set tab behaviour is unit-tested in test/curves.test.ts.
+test("enclosure detail page loads and renders its curve chart", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("pageerror", (err) => errors.push(err.message));
+
+  await page.goto("/en/find");
+  const firstBox = page.locator('a[href*="/enclosures/"]').first();
+  await expect(firstBox).toBeVisible();
+  await firstBox.click();
+
+  await expect(page).toHaveURL(/\/enclosures\//);
   await expect(page.locator("main#main-content")).toBeVisible();
+  // The box's curves island renders a tab group and a chart canvas (no assertion about
+  // which specific kinds/counts appear, which depends on the discovered box's data).
+  await expect(page.locator(".box-curves .tab-group").first()).toBeVisible();
+  await expect(page.locator(".box-curves canvas").first()).toBeVisible();
+  expect(errors).toEqual([]);
 });
 
-test("enclosure curves render kind and stacked-count tabs from one merged curve set", async ({
-  page,
-}) => {
-  // fake-th118's spl+phase+impedance (plus 1x/4x/6x stacked SPL) all live in a single curve-set
-  // object per driverProfiles[].simulations entry: assert they render as one merged tab group
-  // rather than fragmenting back into separate rows.
-  await page.goto("/en/enclosures/fake-th118/");
-  // .tab-group order: [0] measurement/simulation toggle, [1] kind tabs, [2] stacked-count tabs
-  // (spl is the default active kind, so the count row is already showing).
-  const tabGroups = page.locator(".box-curves .controls .tab-group");
-  const kindTabs = tabGroups.nth(1);
-  await expect(kindTabs.getByRole("button", { name: "SPL (dB)" })).toBeVisible();
-  await expect(kindTabs.getByRole("button", { name: "Phase (°)" })).toBeVisible();
-  await expect(kindTabs.getByRole("button", { name: "Impedance (Ω)" })).toBeVisible();
-
-  const countTabs = tabGroups.nth(2);
-  await expect(countTabs.getByRole("button", { name: "1×" })).toBeVisible();
-  await expect(countTabs.getByRole("button", { name: "4×" })).toBeVisible();
-  await expect(countTabs.getByRole("button", { name: "6×" })).toBeVisible();
-});
-
+// Horns live under data/drivers/** which this work never touches, but discover one
+// anyway so the spec stays independent of any single horn id.
 test("horn detail page loads", async ({ page }) => {
-  await page.goto("/en/horns/bc-me7/");
+  await page.goto("/en/drivers?tab=horn");
+  const firstHorn = page.locator('a[href*="/horns/"]').first();
+  await expect(firstHorn).toBeVisible();
+  await firstHorn.click();
+  await expect(page).toHaveURL(/\/horns\//);
   await expect(page.locator("main#main-content")).toBeVisible();
 });
 

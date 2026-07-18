@@ -6,10 +6,12 @@ import { withAll } from "../lib/combobox-items";
 import { humanize } from "../lib/format";
 import {
   axisComboboxItems,
+  type EnclosureColumnKey,
   type EnclosureRecord,
   filterEnclosures,
   type MetricKey,
   metricKeyOf,
+  sortEnclosuresByColumn,
   sortRecords,
 } from "../lib/metrics";
 import { BASE } from "../lib/site";
@@ -39,6 +41,7 @@ let minSpl = $state<number | "">("");
 let minVol = $state<number | "">("");
 let maxVol = $state<number | "">("");
 let driverCountFilter = $state("all");
+let nameFilter = $state("");
 let hasMeasurementsOnly = $state(false);
 let hasPlansOnly = $state(false);
 let verifiedOnly = $state(false);
@@ -47,6 +50,30 @@ let verifiedOnly = $state(false);
 // (Svelte discards the override the next time `category` actually changes).
 const defaultSortKey = (cat: CategoryFilter): MetricKey => (cat === "top" ? "f3HzHigh" : "volumeL");
 let sortKey: MetricKey = $derived(defaultSortKey(category));
+
+// Clicking a column header takes over sorting with raw ascending/descending
+// semantics, independent of the "Sort by" combobox's best-first ordering.
+// Picking from the combobox hands control back to it.
+let colSortKey = $state<EnclosureColumnKey | undefined>(undefined);
+let colSortAsc = $state(true);
+
+function toggleColSort(key: EnclosureColumnKey) {
+  if (colSortKey === key) colSortAsc = !colSortAsc;
+  else {
+    colSortKey = key;
+    colSortAsc = true;
+  }
+}
+
+function colSortIndicator(key: EnclosureColumnKey) {
+  if (colSortKey !== key) return "";
+  return colSortAsc ? " ↑" : " ↓";
+}
+
+function colAriaSort(key: EnclosureColumnKey): "ascending" | "descending" | "none" {
+  if (colSortKey !== key) return "none";
+  return colSortAsc ? "ascending" : "descending";
+}
 
 const allTopologies = $derived([...new Set(records.map((r) => r.topology))].sort());
 
@@ -91,25 +118,29 @@ onMount(async () => {
 let limit = $state(ROW_LIMIT);
 let tableWrap = $state<HTMLElement | undefined>(undefined);
 
+const filteredResults = $derived(
+  filterEnclosures(records, {
+    category,
+    topology,
+    driverSize,
+    driverCount: driverCountFilter,
+    name: nameFilter,
+    tags: selectedTags,
+    minF3,
+    maxF3,
+    minSpl,
+    minVol,
+    maxVol,
+    measuredOnly: hasMeasurementsOnly,
+    plansOnly: hasPlansOnly,
+    verifiedOnly,
+  })
+);
+
 const results = $derived(
-  sortRecords(
-    filterEnclosures(records, {
-      category,
-      topology,
-      driverSize,
-      driverCount: driverCountFilter,
-      tags: selectedTags,
-      minF3,
-      maxF3,
-      minSpl,
-      minVol,
-      maxVol,
-      measuredOnly: hasMeasurementsOnly,
-      plansOnly: hasPlansOnly,
-      verifiedOnly,
-    }),
-    sortKey
-  )
+  colSortKey
+    ? sortEnclosuresByColumn(filteredResults, colSortKey, colSortAsc)
+    : sortRecords(filteredResults, sortKey)
 );
 
 const visibleResults = $derived(results.slice(0, limit));
@@ -119,6 +150,7 @@ function clearFilters() {
   topology = "all";
   driverSize = "all";
   driverCountFilter = "all";
+  nameFilter = "";
   selectedTags = [];
   maxF3 = "";
   minF3 = "";
@@ -138,11 +170,14 @@ function fmt(v: number | undefined, unit: string) {
 let showAdvanced = $state(false);
 
 const basicFilterCount = $derived(
-  (category !== "all" ? 1 : 0) + (topology !== "all" ? 1 : 0) + (driverSize !== "all" ? 1 : 0)
+  (category !== "all" ? 1 : 0) +
+    (topology !== "all" ? 1 : 0) +
+    (driverSize !== "all" ? 1 : 0) +
+    (driverCountFilter !== "all" ? 1 : 0)
 );
 
 const advancedFilterCount = $derived(
-  (driverCountFilter !== "all" ? 1 : 0) +
+  (nameFilter !== "" ? 1 : 0) +
     selectedTags.length +
     (maxF3 !== "" ? 1 : 0) +
     (minF3 !== "" ? 1 : 0) +
@@ -194,6 +229,17 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
         />
       </label>
       <label>
+        <span>{t.driverCount}</span>
+        <Combobox
+          items={driverCountItems}
+          getId={(i) => i.id}
+          getLabel={(i) => i.label}
+          value={driverCountFilter}
+          searchable={false}
+          onselect={(v) => (driverCountFilter = v)}
+        />
+      </label>
+      <label>
         <span>{t.sortBy}</span>
         <Combobox
           items={sortKeyItems}
@@ -203,7 +249,10 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
           searchable={false}
           onselect={(v) => {
             const key = metricKeyOf(v);
-            if (key) sortKey = key;
+            if (key) {
+              sortKey = key;
+              colSortKey = undefined;
+            }
           }}
         />
       </label>
@@ -224,17 +273,15 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
 
     {#if showAdvanced}
       <div class="filter-row adv-row">
-        <label>
-          <span>{t.driverCount}</span>
-          <Combobox
-            items={driverCountItems}
-            getId={(i) => i.id}
-            getLabel={(i) => i.label}
-            value={driverCountFilter}
-            searchable={false}
-            onselect={(v) => (driverCountFilter = v)}
-          />
-        </label>
+        <input
+          type="text"
+          class="name-filter-input"
+          placeholder={t.search}
+          bind:value={nameFilter}
+        />
+      </div>
+
+      <div class="filter-row adv-row">
         <label>
           <span>{t.f3Min}</span>
           <input type="number" min="10" max="500" placeholder="e.g. 30" bind:value={minF3} />
@@ -320,15 +367,33 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
       <table>
         <thead>
           <tr>
-            <th>{t.columns.name}</th>
-            <th>{t.columns.cat}</th>
-            <th>{t.columns.plans}</th>
-            <th>{t.columns.topology}</th>
-            <th>{t.columns.drivers}</th>
-            <th>{t.columns.volume}</th>
-            <th>{t.columns.f3}</th>
-            <th>{t.columns.maxSpl}</th>
-            <th>{t.columns.provenance}</th>
+            <th class="sortable" aria-sort={colAriaSort("name")}>
+              <button type="button" onclick={() => toggleColSort("name")}>{t.columns.name}{colSortIndicator("name")}</button>
+            </th>
+            <th class="sortable" aria-sort={colAriaSort("category")}>
+              <button type="button" onclick={() => toggleColSort("category")}>{t.columns.cat}{colSortIndicator("category")}</button>
+            </th>
+            <th class="sortable" aria-sort={colAriaSort("hasPlans")}>
+              <button type="button" onclick={() => toggleColSort("hasPlans")}>{t.columns.plans}{colSortIndicator("hasPlans")}</button>
+            </th>
+            <th class="sortable" aria-sort={colAriaSort("topology")}>
+              <button type="button" onclick={() => toggleColSort("topology")}>{t.columns.topology}{colSortIndicator("topology")}</button>
+            </th>
+            <th class="sortable" aria-sort={colAriaSort("driverCount")}>
+              <button type="button" onclick={() => toggleColSort("driverCount")}>{t.columns.drivers}{colSortIndicator("driverCount")}</button>
+            </th>
+            <th class="sortable num" aria-sort={colAriaSort("volumeL")}>
+              <button type="button" onclick={() => toggleColSort("volumeL")}>{t.columns.volume}{colSortIndicator("volumeL")}</button>
+            </th>
+            <th class="sortable num" aria-sort={colAriaSort("f3Hz")}>
+              <button type="button" onclick={() => toggleColSort("f3Hz")}>{t.columns.f3}{colSortIndicator("f3Hz")}</button>
+            </th>
+            <th class="sortable num" aria-sort={colAriaSort("maxSplDb")}>
+              <button type="button" onclick={() => toggleColSort("maxSplDb")}>{t.columns.maxSpl}{colSortIndicator("maxSplDb")}</button>
+            </th>
+            <th class="sortable" aria-sort={colAriaSort("provenance")}>
+              <button type="button" onclick={() => toggleColSort("provenance")}>{t.columns.provenance}{colSortIndicator("provenance")}</button>
+            </th>
             <th>{t.columns.tags}</th>
           </tr>
         </thead>
@@ -411,8 +476,8 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     align-items: flex-end;
   }
 
-  .adv-row {
-    padding-top: 0.5rem;
+  .filter-row:not(.adv-row) + .filter-row.adv-row {
+    padding-top: 0.75rem;
     border-top: 1px solid var(--line);
   }
 
@@ -431,6 +496,13 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
 
   .filters input {
     width: 110px;
+  }
+
+  .adv-row input.name-filter-input {
+    width: 100%;
+    max-width: 440px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
   }
 
   .chips-row {
@@ -458,6 +530,27 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     background: var(--panel);
     z-index: 1;
     white-space: nowrap;
+  }
+
+  th.sortable button {
+    all: unset;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  th.sortable button:hover,
+  th.sortable button:focus-visible {
+    color: var(--text);
+  }
+
+  th.sortable button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  th.num {
+    text-align: right;
   }
 
   table td {
@@ -529,9 +622,10 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
   .tag-more {
     position: relative;
     cursor: default;
-    font: inherit;
     appearance: none;
     margin: 0;
+    line-height: normal;
+    vertical-align: baseline;
   }
 
   .tag-more::after {
@@ -549,7 +643,7 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
     white-space: nowrap;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.1s;
+    transition: opacity var(--transition-fast);
     z-index: 10;
   }
 

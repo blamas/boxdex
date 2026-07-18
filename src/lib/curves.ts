@@ -4,7 +4,7 @@
 import { CURVE_KINDS, type CurveKind, type ParsedCurve } from "./csv";
 
 // Kinds surfaced in the UI: excludes spl_stacked which is accessed via DriverCurves.stacked.
-export const DISPLAY_KINDS = CURVE_KINDS.filter((k) => k !== "spl_stacked");
+const DISPLAY_KINDS = CURVE_KINDS.filter((k) => k !== "spl_stacked");
 
 interface StackedEntry {
   curve: ParsedCurve;
@@ -18,6 +18,17 @@ export interface DriverCurves {
   curves: Partial<Record<CurveKind, ParsedCurve>>;
   stacked: Partial<Record<number, StackedEntry>>; // spl_stacked curves by cabinet count
   notes: Partial<Record<CurveKind, string>>;
+}
+
+// Curve kinds a single entry actually carries, in DISPLAY_KINDS order. SPL counts a
+// stacked-only entry (no plain 1x curve) as having an SPL tab, since the count row
+// still renders. Extracted from BoxCurves so the merged-curve-set tab behaviour can
+// be unit-tested against an inline fixture, with no dependency on data/ existing.
+export function availableKinds(dc: DriverCurves): CurveKind[] {
+  return DISPLAY_KINDS.filter((k) => {
+    if (k === "spl") return !!(dc.curves.spl || Object.keys(dc.stacked).length > 0);
+    return !!dc.curves[k];
+  });
 }
 
 // Available SPL count options for a driver entry: [1] if a plain curve exists, then stacked counts.

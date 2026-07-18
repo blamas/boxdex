@@ -10,6 +10,7 @@ export interface DriverFilters {
   brand: string; // "all" or exact brand
   size: string; // "all" or cone sizeInch / compression exitInch as string
   impedance: string; // "all" or Ω as string
+  name: string; // free-text match against "brand model", "" = inactive
   // cone bounds
   maxFs: NumBound;
   minQts: NumBound;
@@ -25,15 +26,18 @@ export interface HornFilters {
   brand: string;
   exit: string;
   profile: string;
+  name: string; // free-text match against "brand model", "" = inactive
   maxCutoff: NumBound;
 }
 
 export const mouthCm2 = (h: Horn): number => Math.round((h.mouthWmm * h.mouthHmm) / 100);
 
 export function filterDrivers(drivers: Driver[], f: DriverFilters): Driver[] {
+  const name = f.name.trim().toLowerCase();
   return drivers.filter((d) => {
     if (f.brand !== "all" && d.brand !== f.brand) return false;
     if (f.impedance !== "all" && d.impedanceOhm !== Number(f.impedance)) return false;
+    if (name !== "" && !`${d.brand} ${d.model}`.toLowerCase().includes(name)) return false;
     if (d.type === "cone") {
       if (f.size !== "all" && d.sizeInch !== Number(f.size)) return false;
       if (f.maxFs !== "" && d.fsHz > Number(f.maxFs)) return false;
@@ -51,10 +55,12 @@ export function filterDrivers(drivers: Driver[], f: DriverFilters): Driver[] {
 }
 
 export function filterHorns(horns: Horn[], f: HornFilters): Horn[] {
+  const name = f.name.trim().toLowerCase();
   return horns.filter((h) => {
     if (f.brand !== "all" && h.brand !== f.brand) return false;
     if (f.exit !== "all" && h.exitInch !== Number(f.exit)) return false;
     if (f.profile !== "all" && h.profile !== f.profile) return false;
+    if (name !== "" && !`${h.brand} ${h.model}`.toLowerCase().includes(name)) return false;
     if (f.maxCutoff !== "" && h.cutoffHz > Number(f.maxCutoff)) return false;
     return true;
   });

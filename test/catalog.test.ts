@@ -69,6 +69,7 @@ const noDriverFilters: DriverFilters = {
   brand: "all",
   size: "all",
   impedance: "all",
+  name: "",
   maxFs: "",
   minQts: "",
   maxQts: "",
@@ -78,7 +79,13 @@ const noDriverFilters: DriverFilters = {
   minSens: "",
 };
 
-const noHornFilters: HornFilters = { brand: "all", exit: "all", profile: "all", maxCutoff: "" };
+const noHornFilters: HornFilters = {
+  brand: "all",
+  exit: "all",
+  profile: "all",
+  name: "",
+  maxCutoff: "",
+};
 
 describe("filterDrivers", () => {
   const drivers = [
@@ -114,6 +121,12 @@ describe("filterDrivers", () => {
   it("applies compression-only bounds without dropping cones", () => {
     expect(ids({ maxCrossover: 800 })).toEqual(["a", "b", "c"]);
     expect(ids({ minSens: 109 })).toEqual(["a", "b", "c"]);
+  });
+
+  it("matches a free-text name search against brand and model, case-insensitively", () => {
+    expect(ids({ name: "faital" })).toEqual(["b"]);
+    expect(ids({ name: "bc" })).toEqual(["a", "c"]);
+    expect(ids({ name: "nope" })).toEqual([]);
   });
 });
 
@@ -179,6 +192,7 @@ describe("filterHorns / sortHorns", () => {
     expect(ids({ exit: "2" })).toEqual(["deep"]);
     expect(ids({ profile: "exponential" })).toEqual(["deep"]);
     expect(ids({ maxCutoff: 500 })).toEqual(["deep"]);
+    expect(ids({ name: "bms" })).toEqual(["deep"]);
   });
 
   it("sorts by derived mouth area and puts missing depth last in either direction", () => {

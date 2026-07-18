@@ -11,6 +11,7 @@ import {
   metricKeyOf,
   paretoFront,
   provenanceOf,
+  sortEnclosuresByColumn,
   sortRecords,
 } from "../src/lib/metrics";
 import { makeMetrics, makeRecord } from "./fixtures";
@@ -102,6 +103,81 @@ describe("sortRecords", () => {
     ];
     const order = recs.map((r) => r.slug);
     sortRecords(recs, "volumeL");
+    expect(recs.map((r) => r.slug)).toEqual(order);
+  });
+});
+
+describe("sortEnclosuresByColumn", () => {
+  it("sorts a string column alphabetically", () => {
+    const recs = [
+      makeRecord({ slug: "c", category: "top" }),
+      makeRecord({ slug: "a", category: "sub" }),
+      makeRecord({ slug: "b", category: "mid" }),
+    ];
+    expect(sortEnclosuresByColumn(recs, "category", true).map((r) => r.slug)).toEqual([
+      "b",
+      "a",
+      "c",
+    ]);
+    expect(sortEnclosuresByColumn(recs, "category", false).map((r) => r.slug)).toEqual([
+      "c",
+      "a",
+      "b",
+    ]);
+  });
+
+  it("sorts a numeric column ascending and descending", () => {
+    const recs = [
+      makeRecord({ slug: "big", metrics: makeMetrics({ volumeL: 300 }) }),
+      makeRecord({ slug: "small", metrics: makeMetrics({ volumeL: 50 }) }),
+    ];
+    expect(sortEnclosuresByColumn(recs, "volumeL", true).map((r) => r.slug)).toEqual([
+      "small",
+      "big",
+    ]);
+    expect(sortEnclosuresByColumn(recs, "volumeL", false).map((r) => r.slug)).toEqual([
+      "big",
+      "small",
+    ]);
+  });
+
+  it("sorts a boolean column, false before true when ascending", () => {
+    const recs = [
+      makeRecord({ slug: "yes", hasPlans: true }),
+      makeRecord({ slug: "no", hasPlans: false }),
+    ];
+    expect(sortEnclosuresByColumn(recs, "hasPlans", true).map((r) => r.slug)).toEqual([
+      "no",
+      "yes",
+    ]);
+    expect(sortEnclosuresByColumn(recs, "hasPlans", false).map((r) => r.slug)).toEqual([
+      "yes",
+      "no",
+    ]);
+  });
+
+  it("pushes records missing the column value to the end regardless of direction", () => {
+    const recs = [
+      makeRecord({ slug: "none", metrics: makeMetrics({ maxSplDb: undefined }) }),
+      makeRecord({ slug: "has", metrics: makeMetrics({ maxSplDb: 130 }) }),
+    ];
+    expect(sortEnclosuresByColumn(recs, "maxSplDb", true).map((r) => r.slug)).toEqual([
+      "has",
+      "none",
+    ]);
+    expect(sortEnclosuresByColumn(recs, "maxSplDb", false).map((r) => r.slug)).toEqual([
+      "has",
+      "none",
+    ]);
+  });
+
+  it("does not mutate the input array", () => {
+    const recs = [
+      makeRecord({ slug: "b", metrics: makeMetrics({ volumeL: 2 }) }),
+      makeRecord({ slug: "a", metrics: makeMetrics({ volumeL: 1 }) }),
+    ];
+    const order = recs.map((r) => r.slug);
+    sortEnclosuresByColumn(recs, "volumeL", true);
     expect(recs.map((r) => r.slug)).toEqual(order);
   });
 });
@@ -269,6 +345,7 @@ describe("filterEnclosures", () => {
     topology: "all",
     driverSize: "all",
     driverCount: "all",
+    name: "",
     tags: [],
     minF3: "",
     maxF3: "",
@@ -327,6 +404,11 @@ describe("filterEnclosures", () => {
   it("filters by driver count, including the 4+ bucket", () => {
     expect(slugs({ driverCount: "2" })).toEqual(["top12"]);
     expect(slugs({ driverCount: "4+" })).toEqual(["br15-quad"]);
+  });
+
+  it("matches a free-text name search case-insensitively", () => {
+    expect(slugs({ name: "BR15" })).toEqual(["br15-quad"]);
+    expect(slugs({ name: "nope" })).toEqual([]);
   });
 
   it("matches any selected tag", () => {

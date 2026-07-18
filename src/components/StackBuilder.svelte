@@ -870,7 +870,7 @@ const curvesLoading = $derived(
     cursor: pointer;
     background: transparent;
     border-color: var(--line);
-    transition: background 0.1s, border-color 0.1s, box-shadow 0.1s;
+    transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
   }
 
   .add-cat-btn:hover:not(:disabled),

@@ -57,6 +57,7 @@ let initialized = $state(false);
 let showAdvanced = $state(false);
 let kindFilter = $state<Kind | "all">("all");
 let categoryFilter = $state("all");
+let nameFilter = $state("");
 
 onMount(async () => {
   try {
@@ -198,6 +199,10 @@ const filteredRecords = $derived(
     .filter((r) => categoryFilter === "all" || r.category === categoryFilter)
     .filter((r) => driverFilter === "all" || r.drivers.includes(driverFilter))
     .filter((r) => kindFilter === "all" || r.availableKinds.includes(kindFilter))
+    .filter(
+      (r) =>
+        nameFilter.trim() === "" || r.name.toLowerCase().includes(nameFilter.trim().toLowerCase())
+    )
 );
 
 // Writable $derived: filtering resets the limit, but a LoadMore override survives until the
@@ -255,14 +260,22 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
       onclick={() => (showAdvanced = !showAdvanced)}
     >
       {t.advanced} {showAdvanced ? "▴" : "▾"}
-      {#if !showAdvanced && (freqMin !== "" || freqMax !== "" || driverFilter !== "all" || kindFilter !== "all" || categoryFilter !== "all")}
-        <span class="advanced-toggle-count">{(freqMin !== "" ? 1 : 0) + (freqMax !== "" ? 1 : 0) + (driverFilter !== "all" ? 1 : 0) + (kindFilter !== "all" ? 1 : 0) + (categoryFilter !== "all" ? 1 : 0)}</span>
+      {#if !showAdvanced && (freqMin !== "" || freqMax !== "" || driverFilter !== "all" || kindFilter !== "all" || categoryFilter !== "all" || nameFilter !== "")}
+        <span class="advanced-toggle-count">{(freqMin !== "" ? 1 : 0) + (freqMax !== "" ? 1 : 0) + (driverFilter !== "all" ? 1 : 0) + (kindFilter !== "all" ? 1 : 0) + (categoryFilter !== "all" ? 1 : 0) + (nameFilter !== "" ? 1 : 0)}</span>
       {/if}
     </button>
   </div>
 
   {#if showAdvanced}
     <div class="adv-controls no-print">
+      <div class="adv-row">
+        <input
+          type="text"
+          class="name-filter-input"
+          placeholder={t.search}
+          bind:value={nameFilter}
+        />
+      </div>
       <div class="adv-row">
         {#each CATEGORIES as cat}
           <button
@@ -292,7 +305,7 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
               getId={(d) => d.id}
               getLabel={(d) => `${d.brand} ${d.model}`}
               value={driverFilter === "all" ? "" : driverFilter}
-              emptyLabel={t.allEnclosures}
+              emptyLabel={t.allDrivers}
               placeholder={t.search}
               onselect={(id) => { driverFilter = id || "all"; }}
             />
@@ -510,8 +523,15 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
     flex-wrap: wrap;
   }
 
-  .adv-controls input {
+  .adv-controls input[type="number"] {
     width: 90px;
+  }
+
+  .adv-controls input.name-filter-input {
+    width: 100%;
+    max-width: 440px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
   }
 
   .adv-sep {

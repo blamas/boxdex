@@ -179,6 +179,7 @@ export interface EnclosureFilters {
   topology: string;
   driverSize: string;
   driverCount: string; // "all" | "1" | "2" | "3" | "4+"
+  name: string; // free-text match against record name, "" = inactive
   tags: string[]; // recommendedFor, any-match
   minF3: number | "";
   maxF3: number | "";
@@ -200,10 +201,12 @@ export function filterEnclosures(
   records: EnclosureRecord[],
   f: EnclosureFilters
 ): EnclosureRecord[] {
+  const name = f.name.trim().toLowerCase();
   return records.filter((r) => {
     if (f.category !== "all" && r.category !== f.category) return false;
     if (f.topology !== "all" && r.topology !== f.topology) return false;
     if (f.driverSize !== "all" && !r.driverSizes.includes(Number(f.driverSize))) return false;
+    if (name !== "" && !r.name.toLowerCase().includes(name)) return false;
     if (f.driverCount !== "all") {
       if (f.driverCount === "4+") {
         if (r.driverCount < 4) return false;
@@ -237,6 +240,72 @@ export function sortRecords(
     if (av === undefined) return 1;
     if (bv === undefined) return -1;
     return field?.better === "max" ? bv - av : av - bv;
+  });
+}
+
+// Columns exposed as clickable headers in Explorer's table (a subset of
+// EnclosureRecord fields, distinct from sortRecords' "better first" metric
+// sort). Raw values, no better/worse direction baked in.
+export type EnclosureColumnKey =
+  | "name"
+  | "category"
+  | "topology"
+  | "driverCount"
+  | "hasPlans"
+  | "provenance"
+  | "volumeL"
+  | "f3Hz"
+  | "maxSplDb";
+
+function recordColumnValue(
+  r: EnclosureRecord,
+  key: EnclosureColumnKey
+): string | number | boolean | undefined {
+  switch (key) {
+    case "name":
+      return r.name;
+    case "category":
+      return r.category;
+    case "topology":
+      return r.topology;
+    case "driverCount":
+      return r.driverCount;
+    case "hasPlans":
+      return r.hasPlans;
+    case "provenance":
+      return r.provenance;
+    case "volumeL":
+      return r.metrics.volumeL;
+    case "f3Hz":
+      return r.metrics.f3Hz;
+    case "maxSplDb":
+      return r.metrics.maxSplDb;
+  }
+}
+
+function compareColumnValues(
+  va: string | number | boolean | undefined,
+  vb: string | number | boolean | undefined
+): number {
+  if (va === undefined || vb === undefined) return 0;
+  return va < vb ? -1 : va > vb ? 1 : 0;
+}
+
+// Missing values (only maxSplDb can be undefined) sort last regardless of
+// direction, matching sortHorns' convention in lib/catalog.ts.
+export function sortEnclosuresByColumn(
+  records: EnclosureRecord[],
+  key: EnclosureColumnKey,
+  asc: boolean
+): EnclosureRecord[] {
+  return [...records].sort((a, b) => {
+    const va = recordColumnValue(a, key);
+    const vb = recordColumnValue(b, key);
+    if (va === undefined && vb === undefined) return 0;
+    if (va === undefined) return 1;
+    if (vb === undefined) return -1;
+    const cmp = compareColumnValues(va, vb);
+    return asc ? cmp : -cmp;
   });
 }
 

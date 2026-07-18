@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CURVE_KINDS } from "../src/lib/csv";
 import {
+  availableKinds,
   availSplCounts,
   CURVE_Y_LABELS,
   type CurvesResponse,
@@ -13,6 +14,7 @@ import {
 } from "../src/lib/curves";
 
 const spl = { freq: [40, 80], value: [110, 120] };
+const phase = { freq: [40, 80], value: [-30, -90] };
 const impedance = { freq: [40, 80], value: [8, 12] };
 
 function dc(
@@ -63,6 +65,45 @@ describe("availSplCounts", () => {
 
   it("returns [] when neither exists", () => {
     expect(availSplCounts(dc("d1", "default", "s", {}))).toEqual([]);
+  });
+});
+
+describe("availableKinds", () => {
+  it("lists carried kinds in DISPLAY_KINDS order, excluding spl_stacked", () => {
+    const d = dc("d1", "default", "hornresp_sim", { impedance, spl, phase });
+    expect(availableKinds(d)).toEqual(["spl", "phase", "impedance"]);
+  });
+
+  it("counts a stacked-only entry (no plain spl) as having an SPL tab", () => {
+    const d: DriverCurves = {
+      id: "d1",
+      driverProfile: "default",
+      source: "hornresp_sim",
+      curves: {},
+      stacked: { 4: { curve: spl } },
+      notes: {},
+    };
+    expect(availableKinds(d)).toEqual(["spl"]);
+  });
+
+  it("returns [] for an entry with no curves", () => {
+    expect(availableKinds(dc("d1", "default", "s", {}))).toEqual([]);
+  });
+
+  // Guards the merged-curve-set tab behaviour the E2E used to assert against a
+  // specific fixture: one curve set carrying spl + phase + impedance plus stacked
+  // SPL at counts 1/4/6 must surface exactly those kind tabs and count options.
+  it("surfaces the merged kinds and SPL counts of a rich single curve set", () => {
+    const d: DriverCurves = {
+      id: "full-system",
+      driverProfile: "default",
+      source: "hornresp_sim",
+      curves: { spl, phase, impedance },
+      stacked: { 4: { curve: spl }, 6: { curve: spl } },
+      notes: {},
+    };
+    expect(availableKinds(d)).toEqual(["spl", "phase", "impedance"]);
+    expect(availSplCounts(d)).toEqual([1, 4, 6]);
   });
 });
 

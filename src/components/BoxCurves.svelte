@@ -8,10 +8,10 @@ import {
   type CurvesResponse,
   curveLabel,
   curvesForProfile,
-  DISPLAY_KINDS,
   type DriverCurves,
   firstAvailableKind,
   initialCurveView,
+  availableKinds as kindsFor,
 } from "../lib/curves";
 import { SERIES_COLORS } from "../lib/palette";
 
@@ -62,15 +62,7 @@ const activeGroup = $derived(groupFor(activeTab, activeProfileId));
 
 const activeDriver = $derived(activeGroup[activeDriverIdx] ?? null);
 
-const availableKinds = $derived(
-  activeDriver
-    ? DISPLAY_KINDS.filter((k) => {
-        if (k === "spl")
-          return !!(activeDriver.curves.spl || Object.keys(activeDriver.stacked).length > 0);
-        return !!activeDriver.curves[k];
-      })
-    : []
-);
+const availableKinds = $derived(activeDriver ? kindsFor(activeDriver) : []);
 
 // Count options shown under the SPL tab: 1× (plain) if a plain curve exists, then stacked counts.
 const splCounts = $derived(
