@@ -2,6 +2,8 @@
 // island binds its inputs to a filter object and delegates here.
 
 import type { Driver, Horn } from "./schemas";
+import { compareValues, sortByValueMissingLast } from "./sort";
+import { matchesName } from "./text";
 
 // Numeric bound from an <input type="number">: "" = filter inactive.
 type NumBound = number | "";
@@ -33,11 +35,10 @@ export interface HornFilters {
 export const mouthCm2 = (h: Horn): number => Math.round((h.mouthWmm * h.mouthHmm) / 100);
 
 export function filterDrivers(drivers: Driver[], f: DriverFilters): Driver[] {
-  const name = f.name.trim().toLowerCase();
   return drivers.filter((d) => {
     if (f.brand !== "all" && d.brand !== f.brand) return false;
     if (f.impedance !== "all" && d.impedanceOhm !== Number(f.impedance)) return false;
-    if (name !== "" && !`${d.brand} ${d.model}`.toLowerCase().includes(name)) return false;
+    if (!matchesName(`${d.brand} ${d.model}`, f.name)) return false;
     if (d.type === "cone") {
       if (f.size !== "all" && d.sizeInch !== Number(f.size)) return false;
       if (f.maxFs !== "" && d.fsHz > Number(f.maxFs)) return false;
@@ -55,12 +56,11 @@ export function filterDrivers(drivers: Driver[], f: DriverFilters): Driver[] {
 }
 
 export function filterHorns(horns: Horn[], f: HornFilters): Horn[] {
-  const name = f.name.trim().toLowerCase();
   return horns.filter((h) => {
     if (f.brand !== "all" && h.brand !== f.brand) return false;
     if (f.exit !== "all" && h.exitInch !== Number(f.exit)) return false;
     if (f.profile !== "all" && h.profile !== f.profile) return false;
-    if (name !== "" && !`${h.brand} ${h.model}`.toLowerCase().includes(name)) return false;
+    if (!matchesName(`${h.brand} ${h.model}`, f.name)) return false;
     if (f.maxCutoff !== "" && h.cutoffHz > Number(f.maxCutoff)) return false;
     return true;
   });
@@ -101,14 +101,9 @@ export function hornSortValue(h: Horn, key: string): number | string | undefined
   return h.brand;
 }
 
-function compare(va: number | string | undefined, vb: number | string | undefined): number {
-  if (va === undefined || vb === undefined) return 0;
-  return va < vb ? -1 : va > vb ? 1 : 0;
-}
-
 export function sortDrivers(drivers: Driver[], key: string, asc: boolean): Driver[] {
   return [...drivers].sort((a, b) => {
-    const cmp = compare(driverSortValue(a, key), driverSortValue(b, key));
+    const cmp = compareValues(driverSortValue(a, key), driverSortValue(b, key));
     return asc ? cmp : -cmp;
   });
 }
@@ -116,13 +111,5 @@ export function sortDrivers(drivers: Driver[], key: string, asc: boolean): Drive
 // Horns missing the sorted value (optional depthMm) go last regardless of direction,
 // matching sortRecords' missing-metric behaviour.
 export function sortHorns(horns: Horn[], key: string, asc: boolean): Horn[] {
-  return [...horns].sort((a, b) => {
-    const va = hornSortValue(a, key);
-    const vb = hornSortValue(b, key);
-    if (va === undefined && vb === undefined) return 0;
-    if (va === undefined) return 1;
-    if (vb === undefined) return -1;
-    const cmp = compare(va, vb);
-    return asc ? cmp : -cmp;
-  });
+  return sortByValueMissingLast(horns, (h) => hornSortValue(h, key), asc);
 }

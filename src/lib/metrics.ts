@@ -1,5 +1,7 @@
 import type { Translations } from "../i18n";
 import type { Category, CategoryFilter } from "./category";
+import { sortByValueMissingLast } from "./sort";
+import { matchesName } from "./text";
 
 export type Provenance = "measured" | "sim";
 
@@ -201,12 +203,11 @@ export function filterEnclosures(
   records: EnclosureRecord[],
   f: EnclosureFilters
 ): EnclosureRecord[] {
-  const name = f.name.trim().toLowerCase();
   return records.filter((r) => {
     if (f.category !== "all" && r.category !== f.category) return false;
     if (f.topology !== "all" && r.topology !== f.topology) return false;
     if (f.driverSize !== "all" && !r.driverSizes.includes(Number(f.driverSize))) return false;
-    if (name !== "" && !r.name.toLowerCase().includes(name)) return false;
+    if (!matchesName(r.name, f.name)) return false;
     if (f.driverCount !== "all") {
       if (f.driverCount === "4+") {
         if (r.driverCount < 4) return false;
@@ -243,9 +244,7 @@ export function sortRecords(
   });
 }
 
-// Columns exposed as clickable headers in Explorer's table (a subset of
-// EnclosureRecord fields, distinct from sortRecords' "better first" metric
-// sort). Raw values, no better/worse direction baked in.
+// Columns exposed as clickable headers in Explorer's table: raw values, not sortRecords' best-first order.
 export type EnclosureColumnKey =
   | "name"
   | "category"
@@ -283,30 +282,13 @@ function recordColumnValue(
   }
 }
 
-function compareColumnValues(
-  va: string | number | boolean | undefined,
-  vb: string | number | boolean | undefined
-): number {
-  if (va === undefined || vb === undefined) return 0;
-  return va < vb ? -1 : va > vb ? 1 : 0;
-}
-
-// Missing values (only maxSplDb can be undefined) sort last regardless of
-// direction, matching sortHorns' convention in lib/catalog.ts.
+// Missing values (only maxSplDb can be undefined) sort last regardless of direction.
 export function sortEnclosuresByColumn(
   records: EnclosureRecord[],
   key: EnclosureColumnKey,
   asc: boolean
 ): EnclosureRecord[] {
-  return [...records].sort((a, b) => {
-    const va = recordColumnValue(a, key);
-    const vb = recordColumnValue(b, key);
-    if (va === undefined && vb === undefined) return 0;
-    if (va === undefined) return 1;
-    if (vb === undefined) return -1;
-    const cmp = compareColumnValues(va, vb);
-    return asc ? cmp : -cmp;
-  });
+  return sortByValueMissingLast(records, (r) => recordColumnValue(r, key), asc);
 }
 
 // A record is dominated if another record is at-least-as-good on both axes and strictly better on one.

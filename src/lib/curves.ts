@@ -20,10 +20,7 @@ export interface DriverCurves {
   notes: Partial<Record<CurveKind, string>>;
 }
 
-// Curve kinds a single entry actually carries, in DISPLAY_KINDS order. SPL counts a
-// stacked-only entry (no plain 1x curve) as having an SPL tab, since the count row
-// still renders. Extracted from BoxCurves so the merged-curve-set tab behaviour can
-// be unit-tested against an inline fixture, with no dependency on data/ existing.
+// Curve kinds a single entry carries, in DISPLAY_KINDS order. A stacked-only entry (no plain 1x curve) still counts as having an SPL tab.
 export function availableKinds(dc: DriverCurves): CurveKind[] {
   return DISPLAY_KINDS.filter((k) => {
     if (k === "spl") return !!(dc.curves.spl || Object.keys(dc.stacked).length > 0);

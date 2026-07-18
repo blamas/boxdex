@@ -18,6 +18,7 @@ import type { EnclosureRecord } from "../lib/metrics";
 import { SERIES_COLORS } from "../lib/palette";
 import type { DriverOption } from "../lib/schemas";
 import { BASE } from "../lib/site";
+import { matchesName } from "../lib/text";
 import { readParam, writeParams } from "../lib/url-state";
 import Combobox from "./Combobox.svelte";
 import CurveChart from "./CurveChart.svelte";
@@ -199,10 +200,7 @@ const filteredRecords = $derived(
     .filter((r) => categoryFilter === "all" || r.category === categoryFilter)
     .filter((r) => driverFilter === "all" || r.drivers.includes(driverFilter))
     .filter((r) => kindFilter === "all" || r.availableKinds.includes(kindFilter))
-    .filter(
-      (r) =>
-        nameFilter.trim() === "" || r.name.toLowerCase().includes(nameFilter.trim().toLowerCase())
-    )
+    .filter((r) => matchesName(r.name, nameFilter))
 );
 
 // Writable $derived: filtering resets the limit, but a LoadMore override survives until the
@@ -273,6 +271,7 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
           type="text"
           class="name-filter-input"
           placeholder={t.search}
+          aria-label={t.search}
           bind:value={nameFilter}
         />
       </div>

@@ -148,7 +148,7 @@ const sourceFiles = data.sources.map((s) => {
 });
 
 const heroImage = data.images[0];
-// Full-resolution sources for the lightbox carousel, indexed to match data.images (hero is index 0).
+// Lightbox carousel sources, indexed to match data.images (hero is index 0).
 const lightboxImages = await Promise.all(
   data.images.map(async (img, i) => {
     const full = await getImage({ src: img, width: Math.min(img.width, 1600) });
@@ -410,6 +410,7 @@ const categoryLabel =
 </Layout>
 
 <script>
+  import { formatCounter, wrapIndex } from "../../../lib/lightbox";
   import { decodeStack, encodeStack } from "../../../lib/stack";
 
   const btn = document.getElementById("detail-stack-btn") as HTMLButtonElement | null;
@@ -447,17 +448,14 @@ const categoryLabel =
     const prevBtn = dialog.querySelector(".lightbox-prev") as HTMLButtonElement;
     const nextBtn = dialog.querySelector(".lightbox-next") as HTMLButtonElement;
     let current = 0;
-    // Matches --transition-fast (the .lightbox-img opacity transition below): the src
-    // swap happens mid-fade so the crossfade covers the (near-instant) image change.
+    // Src swap happens mid-fade (matches --transition-fast) so the crossfade covers it.
     const FADE_MS = 100;
     let fadeTimer: ReturnType<typeof setTimeout> | undefined;
 
     const show = (index: number) => {
-      current = (index + images.length) % images.length;
+      current = wrapIndex(index, images.length);
       const img = images[current];
-      counterEl.textContent = counterFormat
-        .replace("{n}", String(current + 1))
-        .replace("{total}", String(images.length));
+      counterEl.textContent = formatCounter(counterFormat, current + 1, images.length);
       const multi = images.length > 1;
       prevBtn.hidden = !multi;
       nextBtn.hidden = !multi;

@@ -90,9 +90,7 @@ describe("availableKinds", () => {
     expect(availableKinds(dc("d1", "default", "s", {}))).toEqual([]);
   });
 
-  // Guards the merged-curve-set tab behaviour the E2E used to assert against a
-  // specific fixture: one curve set carrying spl + phase + impedance plus stacked
-  // SPL at counts 1/4/6 must surface exactly those kind tabs and count options.
+  // Guards the merged-curve-set behaviour: one curve set with spl+phase+impedance plus stacked SPL.
   it("surfaces the merged kinds and SPL counts of a rich single curve set", () => {
     const d: DriverCurves = {
       id: "full-system",

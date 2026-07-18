@@ -45,16 +45,15 @@ let nameFilter = $state("");
 let hasMeasurementsOnly = $state(false);
 let hasPlansOnly = $state(false);
 let verifiedOnly = $state(false);
-// Default sort: tops rank better by HF extension; everything else by volume. A writable
-// $derived: switching category resets it, but the sort combobox can still override in between
-// (Svelte discards the override the next time `category` actually changes).
+// Writable $derived: switching category resets it, but the sort combobox can override it in between.
 const defaultSortKey = (cat: CategoryFilter): MetricKey => (cat === "top" ? "f3HzHigh" : "volumeL");
 let sortKey: MetricKey = $derived(defaultSortKey(category));
 
-// Clicking a column header takes over sorting with raw ascending/descending
-// semantics, independent of the "Sort by" combobox's best-first ordering.
-// Picking from the combobox hands control back to it.
-let colSortKey = $state<EnclosureColumnKey | undefined>(undefined);
+// Column-header sort override, raw asc/desc: same writable-$derived reset-on-category idiom as sortKey.
+function resetColSort(_cat: CategoryFilter): EnclosureColumnKey | undefined {
+  return undefined;
+}
+let colSortKey: EnclosureColumnKey | undefined = $derived(resetColSort(category));
 let colSortAsc = $state(true);
 
 function toggleColSort(key: EnclosureColumnKey) {
@@ -277,6 +276,7 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
           type="text"
           class="name-filter-input"
           placeholder={t.search}
+          aria-label={t.search}
           bind:value={nameFilter}
         />
       </div>

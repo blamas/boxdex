@@ -336,6 +336,7 @@ function ariaSort(key: SortKey): "ascending" | "descending" | "none" {
         type="text"
         class="name-filter-input"
         placeholder={t.search}
+        aria-label={t.search}
         bind:value={nameFilter}
       />
     </div>

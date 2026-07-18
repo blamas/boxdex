@@ -272,12 +272,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: fit-content;
 }
 
-/* Filter/form labels stack a short static span above a non-searchable trigger
-   (e.g. "Driver count" / "All"): fit-content can leave the trigger narrower
-   than the label text, looking uneven. Stretch it to match. Safe because a
-   percentage width never shrinks a flex item below its own content size when
-   the container's own size is content-derived, it only grows to match a
-   wider sibling. */
+/* Under a label, stretch a fit-content trigger to match the label text width instead of looking narrower. */
 label > .combobox-fit {
   width: 100%;
 }
