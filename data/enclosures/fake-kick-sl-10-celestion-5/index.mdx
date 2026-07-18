@@ -1,0 +1,86 @@
+---
+name: FAKE Basstek 10 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl-10-100-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+  - id: alt-18s
+    drivers:
+      - driver: 18s-10kw3-keybass-vp-16
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 59.5
+grossVolumeL: 74.4
+dims:
+  hMm: 499.5
+  wMm: 357.5
+  dMm: 416.5
+weightKg: 16.7
+specs:
+  f3Hz: 81.8
+  f6Hz: 63.9
+  maxSplExcursionDb: 110.5
+  maxSplThermalDb: 115.7
+  maxSplDb: 110.5
+  sensitivityDb: 95.7
+  recommendedCrossoverHz: 180
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+availability: contact
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-4.0
+recommendedFor:
+  - frenchcore
+  - tekno
+  - tribe
+buildComplexity: moderate
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-celestion-5-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Basstek 10 SL: 10" sealed kick built around the Celestion BL 10-100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

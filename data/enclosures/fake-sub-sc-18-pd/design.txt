@@ -1,0 +1,12 @@
+# FAKE Vortex 18 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=PD 184C002 (pd-184c002-8)
+Fs=40 Hz
+Qts=0.339
+Vas=268 L
+Sd=1152 cm2
+Xmax=8.5 mm
+Vb=348.4 L
+HornCutoff=50 Hz
+F3=50.3 Hz
+Sensitivity=104.1 dB

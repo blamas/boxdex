@@ -1,0 +1,53 @@
+---
+name: FAKE Fury 15 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-15-3008ps-8
+        qty: 1
+netVolumeL: 270.7
+grossVolumeL: 338.4
+dims:
+  hMm: 887
+  wMm: 516.3
+  dMm: 739
+weightKg: 40.5
+specs:
+  f3Hz: 63.2
+  f6Hz: 55
+  fbHz: 48.2
+  f3HzHigh: 115.7
+  maxSplExcursionDb: 112.8
+  maxSplThermalDb: 127.2
+  maxSplDb: 112.8
+  sensitivityDb: 100.2
+  recommendedCrossoverHz: 139
+  maxVelocityMs: 17.5
+  powerAesW: 500
+  powerProgramW: 1000
+  recommendedPowerW: 300
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-bp-15-eminence-2
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - acid
+  - raggatek
+  - hardcore
+buildComplexity: moderate
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources: []
+plans:
+  - fake-kick-bp-15-eminence-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 15 BP: 15" bandpass kick built around the Eminence 15-3008PS. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

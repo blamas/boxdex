@@ -1,0 +1,80 @@
+---
+name: FAKE Rumble 10 SL
+category: kick
+topology: sealed
+topologyVariant: infinite baffle
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-10fe200-4-4
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 49.8
+grossVolumeL: 62.3
+dims:
+  hMm: 457.5
+  wMm: 357.5
+  dMm: 381
+weightKg: 15.6
+specs:
+  f3Hz: 79
+  f6Hz: 60.1
+  maxSplExcursionDb: 111.6
+  maxSplThermalDb: 120.3
+  maxSplDb: 111.6
+  sensitivityDb: 98.5
+  recommendedCrossoverHz: 173.8
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-10-faital-2
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Rumble 10 SL build (2026).
+recommendedFor:
+  - raggatek
+  - hardcore
+  - tekno
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-faital-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Rumble 10 SL: 10" sealed kick built around the Faital PRO 10FE200-4. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

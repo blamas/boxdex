@@ -1,0 +1,12 @@
+# FAKE Basstek 10 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Eminence BASSLITE CH2010 (eminence-basslite-ch2010-8)
+Fs=58 Hz
+Qts=0.438
+Vas=43 L
+Sd=344.9 cm2
+Xmax=3.5 mm
+Vb=87.1 L
+Fb=51.2 Hz
+F3=66.5 Hz
+Sensitivity=96.2 dB

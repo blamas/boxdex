@@ -1,0 +1,12 @@
+# FAKE Dominator 21 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Beyma 21"LEX1600/Nd (beyma-21-lex1600-nd-8)
+Fs=30 Hz
+Qts=0.29
+Vas=305 L
+Sd=1734 cm2
+Xmax=14 mm
+Vb=246.8 L
+Fc=73.1 Hz
+F3=73.1 Hz
+Sensitivity=104 dB

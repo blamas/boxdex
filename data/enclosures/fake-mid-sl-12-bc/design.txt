@@ -1,0 +1,12 @@
+# FAKE Rumble 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=B&C 12 BG 100 (bc-12-bg-100-8)
+Fs=39 Hz
+Qts=0.333
+Vas=41 L
+Sd=522 cm2
+Xmax=7.8 mm
+Vb=23.4 L
+Fc=82.8 Hz
+F3=82.8 Hz
+Sensitivity=95.4 dB

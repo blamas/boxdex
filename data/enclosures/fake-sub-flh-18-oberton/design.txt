@@ -1,0 +1,12 @@
+# FAKE Voidus 18 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Oberton 18B450 (oberton-18b450-8)
+Fs=34.38 Hz
+Qts=0.342
+Vas=241.55 L
+Sd=1110 cm2
+Xmax=7.25 mm
+Vb=289.9 L
+HornCutoff=48.1 Hz
+F3=48.3 Hz
+Sensitivity=102 dB

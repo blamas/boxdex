@@ -1,0 +1,91 @@
+---
+name: FAKE Kraken 18 SL
+category: sub
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-184c002-8
+        qty: 1
+    measurements:
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: default-klp-spl.csv
+            note: gated, half-space
+          impedance:
+            file: default-klp-impedance.csv
+            note: single cabinet
+  - id: alt-18s
+    drivers:
+      - driver: 18s-18-tlw-3000-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 80
+grossVolumeL: 100
+dims:
+  hMm: 443
+  wMm: 611.5
+  dMm: 369
+weightKg: 19
+specs:
+  f3Hz: 83.4
+  f6Hz: 63.4
+  maxSplExcursionDb: 128.7
+  maxSplThermalDb: 130.1
+  maxSplDb: 128.7
+  sensitivityDb: 100.6
+  recommendedCrossoverHz: 183.5
+  powerAesW: 900
+  powerProgramW: 1800
+  recommendedPowerW: 540
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sl-18-pd
+availability: free
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC-BY-NC-4.0
+recommendedFor:
+  - hardstyle
+  - mental
+  - dub
+buildComplexity: simple
+connectors:
+  - speakON NL2
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sl-18-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Kraken 18 SL: 18" sealed sub built around the PD 184C002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

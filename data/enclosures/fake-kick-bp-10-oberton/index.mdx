@@ -1,0 +1,66 @@
+---
+name: FAKE Vortex 10 BP
+category: kick
+topology: bandpass
+topologyVariant: 6th order
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-10b100-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 87.2
+grossVolumeL: 109
+dims:
+  hMm: 605
+  wMm: 357.5
+  dMm: 504
+weightKg: 19.8
+specs:
+  f3Hz: 49.3
+  f6Hz: 42.9
+  fbHz: 38.1
+  f3HzHigh: 91.4
+  maxSplExcursionDb: 98.1
+  maxSplThermalDb: 112.5
+  maxSplDb: 98.1
+  sensitivityDb: 92.5
+  recommendedCrossoverHz: 108.5
+  maxVelocityMs: 16.7
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-bp-10-oberton
+availability: paid
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - hardcore
+  - breakcore
+buildComplexity: simple
+connectors:
+  - speakON NL8
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-10-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Vortex 10 BP: 10" bandpass kick built around the Oberton 10B100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

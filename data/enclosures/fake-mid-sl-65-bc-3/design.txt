@@ -1,0 +1,12 @@
+# FAKE Mammoth 6.5 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=B&C 6CLA51 (bc-6cla51-16)
+Fs=89 Hz
+Qts=0.41
+Vas=5.7 L
+Sd=132 cm2
+Xmax=5.5 mm
+Vb=11.6 L
+Fc=153.5 Hz
+F3=153.5 Hz
+Sensitivity=99.5 dB

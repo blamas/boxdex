@@ -1,0 +1,12 @@
+# FAKE Monolith 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=18 Sound 10M600 (18s-10m600-8)
+Fs=70 Hz
+Qts=0.23
+Vas=25.6 L
+Sd=350 cm2
+Xmax=4 mm
+Vb=30.7 L
+HornCutoff=98 Hz
+F3=98.9 Hz
+Sensitivity=106 dB

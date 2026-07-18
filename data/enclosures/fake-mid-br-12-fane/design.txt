@@ -1,0 +1,12 @@
+# FAKE Voidus 12 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Fane 12-300 vp FRL (fane-12-300-vp-frl-8)
+Fs=50 Hz
+Qts=0.39
+Vas=62 L
+Sd=532 cm2
+Xmax=4.5 mm
+Vb=124.8 L
+Fb=49 Hz
+F3=48.6 Hz
+Sensitivity=99.2 dB

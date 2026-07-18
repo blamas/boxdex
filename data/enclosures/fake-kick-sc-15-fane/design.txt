@@ -1,0 +1,12 @@
+# FAKE Titan 15 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Fane AXIOM AX15/300B (fane-axiom-ax15-300b-8)
+Fs=49 Hz
+Qts=0.352
+Vas=110 L
+Sd=839.2 cm2
+Xmax=4 mm
+Vb=143 L
+HornCutoff=61.3 Hz
+F3=61.4 Hz
+Sensitivity=101.8 dB

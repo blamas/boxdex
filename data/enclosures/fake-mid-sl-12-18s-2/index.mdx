@@ -1,0 +1,78 @@
+---
+name: FAKE Warehouse 12 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-12cx800-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 10.7
+grossVolumeL: 13.4
+dims:
+  hMm: 195.5
+  wMm: 421
+  dMm: 163
+weightKg: 11.2
+specs:
+  f3Hz: 148.1
+  f6Hz: 112.5
+  maxSplExcursionDb: 126.7
+  maxSplThermalDb: 125.4
+  maxSplDb: 125.4
+  sensitivityDb: 99.4
+  recommendedCrossoverHz: 192.5
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-12-18s-2
+availability: paid
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - tribe
+  - psytrance
+buildComplexity: simple
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-12-18s-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Warehouse 12 SL: 12" sealed mid built around the 18 Sound 12CX800. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

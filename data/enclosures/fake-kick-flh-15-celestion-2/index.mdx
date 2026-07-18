@@ -1,0 +1,66 @@
+---
+name: FAKE Mammoth 15 FLH
+category: kick
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl15-300x-4
+        qty: 4
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 762.4
+grossVolumeL: 953
+dims:
+  hMm: 1488.5
+  wMm: 516.3
+  dMm: 1240
+weightKg: 110.8
+specs:
+  f3Hz: 67.8
+  f6Hz: 60.8
+  maxSplExcursionDb: 126.9
+  maxSplThermalDb: 138.1
+  maxSplDb: 126.9
+  sensitivityDb: 111.3
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 67.2
+  recommendedCrossoverHz: 149.2
+  hornThroatCm2: 494.9
+  hornMouthCm2: 3842.6
+  powerAesW: 1200
+  powerProgramW: 2400
+  recommendedPowerW: 720
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-flh-15-celestion-2
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - techno
+  - frenchcore
+buildComplexity: complex
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-15-celestion-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 15 FLH: 15" front loaded horn kick built around the Celestion BL15-300X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

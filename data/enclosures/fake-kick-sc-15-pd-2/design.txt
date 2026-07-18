@@ -1,0 +1,12 @@
+# FAKE Outlaw 15 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=PD 1550/2 (pd-1550-2-8)
+Fs=46.2 Hz
+Qts=0.294
+Vas=126 L
+Sd=908 cm2
+Xmax=5.3 mm
+Vb=655.2 L
+HornCutoff=57.8 Hz
+F3=57.8 Hz
+Sensitivity=108.5 dB

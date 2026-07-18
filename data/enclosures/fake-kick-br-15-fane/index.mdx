@@ -1,0 +1,94 @@
+---
+name: FAKE Riot 15 BR
+category: kick
+topology: bass_reflex
+topologyVariant: slot port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-15-400-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+  - id: alt-18s
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 104.3
+grossVolumeL: 130.4
+dims:
+  hMm: 550.5
+  wMm: 516.3
+  dMm: 459
+weightKg: 21.7
+specs:
+  f3Hz: 50.7
+  f6Hz: 42.9
+  fbHz: 45.2
+  maxSplExcursionDb: 110.8
+  maxSplThermalDb: 125.1
+  maxSplDb: 110.8
+  sensitivityDb: 99.1
+  recommendedCrossoverHz: 111.5
+  maxVelocityMs: 17.1
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-br-15-fane
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC0-1.0
+recommendedFor:
+  - techno
+  - hardstyle
+  - tribe
+buildComplexity: complex
+connectors:
+  - speakON NL2
+revision: 2026 build
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-15-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Riot 15 BR: 15" bass reflex kick built around the Fane 15-400. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

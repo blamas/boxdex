@@ -1,0 +1,12 @@
+# FAKE Dominator 10 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=B&C 10 CL 51 (bc-10-cl-51-8)
+Fs=60 Hz
+Qts=0.394
+Vas=31 L
+Sd=320 cm2
+Xmax=3.7 mm
+Vb=64.2 L
+Fb=58.3 Hz
+F3=57.5 Hz
+Sensitivity=98.7 dB

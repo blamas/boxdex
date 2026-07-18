@@ -1,0 +1,12 @@
+# FAKE Fury 6.5 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=18 Sound 6M44 (18s-6m44-8)
+Fs=102 Hz
+Qts=0.29
+Vas=3.8 L
+Sd=132 cm2
+Xmax=2.25 mm
+Vb=6.4 L
+Fb=130.5 Hz
+F3=150 Hz
+Sensitivity=101 dB

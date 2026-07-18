@@ -1,0 +1,123 @@
+---
+name: FAKE Outlaw 15 BP
+category: sub
+topology: bandpass
+topologyVariant: 4th order
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-153erc002-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: default-s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: default-s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: default-s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: default-s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: default-s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: default-s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: default-rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: default-rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: default-rew-impedance.csv
+            note: single cabinet
+  - id: alt-18s
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 110.2
+grossVolumeL: 137.8
+dims:
+  hMm: 566
+  wMm: 516.3
+  dMm: 471.5
+weightKg: 22.4
+specs:
+  f3Hz: 76.4
+  f6Hz: 66.5
+  fbHz: 55.8
+  f3HzHigh: 133.9
+  sensitivityDb: 100.9
+  recommendedCrossoverHz: 168.1
+  maxVelocityMs: 18.4
+  powerAesW: 550
+  powerProgramW: 1100
+  recommendedPowerW: 330
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-bp-15-pd
+availability: contact
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - mental
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-15-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Outlaw 15 BP: 15" bandpass sub built around the PD 153ERC002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

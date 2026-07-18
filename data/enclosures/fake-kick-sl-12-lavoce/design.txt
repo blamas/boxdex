@@ -1,0 +1,12 @@
+# FAKE Riot 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=LaVoce FBASS12-20 (lavoce-fbass12-20-8)
+Fs=53 Hz
+Qts=0.46
+Vas=75.41 L
+Sd=543.25 cm2
+Xmax=4.3 mm
+Vb=221.6 L
+Fc=81.5 Hz
+F3=81.5 Hz
+Sensitivity=103 dB

@@ -1,0 +1,81 @@
+---
+name: FAKE Nomad 12 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-112nd-w-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 95
+grossVolumeL: 118.8
+dims:
+  hMm: 582
+  wMm: 421
+  dMm: 485
+weightKg: 20.7
+specs:
+  f3Hz: 57.8
+  f6Hz: 50.3
+  fbHz: 44.5
+  f3HzHigh: 106.8
+  maxSplExcursionDb: 110.1
+  maxSplThermalDb: 123.5
+  maxSplDb: 110.1
+  sensitivityDb: 95
+  recommendedCrossoverHz: 127.2
+  maxVelocityMs: 18.8
+  powerAesW: 700
+  powerProgramW: 1400
+  recommendedPowerW: 420
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-SA-4.0
+recommendedFor:
+  - frenchcore
+  - tribe
+  - psytrance
+buildComplexity: simple
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-12-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nomad 12 BP: 12" bandpass kick built around the Beyma 112Nd/W. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

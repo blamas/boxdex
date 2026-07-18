@@ -1,0 +1,70 @@
+---
+name: FAKE Monolith 12 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-12-bg-100-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 23.4
+grossVolumeL: 29.3
+dims:
+  hMm: 289
+  wMm: 421
+  dMm: 241
+weightKg: 17.6
+specs:
+  f3Hz: 82.8
+  f6Hz: 62.9
+  maxSplExcursionDb: 126.9
+  maxSplThermalDb: 128.4
+  maxSplDb: 126.9
+  sensitivityDb: 95.4
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 182.2
+  powerAesW: 2000
+  powerProgramW: 4000
+  recommendedPowerW: 1200
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-12-bc
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Monolith 12 SL build (2026).
+recommendedFor:
+  - psytrance
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-12-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Monolith 12 SL: 12" sealed kick built around the B&C 12 BG 100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

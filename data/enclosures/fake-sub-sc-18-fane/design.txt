@@ -1,0 +1,12 @@
+# FAKE Seismic 18 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Fane 18-800N (fane-18-800n-8)
+Fs=38 Hz
+Qts=0.306
+Vas=217 L
+Sd=1133 cm2
+Xmax=7.1 mm
+Vb=1128.4 L
+HornCutoff=47.5 Hz
+F3=47.9 Hz
+Sensitivity=109 dB

@@ -1,0 +1,73 @@
+---
+name: FAKE Basstek 12 BR
+category: top
+topology: bass_reflex
+topologyVariant: aperiodic
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-112nd-w-8
+        qty: 1
+      - driver: faital-hf106-8
+        qty: 1
+        horn: rcf-h100
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 66.1
+grossVolumeL: 82.6
+dims:
+  hMm: 485
+  wMm: 421
+  dMm: 404.5
+weightKg: 22.4
+specs:
+  f3Hz: 42.8
+  f6Hz: 33.1
+  fbHz: 44.5
+  maxSplExcursionDb: 110.1
+  maxSplThermalDb: 123.5
+  maxSplDb: 110.1
+  sensitivityDb: 95
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 55.6
+  coverageAngleDeg: 90
+  maxVelocityMs: 18.8
+  powerAesW: 700
+  powerProgramW: 1400
+  recommendedPowerW: 420
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-12-beyma-2
+availability: paid
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-12-beyma-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Basstek 12 BR: 12" bass reflex top built around the Beyma 112Nd/W. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

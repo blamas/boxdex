@@ -1,0 +1,12 @@
+# FAKE Rumble 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Beyma 115ND/W (beyma-115nd-w-8)
+Fs=37 Hz
+Qts=0.285
+Vas=145 L
+Sd=910 cm2
+Xmax=6.6 mm
+Vb=59.3 L
+Fb=48.1 Hz
+F3=55.8 Hz
+Sensitivity=97.7 dB

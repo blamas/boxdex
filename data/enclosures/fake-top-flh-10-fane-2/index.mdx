@@ -1,0 +1,68 @@
+---
+name: FAKE Monolith 10 FLH
+category: top
+topology: front_loaded_horn
+topologyVariant: conical FLH
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-10-275-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 62.6
+grossVolumeL: 78.3
+dims:
+  hMm: 512.5
+  wMm: 357.5
+  dMm: 427
+weightKg: 22
+specs:
+  f3Hz: 77.2
+  f6Hz: 69.2
+  sensitivityDb: 101.1
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 77
+  recommendedCrossoverHz: 100.4
+  hornThroatCm2: 256.2
+  hornMouthCm2: 916.1
+  powerAesW: 550
+  powerProgramW: 1100
+  recommendedPowerW: 330
+author: fake-data
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Monolith 10 FLH build (2026).
+recommendedFor:
+  - tekno
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-10-fane-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Monolith 10 FLH: 10" front loaded horn top built around the Fane 10-275. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

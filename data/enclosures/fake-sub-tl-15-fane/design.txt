@@ -1,0 +1,11 @@
+# FAKE Rumble 15 TL - synthetic design export (not a real Hornresp record)
+Topology=transmission_line
+Driver=Fane 15-400 (fane-15-400-8)
+Fs=37 Hz
+Qts=0.305
+Vas=210 L
+Sd=855.3 cm2
+Xmax=5 mm
+Vb=210 L
+F3=31.5 Hz
+Sensitivity=99.1 dB

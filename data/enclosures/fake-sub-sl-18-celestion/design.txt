@@ -1,0 +1,12 @@
+# FAKE Warehouse 18 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Celestion BX18-4085 (celestion-bx18-4085-8)
+Fs=30 Hz
+Qts=0.2
+Vas=337 L
+Sd=1134 cm2
+Xmax=3.4 mm
+Vb=58.6 L
+Fc=106.1 Hz
+F3=106.1 Hz
+Sensitivity=102.8 dB

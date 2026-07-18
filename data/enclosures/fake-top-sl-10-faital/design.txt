@@ -1,0 +1,12 @@
+# FAKE Nucleus 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Faital PRO 10FE200-4 (faital-10fe200-4-4)
+Fs=55 Hz
+Qts=0.492
+Vas=53 L
+Sd=332 cm2
+Xmax=4.6 mm
+Vb=199.2 L
+Fc=79 Hz
+F3=79 Hz
+Sensitivity=104.5 dB

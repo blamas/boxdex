@@ -1,0 +1,12 @@
+# FAKE Kraken 15 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=B&C 14 CXN 6 (bc-14-cxn-6-8)
+Fs=45 Hz
+Qts=0.28
+Vas=131 L
+Sd=707 cm2
+Xmax=5.6 mm
+Vb=75.3 L
+Fb=59.4 Hz
+F3=80.3 Hz
+Sensitivity=100 dB

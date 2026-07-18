@@ -1,0 +1,85 @@
+---
+name: FAKE Bunker 18 FLH
+category: sub
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18fh1042-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 360
+grossVolumeL: 450
+dims:
+  hMm: 939.5
+  wMm: 611.5
+  dMm: 783
+weightKg: 55.5
+specs:
+  f3Hz: 53.4
+  f6Hz: 47.9
+  maxSplExcursionDb: 123.1
+  maxSplThermalDb: 129.4
+  maxSplDb: 123.1
+  sensitivityDb: 103.4
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 53.2
+  recommendedCrossoverHz: 117.5
+  hornThroatCm2: 786.8
+  hornMouthCm2: 2872.5
+  powerAesW: 1000
+  powerProgramW: 2000
+  recommendedPowerW: 600
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - frenchcore
+buildComplexity: moderate
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-flh-18-faital-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Bunker 18 FLH: 18" front loaded horn sub built around the Faital PRO 18FH1042. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,66 @@
+---
+name: FAKE Vortex 10 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: radian-5208-c-8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 24.7
+grossVolumeL: 30.9
+dims:
+  hMm: 322
+  wMm: 357.5
+  dMm: 268.5
+weightKg: 12.8
+specs:
+  f3Hz: 69.4
+  f6Hz: 53.9
+  fbHz: 70.6
+  maxSplExcursionDb: 94.7
+  maxSplThermalDb: 119.3
+  maxSplDb: 94.7
+  sensitivityDb: 96.3
+  recommendedCrossoverHz: 90.2
+  maxVelocityMs: 14.2
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-10-radian
+availability: paid
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - tribe
+buildComplexity: moderate
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-10-radian-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Vortex 10 BR: 10" bass reflex top built around the Radian 5208 C-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

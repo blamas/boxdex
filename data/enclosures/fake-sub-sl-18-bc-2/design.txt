@@ -1,0 +1,12 @@
+# FAKE Rumble 18 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=B&C 18 DS 115 (bc-18-ds-115-8)
+Fs=30 Hz
+Qts=0.2
+Vas=168 L
+Sd=1210 cm2
+Xmax=7.5 mm
+Vb=29.2 L
+Fc=106.1 Hz
+F3=106.1 Hz
+Sensitivity=100.4 dB

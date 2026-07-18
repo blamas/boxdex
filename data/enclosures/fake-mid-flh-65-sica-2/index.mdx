@@ -1,0 +1,74 @@
+---
+name: FAKE Mammoth 6.5 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: sica-6-5-h-1-5-cp-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 24.2
+grossVolumeL: 30.3
+dims:
+  hMm: 384
+  wMm: 246.4
+  dMm: 320
+weightKg: 12.7
+specs:
+  f3Hz: 63.9
+  f6Hz: 57.2
+  maxSplExcursionDb: 101.6
+  maxSplThermalDb: 110.2
+  maxSplDb: 101.6
+  sensitivityDb: 93.4
+  hornCutoffHz: 63.6
+  recommendedCrossoverHz: 83.1
+  hornThroatCm2: 85.9
+  hornMouthCm2: 473.1
+  powerAesW: 120
+  powerProgramW: 240
+  recommendedPowerW: 72
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - dub
+  - mental
+  - techno
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-65-sica-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 6.5 FLH: 6.5" front loaded horn mid built around the Sica 6.5 H 1.5 CP. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

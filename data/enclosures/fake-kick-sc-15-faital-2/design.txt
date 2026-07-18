@@ -1,0 +1,12 @@
+# FAKE Dominator 15 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Faital PRO 15FH500 (faital-15fh500-8)
+Fs=35 Hz
+Qts=0.31
+Vas=199.2 L
+Sd=847 cm2
+Xmax=9.25 mm
+Vb=259 L
+HornCutoff=43.8 Hz
+F3=44.2 Hz
+Sensitivity=101.5 dB

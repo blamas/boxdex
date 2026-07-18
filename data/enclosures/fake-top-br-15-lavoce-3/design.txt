@@ -1,0 +1,12 @@
+# FAKE Cyclone 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=LaVoce NBASS15-30 (lavoce-nbass15-30-8)
+Fs=42 Hz
+Qts=0.36
+Vas=143.06 L
+Sd=855 cm2
+Xmax=6.6 mm
+Vb=114.3 L
+Fb=44.2 Hz
+F3=45.6 Hz
+Sensitivity=98.5 dB

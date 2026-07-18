@@ -1,0 +1,12 @@
+# FAKE Terra 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Beyma 10"G40 (beyma-10-g40-8)
+Fs=45 Hz
+Qts=0.3
+Vas=49 L
+Sd=380 cm2
+Xmax=7 mm
+Vb=58.8 L
+HornCutoff=63 Hz
+F3=63.2 Hz
+Sensitivity=99 dB

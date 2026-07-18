@@ -1,0 +1,109 @@
+---
+name: FAKE Warehouse 12 BR
+category: mid
+topology: bass_reflex
+topologyVariant: dual port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl12-200x-8
+        qty: 2
+      - driver: faital-8fe300-4
+        qty: 1
+      - driver: celestion-cdx1-1446-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 253.2
+grossVolumeL: 316.5
+dims:
+  hMm: 950
+  wMm: 421
+  dMm: 791.5
+weightKg: 53.5
+specs:
+  f3Hz: 39.9
+  f6Hz: 30.9
+  fbHz: 41.6
+  maxSplExcursionDb: 109.1
+  maxSplThermalDb: 125.3
+  maxSplDb: 109.1
+  sensitivityDb: 99.3
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 51.9
+  coverageAngleDeg: 90
+  maxVelocityMs: 17.6
+  powerAesW: 650
+  powerProgramW: 1300
+  recommendedPowerW: 390
+ways: 3
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-12-celestion
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - hardtek
+  - dub
+  - techno
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-12-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Warehouse 12 BR: 12" bass reflex mid built around the Celestion BL12-200X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

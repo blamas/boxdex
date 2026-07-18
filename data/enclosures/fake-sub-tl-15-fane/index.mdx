@@ -1,0 +1,78 @@
+---
+name: FAKE Rumble 15 TL
+category: sub
+topology: transmission_line
+topologyVariant: TQWT
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-15-400-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 210
+grossVolumeL: 262.5
+dims:
+  hMm: 781
+  wMm: 516.3
+  dMm: 651
+weightKg: 33.6
+specs:
+  f3Hz: 31.5
+  f6Hz: 24.1
+  sensitivityDb: 99.1
+  recommendedCrossoverHz: 69.3
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Rumble 15 TL build (2026).
+recommendedFor:
+  - mental
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-15-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Rumble 15 TL: 15" transmission line sub built around the Fane 15-400. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

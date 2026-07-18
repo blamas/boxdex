@@ -1,0 +1,74 @@
+---
+name: FAKE Bunker 6.5 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-6-p200-nd-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: catt_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 5.1
+grossVolumeL: 6.4
+dims:
+  hMm: 176.5
+  wMm: 246.4
+  dMm: 147
+weightKg: 10.6
+specs:
+  f3Hz: 82.4
+  f6Hz: 70.5
+  fbHz: 71.7
+  maxSplExcursionDb: 103.6
+  maxSplThermalDb: 115
+  maxSplDb: 103.6
+  sensitivityDb: 92
+  recommendedCrossoverHz: 107.1
+  maxVelocityMs: 17.5
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-65-beyma-2
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Bunker 6.5 BR build (2026).
+recommendedFor:
+  - bass_music
+buildComplexity: simple
+connectors:
+  - speakON NL4
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-65-beyma-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Bunker 6.5 BR: 6.5" bass reflex mid built around the Beyma 6"P200/ND. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

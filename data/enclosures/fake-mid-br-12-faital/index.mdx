@@ -1,0 +1,98 @@
+---
+name: FAKE Warehouse 12 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-12fe300-4
+        qty: 1
+      - driver: 18s-6ntlw2000-8
+        qty: 1
+      - driver: beyma-cd-2514nd-pt-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+  - id: alt-18s
+    drivers:
+      - driver: 18s-12cx800-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 115.7
+grossVolumeL: 144.6
+dims:
+  hMm: 642
+  wMm: 421
+  dMm: 535
+weightKg: 33
+specs:
+  f3Hz: 38.6
+  f6Hz: 29.7
+  fbHz: 41.3
+  maxSplExcursionDb: 106.1
+  maxSplThermalDb: 119
+  maxSplDb: 106.1
+  sensitivityDb: 95
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 50.2
+  coverageAngleDeg: 90
+  maxVelocityMs: 18
+  powerAesW: 570
+  powerProgramW: 1140
+  recommendedPowerW: 342
+ways: 3
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-4.0
+recommendedFor:
+  - mental
+  - techno
+  - breakcore
+buildComplexity: complex
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-12-faital-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Warehouse 12 BR: 12" bass reflex mid built around the Faital PRO 12FE300. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,12 @@
+# FAKE Cyclone 10 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Fane 10-275 (fane-10-275-8)
+Fs=55 Hz
+Qts=0.356
+Vas=26.1 L
+Sd=366 cm2
+Xmax=4.1 mm
+Vb=67.8 L
+HornCutoff=68.8 Hz
+F3=69.2 Hz
+Sensitivity=100.6 dB

@@ -1,0 +1,79 @@
+---
+name: FAKE Titan 15 FH
+category: sub
+topology: folded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-14-cxn-6-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 196.5
+grossVolumeL: 245.6
+dims:
+  hMm: 755.5
+  wMm: 516.3
+  dMm: 629.5
+weightKg: 32.1
+specs:
+  f3Hz: 49.8
+  f6Hz: 44.6
+  maxSplExcursionDb: 111.8
+  maxSplThermalDb: 126
+  maxSplDb: 111.8
+  sensitivityDb: 105
+  hornCutoffHz: 49.5
+  recommendedCrossoverHz: 109.6
+  hornThroatCm2: 494.9
+  hornMouthCm2: 1755.3
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-fh-15-bc-2
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - breakcore
+  - raggatek
+  - dub
+buildComplexity: moderate
+connectors:
+  - XLR
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-fh-15-bc-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Titan 15 FH: 15" folded horn sub built around the B&C 14 CXN 6. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

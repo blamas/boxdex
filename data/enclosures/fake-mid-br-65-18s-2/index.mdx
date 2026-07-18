@@ -1,0 +1,76 @@
+---
+name: FAKE Titan 6.5 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-6m44-8
+        qty: 4
+      - driver: 18s-nsd1480n-16
+        qty: 1
+        horn: rcf-hf99
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 6.4
+grossVolumeL: 8
+dims:
+  hMm: 197.5
+  wMm: 246.4
+  dMm: 164.5
+weightKg: 30.7
+specs:
+  f3Hz: 150
+  f6Hz: 128.2
+  fbHz: 130.5
+  maxSplExcursionDb: 118.1
+  maxSplThermalDb: 130.1
+  maxSplDb: 118.1
+  sensitivityDb: 101
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 195
+  coverageAngleDeg: 90
+  maxVelocityMs: 17
+  powerAesW: 800
+  powerProgramW: 1600
+  recommendedPowerW: 480
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-65-18s-2
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Titan 6.5 BR build (2026).
+recommendedFor:
+  - techno
+  - hardstyle
+buildComplexity: simple
+connectors:
+  - speakON NL4
+revision: v2
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-65-18s-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Titan 6.5 BR: 6.5" bass reflex mid built around the 18 Sound 6M44. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

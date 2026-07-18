@@ -1,3 +1,0 @@
-Hornresp input record (fake test data)
-Name: kickbin-18-bp
-S1=1210 S2=5400 Con=Exp F12=40

@@ -1,0 +1,12 @@
+# FAKE Rumble 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Fane 10-275 (fane-10-275-8)
+Fs=55 Hz
+Qts=0.356
+Vas=26.1 L
+Sd=366 cm2
+Xmax=4.1 mm
+Vb=62.6 L
+HornCutoff=77 Hz
+F3=77.2 Hz
+Sensitivity=101.1 dB

@@ -1,0 +1,64 @@
+---
+name: FAKE Fury 12 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fsf122-02-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 83.4
+grossVolumeL: 104.3
+dims:
+  hMm: 545
+  wMm: 421
+  dMm: 454.5
+weightKg: 19.4
+specs:
+  f3Hz: 80.3
+  f6Hz: 72
+  maxSplExcursionDb: 111.7
+  maxSplThermalDb: 120.2
+  maxSplDb: 111.7
+  sensitivityDb: 102.4
+  hornCutoffHz: 79.8
+  recommendedCrossoverHz: 104.4
+  hornThroatCm2: 349.3
+  hornMouthCm2: 1147.2
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-flh-12-lavoce
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - psytrance
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-12-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 12 FLH: 12" front loaded horn top built around the LaVoce FSF122.02. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

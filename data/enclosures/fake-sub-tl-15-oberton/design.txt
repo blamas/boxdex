@@ -1,0 +1,11 @@
+# FAKE Vortex 15 TL - synthetic design export (not a real Hornresp record)
+Topology=transmission_line
+Driver=Oberton 15B450 / 15B450A / 15B450A2 (oberton-15b450-15b450a-15b450a2-8)
+Fs=45.08 Hz
+Qts=0.286
+Vas=146.85 L
+Sd=829.6 cm2
+Xmax=6.75 mm
+Vb=146.9 L
+F3=38.4 Hz
+Sensitivity=100 dB

@@ -1,0 +1,12 @@
+# FAKE Nucleus 15 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=LaVoce NBASS15-30 (lavoce-nbass15-30-8)
+Fs=42 Hz
+Qts=0.36
+Vas=143.06 L
+Sd=855 cm2
+Xmax=6.6 mm
+Vb=50.1 L
+Fc=82.5 Hz
+F3=82.5 Hz
+Sensitivity=98.5 dB

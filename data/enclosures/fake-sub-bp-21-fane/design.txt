@@ -1,0 +1,12 @@
+# FAKE Seismic 21 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Fane Colossus Prime 21NDXL (fane-colossus-prime-21ndxl-8)
+Fs=33 Hz
+Qts=0.36
+Vas=241 L
+Sd=1520 cm2
+Xmax=14 mm
+Vb=277 L
+Fb=34.8 Hz
+F3=46 Hz
+Sensitivity=98 dB

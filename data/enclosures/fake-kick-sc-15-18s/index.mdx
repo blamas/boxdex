@@ -1,0 +1,94 @@
+---
+name: FAKE Fury 15 SC
+category: kick
+topology: scoop
+topologyVariant: long scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: default-s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: default-rew-spl.csv
+            note: gated, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-15lw1400-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 172.3
+grossVolumeL: 215.4
+dims:
+  hMm: 707.5
+  wMm: 516.3
+  dMm: 589.5
+weightKg: 29.4
+specs:
+  f3Hz: 60.2
+  f6Hz: 53.9
+  maxSplExcursionDb: 117.4
+  maxSplThermalDb: 129.5
+  maxSplDb: 117.4
+  sensitivityDb: 103.7
+  hornCutoffHz: 60
+  recommendedCrossoverHz: 132.4
+  hornThroatCm2: 598.5
+  hornMouthCm2: 2191.7
+  powerAesW: 850
+  powerProgramW: 1700
+  recommendedPowerW: 510
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-15-18s
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - frenchcore
+  - bass_music
+  - psytrance
+buildComplexity: simple
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-15-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Fury 15 SC: 15" scoop kick built around the 18 Sound 15CX1000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

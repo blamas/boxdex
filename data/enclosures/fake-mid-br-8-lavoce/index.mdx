@@ -1,0 +1,78 @@
+---
+name: FAKE Basstek 8 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass08-18-8
+        qty: 1
+      - driver: beyma-cd-101nd-pk-8
+        qty: 1
+        horn: eighteensound-xt120
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 25.6
+grossVolumeL: 32
+dims:
+  hMm: 361.5
+  wMm: 294
+  dMm: 301
+weightKg: 17.9
+specs:
+  f3Hz: 49.7
+  f6Hz: 38.4
+  fbHz: 50.8
+  maxSplExcursionDb: 100.7
+  maxSplThermalDb: 114.3
+  maxSplDb: 100.7
+  sensitivityDb: 92.5
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 64.6
+  coverageAngleDeg: 90
+  maxVelocityMs: 16.8
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+ways: 2
+author: fake-data
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Basstek 8 BR build (2026).
+recommendedFor:
+  - hardtek
+  - frenchcore
+  - mental
+buildComplexity: simple
+connectors:
+  - binding post
+  - XLR
+revision: v2
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-8-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Basstek 8 BR: 8" bass reflex mid built around the LaVoce FBASS08-18. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

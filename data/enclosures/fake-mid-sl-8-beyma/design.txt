@@ -1,0 +1,12 @@
+# FAKE Outlaw 8 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Beyma 8"BR40/N (beyma-8-br40-n-8)
+Fs=30 Hz
+Qts=0.39
+Vas=89.1 L
+Sd=220 cm2
+Xmax=6.7 mm
+Vb=55.6 L
+Fc=61.5 Hz
+F3=55.2 Hz
+Sensitivity=94 dB

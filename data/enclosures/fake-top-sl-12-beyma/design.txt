@@ -1,0 +1,12 @@
+# FAKE Mammoth 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Beyma 112Nd/W (beyma-112nd-w-8)
+Fs=48 Hz
+Qts=0.415
+Vas=55 L
+Sd=550 cm2
+Xmax=7.4 mm
+Vb=115.6 L
+Fc=81.8 Hz
+F3=81.8 Hz
+Sensitivity=101 dB

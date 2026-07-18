@@ -1,0 +1,86 @@
+---
+name: FAKE Fury 12 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-p12-150-8
+        qty: 1
+      - driver: bc-dh450h-16
+        qty: 1
+        horn: bc-me45
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 15
+grossVolumeL: 18.8
+dims:
+  hMm: 231.5
+  wMm: 421
+  dMm: 193
+weightKg: 16.7
+specs:
+  f3Hz: 115.1
+  f6Hz: 91.5
+  sensitivityDb: 98.2
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 149.6
+  coverageAngleDeg: 90
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-sl-12-pd
+availability: free
+license: CC0-1.0
+recommendedFor:
+  - dub
+  - acid
+buildComplexity: moderate
+connectors:
+  - XLR
+revision: 2026 build
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-12-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Fury 12 SL: 12" sealed top built around the PD P12/150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

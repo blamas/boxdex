@@ -1,0 +1,12 @@
+# FAKE Dominator 8 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Faital PRO 8FE200 (faital-8fe200-4)
+Fs=80 Hz
+Qts=0.45
+Vas=15.8 L
+Sd=209 cm2
+Xmax=4.62 mm
+Vb=40.6 L
+Fc=106.7 Hz
+F3=129 Hz
+Sensitivity=98 dB

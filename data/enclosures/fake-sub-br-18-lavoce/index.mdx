@@ -1,0 +1,89 @@
+---
+name: FAKE Fury 18 BR
+category: sub
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-saf184-01-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 103.7
+grossVolumeL: 129.6
+dims:
+  hMm: 504.5
+  wMm: 611.5
+  dMm: 420.5
+weightKg: 21.7
+specs:
+  f3Hz: 46.5
+  f6Hz: 39.6
+  fbHz: 41.1
+  maxSplExcursionDb: 114.5
+  maxSplThermalDb: 126.7
+  maxSplDb: 114.5
+  sensitivityDb: 98.2
+  recommendedCrossoverHz: 102.3
+  maxVelocityMs: 18.4
+  powerAesW: 700
+  powerProgramW: 1400
+  recommendedPowerW: 420
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-br-18-lavoce
+availability: commission
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+    note: commission enquiries
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: LicenseRef-Proprietary
+recommendedFor:
+  - bass_music
+  - mental
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans: []
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Fury 18 BR: 18" bass reflex sub built around the LaVoce SAF184.01. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,12 @@
+# FAKE Nomad 12 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Celestion BL12-200X (celestion-bl12-200x-8)
+Fs=45 Hz
+Qts=0.416
+Vas=104.6 L
+Sd=517 cm2
+Xmax=4 mm
+Vb=126.6 L
+Fb=41.6 Hz
+F3=39.9 Hz
+Sensitivity=96.3 dB

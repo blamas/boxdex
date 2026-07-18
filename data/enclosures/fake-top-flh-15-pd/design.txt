@@ -1,0 +1,12 @@
+# FAKE Monolith 15 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=PD 1550/2 (pd-1550-2-8)
+Fs=46.2 Hz
+Qts=0.294
+Vas=126 L
+Sd=908 cm2
+Xmax=5.3 mm
+Vb=302.4 L
+HornCutoff=64.7 Hz
+F3=65.1 Hz
+Sensitivity=106 dB

@@ -1,0 +1,68 @@
+---
+name: FAKE Riot 18 SC
+category: sub
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18fh1042-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 195
+grossVolumeL: 243.8
+dims:
+  hMm: 691.5
+  wMm: 611.5
+  dMm: 576.5
+weightKg: 31.9
+specs:
+  f3Hz: 47.9
+  f6Hz: 42.9
+  maxSplExcursionDb: 115.2
+  maxSplThermalDb: 123.4
+  maxSplDb: 115.2
+  sensitivityDb: 99.9
+  hornCutoffHz: 47.5
+  recommendedCrossoverHz: 105.4
+  hornThroatCm2: 786.8
+  hornMouthCm2: 2537.1
+  powerAesW: 500
+  powerProgramW: 1000
+  recommendedPowerW: 300
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sc-18-faital
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-SA-4.0
+recommendedFor:
+  - frenchcore
+  - mental
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+  - speakON NL8
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-18-faital-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Riot 18 SC: 18" scoop sub built around the Faital PRO 18FH1042. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

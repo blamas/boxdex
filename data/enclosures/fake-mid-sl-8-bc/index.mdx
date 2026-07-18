@@ -1,0 +1,90 @@
+---
+name: FAKE Nucleus 8 SL
+category: mid
+topology: sealed
+topologyVariant: infinite baffle
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-8bg51-8
+        qty: 4
+      - driver: rcf-nd650-8
+        qty: 1
+        horn: faital-wg141
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 34
+grossVolumeL: 42.5
+dims:
+  hMm: 416.5
+  wMm: 294
+  dMm: 347
+weightKg: 33.8
+specs:
+  f3Hz: 91.9
+  f6Hz: 69.8
+  maxSplExcursionDb: 125.7
+  maxSplThermalDb: 128
+  maxSplDb: 125.7
+  sensitivityDb: 98
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 119.5
+  coverageAngleDeg: 110
+  powerAesW: 1000
+  powerProgramW: 2000
+  recommendedPowerW: 600
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-8-bc
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - techno
+  - frenchcore
+  - raggatek
+buildComplexity: complex
+connectors:
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-8-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nucleus 8 SL: 8" sealed mid built around the B&C 8BG51. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

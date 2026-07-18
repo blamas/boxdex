@@ -1,0 +1,72 @@
+---
+name: FAKE Warehouse 10 SL
+category: kick
+topology: sealed
+topologyVariant: acoustic suspension
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-10b100-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 27
+grossVolumeL: 33.8
+dims:
+  hMm: 337
+  wMm: 357.5
+  dMm: 280.5
+weightKg: 13
+specs:
+  f3Hz: 69.6
+  f6Hz: 52.9
+  maxSplExcursionDb: 108.6
+  maxSplThermalDb: 112.5
+  maxSplDb: 108.6
+  sensitivityDb: 92.5
+  recommendedCrossoverHz: 153.1
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-10-oberton
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-4.0
+recommendedFor:
+  - frenchcore
+  - breakcore
+buildComplexity: complex
+connectors:
+  - XLR
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Warehouse 10 SL: 10" sealed kick built around the Oberton 10B100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

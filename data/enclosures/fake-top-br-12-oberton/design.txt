@@ -1,0 +1,12 @@
+# FAKE Voidus 12 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Oberton 12B400 (oberton-12b400-8)
+Fs=50.47 Hz
+Qts=0.249
+Vas=74.74 L
+Sd=514.7 cm2
+Xmax=5.25 mm
+Vb=82.8 L
+Fb=74.1 Hz
+F3=91.9 Hz
+Sensitivity=104 dB

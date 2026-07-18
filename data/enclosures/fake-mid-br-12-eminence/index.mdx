@@ -1,0 +1,72 @@
+---
+name: FAKE Havoc 12 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-commonwealth-12-8
+        qty: 1
+      - driver: 18s-nd1018bt-8
+        qty: 1
+        horn: eighteensound-xt120
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 57
+grossVolumeL: 71.3
+dims:
+  hMm: 451
+  wMm: 421
+  dMm: 375.5
+weightKg: 21.4
+specs:
+  f3Hz: 60.9
+  f6Hz: 49.3
+  fbHz: 56.6
+  maxSplExcursionDb: 93.3
+  maxSplThermalDb: 121.6
+  maxSplDb: 93.3
+  sensitivityDb: 98.1
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 79.2
+  coverageAngleDeg: 90
+  maxVelocityMs: 14.1
+  powerAesW: 225
+  powerProgramW: 450
+  recommendedPowerW: 135
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-12-eminence
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-SA-4.0
+recommendedFor:
+  - acid
+buildComplexity: complex
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-12-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Havoc 12 BR: 12" bass reflex mid built around the Eminence COMMONWEALTH 12. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

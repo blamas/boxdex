@@ -1,0 +1,12 @@
+# FAKE Nomad 10 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Beyma 10"G40 (beyma-10-g40-8)
+Fs=45 Hz
+Qts=0.3
+Vas=49 L
+Sd=380 cm2
+Xmax=7 mm
+Vb=46.4 L
+Fb=55.9 Hz
+F3=63.1 Hz
+Sensitivity=98 dB

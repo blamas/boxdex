@@ -1,0 +1,77 @@
+---
+name: FAKE Terra 21 TL
+category: sub
+topology: transmission_line
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: sica-21-s-4-pl-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 255
+grossVolumeL: 318.8
+dims:
+  hMm: 735.5
+  wMm: 706.8
+  dMm: 613
+weightKg: 38.7
+specs:
+  f3Hz: 29.7
+  f6Hz: 22.5
+  maxSplExcursionDb: 109.6
+  maxSplThermalDb: 129.6
+  maxSplDb: 109.6
+  sensitivityDb: 98.8
+  recommendedCrossoverHz: 65.3
+  powerAesW: 1200
+  powerProgramW: 2400
+  recommendedPowerW: 720
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-SA-4.0
+recommendedFor:
+  - acid
+  - hardtek
+buildComplexity: moderate
+connectors:
+  - XLR
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-21-sica-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Terra 21 TL: 21" transmission line sub built around the Sica 21 S 4 PL. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

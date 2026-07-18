@@ -1,0 +1,67 @@
+---
+name: FAKE Rumble 6.5 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-6cla51-16
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 20
+grossVolumeL: 25
+dims:
+  hMm: 349
+  wMm: 246.4
+  dMm: 291
+weightKg: 12.3
+specs:
+  f3Hz: 125.6
+  f6Hz: 112.6
+  maxSplExcursionDb: 113.2
+  maxSplThermalDb: 117.5
+  maxSplDb: 113.2
+  sensitivityDb: 97.5
+  hornCutoffHz: 124.6
+  recommendedCrossoverHz: 163.3
+  hornThroatCm2: 92.4
+  hornMouthCm2: 430
+  powerAesW: 250
+  powerProgramW: 500
+  recommendedPowerW: 150
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-4.0
+recommendedFor:
+  - bass_music
+  - hardcore
+buildComplexity: complex
+connectors:
+  - XLR
+  - speakON NL2
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-65-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Rumble 6.5 FLH: 6.5" front loaded horn mid built around the B&C 6CLA51. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,90 @@
+---
+name: FAKE Outlaw 15 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-153erc002-8
+        qty: 4
+      - driver: bms-4547nd-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 4
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 148.8
+grossVolumeL: 186
+dims:
+  hMm: 657.5
+  wMm: 516.3
+  dMm: 548
+weightKg: 46.7
+specs:
+  f3Hz: 107.9
+  f6Hz: 82
+  maxSplExcursionDb: 140.6
+  maxSplThermalDb: 140.3
+  maxSplDb: 140.3
+  sensitivityDb: 106.9
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 140.3
+  coverageAngleDeg: 90
+  powerAesW: 2200
+  powerProgramW: 4400
+  recommendedPowerW: 1320
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-sl-15-pd
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - techno
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+  - speakON NL2
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-15-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Outlaw 15 SL: 15" sealed top built around the PD 153ERC002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

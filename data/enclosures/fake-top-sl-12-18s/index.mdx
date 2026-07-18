@@ -1,0 +1,71 @@
+---
+name: FAKE Riot 12 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-12cx800-8
+        qty: 1
+      - driver: sica-8-fe-2-cp-8
+        qty: 1
+      - driver: 18s-nd1480a-8
+        qty: 1
+        horn: rcf-hf64
+      - driver: faital-hf109-16
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 10.7
+grossVolumeL: 13.4
+dims:
+  hMm: 195.5
+  wMm: 421
+  dMm: 163
+weightKg: 26.2
+specs:
+  f3Hz: 148.1
+  f6Hz: 112.5
+  sensitivityDb: 99.4
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 192.5
+  coverageAngleDeg: 60
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+ways: 4
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC0-1.0
+recommendedFor:
+  - breakcore
+buildComplexity: simple
+connectors:
+  - XLR
+  - speakON NL2
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-12-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Riot 12 SL: 12" sealed top built around the 18 Sound 12CX800. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

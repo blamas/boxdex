@@ -1,0 +1,78 @@
+---
+name: FAKE Nomad 21 SL
+category: sub
+topology: sealed
+topologyVariant: acoustic suspension
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-21xl3000-4
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 48
+grossVolumeL: 60
+dims:
+  hMm: 319
+  wMm: 706.8
+  dMm: 266
+weightKg: 20.4
+specs:
+  f3Hz: 102.9
+  f6Hz: 78.1
+  maxSplExcursionDb: 148.3
+  maxSplThermalDb: 138.8
+  maxSplDb: 138.8
+  sensitivityDb: 101
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 226.4
+  powerAesW: 6000
+  powerProgramW: 12000
+  recommendedPowerW: 3600
+author: fake-data
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Nomad 21 SL build (2026).
+recommendedFor:
+  - acid
+  - dub
+buildComplexity: simple
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sl-21-faital-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nomad 21 SL: 21" sealed sub built around the Faital PRO 21XL3000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

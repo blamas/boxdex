@@ -1,0 +1,68 @@
+---
+name: FAKE Kraken 12 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-12b400-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 89.7
+grossVolumeL: 112.1
+dims:
+  hMm: 565.5
+  wMm: 421
+  dMm: 471
+weightKg: 20.1
+specs:
+  f3Hz: 71.2
+  f6Hz: 63.9
+  maxSplExcursionDb: 114.7
+  maxSplThermalDb: 124
+  maxSplDb: 114.7
+  sensitivityDb: 102
+  hornCutoffHz: 70.7
+  recommendedCrossoverHz: 92.6
+  hornThroatCm2: 360.3
+  hornMouthCm2: 1190.4
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-flh-12-oberton
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - tekno
+  - psytrance
+  - bass_music
+buildComplexity: simple
+connectors:
+  - XLR
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-12-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Kraken 12 FLH: 12" front loaded horn top built around the Oberton 12B400. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

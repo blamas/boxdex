@@ -1,0 +1,68 @@
+---
+name: FAKE Titan 18 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-18-ds-115-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 39.5
+grossVolumeL: 49.4
+dims:
+  hMm: 311.5
+  wMm: 611.5
+  dMm: 259.5
+weightKg: 14.4
+specs:
+  f3Hz: 75.6
+  f6Hz: 65.1
+  fbHz: 53.6
+  f3HzHigh: 128.6
+  sensitivityDb: 97.4
+  recommendedCrossoverHz: 166.3
+  maxVelocityMs: 18.9
+  powerAesW: 1700
+  powerProgramW: 3400
+  recommendedPowerW: 1020
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-SA-4.0
+recommendedFor:
+  - techno
+  - tribe
+  - mental
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-18-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Titan 18 BP: 18" bandpass sub built around the B&C 18 DS 115. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

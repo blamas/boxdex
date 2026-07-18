@@ -1,0 +1,87 @@
+---
+name: FAKE Basstek 10 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-basslite-ch2010-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 87.1
+grossVolumeL: 108.9
+dims:
+  hMm: 604.5
+  wMm: 357.5
+  dMm: 504
+weightKg: 19.8
+specs:
+  f3Hz: 66.5
+  f6Hz: 57.8
+  fbHz: 51.2
+  f3HzHigh: 122.9
+  maxSplExcursionDb: 102
+  maxSplThermalDb: 118
+  maxSplDb: 102
+  sensitivityDb: 96.2
+  recommendedCrossoverHz: 146.3
+  maxVelocityMs: 16.1
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-bp-10-eminence-2
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC0-1.0
+recommendedFor:
+  - raggatek
+  - frenchcore
+  - tribe
+buildComplexity: moderate
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-10-eminence-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Basstek 10 BP: 10" bandpass kick built around the Eminence BASSLITE CH2010. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

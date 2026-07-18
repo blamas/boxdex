@@ -1,0 +1,60 @@
+---
+name: FAKE Vortex 15 TL
+category: sub
+topology: transmission_line
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-15b450-15b450a-15b450a2-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 146.9
+grossVolumeL: 183.6
+dims:
+  hMm: 653
+  wMm: 516.3
+  dMm: 544.5
+weightKg: 26.5
+specs:
+  f3Hz: 38.4
+  f6Hz: 29.4
+  maxSplExcursionDb: 110.3
+  maxSplThermalDb: 126.5
+  maxSplDb: 110.3
+  sensitivityDb: 100
+  recommendedCrossoverHz: 84.5
+  powerAesW: 450
+  powerProgramW: 900
+  recommendedPowerW: 270
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - bass_music
+  - raggatek
+buildComplexity: simple
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-15-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Vortex 15 TL: 15" transmission line sub built around the Oberton 15B450 / 15B450A / 15B450A2. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

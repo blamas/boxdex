@@ -1,0 +1,12 @@
+# FAKE Vortex 15 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Eminence 15-3008PS (eminence-15-3008ps-8)
+Fs=47.9 Hz
+Qts=0.379
+Vas=203.6 L
+Sd=856.3 cm2
+Xmax=5.5 mm
+Vb=82.1 L
+Fc=89.4 Hz
+F3=89.4 Hz
+Sensitivity=100.2 dB

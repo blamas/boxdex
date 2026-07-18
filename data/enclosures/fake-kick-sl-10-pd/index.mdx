@@ -1,0 +1,65 @@
+---
+name: FAKE Cyclone 10 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-pd-102er-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 31.4
+grossVolumeL: 39.3
+dims:
+  hMm: 363
+  wMm: 357.5
+  dMm: 302.5
+weightKg: 13.5
+specs:
+  f3Hz: 110.6
+  f6Hz: 84
+  maxSplExcursionDb: 106.8
+  maxSplThermalDb: 117.1
+  maxSplDb: 106.8
+  sensitivityDb: 97.1
+  recommendedCrossoverHz: 243.3
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-10-pd
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-SA-4.0
+recommendedFor:
+  - techno
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+  - binding post
+revision: v2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 10 SL: 10" sealed kick built around the PD PD 102ER. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

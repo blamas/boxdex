@@ -1,0 +1,75 @@
+---
+name: FAKE Mammoth 6.5 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-6b150-8
+        qty: 4
+      - driver: lavoce-df10-101le-16
+        qty: 1
+        horn: oberton-h-960
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: basta_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 12
+grossVolumeL: 15
+dims:
+  hMm: 270.5
+  wMm: 246.4
+  dMm: 225
+weightKg: 31.4
+specs:
+  f3Hz: 133.3
+  f6Hz: 101.3
+  maxSplExcursionDb: 125.9
+  maxSplThermalDb: 125.8
+  maxSplDb: 125.8
+  sensitivityDb: 98
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 173.3
+  coverageAngleDeg: 90
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-65-oberton
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - tribe
+buildComplexity: simple
+connectors:
+  - speakON NL4
+revision: rev C
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-65-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 6.5 SL: 6.5" sealed mid built around the Oberton 6B150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

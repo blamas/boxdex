@@ -1,0 +1,12 @@
+# FAKE Basstek 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Celestion BL 10-100 (celestion-bl-10-100-8)
+Fs=70 Hz
+Qts=0.608
+Vas=33 L
+Sd=335 cm2
+Xmax=3.3 mm
+Vb=119 L
+Fc=87.3 Hz
+F3=81.8 Hz
+Sensitivity=98.7 dB

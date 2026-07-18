@@ -1,0 +1,12 @@
+# FAKE Vortex 10 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=LaVoce FBASS10-18-8 (lavoce-fbass10-18-8-8)
+Fs=62 Hz
+Qts=0.416
+Vas=35 L
+Sd=353 cm2
+Xmax=3.6 mm
+Vb=42.4 L
+Fb=57.3 Hz
+F3=55 Hz
+Sensitivity=96.1 dB

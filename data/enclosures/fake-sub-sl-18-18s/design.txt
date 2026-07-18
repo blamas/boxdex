@@ -1,0 +1,12 @@
+# FAKE Seismic 18 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=18 Sound 18 TLW 3000 (18s-18-tlw-3000-8)
+Fs=33 Hz
+Qts=0.407
+Vas=185 L
+Sd=1225 cm2
+Xmax=11.6 mm
+Vb=366.8 L
+Fc=57.3 Hz
+F3=57.3 Hz
+Sensitivity=102.4 dB

@@ -1,0 +1,73 @@
+---
+name: FAKE Terra 15 SC
+category: kick
+topology: scoop
+topologyVariant: short scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-115nd-w-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 754
+grossVolumeL: 942.5
+dims:
+  hMm: 1480
+  wMm: 516.3
+  dMm: 1233.5
+weightKg: 109.8
+specs:
+  f3Hz: 46.4
+  f6Hz: 41.6
+  maxSplExcursionDb: 126.3
+  maxSplThermalDb: 138.2
+  maxSplDb: 126.3
+  sensitivityDb: 107.2
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 46.3
+  recommendedCrossoverHz: 102.1
+  hornThroatCm2: 637
+  hornMouthCm2: 4584.7
+  powerAesW: 2800
+  powerProgramW: 5600
+  recommendedPowerW: 1680
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-15-beyma
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - acid
+buildComplexity: moderate
+connectors:
+  - XLR
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-15-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 15 SC: 15" scoop kick built around the Beyma 115ND/W. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

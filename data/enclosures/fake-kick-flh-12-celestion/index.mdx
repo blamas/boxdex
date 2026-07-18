@@ -1,0 +1,74 @@
+---
+name: FAKE Fury 12 FLH
+category: kick
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl12-200x-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+netVolumeL: 125.5
+grossVolumeL: 156.9
+dims:
+  hMm: 668.5
+  wMm: 421
+  dMm: 557.5
+weightKg: 24.1
+specs:
+  f3Hz: 63.2
+  f6Hz: 56.7
+  maxSplExcursionDb: 110.3
+  maxSplThermalDb: 119.3
+  maxSplDb: 110.3
+  sensitivityDb: 100.3
+  hornCutoffHz: 63
+  recommendedCrossoverHz: 139
+  hornThroatCm2: 361.9
+  hornMouthCm2: 1407.2
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC0-1.0
+recommendedFor:
+  - hardcore
+  - breakcore
+  - frenchcore
+buildComplexity: complex
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-12-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 12 FLH: 12" front loaded horn kick built around the Celestion BL12-200X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

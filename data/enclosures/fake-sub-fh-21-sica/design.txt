@@ -1,0 +1,12 @@
+# FAKE Nomad 21 FH - synthetic design export (not a real Hornresp record)
+Topology=folded_horn
+Driver=Sica 21 S 4 PL (sica-21-s-4-pl-8)
+Fs=34.6 Hz
+Qts=0.3
+Vas=255 L
+Sd=1661.9 cm2
+Xmax=5.2 mm
+Vb=382.5 L
+HornCutoff=38.1 Hz
+F3=38.4 Hz
+Sensitivity=103.8 dB

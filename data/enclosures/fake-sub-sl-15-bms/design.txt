@@ -1,0 +1,12 @@
+# FAKE Fury 15 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=BMS 15C262 (bms-15c262-8)
+Fs=42.5 Hz
+Qts=0.338
+Vas=138 L
+Sd=834 cm2
+Xmax=3.5 mm
+Vb=163.6 L
+Fc=88.9 Hz
+F3=88.9 Hz
+Sensitivity=104.1 dB

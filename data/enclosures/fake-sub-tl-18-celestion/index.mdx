@@ -1,0 +1,68 @@
+---
+name: FAKE Dominator 18 TL
+category: sub
+topology: transmission_line
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bx18-4085-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 337
+grossVolumeL: 421.3
+dims:
+  hMm: 909.5
+  wMm: 611.5
+  dMm: 757.5
+weightKg: 47.9
+specs:
+  f3Hz: 25.6
+  f6Hz: 19.5
+  maxSplExcursionDb: 100.1
+  maxSplThermalDb: 121.6
+  maxSplDb: 100.1
+  sensitivityDb: 99.8
+  recommendedCrossoverHz: 56.3
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - tribe
+  - psytrance
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-18-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Dominator 18 TL: 18" transmission line sub built around the Celestion BX18-4085. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

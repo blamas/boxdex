@@ -1,0 +1,12 @@
+# FAKE Mammoth 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Eminence BASSLITE CH2010 (eminence-basslite-ch2010-8)
+Fs=58 Hz
+Qts=0.438
+Vas=43 L
+Sd=344.9 cm2
+Xmax=3.5 mm
+Vb=51.6 L
+HornCutoff=81.2 Hz
+F3=81.9 Hz
+Sensitivity=100.2 dB

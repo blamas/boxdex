@@ -1,0 +1,85 @@
+---
+name: FAKE Mammoth 8 BR
+category: mid
+topology: bass_reflex
+topologyVariant: aperiodic
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-8n515-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-8m400f-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 5.2
+grossVolumeL: 6.5
+dims:
+  hMm: 163
+  wMm: 294
+  dMm: 135.5
+weightKg: 10.6
+specs:
+  f3Hz: 123
+  f6Hz: 105
+  fbHz: 108.9
+  maxSplExcursionDb: 112.4
+  maxSplThermalDb: 119
+  maxSplDb: 112.4
+  sensitivityDb: 96
+  recommendedCrossoverHz: 159.9
+  maxVelocityMs: 16.4
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-8-bms
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Mammoth 8 BR build (2026).
+recommendedFor:
+  - breakcore
+  - tribe
+buildComplexity: simple
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-8-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 8 BR: 8" bass reflex mid built around the BMS 8N515. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

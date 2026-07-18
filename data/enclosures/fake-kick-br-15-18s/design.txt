@@ -1,0 +1,12 @@
+# FAKE Nomad 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=18 Sound 15CX1000 (18s-15cx1000-8)
+Fs=48 Hz
+Qts=0.304
+Vas=132.5 L
+Sd=855 cm2
+Xmax=6 mm
+Vb=65.2 L
+Fb=58.9 Hz
+F3=66.1 Hz
+Sensitivity=100.2 dB

@@ -1,0 +1,79 @@
+---
+name: FAKE Warehouse 15 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-14-cxn-6-8
+        qty: 4
+      - driver: bc-de680tn-16
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+netVolumeL: 203.6
+grossVolumeL: 254.5
+dims:
+  hMm: 769
+  wMm: 516.3
+  dMm: 641
+weightKg: 52.9
+specs:
+  f3Hz: 69.5
+  f6Hz: 59.6
+  fbHz: 59.4
+  maxSplExcursionDb: 126.9
+  maxSplThermalDb: 138.1
+  maxSplDb: 126.9
+  sensitivityDb: 106
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 90.4
+  coverageAngleDeg: 90
+  maxVelocityMs: 19.3
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-15-bc
+availability: contact
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-4.0
+recommendedFor:
+  - hardcore
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+revision: rev B
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-15-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Warehouse 15 BR: 15" bass reflex top built around the B&C 14 CXN 6. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

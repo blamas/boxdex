@@ -1,0 +1,93 @@
+%PDF-1.4
+1 0 obj
+<</Type/Catalog/Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type/Pages/Kids[3 0 R 4 0 R]/Count 2>>
+endobj
+3 0 obj
+<</Type/Page/Parent 2 0 R/MediaBox[0 0 595 842]/Resources<</Font<</F1 5 0 R/F2 6 0 R>>>>/Contents 7 0 R>>
+endobj
+4 0 obj
+<</Type/Page/Parent 2 0 R/MediaBox[0 0 595 842]/Resources<</Font<</F1 5 0 R/F2 6 0 R>>>>/Contents 8 0 R>>
+endobj
+5 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica>>
+endobj
+6 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica-Bold>>
+endobj
+7 0 obj
+<</Length 1260>>
+stream
+BT /F2 22 Tf 50 782 Td (FAKE Dominator 12 SL) Tj ET
+BT /F1 9 Tf 50 760 Td (Synthetic build plan. Not a real product. Figures derived from driver Thiele-Small parameters.) Tj ET
+0.3 G 0.8 w 50 734 m 545 734 l S
+BT /F2 14 Tf 50 710 Td (Specification) Tj ET
+BT /F2 10 Tf 56 690 Td (Category) Tj ET
+BT /F1 10 Tf 240 690 Td (top) Tj ET
+BT /F2 10 Tf 56 674 Td (Topology) Tj ET
+BT /F1 10 Tf 240 674 Td (sealed) Tj ET
+BT /F2 10 Tf 56 658 Td (Net volume) Tj ET
+BT /F1 10 Tf 240 658 Td (40.6 L) Tj ET
+BT /F2 10 Tf 56 642 Td (Gross volume) Tj ET
+BT /F1 10 Tf 240 642 Td (50.8 L) Tj ET
+BT /F2 10 Tf 56 626 Td (Dimensions \(H x W x D\)) Tj ET
+BT /F1 10 Tf 240 626 Td (380.5 x 421 x 317 mm) Tj ET
+BT /F2 10 Tf 56 610 Td (f3) Tj ET
+BT /F1 10 Tf 240 610 Td (113.4 Hz) Tj ET
+BT /F2 10 Tf 56 594 Td (Sensitivity) Tj ET
+BT /F1 10 Tf 240 594 Td (101.2 dB) Tj ET
+BT /F2 10 Tf 56 578 Td (Max SPL) Tj ET
+BT /F1 10 Tf 240 578 Td (121.9 dB) Tj ET
+BT /F2 10 Tf 56 562 Td (Recommended crossover) Tj ET
+BT /F1 10 Tf 240 562 Td (147.4 Hz) Tj ET
+BT /F2 14 Tf 50 532 Td (Drivers) Tj ET
+BT /F1 10 Tf 56 512 Td (2x  PD P12/150  \(pd-p12-150-8\)) Tj ET
+BT /F1 10 Tf 56 496 Td (1x  18 Sound 6NMB420  \(18s-6nmb420-16\)) Tj ET
+BT /F1 10 Tf 56 480 Td (1x  Oberton D2538  \(oberton-d2538-8\)) Tj ET
+endstream
+endobj
+8 0 obj
+<</Length 987>>
+stream
+BT /F2 18 Tf 50 782 Td (Cut list) Tj ET
+BT /F1 10 Tf 50 758 Td (15 mm plywood, 1 sheet\(s\) of 2440 x 1220 mm) Tj ET
+BT /F2 10 Tf 56 734 Td (Panel) Tj ET
+BT /F2 10 Tf 220 734 Td (W x H \(mm\)) Tj ET
+BT /F2 10 Tf 360 734 Td (Qty) Tj ET
+0.4 G 0.8 w 50 728 m 545 728 l S
+BT /F1 10 Tf 56 712 Td (Front baffle) Tj ET
+BT /F1 10 Tf 220 712 Td (421 x 380.5) Tj ET
+BT /F1 10 Tf 360 712 Td (1) Tj ET
+BT /F1 10 Tf 56 696 Td (Rear panel) Tj ET
+BT /F1 10 Tf 220 696 Td (421 x 380.5) Tj ET
+BT /F1 10 Tf 360 696 Td (1) Tj ET
+BT /F1 10 Tf 56 680 Td (Side panel) Tj ET
+BT /F1 10 Tf 220 680 Td (317 x 380.5) Tj ET
+BT /F1 10 Tf 360 680 Td (2) Tj ET
+BT /F1 10 Tf 56 664 Td (Top / bottom) Tj ET
+BT /F1 10 Tf 220 664 Td (421 x 317) Tj ET
+BT /F1 10 Tf 360 664 Td (2) Tj ET
+BT /F2 12 Tf 50 624 Td (Front panel) Tj ET
+0.2 G 1.2 w 70 429 200 181 re S
+BT /F2 9 Tf 50 42 Td (Build notes:) Tj ET
+BT /F1 9 Tf 120 42 Td (FAKE Dominator 12 SL: 12" sealed top built around the PD P12/150. Synthetic fixture for ca) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000054 00000 n 
+0000000111 00000 n 
+0000000232 00000 n 
+0000000353 00000 n 
+0000000416 00000 n 
+0000000484 00000 n 
+0000001794 00000 n 
+trailer
+<</Size 9/Root 1 0 R>>
+startxref
+2830
+%%EOF

@@ -1,0 +1,12 @@
+# FAKE Vortex 21 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Lavoce SAN215.30 (lavoce-san215-30-8)
+Fs=35 Hz
+Qts=0.33
+Vas=200 L
+Sd=1661 cm2
+Xmax=14.9 mm
+Vb=124.5 L
+Fb=39.9 Hz
+F3=43 Hz
+Sensitivity=95.7 dB

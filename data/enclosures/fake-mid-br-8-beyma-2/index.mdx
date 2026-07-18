@@ -1,0 +1,73 @@
+---
+name: FAKE Terra 8 BR
+category: mid
+topology: bass_reflex
+topologyVariant: dual port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-8-g40-8
+        qty: 1
+      - driver: 18s-6nd430-8
+        qty: 1
+      - driver: lavoce-dn10-142-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 13.6
+grossVolumeL: 17
+dims:
+  hMm: 263.5
+  wMm: 294
+  dMm: 219.5
+weightKg: 21.5
+specs:
+  f3Hz: 76.1
+  f6Hz: 60.2
+  fbHz: 73.7
+  maxSplExcursionDb: 109.8
+  maxSplThermalDb: 119
+  maxSplDb: 109.8
+  sensitivityDb: 95
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 98.9
+  coverageAngleDeg: 90
+  maxVelocityMs: 18.8
+  powerAesW: 450
+  powerProgramW: 900
+  recommendedPowerW: 270
+ways: 3
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-8-beyma-2
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - mental
+  - bass_music
+buildComplexity: moderate
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-8-beyma-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 8 BR: 8" bass reflex mid built around the Beyma 8"G40. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,68 @@
+---
+name: FAKE Monolith 18 BP
+category: sub
+topology: bandpass
+topologyVariant: 4th order
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-18-800n-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 158.8
+grossVolumeL: 198.5
+dims:
+  hMm: 624
+  wMm: 611.5
+  dMm: 520
+weightKg: 27.9
+specs:
+  f3Hz: 62
+  f6Hz: 53.9
+  fbHz: 46.3
+  f3HzHigh: 111.1
+  maxSplExcursionDb: 116.7
+  maxSplThermalDb: 128.5
+  maxSplDb: 116.7
+  sensitivityDb: 99.5
+  recommendedCrossoverHz: 136.4
+  maxVelocityMs: 18.6
+  powerAesW: 800
+  powerProgramW: 1600
+  recommendedPowerW: 480
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-bp-18-fane
+availability: free
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-SA-4.0
+recommendedFor:
+  - acid
+buildComplexity: simple
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-18-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Monolith 18 BP: 18" bandpass sub built around the Fane 18-800N. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

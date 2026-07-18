@@ -1,0 +1,12 @@
+# FAKE Vortex 6.5 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Oberton 6B150 (oberton-6b150-8)
+Fs=55.04 Hz
+Qts=0.292
+Vas=14.61 L
+Sd=127 cm2
+Xmax=5.5 mm
+Vb=25.6 L
+Fb=70 Hz
+F3=80.2 Hz
+Sensitivity=98 dB

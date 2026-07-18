@@ -1,0 +1,76 @@
+---
+name: FAKE Seismic 12 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-basslite-s2012-8
+        qty: 1
+      - driver: faital-8rs250-8
+        qty: 1
+      - driver: faital-hf10ak-8
+        qty: 1
+        horn: bc-me45
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 77.8
+grossVolumeL: 97.3
+dims:
+  hMm: 526.5
+  wMm: 421
+  dMm: 439
+weightKg: 28.8
+specs:
+  f3Hz: 70.7
+  f6Hz: 53.7
+  maxSplExcursionDb: 114.6
+  maxSplThermalDb: 116.4
+  maxSplDb: 114.6
+  sensitivityDb: 94.6
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 91.9
+  coverageAngleDeg: 90
+  powerAesW: 350
+  powerProgramW: 700
+  recommendedPowerW: 210
+ways: 3
+author: fake-data
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - tribe
+  - hardcore
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-12-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Seismic 12 SL: 12" sealed top built around the Eminence BASSLITE S2012. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,12 @@
+# FAKE Warehouse 6.5 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Sica 6.5 H 1.5 CP (sica-6-5-h-1-5-cp-8)
+Fs=45.4 Hz
+Qts=0.42
+Vas=20.2 L
+Sd=122.7 cm2
+Xmax=6 mm
+Vb=25.1 L
+Fb=41.6 Hz
+F3=39.8 Hz
+Sensitivity=89.4 dB

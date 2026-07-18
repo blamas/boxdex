@@ -1,0 +1,76 @@
+---
+name: FAKE Outlaw 10 SL
+category: mid
+topology: sealed
+topologyVariant: acoustic suspension
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-10-cl-51-8
+        qty: 4
+      - driver: 18s-nd2t-8
+        qty: 1
+        horn: bc-me90
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 56
+grossVolumeL: 70
+dims:
+  hMm: 484.5
+  wMm: 357.5
+  dMm: 404
+weightKg: 36.3
+specs:
+  f3Hz: 107.7
+  f6Hz: 81.8
+  maxSplExcursionDb: 126.8
+  maxSplThermalDb: 129.5
+  maxSplDb: 126.8
+  sensitivityDb: 101.7
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 140
+  coverageAngleDeg: 80
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-10-bc
+availability: paid
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - hardstyle
+  - tekno
+buildComplexity: complex
+connectors:
+  - speakON NL8
+revision: v2
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-10-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Outlaw 10 SL: 10" sealed mid built around the B&C 10 CL 51. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

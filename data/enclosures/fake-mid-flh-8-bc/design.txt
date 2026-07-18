@@ -1,0 +1,12 @@
+# FAKE Dominator 8 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=B&C 8BG51 (bc-8bg51-8)
+Fs=52 Hz
+Qts=0.4
+Vas=18 L
+Sd=220 cm2
+Xmax=6.5 mm
+Vb=43.2 L
+HornCutoff=72.8 Hz
+F3=73.4 Hz
+Sensitivity=99 dB

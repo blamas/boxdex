@@ -1,0 +1,68 @@
+---
+name: FAKE Cyclone 10 SC
+category: kick
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-10-275-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 67.8
+grossVolumeL: 84.8
+dims:
+  hMm: 533.5
+  wMm: 357.5
+  dMm: 444.5
+weightKg: 22.6
+specs:
+  f3Hz: 69.2
+  f6Hz: 62
+  maxSplExcursionDb: 115.2
+  maxSplThermalDb: 124.5
+  maxSplDb: 115.2
+  sensitivityDb: 100.6
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 68.8
+  recommendedCrossoverHz: 152.2
+  hornThroatCm2: 256.2
+  hornMouthCm2: 1144.4
+  powerAesW: 550
+  powerProgramW: 1100
+  recommendedPowerW: 330
+author: fake-data
+availability: out_of_print
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - hardstyle
+  - tekno
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-10-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 10 SC: 10" scoop kick built around the Fane 10-275. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

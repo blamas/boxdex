@@ -1,0 +1,12 @@
+# FAKE Cyclone 15 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Eminence 15-3008PS LF (eminence-15-3008ps-lf-8)
+Fs=46.6 Hz
+Qts=0.396
+Vas=130 L
+Sd=856.3 cm2
+Xmax=5.5 mm
+Vb=676 L
+HornCutoff=58.3 Hz
+F3=58.4 Hz
+Sensitivity=107.9 dB

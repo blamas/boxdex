@@ -1,0 +1,12 @@
+# FAKE Basstek 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Radian 510/2 B-8 (radian-510-2-b-8-8)
+Fs=53.1 Hz
+Qts=0.439
+Vas=62.7 L
+Sd=352 cm2
+Xmax=0.7 mm
+Vb=108 L
+Fc=96.8 Hz
+F3=86.8 Hz
+Sensitivity=102.1 dB

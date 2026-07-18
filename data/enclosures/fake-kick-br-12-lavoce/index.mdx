@@ -1,0 +1,66 @@
+---
+name: FAKE Vortex 12 BR
+category: kick
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fsf122-02-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 248
+grossVolumeL: 310
+dims:
+  hMm: 940
+  wMm: 421
+  dMm: 783.5
+weightKg: 52.9
+specs:
+  f3Hz: 58.7
+  f6Hz: 46
+  fbHz: 58
+  maxSplExcursionDb: 118.1
+  maxSplThermalDb: 132.2
+  maxSplDb: 118.1
+  sensitivityDb: 104.4
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 129.1
+  maxVelocityMs: 17.5
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-br-12-lavoce
+availability: free
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-SA-4.0
+recommendedFor:
+  - acid
+  - hardcore
+buildComplexity: moderate
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-12-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Vortex 12 BR: 12" bass reflex kick built around the LaVoce FSF122.02. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

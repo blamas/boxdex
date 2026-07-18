@@ -1,0 +1,69 @@
+---
+name: FAKE Warehouse 10 SC
+category: kick
+topology: scoop
+topologyVariant: long scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-10-g40-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 63.7
+grossVolumeL: 79.6
+dims:
+  hMm: 517
+  wMm: 357.5
+  dMm: 431
+weightKg: 17.2
+specs:
+  f3Hz: 56.7
+  f6Hz: 50.8
+  maxSplExcursionDb: 110.6
+  maxSplThermalDb: 121
+  maxSplDb: 110.6
+  sensitivityDb: 98.5
+  hornCutoffHz: 56.3
+  recommendedCrossoverHz: 124.7
+  hornThroatCm2: 266
+  hornMouthCm2: 1109
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-10-beyma-2
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - psytrance
+  - mental
+buildComplexity: complex
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-10-beyma-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Warehouse 10 SC: 10" scoop kick built around the Beyma 10"G40. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

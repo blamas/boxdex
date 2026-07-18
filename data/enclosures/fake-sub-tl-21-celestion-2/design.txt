@@ -1,0 +1,11 @@
+# FAKE Mammoth 21 TL - synthetic design export (not a real Hornresp record)
+Topology=transmission_line
+Driver=Celestion NTR21-5010JD (celestion-ntr21-5010jd-8)
+Fs=30.2 Hz
+Qts=0.291
+Vas=341.215 L
+Sd=1663 cm2
+Xmax=9 mm
+Vb=341.2 L
+F3=25.8 Hz
+Sensitivity=96.7 dB

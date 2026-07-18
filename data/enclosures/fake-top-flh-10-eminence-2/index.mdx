@@ -1,0 +1,107 @@
+---
+name: FAKE Mammoth 10 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-basslite-ch2010-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 51.6
+grossVolumeL: 64.5
+dims:
+  hMm: 465.5
+  wMm: 357.5
+  dMm: 387.5
+weightKg: 15.8
+specs:
+  f3Hz: 81.9
+  f6Hz: 73.4
+  maxSplExcursionDb: 110.2
+  maxSplThermalDb: 118
+  maxSplDb: 110.2
+  sensitivityDb: 100.2
+  hornCutoffHz: 81.2
+  recommendedCrossoverHz: 106.5
+  hornThroatCm2: 241.4
+  hornMouthCm2: 832.1
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-flh-10-eminence-2
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC0-1.0
+recommendedFor:
+  - frenchcore
+  - raggatek
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+  - speakON NL2
+revision: v2
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-10-eminence-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Mammoth 10 FLH: 10" front loaded horn top built around the Eminence BASSLITE CH2010. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

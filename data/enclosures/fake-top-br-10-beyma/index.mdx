@@ -1,0 +1,81 @@
+---
+name: FAKE Nomad 10 BR
+category: top
+topology: bass_reflex
+topologyVariant: aperiodic
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-10-g40-8
+        qty: 2
+      - driver: sica-8-fe-2-5-cp-8
+        qty: 1
+      - driver: bc-de1090tn-16
+        qty: 1
+      - driver: celestion-cdx1-1742-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 46.4
+grossVolumeL: 58
+dims:
+  hMm: 441
+  wMm: 357.5
+  dMm: 367.5
+weightKg: 35.2
+specs:
+  f3Hz: 63.1
+  f6Hz: 53.9
+  fbHz: 55.9
+  maxSplExcursionDb: 116.4
+  maxSplThermalDb: 127
+  maxSplDb: 116.4
+  sensitivityDb: 98
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 82
+  coverageAngleDeg: 90
+  maxVelocityMs: 19.7
+  powerAesW: 1100
+  powerProgramW: 2200
+  recommendedPowerW: 660
+ways: 4
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-10-beyma
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-NC-4.0
+recommendedFor:
+  - breakcore
+  - dub
+  - hardstyle
+buildComplexity: moderate
+connectors:
+  - XLR
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-10-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nomad 10 BR: 10" bass reflex top built around the Beyma 10"G40. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

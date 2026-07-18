@@ -1,0 +1,67 @@
+---
+name: FAKE Bunker 15 FLH
+category: kick
+topology: front_loaded_horn
+topologyVariant: conical FLH
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-14-cxn-6-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 157.2
+grossVolumeL: 196.5
+dims:
+  hMm: 676
+  wMm: 516.3
+  dMm: 563
+weightKg: 27.7
+specs:
+  f3Hz: 63.2
+  f6Hz: 56.7
+  maxSplExcursionDb: 116
+  maxSplThermalDb: 126
+  maxSplDb: 116
+  sensitivityDb: 104
+  hornCutoffHz: 63
+  recommendedCrossoverHz: 139
+  hornThroatCm2: 494.9
+  hornMouthCm2: 1745.1
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: contact
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-4.0
+recommendedFor:
+  - psytrance
+  - breakcore
+buildComplexity: simple
+connectors:
+  - XLR
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-15-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Bunker 15 FLH: 15" front loaded horn kick built around the B&C 14 CXN 6. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,12 @@
+# FAKE Riot 18 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Faital PRO 18FH1042 (faital-18fh1042-8)
+Fs=38 Hz
+Qts=0.413
+Vas=150 L
+Sd=1124 cm2
+Xmax=5.6 mm
+Vb=195 L
+HornCutoff=47.5 Hz
+F3=47.9 Hz
+Sensitivity=99.9 dB

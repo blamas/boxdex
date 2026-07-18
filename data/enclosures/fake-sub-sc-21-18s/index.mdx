@@ -1,0 +1,85 @@
+---
+name: FAKE Basstek 21 SC
+category: sub
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-21id-2
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-21lw1400-8
+        qty: 4
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 743.6
+grossVolumeL: 929.5
+dims:
+  hMm: 1256
+  wMm: 706.8
+  dMm: 1047
+weightKg: 108.7
+specs:
+  f3Hz: 47.9
+  f6Hz: 42.9
+  maxSplExcursionDb: 138.6
+  maxSplThermalDb: 138.8
+  maxSplDb: 138.6
+  sensitivityDb: 103.7
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 47.5
+  recommendedCrossoverHz: 105.4
+  hornThroatCm2: 1162
+  hornMouthCm2: 5326.4
+  powerAesW: 7200
+  powerProgramW: 14400
+  recommendedPowerW: 4320
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sc-21-18s
+availability: paid
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - psytrance
+  - bass_music
+  - tribe
+buildComplexity: simple
+connectors:
+  - speakON NL8
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-21-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Basstek 21 SC: 21" scoop sub built around the 18 Sound 21iD. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

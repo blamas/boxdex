@@ -1,0 +1,69 @@
+---
+name: FAKE Havoc 10 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-10fe300-4
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 235.2
+grossVolumeL: 294
+dims:
+  hMm: 993.5
+  wMm: 357.5
+  dMm: 828
+weightKg: 51.5
+specs:
+  f3Hz: 70.5
+  f6Hz: 63.2
+  maxSplExcursionDb: 123.8
+  maxSplThermalDb: 130
+  maxSplDb: 123.8
+  sensitivityDb: 104
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 70
+  recommendedCrossoverHz: 91.7
+  hornThroatCm2: 250.6
+  hornMouthCm2: 1775.9
+  powerAesW: 1000
+  powerProgramW: 2000
+  recommendedPowerW: 600
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-flh-10-faital-4
+availability: contact
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-4.0
+recommendedFor:
+  - hardcore
+  - mental
+buildComplexity: complex
+connectors:
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-10-faital-4-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Havoc 10 FLH: 10" front loaded horn top built around the Faital PRO 10FE300. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

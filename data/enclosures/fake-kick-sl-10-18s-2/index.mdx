@@ -1,0 +1,66 @@
+---
+name: FAKE Kraken 10 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-10kw3-keybass-vp-16
+        qty: 1
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 36.6
+grossVolumeL: 45.8
+dims:
+  hMm: 392
+  wMm: 357.5
+  dMm: 326.5
+weightKg: 14.1
+specs:
+  f3Hz: 106.1
+  f6Hz: 80.6
+  maxSplExcursionDb: 108.1
+  maxSplThermalDb: 117.1
+  maxSplDb: 108.1
+  sensitivityDb: 97.1
+  recommendedCrossoverHz: 233.4
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-10-18s-2
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - hardstyle
+  - dub
+  - acid
+buildComplexity: moderate
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-18s-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Kraken 10 SL: 10" sealed kick built around the 18 Sound 10KW3 KEYBASS vp. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

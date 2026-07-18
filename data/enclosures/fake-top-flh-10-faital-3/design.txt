@@ -1,0 +1,12 @@
+# FAKE Cyclone 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Faital PRO 10FE300 (faital-10fe300-4)
+Fs=50 Hz
+Qts=0.39
+Vas=49 L
+Sd=358 cm2
+Xmax=5.47 mm
+Vb=58.8 L
+HornCutoff=70 Hz
+F3=70.5 Hz
+Sensitivity=98 dB

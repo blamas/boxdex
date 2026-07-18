@@ -1,0 +1,77 @@
+---
+name: FAKE Fury 21 FH
+category: sub
+topology: folded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-san215-30-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: basta_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 600
+grossVolumeL: 750
+dims:
+  hMm: 1128.5
+  wMm: 706.8
+  dMm: 940.5
+weightKg: 82.5
+specs:
+  f3Hz: 38.8
+  f6Hz: 34.8
+  maxSplExcursionDb: 129.4
+  maxSplThermalDb: 134.7
+  maxSplDb: 129.4
+  sensitivityDb: 103.7
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 38.5
+  recommendedCrossoverHz: 85.4
+  hornThroatCm2: 1162.7
+  hornMouthCm2: 3589.3
+  powerAesW: 4000
+  powerProgramW: 8000
+  recommendedPowerW: 2400
+author: fake-data
+availability: contact
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-4.0
+recommendedFor:
+  - frenchcore
+  - breakcore
+  - mental
+buildComplexity: complex
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-fh-21-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 21 FH: 21" folded horn sub built around the Lavoce SAN215.30. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,64 @@
+---
+name: FAKE Dominator 15 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-15b450-15b450a-15b450a2-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 28.7
+grossVolumeL: 35.9
+dims:
+  hMm: 289
+  wMm: 516.3
+  dMm: 240.5
+weightKg: 13.2
+specs:
+  f3Hz: 111.5
+  f6Hz: 84.7
+  maxSplExcursionDb: 128.8
+  maxSplThermalDb: 126.5
+  maxSplDb: 126.5
+  sensitivityDb: 100
+  recommendedCrossoverHz: 245.3
+  powerAesW: 450
+  powerProgramW: 900
+  recommendedPowerW: 270
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC0-1.0
+recommendedFor:
+  - tribe
+  - psytrance
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-15-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Dominator 15 SL: 15" sealed kick built around the Oberton 15B450 / 15B450A / 15B450A2. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

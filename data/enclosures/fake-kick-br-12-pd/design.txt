@@ -1,0 +1,12 @@
+# FAKE Cyclone 12 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=PD P12/150 (pd-p12-150-8)
+Fs=51 Hz
+Qts=0.318
+Vas=80 L
+Sd=531 cm2
+Xmax=2.3 mm
+Vb=44.8 L
+Fb=60.1 Hz
+F3=65.9 Hz
+Sensitivity=98.2 dB

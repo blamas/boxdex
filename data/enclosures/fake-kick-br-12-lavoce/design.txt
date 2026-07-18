@@ -1,0 +1,12 @@
+# FAKE Vortex 12 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=LaVoce FSF122.02 (lavoce-fsf122-02-8)
+Fs=57 Hz
+Qts=0.374
+Vas=69.5 L
+Sd=499 cm2
+Xmax=3 mm
+Vb=248 L
+Fb=58 Hz
+F3=58.7 Hz
+Sensitivity=104.4 dB

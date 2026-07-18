@@ -1,0 +1,78 @@
+---
+name: FAKE Nomad 18 SC
+category: sub
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-18-800n-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-18-tlw-3000-8
+        qty: 2
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 564.2
+grossVolumeL: 705.3
+dims:
+  hMm: 1176.5
+  wMm: 611.5
+  dMm: 980.5
+weightKg: 78.5
+specs:
+  f3Hz: 47.9
+  f6Hz: 42.9
+  sensitivityDb: 106
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 47.5
+  recommendedCrossoverHz: 105.4
+  hornThroatCm2: 793.1
+  hornMouthCm2: 4316.6
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sc-18-fane-2
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - psytrance
+  - mental
+buildComplexity: moderate
+connectors:
+  - binding post
+  - speakON NL4
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-18-fane-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nomad 18 SC: 18" scoop sub built around the Fane 18-800N. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

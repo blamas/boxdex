@@ -1,0 +1,79 @@
+---
+name: FAKE Nomad 12 BP
+category: kick
+topology: bandpass
+topologyVariant: 6th order
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-commonwealth-12-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-12cx800-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 82.5
+grossVolumeL: 103.1
+dims:
+  hMm: 542
+  wMm: 421
+  dMm: 451.5
+weightKg: 19.3
+specs:
+  f3Hz: 75.6
+  f6Hz: 65.8
+  fbHz: 56.6
+  f3HzHigh: 135.8
+  sensitivityDb: 98.1
+  recommendedCrossoverHz: 166.3
+  maxVelocityMs: 14.1
+  powerAesW: 225
+  powerProgramW: 450
+  recommendedPowerW: 135
+author: fake-data
+availability: free
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-SA-4.0
+recommendedFor:
+  - mental
+  - hardcore
+buildComplexity: moderate
+connectors:
+  - XLR
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-12-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nomad 12 BP: 12" bandpass kick built around the Eminence COMMONWEALTH 12. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

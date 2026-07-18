@@ -1,3 +1,0 @@
-Hornresp input record (fake test data)
-Name: scoop-18
-S1=1210 S2=5400 Con=Exp F12=40

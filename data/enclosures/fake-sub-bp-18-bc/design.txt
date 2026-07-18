@@ -1,0 +1,12 @@
+# FAKE Titan 18 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=B&C 18 DS 115 (bc-18-ds-115-8)
+Fs=30 Hz
+Qts=0.2
+Vas=168 L
+Sd=1210 cm2
+Xmax=7.5 mm
+Vb=39.5 L
+Fb=53.6 Hz
+F3=75.6 Hz
+Sensitivity=97.4 dB

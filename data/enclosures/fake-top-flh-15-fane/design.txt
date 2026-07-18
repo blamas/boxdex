@@ -1,0 +1,12 @@
+# FAKE Outlaw 15 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Fane 15-400 (fane-15-400-8)
+Fs=37 Hz
+Qts=0.305
+Vas=210 L
+Sd=855.3 cm2
+Xmax=5 mm
+Vb=252 L
+HornCutoff=51.8 Hz
+F3=52.3 Hz
+Sensitivity=103.1 dB

@@ -1,0 +1,12 @@
+# FAKE Bunker 15 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Celestion 15 Professional Woofer - OEM (celestion-15-professional-woofer-oem-8)
+Fs=46.9 Hz
+Qts=0.497
+Vas=175 L
+Sd=854 cm2
+Xmax=3.5 mm
+Vb=342 L
+Fc=66.7 Hz
+F3=66.7 Hz
+Sensitivity=101.8 dB

@@ -1,0 +1,12 @@
+# FAKE Outlaw 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=B&C 10 CL 51 (bc-10-cl-51-8)
+Fs=60 Hz
+Qts=0.394
+Vas=31 L
+Sd=320 cm2
+Xmax=3.7 mm
+Vb=56 L
+Fc=107.7 Hz
+F3=107.7 Hz
+Sensitivity=101.7 dB

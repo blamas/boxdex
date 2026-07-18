@@ -1,0 +1,82 @@
+---
+name: FAKE Terra 10 SL
+category: kick
+topology: sealed
+topologyVariant: infinite baffle
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl-10-100-8
+        qty: 2
+  - id: alt-18s
+    drivers:
+      - driver: 18s-10kw3-keybass-vp-16
+        qty: 2
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 119
+grossVolumeL: 148.8
+dims:
+  hMm: 706.5
+  wMm: 357.5
+  dMm: 589
+weightKg: 28.4
+specs:
+  f3Hz: 81.8
+  f6Hz: 63.9
+  maxSplExcursionDb: 116.5
+  maxSplThermalDb: 121.7
+  maxSplDb: 116.5
+  sensitivityDb: 98.7
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 180
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-10-celestion-4
+availability: out_of_print
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - breakcore
+  - psytrance
+buildComplexity: complex
+connectors:
+  - XLR
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-celestion-4-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 10 SL: 10" sealed kick built around the Celestion BL 10-100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

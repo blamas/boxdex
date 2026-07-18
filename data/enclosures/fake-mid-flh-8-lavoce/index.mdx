@@ -1,0 +1,98 @@
+---
+name: FAKE Nucleus 8 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass08-18-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 28.4
+grossVolumeL: 35.5
+dims:
+  hMm: 380.5
+  wMm: 294
+  dMm: 317
+weightKg: 13.2
+specs:
+  f3Hz: 74.9
+  f6Hz: 67.1
+  maxSplExcursionDb: 107.5
+  maxSplThermalDb: 114.3
+  maxSplDb: 107.5
+  sensitivityDb: 96.5
+  hornCutoffHz: 74.2
+  recommendedCrossoverHz: 97.4
+  hornThroatCm2: 164.5
+  hornMouthCm2: 559.3
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - raggatek
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-8-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nucleus 8 FLH: 8" front loaded horn mid built around the LaVoce FBASS08-18. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,79 @@
+---
+name: FAKE Monolith 10 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-10m600-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 30.7
+grossVolumeL: 38.4
+dims:
+  hMm: 359
+  wMm: 357.5
+  dMm: 299
+weightKg: 13.5
+specs:
+  f3Hz: 98.9
+  f6Hz: 88.7
+  sensitivityDb: 106
+  hornCutoffHz: 98
+  recommendedCrossoverHz: 128.6
+  hornThroatCm2: 245
+  hornMouthCm2: 641.7
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-flh-10-18s
+availability: out_of_print
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - breakcore
+  - frenchcore
+buildComplexity: complex
+connectors:
+  - speakON NL8
+revision: rev B
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-10-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Monolith 10 FLH: 10" front loaded horn top built around the 18 Sound 10M600. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

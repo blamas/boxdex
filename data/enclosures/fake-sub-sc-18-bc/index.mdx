@@ -1,0 +1,81 @@
+---
+name: FAKE Mammoth 18 SC
+category: sub
+topology: scoop
+topologyVariant: short scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-18-ds-115-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 218.4
+grossVolumeL: 273
+dims:
+  hMm: 732
+  wMm: 611.5
+  dMm: 610
+weightKg: 34.6
+specs:
+  f3Hz: 37.7
+  f6Hz: 33.8
+  maxSplExcursionDb: 114.2
+  maxSplThermalDb: 129.7
+  maxSplDb: 114.2
+  sensitivityDb: 100.9
+  hornCutoffHz: 37.5
+  recommendedCrossoverHz: 82.9
+  hornThroatCm2: 847
+  hornMouthCm2: 2685.7
+  powerAesW: 1700
+  powerProgramW: 3400
+  recommendedPowerW: 1020
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-SA-4.0
+recommendedFor:
+  - bass_music
+  - frenchcore
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-18-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Mammoth 18 SC: 18" scoop sub built around the B&C 18 DS 115. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

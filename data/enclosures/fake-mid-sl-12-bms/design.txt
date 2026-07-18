@@ -1,0 +1,12 @@
+# FAKE Dominator 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=BMS 12C262 (bms-12c262-8)
+Fs=45.4 Hz
+Qts=0.23
+Vas=62.8 L
+Sd=487 cm2
+Xmax=2.5 mm
+Vb=7.4 L
+Fc=139.6 Hz
+F3=139.6 Hz
+Sensitivity=97.3 dB

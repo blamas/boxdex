@@ -1,0 +1,12 @@
+# FAKE Bunker 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=BMS 10C262 (bms-10c262-8)
+Fs=65 Hz
+Qts=0.368
+Vas=25.5 L
+Sd=320 cm2
+Xmax=5.1 mm
+Vb=61.2 L
+HornCutoff=91 Hz
+F3=91.4 Hz
+Sensitivity=102.7 dB

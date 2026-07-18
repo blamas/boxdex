@@ -1,0 +1,12 @@
+# FAKE Dominator 21 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Sica 21 S 4 PL (sica-21-s-4-pl-8)
+Fs=34.6 Hz
+Qts=0.3
+Vas=255 L
+Sd=1661.9 cm2
+Xmax=5.2 mm
+Vb=241.6 L
+Fb=42.9 Hz
+F3=48.5 Hz
+Sensitivity=101.8 dB

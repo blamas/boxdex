@@ -1,0 +1,63 @@
+---
+name: FAKE Bunker 15 FLH
+category: kick
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-1550-2-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 151.2
+grossVolumeL: 189
+dims:
+  hMm: 663
+  wMm: 516.3
+  dMm: 552.5
+weightKg: 27
+specs:
+  f3Hz: 65.1
+  f6Hz: 58.4
+  maxSplExcursionDb: 118.2
+  maxSplThermalDb: 126.8
+  maxSplDb: 118.2
+  sensitivityDb: 103
+  hornCutoffHz: 64.7
+  recommendedCrossoverHz: 143.2
+  hornThroatCm2: 635.6
+  hornMouthCm2: 1711.5
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-flh-15-pd
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - breakcore
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-15-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Bunker 15 FLH: 15" front loaded horn kick built around the PD 1550/2. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

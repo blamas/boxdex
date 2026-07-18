@@ -1,0 +1,12 @@
+# FAKE Mammoth 6.5 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Sica 6.5 H 1.5 CP (sica-6-5-h-1-5-cp-8)
+Fs=45.4 Hz
+Qts=0.42
+Vas=20.2 L
+Sd=122.7 cm2
+Xmax=6 mm
+Vb=24.2 L
+HornCutoff=63.6 Hz
+F3=63.9 Hz
+Sensitivity=93.4 dB

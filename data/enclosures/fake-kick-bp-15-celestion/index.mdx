@@ -1,0 +1,58 @@
+---
+name: FAKE Nucleus 15 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl15-300x-4
+        qty: 1
+netVolumeL: 342
+grossVolumeL: 427.5
+dims:
+  hMm: 997
+  wMm: 516.3
+  dMm: 830.5
+weightKg: 48.5
+specs:
+  f3Hz: 53.9
+  f6Hz: 46.4
+  fbHz: 41.6
+  f3HzHigh: 99.8
+  maxSplExcursionDb: 106.4
+  maxSplThermalDb: 126.1
+  maxSplDb: 106.4
+  sensitivityDb: 101.3
+  recommendedCrossoverHz: 118.6
+  maxVelocityMs: 16.6
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-bp-15-celestion
+availability: free
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC-BY-SA-4.0
+recommendedFor:
+  - raggatek
+  - breakcore
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources: []
+plans:
+  - fake-kick-bp-15-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nucleus 15 BP: 15" bandpass kick built around the Celestion BL15-300X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

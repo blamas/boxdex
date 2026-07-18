@@ -1,0 +1,66 @@
+---
+name: FAKE Nucleus 10 BR
+category: kick
+topology: bass_reflex
+topologyVariant: dual port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass10-18-8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 42.4
+grossVolumeL: 53
+dims:
+  hMm: 422
+  wMm: 357.5
+  dMm: 351.5
+weightKg: 14.8
+specs:
+  f3Hz: 55
+  f6Hz: 42.5
+  fbHz: 57.3
+  maxSplExcursionDb: 104.4
+  maxSplThermalDb: 117.9
+  maxSplDb: 104.4
+  sensitivityDb: 96.1
+  recommendedCrossoverHz: 121
+  maxVelocityMs: 16.1
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-br-10-lavoce
+availability: paid
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - mental
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-10-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nucleus 10 BR: 10" bass reflex kick built around the LaVoce FBASS10-18-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

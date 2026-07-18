@@ -1,0 +1,12 @@
+# FAKE Rumble 10 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=18 Sound 10M600 (18s-10m600-8)
+Fs=70 Hz
+Qts=0.23
+Vas=25.6 L
+Sd=350 cm2
+Xmax=4 mm
+Vb=5.7 L
+Fb=110.4 Hz
+F3=142.4 Hz
+Sensitivity=102 dB

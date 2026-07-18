@@ -1,0 +1,12 @@
+# FAKE Terra 10 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Celestion BN10-200S8 (celestion-bn10-200s8-8)
+Fs=89.4 Hz
+Qts=0.352
+Vas=20.5 L
+Sd=344 cm2
+Xmax=2.5 mm
+Vb=15.4 L
+Fb=96.1 Hz
+F3=100.3 Hz
+Sensitivity=99.5 dB

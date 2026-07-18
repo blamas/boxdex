@@ -1,0 +1,85 @@
+---
+name: FAKE Warehouse 12 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-12-300-vp-frl-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-12cx800-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 89.5
+grossVolumeL: 111.9
+dims:
+  hMm: 565
+  wMm: 421
+  dMm: 470.5
+weightKg: 20.1
+specs:
+  f3Hz: 64.5
+  f6Hz: 55.6
+  fbHz: 49
+  f3HzHigh: 117.6
+  maxSplExcursionDb: 107.2
+  maxSplThermalDb: 121
+  maxSplDb: 107.2
+  sensitivityDb: 96.2
+  recommendedCrossoverHz: 141.9
+  maxVelocityMs: 16.8
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-bp-12-fane
+availability: paid
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - frenchcore
+buildComplexity: simple
+connectors:
+  - speakON NL2
+revision: v2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-12-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Warehouse 12 BP: 12" bandpass kick built around the Fane 12-300 vp FRL. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

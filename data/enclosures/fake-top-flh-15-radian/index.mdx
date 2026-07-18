@@ -1,0 +1,75 @@
+---
+name: FAKE Dominator 15 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: radian-2215-b-8-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 325.2
+grossVolumeL: 406.5
+dims:
+  hMm: 972
+  wMm: 516.3
+  dMm: 810
+weightKg: 51.6
+specs:
+  f3Hz: 59
+  f6Hz: 52.9
+  maxSplExcursionDb: 123.2
+  maxSplThermalDb: 132.1
+  maxSplDb: 123.2
+  sensitivityDb: 104
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 58.5
+  recommendedCrossoverHz: 76.7
+  hornThroatCm2: 607.6
+  hornMouthCm2: 2509.2
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-flh-15-radian
+availability: contact
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - dub
+  - raggatek
+  - breakcore
+buildComplexity: complex
+connectors:
+  - speakON NL4
+revision: v2
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-15-radian-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Dominator 15 FLH: 15" front loaded horn top built around the Radian 2215 B-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,73 @@
+---
+name: FAKE Rumble 12 SC
+category: kick
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-12c262-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 81.6
+grossVolumeL: 102
+dims:
+  hMm: 539
+  wMm: 421
+  dMm: 449.5
+weightKg: 19.2
+specs:
+  f3Hz: 57.2
+  f6Hz: 51.3
+  sensitivityDb: 100.8
+  hornCutoffHz: 56.8
+  recommendedCrossoverHz: 125.8
+  hornThroatCm2: 340.9
+  hornMouthCm2: 1361.5
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-12-bms
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - psytrance
+  - techno
+  - raggatek
+buildComplexity: complex
+connectors:
+  - XLR
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-12-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Rumble 12 SC: 12" scoop kick built around the BMS 12C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

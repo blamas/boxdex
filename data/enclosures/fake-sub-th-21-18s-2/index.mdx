@@ -1,0 +1,73 @@
+---
+name: FAKE Riot 21 TH
+category: sub
+topology: tapped_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-21id-2
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+netVolumeL: 257.4
+grossVolumeL: 321.8
+dims:
+  hMm: 739
+  wMm: 706.8
+  dMm: 616
+weightKg: 39
+specs:
+  f3Hz: 36.2
+  f6Hz: 32.5
+  maxSplExcursionDb: 121.7
+  maxSplThermalDb: 126.8
+  maxSplDb: 121.7
+  sensitivityDb: 100.2
+  hornCutoffHz: 36.1
+  recommendedCrossoverHz: 79.6
+  hornThroatCm2: 1660
+  hornMouthCm2: 2872.8
+  powerAesW: 1800
+  powerProgramW: 3600
+  recommendedPowerW: 1080
+author: fake-data
+availability: out_of_print
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - hardstyle
+  - acid
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-th-21-18s-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Riot 21 TH: 21" tapped horn sub built around the 18 Sound 21iD. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

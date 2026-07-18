@@ -1,0 +1,12 @@
+# FAKE Seismic 15 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Beyma 115ND/W (beyma-115nd-w-8)
+Fs=37 Hz
+Qts=0.285
+Vas=145 L
+Sd=910 cm2
+Xmax=6.6 mm
+Vb=348 L
+HornCutoff=51.8 Hz
+F3=52.3 Hz
+Sensitivity=104.7 dB

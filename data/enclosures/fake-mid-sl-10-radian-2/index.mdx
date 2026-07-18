@@ -1,0 +1,75 @@
+---
+name: FAKE Riot 10 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: radian-510-2-b-8-8
+        qty: 1
+      - driver: bc-de160-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 72.2
+grossVolumeL: 90.3
+dims:
+  hMm: 550.5
+  wMm: 357.5
+  dMm: 459
+weightKg: 23.1
+specs:
+  f3Hz: 87.7
+  f6Hz: 61.6
+  maxSplExcursionDb: 94.3
+  maxSplThermalDb: 119.1
+  maxSplDb: 94.3
+  sensitivityDb: 96.1
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 114
+  coverageAngleDeg: 90
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+ways: 2
+author: fake-data
+availability: free
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-SA-4.0
+recommendedFor:
+  - raggatek
+buildComplexity: moderate
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-10-radian-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Riot 10 SL: 10" sealed mid built around the Radian 510/2 B-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

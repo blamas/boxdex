@@ -1,0 +1,66 @@
+---
+name: FAKE Dominator 15 BR
+category: sub
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-15-3008ps-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 377.2
+grossVolumeL: 471.5
+dims:
+  hMm: 1047
+  wMm: 516.3
+  dMm: 872.5
+weightKg: 57.4
+specs:
+  f3Hz: 48.4
+  f6Hz: 37.7
+  fbHz: 48.2
+  maxSplExcursionDb: 118.8
+  maxSplThermalDb: 133.2
+  maxSplDb: 118.8
+  sensitivityDb: 103.2
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 106.5
+  maxVelocityMs: 18.1
+  powerAesW: 1000
+  powerProgramW: 2000
+  recommendedPowerW: 600
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC0-1.0
+recommendedFor:
+  - hardtek
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-br-15-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Dominator 15 BR: 15" bass reflex sub built around the Eminence 15-3008PS. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

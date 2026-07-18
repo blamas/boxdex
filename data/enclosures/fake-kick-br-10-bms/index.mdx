@@ -1,0 +1,71 @@
+---
+name: FAKE Nucleus 10 BR
+category: kick
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-10c262-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 21.7
+grossVolumeL: 27.1
+dims:
+  hMm: 301.5
+  wMm: 357.5
+  dMm: 251.5
+weightKg: 12.4
+specs:
+  f3Hz: 68.5
+  f6Hz: 53.9
+  fbHz: 67.1
+  maxSplExcursionDb: 109.3
+  maxSplThermalDb: 121.7
+  maxSplDb: 109.3
+  sensitivityDb: 95.7
+  recommendedCrossoverHz: 150.7
+  maxVelocityMs: 17.2
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-br-10-bms
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - hardtek
+  - psytrance
+  - mental
+buildComplexity: moderate
+connectors:
+  - XLR
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-10-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nucleus 10 BR: 10" bass reflex kick built around the BMS 10C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

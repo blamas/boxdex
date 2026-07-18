@@ -1,0 +1,12 @@
+# FAKE Kraken 15 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Faital PRO 15FH500 16 Ohms (faital-15fh500-16-ohms-16)
+Fs=35 Hz
+Qts=0.454
+Vas=196.8 L
+Sd=800 cm2
+Xmax=9.3 mm
+Vb=134.4 L
+Fc=69.4 Hz
+F3=57.6 Hz
+Sensitivity=95.5 dB

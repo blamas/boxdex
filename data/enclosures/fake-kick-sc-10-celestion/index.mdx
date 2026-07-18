@@ -1,0 +1,65 @@
+---
+name: FAKE Dominator 10 SC
+category: kick
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bn10-200s8-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 53.4
+grossVolumeL: 66.8
+dims:
+  hMm: 473.5
+  wMm: 357.5
+  dMm: 394.5
+weightKg: 21
+specs:
+  f3Hz: 112.6
+  f6Hz: 100.9
+  maxSplExcursionDb: 118.8
+  maxSplThermalDb: 128.5
+  maxSplDb: 118.8
+  sensitivityDb: 106
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 111.8
+  recommendedCrossoverHz: 247.7
+  hornThroatCm2: 240.8
+  hornMouthCm2: 1015.7
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-10-celestion
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - psytrance
+buildComplexity: complex
+revision: MkII
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-10-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Dominator 10 SC: 10" scoop kick built around the Celestion BN10-200S8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

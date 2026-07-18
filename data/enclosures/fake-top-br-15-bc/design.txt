@@ -1,0 +1,12 @@
+# FAKE Warehouse 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=B&C 14 CXN 6 (bc-14-cxn-6-8)
+Fs=45 Hz
+Qts=0.28
+Vas=131 L
+Sd=707 cm2
+Xmax=5.6 mm
+Vb=203.6 L
+Fb=59.4 Hz
+F3=69.5 Hz
+Sensitivity=106 dB

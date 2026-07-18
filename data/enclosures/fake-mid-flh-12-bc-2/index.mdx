@@ -1,0 +1,77 @@
+---
+name: FAKE Cyclone 12 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-12-bg-100-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 6
+            file: s1-spl-6u.csv
+            note: 6x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 196.8
+grossVolumeL: 246
+dims:
+  hMm: 837.5
+  wMm: 421
+  dMm: 698
+weightKg: 47.1
+specs:
+  f3Hz: 55
+  f6Hz: 49.3
+  maxSplExcursionDb: 125.9
+  maxSplThermalDb: 134.4
+  maxSplDb: 125.9
+  sensitivityDb: 102.4
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 54.6
+  recommendedCrossoverHz: 71.5
+  hornThroatCm2: 365.4
+  hornMouthCm2: 1762.9
+  powerAesW: 4000
+  powerProgramW: 8000
+  recommendedPowerW: 2400
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-12-bc-2
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - psytrance
+  - mental
+buildComplexity: moderate
+connectors:
+  - XLR
+  - speakON NL2
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-12-bc-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 12 FLH: 12" front loaded horn mid built around the B&C 12 BG 100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,75 @@
+---
+name: FAKE Mammoth 21 TL
+category: sub
+topology: transmission_line
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-ntr21-5010jd-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 341.2
+grossVolumeL: 426.5
+dims:
+  hMm: 851
+  wMm: 706.8
+  dMm: 709
+weightKg: 48.4
+specs:
+  f3Hz: 25.8
+  f6Hz: 19.5
+  maxSplExcursionDb: 112
+  maxSplThermalDb: 128.7
+  maxSplDb: 112
+  sensitivityDb: 96.7
+  recommendedCrossoverHz: 56.8
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - frenchcore
+buildComplexity: complex
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-21-celestion-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Mammoth 21 TL: 21" transmission line sub built around the Celestion NTR21-5010JD. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

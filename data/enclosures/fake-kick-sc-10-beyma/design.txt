@@ -1,0 +1,12 @@
+# FAKE Nucleus 10 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Beyma 10"G40 (beyma-10-g40-8)
+Fs=45 Hz
+Qts=0.3
+Vas=49 L
+Sd=380 cm2
+Xmax=7 mm
+Vb=63.7 L
+HornCutoff=56.3 Hz
+F3=56.7 Hz
+Sensitivity=98.5 dB

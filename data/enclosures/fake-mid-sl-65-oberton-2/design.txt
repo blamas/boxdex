@@ -1,0 +1,12 @@
+# FAKE Kraken 6.5 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Oberton 6B150 (oberton-6b150-8)
+Fs=55.04 Hz
+Qts=0.292
+Vas=14.61 L
+Sd=127 cm2
+Xmax=5.5 mm
+Vb=4.4 L
+Fc=150.8 Hz
+F3=135.3 Hz
+Sensitivity=95 dB

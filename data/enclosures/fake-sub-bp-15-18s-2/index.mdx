@@ -1,0 +1,101 @@
+---
+name: FAKE Nomad 15 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: default-rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: default-rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: default-klp-spl.csv
+            note: gated, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-15lw1400-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 95.3
+grossVolumeL: 119.1
+dims:
+  hMm: 526
+  wMm: 516.3
+  dMm: 438.5
+weightKg: 20.7
+specs:
+  f3Hz: 79.5
+  f6Hz: 68.5
+  fbHz: 58.9
+  f3HzHigh: 141.4
+  maxSplExcursionDb: 117
+  maxSplThermalDb: 129.5
+  maxSplDb: 117
+  sensitivityDb: 100.2
+  recommendedCrossoverHz: 174.9
+  maxVelocityMs: 17.8
+  powerAesW: 850
+  powerProgramW: 1700
+  recommendedPowerW: 510
+author: fake-data
+availability: contact
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-4.0
+recommendedFor:
+  - dub
+  - mental
+buildComplexity: simple
+connectors:
+  - speakON NL4
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-15-18s-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nomad 15 BP: 15" bandpass sub built around the 18 Sound 15CX1000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

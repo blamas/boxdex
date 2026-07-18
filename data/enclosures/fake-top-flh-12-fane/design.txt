@@ -1,0 +1,12 @@
+# FAKE Terra 12 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Fane 12-300 vp FRL (fane-12-300-vp-frl-8)
+Fs=50 Hz
+Qts=0.39
+Vas=62 L
+Sd=532 cm2
+Xmax=4.5 mm
+Vb=74.4 L
+HornCutoff=70 Hz
+F3=70.5 Hz
+Sensitivity=100.2 dB

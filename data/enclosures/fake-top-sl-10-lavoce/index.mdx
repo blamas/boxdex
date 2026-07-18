@@ -1,0 +1,99 @@
+---
+name: FAKE Terra 10 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass10-18-16-16
+        qty: 1
+      - driver: faital-hf100-8
+        qty: 1
+        horn: beyma-td-164
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 47.7
+grossVolumeL: 59.6
+dims:
+  hMm: 447.5
+  wMm: 357.5
+  dMm: 372.5
+weightKg: 20.4
+specs:
+  f3Hz: 86.9
+  f6Hz: 66.5
+  maxSplExcursionDb: 114.4
+  maxSplThermalDb: 116
+  maxSplDb: 114.4
+  sensitivityDb: 95
+  impedanceNominalOhm: 16
+  impedanceMinOhm: 12.5
+  recommendedCrossoverHz: 113
+  coverageAngleDeg: 60
+  powerAesW: 125
+  powerProgramW: 250
+  recommendedPowerW: 75
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-sl-10-lavoce
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - acid
+  - tribe
+  - frenchcore
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-10-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Terra 10 SL: 10" sealed top built around the LaVoce FBASS10-18-16. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

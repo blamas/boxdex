@@ -1,0 +1,66 @@
+---
+name: FAKE Mammoth 15 BR
+category: sub
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-15-400-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 104.3
+grossVolumeL: 130.4
+dims:
+  hMm: 550.5
+  wMm: 516.3
+  dMm: 459
+weightKg: 21.7
+specs:
+  f3Hz: 50.7
+  f6Hz: 42.9
+  fbHz: 45.2
+  maxSplExcursionDb: 110.8
+  maxSplThermalDb: 125.1
+  maxSplDb: 110.8
+  sensitivityDb: 99.1
+  recommendedCrossoverHz: 111.5
+  maxVelocityMs: 17.1
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-SA-4.0
+recommendedFor:
+  - techno
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-br-15-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 15 BR: 15" bass reflex sub built around the Fane 15-400. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

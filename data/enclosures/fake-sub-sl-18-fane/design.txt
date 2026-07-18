@@ -1,0 +1,12 @@
+# FAKE Nucleus 18 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Fane 18-500 TLHP (fane-18-500-tlhp-8)
+Fs=29 Hz
+Qts=0.403
+Vas=521 L
+Sd=1178.4 cm2
+Xmax=6.3 mm
+Vb=1003.2 L
+Fc=50.9 Hz
+F3=50.9 Hz
+Sensitivity=104.2 dB

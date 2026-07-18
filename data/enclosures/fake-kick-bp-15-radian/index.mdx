@@ -1,0 +1,83 @@
+---
+name: FAKE Nomad 15 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: radian-2215-b-8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 113.1
+grossVolumeL: 141.4
+dims:
+  hMm: 573.5
+  wMm: 516.3
+  dMm: 477.5
+weightKg: 22.7
+specs:
+  f3Hz: 65.1
+  f6Hz: 56.7
+  fbHz: 48.8
+  f3HzHigh: 117.1
+  maxSplExcursionDb: 113.9
+  maxSplThermalDb: 126
+  maxSplDb: 113.9
+  sensitivityDb: 97
+  recommendedCrossoverHz: 143.2
+  maxVelocityMs: 17.8
+  powerAesW: 800
+  powerProgramW: 1600
+  recommendedPowerW: 480
+author: fake-data
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - mental
+  - tribe
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-15-radian-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nomad 15 BP: 15" bandpass kick built around the Radian 2215 B-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

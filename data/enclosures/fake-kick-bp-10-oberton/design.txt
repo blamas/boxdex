@@ -1,0 +1,12 @@
+# FAKE Vortex 10 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Oberton 10B100 (oberton-10b100-8)
+Fs=44 Hz
+Qts=0.447
+Vas=40.5 L
+Sd=317.3 cm2
+Xmax=4.4 mm
+Vb=87.2 L
+Fb=38.1 Hz
+F3=49.3 Hz
+Sensitivity=92.5 dB

@@ -1,0 +1,86 @@
+---
+name: FAKE Dominator 8 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-8m150-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 16
+grossVolumeL: 20
+dims:
+  hMm: 285.5
+  wMm: 294
+  dMm: 238
+weightKg: 26.8
+specs:
+  f3Hz: 150.6
+  f6Hz: 124.4
+  fbHz: 113.3
+  maxSplExcursionDb: 122.6
+  maxSplThermalDb: 131.8
+  maxSplDb: 122.6
+  sensitivityDb: 104
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 195.8
+  maxVelocityMs: 17.7
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-8-oberton-3
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - mental
+  - breakcore
+  - bass_music
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-8-oberton-3-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Dominator 8 BR: 8" bass reflex mid built around the Oberton 8M150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

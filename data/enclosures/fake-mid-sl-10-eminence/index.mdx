@@ -1,0 +1,63 @@
+---
+name: FAKE Cyclone 10 SL
+category: mid
+topology: sealed
+topologyVariant: acoustic suspension
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-alpha-10-v2-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 79.6
+grossVolumeL: 99.5
+dims:
+  hMm: 578
+  wMm: 357.5
+  dMm: 481.5
+weightKg: 19
+specs:
+  f3Hz: 71.3
+  f6Hz: 54.2
+  maxSplExcursionDb: 107
+  maxSplThermalDb: 118
+  maxSplDb: 107
+  sensitivityDb: 96.2
+  recommendedCrossoverHz: 92.7
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+availability: contact
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - hardcore
+  - frenchcore
+buildComplexity: simple
+revision: v2
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-10-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 10 SL: 10" sealed mid built around the Eminence ALPHA 10 v2. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

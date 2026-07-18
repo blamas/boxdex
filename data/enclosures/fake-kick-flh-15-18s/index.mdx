@@ -1,0 +1,75 @@
+---
+name: FAKE Outlaw 15 FLH
+category: kick
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 159
+grossVolumeL: 198.8
+dims:
+  hMm: 679.5
+  wMm: 516.3
+  dMm: 566.5
+weightKg: 27.9
+specs:
+  f3Hz: 67.8
+  f6Hz: 60.8
+  maxSplExcursionDb: 119.5
+  maxSplThermalDb: 129.5
+  maxSplDb: 119.5
+  sensitivityDb: 104.2
+  hornCutoffHz: 67.2
+  recommendedCrossoverHz: 149.2
+  hornThroatCm2: 598.5
+  hornMouthCm2: 1754.1
+  powerAesW: 850
+  powerProgramW: 1700
+  recommendedPowerW: 510
+author: fake-data
+availability: contact
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-4.0
+recommendedFor:
+  - raggatek
+buildComplexity: simple
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-15-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Outlaw 15 FLH: 15" front loaded horn kick built around the 18 Sound 15CX1000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

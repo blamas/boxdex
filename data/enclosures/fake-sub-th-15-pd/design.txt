@@ -1,0 +1,12 @@
+# FAKE Nomad 15 TH - synthetic design export (not a real Hornresp record)
+Topology=tapped_horn
+Driver=PD 1550/2 (pd-1550-2-8)
+Fs=46.2 Hz
+Qts=0.294
+Vas=126 L
+Sd=908 cm2
+Xmax=5.3 mm
+Vb=453.6 L
+HornCutoff=43.9 Hz
+F3=44.2 Hz
+Sensitivity=108 dB

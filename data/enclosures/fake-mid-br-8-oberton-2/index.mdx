@@ -1,0 +1,73 @@
+---
+name: FAKE Rumble 8 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-8m150-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 4
+grossVolumeL: 5
+dims:
+  hMm: 143
+  wMm: 294
+  dMm: 119
+weightKg: 10.5
+specs:
+  f3Hz: 150.6
+  f6Hz: 124.4
+  fbHz: 113.3
+  maxSplExcursionDb: 110.5
+  maxSplThermalDb: 119.8
+  maxSplDb: 110.5
+  sensitivityDb: 98
+  recommendedCrossoverHz: 195.8
+  maxVelocityMs: 15.9
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-8-oberton-2
+availability: out_of_print
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - raggatek
+  - mental
+  - techno
+buildComplexity: simple
+connectors:
+  - jack 6.35mm
+  - binding post
+revision: rev C
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-8-oberton-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Rumble 8 BR: 8" bass reflex mid built around the Oberton 8M150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

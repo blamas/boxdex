@@ -1,0 +1,12 @@
+# FAKE Nucleus 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=B&C 10 CL 51 (bc-10-cl-51-8)
+Fs=60 Hz
+Qts=0.394
+Vas=31 L
+Sd=320 cm2
+Xmax=3.7 mm
+Vb=37.2 L
+HornCutoff=84 Hz
+F3=84.4 Hz
+Sensitivity=99.7 dB

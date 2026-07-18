@@ -1,0 +1,12 @@
+# FAKE Dominator 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Celestion BL15-300X (celestion-bl15-300x-4)
+Fs=48 Hz
+Qts=0.447
+Vas=158.8 L
+Sd=707 cm2
+Xmax=4.3 mm
+Vb=236.2 L
+Fb=41.6 Hz
+F3=38.5 Hz
+Sensitivity=101.3 dB

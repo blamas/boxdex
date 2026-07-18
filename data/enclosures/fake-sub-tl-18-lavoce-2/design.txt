@@ -1,0 +1,11 @@
+# FAKE Havoc 18 TL - synthetic design export (not a real Hornresp record)
+Topology=transmission_line
+Driver=LaVoce SAF184.01 (lavoce-saf184-01-8)
+Fs=33 Hz
+Qts=0.299
+Vas=221 L
+Sd=1160 cm2
+Xmax=6.8 mm
+Vb=884 L
+F3=28.2 Hz
+Sensitivity=104.2 dB

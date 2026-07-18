@@ -1,0 +1,66 @@
+---
+name: FAKE Fury 12 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-basslite-s2012-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 77.8
+grossVolumeL: 97.3
+dims:
+  hMm: 526.5
+  wMm: 421
+  dMm: 439
+weightKg: 18.8
+specs:
+  f3Hz: 70.7
+  f6Hz: 53.7
+  maxSplExcursionDb: 114.6
+  maxSplThermalDb: 116.4
+  maxSplDb: 114.6
+  sensitivityDb: 94.6
+  recommendedCrossoverHz: 155.5
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-12-eminence
+availability: paid
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - hardstyle
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-12-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 12 SL: 12" sealed kick built around the Eminence BASSLITE S2012. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,12 @@
+# FAKE Nomad 18 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=BMS 18N830V2 (bms-18n830v2-6)
+Fs=31 Hz
+Qts=0.37
+Vas=262 L
+Sd=1212 cm2
+Xmax=8 mm
+Vb=340.6 L
+HornCutoff=38.8 Hz
+F3=38.8 Hz
+Sensitivity=98.4 dB

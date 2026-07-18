@@ -1,0 +1,12 @@
+# FAKE Kraken 12 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=PD P12/150 (pd-p12-150-8)
+Fs=51 Hz
+Qts=0.318
+Vas=80 L
+Sd=531 cm2
+Xmax=2.3 mm
+Vb=104 L
+HornCutoff=63.8 Hz
+F3=63.9 Hz
+Sensitivity=101.7 dB

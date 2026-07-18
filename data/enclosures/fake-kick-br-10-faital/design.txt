@@ -1,0 +1,12 @@
+# FAKE Riot 10 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Faital PRO 10FE300 (faital-10fe300-4)
+Fs=50 Hz
+Qts=0.39
+Vas=49 L
+Sd=358 cm2
+Xmax=5.47 mm
+Vb=49.3 L
+Fb=49 Hz
+F3=48.6 Hz
+Sensitivity=94 dB

@@ -1,0 +1,12 @@
+# FAKE Dominator 15 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Oberton 15B450 / 15B450A / 15B450A2 (oberton-15b450-15b450a-15b450a2-8)
+Fs=45.08 Hz
+Qts=0.286
+Vas=146.85 L
+Sd=829.6 cm2
+Xmax=6.75 mm
+Vb=28.7 L
+Fc=111.4 Hz
+F3=111.5 Hz
+Sensitivity=100 dB

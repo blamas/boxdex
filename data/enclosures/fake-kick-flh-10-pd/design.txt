@@ -1,0 +1,12 @@
+# FAKE Outlaw 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Precision Devices PD107 (pd-pd107-16)
+Fs=74.4 Hz
+Qts=0.158
+Vas=20.78 L
+Sd=346 cm2
+Xmax=2.5 mm
+Vb=49.8 L
+HornCutoff=104.2 Hz
+F3=105 Hz
+Sensitivity=106 dB

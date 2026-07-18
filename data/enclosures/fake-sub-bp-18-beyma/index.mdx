@@ -1,0 +1,87 @@
+---
+name: FAKE Nucleus 18 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-118nd-w-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 380.9
+grossVolumeL: 476.1
+dims:
+  hMm: 966.5
+  wMm: 611.5
+  dMm: 805.5
+weightKg: 52.8
+specs:
+  f3Hz: 45.1
+  f6Hz: 39.2
+  fbHz: 34.6
+  f3HzHigh: 83
+  maxSplExcursionDb: 112.7
+  maxSplThermalDb: 126.2
+  maxSplDb: 112.7
+  sensitivityDb: 97.7
+  recommendedCrossoverHz: 99.2
+  maxVelocityMs: 18.5
+  powerAesW: 700
+  powerProgramW: 1400
+  recommendedPowerW: 420
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC0-1.0
+recommendedFor:
+  - acid
+  - hardtek
+  - hardcore
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-18-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nucleus 18 BP: 18" bandpass sub built around the Beyma 118Nd/W. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

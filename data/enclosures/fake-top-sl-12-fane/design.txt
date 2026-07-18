@@ -1,0 +1,12 @@
+# FAKE Seismic 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Fane 12-100TC (fane-12-100tc-8)
+Fs=56 Hz
+Qts=0.779
+Vas=56.1 L
+Sd=490 cm2
+Xmax=2.5 mm
+Vb=531.6 L
+Fc=66.8 Hz
+F3=54.4 Hz
+Sensitivity=99.5 dB

@@ -1,0 +1,12 @@
+# FAKE Dominator 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=LaVoce FBASS10-18-16 (lavoce-fbass10-18-16-16)
+Fs=70 Hz
+Qts=0.57
+Vas=28.39 L
+Sd=353 cm2
+Xmax=4.8 mm
+Vb=95.4 L
+Fc=88.4 Hz
+F3=86.9 Hz
+Sensitivity=98 dB

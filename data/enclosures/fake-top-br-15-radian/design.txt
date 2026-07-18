@@ -1,0 +1,12 @@
+# FAKE Cyclone 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Radian 2215 B-8 (radian-2215-b-8-8)
+Fs=41.8 Hz
+Qts=0.321
+Vas=135.5 L
+Sd=868 cm2
+Xmax=6 mm
+Vb=155.8 L
+Fb=48.8 Hz
+F3=53.3 Hz
+Sensitivity=100 dB

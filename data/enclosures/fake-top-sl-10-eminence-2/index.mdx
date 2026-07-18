@@ -1,0 +1,92 @@
+---
+name: FAKE Bunker 10 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-alpha-10-v2-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 79.6
+grossVolumeL: 99.5
+dims:
+  hMm: 578
+  wMm: 357.5
+  dMm: 481.5
+weightKg: 19
+specs:
+  f3Hz: 71.3
+  f6Hz: 54.2
+  maxSplExcursionDb: 107
+  maxSplThermalDb: 118
+  maxSplDb: 107
+  sensitivityDb: 96.2
+  recommendedCrossoverHz: 92.7
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC-BY-SA-4.0
+recommendedFor:
+  - frenchcore
+buildComplexity: moderate
+connectors:
+  - binding post
+  - XLR
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-10-eminence-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Bunker 10 SL: 10" sealed top built around the Eminence ALPHA 10 v2. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

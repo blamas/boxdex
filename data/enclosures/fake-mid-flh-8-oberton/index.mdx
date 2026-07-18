@@ -1,0 +1,71 @@
+---
+name: FAKE Nomad 8 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-8m150-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 51.8
+grossVolumeL: 64.8
+dims:
+  hMm: 514.5
+  wMm: 294
+  dMm: 428.5
+weightKg: 20.8
+specs:
+  f3Hz: 96
+  f6Hz: 86.1
+  maxSplExcursionDb: 113.7
+  maxSplThermalDb: 125.8
+  maxSplDb: 113.7
+  sensitivityDb: 105
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 95.5
+  recommendedCrossoverHz: 124.8
+  hornThroatCm2: 141.4
+  hornMouthCm2: 756.3
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-8-oberton
+availability: out_of_print
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - dub
+  - techno
+  - tekno
+buildComplexity: simple
+connectors:
+  - speakON NL4
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-8-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nomad 8 FLH: 8" front loaded horn mid built around the Oberton 8M150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

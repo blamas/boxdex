@@ -1,0 +1,71 @@
+---
+name: FAKE Terra 12 FLH
+category: kick
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-12b400-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 6
+            file: s1-spl-6u.csv
+            note: 6x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 89.7
+grossVolumeL: 112.1
+dims:
+  hMm: 565.5
+  wMm: 421
+  dMm: 471
+weightKg: 20.1
+specs:
+  f3Hz: 71.2
+  f6Hz: 63.9
+  maxSplExcursionDb: 114.7
+  maxSplThermalDb: 124
+  maxSplDb: 114.7
+  sensitivityDb: 102
+  hornCutoffHz: 70.7
+  recommendedCrossoverHz: 156.6
+  hornThroatCm2: 360.3
+  hornMouthCm2: 1190.4
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - hardstyle
+buildComplexity: moderate
+revision: MkII
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-12-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 12 FLH: 12" front loaded horn kick built around the Oberton 12B400. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

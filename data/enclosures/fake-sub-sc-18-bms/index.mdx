@@ -1,0 +1,81 @@
+---
+name: FAKE Nomad 18 SC
+category: sub
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-18n830v2-6
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 340.6
+grossVolumeL: 425.8
+dims:
+  hMm: 914
+  wMm: 611.5
+  dMm: 762
+weightKg: 48.3
+specs:
+  f3Hz: 38.8
+  f6Hz: 34.8
+  maxSplExcursionDb: 115.3
+  maxSplThermalDb: 122.3
+  maxSplDb: 115.3
+  sensitivityDb: 98.4
+  hornCutoffHz: 38.8
+  recommendedCrossoverHz: 85.4
+  hornThroatCm2: 848.4
+  hornMouthCm2: 3353.5
+  powerAesW: 550
+  powerProgramW: 1100
+  recommendedPowerW: 330
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sc-18-bms
+availability: free
+license: CC0-1.0
+recommendedFor:
+  - tribe
+  - hardstyle
+  - breakcore
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+  - binding post
+revision: v2
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-18-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nomad 18 SC: 18" scoop sub built around the BMS 18N830V2. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

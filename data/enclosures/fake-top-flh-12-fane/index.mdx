@@ -1,0 +1,67 @@
+---
+name: FAKE Terra 12 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-12-300-vp-frl-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 74.4
+grossVolumeL: 93
+dims:
+  hMm: 515
+  wMm: 421
+  dMm: 429
+weightKg: 18.4
+specs:
+  f3Hz: 70.5
+  f6Hz: 63.2
+  maxSplExcursionDb: 113.5
+  maxSplThermalDb: 121
+  maxSplDb: 113.5
+  sensitivityDb: 100.2
+  hornCutoffHz: 70
+  recommendedCrossoverHz: 91.7
+  hornThroatCm2: 372.4
+  hornMouthCm2: 1084.1
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - raggatek
+  - breakcore
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-12-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 12 FLH: 12" front loaded horn top built around the Fane 12-300 vp FRL. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,12 @@
+# FAKE Riot 15 FH - synthetic design export (not a real Hornresp record)
+Topology=folded_horn
+Driver=Beyma 115ND/W (beyma-115nd-w-8)
+Fs=37 Hz
+Qts=0.285
+Vas=145 L
+Sd=910 cm2
+Xmax=6.6 mm
+Vb=217.5 L
+HornCutoff=40.7 Hz
+F3=40.8 Hz
+Sensitivity=102.7 dB

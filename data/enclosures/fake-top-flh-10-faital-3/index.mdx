@@ -1,0 +1,67 @@
+---
+name: FAKE Cyclone 10 FLH
+category: top
+topology: front_loaded_horn
+topologyVariant: conical FLH
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-10fe300-4
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 58.8
+grossVolumeL: 73.5
+dims:
+  hMm: 496.5
+  wMm: 357.5
+  dMm: 414
+weightKg: 16.6
+specs:
+  f3Hz: 70.5
+  f6Hz: 63.2
+  maxSplExcursionDb: 111.8
+  maxSplThermalDb: 118
+  maxSplDb: 111.8
+  sensitivityDb: 98
+  hornCutoffHz: 70
+  recommendedCrossoverHz: 91.7
+  hornThroatCm2: 250.6
+  hornMouthCm2: 887.5
+  powerAesW: 250
+  powerProgramW: 500
+  recommendedPowerW: 150
+author: fake-data
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Cyclone 10 FLH build (2026).
+recommendedFor:
+  - raggatek
+  - hardstyle
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+revision: rev B
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-10-faital-3-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 10 FLH: 10" front loaded horn top built around the Faital PRO 10FE300. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

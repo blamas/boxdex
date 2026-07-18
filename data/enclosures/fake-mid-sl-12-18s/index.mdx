@@ -1,0 +1,73 @@
+---
+name: FAKE Riot 12 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-12cx800-8
+        qty: 4
+      - driver: 18s-nd1050-16
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 42.8
+grossVolumeL: 53.5
+dims:
+  hMm: 390.5
+  wMm: 421
+  dMm: 325.5
+weightKg: 34.8
+specs:
+  f3Hz: 148.1
+  f6Hz: 112.5
+  maxSplExcursionDb: 138.8
+  maxSplThermalDb: 137.5
+  maxSplDb: 137.5
+  sensitivityDb: 105.4
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 192.5
+  coverageAngleDeg: 90
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-12-18s
+availability: contact
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - frenchcore
+buildComplexity: moderate
+connectors:
+  - XLR
+  - jack 6.35mm
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-12-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Riot 12 SL: 12" sealed mid built around the 18 Sound 12CX800. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

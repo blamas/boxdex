@@ -1,0 +1,68 @@
+---
+name: FAKE Nomad 15 TH
+category: sub
+topology: tapped_horn
+topologyVariant: offset driver
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-1550-2-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 453.6
+grossVolumeL: 567
+dims:
+  hMm: 1148
+  wMm: 516.3
+  dMm: 956.5
+weightKg: 66
+specs:
+  f3Hz: 44.2
+  f6Hz: 39.6
+  maxSplExcursionDb: 117.5
+  maxSplThermalDb: 132.8
+  maxSplDb: 117.5
+  sensitivityDb: 108
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 43.9
+  recommendedCrossoverHz: 97.2
+  hornThroatCm2: 908
+  hornMouthCm2: 3259.9
+  powerAesW: 1200
+  powerProgramW: 2400
+  recommendedPowerW: 720
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC0-1.0
+recommendedFor:
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-th-15-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nomad 15 TH: 15" tapped horn sub built around the PD 1550/2. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

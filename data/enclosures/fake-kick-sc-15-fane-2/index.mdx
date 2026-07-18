@@ -1,0 +1,87 @@
+---
+name: FAKE Rumble 15 SC
+category: kick
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-axiom-ax15-300b-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 286
+grossVolumeL: 357.5
+dims:
+  hMm: 911.5
+  wMm: 516.3
+  dMm: 759.5
+weightKg: 47.2
+specs:
+  f3Hz: 61.4
+  f6Hz: 55
+  maxSplExcursionDb: 120.1
+  maxSplThermalDb: 129.1
+  maxSplDb: 120.1
+  sensitivityDb: 104.8
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 61.3
+  recommendedCrossoverHz: 135.1
+  hornThroatCm2: 587.4
+  hornMouthCm2: 2823.6
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+author: fake-data
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Rumble 15 SC build (2026).
+recommendedFor:
+  - psytrance
+buildComplexity: simple
+connectors:
+  - speakON NL4
+revision: MkII
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-15-fane-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Rumble 15 SC: 15" scoop kick built around the Fane AXIOM AX15/300B. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

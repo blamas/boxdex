@@ -1,0 +1,81 @@
+---
+name: FAKE Nomad 15 TL
+category: sub
+topology: transmission_line
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-15c262-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 138
+grossVolumeL: 172.5
+dims:
+  hMm: 633
+  wMm: 516.3
+  dMm: 527.5
+weightKg: 25.5
+specs:
+  f3Hz: 36.2
+  f6Hz: 27.7
+  maxSplExcursionDb: 103.7
+  maxSplThermalDb: 124.1
+  maxSplDb: 103.7
+  sensitivityDb: 98.1
+  recommendedCrossoverHz: 79.6
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - dub
+  - hardstyle
+buildComplexity: simple
+connectors:
+  - speakON NL2
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-15-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nomad 15 TL: 15" transmission line sub built around the BMS 15C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

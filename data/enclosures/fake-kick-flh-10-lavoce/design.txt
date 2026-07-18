@@ -1,0 +1,12 @@
+# FAKE Monolith 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=LaVoce FBASS10-18-8 (lavoce-fbass10-18-8-8)
+Fs=62 Hz
+Qts=0.416
+Vas=35 L
+Sd=353 cm2
+Xmax=3.6 mm
+Vb=168 L
+HornCutoff=86.8 Hz
+F3=86.9 Hz
+Sensitivity=106.1 dB

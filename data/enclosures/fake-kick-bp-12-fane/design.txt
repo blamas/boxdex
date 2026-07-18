@@ -1,0 +1,12 @@
+# FAKE Warehouse 12 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Fane 12-300 vp FRL (fane-12-300-vp-frl-8)
+Fs=50 Hz
+Qts=0.39
+Vas=62 L
+Sd=532 cm2
+Xmax=4.5 mm
+Vb=89.5 L
+Fb=49 Hz
+F3=64.5 Hz
+Sensitivity=96.2 dB

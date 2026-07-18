@@ -1,0 +1,12 @@
+# FAKE Bunker 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Eminence ALPHA 10 v2 (eminence-alpha-10-v2-8)
+Fs=50.9 Hz
+Qts=0.505
+Vas=76.4 L
+Sd=344.9 cm2
+Xmax=3.2 mm
+Vb=79.6 L
+Fc=71.3 Hz
+F3=71.3 Hz
+Sensitivity=96.2 dB

@@ -1,0 +1,12 @@
+# FAKE Nucleus 10 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Fane 10-275 (fane-10-275-8)
+Fs=55 Hz
+Qts=0.356
+Vas=26.1 L
+Sd=366 cm2
+Xmax=4.1 mm
+Vb=20.2 L
+Fb=58.5 Hz
+F3=60.7 Hz
+Sensitivity=94.1 dB

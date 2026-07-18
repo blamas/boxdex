@@ -1,0 +1,12 @@
+# FAKE Vortex 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=18 Sound 12CX800 (18s-12cx800-8)
+Fs=53 Hz
+Qts=0.253
+Vas=73 L
+Sd=530 cm2
+Xmax=4.7 mm
+Vb=8.1 L
+Fc=167.6 Hz
+F3=150.4 Hz
+Sensitivity=99.4 dB

@@ -1,0 +1,71 @@
+---
+name: FAKE Fury 18 SC
+category: sub
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-184c002-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 348.4
+grossVolumeL: 435.5
+dims:
+  hMm: 924.5
+  wMm: 611.5
+  dMm: 770.5
+weightKg: 49.2
+specs:
+  f3Hz: 50.3
+  f6Hz: 45.1
+  maxSplExcursionDb: 119.9
+  maxSplThermalDb: 130.1
+  maxSplDb: 119.9
+  sensitivityDb: 104.1
+  hornCutoffHz: 50
+  recommendedCrossoverHz: 110.7
+  hornThroatCm2: 806.4
+  hornMouthCm2: 3392
+  powerAesW: 900
+  powerProgramW: 1800
+  recommendedPowerW: 540
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sc-18-pd-2
+availability: free
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC0-1.0
+recommendedFor:
+  - raggatek
+  - dub
+  - mental
+buildComplexity: complex
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-18-pd-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 18 SC: 18" scoop sub built around the PD 184C002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

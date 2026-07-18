@@ -1,0 +1,90 @@
+---
+name: FAKE Kraken 15 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-15-3008ps-8
+        qty: 4
+      - driver: bc-de880tn-16
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 754.4
+grossVolumeL: 943
+dims:
+  hMm: 1480.5
+  wMm: 516.3
+  dMm: 1233.5
+weightKg: 114.9
+specs:
+  f3Hz: 48.4
+  f6Hz: 37.7
+  fbHz: 48.2
+  maxSplExcursionDb: 124.8
+  maxSplThermalDb: 139.2
+  maxSplDb: 124.8
+  sensitivityDb: 106.2
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 62.9
+  coverageAngleDeg: 90
+  maxVelocityMs: 19.3
+  powerAesW: 2000
+  powerProgramW: 4000
+  recommendedPowerW: 1200
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-15-eminence-3
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-4.0
+recommendedFor:
+  - acid
+buildComplexity: moderate
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-15-eminence-3-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Kraken 15 BR: 15" bass reflex top built around the Eminence 15-3008PS. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

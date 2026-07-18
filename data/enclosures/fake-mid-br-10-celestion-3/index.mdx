@@ -1,0 +1,109 @@
+---
+name: FAKE Outlaw 10 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bn10-200s8-8
+        qty: 1
+      - driver: bc-6cla51-16
+        qty: 1
+      - driver: radian-951-8
+        qty: 1
+        horn: rcf-hf64
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 15.4
+grossVolumeL: 19.3
+dims:
+  hMm: 254.5
+  wMm: 357.5
+  dMm: 212
+weightKg: 21.7
+specs:
+  f3Hz: 100.3
+  f6Hz: 79.5
+  fbHz: 96.1
+  maxSplExcursionDb: 110
+  maxSplThermalDb: 122.5
+  maxSplDb: 110
+  sensitivityDb: 99.5
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 130.4
+  coverageAngleDeg: 60
+  maxVelocityMs: 16
+  powerAesW: 450
+  powerProgramW: 900
+  recommendedPowerW: 270
+ways: 3
+author: fake-data
+availability: contact
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - breakcore
+buildComplexity: simple
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-10-celestion-3-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Outlaw 10 BR: 10" bass reflex mid built around the Celestion BN10-200S8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

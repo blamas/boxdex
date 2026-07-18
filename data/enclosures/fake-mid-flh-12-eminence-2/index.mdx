@@ -1,0 +1,76 @@
+---
+name: FAKE Havoc 12 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-commonwealth-12-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 216
+grossVolumeL: 270
+dims:
+  hMm: 877.5
+  wMm: 421
+  dMm: 731
+weightKg: 39.3
+specs:
+  f3Hz: 70.5
+  f6Hz: 63.2
+  maxSplExcursionDb: 103.2
+  maxSplThermalDb: 127.6
+  maxSplDb: 103.2
+  sensitivityDb: 105.1
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 70
+  recommendedCrossoverHz: 91.7
+  hornThroatCm2: 363.7
+  hornMouthCm2: 1847.1
+  powerAesW: 450
+  powerProgramW: 900
+  recommendedPowerW: 270
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-12-eminence-2
+availability: paid
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - acid
+  - psytrance
+  - hardcore
+buildComplexity: simple
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-12-eminence-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Havoc 12 FLH: 12" front loaded horn mid built around the Eminence COMMONWEALTH 12. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

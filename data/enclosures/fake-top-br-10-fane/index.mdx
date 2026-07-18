@@ -1,0 +1,104 @@
+---
+name: FAKE Outlaw 10 BR
+category: top
+topology: bass_reflex
+topologyVariant: slot port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-10-275-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: default-rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: default-rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: default-klp-spl.csv
+            note: gated, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-10m600-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 20.2
+grossVolumeL: 25.3
+dims:
+  hMm: 291.5
+  wMm: 357.5
+  dMm: 243
+weightKg: 12.3
+specs:
+  f3Hz: 60.7
+  f6Hz: 47.9
+  fbHz: 58.5
+  sensitivityDb: 94.1
+  recommendedCrossoverHz: 78.9
+  maxVelocityMs: 16.5
+  powerAesW: 275
+  powerProgramW: 550
+  recommendedPowerW: 165
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-10-fane
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - mental
+  - hardtek
+  - raggatek
+buildComplexity: simple
+connectors:
+  - speakON NL2
+revision: 2026 build
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-10-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Outlaw 10 BR: 10" bass reflex top built around the Fane 10-275. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

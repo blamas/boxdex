@@ -1,0 +1,12 @@
+# FAKE Havoc 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Celestion BL12-200X (celestion-bl12-200x-8)
+Fs=45 Hz
+Qts=0.416
+Vas=104.6 L
+Sd=517 cm2
+Xmax=4 mm
+Vb=56.8 L
+Fc=97.4 Hz
+F3=80.8 Hz
+Sensitivity=99.3 dB

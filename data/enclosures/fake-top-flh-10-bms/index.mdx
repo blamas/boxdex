@@ -1,0 +1,67 @@
+---
+name: FAKE Seismic 10 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-10c262-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 30.6
+grossVolumeL: 38.3
+dims:
+  hMm: 358.5
+  wMm: 357.5
+  dMm: 299
+weightKg: 13.4
+specs:
+  f3Hz: 91.4
+  f6Hz: 81.9
+  maxSplExcursionDb: 114.7
+  maxSplThermalDb: 121.7
+  maxSplDb: 114.7
+  sensitivityDb: 99.7
+  hornCutoffHz: 91
+  recommendedCrossoverHz: 118.8
+  hornThroatCm2: 224
+  hornMouthCm2: 640.8
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - dub
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+revision: rev B
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-10-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Seismic 10 FLH: 10" front loaded horn top built around the BMS 10C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

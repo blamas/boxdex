@@ -1,0 +1,95 @@
+---
+name: FAKE Mammoth 18 SL
+category: sub
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-saf184-01-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 48.1
+grossVolumeL: 60.1
+dims:
+  hMm: 343.5
+  wMm: 611.5
+  dMm: 286
+weightKg: 15.4
+specs:
+  f3Hz: 78
+  f6Hz: 59.3
+  maxSplExcursionDb: 125.6
+  maxSplThermalDb: 126.7
+  maxSplDb: 125.6
+  sensitivityDb: 98.2
+  recommendedCrossoverHz: 171.6
+  powerAesW: 700
+  powerProgramW: 1400
+  recommendedPowerW: 420
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sl-18-lavoce
+availability: contact
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-4.0
+recommendedFor:
+  - frenchcore
+  - raggatek
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sl-18-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Mammoth 18 SL: 18" sealed sub built around the LaVoce SAF184.01. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

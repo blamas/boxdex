@@ -1,0 +1,63 @@
+---
+name: FAKE Basstek 12 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-112nd-w-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 28.9
+grossVolumeL: 36.1
+dims:
+  hMm: 321
+  wMm: 421
+  dMm: 267.5
+weightKg: 13.2
+specs:
+  f3Hz: 81.8
+  f6Hz: 62.1
+  maxSplExcursionDb: 120.7
+  maxSplThermalDb: 123.5
+  maxSplDb: 120.7
+  sensitivityDb: 95
+  recommendedCrossoverHz: 180
+  powerAesW: 700
+  powerProgramW: 1400
+  recommendedPowerW: 420
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-12-beyma
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC0-1.0
+recommendedFor:
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-12-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Basstek 12 SL: 12" sealed kick built around the Beyma 112Nd/W. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,92 @@
+---
+name: FAKE Cyclone 10 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl-10-100-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: default-s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: default-rew-spl.csv
+            note: gated, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-10kw3-keybass-vp-16
+        qty: 4
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 238
+grossVolumeL: 297.5
+dims:
+  hMm: 999.5
+  wMm: 357.5
+  dMm: 833
+weightKg: 51.8
+specs:
+  f3Hz: 81.8
+  f6Hz: 63.9
+  maxSplExcursionDb: 122.6
+  maxSplThermalDb: 127.7
+  maxSplDb: 122.6
+  sensitivityDb: 101.7
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 180
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-10-celestion-3
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - psytrance
+  - tribe
+  - frenchcore
+buildComplexity: simple
+connectors:
+  - XLR
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-celestion-3-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Cyclone 10 SL: 10" sealed kick built around the Celestion BL 10-100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,69 @@
+---
+name: FAKE Rumble 15 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+      - driver: 18s-6m44-8
+        qty: 1
+      - driver: 18s-nsd1095n-16
+        qty: 1
+        horn: beyma-td-8060
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 30.1
+grossVolumeL: 37.6
+dims:
+  hMm: 295.5
+  wMm: 516.3
+  dMm: 246.5
+weightKg: 23.4
+specs:
+  f3Hz: 111.6
+  f6Hz: 84.8
+  maxSplExcursionDb: 128.1
+  maxSplThermalDb: 129.5
+  maxSplDb: 128.1
+  sensitivityDb: 100.2
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 145.1
+  coverageAngleDeg: 80
+  powerAesW: 1050
+  powerProgramW: 2100
+  recommendedPowerW: 630
+ways: 3
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - hardcore
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-15-18s-3-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Rumble 15 SL: 15" sealed top built around the 18 Sound 15CX1000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

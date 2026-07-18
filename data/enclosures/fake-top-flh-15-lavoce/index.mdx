@@ -1,0 +1,66 @@
+---
+name: FAKE Fury 15 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-nbass15-30-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 171.7
+grossVolumeL: 214.6
+dims:
+  hMm: 706
+  wMm: 516.3
+  dMm: 588.5
+weightKg: 29.3
+specs:
+  f3Hz: 59
+  f6Hz: 52.9
+  maxSplExcursionDb: 117.9
+  maxSplThermalDb: 124.5
+  maxSplDb: 117.9
+  sensitivityDb: 102.5
+  hornCutoffHz: 58.8
+  recommendedCrossoverHz: 76.7
+  hornThroatCm2: 598.5
+  hornMouthCm2: 1822.5
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-flh-15-lavoce
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - raggatek
+  - psytrance
+  - frenchcore
+buildComplexity: complex
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-15-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 15 FLH: 15" front loaded horn top built around the LaVoce NBASS15-30. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

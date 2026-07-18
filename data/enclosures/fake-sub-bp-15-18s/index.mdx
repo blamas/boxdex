@@ -1,0 +1,87 @@
+---
+name: FAKE Monolith 15 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 95.3
+grossVolumeL: 119.1
+dims:
+  hMm: 526
+  wMm: 516.3
+  dMm: 438.5
+weightKg: 20.7
+specs:
+  f3Hz: 79.5
+  f6Hz: 68.5
+  fbHz: 58.9
+  f3HzHigh: 141.4
+  maxSplExcursionDb: 117
+  maxSplThermalDb: 129.5
+  maxSplDb: 117
+  sensitivityDb: 100.2
+  recommendedCrossoverHz: 174.9
+  maxVelocityMs: 17.8
+  powerAesW: 850
+  powerProgramW: 1700
+  recommendedPowerW: 510
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-bp-15-18s
+availability: paid
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - mental
+buildComplexity: complex
+connectors:
+  - speakON NL2
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-15-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Monolith 15 BP: 15" bandpass sub built around the 18 Sound 15CX1000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

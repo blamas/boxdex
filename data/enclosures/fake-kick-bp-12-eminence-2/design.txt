@@ -1,0 +1,12 @@
+# FAKE Riot 12 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Eminence COMMONWEALTH 12 (eminence-commonwealth-12-8)
+Fs=50 Hz
+Qts=0.332
+Vas=90 L
+Sd=519.5 cm2
+Xmax=0.7 mm
+Vb=82.5 L
+Fb=56.6 Hz
+F3=75.6 Hz
+Sensitivity=98.1 dB

@@ -1,0 +1,11 @@
+# FAKE Nucleus 21 TL - synthetic design export (not a real Hornresp record)
+Topology=transmission_line
+Driver=Precision Devices PD2150 (pd-pd2150-8)
+Fs=22 Hz
+Qts=0.19
+Vas=628 L
+Sd=1630 cm2
+Xmax=19 mm
+Vb=2512 L
+F3=18.8 Hz
+Sensitivity=105 dB

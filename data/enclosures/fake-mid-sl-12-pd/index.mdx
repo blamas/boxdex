@@ -1,0 +1,70 @@
+---
+name: FAKE Mammoth 12 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-p12-150-8
+        qty: 1
+      - driver: bms-4526nd-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 15
+grossVolumeL: 18.8
+dims:
+  hMm: 231.5
+  wMm: 421
+  dMm: 193
+weightKg: 16.7
+specs:
+  f3Hz: 115.1
+  f6Hz: 91.5
+  maxSplExcursionDb: 118.1
+  maxSplThermalDb: 120
+  maxSplDb: 118.1
+  sensitivityDb: 98.2
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 149.6
+  coverageAngleDeg: 90
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-12-pd
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Mammoth 12 SL build (2026).
+recommendedFor:
+  - psytrance
+  - acid
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-12-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 12 SL: 12" sealed mid built around the PD P12/150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

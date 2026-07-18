@@ -1,0 +1,12 @@
+# FAKE Fury 15 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Faital PRO 15FH500 4 Ohms (faital-15fh500-4-ohms-4)
+Fs=33 Hz
+Qts=0.28
+Vas=209.5 L
+Sd=847 cm2
+Xmax=7.7 mm
+Vb=502.8 L
+HornCutoff=46.2 Hz
+F3=46.4 Hz
+Sensitivity=107 dB

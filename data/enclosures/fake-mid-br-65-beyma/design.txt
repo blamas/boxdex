@@ -1,0 +1,12 @@
+# FAKE Mammoth 6.5 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Beyma 6"P200/ND (beyma-6-p200-nd-8)
+Fs=56 Hz
+Qts=0.29
+Vas=11.9 L
+Sd=135 cm2
+Xmax=5.5 mm
+Vb=5.1 L
+Fb=71.7 Hz
+F3=82.4 Hz
+Sensitivity=92 dB

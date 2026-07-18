@@ -1,0 +1,12 @@
+# FAKE Mammoth 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Eminence BASSLITE S2012 (eminence-basslite-s2012-8)
+Fs=48 Hz
+Qts=0.48
+Vas=91 L
+Sd=517 cm2
+Xmax=5.2 mm
+Vb=77.8 L
+Fc=70.7 Hz
+F3=70.7 Hz
+Sensitivity=94.6 dB

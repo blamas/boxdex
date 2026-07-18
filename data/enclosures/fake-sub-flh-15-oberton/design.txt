@@ -1,0 +1,12 @@
+# FAKE Havoc 15 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Oberton 15B450 / 15B450A / 15B450A2 (oberton-15b450-15b450a-15b450a2-8)
+Fs=45.08 Hz
+Qts=0.286
+Vas=146.85 L
+Sd=829.6 cm2
+Xmax=6.75 mm
+Vb=352.4 L
+HornCutoff=63.1 Hz
+F3=63.2 Hz
+Sensitivity=107 dB

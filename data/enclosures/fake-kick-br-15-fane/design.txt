@@ -1,0 +1,12 @@
+# FAKE Riot 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Fane 15-400 (fane-15-400-8)
+Fs=37 Hz
+Qts=0.305
+Vas=210 L
+Sd=855.3 cm2
+Xmax=5 mm
+Vb=104.3 L
+Fb=45.2 Hz
+F3=50.7 Hz
+Sensitivity=99.1 dB

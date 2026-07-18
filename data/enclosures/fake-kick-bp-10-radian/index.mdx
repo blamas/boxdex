@@ -1,0 +1,64 @@
+---
+name: FAKE Bunker 10 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: radian-5208-c-8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 42.8
+grossVolumeL: 53.5
+dims:
+  hMm: 424
+  wMm: 357.5
+  dMm: 353
+weightKg: 14.8
+specs:
+  f3Hz: 77.9
+  f6Hz: 67.8
+  fbHz: 70.6
+  f3HzHigh: 169.4
+  sensitivityDb: 96.3
+  recommendedCrossoverHz: 171.4
+  maxVelocityMs: 14.2
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - dub
+  - hardtek
+buildComplexity: moderate
+connectors:
+  - XLR
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-10-radian-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Bunker 10 BP: 10" bandpass kick built around the Radian 5208 C-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

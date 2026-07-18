@@ -1,0 +1,80 @@
+---
+name: FAKE Riot 12 FLH
+category: kick
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-12c262-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 301.6
+grossVolumeL: 377
+dims:
+  hMm: 1036.5
+  wMm: 421
+  dMm: 864
+weightKg: 58.9
+specs:
+  f3Hz: 63.9
+  f6Hz: 57.2
+  sensitivityDb: 107.3
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 63.6
+  recommendedCrossoverHz: 140.6
+  hornThroatCm2: 340.9
+  hornMouthCm2: 2181.8
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-flh-12-bms
+availability: paid
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - hardstyle
+  - hardcore
+  - bass_music
+buildComplexity: simple
+connectors:
+  - speakON NL4
+  - binding post
+revision: rev C
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-12-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Riot 12 FLH: 12" front loaded horn kick built around the BMS 12C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

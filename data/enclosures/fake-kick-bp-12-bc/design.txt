@@ -1,0 +1,12 @@
+# FAKE Rumble 12 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=B&C 12 BG 100 (bc-12-bg-100-8)
+Fs=39 Hz
+Qts=0.333
+Vas=41 L
+Sd=522 cm2
+Xmax=7.8 mm
+Vb=37.9 L
+Fb=44.1 Hz
+F3=59 Hz
+Sensitivity=92.4 dB

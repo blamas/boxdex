@@ -1,0 +1,65 @@
+---
+name: FAKE Nucleus 10 FLH
+category: mid
+topology: front_loaded_horn
+topologyVariant: hybrid FLH
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-10-cl-51-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 37.2
+grossVolumeL: 46.5
+dims:
+  hMm: 395
+  wMm: 357.5
+  dMm: 329
+weightKg: 14.2
+specs:
+  f3Hz: 84.4
+  f6Hz: 75.6
+  maxSplExcursionDb: 110.5
+  maxSplThermalDb: 117.5
+  maxSplDb: 110.5
+  sensitivityDb: 99.7
+  hornCutoffHz: 84
+  recommendedCrossoverHz: 109.7
+  hornThroatCm2: 224
+  hornMouthCm2: 706.1
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-10-bc
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - frenchcore
+  - breakcore
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-10-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nucleus 10 FLH: 10" front loaded horn mid built around the B&C 10 CL 51. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

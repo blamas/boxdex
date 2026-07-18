@@ -1,0 +1,12 @@
+# FAKE Warehouse 18 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=LaVoce SAF184.01 (lavoce-saf184-01-8)
+Fs=33 Hz
+Qts=0.299
+Vas=221 L
+Sd=1160 cm2
+Xmax=6.8 mm
+Vb=1060.8 L
+HornCutoff=46.2 Hz
+F3=46.4 Hz
+Sensitivity=108.2 dB

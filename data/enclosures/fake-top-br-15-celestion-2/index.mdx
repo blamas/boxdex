@@ -1,0 +1,88 @@
+---
+name: FAKE Monolith 15 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl15-300x-4
+        qty: 1
+      - driver: bc-de400-8
+        qty: 1
+        horn: bc-me45
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+  - id: alt-18s
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 236.2
+grossVolumeL: 295.3
+dims:
+  hMm: 828.5
+  wMm: 516.3
+  dMm: 690.5
+weightKg: 41.6
+specs:
+  f3Hz: 38.5
+  f6Hz: 29.7
+  fbHz: 41.6
+  maxSplExcursionDb: 106.4
+  maxSplThermalDb: 126.1
+  maxSplDb: 106.4
+  sensitivityDb: 101.3
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 50.1
+  coverageAngleDeg: 90
+  maxVelocityMs: 16.6
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+ways: 2
+author: fake-data
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Monolith 15 BR build (2026).
+recommendedFor:
+  - raggatek
+  - hardtek
+buildComplexity: simple
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-15-celestion-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Monolith 15 BR: 15" bass reflex top built around the Celestion BL15-300X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

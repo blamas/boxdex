@@ -1,0 +1,12 @@
+# FAKE Basstek 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=BMS 15C262 (bms-15c262-8)
+Fs=42.5 Hz
+Qts=0.338
+Vas=138 L
+Sd=834 cm2
+Xmax=3.5 mm
+Vb=92 L
+Fb=47.4 Hz
+F3=50.5 Hz
+Sensitivity=98.1 dB

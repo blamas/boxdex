@@ -1,0 +1,79 @@
+---
+name: FAKE Kraken 18 TL
+category: sub
+topology: transmission_line
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-184c002-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 268
+grossVolumeL: 335
+dims:
+  hMm: 811
+  wMm: 611.5
+  dMm: 675.5
+weightKg: 40.2
+specs:
+  f3Hz: 34.1
+  f6Hz: 26.1
+  maxSplExcursionDb: 113.1
+  maxSplThermalDb: 130.1
+  maxSplDb: 113.1
+  sensitivityDb: 100.6
+  recommendedCrossoverHz: 75
+  powerAesW: 900
+  powerProgramW: 1800
+  recommendedPowerW: 540
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-4.0
+recommendedFor:
+  - acid
+  - breakcore
+  - psytrance
+buildComplexity: complex
+connectors:
+  - binding post
+  - speakON NL4
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-18-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Kraken 18 TL: 18" transmission line sub built around the PD 184C002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

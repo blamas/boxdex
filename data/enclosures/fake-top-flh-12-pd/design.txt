@@ -1,0 +1,12 @@
+# FAKE Warehouse 12 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=PD P12/150 (pd-p12-150-8)
+Fs=51 Hz
+Qts=0.318
+Vas=80 L
+Sd=531 cm2
+Xmax=2.3 mm
+Vb=96 L
+HornCutoff=71.4 Hz
+F3=72 Hz
+Sensitivity=102.2 dB

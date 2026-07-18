@@ -1,0 +1,12 @@
+# FAKE Mammoth 18 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=LaVoce SAF184.01 (lavoce-saf184-01-8)
+Fs=33 Hz
+Qts=0.299
+Vas=221 L
+Sd=1160 cm2
+Xmax=6.8 mm
+Vb=48.1 L
+Fc=78 Hz
+F3=78 Hz
+Sensitivity=98.2 dB

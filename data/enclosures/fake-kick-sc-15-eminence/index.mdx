@@ -1,0 +1,88 @@
+---
+name: FAKE Cyclone 15 SC
+category: kick
+topology: scoop
+topologyVariant: long scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-15-3008ps-lf-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 676
+grossVolumeL: 845
+dims:
+  hMm: 1401.5
+  wMm: 516.3
+  dMm: 1168
+weightKg: 101.1
+specs:
+  f3Hz: 58.4
+  f6Hz: 52.3
+  maxSplExcursionDb: 128.2
+  maxSplThermalDb: 137.4
+  maxSplDb: 128.2
+  sensitivityDb: 107.9
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 58.3
+  recommendedCrossoverHz: 128.5
+  hornThroatCm2: 599.4
+  hornMouthCm2: 4341.6
+  powerAesW: 2000
+  powerProgramW: 4000
+  recommendedPowerW: 1200
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-15-eminence
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - hardtek
+  - frenchcore
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+revision: rev B
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-15-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Cyclone 15 SC: 15" scoop kick built around the Eminence 15-3008PS LF. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

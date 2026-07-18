@@ -1,0 +1,84 @@
+---
+name: FAKE Cyclone 6.5 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-6b150-8
+        qty: 2
+      - driver: beyma-cd-2514nd-pt-8
+        qty: 1
+        horn: rcf-hf950
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-6m44-8
+        qty: 2
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 12.8
+grossVolumeL: 16
+dims:
+  hMm: 279
+  wMm: 246.4
+  dMm: 232.5
+weightKg: 21.4
+specs:
+  f3Hz: 80.2
+  f6Hz: 68.5
+  fbHz: 70
+  sensitivityDb: 95
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 104.3
+  coverageAngleDeg: 90
+  maxVelocityMs: 18.1
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+ways: 2
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC0-1.0
+recommendedFor:
+  - dub
+  - psytrance
+buildComplexity: moderate
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-65-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 6.5 BR: 6.5" bass reflex mid built around the Oberton 6B150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,76 @@
+---
+name: FAKE Vortex 10 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass10-18-16-16
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 95.4
+grossVolumeL: 119.3
+dims:
+  hMm: 633
+  wMm: 357.5
+  dMm: 527.5
+weightKg: 25.7
+specs:
+  f3Hz: 86.9
+  f6Hz: 66.5
+  maxSplExcursionDb: 120.5
+  maxSplThermalDb: 122
+  maxSplDb: 120.5
+  sensitivityDb: 98
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 113
+  powerAesW: 250
+  powerProgramW: 500
+  recommendedPowerW: 150
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - mental
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-10-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Vortex 10 SL: 10" sealed mid built around the LaVoce FBASS10-18-16. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,76 @@
+---
+name: FAKE Titan 21 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-21id-2
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 48.5
+grossVolumeL: 60.6
+dims:
+  hMm: 321
+  wMm: 706.8
+  dMm: 267.5
+weightKg: 15.5
+specs:
+  f3Hz: 82.7
+  f6Hz: 72
+  fbHz: 59.9
+  f3HzHigh: 143.8
+  maxSplExcursionDb: 130.4
+  maxSplThermalDb: 126.8
+  maxSplDb: 126.8
+  sensitivityDb: 94.2
+  recommendedCrossoverHz: 181.9
+  maxVelocityMs: 23.4
+  powerAesW: 1800
+  powerProgramW: 3600
+  recommendedPowerW: 1080
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-bp-21-18s
+availability: paid
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - dub
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-21-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Titan 21 BP: 21" bandpass sub built around the 18 Sound 21iD. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

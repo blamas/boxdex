@@ -1,0 +1,62 @@
+---
+name: FAKE Fury 15 SL
+category: sub
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-15c262-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 163.6
+grossVolumeL: 204.5
+dims:
+  hMm: 689.5
+  wMm: 516.3
+  dMm: 574.5
+weightKg: 43.4
+specs:
+  f3Hz: 88.9
+  f6Hz: 67.6
+  sensitivityDb: 104.1
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 195.6
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+author: fake-data
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sl-15-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 15 SL: 15" sealed sub built around the BMS 15C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

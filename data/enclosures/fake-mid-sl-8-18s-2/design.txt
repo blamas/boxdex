@@ -1,0 +1,12 @@
+# FAKE Titan 8 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=18 Sound 8M400F (18s-8m400f-8)
+Fs=89 Hz
+Qts=0.26
+Vas=13.7 L
+Sd=227 cm2
+Xmax=3 mm
+Vb=8.4 L
+Fc=242 Hz
+F3=242 Hz
+Sensitivity=106.5 dB

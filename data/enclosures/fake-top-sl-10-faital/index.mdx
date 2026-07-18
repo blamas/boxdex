@@ -1,0 +1,72 @@
+---
+name: FAKE Nucleus 10 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-10fe200-4-4
+        qty: 4
+      - driver: 18s-8ntls2000-16
+        qty: 1
+      - driver: bc-de991tn-8
+        qty: 1
+        horn: oberton-h-1464
+      - driver: beyma-cd-11nd-8
+        qty: 1
+        horn: em-apt-80s
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 199.2
+grossVolumeL: 249
+dims:
+  hMm: 914
+  wMm: 357.5
+  dMm: 762
+weightKg: 62.4
+specs:
+  f3Hz: 79
+  f6Hz: 60.1
+  maxSplExcursionDb: 123.6
+  maxSplThermalDb: 132.3
+  maxSplDb: 123.6
+  sensitivityDb: 104.5
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 102.7
+  coverageAngleDeg: 60
+  powerAesW: 950
+  powerProgramW: 1900
+  recommendedPowerW: 570
+ways: 4
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-sl-10-faital
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - tribe
+  - dub
+  - hardstyle
+buildComplexity: moderate
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-10-faital-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nucleus 10 SL: 10" sealed top built around the Faital PRO 10FE200-4. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

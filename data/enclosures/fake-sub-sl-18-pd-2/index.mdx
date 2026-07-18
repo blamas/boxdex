@@ -1,0 +1,73 @@
+---
+name: FAKE Seismic 18 SL
+category: sub
+topology: sealed
+topologyVariant: infinite baffle
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-184c002-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 80
+grossVolumeL: 100
+dims:
+  hMm: 443
+  wMm: 611.5
+  dMm: 369
+weightKg: 19
+specs:
+  f3Hz: 83.4
+  f6Hz: 63.4
+  maxSplExcursionDb: 128.7
+  maxSplThermalDb: 130.1
+  maxSplDb: 128.7
+  sensitivityDb: 100.6
+  recommendedCrossoverHz: 183.5
+  powerAesW: 900
+  powerProgramW: 1800
+  recommendedPowerW: 540
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sl-18-pd-2
+availability: commission
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+    note: commission enquiries
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: LicenseRef-Proprietary
+recommendedFor:
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans: []
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Seismic 18 SL: 18" sealed sub built around the PD 184C002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

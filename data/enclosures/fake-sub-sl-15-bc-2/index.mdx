@@ -1,0 +1,77 @@
+---
+name: FAKE Fury 15 SL
+category: sub
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-14-cxn-6-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 24.4
+grossVolumeL: 30.5
+dims:
+  hMm: 266
+  wMm: 516.3
+  dMm: 222
+weightKg: 12.7
+specs:
+  f3Hz: 113.6
+  f6Hz: 86.3
+  maxSplExcursionDb: 126.2
+  maxSplThermalDb: 126
+  maxSplDb: 126
+  sensitivityDb: 100
+  recommendedCrossoverHz: 249.9
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sl-15-bc-2
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - hardstyle
+  - acid
+  - tekno
+buildComplexity: simple
+connectors:
+  - speakON NL2
+revision: rev B
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sl-15-bc-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Fury 15 SL: 15" sealed sub built around the B&C 14 CXN 6. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,12 @@
+# FAKE Havoc 12 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Beyma 112Nd/W (beyma-112nd-w-8)
+Fs=48 Hz
+Qts=0.415
+Vas=55 L
+Sd=550 cm2
+Xmax=7.4 mm
+Vb=66.1 L
+Fb=44.5 Hz
+F3=42.8 Hz
+Sensitivity=95 dB

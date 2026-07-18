@@ -1,0 +1,71 @@
+---
+name: FAKE Cyclone 12 FLH
+category: kick
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-12-bg-100-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 49.2
+grossVolumeL: 61.5
+dims:
+  hMm: 418.5
+  wMm: 421
+  dMm: 349
+weightKg: 15.5
+specs:
+  f3Hz: 55
+  f6Hz: 49.3
+  maxSplExcursionDb: 113.8
+  maxSplThermalDb: 122.4
+  maxSplDb: 113.8
+  sensitivityDb: 96.4
+  hornCutoffHz: 54.6
+  recommendedCrossoverHz: 121
+  hornThroatCm2: 365.4
+  hornMouthCm2: 880.9
+  powerAesW: 1000
+  powerProgramW: 2000
+  recommendedPowerW: 600
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-flh-12-bc
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC0-1.0
+recommendedFor:
+  - hardcore
+  - hardtek
+  - techno
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-12-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 12 FLH: 12" front loaded horn kick built around the B&C 12 BG 100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

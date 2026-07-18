@@ -1,0 +1,12 @@
+# FAKE Outlaw 12 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=18 Sound 12CX800 (18s-12cx800-8)
+Fs=53 Hz
+Qts=0.253
+Vas=73 L
+Sd=530 cm2
+Xmax=4.7 mm
+Vb=87.6 L
+HornCutoff=74.2 Hz
+F3=74.9 Hz
+Sensitivity=103.4 dB

@@ -1,0 +1,77 @@
+---
+name: FAKE Fury 12 BR
+category: kick
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-12c262-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 6
+            file: s1-spl-6u.csv
+            note: 6x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 27.8
+grossVolumeL: 34.8
+dims:
+  hMm: 315
+  wMm: 421
+  dMm: 262.5
+weightKg: 18.1
+specs:
+  f3Hz: 92.4
+  f6Hz: 77.2
+  fbHz: 71.6
+  maxSplExcursionDb: 113.9
+  maxSplThermalDb: 129.3
+  maxSplDb: 113.9
+  sensitivityDb: 100.3
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 203.3
+  maxVelocityMs: 16
+  powerAesW: 800
+  powerProgramW: 1600
+  recommendedPowerW: 480
+author: fake-data
+availability: contact
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - acid
+  - tribe
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-12-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 12 BR: 12" bass reflex kick built around the BMS 12C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

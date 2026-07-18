@@ -1,0 +1,12 @@
+# FAKE Nomad 8 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Oberton 8M150 (oberton-8m150-8)
+Fs=68.2 Hz
+Qts=0.217
+Vas=21.62 L
+Sd=202 cm2
+Xmax=3.25 mm
+Vb=51.8 L
+HornCutoff=95.5 Hz
+F3=96 Hz
+Sensitivity=105 dB

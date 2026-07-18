@@ -1,0 +1,81 @@
+---
+name: FAKE Bunker 6.5 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-6-p200-nd-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 20
+grossVolumeL: 25
+dims:
+  hMm: 349
+  wMm: 246.4
+  dMm: 291
+weightKg: 12.3
+specs:
+  f3Hz: 78.7
+  f6Hz: 70.5
+  maxSplExcursionDb: 105.3
+  maxSplThermalDb: 115
+  maxSplDb: 105.3
+  sensitivityDb: 96
+  hornCutoffHz: 78.4
+  recommendedCrossoverHz: 102.3
+  hornThroatCm2: 94.5
+  hornMouthCm2: 430
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-65-beyma
+availability: paid
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - raggatek
+  - hardstyle
+buildComplexity: simple
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-65-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Bunker 6.5 FLH: 6.5" front loaded horn mid built around the Beyma 6"P200/ND. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

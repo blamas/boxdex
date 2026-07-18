@@ -1,0 +1,12 @@
+# FAKE Fury 21 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=B&C 21DS115 (bc-21ds115-4)
+Fs=32 Hz
+Qts=0.21
+Vas=219 L
+Sd=1620 cm2
+Xmax=15 mm
+Vb=67.9 L
+Fb=54.8 Hz
+F3=64.5 Hz
+Sensitivity=100 dB

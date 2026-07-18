@@ -1,0 +1,81 @@
+---
+name: FAKE Basstek 10 SC
+category: kick
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass10-18-8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 45.5
+grossVolumeL: 56.9
+dims:
+  hMm: 437
+  wMm: 357.5
+  dMm: 364
+weightKg: 15.1
+specs:
+  f3Hz: 77.9
+  f6Hz: 69.8
+  maxSplExcursionDb: 109.7
+  maxSplThermalDb: 117.9
+  maxSplDb: 109.7
+  sensitivityDb: 99.6
+  hornCutoffHz: 77.5
+  recommendedCrossoverHz: 171.4
+  hornThroatCm2: 247.1
+  hornMouthCm2: 937.4
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-10-lavoce
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - hardtek
+buildComplexity: complex
+connectors:
+  - speakON NL8
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-10-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Basstek 10 SC: 10" scoop kick built around the LaVoce FBASS10-18-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

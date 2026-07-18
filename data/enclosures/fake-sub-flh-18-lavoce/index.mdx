@@ -1,0 +1,65 @@
+---
+name: FAKE Warehouse 18 FLH
+category: sub
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-saf184-01-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 1060.8
+grossVolumeL: 1326
+dims:
+  hMm: 1613
+  wMm: 611.5
+  dMm: 1344.5
+weightKg: 144.3
+specs:
+  f3Hz: 46.4
+  f6Hz: 41.6
+  maxSplExcursionDb: 128.6
+  maxSplThermalDb: 138.7
+  maxSplDb: 128.6
+  sensitivityDb: 108.2
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 46.2
+  recommendedCrossoverHz: 102.1
+  hornThroatCm2: 812
+  hornMouthCm2: 4931.7
+  powerAesW: 2800
+  powerProgramW: 5600
+  recommendedPowerW: 1680
+author: fake-data
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - hardtek
+buildComplexity: complex
+connectors:
+  - speakON NL8
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 4
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-flh-18-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Warehouse 18 FLH: 18" front loaded horn sub built around the LaVoce SAF184.01. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

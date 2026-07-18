@@ -1,0 +1,69 @@
+---
+name: FAKE Riot 18 FH
+category: sub
+topology: folded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-18b450-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 362.3
+grossVolumeL: 452.9
+dims:
+  hMm: 942.5
+  wMm: 611.5
+  dMm: 785.5
+weightKg: 50.8
+specs:
+  f3Hz: 38.1
+  f6Hz: 34.1
+  maxSplExcursionDb: 113.4
+  maxSplThermalDb: 125
+  maxSplDb: 113.4
+  sensitivityDb: 103
+  hornCutoffHz: 37.8
+  recommendedCrossoverHz: 83.8
+  hornThroatCm2: 777
+  hornMouthCm2: 2593.5
+  powerAesW: 500
+  powerProgramW: 1000
+  recommendedPowerW: 300
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-fh-18-oberton
+availability: contact
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-4.0
+recommendedFor:
+  - breakcore
+  - techno
+buildComplexity: complex
+connectors:
+  - XLR
+revision: v2
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-fh-18-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Riot 18 FH: 18" folded horn sub built around the Oberton 18B450. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,12 @@
+# FAKE Kraken 18 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Beyma 118Nd/W (beyma-118nd-w-8)
+Fs=36 Hz
+Qts=0.398
+Vas=249 L
+Sd=1300 cm2
+Xmax=7 mm
+Vb=325.9 L
+Fb=34.6 Hz
+F3=59 Hz
+Sensitivity=97.7 dB

@@ -1,0 +1,63 @@
+---
+name: FAKE Havoc 18 TL
+category: sub
+topology: transmission_line
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-saf184-01-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 884
+grossVolumeL: 1105
+dims:
+  hMm: 1472.5
+  wMm: 611.5
+  dMm: 1227
+weightKg: 124.5
+specs:
+  f3Hz: 28.2
+  f6Hz: 21.4
+  maxSplExcursionDb: 120
+  maxSplThermalDb: 138.7
+  maxSplDb: 120
+  sensitivityDb: 104.2
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 62
+  powerAesW: 2800
+  powerProgramW: 5600
+  recommendedPowerW: 1680
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-tl-18-lavoce-2
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - hardcore
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-18-lavoce-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Havoc 18 TL: 18" transmission line sub built around the LaVoce SAF184.01. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

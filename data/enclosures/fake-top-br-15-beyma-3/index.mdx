@@ -1,0 +1,78 @@
+---
+name: FAKE Warehouse 15 BR
+category: top
+topology: bass_reflex
+topologyVariant: dual port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-115nd-w-8
+        qty: 2
+      - driver: oberton-nd100-1-4-8
+        qty: 1
+        horn: rcf-hf66
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 118.6
+grossVolumeL: 148.3
+dims:
+  hMm: 587
+  wMm: 516.3
+  dMm: 489
+weightKg: 33.3
+specs:
+  f3Hz: 55.8
+  f6Hz: 47.9
+  fbHz: 48.1
+  maxSplExcursionDb: 120.9
+  maxSplThermalDb: 132.2
+  maxSplDb: 120.9
+  sensitivityDb: 100.7
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 72.5
+  coverageAngleDeg: 90
+  maxVelocityMs: 18.8
+  powerAesW: 1400
+  powerProgramW: 2800
+  recommendedPowerW: 840
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-15-beyma-3
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-4.0
+recommendedFor:
+  - breakcore
+  - techno
+  - tekno
+buildComplexity: complex
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-15-beyma-3-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Warehouse 15 BR: 15" bass reflex top built around the Beyma 115ND/W. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,69 @@
+---
+name: FAKE Basstek 21 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-ntr21-5010jd-8
+        qty: 1
+    measurements:
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+          impedance:
+            file: klp-impedance.csv
+            note: single cabinet
+netVolumeL: 200.1
+grossVolumeL: 250.1
+dims:
+  hMm: 651.5
+  wMm: 706.8
+  dMm: 543
+weightKg: 32.5
+specs:
+  f3Hz: 59.6
+  f6Hz: 51.3
+  fbHz: 38.5
+  f3HzHigh: 92.4
+  maxSplExcursionDb: 118.9
+  maxSplThermalDb: 128.7
+  maxSplDb: 118.9
+  sensitivityDb: 96.7
+  recommendedCrossoverHz: 131.1
+  maxVelocityMs: 19.9
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-bp-21-celestion
+availability: paid
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - breakcore
+buildComplexity: moderate
+connectors:
+  - binding post
+revision: rev B
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources: []
+plans:
+  - fake-sub-bp-21-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Basstek 21 BP: 21" bandpass sub built around the Celestion NTR21-5010JD. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

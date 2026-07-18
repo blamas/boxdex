@@ -1,0 +1,71 @@
+---
+name: FAKE Seismic 18 SC
+category: sub
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-18fh1042-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 390
+grossVolumeL: 487.5
+dims:
+  hMm: 978
+  wMm: 611.5
+  dMm: 815
+weightKg: 58.9
+specs:
+  f3Hz: 47.9
+  f6Hz: 42.9
+  maxSplExcursionDb: 121.2
+  maxSplThermalDb: 129.4
+  maxSplDb: 121.2
+  sensitivityDb: 102.9
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 47.5
+  recommendedCrossoverHz: 105.4
+  hornThroatCm2: 786.8
+  hornMouthCm2: 3588.3
+  powerAesW: 1000
+  powerProgramW: 2000
+  recommendedPowerW: 600
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Seismic 18 SC build (2026).
+recommendedFor:
+  - tribe
+  - dub
+  - hardtek
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-18-faital-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Seismic 18 SC: 18" scoop sub built around the Faital PRO 18FH1042. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

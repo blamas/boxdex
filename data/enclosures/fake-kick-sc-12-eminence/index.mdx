@@ -1,0 +1,103 @@
+---
+name: FAKE Havoc 12 SC
+category: kick
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-commonwealth-12-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 468
+grossVolumeL: 585
+dims:
+  hMm: 1291.5
+  wMm: 421
+  dMm: 1076
+weightKg: 77.7
+specs:
+  f3Hz: 62.6
+  f6Hz: 56.1
+  maxSplExcursionDb: 107.1
+  maxSplThermalDb: 133.7
+  maxSplDb: 107.1
+  sensitivityDb: 107.6
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 62.5
+  recommendedCrossoverHz: 137.7
+  hornThroatCm2: 363.7
+  hornMouthCm2: 3262.3
+  powerAesW: 900
+  powerProgramW: 1800
+  recommendedPowerW: 540
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-12-eminence
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - tekno
+  - mental
+buildComplexity: moderate
+connectors:
+  - XLR
+revision: rev C
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-12-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Havoc 12 SC: 12" scoop kick built around the Eminence COMMONWEALTH 12. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

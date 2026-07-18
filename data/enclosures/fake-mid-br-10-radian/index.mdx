@@ -1,0 +1,87 @@
+---
+name: FAKE Mammoth 10 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: radian-5208-c-8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 24.7
+grossVolumeL: 30.9
+dims:
+  hMm: 322
+  wMm: 357.5
+  dMm: 268.5
+weightKg: 12.8
+specs:
+  f3Hz: 69.4
+  f6Hz: 53.9
+  fbHz: 70.6
+  maxSplExcursionDb: 94.7
+  maxSplThermalDb: 119.3
+  maxSplDb: 94.7
+  sensitivityDb: 96.3
+  recommendedCrossoverHz: 90.2
+  maxVelocityMs: 14.2
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC0-1.0
+recommendedFor:
+  - tekno
+  - mental
+  - psytrance
+buildComplexity: simple
+connectors:
+  - speakON NL2
+revision: rev C
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-10-radian-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Mammoth 10 BR: 10" bass reflex mid built around the Radian 5208 C-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

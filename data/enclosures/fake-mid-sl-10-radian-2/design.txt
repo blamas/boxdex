@@ -1,0 +1,12 @@
+# FAKE Riot 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Radian 510/2 B-8 (radian-510-2-b-8-8)
+Fs=53.1 Hz
+Qts=0.439
+Vas=62.7 L
+Sd=352 cm2
+Xmax=0.7 mm
+Vb=72.2 L
+Fc=72.6 Hz
+F3=87.7 Hz
+Sensitivity=96.1 dB

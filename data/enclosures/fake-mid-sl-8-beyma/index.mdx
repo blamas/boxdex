@@ -1,0 +1,73 @@
+---
+name: FAKE Outlaw 8 SL
+category: mid
+topology: sealed
+topologyVariant: acoustic suspension
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-8-br40-n-8
+        qty: 2
+      - driver: bc-6md38-16
+        qty: 1
+      - driver: faital-hf103-16
+        qty: 1
+        horn: em-apt-150s
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 55.6
+grossVolumeL: 69.5
+dims:
+  hMm: 532.5
+  wMm: 294
+  dMm: 444
+weightKg: 31.3
+specs:
+  f3Hz: 55.2
+  f6Hz: 43.9
+  maxSplExcursionDb: 112.9
+  maxSplThermalDb: 114
+  maxSplDb: 112.9
+  sensitivityDb: 94
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 71.8
+  coverageAngleDeg: 100
+  powerAesW: 220
+  powerProgramW: 440
+  recommendedPowerW: 132
+ways: 3
+author: fake-data
+availability: out_of_print
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - tekno
+  - hardcore
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-8-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Outlaw 8 SL: 8" sealed mid built around the Beyma 8"BR40/N. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

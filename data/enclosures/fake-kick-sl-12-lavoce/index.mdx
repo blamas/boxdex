@@ -1,0 +1,64 @@
+---
+name: FAKE Riot 12 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass12-20-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 221.6
+grossVolumeL: 277
+dims:
+  hMm: 888.5
+  wMm: 421
+  dMm: 740.5
+weightKg: 49.9
+specs:
+  f3Hz: 81.5
+  f6Hz: 61.9
+  maxSplExcursionDb: 127.9
+  maxSplThermalDb: 132.1
+  maxSplDb: 127.9
+  sensitivityDb: 103
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 179.3
+  powerAesW: 800
+  powerProgramW: 1600
+  recommendedPowerW: 480
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - techno
+buildComplexity: simple
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-12-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Riot 12 SL: 12" sealed kick built around the LaVoce FBASS12-20. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

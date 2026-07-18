@@ -1,0 +1,12 @@
+# FAKE Fury 15 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=18 Sound 15CX1000 (18s-15cx1000-8)
+Fs=48 Hz
+Qts=0.304
+Vas=132.5 L
+Sd=855 cm2
+Xmax=6 mm
+Vb=172.3 L
+HornCutoff=60 Hz
+F3=60.2 Hz
+Sensitivity=103.7 dB

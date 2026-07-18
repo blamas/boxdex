@@ -1,0 +1,12 @@
+# FAKE Havoc 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Oberton 12B400 (oberton-12b400-8)
+Fs=50.47 Hz
+Qts=0.249
+Vas=74.74 L
+Sd=514.7 cm2
+Xmax=5.25 mm
+Vb=21.2 L
+Fc=143.3 Hz
+F3=143.3 Hz
+Sensitivity=101 dB

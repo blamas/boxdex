@@ -1,0 +1,12 @@
+# FAKE Fury 8 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=BMS 8N515 (bms-8n515-8)
+Fs=87.7 Hz
+Qts=0.3
+Vas=11.04 L
+Sd=222 cm2
+Xmax=4 mm
+Vb=20.8 L
+Fb=108.9 Hz
+F3=123 Hz
+Sensitivity=102 dB

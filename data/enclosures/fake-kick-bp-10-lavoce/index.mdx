@@ -1,0 +1,75 @@
+---
+name: FAKE Havoc 10 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass10-18-8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 6
+            file: s1-spl-6u.csv
+            note: 6x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 60.9
+grossVolumeL: 76.1
+dims:
+  hMm: 505.5
+  wMm: 357.5
+  dMm: 421
+weightKg: 16.8
+specs:
+  f3Hz: 74.9
+  f6Hz: 64.5
+  fbHz: 57.3
+  f3HzHigh: 137.5
+  maxSplExcursionDb: 104.4
+  maxSplThermalDb: 117.9
+  maxSplDb: 104.4
+  sensitivityDb: 96.1
+  recommendedCrossoverHz: 164.8
+  maxVelocityMs: 16.1
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-bp-10-lavoce
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - dub
+  - hardtek
+  - bass_music
+buildComplexity: complex
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-10-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Havoc 10 BP: 10" bandpass kick built around the LaVoce FBASS10-18-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

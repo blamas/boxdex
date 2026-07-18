@@ -1,0 +1,69 @@
+---
+name: FAKE Seismic 6.5 FLH
+category: mid
+topology: front_loaded_horn
+topologyVariant: hybrid FLH
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-6b150-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 80
+grossVolumeL: 100
+dims:
+  hMm: 698
+  wMm: 246.4
+  dMm: 581.5
+weightKg: 34
+specs:
+  f3Hz: 77.2
+  f6Hz: 69.2
+  maxSplExcursionDb: 116.4
+  maxSplThermalDb: 125.8
+  maxSplDb: 116.4
+  sensitivityDb: 102
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 77.1
+  recommendedCrossoverHz: 100.4
+  hornThroatCm2: 88.9
+  hornMouthCm2: 859.9
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-65-oberton
+availability: free
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-SA-4.0
+recommendedFor:
+  - frenchcore
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-65-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Seismic 6.5 FLH: 6.5" front loaded horn mid built around the Oberton 6B150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

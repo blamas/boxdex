@@ -1,0 +1,87 @@
+---
+name: FAKE Voidus 15 BR
+category: kick
+topology: bass_reflex
+topologyVariant: aperiodic
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-115nd-w-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 237.2
+grossVolumeL: 296.5
+dims:
+  hMm: 830
+  wMm: 516.3
+  dMm: 692
+weightKg: 51.7
+specs:
+  f3Hz: 55.8
+  f6Hz: 47.9
+  fbHz: 48.1
+  maxSplExcursionDb: 126.9
+  maxSplThermalDb: 138.2
+  maxSplDb: 126.9
+  sensitivityDb: 103.7
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 122.8
+  maxVelocityMs: 20
+  powerAesW: 2800
+  powerProgramW: 5600
+  recommendedPowerW: 1680
+author: fake-data
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - techno
+  - breakcore
+  - raggatek
+buildComplexity: moderate
+connectors:
+  - XLR
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-15-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Voidus 15 BR: 15" bass reflex kick built around the Beyma 115ND/W. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

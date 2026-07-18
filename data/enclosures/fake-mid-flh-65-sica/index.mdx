@@ -1,0 +1,67 @@
+---
+name: FAKE Cyclone 6.5 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: sica-6-5-h-1-5-cp-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 48.4
+grossVolumeL: 60.5
+dims:
+  hMm: 543
+  wMm: 246.4
+  dMm: 452.5
+weightKg: 20.4
+specs:
+  f3Hz: 63.9
+  f6Hz: 57.2
+  maxSplExcursionDb: 107.6
+  maxSplThermalDb: 116.2
+  maxSplDb: 107.6
+  sensitivityDb: 96.4
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 63.6
+  recommendedCrossoverHz: 83.1
+  hornThroatCm2: 85.9
+  hornMouthCm2: 669
+  powerAesW: 240
+  powerProgramW: 480
+  recommendedPowerW: 144
+author: fake-data
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - tribe
+  - acid
+  - tekno
+buildComplexity: moderate
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-65-sica-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 6.5 FLH: 6.5" front loaded horn mid built around the Sica 6.5 H 1.5 CP. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

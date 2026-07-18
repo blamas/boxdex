@@ -1,0 +1,12 @@
+# FAKE Havoc 12 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Eminence COMMONWEALTH 12 (eminence-commonwealth-12-8)
+Fs=50 Hz
+Qts=0.332
+Vas=90 L
+Sd=519.5 cm2
+Xmax=0.7 mm
+Vb=468 L
+HornCutoff=62.5 Hz
+F3=62.6 Hz
+Sensitivity=107.6 dB

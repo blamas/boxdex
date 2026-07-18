@@ -1,0 +1,115 @@
+---
+name: FAKE Vortex 10 BR
+category: kick
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fbass10-18-8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: default-s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: default-s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: default-s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: default-s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: default-s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: default-s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: default-rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: default-rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: default-rew-impedance.csv
+            note: single cabinet
+  - id: alt-18s
+    drivers:
+      - driver: 18s-10m600-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 42.4
+grossVolumeL: 53
+dims:
+  hMm: 422
+  wMm: 357.5
+  dMm: 351.5
+weightKg: 14.8
+specs:
+  f3Hz: 55
+  f6Hz: 42.5
+  fbHz: 57.3
+  maxSplExcursionDb: 104.4
+  maxSplThermalDb: 117.9
+  maxSplDb: 104.4
+  sensitivityDb: 96.1
+  recommendedCrossoverHz: 121
+  maxVelocityMs: 16.1
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-br-10-lavoce-2
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - bass_music
+  - mental
+  - acid
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-10-lavoce-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Vortex 10 BR: 10" bass reflex kick built around the LaVoce FBASS10-18-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

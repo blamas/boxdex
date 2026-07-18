@@ -1,0 +1,12 @@
+# FAKE Kraken 10 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Radian 510/2 B-8 (radian-510-2-b-8-8)
+Fs=53.1 Hz
+Qts=0.439
+Vas=62.7 L
+Sd=352 cm2
+Xmax=0.7 mm
+Vb=150.4 L
+HornCutoff=74.3 Hz
+F3=74.9 Hz
+Sensitivity=103.1 dB

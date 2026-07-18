@@ -1,0 +1,11 @@
+# FAKE Bunker 21 TL - synthetic design export (not a real Hornresp record)
+Topology=transmission_line
+Driver=Fane Colossus Prime 21NDXL (fane-colossus-prime-21ndxl-8)
+Fs=33 Hz
+Qts=0.36
+Vas=241 L
+Sd=1520 cm2
+Xmax=14 mm
+Vb=964 L
+F3=28.2 Hz
+Sensitivity=104 dB

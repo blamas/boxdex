@@ -1,0 +1,63 @@
+---
+name: FAKE Basstek 15 BR
+category: sub
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-15c262-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 92
+grossVolumeL: 115
+dims:
+  hMm: 517
+  wMm: 516.3
+  dMm: 431
+weightKg: 20.4
+specs:
+  f3Hz: 50.5
+  f6Hz: 40.8
+  fbHz: 47.4
+  maxSplExcursionDb: 108.3
+  maxSplThermalDb: 124.1
+  maxSplDb: 108.3
+  sensitivityDb: 98.1
+  recommendedCrossoverHz: 111.1
+  maxVelocityMs: 16.1
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - hardstyle
+  - techno
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-br-15-bms-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Basstek 15 BR: 15" bass reflex sub built around the BMS 15C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

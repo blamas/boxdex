@@ -1,0 +1,71 @@
+---
+name: FAKE Mammoth 6.5 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-6-b30-p-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 15.6
+grossVolumeL: 19.5
+dims:
+  hMm: 308
+  wMm: 246.4
+  dMm: 257
+weightKg: 11.8
+specs:
+  f3Hz: 79.2
+  f6Hz: 60.2
+  maxSplExcursionDb: 105.7
+  maxSplThermalDb: 107
+  maxSplDb: 105.7
+  sensitivityDb: 90
+  recommendedCrossoverHz: 103
+  powerAesW: 50
+  powerProgramW: 100
+  recommendedPowerW: 30
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-65-beyma
+availability: paid
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - hardtek
+  - frenchcore
+  - mental
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-65-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 6.5 SL: 6.5" sealed mid built around the Beyma 6"B30/P. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

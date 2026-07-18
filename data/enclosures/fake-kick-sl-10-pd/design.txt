@@ -1,0 +1,12 @@
+# FAKE Cyclone 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=PD PD 102ER (pd-pd-102er-8)
+Fs=81.8 Hz
+Qts=0.523
+Vas=26 L
+Sd=346 cm2
+Xmax=1.3 mm
+Vb=31.4 L
+Fc=110.6 Hz
+F3=110.6 Hz
+Sensitivity=97.1 dB

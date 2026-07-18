@@ -1,0 +1,12 @@
+# FAKE Titan 18 TH - synthetic design export (not a real Hornresp record)
+Topology=tapped_horn
+Driver=18 Sound 18 TLW 3000 (18s-18-tlw-3000-8)
+Fs=33 Hz
+Qts=0.407
+Vas=185 L
+Sd=1225 cm2
+Xmax=11.6 mm
+Vb=333 L
+HornCutoff=31.4 Hz
+F3=31.5 Hz
+Sensitivity=102.4 dB

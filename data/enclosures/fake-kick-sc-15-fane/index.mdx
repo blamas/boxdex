@@ -1,0 +1,68 @@
+---
+name: FAKE Titan 15 SC
+category: kick
+topology: scoop
+topologyVariant: long scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-axiom-ax15-300b-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 143
+grossVolumeL: 178.8
+dims:
+  hMm: 644.5
+  wMm: 516.3
+  dMm: 537
+weightKg: 26.1
+specs:
+  f3Hz: 61.4
+  f6Hz: 55
+  maxSplExcursionDb: 114
+  maxSplThermalDb: 123.1
+  maxSplDb: 114
+  sensitivityDb: 101.8
+  hornCutoffHz: 61.3
+  recommendedCrossoverHz: 135.1
+  hornThroatCm2: 587.4
+  hornMouthCm2: 1996.5
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sc-15-fane
+availability: free
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC0-1.0
+recommendedFor:
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sc-15-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Titan 15 SC: 15" scoop kick built around the Fane AXIOM AX15/300B. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

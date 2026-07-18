@@ -1,0 +1,12 @@
+# FAKE Dominator 8 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Oberton 8M150 (oberton-8m150-8)
+Fs=68.2 Hz
+Qts=0.217
+Vas=21.62 L
+Sd=202 cm2
+Xmax=3.25 mm
+Vb=16 L
+Fb=113.3 Hz
+F3=150.6 Hz
+Sensitivity=104 dB

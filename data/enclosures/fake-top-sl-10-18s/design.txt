@@ -1,0 +1,12 @@
+# FAKE Voidus 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=18 Sound 10KW3 KEYBASS vp (18s-10kw3-keybass-vp-16)
+Fs=71 Hz
+Qts=0.473
+Vas=45.2 L
+Sd=380 cm2
+Xmax=1.5 mm
+Vb=146.4 L
+Fc=106.1 Hz
+F3=106.1 Hz
+Sensitivity=103.1 dB

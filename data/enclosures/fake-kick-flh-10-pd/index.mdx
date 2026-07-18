@@ -1,0 +1,88 @@
+---
+name: FAKE Outlaw 10 FLH
+category: kick
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-pd107-16
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 49.8
+grossVolumeL: 62.3
+dims:
+  hMm: 457.5
+  wMm: 357.5
+  dMm: 381
+weightKg: 20.6
+specs:
+  f3Hz: 105
+  f6Hz: 94.1
+  maxSplExcursionDb: 117.6
+  maxSplThermalDb: 129.8
+  maxSplDb: 117.6
+  sensitivityDb: 106
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 104.2
+  recommendedCrossoverHz: 231
+  hornThroatCm2: 242.2
+  hornMouthCm2: 817.8
+  powerAesW: 600
+  powerProgramW: 1200
+  recommendedPowerW: 360
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-flh-10-pd
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - dub
+  - acid
+buildComplexity: simple
+connectors:
+  - jack 6.35mm
+  - speakON NL4
+revision: v2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-flh-10-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Outlaw 10 FLH: 10" front loaded horn kick built around the Precision Devices PD107. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

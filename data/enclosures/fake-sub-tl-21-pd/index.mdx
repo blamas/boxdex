@@ -1,0 +1,69 @@
+---
+name: FAKE Nucleus 21 TL
+category: sub
+topology: transmission_line
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-pd2150-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: akabak_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 2512
+grossVolumeL: 3140
+dims:
+  hMm: 2309
+  wMm: 706.8
+  dMm: 1924
+weightKg: 307.6
+specs:
+  f3Hz: 18.8
+  f6Hz: 14.4
+  maxSplExcursionDb: 124.8
+  maxSplThermalDb: 141
+  maxSplDb: 124.8
+  sensitivityDb: 105
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 41.4
+  powerAesW: 4000
+  powerProgramW: 8000
+  recommendedPowerW: 2400
+author: fake-data
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - raggatek
+  - hardtek
+  - psytrance
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 18
+sheetCount: 6
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-tl-21-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nucleus 21 TL: 21" transmission line sub built around the Precision Devices PD2150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

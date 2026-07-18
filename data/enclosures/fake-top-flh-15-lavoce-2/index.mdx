@@ -1,0 +1,68 @@
+---
+name: FAKE Riot 15 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-nbass15-30-8
+        qty: 1
+    measurements:
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+          impedance:
+            file: klp-impedance.csv
+            note: single cabinet
+netVolumeL: 171.7
+grossVolumeL: 214.6
+dims:
+  hMm: 706
+  wMm: 516.3
+  dMm: 588.5
+weightKg: 29.3
+specs:
+  f3Hz: 59
+  f6Hz: 52.9
+  maxSplExcursionDb: 117.9
+  maxSplThermalDb: 124.5
+  maxSplDb: 117.9
+  sensitivityDb: 102.5
+  hornCutoffHz: 58.8
+  recommendedCrossoverHz: 76.7
+  hornThroatCm2: 598.5
+  hornMouthCm2: 1822.5
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-4.0
+recommendedFor:
+  - hardtek
+buildComplexity: moderate
+connectors:
+  - binding post
+  - speakON NL8
+revision: 2026 build
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources: []
+plans:
+  - fake-top-flh-15-lavoce-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Riot 15 FLH: 15" front loaded horn top built around the LaVoce NBASS15-30. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

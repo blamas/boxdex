@@ -1,0 +1,12 @@
+# FAKE Warehouse 8 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Beyma 8"G40 (beyma-8-g40-8)
+Fs=70 Hz
+Qts=0.36
+Vas=17 L
+Sd=220 cm2
+Xmax=6.5 mm
+Vb=54.4 L
+Fb=73.7 Hz
+F3=76.1 Hz
+Sensitivity=101 dB

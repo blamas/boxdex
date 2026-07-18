@@ -1,0 +1,68 @@
+---
+name: FAKE Basstek 21 FH
+category: sub
+topology: folded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-21-lex1600-nd-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 1830
+grossVolumeL: 2287.5
+dims:
+  hMm: 1970.5
+  wMm: 706.8
+  dMm: 1642.5
+weightKg: 230.9
+specs:
+  f3Hz: 33.1
+  f6Hz: 29.7
+  maxSplExcursionDb: 132.5
+  maxSplThermalDb: 142.1
+  maxSplDb: 132.5
+  sensitivityDb: 109
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 33
+  recommendedCrossoverHz: 72.8
+  hornThroatCm2: 1213.8
+  hornMouthCm2: 6267.4
+  powerAesW: 6400
+  powerProgramW: 12800
+  recommendedPowerW: 3840
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-fh-21-beyma-2
+availability: commission
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+    note: commission enquiries
+license: LicenseRef-Proprietary
+recommendedFor:
+  - psytrance
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 5
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans: []
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Basstek 21 FH: 21" folded horn sub built around the Beyma 21"LEX1600/Nd. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

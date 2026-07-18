@@ -1,0 +1,12 @@
+# FAKE Nomad 15 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Radian 2215 B-8 (radian-2215-b-8-8)
+Fs=41.8 Hz
+Qts=0.321
+Vas=135.5 L
+Sd=868 cm2
+Xmax=6 mm
+Vb=113.1 L
+Fb=48.8 Hz
+F3=65.1 Hz
+Sensitivity=97 dB

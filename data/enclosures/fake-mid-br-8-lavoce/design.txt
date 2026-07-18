@@ -1,0 +1,12 @@
+# FAKE Basstek 8 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=LaVoce FBASS08-18 (lavoce-fbass08-18-8)
+Fs=53 Hz
+Qts=0.4
+Vas=23.64 L
+Sd=235.06 cm2
+Xmax=4.5 mm
+Vb=25.6 L
+Fb=50.8 Hz
+F3=49.7 Hz
+Sensitivity=92.5 dB

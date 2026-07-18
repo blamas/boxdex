@@ -1,0 +1,12 @@
+# FAKE Riot 12 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Celestion BL12-200X (celestion-bl12-200x-8)
+Fs=45 Hz
+Qts=0.416
+Vas=104.6 L
+Sd=517 cm2
+Xmax=4 mm
+Vb=251 L
+HornCutoff=63 Hz
+F3=63.2 Hz
+Sensitivity=103.3 dB

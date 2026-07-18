@@ -1,0 +1,67 @@
+---
+name: FAKE Terra 15 BR
+category: kick
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-153erc002-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 73
+grossVolumeL: 91.3
+dims:
+  hMm: 460.5
+  wMm: 516.3
+  dMm: 384
+weightKg: 18.2
+specs:
+  f3Hz: 69.2
+  f6Hz: 59
+  fbHz: 55.8
+  maxSplExcursionDb: 117.1
+  maxSplThermalDb: 128.3
+  maxSplDb: 117.1
+  sensitivityDb: 100.9
+  recommendedCrossoverHz: 152.2
+  maxVelocityMs: 18.4
+  powerAesW: 550
+  powerProgramW: 1100
+  recommendedPowerW: 330
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Terra 15 BR build (2026).
+recommendedFor:
+  - tekno
+  - techno
+buildComplexity: complex
+revision: v2
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-15-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 15 BR: 15" bass reflex kick built around the PD 153ERC002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

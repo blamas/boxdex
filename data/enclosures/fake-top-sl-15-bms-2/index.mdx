@@ -1,0 +1,110 @@
+---
+name: FAKE Havoc 15 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-15c262-8
+        qty: 1
+      - driver: bc-8ndl64-16
+        qty: 1
+      - driver: faital-hf102-8
+        qty: 1
+      - driver: beyma-cd-1114fe-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: default-rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: default-rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: default-klp-spl.csv
+            note: gated, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-15cx1000-8
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 40.9
+grossVolumeL: 51.1
+dims:
+  hMm: 344.5
+  wMm: 516.3
+  dMm: 287
+weightKg: 29.6
+specs:
+  f3Hz: 88.9
+  f6Hz: 67.6
+  maxSplExcursionDb: 119.3
+  maxSplThermalDb: 124.1
+  maxSplDb: 119.3
+  sensitivityDb: 98.1
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 115.6
+  coverageAngleDeg: 90
+  powerAesW: 750
+  powerProgramW: 1500
+  recommendedPowerW: 450
+ways: 4
+author: fake-data
+availability: contact
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-4.0
+recommendedFor:
+  - tekno
+  - acid
+buildComplexity: complex
+connectors:
+  - speakON NL4
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-15-bms-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Havoc 15 SL: 15" sealed top built around the BMS 15C262. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

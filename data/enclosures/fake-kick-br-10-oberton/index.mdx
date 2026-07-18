@@ -1,0 +1,67 @@
+---
+name: FAKE Basstek 10 BR
+category: kick
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-10b100-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 60.2
+grossVolumeL: 75.3
+dims:
+  hMm: 502.5
+  wMm: 357.5
+  dMm: 419
+weightKg: 16.8
+specs:
+  f3Hz: 35.3
+  f6Hz: 27.1
+  fbHz: 38.1
+  maxSplExcursionDb: 98.1
+  maxSplThermalDb: 112.5
+  maxSplDb: 98.1
+  sensitivityDb: 92.5
+  recommendedCrossoverHz: 77.7
+  maxVelocityMs: 16.7
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-br-10-oberton
+availability: paid
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - acid
+  - frenchcore
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+revision: rev C
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-10-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Basstek 10 BR: 10" bass reflex kick built around the Oberton 10B100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

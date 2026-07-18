@@ -1,0 +1,12 @@
+# FAKE Fury 10 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=PD PDN 10MH25 (pd-pdn-10mh25-8)
+Fs=79.7 Hz
+Qts=0.221
+Vas=18 L
+Sd=346.4 cm2
+Xmax=2.4 mm
+Vb=5.4 L
+Fb=130.2 Hz
+F3=181.5 Hz
+Sensitivity=99.3 dB

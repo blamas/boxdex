@@ -1,0 +1,98 @@
+---
+name: FAKE Riot 21 SC
+category: sub
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-21xl3000-4
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: default-s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: default-s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: default-rew-spl.csv
+            note: gated, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-21id-2
+        qty: 2
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 581.2
+grossVolumeL: 726.5
+dims:
+  hMm: 1110.5
+  wMm: 706.8
+  dMm: 925.5
+weightKg: 80.4
+specs:
+  f3Hz: 40.4
+  f6Hz: 36.2
+  maxSplExcursionDb: 132.1
+  maxSplThermalDb: 138.8
+  maxSplDb: 132.1
+  sensitivityDb: 104.5
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 40
+  recommendedCrossoverHz: 88.9
+  hornThroatCm2: 1220.8
+  hornMouthCm2: 4709.4
+  powerAesW: 6000
+  powerProgramW: 12000
+  recommendedPowerW: 3600
+author: fake-data
+availability: free
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-SA-4.0
+recommendedFor:
+  - frenchcore
+  - raggatek
+buildComplexity: simple
+connectors:
+  - XLR
+revision: rev C
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-21-faital-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Riot 21 SC: 21" scoop sub built around the Faital PRO 21XL3000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

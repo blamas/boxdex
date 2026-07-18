@@ -1,0 +1,78 @@
+---
+name: FAKE Outlaw 15 FLH
+category: top
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-15-400-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 6
+            file: s1-spl-6u.csv
+            note: 6x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 252
+grossVolumeL: 315
+dims:
+  hMm: 855.5
+  wMm: 516.3
+  dMm: 713
+weightKg: 38.3
+specs:
+  f3Hz: 52.3
+  f6Hz: 46.4
+  maxSplExcursionDb: 113.4
+  maxSplThermalDb: 125.1
+  maxSplDb: 113.4
+  sensitivityDb: 103.1
+  hornCutoffHz: 51.8
+  recommendedCrossoverHz: 68
+  hornThroatCm2: 598.7
+  hornMouthCm2: 2208.5
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-flh-15-fane
+availability: paid
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - raggatek
+  - techno
+buildComplexity: simple
+connectors:
+  - XLR
+revision: rev B
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-15-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Outlaw 15 FLH: 15" front loaded horn top built around the Fane 15-400. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

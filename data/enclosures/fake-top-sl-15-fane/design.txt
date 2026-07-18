@@ -1,0 +1,12 @@
+# FAKE Mammoth 15 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Fane 15-400 (fane-15-400-8)
+Fs=37 Hz
+Qts=0.305
+Vas=210 L
+Sd=855.3 cm2
+Xmax=5 mm
+Vb=96 L
+Fc=85.8 Hz
+F3=85.8 Hz
+Sensitivity=102.1 dB

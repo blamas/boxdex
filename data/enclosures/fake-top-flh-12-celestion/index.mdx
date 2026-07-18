@@ -1,0 +1,83 @@
+---
+name: FAKE Rumble 12 FLH
+category: top
+topology: front_loaded_horn
+topologyVariant: hybrid FLH
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl12-200x-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 251
+grossVolumeL: 313.8
+dims:
+  hMm: 945.5
+  wMm: 421
+  dMm: 788
+weightKg: 43.2
+specs:
+  f3Hz: 63.2
+  f6Hz: 56.7
+  maxSplExcursionDb: 116.4
+  maxSplThermalDb: 125.3
+  maxSplDb: 116.4
+  sensitivityDb: 103.3
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 63
+  recommendedCrossoverHz: 82.2
+  hornThroatCm2: 361.9
+  hornMouthCm2: 1990.3
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+availability: contact
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-4.0
+recommendedFor:
+  - hardstyle
+buildComplexity: moderate
+connectors:
+  - XLR
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-flh-12-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Rumble 12 FLH: 12" front loaded horn top built around the Celestion BL12-200X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

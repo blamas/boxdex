@@ -1,0 +1,91 @@
+---
+name: FAKE Dominator 15 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-153erc002-8
+        qty: 2
+      - driver: bms-10c262-8
+        qty: 1
+      - driver: 18s-nd2t-16
+        qty: 1
+        horn: rcf-hf950
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 74.4
+grossVolumeL: 93
+dims:
+  hMm: 465
+  wMm: 516.3
+  dMm: 387.5
+weightKg: 33.4
+specs:
+  f3Hz: 107.9
+  f6Hz: 82
+  maxSplExcursionDb: 134.6
+  maxSplThermalDb: 134.3
+  maxSplDb: 134.3
+  sensitivityDb: 103.9
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 140.3
+  coverageAngleDeg: 90
+  powerAesW: 1500
+  powerProgramW: 3000
+  recommendedPowerW: 900
+ways: 3
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-sl-15-pd-2
+availability: commission
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+    note: commission enquiries
+license: LicenseRef-Proprietary
+recommendedFor:
+  - breakcore
+  - hardtek
+buildComplexity: simple
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans: []
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Dominator 15 SL: 15" sealed top built around the PD 153ERC002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

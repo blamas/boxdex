@@ -1,0 +1,12 @@
+# FAKE Bunker 6.5 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Beyma 6"P200/ND (beyma-6-p200-nd-8)
+Fs=56 Hz
+Qts=0.29
+Vas=11.9 L
+Sd=135 cm2
+Xmax=5.5 mm
+Vb=20 L
+HornCutoff=78.4 Hz
+F3=78.7 Hz
+Sensitivity=96 dB

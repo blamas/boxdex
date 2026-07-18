@@ -1,0 +1,89 @@
+---
+name: FAKE Nomad 21 FH
+category: sub
+topology: folded_horn
+topologyVariant: W-bin
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: sica-21-s-4-pl-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 382.5
+grossVolumeL: 478.1
+dims:
+  hMm: 901
+  wMm: 706.8
+  dMm: 751
+weightKg: 53
+specs:
+  f3Hz: 38.4
+  f6Hz: 34.5
+  maxSplExcursionDb: 114.1
+  maxSplThermalDb: 129.6
+  maxSplDb: 114.1
+  sensitivityDb: 103.8
+  hornCutoffHz: 38.1
+  recommendedCrossoverHz: 84.5
+  hornThroatCm2: 1163.3
+  hornMouthCm2: 2865.7
+  powerAesW: 1200
+  powerProgramW: 2400
+  recommendedPowerW: 720
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-fh-21-sica
+availability: commission
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+    note: commission enquiries
+license: LicenseRef-Proprietary
+recommendedFor:
+  - bass_music
+  - dub
+  - hardstyle
+buildComplexity: simple
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans: []
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nomad 21 FH: 21" folded horn sub built around the Sica 21 S 4 PL. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

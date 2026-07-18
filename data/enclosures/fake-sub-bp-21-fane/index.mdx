@@ -1,0 +1,67 @@
+---
+name: FAKE Seismic 21 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-colossus-prime-21ndxl-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 277
+grossVolumeL: 346.3
+dims:
+  hMm: 767
+  wMm: 706.8
+  dMm: 639
+weightKg: 41.2
+specs:
+  f3Hz: 46
+  f6Hz: 40
+  fbHz: 34.8
+  f3HzHigh: 83.5
+  maxSplExcursionDb: 120.2
+  maxSplThermalDb: 129.8
+  maxSplDb: 120.2
+  sensitivityDb: 98
+  recommendedCrossoverHz: 101.2
+  maxVelocityMs: 23.4
+  powerAesW: 1500
+  powerProgramW: 3000
+  recommendedPowerW: 900
+author: fake-data
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Seismic 21 BP build (2026).
+recommendedFor:
+  - dub
+  - hardstyle
+  - tribe
+buildComplexity: complex
+connectors:
+  - XLR
+  - speakON NL4
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-21-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Seismic 21 BP: 21" bandpass sub built around the Fane Colossus Prime 21NDXL. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

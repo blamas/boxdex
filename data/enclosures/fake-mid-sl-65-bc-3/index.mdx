@@ -1,0 +1,79 @@
+---
+name: FAKE Mammoth 6.5 SL
+category: mid
+topology: sealed
+topologyVariant: infinite baffle
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-6cla51-16
+        qty: 4
+      - driver: bc-de991tn-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 11.6
+grossVolumeL: 14.5
+dims:
+  hMm: 265.5
+  wMm: 246.4
+  dMm: 221.5
+weightKg: 31.3
+specs:
+  f3Hz: 153.5
+  f6Hz: 116.6
+  sensitivityDb: 99.5
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 199.6
+  coverageAngleDeg: 90
+  powerAesW: 1000
+  powerProgramW: 2000
+  recommendedPowerW: 600
+ways: 2
+author: fake-data
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - techno
+  - acid
+  - psytrance
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-65-bc-3-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Mammoth 6.5 SL: 6.5" sealed mid built around the B&C 6CLA51. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

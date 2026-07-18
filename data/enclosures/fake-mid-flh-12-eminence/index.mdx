@@ -1,0 +1,68 @@
+---
+name: FAKE Rumble 12 FLH
+category: mid
+topology: front_loaded_horn
+topologyVariant: conical FLH
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-commonwealth-12-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 432
+grossVolumeL: 540
+dims:
+  hMm: 1240.5
+  wMm: 421
+  dMm: 1034
+weightKg: 73.6
+specs:
+  f3Hz: 70.5
+  f6Hz: 63.2
+  sensitivityDb: 108.1
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 70
+  recommendedCrossoverHz: 91.7
+  hornThroatCm2: 363.7
+  hornMouthCm2: 2611.3
+  powerAesW: 900
+  powerProgramW: 1800
+  recommendedPowerW: 540
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-12-eminence
+availability: paid
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - tekno
+  - mental
+  - frenchcore
+buildComplexity: simple
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 15
+sheetCount: 3
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-12-eminence-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Rumble 12 FLH: 12" front loaded horn mid built around the Eminence COMMONWEALTH 12. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

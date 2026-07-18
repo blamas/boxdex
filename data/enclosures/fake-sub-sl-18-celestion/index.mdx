@@ -1,0 +1,94 @@
+---
+name: FAKE Warehouse 18 SL
+category: sub
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bx18-4085-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 58.6
+grossVolumeL: 73.3
+dims:
+  hMm: 379.5
+  wMm: 611.5
+  dMm: 316
+weightKg: 21.6
+specs:
+  f3Hz: 106.1
+  f6Hz: 80.6
+  maxSplExcursionDb: 130.8
+  maxSplThermalDb: 127.6
+  maxSplDb: 127.6
+  sensitivityDb: 102.8
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 233.4
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-sl-18-celestion
+availability: free
+license: CC-BY-NC-4.0
+recommendedFor:
+  - acid
+  - hardtek
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sl-18-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Warehouse 18 SL: 18" sealed sub built around the Celestion BX18-4085. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

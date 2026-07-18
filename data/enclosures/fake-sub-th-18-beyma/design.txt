@@ -1,0 +1,12 @@
+# FAKE Kraken 18 TH - synthetic design export (not a real Hornresp record)
+Topology=tapped_horn
+Driver=Beyma 118Nd/W (beyma-118nd-w-8)
+Fs=36 Hz
+Qts=0.398
+Vas=249 L
+Sd=1300 cm2
+Xmax=7 mm
+Vb=896.4 L
+HornCutoff=34.2 Hz
+F3=34.5 Hz
+Sensitivity=106.7 dB

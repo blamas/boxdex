@@ -1,0 +1,63 @@
+---
+name: FAKE Kraken 12 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-fsf122-02-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 62
+grossVolumeL: 77.5
+dims:
+  hMm: 470
+  wMm: 421
+  dMm: 391.5
+weightKg: 17
+specs:
+  f3Hz: 58.7
+  f6Hz: 46
+  fbHz: 58
+  maxSplExcursionDb: 106
+  maxSplThermalDb: 120.2
+  maxSplDb: 106
+  sensitivityDb: 98.4
+  recommendedCrossoverHz: 76.3
+  maxVelocityMs: 15.7
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-12-lavoce-2
+availability: free
+license: CC0-1.0
+recommendedFor:
+  - hardtek
+buildComplexity: moderate
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-12-lavoce-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Kraken 12 BR: 12" bass reflex top built around the LaVoce FSF122.02. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

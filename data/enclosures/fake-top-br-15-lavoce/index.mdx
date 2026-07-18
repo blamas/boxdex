@@ -1,0 +1,87 @@
+---
+name: FAKE Riot 15 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-nbass15-30-8
+        qty: 1
+      - driver: 18s-6nd410-16
+        qty: 1
+      - driver: 18s-nd1480-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 114.3
+grossVolumeL: 142.9
+dims:
+  hMm: 576.5
+  wMm: 516.3
+  dMm: 480.5
+weightKg: 32.9
+specs:
+  f3Hz: 45.6
+  f6Hz: 35.9
+  fbHz: 44.2
+  maxSplExcursionDb: 112.8
+  maxSplThermalDb: 124.5
+  maxSplDb: 112.8
+  sensitivityDb: 98.5
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 59.3
+  coverageAngleDeg: 90
+  maxVelocityMs: 18.8
+  powerAesW: 580
+  powerProgramW: 1160
+  recommendedPowerW: 348
+ways: 3
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-4.0
+recommendedFor:
+  - acid
+buildComplexity: moderate
+connectors:
+  - XLR
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-15-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Riot 15 BR: 15" bass reflex top built around the LaVoce NBASS15-30. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

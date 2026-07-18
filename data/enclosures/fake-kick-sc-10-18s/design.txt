@@ -1,0 +1,12 @@
+# FAKE Mammoth 10 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=18 Sound 10M600 (18s-10m600-8)
+Fs=70 Hz
+Qts=0.23
+Vas=25.6 L
+Sd=350 cm2
+Xmax=4 mm
+Vb=133.2 L
+HornCutoff=87.5 Hz
+F3=87.8 Hz
+Sensitivity=111.5 dB

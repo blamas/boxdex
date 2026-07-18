@@ -1,0 +1,12 @@
+# FAKE Warehouse 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Radian 212/2 B-8 (radian-212-2-b-8-8)
+Fs=54.5 Hz
+Qts=0.696
+Vas=64.9 L
+Sd=559 cm2
+Xmax=0.9 mm
+Vb=808.4 L
+Fc=62.6 Hz
+F3=56.2 Hz
+Sensitivity=100.6 dB

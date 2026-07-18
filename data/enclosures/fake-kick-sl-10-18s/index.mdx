@@ -1,0 +1,68 @@
+---
+name: FAKE Outlaw 10 SL
+category: kick
+topology: sealed
+topologyVariant: infinite baffle
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-10kw3-keybass-vp-16
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 17.2
+grossVolumeL: 21.5
+dims:
+  hMm: 268.5
+  wMm: 357.5
+  dMm: 224
+weightKg: 11.9
+specs:
+  f3Hz: 112.1
+  f6Hz: 92
+  maxSplExcursionDb: 112.3
+  maxSplThermalDb: 117.1
+  maxSplDb: 112.3
+  sensitivityDb: 97.1
+  recommendedCrossoverHz: 246.6
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-10-18s
+availability: contact
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-4.0
+recommendedFor:
+  - psytrance
+  - raggatek
+  - hardtek
+buildComplexity: simple
+connectors:
+  - binding post
+  - speakON NL8
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Outlaw 10 SL: 10" sealed kick built around the 18 Sound 10KW3 KEYBASS vp. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

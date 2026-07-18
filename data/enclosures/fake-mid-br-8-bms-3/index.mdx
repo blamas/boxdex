@@ -1,0 +1,81 @@
+---
+name: FAKE Fury 8 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bms-8n515-8
+        qty: 4
+      - driver: bc-de360-16
+        qty: 1
+        horn: faital-sth100
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 20.8
+grossVolumeL: 26
+dims:
+  hMm: 326
+  wMm: 294
+  dMm: 271.5
+weightKg: 32.3
+specs:
+  f3Hz: 123
+  f6Hz: 105
+  fbHz: 108.9
+  maxSplExcursionDb: 124.5
+  maxSplThermalDb: 131.1
+  maxSplDb: 124.5
+  sensitivityDb: 102
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 159.9
+  coverageAngleDeg: 80
+  maxVelocityMs: 18.2
+  powerAesW: 800
+  powerProgramW: 1600
+  recommendedPowerW: 480
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-br-8-bms-3
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - mental
+buildComplexity: moderate
+connectors:
+  - binding post
+revision: rev B
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-8-bms-3-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 8 BR: 8" bass reflex mid built around the BMS 8N515. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

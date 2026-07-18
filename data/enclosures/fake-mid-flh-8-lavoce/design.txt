@@ -1,0 +1,12 @@
+# FAKE Nucleus 8 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=LaVoce FBASS08-18 (lavoce-fbass08-18-8)
+Fs=53 Hz
+Qts=0.4
+Vas=23.64 L
+Sd=235.06 cm2
+Xmax=4.5 mm
+Vb=28.4 L
+HornCutoff=74.2 Hz
+F3=74.9 Hz
+Sensitivity=96.5 dB

@@ -1,0 +1,86 @@
+---
+name: FAKE Seismic 18 SC
+category: sub
+topology: scoop
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-18-800n-8
+        qty: 4
+    measurements:
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: default-klp-spl.csv
+            note: gated, half-space
+          impedance:
+            file: default-klp-impedance.csv
+            note: single cabinet
+  - id: alt-18s
+    drivers:
+      - driver: 18s-18-tlw-3000-8
+        qty: 4
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+netVolumeL: 1128.4
+grossVolumeL: 1410.5
+dims:
+  hMm: 1663.5
+  wMm: 611.5
+  dMm: 1386.5
+weightKg: 151.9
+specs:
+  f3Hz: 47.9
+  f6Hz: 42.9
+  maxSplExcursionDb: 129.4
+  maxSplThermalDb: 140.6
+  maxSplDb: 129.4
+  sensitivityDb: 109
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 47.5
+  recommendedCrossoverHz: 105.4
+  hornThroatCm2: 793.1
+  hornMouthCm2: 6103.4
+  powerAesW: 3200
+  powerProgramW: 6400
+  recommendedPowerW: 1920
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-SA-4.0
+recommendedFor:
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - XLR
+revision: MkII
+plywoodThicknessMm: 18
+sheetCount: 4
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sc-18-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Seismic 18 SC: 18" scoop sub built around the Fane 18-800N. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

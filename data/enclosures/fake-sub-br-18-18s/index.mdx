@@ -1,0 +1,89 @@
+---
+name: FAKE Voidus 18 BR
+category: sub
+topology: bass_reflex
+topologyVariant: slot port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-18-tlw-3000-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-18id-2
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 210.3
+grossVolumeL: 262.9
+dims:
+  hMm: 718.5
+  wMm: 611.5
+  dMm: 598.5
+weightKg: 33.7
+specs:
+  f3Hz: 30.2
+  f6Hz: 23.4
+  fbHz: 31.1
+  maxSplExcursionDb: 114.8
+  maxSplThermalDb: 129
+  maxSplDb: 114.8
+  sensitivityDb: 96.4
+  recommendedCrossoverHz: 66.4
+  maxVelocityMs: 21.7
+  powerAesW: 1800
+  powerProgramW: 3600
+  recommendedPowerW: 1080
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-br-18-18s
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC0-1.0
+recommendedFor:
+  - bass_music
+  - techno
+  - tekno
+buildComplexity: simple
+connectors:
+  - XLR
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-br-18-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Voidus 18 BR: 18" bass reflex sub built around the 18 Sound 18 TLW 3000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

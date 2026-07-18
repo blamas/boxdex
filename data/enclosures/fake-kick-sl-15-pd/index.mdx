@@ -1,0 +1,79 @@
+---
+name: FAKE Cyclone 15 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-153erc002-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 37.2
+grossVolumeL: 46.5
+dims:
+  hMm: 329
+  wMm: 516.3
+  dMm: 274
+weightKg: 14.2
+specs:
+  f3Hz: 107.9
+  f6Hz: 82
+  maxSplExcursionDb: 128.6
+  maxSplThermalDb: 128.3
+  maxSplDb: 128.3
+  sensitivityDb: 100.9
+  recommendedCrossoverHz: 237.4
+  powerAesW: 550
+  powerProgramW: 1100
+  recommendedPowerW: 330
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-sl-15-pd
+availability: out_of_print
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - frenchcore
+  - breakcore
+  - dub
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-15-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Cyclone 15 SL: 15" sealed kick built around the PD 153ERC002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

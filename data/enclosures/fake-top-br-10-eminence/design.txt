@@ -1,0 +1,12 @@
+# FAKE Dominator 10 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Eminence BASSLITE CH2010 (eminence-basslite-ch2010-8)
+Fs=58 Hz
+Qts=0.438
+Vas=43 L
+Sd=344.9 cm2
+Xmax=3.5 mm
+Vb=120.6 L
+Fb=51.2 Hz
+F3=47.9 Hz
+Sensitivity=99.2 dB

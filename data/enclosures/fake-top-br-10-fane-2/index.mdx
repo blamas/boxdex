@@ -1,0 +1,93 @@
+---
+name: FAKE Mammoth 10 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-10-275-8
+        qty: 1
+      - driver: 18s-6nd410-16
+        qty: 1
+      - driver: celestion-cdx1-1740-8
+        qty: 1
+        horn: faital-sth100
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 20.2
+grossVolumeL: 25.3
+dims:
+  hMm: 291.5
+  wMm: 357.5
+  dMm: 243
+weightKg: 22.3
+specs:
+  f3Hz: 60.7
+  f6Hz: 47.9
+  fbHz: 58.5
+  maxSplExcursionDb: 106.2
+  maxSplThermalDb: 118.5
+  maxSplDb: 106.2
+  sensitivityDb: 94.1
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 78.9
+  coverageAngleDeg: 80
+  maxVelocityMs: 17.1
+  powerAesW: 455
+  powerProgramW: 910
+  recommendedPowerW: 273
+ways: 3
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-10-fane-2
+availability: free
+license: CC0-1.0
+recommendedFor:
+  - hardstyle
+  - hardtek
+buildComplexity: complex
+connectors:
+  - binding post
+  - XLR
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-10-fane-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Mammoth 10 BR: 10" bass reflex top built around the Fane 10-275. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

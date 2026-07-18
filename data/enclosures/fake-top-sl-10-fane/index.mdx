@@ -1,0 +1,79 @@
+---
+name: FAKE Mammoth 10 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-10-275-8
+        qty: 1
+      - driver: 18s-6nd410-8
+        qty: 1
+      - driver: bc-de550-16
+        qty: 1
+        horn: oberton-h-960
+      - driver: rcf-nd640-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: winsd_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 8.9
+grossVolumeL: 11.1
+dims:
+  hMm: 193
+  wMm: 357.5
+  dMm: 161
+weightKg: 26
+specs:
+  f3Hz: 109.2
+  f6Hz: 83
+  maxSplExcursionDb: 117.1
+  maxSplThermalDb: 118.5
+  maxSplDb: 117.1
+  sensitivityDb: 94.1
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 142
+  coverageAngleDeg: 90
+  powerAesW: 455
+  powerProgramW: 910
+  recommendedPowerW: 273
+ways: 4
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-sl-10-fane
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - tekno
+  - bass_music
+  - mental
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-10-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 10 SL: 10" sealed top built around the Fane 10-275. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

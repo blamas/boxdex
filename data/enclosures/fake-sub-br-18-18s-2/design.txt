@@ -1,0 +1,12 @@
+# FAKE Nucleus 18 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=18 Sound 18 TLW 3000 (18s-18-tlw-3000-8)
+Fs=33 Hz
+Qts=0.407
+Vas=185 L
+Sd=1225 cm2
+Xmax=11.6 mm
+Vb=210.3 L
+Fb=31.1 Hz
+F3=30.2 Hz
+Sensitivity=96.4 dB

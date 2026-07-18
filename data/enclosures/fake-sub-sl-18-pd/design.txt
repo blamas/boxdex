@@ -1,0 +1,12 @@
+# FAKE Kraken 18 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=PD 184C002 (pd-184c002-8)
+Fs=40 Hz
+Qts=0.339
+Vas=268 L
+Sd=1152 cm2
+Xmax=8.5 mm
+Vb=80 L
+Fc=83.4 Hz
+F3=83.4 Hz
+Sensitivity=100.6 dB

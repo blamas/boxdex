@@ -1,0 +1,12 @@
+# FAKE Titan 21 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=18 Sound 21iD (18s-21id-2)
+Fs=38 Hz
+Qts=0.23
+Vas=143 L
+Sd=1660 cm2
+Xmax=14 mm
+Vb=48.5 L
+Fb=59.9 Hz
+F3=82.7 Hz
+Sensitivity=94.2 dB

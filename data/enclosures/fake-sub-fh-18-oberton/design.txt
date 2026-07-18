@@ -1,0 +1,12 @@
+# FAKE Riot 18 FH - synthetic design export (not a real Hornresp record)
+Topology=folded_horn
+Driver=Oberton 18B450 (oberton-18b450-8)
+Fs=34.38 Hz
+Qts=0.342
+Vas=241.55 L
+Sd=1110 cm2
+Xmax=7.25 mm
+Vb=362.3 L
+HornCutoff=37.8 Hz
+F3=38.1 Hz
+Sensitivity=103 dB

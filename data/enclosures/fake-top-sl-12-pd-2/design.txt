@@ -1,0 +1,12 @@
+# FAKE Dominator 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=PD P12/150 (pd-p12-150-8)
+Fs=51 Hz
+Qts=0.318
+Vas=80 L
+Sd=531 cm2
+Xmax=2.3 mm
+Vb=40.6 L
+Fc=113.4 Hz
+F3=113.4 Hz
+Sensitivity=101.2 dB

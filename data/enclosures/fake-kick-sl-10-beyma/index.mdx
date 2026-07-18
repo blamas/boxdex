@@ -1,0 +1,85 @@
+---
+name: FAKE Terra 10 SL
+category: kick
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-10-br60-v2-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: catt_sim
+        curves:
+          spl:
+            file: default-s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: akabak_sim
+        curves:
+          spl:
+            file: default-s2-spl.csv
+            note: 1W/1m, half-space
+  - id: alt-18s
+    drivers:
+      - driver: 18s-10kw3-keybass-vp-16
+        qty: 1
+    simulations:
+      - id: hr
+        source: hornresp_sim
+        curves:
+          spl:
+            file: alt-18s-hr-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: alt-18s-hr-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: alt-18s-rew-spl.csv
+            note: gated, half-space
+netVolumeL: 62.1
+grossVolumeL: 77.6
+dims:
+  hMm: 510.5
+  wMm: 357.5
+  dMm: 425.5
+weightKg: 17
+specs:
+  f3Hz: 52.6
+  f6Hz: 39.9
+  maxSplExcursionDb: 108.7
+  maxSplThermalDb: 112
+  maxSplDb: 108.7
+  sensitivityDb: 92
+  recommendedCrossoverHz: 115.7
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+availability: free
+license: CC0-1.0
+recommendedFor:
+  - dub
+  - tekno
+buildComplexity: moderate
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: catt
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-sl-10-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 10 SL: 10" sealed kick built around the Beyma 10"BR60 V2. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

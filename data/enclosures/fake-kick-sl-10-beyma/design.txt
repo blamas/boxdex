@@ -1,0 +1,12 @@
+# FAKE Terra 10 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Beyma 10"BR60 V2 (beyma-10-br60-v2-8)
+Fs=29 Hz
+Qts=0.39
+Vas=142 L
+Sd=380 cm2
+Xmax=6.5 mm
+Vb=62.1 L
+Fc=52.6 Hz
+F3=52.6 Hz
+Sensitivity=92 dB

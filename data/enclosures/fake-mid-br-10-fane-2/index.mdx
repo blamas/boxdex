@@ -1,0 +1,71 @@
+---
+name: FAKE Nucleus 10 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-10-275-8
+        qty: 1
+      - driver: beyma-cd-1114fe-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 20.2
+grossVolumeL: 25.3
+dims:
+  hMm: 291.5
+  wMm: 357.5
+  dMm: 243
+weightKg: 17.3
+specs:
+  f3Hz: 60.7
+  f6Hz: 47.9
+  fbHz: 58.5
+  maxSplExcursionDb: 106.2
+  maxSplThermalDb: 118.5
+  maxSplDb: 106.2
+  sensitivityDb: 94.1
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 78.9
+  coverageAngleDeg: 90
+  maxVelocityMs: 16.5
+  powerAesW: 275
+  powerProgramW: 550
+  recommendedPowerW: 165
+ways: 2
+author: fake-data
+availability: free
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Nucleus 10 BR build (2026).
+recommendedFor:
+  - hardstyle
+  - hardtek
+  - techno
+buildComplexity: complex
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-10-fane-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nucleus 10 BR: 10" bass reflex mid built around the Fane 10-275. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

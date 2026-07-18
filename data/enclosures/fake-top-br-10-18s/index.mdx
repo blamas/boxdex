@@ -1,0 +1,84 @@
+---
+name: FAKE Rumble 10 BR
+category: top
+topology: bass_reflex
+topologyVariant: dual port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-10m600-8
+        qty: 1
+      - driver: sica-cd-40x70-26-n35-8
+        qty: 1
+        horn: em-apt-150s
+    simulations:
+      - id: s1
+        source: winsd_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 5.7
+grossVolumeL: 7.1
+dims:
+  hMm: 154.5
+  wMm: 357.5
+  dMm: 128.5
+weightKg: 15.6
+specs:
+  f3Hz: 142.4
+  f6Hz: 119.5
+  fbHz: 110.4
+  maxSplExcursionDb: 116.6
+  maxSplThermalDb: 128
+  maxSplDb: 116.6
+  sensitivityDb: 102
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 185.1
+  coverageAngleDeg: 100
+  maxVelocityMs: 16.4
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+ways: 2
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - acid
+  - frenchcore
+buildComplexity: complex
+connectors:
+  - speakON NL4
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: winisd
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-10-18s-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Rumble 10 BR: 10" bass reflex top built around the 18 Sound 10M600. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

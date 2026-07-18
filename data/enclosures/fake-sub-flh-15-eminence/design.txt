@@ -1,0 +1,12 @@
+# FAKE Terra 15 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Eminence 15-3008PS (eminence-15-3008ps-8)
+Fs=47.9 Hz
+Qts=0.379
+Vas=203.6 L
+Sd=856.3 cm2
+Xmax=5.5 mm
+Vb=244.3 L
+HornCutoff=67.1 Hz
+F3=67.1 Hz
+Sensitivity=104.2 dB

@@ -1,0 +1,74 @@
+---
+name: FAKE Nomad 12 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl12-200x-8
+        qty: 1
+      - driver: faital-hf1000-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 55.4
+grossVolumeL: 69.3
+dims:
+  hMm: 444.5
+  wMm: 421
+  dMm: 370.5
+weightKg: 21.2
+specs:
+  f3Hz: 76.5
+  f6Hz: 58.1
+  maxSplExcursionDb: 113.7
+  maxSplThermalDb: 119.3
+  maxSplDb: 113.7
+  sensitivityDb: 96.3
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 99.5
+  coverageAngleDeg: 90
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-12-celestion
+availability: out_of_print
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - hardstyle
+  - frenchcore
+  - bass_music
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-12-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nomad 12 SL: 12" sealed mid built around the Celestion BL12-200X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

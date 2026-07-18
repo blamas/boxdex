@@ -1,0 +1,70 @@
+---
+name: FAKE Kraken 15 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-14-cxn-6-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: winsd_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 75.3
+grossVolumeL: 94.1
+dims:
+  hMm: 467.5
+  wMm: 516.3
+  dMm: 389.5
+weightKg: 18.5
+specs:
+  f3Hz: 80.3
+  f6Hz: 69.8
+  fbHz: 59.4
+  f3HzHigh: 142.6
+  maxSplExcursionDb: 114.9
+  maxSplThermalDb: 126
+  maxSplDb: 114.9
+  sensitivityDb: 100
+  recommendedCrossoverHz: 176.7
+  maxVelocityMs: 17.5
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-bp-15-bc
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - mental
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+  - XLR
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-15-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Kraken 15 BP: 15" bandpass kick built around the B&C 14 CXN 6. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

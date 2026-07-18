@@ -1,0 +1,69 @@
+---
+name: FAKE Terra 15 SL
+category: sub
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-14-cxn-6-8
+        qty: 4
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: catt_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 97.6
+grossVolumeL: 122
+dims:
+  hMm: 532.5
+  wMm: 516.3
+  dMm: 443.5
+weightKg: 36
+specs:
+  f3Hz: 113.6
+  f6Hz: 86.3
+  maxSplExcursionDb: 138.2
+  maxSplThermalDb: 138.1
+  maxSplDb: 138.1
+  sensitivityDb: 106
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 249.9
+  powerAesW: 1600
+  powerProgramW: 3200
+  recommendedPowerW: 960
+author: fake-data
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - bass_music
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+  - speakON NL2
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-sl-15-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 15 SL: 15" sealed sub built around the B&C 14 CXN 6. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

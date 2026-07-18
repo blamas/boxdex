@@ -1,0 +1,75 @@
+---
+name: FAKE Titan 15 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-115nd-w-8
+        qty: 1
+      - driver: lavoce-dn10-14-2-16
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 59.3
+grossVolumeL: 74.1
+dims:
+  hMm: 415
+  wMm: 516.3
+  dMm: 346
+weightKg: 21.7
+specs:
+  f3Hz: 55.8
+  f6Hz: 47.9
+  fbHz: 48.1
+  maxSplExcursionDb: 114.9
+  maxSplThermalDb: 126.2
+  maxSplDb: 114.9
+  sensitivityDb: 97.7
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 72.5
+  coverageAngleDeg: 90
+  maxVelocityMs: 18.2
+  powerAesW: 700
+  powerProgramW: 1400
+  recommendedPowerW: 420
+ways: 2
+author: fake-data
+availability: contact
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - acid
+  - tribe
+  - breakcore
+buildComplexity: moderate
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-15-beyma-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Titan 15 BR: 15" bass reflex top built around the Beyma 115ND/W. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,84 @@
+---
+name: FAKE Riot 10 BR
+category: kick
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: faital-10fe300-4
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 49.3
+grossVolumeL: 61.6
+dims:
+  hMm: 454.5
+  wMm: 357.5
+  dMm: 379
+weightKg: 15.5
+specs:
+  f3Hz: 48.6
+  f6Hz: 37.7
+  fbHz: 49
+  maxSplExcursionDb: 105.4
+  maxSplThermalDb: 118
+  maxSplDb: 105.4
+  sensitivityDb: 94
+  recommendedCrossoverHz: 106.9
+  maxVelocityMs: 17.4
+  powerAesW: 250
+  powerProgramW: 500
+  recommendedPowerW: 150
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-br-10-faital
+availability: paid
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - bass_music
+  - raggatek
+buildComplexity: moderate
+connectors:
+  - speakON NL4
+revision: v2
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-10-faital-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Riot 10 BR: 10" bass reflex kick built around the Faital PRO 10FE300. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

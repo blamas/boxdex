@@ -1,0 +1,12 @@
+# FAKE Havoc 12 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Eminence COMMONWEALTH 12 (eminence-commonwealth-12-8)
+Fs=50 Hz
+Qts=0.332
+Vas=90 L
+Sd=519.5 cm2
+Xmax=0.7 mm
+Vb=216 L
+HornCutoff=70 Hz
+F3=70.5 Hz
+Sensitivity=105.1 dB

@@ -1,0 +1,80 @@
+---
+name: FAKE Nomad 12 BR
+category: top
+topology: bass_reflex
+topologyVariant: dual port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl12-200x-8
+        qty: 1
+      - driver: 18s-nd3g-8
+        qty: 1
+        horn: rcf-hf950
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+        stacked:
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+          - count: 8
+            file: s1-spl-8u.csv
+            note: 8x array
+netVolumeL: 126.6
+grossVolumeL: 158.3
+dims:
+  hMm: 671.5
+  wMm: 421
+  dMm: 560
+weightKg: 29.2
+specs:
+  f3Hz: 39.9
+  f6Hz: 30.9
+  fbHz: 41.6
+  maxSplExcursionDb: 103.1
+  maxSplThermalDb: 119.3
+  maxSplDb: 103.1
+  sensitivityDb: 96.3
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 51.9
+  coverageAngleDeg: 90
+  maxVelocityMs: 16.4
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+ways: 2
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-12-celestion
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-4.0
+recommendedFor:
+  - tribe
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-12-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Nomad 12 BR: 12" bass reflex top built around the Celestion BL12-200X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

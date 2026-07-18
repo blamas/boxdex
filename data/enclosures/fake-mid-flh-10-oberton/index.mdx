@@ -1,0 +1,100 @@
+---
+name: FAKE Nucleus 10 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-10b100-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 48.6
+grossVolumeL: 60.8
+dims:
+  hMm: 452
+  wMm: 357.5
+  dMm: 376.5
+weightKg: 15.5
+specs:
+  f3Hz: 62
+  f6Hz: 55.6
+  maxSplExcursionDb: 106.6
+  maxSplThermalDb: 112.5
+  maxSplDb: 106.6
+  sensitivityDb: 96.5
+  hornCutoffHz: 61.6
+  recommendedCrossoverHz: 80.6
+  hornThroatCm2: 222.1
+  hornMouthCm2: 808
+  powerAesW: 100
+  powerProgramW: 200
+  recommendedPowerW: 60
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-10-oberton
+availability: free
+license: CC-BY-4.0
+recommendedFor:
+  - techno
+  - bass_music
+buildComplexity: simple
+connectors:
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-10-oberton-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nucleus 10 FLH: 10" front loaded horn mid built around the Oberton 10B100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

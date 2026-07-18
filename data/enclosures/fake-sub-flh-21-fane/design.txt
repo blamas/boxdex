@@ -1,0 +1,12 @@
+# FAKE Monolith 21 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=Fane Colossus Prime 21NDXL (fane-colossus-prime-21ndxl-8)
+Fs=33 Hz
+Qts=0.36
+Vas=241 L
+Sd=1520 cm2
+Xmax=14 mm
+Vb=578.4 L
+HornCutoff=46.2 Hz
+F3=46.4 Hz
+Sensitivity=105 dB

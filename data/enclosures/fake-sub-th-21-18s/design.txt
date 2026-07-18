@@ -1,0 +1,12 @@
+# FAKE Basstek 21 TH - synthetic design export (not a real Hornresp record)
+Topology=tapped_horn
+Driver=18 Sound 21iD (18s-21id-2)
+Fs=38 Hz
+Qts=0.23
+Vas=143 L
+Sd=1660 cm2
+Xmax=14 mm
+Vb=257.4 L
+HornCutoff=36.1 Hz
+F3=36.2 Hz
+Sensitivity=100.2 dB

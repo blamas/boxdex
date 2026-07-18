@@ -1,0 +1,12 @@
+# FAKE Bunker 15 FH - synthetic design export (not a real Hornresp record)
+Topology=folded_horn
+Driver=Faital PRO 15FH500 vp1 (faital-15fh500-vp1-8)
+Fs=40 Hz
+Qts=0.328
+Vas=146.1 L
+Sd=800 cm2
+Xmax=6.7 mm
+Vb=876.8 L
+HornCutoff=44 Hz
+F3=44.2 Hz
+Sensitivity=109.4 dB

@@ -1,0 +1,12 @@
+# FAKE Riot 21 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=Faital PRO 21XL3000 (faital-21xl3000-4)
+Fs=32 Hz
+Qts=0.22
+Vas=223.5 L
+Sd=1744 cm2
+Xmax=17.67 mm
+Vb=581.2 L
+HornCutoff=40 Hz
+F3=40.4 Hz
+Sensitivity=104.5 dB

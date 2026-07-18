@@ -1,0 +1,107 @@
+---
+name: FAKE Cyclone 21 TH
+category: sub
+topology: tapped_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-21ds115-4
+        qty: 4
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 1576.8
+grossVolumeL: 1971
+dims:
+  hMm: 1829.5
+  wMm: 706.8
+  dMm: 1524.5
+weightKg: 202.4
+specs:
+  f3Hz: 30.6
+  f6Hz: 27.4
+  maxSplExcursionDb: 131.2
+  maxSplThermalDb: 144.3
+  maxSplDb: 131.2
+  sensitivityDb: 112
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 30.4
+  recommendedCrossoverHz: 67.3
+  hornThroatCm2: 1620
+  hornMouthCm2: 7112
+  powerAesW: 6800
+  powerProgramW: 13600
+  recommendedPowerW: 4080
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Cyclone 21 TH build (2026).
+recommendedFor:
+  - techno
+  - psytrance
+buildComplexity: moderate
+connectors:
+  - XLR
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 4
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-th-21-bc-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Cyclone 21 TH: 21" tapped horn sub built around the B&C 21DS115. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

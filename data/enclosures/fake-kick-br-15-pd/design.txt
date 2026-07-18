@@ -1,0 +1,12 @@
+# FAKE Terra 15 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=PD 153ERC002 (pd-153erc002-8)
+Fs=38 Hz
+Qts=0.249
+Vas=263 L
+Sd=853 cm2
+Xmax=6.8 mm
+Vb=73 L
+Fb=55.8 Hz
+F3=69.2 Hz
+Sensitivity=100.9 dB

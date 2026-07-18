@@ -1,0 +1,12 @@
+# FAKE Titan 12 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=Faital PRO 12FE300 (faital-12fe300-4)
+Fs=47 Hz
+Qts=0.44
+Vas=81.4 L
+Sd=543 cm2
+Xmax=5.47 mm
+Vb=51.5 L
+Fc=75.5 Hz
+F3=75.5 Hz
+Sensitivity=95 dB

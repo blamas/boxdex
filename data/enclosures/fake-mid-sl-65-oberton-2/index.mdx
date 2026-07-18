@@ -1,0 +1,70 @@
+---
+name: FAKE Kraken 6.5 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: oberton-6b150-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: basta_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 4.4
+grossVolumeL: 5.5
+dims:
+  hMm: 163.5
+  wMm: 246.4
+  dMm: 136.5
+weightKg: 15.5
+specs:
+  f3Hz: 135.3
+  f6Hz: 107.6
+  maxSplExcursionDb: 122
+  maxSplThermalDb: 119.8
+  maxSplDb: 119.8
+  sensitivityDb: 95
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 175.9
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-sl-65-oberton-2
+availability: out_of_print
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - techno
+  - dub
+buildComplexity: simple
+connectors:
+  - XLR
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-sl-65-oberton-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Kraken 6.5 SL: 6.5" sealed mid built around the Oberton 6B150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

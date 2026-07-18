@@ -1,0 +1,75 @@
+---
+name: FAKE Fury 12 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: radian-2312-8-8
+        qty: 1
+      - driver: bc-de1090tn-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 41
+grossVolumeL: 51.3
+dims:
+  hMm: 382.5
+  wMm: 421
+  dMm: 318.5
+weightKg: 19.6
+specs:
+  f3Hz: 50.8
+  f6Hz: 40
+  fbHz: 49.2
+  maxSplExcursionDb: 108
+  maxSplThermalDb: 120.6
+  maxSplDb: 108
+  sensitivityDb: 93.6
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 66
+  coverageAngleDeg: 90
+  maxVelocityMs: 17
+  powerAesW: 500
+  powerProgramW: 1000
+  recommendedPowerW: 300
+ways: 2
+author: fake-data
+availability: out_of_print
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - hardcore
+  - breakcore
+  - dub
+buildComplexity: complex
+connectors:
+  - speakON NL4
+  - jack 6.35mm
+revision: MkII
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-12-radian-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Fury 12 BR: 12" bass reflex top built around the Radian 2312-8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

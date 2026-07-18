@@ -1,0 +1,12 @@
+# FAKE Monolith 18 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Fane 18-800N (fane-18-800n-8)
+Fs=38 Hz
+Qts=0.306
+Vas=217 L
+Sd=1133 cm2
+Xmax=7.1 mm
+Vb=158.8 L
+Fb=46.3 Hz
+F3=62 Hz
+Sensitivity=99.5 dB

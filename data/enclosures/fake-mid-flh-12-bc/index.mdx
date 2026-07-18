@@ -1,0 +1,69 @@
+---
+name: FAKE Mammoth 12 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-12-bg-100-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 98.4
+grossVolumeL: 123
+dims:
+  hMm: 592
+  wMm: 421
+  dMm: 493.5
+weightKg: 26.1
+specs:
+  f3Hz: 55
+  f6Hz: 49.3
+  maxSplExcursionDb: 119.8
+  maxSplThermalDb: 128.4
+  maxSplDb: 119.8
+  sensitivityDb: 99.4
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  hornCutoffHz: 54.6
+  recommendedCrossoverHz: 71.5
+  hornThroatCm2: 365.4
+  hornMouthCm2: 1246.2
+  powerAesW: 2000
+  powerProgramW: 4000
+  recommendedPowerW: 1200
+author: fake-data
+availability: free
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-NC-4.0
+recommendedFor:
+  - psytrance
+  - hardcore
+buildComplexity: simple
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-12-bc-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Mammoth 12 FLH: 12" front loaded horn mid built around the B&C 12 BG 100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

@@ -1,0 +1,77 @@
+---
+name: FAKE Dominator 15 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl15-300x-4
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 236.2
+grossVolumeL: 295.3
+dims:
+  hMm: 828.5
+  wMm: 516.3
+  dMm: 690.5
+weightKg: 36.6
+specs:
+  f3Hz: 38.5
+  f6Hz: 29.7
+  fbHz: 41.6
+  maxSplExcursionDb: 106.4
+  maxSplThermalDb: 126.1
+  maxSplDb: 106.4
+  sensitivityDb: 101.3
+  recommendedCrossoverHz: 50.1
+  maxVelocityMs: 16.6
+  powerAesW: 300
+  powerProgramW: 600
+  recommendedPowerW: 180
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-top-br-15-celestion
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - frenchcore
+  - hardstyle
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-15-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Dominator 15 BR: 15" bass reflex top built around the Celestion BL15-300X. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

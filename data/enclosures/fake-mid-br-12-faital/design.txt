@@ -1,0 +1,12 @@
+# FAKE Warehouse 12 BR - synthetic design export (not a real Hornresp record)
+Topology=bass_reflex
+Driver=Faital PRO 12FE300 (faital-12fe300-4)
+Fs=47 Hz
+Qts=0.44
+Vas=81.4 L
+Sd=543 cm2
+Xmax=5.47 mm
+Vb=115.7 L
+Fb=41.3 Hz
+F3=38.6 Hz
+Sensitivity=95 dB

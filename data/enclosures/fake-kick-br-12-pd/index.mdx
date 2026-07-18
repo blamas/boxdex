@@ -1,0 +1,84 @@
+---
+name: FAKE Cyclone 12 BR
+category: kick
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-p12-150-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 44.8
+grossVolumeL: 56
+dims:
+  hMm: 399.5
+  wMm: 421
+  dMm: 333
+weightKg: 15
+specs:
+  f3Hz: 65.9
+  f6Hz: 55
+  fbHz: 60.1
+  maxSplExcursionDb: 104.9
+  maxSplThermalDb: 120
+  maxSplDb: 104.9
+  sensitivityDb: 98.2
+  recommendedCrossoverHz: 145
+  maxVelocityMs: 15.2
+  powerAesW: 150
+  powerProgramW: 300
+  recommendedPowerW: 90
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-kick-br-12-pd
+availability: paid
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - breakcore
+  - psytrance
+  - mental
+buildComplexity: moderate
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-br-12-pd-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Cyclone 12 BR: 12" bass reflex kick built around the PD P12/150. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

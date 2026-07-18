@@ -1,0 +1,12 @@
+# FAKE Mammoth 18 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=B&C 18 DS 115 (bc-18-ds-115-8)
+Fs=30 Hz
+Qts=0.2
+Vas=168 L
+Sd=1210 cm2
+Xmax=7.5 mm
+Vb=218.4 L
+HornCutoff=37.5 Hz
+F3=37.7 Hz
+Sensitivity=100.9 dB

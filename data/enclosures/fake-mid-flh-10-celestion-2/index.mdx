@@ -1,0 +1,75 @@
+---
+name: FAKE Terra 10 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bn10-200s8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+      - id: s2
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s2-spl.csv
+            note: 1W/1m, half-space
+netVolumeL: 24.6
+grossVolumeL: 30.8
+dims:
+  hMm: 321.5
+  wMm: 357.5
+  dMm: 268
+weightKg: 12.8
+specs:
+  f3Hz: 125.6
+  f6Hz: 112.6
+  maxSplExcursionDb: 114.6
+  maxSplThermalDb: 122.5
+  maxSplDb: 114.6
+  sensitivityDb: 103.5
+  hornCutoffHz: 125.2
+  recommendedCrossoverHz: 163.3
+  hornThroatCm2: 240.8
+  hornMouthCm2: 574.7
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-10-celestion-2
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-4.0
+recommendedFor:
+  - hardstyle
+  - frenchcore
+  - techno
+buildComplexity: complex
+connectors:
+  - XLR
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-10-celestion-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Terra 10 FLH: 10" front loaded horn mid built around the Celestion BN10-200S8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

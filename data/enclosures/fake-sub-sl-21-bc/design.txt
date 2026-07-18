@@ -1,0 +1,12 @@
+# FAKE Seismic 21 SL - synthetic design export (not a real Hornresp record)
+Topology=sealed
+Driver=B&C 21DS115 (bc-21ds115-4)
+Fs=32 Hz
+Qts=0.21
+Vas=219 L
+Sd=1620 cm2
+Xmax=15 mm
+Vb=42.4 L
+Fc=107.7 Hz
+F3=107.7 Hz
+Sensitivity=103 dB

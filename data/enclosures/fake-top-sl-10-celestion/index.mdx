@@ -1,0 +1,104 @@
+---
+name: FAKE Basstek 10 SL
+category: top
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bl-10-100-8
+        qty: 2
+      - driver: 18s-8ntls2000-16
+        qty: 1
+      - driver: bc-de618tn-8
+        qty: 1
+        horn: oberton-h-1464
+      - driver: faital-hmf200-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 119
+grossVolumeL: 148.8
+dims:
+  hMm: 706.5
+  wMm: 357.5
+  dMm: 589
+weightKg: 43.4
+specs:
+  f3Hz: 81.8
+  f6Hz: 63.9
+  maxSplExcursionDb: 116.5
+  maxSplThermalDb: 121.7
+  maxSplDb: 116.5
+  sensitivityDb: 98.7
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 106.3
+  coverageAngleDeg: 60
+  powerAesW: 550
+  powerProgramW: 1100
+  recommendedPowerW: 330
+ways: 4
+author: fake-data
+availability: contact
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-4.0
+recommendedFor:
+  - frenchcore
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-sl-10-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Basstek 10 SL: 10" sealed top built around the Celestion BL 10-100. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

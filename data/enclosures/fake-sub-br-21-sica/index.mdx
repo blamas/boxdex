@@ -1,0 +1,81 @@
+---
+name: FAKE Dominator 21 BR
+category: sub
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: sica-21-s-4-pl-8
+        qty: 2
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 241.6
+grossVolumeL: 302
+dims:
+  hMm: 716
+  wMm: 706.8
+  dMm: 596.5
+weightKg: 42.2
+specs:
+  f3Hz: 48.5
+  f6Hz: 41.2
+  fbHz: 42.9
+  maxSplExcursionDb: 122.1
+  maxSplThermalDb: 135.6
+  maxSplDb: 122.1
+  sensitivityDb: 101.8
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 106.7
+  maxVelocityMs: 17.8
+  powerAesW: 2400
+  powerProgramW: 4800
+  recommendedPowerW: 1440
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-br-21-sica
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - hardstyle
+  - psytrance
+  - hardtek
+buildComplexity: complex
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-br-21-sica-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Dominator 21 BR: 21" bass reflex sub built around the Sica 21 S 4 PL. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

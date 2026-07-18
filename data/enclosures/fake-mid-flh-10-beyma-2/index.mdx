@@ -1,0 +1,103 @@
+---
+name: FAKE Terra 10 FLH
+category: mid
+topology: front_loaded_horn
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: beyma-10-g40-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: basta_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+          group_delay:
+            file: s1-group_delay.csv
+            note: from phase
+          distortion:
+            file: s1-distortion.csv
+            note: THD at nominal drive
+          power_compression:
+            file: s1-power_compression.csv
+            note: at rated power
+        stacked:
+          - count: 2
+            file: s1-spl-2u.csv
+            note: 2x array
+          - count: 4
+            file: s1-spl-4u.csv
+            note: 4x array
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          phase:
+            file: rew-phase.csv
+            note: minimum-phase
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+netVolumeL: 58.8
+grossVolumeL: 73.5
+dims:
+  hMm: 496.5
+  wMm: 357.5
+  dMm: 414
+weightKg: 16.6
+specs:
+  f3Hz: 63.2
+  f6Hz: 56.7
+  maxSplExcursionDb: 112.5
+  maxSplThermalDb: 121
+  maxSplDb: 112.5
+  sensitivityDb: 99
+  hornCutoffHz: 63
+  recommendedCrossoverHz: 82.2
+  hornThroatCm2: 266
+  hornMouthCm2: 887.5
+  powerAesW: 400
+  powerProgramW: 800
+  recommendedPowerW: 240
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-mid-flh-10-beyma-2
+availability: paid
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - bass_music
+  - techno
+buildComplexity: moderate
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: basta
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-flh-10-beyma-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Terra 10 FLH: 10" front loaded horn mid built around the Beyma 10"G40. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

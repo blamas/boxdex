@@ -1,0 +1,87 @@
+---
+name: FAKE Riot 12 BR
+category: top
+topology: bass_reflex
+topologyVariant: aperiodic
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: fane-12-300-vp-frl-8
+        qty: 2
+      - driver: lavoce-wsf081-82-16-16
+        qty: 1
+      - driver: 18s-nd1020-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 124.8
+grossVolumeL: 156
+dims:
+  hMm: 667
+  wMm: 421
+  dMm: 555.5
+weightKg: 39
+specs:
+  f3Hz: 48.6
+  f6Hz: 37.7
+  fbHz: 49
+  maxSplExcursionDb: 113.2
+  maxSplThermalDb: 127
+  maxSplDb: 113.2
+  sensitivityDb: 99.2
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 63.2
+  coverageAngleDeg: 90
+  maxVelocityMs: 18
+  powerAesW: 750
+  powerProgramW: 1500
+  recommendedPowerW: 450
+ways: 3
+author: fake-data
+availability: out_of_print
+contact:
+  - channel: email
+    value: boxdex@users.noreply.github.com
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - mental
+buildComplexity: simple
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-12-fane-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Riot 12 BR: 12" bass reflex top built around the Fane 12-300 vp FRL. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

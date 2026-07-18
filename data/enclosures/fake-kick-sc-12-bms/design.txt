@@ -1,0 +1,12 @@
+# FAKE Rumble 12 SC - synthetic design export (not a real Hornresp record)
+Topology=scoop
+Driver=BMS 12C262 (bms-12c262-8)
+Fs=45.4 Hz
+Qts=0.23
+Vas=62.8 L
+Sd=487 cm2
+Xmax=2.5 mm
+Vb=81.6 L
+HornCutoff=56.8 Hz
+F3=57.2 Hz
+Sensitivity=100.8 dB

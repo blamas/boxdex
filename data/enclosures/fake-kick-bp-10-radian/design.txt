@@ -1,0 +1,12 @@
+# FAKE Bunker 10 BP - synthetic design export (not a real Hornresp record)
+Topology=bandpass
+Driver=Radian 5208 C-8 (radian-5208-c-8-8)
+Fs=73 Hz
+Qts=0.396
+Vas=23.5 L
+Sd=341.3 cm2
+Xmax=0.8 mm
+Vb=42.8 L
+Fb=70.6 Hz
+F3=77.9 Hz
+Sensitivity=96.3 dB

@@ -1,0 +1,69 @@
+---
+name: FAKE Voidus 6.5 SL
+category: mid
+topology: sealed
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: bc-6cla51-16
+        qty: 4
+    measurements:
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+          impedance:
+            file: klp-impedance.csv
+            note: single cabinet
+netVolumeL: 11.6
+grossVolumeL: 14.5
+dims:
+  hMm: 265.5
+  wMm: 246.4
+  dMm: 221.5
+weightKg: 26.3
+specs:
+  f3Hz: 153.5
+  f6Hz: 116.6
+  maxSplExcursionDb: 128.7
+  maxSplThermalDb: 129.5
+  maxSplDb: 128.7
+  sensitivityDb: 99.5
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 199.6
+  powerAesW: 1000
+  powerProgramW: 2000
+  recommendedPowerW: 600
+author: fake-data
+availability: contact
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-4.0
+recommendedFor:
+  - techno
+buildComplexity: moderate
+connectors:
+  - binding post
+revision: rev C
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources: []
+plans:
+  - fake-mid-sl-65-bc-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Voidus 6.5 SL: 6.5" sealed mid built around the B&C 6CLA51. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

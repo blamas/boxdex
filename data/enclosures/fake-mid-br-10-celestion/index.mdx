@@ -1,0 +1,72 @@
+---
+name: FAKE Cyclone 10 BR
+category: mid
+topology: bass_reflex
+topologyVariant: slot port
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bn10-200s8-8
+        qty: 1
+      - driver: oberton-ndc72cn-16
+        qty: 1
+        horn: rcf-hf950
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 15.4
+grossVolumeL: 19.3
+dims:
+  hMm: 254.5
+  wMm: 357.5
+  dMm: 212
+weightKg: 16.7
+specs:
+  f3Hz: 100.3
+  f6Hz: 79.5
+  fbHz: 96.1
+  maxSplExcursionDb: 110
+  maxSplThermalDb: 122.5
+  maxSplDb: 110
+  sensitivityDb: 99.5
+  impedanceNominalOhm: 8
+  impedanceMinOhm: 6.2
+  recommendedCrossoverHz: 130.4
+  coverageAngleDeg: 90
+  maxVelocityMs: 15.4
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+ways: 2
+author: fake-data
+availability: free
+license: CC-BY-SA-4.0
+recommendedFor:
+  - psytrance
+buildComplexity: moderate
+connectors:
+  - speakON NL8
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-10-celestion-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Cyclone 10 BR: 10" bass reflex mid built around the Celestion BN10-200S8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

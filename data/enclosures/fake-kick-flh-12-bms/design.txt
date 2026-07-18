@@ -1,0 +1,12 @@
+# FAKE Riot 12 FLH - synthetic design export (not a real Hornresp record)
+Topology=front_loaded_horn
+Driver=BMS 12C262 (bms-12c262-8)
+Fs=45.4 Hz
+Qts=0.23
+Vas=62.8 L
+Sd=487 cm2
+Xmax=2.5 mm
+Vb=301.6 L
+HornCutoff=63.6 Hz
+F3=63.9 Hz
+Sensitivity=107.3 dB

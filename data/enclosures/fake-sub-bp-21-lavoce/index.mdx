@@ -1,0 +1,81 @@
+---
+name: FAKE Bunker 21 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: lavoce-san215-30-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 180.2
+grossVolumeL: 225.3
+dims:
+  hMm: 618.5
+  wMm: 706.8
+  dMm: 515.5
+weightKg: 30.3
+specs:
+  f3Hz: 53.4
+  f6Hz: 46
+  fbHz: 39.9
+  f3HzHigh: 95.8
+  maxSplExcursionDb: 123.9
+  maxSplThermalDb: 128.7
+  maxSplDb: 123.9
+  sensitivityDb: 95.7
+  recommendedCrossoverHz: 117.5
+  maxVelocityMs: 24
+  powerAesW: 2000
+  powerProgramW: 4000
+  recommendedPowerW: 1200
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-bp-21-lavoce
+availability: paid
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-NC-SA-4.0
+recommendedFor:
+  - tekno
+  - dub
+buildComplexity: complex
+connectors:
+  - binding post
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-21-lavoce-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Bunker 21 BP: 21" bandpass sub built around the Lavoce SAN215.30. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

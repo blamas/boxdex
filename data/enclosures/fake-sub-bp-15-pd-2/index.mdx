@@ -1,0 +1,69 @@
+---
+name: FAKE Monolith 15 BP
+category: sub
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: pd-153erc002-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+netVolumeL: 110.2
+grossVolumeL: 137.8
+dims:
+  hMm: 566
+  wMm: 516.3
+  dMm: 471.5
+weightKg: 22.4
+specs:
+  f3Hz: 76.4
+  f6Hz: 66.5
+  fbHz: 55.8
+  f3HzHigh: 133.9
+  maxSplExcursionDb: 117.1
+  maxSplThermalDb: 128.3
+  maxSplDb: 117.1
+  sensitivityDb: 100.9
+  recommendedCrossoverHz: 168.1
+  maxVelocityMs: 18.4
+  powerAesW: 550
+  powerProgramW: 1100
+  recommendedPowerW: 330
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-bp-15-pd-2
+availability: contact
+contact:
+  - channel: profile
+    value: https://instagram.com/boxdex.systems
+license: CC-BY-4.0
+recommendedFor:
+  - psytrance
+buildComplexity: complex
+connectors:
+  - jack 6.35mm
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-bp-15-pd-2-plan.pdf
+images:
+  - render.png
+  - response.png
+---
+
+FAKE Monolith 15 BP: 15" bandpass sub built around the PD 153ERC002. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

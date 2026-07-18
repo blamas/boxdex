@@ -1,0 +1,81 @@
+---
+name: FAKE Nucleus 18 BR
+category: sub
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: 18s-18-tlw-3000-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 210.3
+grossVolumeL: 262.9
+dims:
+  hMm: 718.5
+  wMm: 611.5
+  dMm: 598.5
+weightKg: 33.7
+specs:
+  f3Hz: 30.2
+  f6Hz: 23.4
+  fbHz: 31.1
+  maxSplExcursionDb: 114.8
+  maxSplThermalDb: 129
+  maxSplDb: 114.8
+  sensitivityDb: 96.4
+  recommendedCrossoverHz: 66.4
+  maxVelocityMs: 21.7
+  powerAesW: 1800
+  powerProgramW: 3600
+  recommendedPowerW: 1080
+author: fake-data
+sourceUrl: https://github.com/blamas/boxdex/tree/main/data/enclosures/fake-sub-br-18-18s-2
+availability: contact
+contact:
+  - channel: profile
+    value: https://soundcloud.com/boxdex
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - breakcore
+buildComplexity: complex
+connectors:
+  - speakON NL2
+plywoodThicknessMm: 18
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-sub-br-18-18s-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Nucleus 18 BR: 18" bass reflex sub built around the 18 Sound 18 TLW 3000. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

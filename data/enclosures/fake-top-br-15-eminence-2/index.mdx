@@ -1,0 +1,91 @@
+---
+name: FAKE Titan 15 BR
+category: top
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-15-3008ps-8
+        qty: 2
+      - driver: bc-6cla51-8
+        qty: 1
+      - driver: oberton-ndc72cn-16
+        qty: 1
+      - driver: faital-hf108r-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: akabak_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 377.2
+grossVolumeL: 471.5
+dims:
+  hMm: 1047
+  wMm: 516.3
+  dMm: 872.5
+weightKg: 72.4
+specs:
+  f3Hz: 48.4
+  f6Hz: 37.7
+  fbHz: 48.2
+  maxSplExcursionDb: 118.8
+  maxSplThermalDb: 133.2
+  maxSplDb: 118.8
+  sensitivityDb: 103.2
+  impedanceNominalOhm: 4
+  impedanceMinOhm: 3.1
+  recommendedCrossoverHz: 62.9
+  coverageAngleDeg: 90
+  maxVelocityMs: 18.7
+  powerAesW: 1250
+  powerProgramW: 2500
+  recommendedPowerW: 750
+ways: 4
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: CC-BY-4.0
+recommendedFor:
+  - hardstyle
+  - techno
+  - raggatek
+buildComplexity: simple
+connectors:
+  - binding post
+verified: true
+plywoodThicknessMm: 15
+sheetCount: 2
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: akabak
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-top-br-15-eminence-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Titan 15 BR: 15" bass reflex top built around the Eminence 15-3008PS. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

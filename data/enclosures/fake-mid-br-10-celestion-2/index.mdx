@@ -1,0 +1,80 @@
+---
+name: FAKE Terra 10 BR
+category: mid
+topology: bass_reflex
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: celestion-bn10-200s8-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: vituixcad_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          phase:
+            file: s1-phase.csv
+            note: minimum-phase
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+netVolumeL: 15.4
+grossVolumeL: 19.3
+dims:
+  hMm: 254.5
+  wMm: 357.5
+  dMm: 212
+weightKg: 11.7
+specs:
+  f3Hz: 100.3
+  f6Hz: 79.5
+  fbHz: 96.1
+  maxSplExcursionDb: 110
+  maxSplThermalDb: 122.5
+  maxSplDb: 110
+  sensitivityDb: 99.5
+  recommendedCrossoverHz: 130.4
+  maxVelocityMs: 15.4
+  powerAesW: 200
+  powerProgramW: 400
+  recommendedPowerW: 120
+author: fake-data
+availability: out_of_print
+contact:
+  - channel: profile
+    value: https://facebook.com/boxdexsoundsystem
+license: CC-BY-NC-ND-4.0
+recommendedFor:
+  - psytrance
+  - hardtek
+  - mental
+buildComplexity: moderate
+connectors:
+  - binding post
+plywoodThicknessMm: 15
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: vituixcad
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-mid-br-10-celestion-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Terra 10 BR: 10" bass reflex mid built around the Celestion BN10-200S8. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.

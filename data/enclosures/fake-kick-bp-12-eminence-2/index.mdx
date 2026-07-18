@@ -1,0 +1,87 @@
+---
+name: FAKE Riot 12 BP
+category: kick
+topology: bandpass
+driverProfiles:
+  - id: default
+    drivers:
+      - driver: eminence-commonwealth-12-8
+        qty: 1
+    simulations:
+      - id: s1
+        source: hornresp_sim
+        curves:
+          spl:
+            file: s1-spl.csv
+            note: 1W/1m, half-space
+          impedance:
+            file: s1-impedance.csv
+            note: single cabinet
+    measurements:
+      - id: rew
+        source: rew_measured
+        curves:
+          spl:
+            file: rew-spl.csv
+            note: gated, half-space
+          impedance:
+            file: rew-impedance.csv
+            note: single cabinet
+      - id: klp
+        source: klippel
+        curves:
+          spl:
+            file: klp-spl.csv
+            note: gated, half-space
+netVolumeL: 82.5
+grossVolumeL: 103.1
+dims:
+  hMm: 542
+  wMm: 421
+  dMm: 451.5
+weightKg: 19.3
+specs:
+  f3Hz: 75.6
+  f6Hz: 65.8
+  fbHz: 56.6
+  f3HzHigh: 135.8
+  maxSplExcursionDb: 93.3
+  maxSplThermalDb: 121.6
+  maxSplDb: 93.3
+  sensitivityDb: 98.1
+  recommendedCrossoverHz: 166.3
+  maxVelocityMs: 14.1
+  powerAesW: 225
+  powerProgramW: 450
+  recommendedPowerW: 135
+author: fake-data
+availability: free
+contact:
+  - channel: website
+    value: https://github.com/blamas/boxdex
+license: LicenseRef-Permission
+licenseNote: Redistribution of these plans granted by the original designer to
+  Boxdex for the FAKE Riot 12 BP build (2026).
+recommendedFor:
+  - mental
+  - raggatek
+buildComplexity: moderate
+verified: true
+plywoodThicknessMm: 18
+sheetCount: 1
+sheetSizeMm:
+  wMm: 2440
+  hMm: 1220
+sources:
+  - tool: hornresp
+    file: design.txt
+    note: synthetic parameter export
+plans:
+  - fake-kick-bp-12-eminence-2-plan.pdf
+images:
+  - render.png
+  - response.png
+  - response-measured.png
+---
+
+FAKE Riot 12 BP: 12" bandpass kick built around the Eminence COMMONWEALTH 12. Synthetic fixture for catalog testing, not a real product. All figures are derived from the driver Thiele-Small parameters.
