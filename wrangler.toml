@@ -24,6 +24,9 @@ GITHUB_REPO_NAME = "boxdex"
 [placement]
 mode = "smart"
 
+[observability]
+enabled = true
+
 [observability.logs]
 enabled = true
 invocation_logs = true

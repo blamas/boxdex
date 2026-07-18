@@ -54,7 +54,13 @@ The box-contribute endpoint additionally needs two **Worker secrets**, set with
 ## Infrastructure
 
 - **R2 bucket**: `boxdex-site`. Production files live under the `production/` prefix.
-  PR previews live under `previews/pr-<n>/`.
+  PR previews live under `previews/pr-<n>/`. A lifecycle rule (`pr-preview-expiry`,
+  prefix `previews/`, 90-day expiry) is a backstop that deletes preview objects even if
+  the `retire-preview` job never runs (workflow failure, PR closed outside the normal
+  flow, etc.). Applied out-of-band with
+  `wrangler r2 bucket lifecycle add boxdex-site pr-preview-expiry previews/ --expire-days 90`,
+  it isn't tracked in `wrangler.toml` (lifecycle rules are bucket settings, not Worker
+  config) so re-apply it by hand if the bucket is ever recreated.
 - **Worker**: `worker/index.ts`. Receives all requests, resolves URL to an R2 key,
   applies Cache-Control, handles conditional GET (ETag/304), and serves the object body.
   The `ASSET_PREFIX` var (`production` or `previews/pr-<n>`) selects which prefix to
