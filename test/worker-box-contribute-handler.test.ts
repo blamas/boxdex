@@ -163,6 +163,30 @@ describe("handleBoxContribute", () => {
     expect(siteverifyCalls()).toHaveLength(1);
   });
 
+  it("403s rather than throwing when siteverify returns a non-JSON error page", async () => {
+    // Regression: the call sat outside the try, so a siteverify 5xx became a bare 500.
+    const base = fetchMock;
+    vi.stubGlobal("fetch", (input: RequestInfo | URL, init?: RequestInit) => {
+      if (String(input).includes("siteverify")) {
+        return Promise.resolve(new Response("<html>502 Bad Gateway</html>", { status: 502 }));
+      }
+      return base(input, init);
+    });
+    const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
+    expect(res.status).toBe(403);
+    expect(await res.json()).toHaveProperty("errors");
+  });
+
+  it("403s rather than throwing when siteverify is unreachable", async () => {
+    const base = fetchMock;
+    vi.stubGlobal("fetch", (input: RequestInfo | URL, init?: RequestInit) => {
+      if (String(input).includes("siteverify")) return Promise.reject(new Error("network down"));
+      return base(input, init);
+    });
+    const res = await handleBoxContribute(makeRequest(validFm(), {}), env);
+    expect(res.status).toBe(403);
+  });
+
   it("opens a PR on a deduped slug with index.mdx plus uploads, and labels it", async () => {
     const res = await handleBoxContribute(
       makeRequest(validFm({ images: ["a.png"] }), { "a.png": "img-bytes" }),

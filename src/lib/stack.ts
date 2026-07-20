@@ -456,6 +456,26 @@ export const LOG_GRID: number[] = (() => {
   return grid;
 })();
 
+// Clamped at both ends so an out-of-range value lands on the edge, not off-canvas.
+export function logFraction(f: number, fMin: number, fMax: number): number {
+  const lo = Math.log10(fMin);
+  const hi = Math.log10(fMax);
+  const v = (Math.log10(Math.min(Math.max(f, fMin), fMax)) - lo) / (hi - lo);
+  return Math.min(Math.max(v, 0), 1);
+}
+
+// Integer multiples within each decade (30,40,…,90,200,…), strictly inside the range.
+export function minorLogTicks(fMin: number, fMax: number): number[] {
+  const ticks: number[] = [];
+  for (let exp = Math.floor(Math.log10(fMin)); exp <= Math.ceil(Math.log10(fMax)); exp++) {
+    for (let mult = 2; mult <= 9; mult++) {
+      const f = mult * 10 ** exp;
+      if (f > fMin && f < fMax) ticks.push(f);
+    }
+  }
+  return ticks;
+}
+
 // Predicted system response: each band scaled by its array gain, then summed across
 // bands on a shared grid. "power" (default) assumes random phase between bands:
 // dB = 10·log10( Σ 10^(dB/10) ). "coherent" assumes aligned phase, the ideal-LR4
@@ -493,8 +513,13 @@ function meanInRange(points: [number, number][], [lo, hi]: [number, number]): nu
 
 // Sub-to-top tilt of the composite response (positive = subs hotter than tops, the
 // "house curve" most bass-led genres want). Null unless both regions carry energy.
-export function spectralBalance(bands: ResponseBand[]): SpectralBalance | null {
-  const composite = compositeResponse(bands);
+// `mode` must match the one the displayed composite was built with, otherwise the
+// readout describes a different curve than the one plotted above it.
+export function spectralBalance(
+  bands: ResponseBand[],
+  mode: "power" | "coherent" = "power"
+): SpectralBalance | null {
+  const composite = compositeResponse(bands, mode);
   const subAvgDb = meanInRange(composite, SUB_REGION);
   const topAvgDb = meanInRange(composite, TOP_REGION);
   if (subAvgDb === null || topAvgDb === null) return null;

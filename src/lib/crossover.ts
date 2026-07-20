@@ -337,8 +337,15 @@ export interface XoPoint {
   highApproximated: boolean;
   clampedToCdMin: boolean;
   highClampedToCdMin: boolean;
-  lowWarnings: string[];
-  highWarnings: string[];
+  lowWarnings: XoWarning[];
+  highWarnings: XoWarning[];
+}
+
+// Machine-keyed so the UI can localize it. Same shape as FieldError in contribute.ts:
+// the key selects the sentence, params fill its placeholders.
+export interface XoWarning {
+  key: "belowCdFloor" | "belowOwnData" | "aboveOwnData";
+  params: Record<string, number>;
 }
 
 export function resolveCrossovers(
@@ -348,36 +355,28 @@ export function resolveCrossovers(
   return suggestions.map((s) => {
     const lowOverride = overrides[xoOverrideKey(s.id, "lo")];
     const lowCustom = lowOverride !== undefined && lowOverride > 0;
-    const lowWarnings: string[] = [];
+    const lowWarnings: XoWarning[] = [];
     if (lowCustom) {
       if (s.cdMinHz !== undefined && lowOverride < s.cdMinHz) {
-        lowWarnings.push(`below the CD protection floor (≥ ${s.cdMinHz} Hz): diaphragm risk`);
+        lowWarnings.push({ key: "belowCdFloor", params: { hz: s.cdMinHz } });
       }
       if (lowOverride < s.floorHz) {
-        lowWarnings.push(
-          `below this box's own lowest measured point (${Math.round(s.floorHz)} Hz)`
-        );
+        lowWarnings.push({ key: "belowOwnData", params: { hz: Math.round(s.floorHz) } });
       }
       if (lowOverride > s.ceilingHz) {
-        lowWarnings.push(
-          `above this box's own highest measured point (${Math.round(s.ceilingHz)} Hz)`
-        );
+        lowWarnings.push({ key: "aboveOwnData", params: { hz: Math.round(s.ceilingHz) } });
       }
     }
 
     const highOverride = overrides[xoOverrideKey(s.id, "hi")];
     const highCustom = highOverride !== undefined && highOverride > 0;
-    const highWarnings: string[] = [];
+    const highWarnings: XoWarning[] = [];
     if (highCustom) {
       if (highOverride < s.floorHz) {
-        highWarnings.push(
-          `below this box's own lowest measured point (${Math.round(s.floorHz)} Hz)`
-        );
+        highWarnings.push({ key: "belowOwnData", params: { hz: Math.round(s.floorHz) } });
       }
       if (highOverride > s.ceilingHz) {
-        highWarnings.push(
-          `above this box's own highest measured point (${Math.round(s.ceilingHz)} Hz)`
-        );
+        highWarnings.push({ key: "aboveOwnData", params: { hz: Math.round(s.ceilingHz) } });
       }
     }
 
@@ -431,4 +430,55 @@ export function applyCrossovers<T extends ResponseBand & { id: string }>(
       }),
     };
   });
+}
+
+// A corner can carry several flags at once but only shows one style, so the priority
+// gap > clamped > approximated > extrapolated is fixed here for chip and legend alike.
+export type XoCornerStatus = "gap" | "clamped" | "approximated" | "extrapolated" | "none";
+
+export function cornerStatus(p: XoPoint, side: XoSide): XoCornerStatus {
+  if (side === "lo") {
+    if (p.lowCustom) return "none";
+    if (p.lowGap) return "gap";
+    if (p.clampedToCdMin) return "clamped";
+    if (p.lowApproximated) return "approximated";
+    if (p.lowExtrapolated) return "extrapolated";
+  } else {
+    if (p.highCustom) return "none";
+    if (p.highGap) return "gap";
+    if (p.highClampedToCdMin) return "clamped";
+    if (p.highApproximated) return "approximated";
+    if (p.highExtrapolated) return "extrapolated";
+  }
+  return "none";
+}
+
+export interface XoMarkLine {
+  hz: number;
+  lowpassColor?: string;
+  highpassColor?: string;
+}
+
+// Grouped by frequency, not one entry per corner: two boxes' corners coincide until
+// independently edited.
+export function xoMarkLines(
+  points: XoPoint[],
+  colorOf: (id: string) => string | undefined
+): XoMarkLine[] {
+  const byHz = new Map<number, XoMarkLine>();
+  for (const p of points) {
+    const color = colorOf(p.id);
+    if (!color) continue;
+    if (p.lowHz !== undefined) {
+      const entry = byHz.get(p.lowHz) ?? { hz: p.lowHz };
+      entry.highpassColor = color;
+      byHz.set(p.lowHz, entry);
+    }
+    if (p.highHz !== undefined) {
+      const entry = byHz.get(p.highHz) ?? { hz: p.highHz };
+      entry.lowpassColor = color;
+      byHz.set(p.highHz, entry);
+    }
+  }
+  return [...byHz.values()];
 }

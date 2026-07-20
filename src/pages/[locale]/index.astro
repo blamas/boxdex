@@ -6,11 +6,29 @@ import { localeStaticPaths, useLocale } from "../../i18n";
 export { localeStaticPaths as getStaticPaths };
 
 const { t, localeBase } = useLocale(Astro.params);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Boxdex",
+  description: t.pages.catalog.description,
+  url: new URL(localeBase, Astro.site).href,
+  inLanguage: Astro.currentLocale,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${new URL(`${localeBase}/find`, Astro.site).href}?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
 ---
 
 <Layout
   title={t.pages.catalog.title}
   description={t.pages.catalog.description}
+  jsonLd={jsonLd}
   preloadData={["/api/manifest.json"]}
 >
   <div class="page-header">

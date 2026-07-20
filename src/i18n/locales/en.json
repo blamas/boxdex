@@ -1,5 +1,7 @@
 {
   "nav": {
+    "toggleNav": "Toggle navigation",
+    "language": "Language",
     "catalog": "Catalog",
     "compare": "Compare",
     "explore": "Explore",
@@ -198,6 +200,7 @@
       "heading": "My Stack",
       "subtitle": "Select enclosures by role, set quantities, and check coverage and crossover.",
       "notice": "Crossover suggestions, system response, and coverage figures are theoretical estimates derived from simple maths and stored SPL curves, not acoustic simulations. Use this tool to size a rig quickly or as a starting point, then validate with measurements and simulation.",
+      "noticeLimits": "See what this model does and does not compute",
       "noticeLink": "Learn more about sound system design and simulation"
     },
     "help": {
@@ -445,6 +448,7 @@
     "verified": "verified"
   },
   "compare": {
+    "chartAriaLabel": "Overlaid {measure} curves for the selected enclosures, plotted against frequency in Hz",
     "search": "Search…",
     "normalise": "Normalise peak to 0 dB",
     "advanced": "Advanced",
@@ -605,6 +609,10 @@
     "channelPrefix": "{n} channels ·",
     "wiringsNote": "Wirings are per channel for the selected split. Amp rating is continuous power into the chosen load: ≥ 1× the cabs' total AES, ideally 2× for clean peaks, a clipping amp kills drivers faster than honest overpowering. Loads shown are nominal: a stated minimum-impedance dip only downgrades the rating when it dips deeper than the 0.8× nominal the IEC spec already allows for.",
     "worstCaseLoad": "real minimum impedance (worst case): {load} Ω",
+    "wiringSingle": "single",
+    "wiringParallel": "{parallel}× parallel",
+    "wiringSeries": "{series}× series",
+    "wiringSeriesParallel": "{series} series × {parallel} parallel",
     "coverage": "Coverage",
     "depthFromStack": "Depth from stack",
     "targetSpl": "Target SPL",
@@ -633,6 +641,9 @@
     "raisedToCdFloor": "raised to CD floor",
     "extrapolated": "extrapolated, verify",
     "approximated": "closest approach, not an exact crossing",
+    "xoWarnBelowCdFloor": "below the CD protection floor (≥ {hz} Hz): diaphragm risk",
+    "xoWarnBelowOwnData": "below this box's own lowest measured point ({hz} Hz)",
+    "xoWarnAboveOwnData": "above this box's own highest measured point ({hz} Hz)",
     "spectralBalance": "Spectral balance: subs {tilt} vs tops",
     "spectralBalanceSuffix": "avg",
     "loading": "Loading curves…",
@@ -640,9 +651,11 @@
     "noSplAvailable": "No SPL curves available for the selected boxes.",
     "chartNoteXo": "Bold = predicted system response with ideal LR4 crossovers applied (filtered bands, coherent sum, assumes time-aligned bands). Dashed = filtered individual bands. Derived prediction. Stored curves unchanged.",
     "chartNoteNoXo": "Bold = predicted system response (per-band curves scaled by array gain, then power-summed). Dashed = individual bands. Derived prediction. Stored curves unchanged.",
-    "systemPredicted": "System (predicted)"
+    "systemPredicted": "System (predicted)",
+    "chartAriaLabel": "Predicted system frequency response: SPL in dB against frequency in Hz, one curve per band plus the summed system response"
   },
   "boxCurves": {
+    "chartAriaLabel": "{measure} curve for {name}, plotted against frequency in Hz",
     "simulation": "Simulation",
     "measurement": "Measurement",
     "loading": "Loading…",
@@ -653,6 +666,7 @@
     "measuredSolid": "measured (solid)"
   },
   "designSpace": {
+    "chartAriaLabel": "Scatter plot of {y} against {x} for the enclosure catalogue, one point per enclosure.",
     "xAxis": "X axis",
     "yAxis": "Y axis",
     "colorBy": "Color by",
@@ -665,6 +679,7 @@
     "provenance": "Provenance"
   },
   "radarCompare": {
+    "chartAriaLabel": "Radar chart comparing {items} across {n} axes, each normalised to 100 = catalogue maximum. The same values are in the table above.",
     "selectPlaceholder": "select...",
     "selectPrompt": "Select at least one entry from the dropdown above, or go to the {listLabel} and check boxes to compare.",
     "model": "Model",
@@ -777,6 +792,22 @@
     "fit": "Fit",
     "notes": "Notes",
     "compare": "Compare",
+    "tierClose": "close",
+    "tierUsable": "usable",
+    "tierRisky": "risky",
+    "paramFs": "Fs",
+    "paramQts": "Qts",
+    "paramVas": "Vas",
+    "paramXmax": "Xmax",
+    "paramSens": "Sens",
+    "paramMinXo": "Min XO",
+    "paramRangeLow": "Range low",
+    "paramRangeHigh": "Range high",
+    "paramVoiceCoil": "Voice coil",
+    "flagImpedanceDiffers": "{candidate} Ω vs {target} Ω: amp load changes",
+    "flagLowerPower": "{candidate} W vs {target} W: lower power handling",
+    "flagLowerExcursion": "Xmax {candidate} mm < {target} mm: lower excursion-limited SPL",
+    "flagHigherMinCrossover": "min crossover {candidate} Hz > {target} Hz: raise the XO",
     "compareClosest": "Compare the closest {n} against the {model} →",
     "provenanceNoteCone": "Ranked on parameter similarity only (Qts, Fs, Vas, Xmax, sensitivity). Same nominal size required. A hint, not a simulation, model the swap before cutting or buying.",
     "provenanceNoteComp": "Ranked on parameter similarity only (crossover floor, range, sensitivity, voice coil). Same throat exit required. A hint, not a simulation, model the swap before cutting or buying.",
@@ -991,7 +1022,7 @@
           "crossoverSuggestions": {
             "term": "Crossover suggestions",
             "ariaLabel": "Link to Crossover suggestions",
-            "def": "One crossover point per adjacent band pair: the enclosure's stated value when available, otherwise the geometric mean of the overlap range, clamped to compression driver protection floors. Spectral gaps are reported rather than papered over."
+            "def": "One crossover point per adjacent band pair, found from the boxes' own SPL curves rather than their stated specs: the frequency where the two bands' composite curves actually cross at equal SPL, searched on a 1/12-octave log grid and clamped up to any compression driver protection floor. The search may reach one octave past a curve's own last data point using that edge's slope. Where no true crossing exists, the closest approach is used and flagged as approximated; beyond 20 dB apart a gap is reported instead. Corners are starting points for a real alignment, not DSP presets: the model is magnitude-only, with no phase term."
           },
           "systemResponse": {
             "term": "Predicted system response",
@@ -1004,7 +1035,17 @@
           "measuredVsSim": {
             "term": "Measured vs sim badges",
             "ariaLabel": "Link to Measured vs sim badges",
-            "def": "Every enclosure is marked measured or sim. Measurements come from REW or Klippel; sims from Hornresp or AkAbak. The two are never blended on the same curve."
+            "def": "Every enclosure is marked measured or sim. Measurements come from REW or Klippel, sims from Hornresp or AkAbak. The two are never blended on the same curve."
+          },
+          "sourceQuality": {
+            "term": "Where driver specs come from",
+            "ariaLabel": "Link to Where driver specs come from",
+            "def": "Driver parameters are transcribed, and their sources are uneven: most entries link to third-party parameter aggregators rather than manufacturer datasheets, and some carry no source link at all. Treat every figure as manufacturer-nominal unless you check the link. Published Thiele-Small parameters are typically single-sample and vary 10-20% unit to unit, so a value shown to three decimals is a transcription, not a tolerance."
+          },
+          "modelLimits": {
+            "term": "What the predictions assume",
+            "ariaLabel": "Link to What the predictions assume",
+            "def": "Predictions are arithmetic over stored curves, not acoustic simulations. The main assumptions: array gain is unbounded and frequency-independent, distance is point-source inverse-square with no air absorption, the crossover model is magnitude-only with no phase term (so it cannot show lobing or crossover cancellation), and no prediction derates for power or port compression. Time alignment, directivity, rigging and limiter settings are out of scope entirely. Full detail, with every constant quoted from source, is in docs/methodology.md in the repository."
           },
           "exports": {
             "term": "Exports",
@@ -1072,7 +1113,7 @@
           },
           "horn_profile": {
             "term": "Flare profile",
-            "def": "The mathematical curve of the horn's expanding walls. Conical: straight-walled, widest pattern, simplest to build. Exponential: classical flare, lower cutoff for a given mouth size. Tractrix: gentler impedance transition, common in PA horns. Oblate spheroidal: optimised for constant directivity across frequency. Radial: sector-shaped walls, good pattern control in one plane. Multicell: array of smaller horns, wide coverage, vintage PA look. Diffraction: shallow waveguide plate, very wide coverage from minimal depth."
+            "def": "The mathematical curve of the horn's expanding walls. Conical: straight-walled, widest pattern, simplest to build. Exponential: classical flare, lower cutoff for a given mouth size. Tractrix: gentler impedance transition, common in PA horns. Oblate spheroidal: optimised for constant directivity across frequency. Radial: sector-shaped walls, good pattern control in one plane. Multicell: array of smaller horns, wide coverage, vintage PA look. Diffraction: shallow waveguide plate, very wide coverage from minimal depth. Hypex: hyperbolic-exponential, a family sitting between conical and exponential, the flare constant trades loading against midband ripple. Le Cléac'h: expands so the wavefront stays spherical along the axis, minimising higher-order modes, favoured for horn hi-fi and full-range builds."
           }
         },
         "system": {
@@ -1158,6 +1199,10 @@
           "transmission_line": {
             "term": "Transmission line",
             "def": "A long damped duct behind the driver, ~quarter-wavelength at tuning: deep, clean extension from a moderate box. More a hi-fi/studio choice than a rig workhorse, big for the SPL they make."
+          },
+          "cardioid": {
+            "term": "Cardioid",
+            "def": "A single cabinet built to radiate forward and cancel rearward, either with opposed drivers or a rear driver fed delayed and inverted. Buys roughly 10-15 dB of front-to-back rejection over the low end, which keeps stage and neighbours out of the sub field, at the cost of some forward output and extra amplifier channels. Distinct from end-fire, which achieves a similar pattern by spacing several ordinary cabinets and is a property of the arrangement, not of the box: Boxdex records topology per cabinet, so end-fire has no taxonomy value."
           }
         },
         "availability": {

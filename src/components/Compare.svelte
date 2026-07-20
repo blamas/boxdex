@@ -326,7 +326,7 @@ const ALL_KINDS: Kind[] = ["spl", "phase", "impedance"];
       {tt(t.emptyState, { kind })}
     </div>
   {:else}
-    <CurveChart series={series} yName={curveLabels[kind]} />
+    <CurveChart series={series} yName={curveLabels[kind]} ariaLabel={tt(t.chartAriaLabel, { measure: curveLabels[kind] })} />
   {/if}
 
   <p class="provenance-note">{t.provenanceNote}</p>

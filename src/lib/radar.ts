@@ -45,12 +45,12 @@ export function axisMaxima<T>(pool: T[], axes: RadarAxis<T>[]): number[] {
   return axes.map((ax) => Math.max(0, ...pool.map((item) => ax.get(item) ?? 0)));
 }
 
-// Normalised 0-100 scores for one item, in axis order. Missing values score 0
-// (inverted axes: 100, i.e. "best", callers should only feed comparable items).
-export function radarValues<T>(item: T, axes: RadarAxis<T>[], maxima: number[]): number[] {
+// Missing yields null, never 0: on an inverted axis 0 would score as 100, best in pool.
+export function radarValues<T>(item: T, axes: RadarAxis<T>[], maxima: number[]): (number | null)[] {
   return axes.map((ax, i) => {
-    const raw = ax.get(item) ?? 0;
-    const norm = maxima[i] > 0 ? (raw / maxima[i]) * 100 : 0;
+    const raw = ax.get(item);
+    if (raw === undefined || maxima[i] <= 0) return null;
+    const norm = (raw / maxima[i]) * 100;
     return ax.invert ? 100 - norm : norm;
   });
 }

@@ -16,6 +16,33 @@ export async function getStaticPaths() {
   const horns = await getCollection("horns");
   const pool = drivers.map((e) => ({ ...e.data, id: e.id }) as Driver);
   const substituteIndex = allSubstitutes(pool);
+
+  // Indexed once like substituteIndex: inside the map below this rescans everything ~12k times.
+  const usedByIndex = new Map<string, typeof enclosures>();
+  for (const e of enclosures) {
+    const ids = new Set(e.data.driverProfiles.flatMap((p) => p.drivers.map((x) => x.driver.id)));
+    for (const id of ids) {
+      const list = usedByIndex.get(id);
+      if (list) list.push(e);
+      else usedByIndex.set(id, [e]);
+    }
+  }
+  for (const list of usedByIndex.values()) {
+    list.sort((a, b) => a.data.name.localeCompare(b.data.name));
+  }
+
+  const hornsByExit = new Map<number, typeof horns>();
+  for (const h of horns) {
+    const list = hornsByExit.get(h.data.exitInch);
+    if (list) list.push(h);
+    else hornsByExit.set(h.data.exitInch, [h]);
+  }
+  for (const list of hornsByExit.values()) {
+    list.sort((a, b) =>
+      `${a.data.brand} ${a.data.model}`.localeCompare(`${b.data.brand} ${b.data.model}`)
+    );
+  }
+
   return LOCALES.flatMap((locale) =>
     drivers.map((entry) => {
       const d = entry.data;
@@ -25,21 +52,8 @@ export async function getStaticPaths() {
         props: {
           entry,
           substitutes: substituteIndex.get(entry.id) ?? [],
-          usedBy: enclosures
-            .filter((e) =>
-              e.data.driverProfiles.some((p) => p.drivers.some((x) => x.driver.id === entry.id))
-            )
-            .sort((a, b) => a.data.name.localeCompare(b.data.name)),
-          mates:
-            exitInch === null
-              ? []
-              : horns
-                  .filter((h) => h.data.exitInch === exitInch)
-                  .sort((a, b) =>
-                    `${a.data.brand} ${a.data.model}`.localeCompare(
-                      `${b.data.brand} ${b.data.model}`
-                    )
-                  ),
+          usedBy: usedByIndex.get(entry.id) ?? [],
+          mates: exitInch === null ? [] : (hornsByExit.get(exitInch) ?? []),
         },
       };
     })
@@ -102,9 +116,34 @@ const specHeading = isCone ? t.driverDetail.tsParams : t.driverDetail.compSpecs;
 const description = isCone
   ? `${t.driverDetail.tsParams} for ${d.brand} ${d.model}`
   : `${t.driverDetail.compSpecs} for ${d.brand} ${d.model}`;
+
+// Datasheet fields only, nothing derived: this is read without the page's caveats.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: `${d.brand} ${d.model}`,
+  sku: entry.id,
+  category: isCone ? "Loudspeaker driver" : "Compression driver",
+  brand: { "@type": "Brand", name: d.brand },
+  ...(d.datasheetUrl ? { subjectOf: { "@type": "CreativeWork", url: d.datasheetUrl } } : {}),
+  additionalProperty: [
+    { name: "Nominal impedance", value: d.impedanceOhm, unitCode: "OHM" },
+    { name: "Power handling (AES)", value: d.peW, unitCode: "WTT" },
+    ...(isCone
+      ? [
+          { name: "Nominal diameter", value: d.sizeInch, unitCode: "INH" },
+          { name: "Resonant frequency", value: d.fsHz, unitCode: "HTZ" },
+          { name: "Sensitivity", value: d.sensitivityDb, unitCode: "2N" },
+        ]
+      : [
+          { name: "Throat exit", value: d.exitInch, unitCode: "INH" },
+          { name: "Sensitivity on reference horn", value: d.sensitivityHornDb, unitCode: "2N" },
+        ]),
+  ].map((p) => ({ "@type": "PropertyValue", ...p })),
+};
 ---
 
-<Layout title={`${d.brand} ${d.model}`} description={description}>
+<Layout title={`${d.brand} ${d.model}`} description={description} jsonLd={jsonLd}>
   <div>
     <header class="detail-header">
       <p class="crumb"><a href={`${localeBase}/drivers`}>← {t.driverDetail.allDrivers}</a></p>

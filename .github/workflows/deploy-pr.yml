@@ -49,6 +49,8 @@ jobs:
         run: npm run build && npx pagefind --site dist
         env:
           SITE_URL: ${{ vars.SITE_URL }}
+          GIT_REPO_URL: ${{ vars.GIT_REPO_URL }}
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
 
       - name: Set preview metadata
         id: meta

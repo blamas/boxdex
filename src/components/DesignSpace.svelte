@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onMount } from "svelte";
-import type { Translations } from "../i18n";
+import { type Translations, tt } from "../i18n";
 import { type EChartsInstance, getActiveTheme } from "../lib/echarts";
 import { downloadBlob, jsonString, recordsToCsv } from "../lib/export";
 import { humanize } from "../lib/format";
@@ -15,7 +15,7 @@ import {
   paretoFront,
 } from "../lib/metrics";
 import { SERIES_COLORS } from "../lib/palette";
-import { BASE } from "../lib/site";
+import { fetchJson } from "../lib/site";
 import { readParam, writeParams } from "../lib/url-state";
 import Combobox from "./Combobox.svelte";
 import EChart from "./EChart.svelte";
@@ -64,9 +64,7 @@ onMount(async () => {
     if (pc === "topology" || pc === "category") colorKey = pc;
     if (readParam("pareto") === "1") onlyPareto = true;
 
-    const res = await fetch(`${BASE}/api/manifest.json`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    records = await res.json();
+    records = await fetchJson("/api/manifest.json");
   } catch (e) {
     error = String(e);
   } finally {
@@ -282,7 +280,15 @@ $effect(() => {
   {#if error}
     <div class="empty-state">{t.failedToLoad}</div>
   {:else if records.length > 0}
-    <EChart option={buildOption} height={500} onInit={onChartInit} />
+    <EChart
+      option={buildOption}
+      ariaLabel={tt(t.chartAriaLabel, {
+        x: axisLabels[xKey as keyof typeof axisLabels],
+        y: axisLabels[yKey as keyof typeof axisLabels],
+      })}
+      height={500}
+      onInit={onChartInit}
+    />
   {:else}
     <div class="chart-placeholder skeleton" aria-hidden="true"></div>
   {/if}

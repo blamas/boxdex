@@ -278,6 +278,26 @@ describe("emitFrontmatter", () => {
     expect(out).not.toContain("weightKg:");
   });
 
+  it("skips array items that carry no fields instead of throwing", () => {
+    // Regression: an empty profile object reached the emitter and surfaced as a 502.
+    const fm = {
+      ...validBox(),
+      driverProfiles: [{}],
+    } as unknown as EnclosureInput;
+    expect(() => emitFrontmatter(fm)).not.toThrow();
+  });
+
+  it("skips empty objects in a contact array without corrupting the yaml", () => {
+    const fm = {
+      ...validBox(),
+      availability: "contact",
+      contact: [{}, { channel: "email", value: "a@b.co" }],
+    } as unknown as EnclosureInput;
+    const out = emitFrontmatter(fm);
+    expect(out).toContain('- channel: "email"');
+    expect(out).not.toContain("- \n");
+  });
+
   it("never emits keys outside the allowlist (no self-verified submissions)", () => {
     const fm = { ...validBox(), verified: true, evil: "x" } as EnclosureInput;
     const out = emitFrontmatter(fm);

@@ -8,6 +8,8 @@ import {
   compositeResponse,
   decodeStack,
   encodeStack,
+  logFraction,
+  minorLogTicks,
   type ResponseBand,
   recommendedGeneratorW,
   type StackSlot,
@@ -423,6 +425,23 @@ describe("compositeResponse / spectralBalance", () => {
     expect(bal?.topAvgDb).toBeCloseTo(110, 0);
   });
 
+  it("honours the summing mode so the tilt matches the plotted composite", () => {
+    // Two coincident bands per region: power sums +3 dB, coherent +6 dB.
+    const pair = (category: ResponseBand["category"], f0: number, f1: number, db: number) =>
+      [
+        { category, qty: 1, points: [[f0, db] as [number, number], [f1, db] as [number, number]] },
+        { category, qty: 1, points: [[f0, db] as [number, number], [f1, db] as [number, number]] },
+      ] satisfies ResponseBand[];
+    const bands: ResponseBand[] = [...pair("sub", 30, 80, 130), ...pair("top", 1000, 10000, 110)];
+
+    const power = spectralBalance(bands, "power");
+    const coherent = spectralBalance(bands, "coherent");
+
+    expect(power?.subAvgDb).toBeCloseTo(133.01, 1);
+    expect(coherent?.subAvgDb).toBeCloseTo(136.02, 1);
+    expect(spectralBalance(bands)?.subAvgDb).toBeCloseTo(power?.subAvgDb ?? 0, 5);
+  });
+
   it("returns null balance when one region carries no energy", () => {
     const bands: ResponseBand[] = [
       {
@@ -529,5 +548,31 @@ describe("summarizeStack", () => {
     expect(s.systemMaxSplDb).toBeUndefined();
     expect(s.lowHz).toBeUndefined();
     expect(s.highHz).toBeUndefined();
+  });
+});
+
+describe("logFraction", () => {
+  it("maps the endpoints to 0 and 1 and the geometric mean to the midpoint", () => {
+    expect(logFraction(20, 20, 20000)).toBeCloseTo(0, 10);
+    expect(logFraction(20000, 20, 20000)).toBeCloseTo(1, 10);
+    expect(logFraction(Math.sqrt(20 * 20000), 20, 20000)).toBeCloseTo(0.5, 10);
+  });
+
+  it("clamps out-of-range input to the edges rather than going off-axis", () => {
+    expect(logFraction(5, 20, 20000)).toBe(0);
+    expect(logFraction(40000, 20, 20000)).toBe(1);
+  });
+});
+
+describe("minorLogTicks", () => {
+  it("emits integer multiples strictly inside the range", () => {
+    expect(minorLogTicks(20, 200)).toEqual([30, 40, 50, 60, 70, 80, 90]);
+  });
+
+  it("excludes the bounds themselves", () => {
+    const ticks = minorLogTicks(20, 22000);
+    expect(ticks).not.toContain(20);
+    expect(ticks).toContain(30);
+    expect(ticks).toContain(20000);
   });
 });

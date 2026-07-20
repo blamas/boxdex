@@ -27,7 +27,8 @@
     "front_loaded_horn",
     "folded_horn",
     "scoop",
-    "transmission_line"
+    "transmission_line",
+    "cardioid"
   ],
   "topologyVariant": null,
   "license": [
@@ -47,6 +48,8 @@
     "oblate_spheroid",
     "radial",
     "multicell",
-    "diffraction"
+    "diffraction",
+    "hypex",
+    "le_cleach"
   ]
 }

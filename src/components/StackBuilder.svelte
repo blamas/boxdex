@@ -9,7 +9,7 @@ import { type CurvesResponse, curveEntries, resolveCurveEntry } from "../lib/cur
 import { fmtHz, fmtOhm, fmtW } from "../lib/format";
 import type { EnclosureRecord } from "../lib/metrics";
 import { SERIES_COLORS } from "../lib/palette";
-import { BASE } from "../lib/site";
+import { fetchJson } from "../lib/site";
 import {
   AMP_EFFICIENCY,
   additionalUnitsNeeded,
@@ -31,6 +31,7 @@ import {
   divisors,
   effectiveRating,
   suggestedChannels,
+  type WiringArrangement,
   wiringOptions,
 } from "../lib/wiring";
 import Combobox from "./Combobox.svelte";
@@ -93,12 +94,8 @@ $effect(() => {
     )
       continue;
     pendingCurves.add(slot.slug);
-    fetch(`${BASE}/api/curves/${slot.slug}.json`)
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json();
-      })
-      .then((d: CurvesResponse) => {
+    fetchJson<CurvesResponse>(`/api/curves/${slot.slug}.json`)
+      .then((d) => {
         curveCache = { ...curveCache, [slot.slug]: d };
       })
       .catch(() => {})
@@ -119,9 +116,7 @@ onMount(async () => {
       xoGains = decoded.xo.gains;
     }
 
-    const res = await fetch(`${BASE}/api/manifest.json`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    records = await res.json();
+    records = await fetchJson("/api/manifest.json");
   } catch (e) {
     error = String(e);
   } finally {
@@ -276,6 +271,17 @@ const xoCurves = $derived.by<XoCurve[]>(() => {
 });
 
 const xoSuggestions = $derived(suggestCrossovers(xoCurves));
+
+const WIRING_KEYS: Record<WiringArrangement["kind"], keyof typeof t> = {
+  single: "wiringSingle",
+  parallel: "wiringParallel",
+  series: "wiringSeries",
+  seriesParallel: "wiringSeriesParallel",
+};
+
+function wiringLabel(a: WiringArrangement): string {
+  return tt(t[WIRING_KEYS[a.kind]] as string, { series: a.series, parallel: a.parallel });
+}
 
 function togglePicker(cat: Category) {
   pickerCat = pickerCat === cat ? null : cat;
@@ -584,7 +590,7 @@ const curvesLoading = $derived(
                 <span class="amp-wirings">
                   {#each wiringOptions(rec.nominalImpedanceOhm, qtyPerCh, minOhm) as opt}
                     <span class="wiring-chip wiring-{effectiveRating(opt)}" title={opt.minLoadOhm !== undefined ? tt(t.worstCaseLoad, { load: fmtOhm(opt.minLoadOhm) }) : undefined}>
-                      {opt.label} · {fmtOhm(opt.loadOhm)} Ω{#if opt.minLoadOhm !== undefined} ({fmtOhm(opt.minLoadOhm)} Ω min){/if}
+                      {wiringLabel(opt.arrangement)} · {fmtOhm(opt.loadOhm)} Ω{#if opt.minLoadOhm !== undefined} ({fmtOhm(opt.minLoadOhm)} Ω min){/if}
                     </span>
                   {/each}
                 </span>

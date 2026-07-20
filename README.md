@@ -98,6 +98,7 @@ Key decisions are recorded in [`docs/decisions/`](docs/decisions/):
 | [009](docs/decisions/009-echarts-import-gateway.md) | ECharts tree-shaking via a single import gateway |
 | [010](docs/decisions/010-taxonomy-controlled-vocabularies.md) | Taxonomy-driven controlled vocabularies |
 | [011](docs/decisions/011-box-contribute-pipeline.md) | Box-contribute pipeline (Worker-opened GitHub PRs, optional for self-hosting) |
+| [012](docs/decisions/012-data-provenance-and-model-limits.md) | Data provenance and stated model limits |
 
 ## Contributing
 
@@ -107,6 +108,9 @@ use the box-contribute form on the live site: it opens the pull request for you.
 
 Deeper references:
 
+- [docs/methodology.md](docs/methodology.md): what Boxdex computes and what it does not:
+  data provenance and tolerances, every model assumption behind the predictions, and an
+  explicit list of what is out of scope. **Read this before trusting a derived figure.**
 - [docs/data-model.md](docs/data-model.md): full data model: driver discriminated union,
   horn catalogue, enclosure frontmatter invariants, curves API shape, CSV format, taxonomy
 - [docs/deployment.md](docs/deployment.md): CI/CD pipeline, R2+Worker setup, PR previews,

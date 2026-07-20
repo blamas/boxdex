@@ -9,10 +9,15 @@ in [`LICENSES/`](LICENSES/), named by SPDX identifier.
 | `data/drivers/**`, `data/taxonomy.json` | [CC0-1.0](LICENSES/CC0-1.0.txt) |
 | `data/enclosures/<slug>/**` | per entry: see below |
 
-Driver and horn specs are factual data transcribed from manufacturer
-datasheets; Boxdex waives any database or compilation rights over them via
-CC0 (which also covers sui generis database rights). Manufacturer and
-product names appear nominatively and remain trademarks of their owners.
+Driver and horn specs are factual data. Sources vary per entry and are
+recorded in `datasheetUrl` where known: some entries are transcribed from
+manufacturer datasheets, but the majority come from third-party parameter
+aggregators, and some entries carry no source link at all. See
+[`docs/methodology.md`](docs/methodology.md) for the provenance breakdown and
+the tolerances to assume. Boxdex waives any database or compilation rights
+over this data via CC0 (which also covers sui generis database rights).
+Manufacturer and product names appear nominatively and remain trademarks of
+their owners.
 
 Original authors are always credited via the `author` field, whatever the
 license of the entry; moral rights, where they apply, are unaffected by the

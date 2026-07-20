@@ -4,9 +4,16 @@
 
 export type LoadRating = "ok" | "caution" | "danger" | "inefficient";
 
+// How N cabinets are arranged: p parallel branches of s cabinets in series. Kept as
+// structure rather than a prebuilt English label so the UI can localize it.
+export interface WiringArrangement {
+  kind: "single" | "parallel" | "series" | "seriesParallel";
+  series: number;
+  parallel: number;
+}
+
 export interface WiringOption {
-  // "single", "2× parallel", "4× series", "2 series × 2 parallel"
-  label: string;
+  arrangement: WiringArrangement;
   loadOhm: number;
   rating: LoadRating;
   // Combined load using each box's real impedance dip below nominal (impedanceMinOhm),
@@ -59,7 +66,12 @@ export function divisors(n: number): number[] {
 // nominal, since series/parallel combination is linear regardless of which impedance
 // figure is being combined. The dip is rated after normalising through
 // IEC_MIN_IMPEDANCE_RATIO (see there), and can only worsen the nominal rating.
-function makeOption(label: string, nominalOhm: number, ratio: number, minOhm?: number) {
+function makeOption(
+  arrangement: WiringArrangement,
+  nominalOhm: number,
+  ratio: number,
+  minOhm?: number
+) {
   const loadOhm = nominalOhm * ratio;
   const rating = loadRating(loadOhm);
   const minLoadOhm = minOhm !== undefined ? minOhm * ratio : undefined;
@@ -70,7 +82,7 @@ function makeOption(label: string, nominalOhm: number, ratio: number, minOhm?: n
       ? Math.round((minLoadOhm / IEC_MIN_IMPEDANCE_RATIO) * 1000) / 1000
       : undefined;
   return {
-    label,
+    arrangement,
     loadOhm,
     rating,
     minLoadOhm,
@@ -83,15 +95,14 @@ function makeOption(label: string, nominalOhm: number, ratio: number, minOhm?: n
 // each in series (s·p = N), load = Z·s/p. Sorted by ascending load.
 export function wiringOptions(nominalOhm: number, qty: number, minOhm?: number): WiringOption[] {
   if (nominalOhm <= 0 || qty < 1 || !Number.isInteger(qty)) return [];
-  if (qty === 1) return [makeOption("single", nominalOhm, 1, minOhm)];
+  if (qty === 1) {
+    return [makeOption({ kind: "single", series: 1, parallel: 1 }, nominalOhm, 1, minOhm)];
+  }
 
   const options = divisors(qty).map((s) => {
     const p = qty / s;
-    let label: string;
-    if (s === 1) label = `${p}× parallel`;
-    else if (p === 1) label = `${s}× series`;
-    else label = `${s} series × ${p} parallel`;
-    return makeOption(label, nominalOhm, s / p, minOhm);
+    const kind = s === 1 ? "parallel" : p === 1 ? "series" : "seriesParallel";
+    return makeOption({ kind, series: s, parallel: p }, nominalOhm, s / p, minOhm);
   });
   return options.sort((a, b) => a.loadOhm - b.loadOhm);
 }

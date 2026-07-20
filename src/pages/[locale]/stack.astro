@@ -17,6 +17,7 @@ const { t, localeBase } = useLocale(Astro.params);
   <p class="subtitle">{t.pages.stack.subtitle}</p>
   <p class="notice">
     {t.pages.stack.notice}
+    {" "}<a href={`${localeBase}/help#model-limits`}>{t.pages.stack.noticeLimits}</a>.
     {" "}<a href={`${localeBase}/help#further`}>{t.pages.stack.noticeLink}</a>.
   </p>
   <StackBuilder client:only="svelte" t={t.stackBuilder} tSystemResponse={t.systemResponse} />

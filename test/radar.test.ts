@@ -35,7 +35,16 @@ describe("radarValues", () => {
     expect(radarValues({ sens: 100, fs: 30 }, AXES, maxima)[1]).toBeCloseTo(25);
   });
 
-  it("scores 0 on a zero-max axis instead of dividing by zero", () => {
-    expect(radarValues({ sens: 96 }, AXES, [0, 0])).toEqual([0, 100]);
+  it("yields null on a zero-max axis instead of dividing by zero", () => {
+    expect(radarValues({ sens: 96 }, AXES, [0, 0])).toEqual([null, null]);
+  });
+
+  it("yields null for a missing value rather than scoring it", () => {
+    // Regression: missing coerced to 0, which on an inverted axis became 100, best in pool.
+    expect(radarValues({ sens: 96 }, AXES, [100, 40])).toEqual([96, null]);
+  });
+
+  it("yields null for a missing value on a non-inverted axis too", () => {
+    expect(radarValues({ fs: 30 }, AXES, [100, 40])).toEqual([null, 25]);
   });
 });

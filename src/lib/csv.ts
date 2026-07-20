@@ -37,7 +37,10 @@ export function parseCurveCsv(text: string): ParsedCurve {
     value.push(v);
   }
 
-  return { freq, value };
+  // Consumers read first/last as the frequency bounds, so a descending export (REW can
+  // produce one) silently breaks interpolation. Reordering is not resampling.
+  const order = freq.map((_, i) => i).sort((a, b) => freq[a] - freq[b]);
+  return { freq: order.map((i) => freq[i]), value: order.map((i) => value[i]) };
 }
 
 export function toPairs(curve: ParsedCurve): [number, number][] {
