@@ -1,0 +1,42 @@
+name: Bug report
+description: Something in the site or the build is broken
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened
+      description: What you expected instead, and what actually happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Page where you saw the issue, if applicable
+      placeholder: https://boxdex.example.workers.dev/en/enclosures/...
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / environment
+      placeholder: Firefox 128 on NixOS, or `npm run dev` locally
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console output or error messages
+      description: Browser devtools console, or terminal output for local/build issues
+      render: shell

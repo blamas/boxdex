@@ -9,41 +9,6 @@ A free, open, and privacy-respecting reference for sound-system loudspeaker desi
 It centralises open enclosure plans, driver specs, and horn data so engineers and
 builders can work without commercial lock-in or personal data exposure.
 
-## Values
-
-These are permanent commitments, not features or marketing.
-
-**Free and open source.** The site itself is free software (MIT). Driver and horn specs
-are CC0. Enclosure entries carry the original designer's license, which may be open
-(CC0, CC-BY, CC-BY-SA), permission-based, or proprietary: we catalog designs honestly
-regardless of their terms. Proprietary entries are metadata and a source link only; no
-plan files are bundled without rights. The site never charges for access to any of it.
-
-**No tracking, no accounts, no cookies.** Browsing is fully static. There are no user
-accounts, no analytics cookies, no fingerprinting scripts, and no third-party trackers.
-The only client-side storage is your browser's `localStorage` for theme preference and
-stack state, and it never leaves your device. Cloudflare processes standard infrastructure
-access logs (IP, user-agent, URL) as any CDN does, but we have no access to that data and
-do not add any layer on top of it. The one exception to "static" is the optional
-box-contribute form: that single page loads Cloudflare Turnstile (anti-bot) on the live site,
-and submitting it turns your entry into a public GitHub pull request. Details on the
-privacy page.
-
-**Take it, run it, share it.** Fork the repo, modify it, host your own instance, build
-a regional mirror, translate it into another language: the code and the driver/horn
-data are yours to use. Sound should be accessible everywhere, not locked inside one
-platform. The contribution endpoint is optional infrastructure: a self-hosted mirror
-without the GitHub App and Turnstile secrets stays a purely static site, the form simply
-cannot submit. One caveat: enclosure-specific assets (plan PDFs, photos) each carry the
-original designer's license and may not be freely redistributable; check the `license`
-field of each entry before mirroring those files.
-
-**Knowledge as protection.** Sound system culture has always lived under threat:
-gatherings banned, equipment seized, organisers criminalised. It is the people, not
-the website, who bear that risk. Keeping this knowledge free, open, and widely
-distributed means builders and organisers are less dependent on any single source that
-can be taken away. Anyone can have it. Anyone can pass it on.
-
 ## Stack
 
 | Area | Choice |
@@ -146,6 +111,41 @@ Deeper references:
   horn catalogue, enclosure frontmatter invariants, curves API shape, CSV format, taxonomy
 - [docs/deployment.md](docs/deployment.md): CI/CD pipeline, R2+Worker setup, PR previews,
   required secrets and variables
+
+## Values
+
+These are permanent commitments, not features or marketing.
+
+**Free and open source.** The site itself is free software (MIT). Driver and horn specs
+are CC0. Enclosure entries carry the original designer's license, which may be open
+(CC0, CC-BY, CC-BY-SA), permission-based, or proprietary: we catalog designs honestly
+regardless of their terms. Proprietary entries are metadata and a source link only; no
+plan files are bundled without rights. The site never charges for access to any of it.
+
+**No tracking, no accounts, no cookies.** Browsing is fully static. There are no user
+accounts, no analytics cookies, no fingerprinting scripts, and no third-party trackers.
+The only client-side storage is your browser's `localStorage` for theme preference and
+stack state, and it never leaves your device. Cloudflare processes standard infrastructure
+access logs (IP, user-agent, URL) as any CDN does, but we have no access to that data and
+do not add any layer on top of it. The one exception to "static" is the optional
+box-contribute form: that single page loads Cloudflare Turnstile (anti-bot) on the live site,
+and submitting it turns your entry into a public GitHub pull request. Details on the
+privacy page.
+
+**Take it, run it, share it.** Fork the repo, modify it, host your own instance, build
+a regional mirror, translate it into another language: the code and the driver/horn
+data are yours to use. Sound should be accessible everywhere, not locked inside one
+platform. The contribution endpoint is optional infrastructure: a self-hosted mirror
+without the GitHub App and Turnstile secrets stays a purely static site, the form simply
+cannot submit. One caveat: enclosure-specific assets (plan PDFs, photos) each carry the
+original designer's license and may not be freely redistributable; check the `license`
+field of each entry before mirroring those files.
+
+**Knowledge as protection.** Sound system culture has always lived under threat:
+gatherings banned, equipment seized, organisers criminalised. It is the people, not
+the website, who bear that risk. Keeping this knowledge free, open, and widely
+distributed means builders and organisers are less dependent on any single source that
+can be taken away. Anyone can have it. Anyone can pass it on.
 
 ## License
 

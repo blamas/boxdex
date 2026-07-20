@@ -1,0 +1,35 @@
+name: Data correction
+description: An existing driver, horn, or enclosure entry has wrong or outdated data
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For **new** drivers, horns, or enclosures, use the box-contribute form
+        on the live site or open a pull request instead, see
+        [CONTRIBUTING.md](../../blob/main/CONTRIBUTING.md). This template is
+        for fixing something already in the catalog.
+
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: The id/slug and path, e.g. `data/drivers/cone/bc/18ds115-8.json` or the enclosure slug
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What's wrong
+      description: Which field(s), what the current value says, and what it should be
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Datasheet, manufacturer page, or other reference backing the correction
+    validations:
+      required: true

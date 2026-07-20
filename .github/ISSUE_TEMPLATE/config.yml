@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/blamas/boxdex/blob/main/CONTRIBUTING.md
+    about: How to add a driver, horn, or enclosure, and the PR checklist
+  - name: Security vulnerability
+    url: https://github.com/blamas/boxdex/security/advisories/new
+    about: Do not open a public issue for security reports, use private advisories instead
