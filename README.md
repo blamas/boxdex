@@ -1,4 +1,4 @@
-# Boxdex: open enclosure plans
+# Boxdex: the open speaker catalog
 
 [![CI](https://github.com/blamas/boxdex/actions/workflows/ci.yml/badge.svg)](https://github.com/blamas/boxdex/actions/workflows/ci.yml)
 [![Deploy](https://github.com/blamas/boxdex/actions/workflows/deploy.yml/badge.svg)](https://github.com/blamas/boxdex/actions/workflows/deploy.yml)
@@ -6,8 +6,10 @@
 [![Hosted on Cloudflare](https://img.shields.io/badge/hosted%20on-Cloudflare-f38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com)
 
 A free, open, and privacy-respecting reference for sound-system loudspeaker design.
-It centralises open enclosure plans, driver specs, and horn data so engineers and
-builders can work without commercial lock-in or personal data exposure.
+It centralises enclosure plans, driver specs, and horn data in one open catalog so
+engineers and builders can work without commercial lock-in or personal data exposure.
+Enclosure entries carry their original designer's license, open or proprietary,
+catalogued honestly without exception.
 
 ## Stack
 

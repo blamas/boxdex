@@ -173,7 +173,7 @@
   "pages": {
     "catalog": {
       "title": "Catalog",
-      "description": "Open enclosure plans: catalog of subwoofer and top designs",
+      "description": "Open enclosure catalog: subwoofer and top designs",
       "heading": "Enclosure Catalog"
     },
     "compare": {
@@ -227,7 +227,7 @@
     },
     "contribute": {
       "title": "Add a Box",
-      "description": "Contribute an open enclosure design to Boxdex",
+      "description": "Contribute an enclosure design to Boxdex",
       "heading": "Add a Box",
       "subtitle": "Submit a complete enclosure. On submit we open a pull request for a maintainer to review."
     },
