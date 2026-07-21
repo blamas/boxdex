@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import en from "../src/i18n/locales/en.json";
-import { translateFileIssue, translateZodIssue } from "../src/lib/contribute-i18n";
+import { translateFieldIssue, translateZodIssue } from "../src/lib/contribute-i18n";
 import { enclosureFrontmatterObject } from "../src/lib/schemas";
 
 const t = en.contributeBox.validation;
@@ -102,7 +102,7 @@ describe("translateZodIssue", () => {
   });
 });
 
-describe("translateFileIssue", () => {
+describe("translateFieldIssue", () => {
   it("translates a keyed FieldError and interpolates params", () => {
     const e = {
       field: "images",
@@ -110,14 +110,19 @@ describe("translateFileIssue", () => {
       key: "fileTooLarge",
       params: { name: "a.png", mb: 15 },
     };
-    expect(translateFileIssue(e, t)).toBe(
+    expect(translateFieldIssue(e, t)).toBe(
       t.fileTooLarge.replace("{name}", "a.png").replace("{mb}", "15")
     );
   });
 
   it("falls back to message when there is no key", () => {
-    expect(translateFileIssue({ field: "files", message: "plain english" }, t)).toBe(
+    expect(translateFieldIssue({ field: "files", message: "plain english" }, t)).toBe(
       "plain english"
     );
+  });
+
+  it("translates a required-field key from requiredFieldErrors", () => {
+    const e = { field: "name", message: "name is required", key: "nameRequired" };
+    expect(translateFieldIssue(e, t)).toBe(t.nameRequired);
   });
 });

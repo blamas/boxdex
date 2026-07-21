@@ -11,7 +11,8 @@
     "contribute": "Contribuer",
     "helpLabel": "Aide & glossaire",
     "toggleTheme": "Basculer thème clair/sombre",
-    "ariaLabel": "Navigation principale"
+    "ariaLabel": "Navigation principale",
+    "skipToContent": "Aller au contenu principal"
   },
   "meta": {
     "titleRest": " : le catalogue de caissons",
@@ -140,7 +141,14 @@
       "fileBadName": "Nom de fichier invalide « {name} » : utilisez un nom simple, sans dossier ni « .. »",
       "fileTooLarge": "« {name} » dépasse la limite de {mb} Mo par fichier",
       "totalTooLarge": "La taille totale envoyée dépasse la limite de {mb} Mo",
-      "tooManyImages": "{max} images maximum"
+      "tooManyImages": "{max} images maximum",
+      "nameRequired": "Le nom est obligatoire",
+      "categoryRequired": "La catégorie est obligatoire",
+      "licenseRequired": "La licence est obligatoire",
+      "driverProfilesRequired": "Au moins un profil de HP est requis",
+      "netVolumeRequired": "Le volume net est obligatoire",
+      "dimsRequired": "Hauteur, largeur et profondeur sont obligatoires",
+      "f3Required": "F3 (Hz) est obligatoire"
     }
   },
   "footer": {
@@ -497,6 +505,7 @@
     "found": "trouvé(s)",
     "all": "Tous",
     "plansAvailable": "Plans disponibles",
+    "eg": "ex. {value}",
     "columns": {
       "name": "Nom",
       "cat": "Cat",
@@ -533,6 +542,7 @@
     "horns": "horns",
     "compare": "Comparer {n} →",
     "maxComparers": "4 {type} maximum peuvent être comparés à la fois.",
+    "eg": "ex. {value}",
     "advancedCone": {
       "maxFs": "Fs max (Hz)",
       "qtsMin": "Qts min",
@@ -637,6 +647,8 @@
     "highpass": "passe-haut",
     "lowpass": "passe-bas",
     "spectralGap": "lacune spectrale",
+    "freqStripAriaLabel": "Bande de plage de fréquences",
+    "gapShort": "lacune",
     "raisedToCdFloor": "relevé au plancher CD",
     "extrapolated": "extrapolé, à vérifier",
     "approximated": "point le plus proche, pas un croisement exact",
@@ -675,7 +687,9 @@
     "loading": "Chargement…",
     "failedToLoad": "Échec du chargement.",
     "note": "Les points cerclés sont Pareto-optimaux : cercle = mesuré, triangle = simulé. Cliquez sur un point pour ouvrir son plan.",
-    "provenance": "Provenance"
+    "provenance": "Provenance",
+    "paretoFrontier": "Frontière de Pareto",
+    "paretoLabel": "Pareto"
   },
   "radarCompare": {
     "chartAriaLabel": "Diagramme radar comparant {items} sur {n} axes, chacun normalisé à 100 = maximum du catalogue. Les mêmes valeurs figurent dans le tableau ci-dessus.",
@@ -860,6 +874,9 @@
     "coneDetail": "Qts {qts} · Vas {vas} L · Xmax {xmax} mm",
     "compDetail": "{fLow}-{fHigh} Hz · xover ≥ {minXo} Hz",
     "exitSuffix": "\" exit",
+    "notFoundSuffix": " (introuvable)",
+    "notesHeading": "Notes",
+    "sourceLabel": "Source :",
     "specRows": {
       "topology": "Topologie",
       "ways": "Voies",
@@ -905,6 +922,13 @@
     "mateCDs": "HP à compression compatibles (même exit)",
     "alignmentHint": "Indication d'alignement",
     "noCompatible": "Aucun dans le catalogue pour l'instant.",
+    "datasheetLink": "fiche technique ↗",
+    "matchedOnExit": "Correspondance sur l'exit uniquement ({exit}\"). Vérifiez la fixation et le crossover sur les deux fiches techniques.",
+    "needsQes": "Qes requis",
+    "sealedVbRow": "Vb clos (Qtc ≈ 0,71)",
+    "qtsTooHigh": "Qts trop élevé",
+    "ruleOfThumbNote": "Règles empiriques basées uniquement sur les paramètres T/S. Vérifiez avec une vraie simulation avant de découper le bois.",
+    "noUsedIn": "Aucun caisson du catalogue n'utilise ce HP pour l'instant.",
     "specRows": {
       "nominalSize": "Taille nominale",
       "impedance": "Impédance",
@@ -945,7 +969,23 @@
     "noCompatibleCDs": "Aucun HP à compression avec cet exit dans le catalogue.",
     "compatibleDrivers": "HP à compression compatibles",
     "usedIn": "Utilisé dans ces caissons",
-    "noUsedIn": "Aucun caisson du catalogue n'utilise ce pavillon pour l'instant."
+    "noUsedIn": "Aucun caisson du catalogue n'utilise ce pavillon pour l'instant.",
+    "allHorns": "tous les horns",
+    "datasheetLink": "fiche technique ↗",
+    "metaDescription": "Specs horn/pavillon pour {brand} {model}",
+    "matchedOnExit": "Correspondance sur l'exit uniquement ({exit}\"). Vérifiez la fixation (perçage / filetage) et le crossover sur les deux fiches techniques avant de construire.",
+    "specRows": {
+      "throatExit": "Throat exit",
+      "coverageHV": "Couverture (H×V)",
+      "directivity": "Directivité",
+      "constantDirectivity": "constante (CD)",
+      "flareCutoff": "Flare cutoff",
+      "mouth": "Mouth",
+      "depth": "Profondeur",
+      "profile": "Profil",
+      "material": "Matériau",
+      "weight": "Poids"
+    }
   },
   "help": {
     "toc": {

@@ -11,7 +11,8 @@
     "contribute": "Contribute",
     "helpLabel": "Help & glossary",
     "toggleTheme": "Toggle light/dark theme",
-    "ariaLabel": "Main navigation"
+    "ariaLabel": "Main navigation",
+    "skipToContent": "Skip to main content"
   },
   "meta": {
     "titleRest": ": the enclosure catalog",
@@ -140,7 +141,14 @@
       "fileBadName": "Invalid filename \"{name}\": use a plain name without folders or \"..\"",
       "fileTooLarge": "\"{name}\" exceeds the {mb} MB per-file limit",
       "totalTooLarge": "Total upload size exceeds the {mb} MB limit",
-      "tooManyImages": "At most {max} images"
+      "tooManyImages": "At most {max} images",
+      "nameRequired": "Name is required",
+      "categoryRequired": "Category is required",
+      "licenseRequired": "License is required",
+      "driverProfilesRequired": "At least one driver profile is required",
+      "netVolumeRequired": "Net volume is required",
+      "dimsRequired": "Height, width and depth are required",
+      "f3Required": "F3 (Hz) is required"
     }
   },
   "footer": {
@@ -503,6 +511,7 @@
     "found": "found",
     "all": "All",
     "plansAvailable": "Plans available",
+    "eg": "e.g. {value}",
     "columns": {
       "name": "Name",
       "cat": "Cat",
@@ -539,6 +548,7 @@
     "horns": "horns",
     "compare": "Compare {n} →",
     "maxComparers": "Max 4 {type} can be compared at once.",
+    "eg": "e.g. {value}",
     "advancedCone": {
       "maxFs": "Max Fs (Hz)",
       "qtsMin": "Qts min",
@@ -643,6 +653,8 @@
     "highpass": "highpass",
     "lowpass": "lowpass",
     "spectralGap": "spectral gap",
+    "freqStripAriaLabel": "Frequency range strip",
+    "gapShort": "gap",
     "raisedToCdFloor": "raised to CD floor",
     "extrapolated": "extrapolated, verify",
     "approximated": "closest approach, not an exact crossing",
@@ -681,7 +693,9 @@
     "loading": "Loading…",
     "failedToLoad": "Failed to load data.",
     "note": "Ringed points are Pareto-optimal, circle = measured, triangle = simulated. Click a point to open its plan.",
-    "provenance": "Provenance"
+    "provenance": "Provenance",
+    "paretoFrontier": "Pareto frontier",
+    "paretoLabel": "Pareto"
   },
   "radarCompare": {
     "chartAriaLabel": "Radar chart comparing {items} across {n} axes, each normalised to 100 = catalogue maximum. The same values are in the table above.",
@@ -866,6 +880,9 @@
     "coneDetail": "Qts {qts} · Vas {vas} L · Xmax {xmax} mm",
     "compDetail": "{fLow}-{fHigh} Hz · xover ≥ {minXo} Hz",
     "exitSuffix": "\" exit",
+    "notFoundSuffix": " (not found)",
+    "notesHeading": "Notes",
+    "sourceLabel": "Source:",
     "specRows": {
       "topology": "Topology",
       "ways": "Ways",
@@ -911,6 +928,13 @@
     "mateCDs": "Compatible compression drivers (same exit)",
     "alignmentHint": "Alignment hint",
     "noCompatible": "None in the catalog yet.",
+    "datasheetLink": "datasheet ↗",
+    "matchedOnExit": "Matched on throat exit ({exit}\") only. Verify mounting and crossover against both datasheets.",
+    "needsQes": "needs Qes",
+    "sealedVbRow": "Sealed Vb (Qtc ≈ 0.71)",
+    "qtsTooHigh": "Qts too high",
+    "ruleOfThumbNote": "Rules of thumb from T/S parameters only. Verify against a real simulation before cutting wood.",
+    "noUsedIn": "No enclosure in the catalog uses this driver yet.",
     "specRows": {
       "nominalSize": "Nominal size",
       "impedance": "Impedance",
@@ -951,7 +975,23 @@
     "noCompatibleCDs": "No compression drivers with this exit in the catalog.",
     "compatibleDrivers": "Compatible compression drivers",
     "usedIn": "Used in these enclosures",
-    "noUsedIn": "No enclosure in the catalog uses this horn yet."
+    "noUsedIn": "No enclosure in the catalog uses this horn yet.",
+    "allHorns": "all horns",
+    "datasheetLink": "datasheet ↗",
+    "metaDescription": "Horn/waveguide specs for {brand} {model}",
+    "matchedOnExit": "Matched on throat exit ({exit}\") only. Verify mounting (bolt pattern / thread) and crossover against both datasheets before building.",
+    "specRows": {
+      "throatExit": "Throat exit",
+      "coverageHV": "Coverage (H×V)",
+      "directivity": "Directivity",
+      "constantDirectivity": "constant (CD)",
+      "flareCutoff": "Flare cutoff",
+      "mouth": "Mouth",
+      "depth": "Depth",
+      "profile": "Profile",
+      "material": "Material",
+      "weight": "Weight"
+    }
   },
   "help": {
     "toc": {

@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { Resvg } from "@resvg/resvg-js";
 import satori from "satori";
-// `?raw` avoids a filesystem read, which breaks once Astro bundles this away from public/.
+// `?raw`: a fs read here breaks once Astro bundles this away from public/.
 import iconSvg from "../../public/favicon-iso.svg?raw";
 import { type Translations, useTranslations } from "../i18n";
 

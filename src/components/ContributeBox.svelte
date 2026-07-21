@@ -16,7 +16,7 @@ import {
 } from "../lib/contribute";
 import {
   CONTRIBUTE_VALIDATION_CONTEXT,
-  translateFileIssue,
+  translateFieldIssue,
   translateZodIssue,
 } from "../lib/contribute-i18n";
 import { CURVE_KINDS } from "../lib/csv";
@@ -317,7 +317,7 @@ const fileIssues = $derived(
   validateUploads(
     frontmatter as EnclosureInput,
     allFiles().map((f) => ({ name: f.name, size: f.size }))
-  ).map((e) => ({ path: e.field, message: translateFileIssue(e, t.validation) }))
+  ).map((e) => ({ path: e.field, message: translateFieldIssue(e, t.validation) }))
 );
 
 const issues = $derived([...schemaIssues, ...fileIssues]);
@@ -918,7 +918,7 @@ async function submit() {
     {#if serverErrors.length}
       <div class="card errors" aria-live="polite">
         <ul>
-          {#each serverErrors as e}<li>{e.field ? `${e.field}: ` : ""}{e.message}</li>{/each}
+          {#each serverErrors as e}<li>{e.field ? `${e.field}: ` : ""}{translateFieldIssue(e, t.validation)}</li>{/each}
         </ul>
       </div>
     {/if}

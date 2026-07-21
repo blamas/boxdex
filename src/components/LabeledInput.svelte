@@ -25,6 +25,7 @@ let {
   errors?: string[];
 } = $props();
 
+// ContributeBox (this component's only caller) always sets this context.
 const validationContext = getContext<{ validation: Record<string, string> }>(
   CONTRIBUTE_VALIDATION_CONTEXT
 );
@@ -43,9 +44,7 @@ function onNumberInput(e: Event) {
 const isEmpty = $derived(value === null || value === undefined || value === "");
 const missing = $derived(!badInput && errors.length > 0 && isEmpty);
 const invalid = $derived(badInput || (errors.length > 0 && !isEmpty));
-const displayErrors = $derived(
-  badInput ? [validationContext?.validation?.notANumber ?? "Enter a valid number"] : errors
-);
+const displayErrors = $derived(badInput ? [validationContext.validation.notANumber] : errors);
 </script>
 
 <label class="field">

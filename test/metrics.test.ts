@@ -205,18 +205,13 @@ describe("metricKeyOf", () => {
 
 describe("axisComboboxItems", () => {
   const axisLabels = Object.fromEntries(
-    AXIS_FIELDS.map((f) => [f.key, `${f.label} (localized)`])
+    AXIS_FIELDS.map((f) => [f.key, `${f.key} (localized)`])
   ) as Record<string, string>;
 
   it("maps every axis field to a localized {id,label} item", () => {
     const items = axisComboboxItems(axisLabels as never);
     expect(items).toHaveLength(AXIS_FIELDS.length);
-    expect(items[0]).toEqual({ id: "volumeL", label: "Net volume (localized) (L)" });
-  });
-
-  it("falls back to the field's default label when a translation is missing", () => {
-    const items = axisComboboxItems({} as never);
-    expect(items[0]).toEqual({ id: "volumeL", label: "Net volume (L)" });
+    expect(items[0]).toEqual({ id: "volumeL", label: "volumeL (localized) (L)" });
   });
 });
 

@@ -4,7 +4,7 @@ import EnclosureList from "../../../components/EnclosureList.astro";
 import Layout from "../../../components/Layout.astro";
 import SpecTable from "../../../components/SpecTable.astro";
 import SubstituteList from "../../../components/SubstituteList.astro";
-import { LOCALES, useLocale } from "../../../i18n";
+import { LOCALES, tt, useLocale } from "../../../i18n";
 import { alignmentFromEbp, ebp, sealedVbL } from "../../../lib/driver";
 import { withUnit } from "../../../lib/format";
 import type { Driver } from "../../../lib/schemas";
@@ -151,7 +151,7 @@ const jsonLd = {
       <p class="meta">
         {headline}
         {d.datasheetUrl && (
-          <> · <a href={d.datasheetUrl} target="_blank" rel="noopener">datasheet ↗</a></>
+          <> · <a href={d.datasheetUrl} target="_blank" rel="noopener">{t.driverDetail.datasheetLink}</a></>
         )}
       </p>
     </header>
@@ -178,8 +178,7 @@ const jsonLd = {
             <p class="muted">{t.driverDetail.noCompatible}</p>
           )}
           <p class="provenance-note">
-            Matched on throat exit ({d.exitInch}") only. Verify mounting and crossover against
-            both datasheets.
+            {tt(t.driverDetail.matchedOnExit, { exit: d.exitInch })}
           </p>
         </section>
       )}
@@ -194,18 +193,18 @@ const jsonLd = {
                 <td>
                   {ebpValue !== undefined
                     ? <>{ebpValue}{alignment && <span class="align-tag"> · {alignment}</span>}</>
-                    : <span class="muted">needs Qes</span>}
+                    : <span class="muted">{t.driverDetail.needsQes}</span>}
                 </td>
               </tr>
               <tr>
-                <th>Sealed Vb (Qtc ≈ 0.71)</th>
-                <td>{vbClosed !== undefined ? `≈ ${vbClosed} L` : <span class="muted">Qts too high</span>}</td>
+                <th>{t.driverDetail.sealedVbRow}</th>
+                <td>{vbClosed !== undefined ? `≈ ${vbClosed} L` : <span class="muted">{t.driverDetail.qtsTooHigh}</span>}</td>
               </tr>
             </tbody>
           </table>
           {alignment && <p class="provenance-note">{t.driverDetail.alignmentHints[alignment as keyof typeof t.driverDetail.alignmentHints]}</p>}
           <p class="provenance-note">
-            Rules of thumb from T/S parameters only. Verify against a real simulation before cutting wood.
+            {t.driverDetail.ruleOfThumbNote}
           </p>
         </section>
       )}
@@ -220,7 +219,7 @@ const jsonLd = {
         {usedBy.length > 0 ? (
           <EnclosureList items={usedBy} />
         ) : (
-          <p class="muted">No enclosure in the catalog uses this driver yet.</p>
+          <p class="muted">{t.driverDetail.noUsedIn}</p>
         )}
       </section>
     </div>

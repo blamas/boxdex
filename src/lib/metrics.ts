@@ -32,22 +32,21 @@ export type MetricKey = keyof DerivedMetrics;
 
 export interface AxisField {
   key: MetricKey;
-  label: string;
   unit: string;
   better: "min" | "max";
 }
 
 export const AXIS_FIELDS: AxisField[] = [
-  { key: "volumeL", label: "Net volume", unit: "L", better: "min" },
-  { key: "footprintCm2", label: "Footprint", unit: "cm²", better: "min" },
-  { key: "heightMm", label: "Height", unit: "mm", better: "min" },
-  { key: "weightKg", label: "Weight", unit: "kg", better: "min" },
-  { key: "f3Hz", label: "F3 low", unit: "Hz", better: "min" },
-  { key: "f3HzHigh", label: "F3 high", unit: "Hz", better: "max" },
-  { key: "maxSplDb", label: "Max SPL", unit: "dB", better: "max" },
-  { key: "sensitivityDb", label: "Sensitivity", unit: "dB", better: "max" },
-  { key: "outputDensity", label: "Output density", unit: "dB/size", better: "max" },
-  { key: "outputPerKg", label: "Output per kg", unit: "dB/kg", better: "max" },
+  { key: "volumeL", unit: "L", better: "min" },
+  { key: "footprintCm2", unit: "cm²", better: "min" },
+  { key: "heightMm", unit: "mm", better: "min" },
+  { key: "weightKg", unit: "kg", better: "min" },
+  { key: "f3Hz", unit: "Hz", better: "min" },
+  { key: "f3HzHigh", unit: "Hz", better: "max" },
+  { key: "maxSplDb", unit: "dB", better: "max" },
+  { key: "sensitivityDb", unit: "dB", better: "max" },
+  { key: "outputDensity", unit: "dB/size", better: "max" },
+  { key: "outputPerKg", unit: "dB/kg", better: "max" },
 ];
 
 export const AXIS_MAP = new Map(AXIS_FIELDS.map((f) => [f.key, f]));
@@ -64,7 +63,7 @@ export function axisComboboxItems(
 ): { id: MetricKey; label: string }[] {
   return AXIS_FIELDS.map((f) => ({
     id: f.key,
-    label: `${axisLabels[f.key as keyof typeof axisLabels] ?? f.label} (${f.unit})`,
+    label: `${axisLabels[f.key as keyof typeof axisLabels]} (${f.unit})`,
   }));
 }
 

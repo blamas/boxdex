@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import EnclosureList from "../../../components/EnclosureList.astro";
 import Layout from "../../../components/Layout.astro";
 import SpecTable from "../../../components/SpecTable.astro";
-import { LOCALES, useLocale } from "../../../i18n";
+import { LOCALES, tt, useLocale } from "../../../i18n";
 import { withUnit } from "../../../lib/format";
 
 export async function getStaticPaths() {
@@ -34,34 +34,35 @@ const { entry, compatible, usedBy } = Astro.props;
 const h = entry.data;
 
 const { t, localeBase } = useLocale(Astro.params);
+const sr = t.hornDetail.specRows;
 
 const mouthAreaCm2 = Math.round((h.mouthWmm * h.mouthHmm) / 100);
 
 const specRows: { label: string; value: string | undefined }[] = [
-  { label: "Throat exit", value: `${h.exitInch}"` },
-  { label: "Coverage (H×V)", value: `${h.coverageHorizontalDeg}° × ${h.coverageVerticalDeg}°` },
-  { label: "Directivity", value: h.constantDirectivity ? "constant (CD)" : undefined },
-  { label: "Flare cutoff", value: withUnit(h.cutoffHz, "Hz") },
-  { label: "Mouth", value: `${h.mouthWmm} × ${h.mouthHmm} mm (≈ ${mouthAreaCm2} cm²)` },
-  { label: "Depth", value: withUnit(h.depthMm, "mm") },
-  { label: "Profile", value: h.profile },
-  { label: "Material", value: h.material },
-  { label: "Weight", value: withUnit(h.weightKg, "kg") },
+  { label: sr.throatExit, value: `${h.exitInch}"` },
+  { label: sr.coverageHV, value: `${h.coverageHorizontalDeg}° × ${h.coverageVerticalDeg}°` },
+  { label: sr.directivity, value: h.constantDirectivity ? sr.constantDirectivity : undefined },
+  { label: sr.flareCutoff, value: withUnit(h.cutoffHz, "Hz") },
+  { label: sr.mouth, value: `${h.mouthWmm} × ${h.mouthHmm} mm (≈ ${mouthAreaCm2} cm²)` },
+  { label: sr.depth, value: withUnit(h.depthMm, "mm") },
+  { label: sr.profile, value: h.profile },
+  { label: sr.material, value: h.material },
+  { label: sr.weight, value: withUnit(h.weightKg, "kg") },
 ];
 
 const headline = `${h.exitInch}" exit · ${h.coverageHorizontalDeg}°×${h.coverageVerticalDeg}° · ${h.cutoffHz} Hz`;
-const description = `Horn/waveguide specs for ${h.brand} ${h.model}`;
+const description = tt(t.hornDetail.metaDescription, { brand: h.brand, model: h.model });
 ---
 
 <Layout title={`${h.brand} ${h.model}`} description={description}>
   <div class="detail">
     <header class="detail-header">
-      <p class="crumb"><a href={`${localeBase}/drivers?tab=horn`}>← all horns</a></p>
+      <p class="crumb"><a href={`${localeBase}/drivers?tab=horn`}>← {t.hornDetail.allHorns}</a></p>
       <h1>{h.brand} {h.model}</h1>
       <p class="meta">
         {headline}
         {h.datasheetUrl && (
-          <> · <a href={h.datasheetUrl} target="_blank" rel="noopener">datasheet ↗</a></>
+          <> · <a href={h.datasheetUrl} target="_blank" rel="noopener">{t.hornDetail.datasheetLink}</a></>
         )}
       </p>
     </header>
@@ -87,8 +88,7 @@ const description = `Horn/waveguide specs for ${h.brand} ${h.model}`;
           <p class="muted">{t.hornDetail.noCompatibleCDs}</p>
         )}
         <p class="provenance-note">
-          Matched on throat exit ({h.exitInch}") only. Verify mounting (bolt pattern / thread)
-          and crossover against both datasheets before building.
+          {tt(t.hornDetail.matchedOnExit, { exit: h.exitInch })}
         </p>
       </section>
 

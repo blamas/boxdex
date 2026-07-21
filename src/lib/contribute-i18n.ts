@@ -1,7 +1,6 @@
-// Localizes the two error sources ContributeBox surfaces: zod issues from the schema
-// (src/lib/schemas.ts) and file-reference issues from validateUploads (src/lib/contribute.ts).
-// Both attach a stable machine key (zod issues via `params.key`, FieldError via `.key`) so
-// translation doesn't depend on matching English message text.
+// Localizes the error sources ContributeBox surfaces: zod issues from the schema
+// (src/lib/schemas.ts) and FieldErrors from contribute.ts (file + required-field checks).
+// Both attach a stable machine key so translation doesn't depend on matching English text.
 
 import { tt } from "../i18n";
 import type { FieldError } from "./contribute";
@@ -83,8 +82,21 @@ const FILE_KEYS = new Set([
   "tooManyImages",
 ]);
 
-export function translateFileIssue(error: FieldError, t: ValidationMessages): string {
-  if (error.key && FILE_KEYS.has(error.key) && t[error.key]) {
+// Keys from requiredFieldErrors() (src/lib/contribute.ts), returned as serverErrors.
+const REQUIRED_FIELD_KEYS = new Set([
+  "nameRequired",
+  "categoryRequired",
+  "licenseRequired",
+  "driverProfilesRequired",
+  "netVolumeRequired",
+  "dimsRequired",
+  "f3Required",
+]);
+
+const FIELD_ERROR_KEYS = new Set([...FILE_KEYS, ...REQUIRED_FIELD_KEYS]);
+
+export function translateFieldIssue(error: FieldError, t: ValidationMessages): string {
+  if (error.key && FIELD_ERROR_KEYS.has(error.key) && t[error.key]) {
     return tt(t[error.key], error.params ?? {});
   }
   return error.message;

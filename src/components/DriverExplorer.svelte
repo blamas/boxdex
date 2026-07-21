@@ -291,7 +291,7 @@ const ariaSort = (key: SortKey) => ariaSortFor(sortKey, sortAsc, key);
       </label>
       <label>
         {t.maxCutoff}
-        <input type="number" min="100" max="5000" placeholder="e.g. 1000" bind:value={maxCutoff} />
+        <input type="number" min="100" max="5000" placeholder={tt(t.eg, { value: 1000 })} bind:value={maxCutoff} />
       </label>
     {:else}
       <label>
@@ -340,32 +340,32 @@ const ariaSort = (key: SortKey) => ariaSortFor(sortKey, sortAsc, key);
       {#if isCone}
         <label>
           {t.advancedCone.maxFs}
-          <input type="number" min="10" max="200" placeholder="e.g. 40" bind:value={maxFs} />
+          <input type="number" min="10" max="200" placeholder={tt(t.eg, { value: 40 })} bind:value={maxFs} />
         </label>
         <label>
           {t.advancedCone.qtsMin}
-          <input type="number" min="0" max="2" step="0.01" placeholder="e.g. 0.2" bind:value={minQts} />
+          <input type="number" min="0" max="2" step="0.01" placeholder={tt(t.eg, { value: 0.2 })} bind:value={minQts} />
         </label>
         <label>
           {t.advancedCone.qtsMax}
-          <input type="number" min="0" max="2" step="0.01" placeholder="e.g. 0.7" bind:value={maxQts} />
+          <input type="number" min="0" max="2" step="0.01" placeholder={tt(t.eg, { value: 0.7 })} bind:value={maxQts} />
         </label>
         <label>
           {t.advancedCone.minXmax}
-          <input type="number" min="1" max="100" placeholder="e.g. 10" bind:value={minXmax} />
+          <input type="number" min="1" max="100" placeholder={tt(t.eg, { value: 10 })} bind:value={minXmax} />
         </label>
         <label>
           {t.advancedCone.minPe}
-          <input type="number" min="1" max="5000" placeholder="e.g. 500" bind:value={minPe} />
+          <input type="number" min="1" max="5000" placeholder={tt(t.eg, { value: 500 })} bind:value={minPe} />
         </label>
       {:else}
         <label>
           {t.advancedComp.maxCrossover}
-          <input type="number" min="100" max="5000" placeholder="e.g. 1200" bind:value={maxCrossover} />
+          <input type="number" min="100" max="5000" placeholder={tt(t.eg, { value: 1200 })} bind:value={maxCrossover} />
         </label>
         <label>
           {t.advancedComp.minSens}
-          <input type="number" min="90" max="120" placeholder="e.g. 108" bind:value={minSens} />
+          <input type="number" min="90" max="120" placeholder={tt(t.eg, { value: 108 })} bind:value={minSens} />
         </label>
       {/if}
     </div>

@@ -187,7 +187,7 @@ function buildOption() {
     series: [
       ...scatterSeries,
       {
-        name: "Pareto frontier",
+        name: t.paretoFrontier,
         type: "line",
         data: frontierLineData,
         showSymbol: false,
@@ -195,7 +195,7 @@ function buildOption() {
         z: 1,
       },
       {
-        name: "Pareto",
+        name: t.paretoLabel,
         type: "scatter",
         data: frontierRingData,
         symbolSize: 20,

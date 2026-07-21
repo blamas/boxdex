@@ -1,8 +1,9 @@
 <script lang="ts">
+import type { Translations } from "../i18n";
 import type { Category } from "../lib/category";
 import { type CrossoverSlot, logFraction, minorLogTicks } from "../lib/stack";
 
-const { slots }: { slots: CrossoverSlot[] } = $props();
+const { slots, t }: { slots: CrossoverSlot[]; t: Translations["systemResponse"] } = $props();
 
 const W = 760;
 const BAR_H = 22;
@@ -78,7 +79,7 @@ const regions = $derived.by(() => {
 
 {#if slots.length > 0}
   <div class="strip">
-    <svg viewBox="0 0 {W} {svgHeight}" width={W} height={svgHeight} aria-label="Frequency range strip">
+    <svg viewBox="0 0 {W} {svgHeight}" width={W} height={svgHeight} aria-label={t.freqStripAriaLabel}>
       {#each regions as r}
         <rect
           x={r.x}
@@ -96,7 +97,7 @@ const regions = $derived.by(() => {
             font-size="8"
             fill="var(--danger)"
             font-family="monospace"
-          >gap</text>
+          >{t.gapShort}</text>
         {/if}
       {/each}
 

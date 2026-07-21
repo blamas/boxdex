@@ -1,6 +1,6 @@
 import { Resvg } from "@resvg/resvg-js";
 import type { APIRoute } from "astro";
-// `?raw` avoids a filesystem read, which breaks once Astro bundles this away from public/.
+// `?raw`: a fs read here breaks once Astro bundles this away from public/.
 import svg from "../../public/favicon.svg?raw";
 
 export const GET: APIRoute = () => {

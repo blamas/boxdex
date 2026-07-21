@@ -23,10 +23,12 @@ let {
   t,
   localeBase,
   axisLabels,
+  categoryLabels,
 }: {
   t: Translations["explorer"];
   localeBase: string;
   axisLabels: Translations["axisLabels"];
+  categoryLabels: Translations["categoryLabels"];
 } = $props();
 
 let records = $state<EnclosureRecord[]>([]);
@@ -76,7 +78,11 @@ const allSizes = $derived(
 const allTags = $derived([...new Set(records.flatMap((r) => r.recommendedFor))].sort());
 
 const categoryItems = $derived(
-  withAll(CATEGORIES, (c) => ({ id: c, label: c[0].toUpperCase() + c.slice(1) }), t.all)
+  withAll(
+    CATEGORIES,
+    (c) => ({ id: c, label: categoryLabels[c as keyof typeof categoryLabels] ?? c }),
+    t.all
+  )
 );
 
 const topologyItems = $derived(
@@ -275,23 +281,23 @@ const activeFilterCount = $derived(basicFilterCount + advancedFilterCount);
       <div class="filter-row adv-row">
         <label>
           <span>{t.f3Min}</span>
-          <input type="number" min="10" max="500" placeholder="e.g. 30" bind:value={minF3} />
+          <input type="number" min="10" max="500" placeholder={tt(t.eg, { value: 30 })} bind:value={minF3} />
         </label>
         <label>
           <span>{t.f3Max}</span>
-          <input type="number" min="10" max="500" placeholder="e.g. 80" bind:value={maxF3} />
+          <input type="number" min="10" max="500" placeholder={tt(t.eg, { value: 80 })} bind:value={maxF3} />
         </label>
         <label>
           <span>{t.minSpl}</span>
-          <input type="number" min="80" max="160" placeholder="e.g. 130" bind:value={minSpl} />
+          <input type="number" min="80" max="160" placeholder={tt(t.eg, { value: 130 })} bind:value={minSpl} />
         </label>
         <label>
           <span>{t.volMin}</span>
-          <input type="number" min="1" max="2000" placeholder="e.g. 50" bind:value={minVol} />
+          <input type="number" min="1" max="2000" placeholder={tt(t.eg, { value: 50 })} bind:value={minVol} />
         </label>
         <label>
           <span>{t.volMax}</span>
-          <input type="number" min="1" max="2000" placeholder="e.g. 300" bind:value={maxVol} />
+          <input type="number" min="1" max="2000" placeholder={tt(t.eg, { value: 300 })} bind:value={maxVol} />
         </label>
       </div>
 

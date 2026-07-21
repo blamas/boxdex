@@ -16,7 +16,13 @@ const { t, localeBase } = useLocale(Astro.params);
   <h1>{t.pages.find.heading}</h1>
   <p class="subtitle">{t.pages.find.subtitle}</p>
   <div class="island-reserve">
-    <Explorer client:only="svelte" t={t.explorer} localeBase={localeBase} axisLabels={t.axisLabels} />
+    <Explorer
+      client:only="svelte"
+      t={t.explorer}
+      localeBase={localeBase}
+      axisLabels={t.axisLabels}
+      categoryLabels={t.categoryLabels}
+    />
   </div>
 </Layout>
 

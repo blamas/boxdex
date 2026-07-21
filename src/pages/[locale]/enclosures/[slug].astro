@@ -341,7 +341,7 @@ const categoryLabel =
               <li>
                 {url
                   ? <a href={url} download={filename}>{filename}</a>
-                  : <span class="muted">{filename} (not found)</span>}
+                  : <span class="muted">{filename}{t.enclosureDetail.notFoundSuffix}</span>}
               </li>
             ))}
           </ul>
@@ -356,7 +356,7 @@ const categoryLabel =
               <li>
                 {url
                   ? <a href={url} download={file}>{file}</a>
-                  : <span class="muted">{file} (not found)</span>}
+                  : <span class="muted">{file}{t.enclosureDetail.notFoundSuffix}</span>}
                 <span class="muted"> · {tool}{note ? ` · ${note}` : ""}</span>
               </li>
             ))}
@@ -395,12 +395,12 @@ const categoryLabel =
 
       {data.sourceUrl && (
         <p class="source-url">
-          Source: <a href={data.sourceUrl} target="_blank" rel="noopener">{data.sourceUrl}</a>
+          {t.enclosureDetail.sourceLabel} <a href={data.sourceUrl} target="_blank" rel="noopener">{data.sourceUrl}</a>
         </p>
       )}
 
       <section class="notes-section">
-        <h2>Notes</h2>
+        <h2>{t.enclosureDetail.notesHeading}</h2>
         <div class="notes-body">
           <Content />
         </div>

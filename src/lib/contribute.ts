@@ -405,37 +405,52 @@ export function buildFrontmatter(s: ContributeState): Record<string, unknown> {
 // Presence/positivity only, not duplicated here: full validation is the CI build gate.
 export function requiredFieldErrors(fm: EnclosureInput): FieldError[] {
   const errors: FieldError[] = [];
-  const req = (cond: boolean, field: string, message: string) => {
-    if (!cond) errors.push({ field, message });
+  const req = (cond: boolean, field: string, message: string, key: string) => {
+    if (!cond) errors.push({ field, message, key });
   };
-  req(typeof fm.name === "string" && fm.name.trim().length > 0, "name", "name is required");
+  req(
+    typeof fm.name === "string" && fm.name.trim().length > 0,
+    "name",
+    "name is required",
+    "nameRequired"
+  );
   req(
     typeof fm.category === "string" && fm.category.length > 0,
     "category",
-    "category is required"
+    "category is required",
+    "categoryRequired"
   );
-  req(typeof fm.license === "string" && fm.license.length > 0, "license", "license is required");
+  req(
+    typeof fm.license === "string" && fm.license.length > 0,
+    "license",
+    "license is required",
+    "licenseRequired"
+  );
   req(
     Array.isArray(fm.driverProfiles) && fm.driverProfiles.length > 0,
     "driverProfiles",
-    "at least one driver profile is required"
+    "at least one driver profile is required",
+    "driverProfilesRequired"
   );
   req(
     typeof fm.netVolumeL === "number" && fm.netVolumeL > 0,
     "netVolumeL",
-    "netVolumeL is required"
+    "netVolumeL is required",
+    "netVolumeRequired"
   );
   req(
     typeof fm.dims?.hMm === "number" &&
       typeof fm.dims?.wMm === "number" &&
       typeof fm.dims?.dMm === "number",
     "dims",
-    "dims (hMm, wMm, dMm) are required"
+    "dims (hMm, wMm, dMm) are required",
+    "dimsRequired"
   );
   req(
     typeof fm.specs?.f3Hz === "number" && fm.specs.f3Hz > 0,
     "specs.f3Hz",
-    "specs.f3Hz is required"
+    "specs.f3Hz is required",
+    "f3Required"
   );
   return errors;
 }

@@ -193,7 +193,7 @@ const hasAnyExtrapolated = $derived(
 );
 </script>
 
-<CrossoverStrip slots={crossoverSlots} />
+<CrossoverStrip slots={crossoverSlots} {t} />
 {#if xoPoints.length > 0}
   <div class="xo-header">
     <span class="xo-label">
