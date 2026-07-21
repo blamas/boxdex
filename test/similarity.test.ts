@@ -98,8 +98,8 @@ describe("subs: cone scoring", () => {
 
   it("reports per-parameter deltas", () => {
     const [c] = subs(target, [makeCone("c", { fsHz: 40 })]);
-    const fs = c.deltas.find((d) => d.label === "Fs");
-    expect(fs).toEqual({ label: "Fs", unit: "Hz", target: 35, candidate: 40 });
+    const fs = c.deltas.find((d) => d.key === "fs");
+    expect(fs).toEqual({ key: "fs", unit: "Hz", target: 35, candidate: 40 });
   });
 });
 
@@ -148,16 +148,19 @@ describe("subs: flags", () => {
   it("flags impedance, power and Xmax regressions", () => {
     const [c] = subs(target, [makeCone("c", { impedanceOhm: 4, peW: 300, xmaxMm: 5 })]);
     expect(c.flags).toEqual([
-      "4 Ω vs 8 Ω: amp load changes",
-      "300 W vs 600 W: lower power handling",
-      "Xmax 5 mm < 8 mm: lower excursion-limited SPL",
+      { key: "impedanceDiffers", params: { candidate: 4, target: 8 } },
+      { key: "lowerPower", params: { candidate: 300, target: 600 } },
+      { key: "lowerExcursion", params: { candidate: 5, target: 8 } },
     ]);
   });
 
   it("flags a raised CD crossover floor", () => {
     const cd = makeCd("t");
     const [c] = subs(cd, [makeCd("c", { minCrossoverHz: 1200 })]);
-    expect(c.flags).toContain("min crossover 1200 Hz > 800 Hz: raise the XO");
+    expect(c.flags).toContainEqual({
+      key: "higherMinCrossover",
+      params: { candidate: 1200, target: 800 },
+    });
   });
 
   it("has no flags for an equivalent driver", () => {

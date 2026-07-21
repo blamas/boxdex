@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { Category } from "../lib/category";
-import type { CrossoverSlot } from "../lib/stack";
+import { type CrossoverSlot, logFraction, minorLogTicks } from "../lib/stack";
 
 const { slots }: { slots: CrossoverSlot[] } = $props();
 
@@ -11,19 +11,10 @@ const AXIS_H = 18;
 
 const F_MIN = 20;
 const F_MAX = 22000;
-const LOG_MIN = Math.log10(F_MIN);
-const LOG_MAX = Math.log10(F_MAX);
 
 const TICKS = [20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000];
 
-// Minor grid lines at every integer multiple within each decade (30,40,…,90,200,…)
-const MINOR_TICKS: number[] = [];
-for (let exp = 1; exp <= 4; exp++) {
-  for (let mult = 2; mult <= 9; mult++) {
-    const f = mult * 10 ** exp;
-    if (f > F_MIN && f < F_MAX) MINOR_TICKS.push(f);
-  }
-}
+const MINOR_TICKS = minorLogTicks(F_MIN, F_MAX);
 const TICK_LABELS: Record<number, string> = {
   20: "20",
   50: "50",
@@ -45,7 +36,7 @@ const CAT_COLORS: Record<Category, string> = {
 };
 
 function logX(f: number): number {
-  return ((Math.log10(Math.max(f, F_MIN)) - LOG_MIN) / (LOG_MAX - LOG_MIN)) * W;
+  return logFraction(f, F_MIN, F_MAX) * W;
 }
 
 const svgHeight = $derived(slots.length * (BAR_H + BAR_GAP) + AXIS_H);

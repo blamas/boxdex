@@ -1,7 +1,7 @@
 ---
 import { DEFAULT_LOCALE, tt, useTranslations } from "../i18n";
 import type { Driver } from "../lib/schemas";
-import type { SubstituteCandidate } from "../lib/similarity";
+import type { ParamKey, SubstituteCandidate, SubstituteFlag } from "../lib/similarity";
 import { BASE } from "../lib/site";
 
 interface Props {
@@ -24,6 +24,34 @@ function fmtDelta(candidate: number, target: number): string {
   if (diff === 0) return "=";
   return diff > 0 ? `+${diff}` : String(diff);
 }
+
+const PARAM_KEYS: Record<ParamKey, keyof typeof tsl> = {
+  fs: "paramFs",
+  qts: "paramQts",
+  vas: "paramVas",
+  xmax: "paramXmax",
+  sens: "paramSens",
+  minXo: "paramMinXo",
+  rangeLow: "paramRangeLow",
+  rangeHigh: "paramRangeHigh",
+  voiceCoil: "paramVoiceCoil",
+};
+
+const FLAG_KEYS: Record<SubstituteFlag["key"], keyof typeof tsl> = {
+  impedanceDiffers: "flagImpedanceDiffers",
+  lowerPower: "flagLowerPower",
+  lowerExcursion: "flagLowerExcursion",
+  higherMinCrossover: "flagHigherMinCrossover",
+};
+
+const TIER_KEYS = {
+  close: "tierClose",
+  usable: "tierUsable",
+  risky: "tierRisky",
+} as const;
+
+const paramLabel = (k: ParamKey) => tsl[PARAM_KEYS[k]] as string;
+const flagText = (f: SubstituteFlag) => tt(tsl[FLAG_KEYS[f.key]] as string, f.params);
 ---
 
 {candidates.length > 0 ? (
@@ -32,7 +60,7 @@ function fmtDelta(candidate: number, target: number): string {
       <thead>
         <tr>
           <th>{tsl.driver}</th>
-          {columns.map((c) => <th>{c.label}{c.unit && ` (${c.unit})`}</th>)}
+          {columns.map((c) => <th>{paramLabel(c.key)}{c.unit && ` (${c.unit})`}</th>)}
           <th>{tsl.fit}</th>
           <th>{tsl.notes}</th>
           <th>{tsl.compare}</th>
@@ -47,8 +75,8 @@ function fmtDelta(candidate: number, target: number): string {
             {c.deltas.map((d) => (
               <td>{d.candidate} <span class="delta">{fmtDelta(d.candidate, d.target)}</span></td>
             ))}
-            <td><span class={`tier tier-${c.tier}`}>{c.tier}</span></td>
-            <td class="notes">{c.flags.join(" · ")}</td>
+            <td><span class={`tier tier-${c.tier}`}>{tsl[TIER_KEYS[c.tier]]}</span></td>
+            <td class="notes">{c.flags.map(flagText).join(" · ")}</td>
             <td class="compare-cell">
               <a class="compare-link" href={compareUrl([target.id, c.driver.id])} title={tt(tsl.compareTitle, { model1: target.model, model2: c.driver.model })} aria-label={tt(tsl.compareTitle, { model1: target.model, model2: c.driver.model })}>+</a>
             </td>

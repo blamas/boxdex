@@ -15,7 +15,7 @@ import {
 } from "../lib/curves";
 import { SERIES_COLORS } from "../lib/palette";
 
-import { BASE } from "../lib/site";
+import { fetchJson } from "../lib/site";
 import CurveChart from "./CurveChart.svelte";
 
 interface Props {
@@ -37,9 +37,7 @@ let activeStackCount = $state<number | null>(null);
 
 onMount(async () => {
   try {
-    const res = await fetch(`${BASE}/api/curves/${slug}.json`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    data = await res.json();
+    data = await fetchJson(`/api/curves/${slug}.json`);
     if (data) {
       activeProfileId = data.driverProfiles[0]?.id ?? "";
       const initial = initialCurveView(data, activeProfileId);
@@ -216,7 +214,7 @@ function switchKind(kind: CurveKind) {
     </div>
 
     {#if availableKinds.length > 0}
-      <CurveChart series={series} yName={curveLabels[activeKind]} />
+      <CurveChart series={series} yName={curveLabels[activeKind]} ariaLabel={tt(t.chartAriaLabel, { measure: curveLabels[activeKind], name })} />
       {#if activeDriver}
         <p class="provenance-note">
           {activeDriver.source} &mdash;

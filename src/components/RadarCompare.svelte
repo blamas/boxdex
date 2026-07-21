@@ -5,7 +5,7 @@ import { getActiveTheme } from "../lib/echarts";
 import { downloadBlob, jsonString, toCsv } from "../lib/export";
 import { SERIES_COLORS } from "../lib/palette";
 import { axisMaxima, type CompareItem, type CompareView, radarValues } from "../lib/radar";
-import { BASE } from "../lib/site";
+import { fetchJson } from "../lib/site";
 import { readParam, writeParams } from "../lib/url-state";
 import Combobox from "./Combobox.svelte";
 import EChart from "./EChart.svelte";
@@ -58,9 +58,7 @@ let initialized = $state(false);
 onMount(async () => {
   try {
     const ids = (readParam("ids") ?? "").split(",").filter(Boolean);
-    const res = await fetch(`${BASE}${fetchPath}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    all = await res.json();
+    all = await fetchJson(fetchPath);
     selectedIds = sanitizeIds(ids, all);
   } catch (e) {
     error = String(e);
@@ -273,7 +271,14 @@ function buildRadarOption() {
     </div>
 
     <div class="radar-wrap">
-      <EChart option={buildRadarOption} height={560} />
+      <EChart
+        option={buildRadarOption}
+        ariaLabel={tt(tRadar.chartAriaLabel, {
+          items: selected.map((i) => i.model).join(", "),
+          n: v.axes.length,
+        })}
+        height={560}
+      />
       <p class="radar-note">{v.note}</p>
     </div>
   </div>

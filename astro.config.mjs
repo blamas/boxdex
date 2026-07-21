@@ -26,7 +26,15 @@ export default defineConfig({
   integrations: [
     mdx(),
     svelte(),
-    sitemap({ filter: (page) => !page.endsWith("/404/") }),
+    // i18n must mirror the top-level i18n config: it makes the sitemap emit xhtml:link
+    // alternates per URL, matching the hreflang tags Layout.astro puts in <head>.
+    sitemap({
+      // Drop the per-locale 404s, and the apex: it is a JS locale dispatcher that
+      // canonicalises to /en/, so listing it would emit a second hreflang="en" pointing
+      // at a different URL than /en/ and put two conflicting alternates in the set.
+      filter: (page) => !page.endsWith("/404/") && new URL(page).pathname !== "/",
+      i18n: { defaultLocale: "en", locales: { en: "en", fr: "fr" } },
+    }),
     pagefind(),
   ],
   build: {

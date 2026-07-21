@@ -20,6 +20,7 @@ import {
   translateZodIssue,
 } from "../lib/contribute-i18n";
 import { CURVE_KINDS } from "../lib/csv";
+import { numBounds, schemaAt } from "../lib/schema-introspect";
 import {
   BUILD_COMPLEXITIES,
   type DriverOption,
@@ -92,32 +93,11 @@ const GEOM_FIELD_PATH: Record<GeomKey, string> = {
   sheetH: "sheetSizeMm.hMm",
 };
 
-// Bounds read straight off enclosureFrontmatterObject's .min()/.max() checks, so the number
-// input's native min/max hint (spinner clamping, mobile keyboard) can never drift from the
-// zod-driven error text. Optionals are unwrapped until the ZodNumber underneath.
-function numBounds(schema: unknown): { min?: number; max?: number } {
-  let s = schema as {
-    unwrap?: () => unknown;
-    minValue?: number | null;
-    maxValue?: number | null;
-  };
-  while (typeof s.unwrap === "function") s = s.unwrap() as typeof s;
-  return { min: s.minValue ?? undefined, max: s.maxValue ?? undefined };
-}
-
-// Walk a dotted frontmatter path ("sheetSizeMm.wMm") down the schema's shapes.
-function schemaAt(path: string): unknown {
-  let node: unknown = enclosureFrontmatterObject;
-  for (const seg of path.split(".")) {
-    let n = node as { unwrap?: () => unknown; shape?: Record<string, unknown> };
-    while (typeof n.unwrap === "function") n = n.unwrap() as typeof n;
-    node = n.shape?.[seg];
-  }
-  return node;
-}
-
 const GEOM_FIELD_BOUNDS = Object.fromEntries(
-  GEOM_FIELDS.map((f) => [f.k, numBounds(schemaAt(GEOM_FIELD_PATH[f.k]))])
+  GEOM_FIELDS.map((f) => [
+    f.k,
+    numBounds(schemaAt(enclosureFrontmatterObject, GEOM_FIELD_PATH[f.k])),
+  ])
 ) as Record<GeomKey, { min?: number; max?: number }>;
 
 // Pulled from the schema so a new spec field appears on the form without touching this file.

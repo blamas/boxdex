@@ -5,6 +5,8 @@ import {
   effectiveRating,
   loadRating,
   suggestedChannels,
+  type WiringArrangement,
+  type WiringOption,
   wiringOptions,
 } from "../src/lib/wiring";
 
@@ -19,27 +21,41 @@ describe("loadRating", () => {
   });
 });
 
+// s series × p parallel, matching WiringArrangement.
+const arr = (kind: WiringArrangement["kind"], series: number, parallel: number) => ({
+  kind,
+  series,
+  parallel,
+});
+const byArrangement = (opts: WiringOption[], kind: WiringArrangement["kind"], series: number) =>
+  opts.find((o) => o.arrangement.kind === kind && o.arrangement.series === series);
+
 describe("wiringOptions", () => {
   it("returns a single option for one cab", () => {
-    expect(wiringOptions(8, 1)).toEqual([{ label: "single", loadOhm: 8, rating: "ok" }]);
+    expect(wiringOptions(8, 1)).toEqual([
+      { arrangement: arr("single", 1, 1), loadOhm: 8, rating: "ok" },
+    ]);
   });
 
   it("enumerates series/parallel arrangements sorted by load", () => {
     const opts = wiringOptions(8, 4);
     expect(opts).toEqual([
-      { label: "4× parallel", loadOhm: 2, rating: "caution" },
-      { label: "2 series × 2 parallel", loadOhm: 8, rating: "ok" },
-      { label: "4× series", loadOhm: 32, rating: "inefficient" },
+      { arrangement: arr("parallel", 1, 4), loadOhm: 2, rating: "caution" },
+      { arrangement: arr("seriesParallel", 2, 2), loadOhm: 8, rating: "ok" },
+      { arrangement: arr("series", 4, 1), loadOhm: 32, rating: "inefficient" },
     ]);
   });
 
   it("flags a sub-2Ω parallel load as danger", () => {
     const opts = wiringOptions(4, 4);
-    expect(opts[0]).toEqual({ label: "4× parallel", loadOhm: 1, rating: "danger" });
+    expect(opts[0]).toEqual({ arrangement: arr("parallel", 1, 4), loadOhm: 1, rating: "danger" });
   });
 
   it("handles prime quantities (no series-parallel split)", () => {
-    expect(wiringOptions(8, 3).map((o) => o.label)).toEqual(["3× parallel", "3× series"]);
+    expect(wiringOptions(8, 3).map((o) => o.arrangement)).toEqual([
+      arr("parallel", 1, 3),
+      arr("series", 3, 1),
+    ]);
   });
 
   it("rejects invalid inputs", () => {
@@ -52,12 +68,12 @@ describe("wiringOptions", () => {
     // 4× 8 Ω nominal dipping to 6.4 Ω (exactly the IEC 0.8× allowance): in a 2s×2p
     // split nominal stays 8 Ω, the dip 6.4 Ω, both "ok".
     const opts = wiringOptions(8, 4, 6.4);
-    const twoByTwo = opts.find((o) => o.label === "2 series × 2 parallel");
+    const twoByTwo = byArrangement(opts, "seriesParallel", 2);
     expect(twoByTwo?.minLoadOhm).toBeCloseTo(6.4, 5);
     expect(twoByTwo?.minRating).toBe("ok");
     // 4× parallel: nominal 2 Ω, and a compliant dip normalises right back to nominal,
     // so it adds nothing beyond the nominal "caution" (no double-counted conservatism).
-    const parallel = opts.find((o) => o.label === "4× parallel");
+    const parallel = byArrangement(opts, "parallel", 1);
     expect(parallel?.rating).toBe("caution");
     expect(parallel?.minLoadOhm).toBeCloseTo(1.6, 5);
     expect(parallel?.minRating).toBe("caution");
@@ -66,7 +82,7 @@ describe("wiringOptions", () => {
   it("downgrades an anomalously deep dip, but never upgrades the nominal rating", () => {
     // 8 Ω nominal dipping to 2.4 Ω (0.3×, far past the 0.8× allowance): 2× parallel is
     // nominally 4 Ω (ok) but the normalised dip (1.2/0.8 = 1.5 Ω) rates danger.
-    const deep = wiringOptions(8, 2, 2.4).find((o) => o.label === "2× parallel");
+    const deep = byArrangement(wiringOptions(8, 2, 2.4), "parallel", 1);
     expect(deep?.rating).toBe("ok");
     expect(deep?.minRating).toBe("danger");
     // A high (inefficient) nominal load stays inefficient even when its dip normalises
@@ -86,7 +102,7 @@ describe("effectiveRating", () => {
   it("prefers the worst-case rating when a minimum impedance is known", () => {
     expect(
       effectiveRating({
-        label: "x",
+        arrangement: arr("single", 1, 1),
         loadOhm: 8,
         rating: "ok",
         minLoadOhm: 1.6,
@@ -98,7 +114,7 @@ describe("effectiveRating", () => {
   it("falls back to the nominal rating without a minimum impedance figure", () => {
     expect(
       effectiveRating({
-        label: "x",
+        arrangement: arr("single", 1, 1),
         loadOhm: 8,
         rating: "ok",
         minLoadOhm: undefined,

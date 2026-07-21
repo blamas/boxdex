@@ -45,7 +45,9 @@
         "oblate_spheroid",
         "radial",
         "multicell",
-        "diffraction"
+        "diffraction",
+        "hypex",
+        "le_cleach"
       ]
     },
     "constantDirectivity": {

@@ -12,7 +12,7 @@ import {
   metricKeyOf,
   sortRecords,
 } from "../lib/metrics";
-import { BASE } from "../lib/site";
+import { fetchJson } from "../lib/site";
 import { decodeStack, encodeStack } from "../lib/stack";
 import Combobox from "./Combobox.svelte";
 import LoadMore, { ROW_LIMIT } from "./LoadMore.svelte";
@@ -36,9 +36,7 @@ let addedSlugs = $state(new Set<string>());
 
 onMount(async () => {
   try {
-    const res = await fetch(`${BASE}/api/manifest.json`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    records = await res.json();
+    records = await fetchJson("/api/manifest.json");
   } catch (e) {
     error = String(e);
   } finally {

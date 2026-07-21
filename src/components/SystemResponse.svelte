@@ -1,12 +1,15 @@
 <script lang="ts">
-import type { Translations } from "../i18n";
+import { type Translations, tt } from "../i18n";
 import type { Category } from "../lib/category";
 import {
   applyCrossovers,
+  cornerStatus,
   resolveCrossovers,
   type XoPoint,
   type XoSide,
   type XoSuggestion,
+  type XoWarning,
+  xoMarkLines,
   xoOverrideKey,
 } from "../lib/crossover";
 import { cssVar } from "../lib/echarts";
@@ -144,64 +147,30 @@ const bandColorById = $derived.by(() => {
   return map;
 });
 
-// Grouped by exact frequency, not just pushed one entry per corner: two boxes' corners
-// still coincide until independently edited. The line itself stays neutral (see
-// CurveChart); the label badge carries the color instead, border = the box being
-// lowpassed here (its own highHz landed on this frequency, it plays below this point),
-// text = the box being highpassed here (its own lowHz landed here, it plays above it).
-// Either side falls back to the other when this frequency only has one contributor.
-const xoMarkLines = $derived.by(() => {
-  if (!xoApplied) return [];
-  const byHz = new Map<number, { lowpassColor?: string; highpassColor?: string }>();
-  for (const p of xoPoints) {
-    const color = bandColorById.get(p.id);
-    if (!color) continue;
-    // p.lowHz is this box's own highpass corner: it's the "high" (highpass) side here.
-    if (p.lowHz !== undefined) {
-      const entry = byHz.get(p.lowHz) ?? {};
-      entry.highpassColor = color;
-      byHz.set(p.lowHz, entry);
-    }
-    // p.highHz is this box's own lowpass corner: it's the "low" (lowpass) side here.
-    if (p.highHz !== undefined) {
-      const entry = byHz.get(p.highHz) ?? {};
-      entry.lowpassColor = color;
-      byHz.set(p.highHz, entry);
-    }
-  }
-  return [...byHz.entries()].map(([hz, { lowpassColor, highpassColor }]) => ({
-    x: hz,
-    label: `${fmtHz(hz)} Hz`,
-    borderColor: lowpassColor,
-    textColor: highpassColor,
-  }));
-});
+// Line stays neutral (see CurveChart), the label badge carries the colour.
+const markLines = $derived(xoApplied ? xoMarkLines(xoPoints, (id) => bandColorById.get(id)) : []);
 
-const balance = $derived(spectralBalance(activeBands));
+const xoMarkLineOptions = $derived(
+  markLines.map((m) => ({
+    x: m.hz,
+    label: `${fmtHz(m.hz)} Hz`,
+    borderColor: m.lowpassColor,
+    textColor: m.highpassColor,
+  }))
+);
 
-// One corner can be both approximated and extrapolated at once (the closest-approach
-// point can itself land past a curve's own real data), but a single border can only show
-// one style. Priority picks the more important caveat to display, gap (nothing reachable)
-// > clamped (safety floor) > approximated (no real crossing exists) > extrapolated (a
-// real crossing, just found past the data), and both the chip border and the legend use
-// this same function, so they can never disagree about which state is showing.
-type XoCornerStatus = "gap" | "clamped" | "approximated" | "extrapolated" | "none";
+// Same summing mode the plotted composite uses, so the tilt figure always describes
+// the curve drawn above it.
+const balance = $derived(spectralBalance(activeBands, xoApplied ? "coherent" : "power"));
 
-function cornerStatus(p: XoPoint, side: XoSide): XoCornerStatus {
-  if (side === "lo") {
-    if (p.lowCustom) return "none";
-    if (p.lowGap) return "gap";
-    if (p.clampedToCdMin) return "clamped";
-    if (p.lowApproximated) return "approximated";
-    if (p.lowExtrapolated) return "extrapolated";
-  } else {
-    if (p.highCustom) return "none";
-    if (p.highGap) return "gap";
-    if (p.highClampedToCdMin) return "clamped";
-    if (p.highApproximated) return "approximated";
-    if (p.highExtrapolated) return "extrapolated";
-  }
-  return "none";
+const XO_WARNING_KEYS: Record<XoWarning["key"], keyof typeof t> = {
+  belowCdFloor: "xoWarnBelowCdFloor",
+  belowOwnData: "xoWarnBelowOwnData",
+  aboveOwnData: "xoWarnAboveOwnData",
+};
+
+function xoWarningText(w: XoWarning): string {
+  return tt(t[XO_WARNING_KEYS[w.key]] as string, w.params);
 }
 
 // Only explained in the legend when at least one row actually shows it, so a clean stack
@@ -358,10 +327,10 @@ const hasAnyExtrapolated = $derived(
   {/if}
   {#each xoPoints as p}
     {#each p.lowWarnings as w}
-      <p class="xo-warning">⚠ {p.name} {t.highpass} at {p.lowHz} Hz: {w}</p>
+      <p class="xo-warning">⚠ {p.name} {t.highpass} at {p.lowHz} Hz: {xoWarningText(w)}</p>
     {/each}
     {#each p.highWarnings as w}
-      <p class="xo-warning">⚠ {p.name} {t.lowpass} at {p.highHz} Hz: {w}</p>
+      <p class="xo-warning">⚠ {p.name} {t.lowpass} at {p.highHz} Hz: {xoWarningText(w)}</p>
     {/each}
   {/each}
 {/if}
@@ -375,7 +344,7 @@ const hasAnyExtrapolated = $derived(
 {/if}
 {#if responseSeries.length > 0}
   <div class="xo-chart-wrap">
-    <CurveChart series={responseSeries} yName="SPL (dB)" markLines={xoMarkLines} />
+    <CurveChart series={responseSeries} yName="SPL (dB)" ariaLabel={t.chartAriaLabel} markLines={xoMarkLineOptions} />
     <p class="chart-note">
       {xoApplied ? t.chartNoteXo : t.chartNoteNoXo}
     </p>

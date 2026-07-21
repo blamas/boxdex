@@ -2,5 +2,5 @@
   "$schema": "https://unpkg.com/knip@latest/schema.json",
   "entry": ["scripts/*.mjs"],
   "ignore": ["data/**"],
-  "ignoreDependencies": ["wrangler", "@axe-core/playwright"]
+  "ignoreDependencies": ["wrangler"]
 }

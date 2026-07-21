@@ -9,12 +9,22 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  // Read without page context, so pass only factual data.
+  jsonLd?: Record<string, unknown>;
   // BASE-relative JSON endpoints the page's island fetches on mount; preloaded from
   // the head so the data downloads in parallel with the island JS instead of after it.
   preloadData?: string[];
 }
 
-const { title, description = "Open enclosure plans database", preloadData = [] } = Astro.props;
+const {
+  title,
+  description = "Open enclosure plans database",
+  jsonLd,
+  preloadData = [],
+} = Astro.props;
+
+// Escaped so an embedded "</script>" cannot close the block early.
+const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, "\\u003c") : undefined;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
@@ -31,6 +41,16 @@ const allLocales = LOCALES.map((l) => ({
   url: getRelativeLocaleUrl(l, rawPath),
 }));
 
+// hreflang needs absolute URLs, the switcher above relative ones: same pages, two forms.
+const localeAlternates = allLocales.map((l) => ({
+  code: l.code,
+  href: new URL(l.url, Astro.site).href,
+}));
+const defaultLocaleHref = localeAlternates.find((l) => l.code === DEFAULT_LOCALE)?.href;
+
+// Unfurlers do not resolve relative image paths, so og:image has to be absolute.
+const ogImage = new URL(`${BASE}/og.png`, Astro.site).href;
+
 function navHref(path: string) {
   return getRelativeLocaleUrl(locale, path);
 }
@@ -45,14 +65,25 @@ function navHref(path: string) {
     <title>{title} · Boxdex</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {localeAlternates.map((l) => <link rel="alternate" hreflang={l.code} href={l.href} />)}
+    {defaultLocaleHref && <link rel="alternate" hreflang="x-default" href={defaultLocaleHref} />}
     <link rel="sitemap" href={`${BASE}/sitemap-index.xml`} />
     <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
+    <link rel="apple-touch-icon" href={`${BASE}/apple-touch-icon.png`} />
     <meta property="og:title" content={`${title} · Boxdex`} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:site_name" content="Boxdex" />
+    <meta property="og:locale" content={locale} />
+    {LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={l} />)}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Boxdex" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
     {preloadData.map((p: string) => <link rel="preload" href={`${BASE}${p}`} as="fetch" crossorigin="anonymous" />)}
     <link rel="prefetch" href={`${BASE}/pagefind/pagefind.js`} />
     <ClientRouter />
@@ -84,7 +115,7 @@ function navHref(path: string) {
             <a href={navHref("/drivers")}>{t.nav.drivers}</a>
             <a href={navHref("/contribute")}>{t.nav.contribute}</a>
           </div>
-          <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+          <button id="nav-toggle" aria-label={t.nav.toggleNav} aria-expanded="false">☰</button>
           <div class="search-bar">
             <Search />
           </div>
@@ -95,7 +126,7 @@ function navHref(path: string) {
               type="button"
               aria-haspopup="listbox"
               aria-expanded="false"
-              aria-label="Language"
+              aria-label={t.nav.language}
             >
               <span class="combobox-value">{locale.toUpperCase()}</span>
               <span class="combobox-arrow" aria-hidden="true">▾</span>
@@ -195,6 +226,9 @@ function navHref(path: string) {
         }
       })();
     </script>
+    <!-- Not in head: knip stops parsing an .astro file at a script tag it can't read as JS,
+         hiding every module import below it. -->
+    {jsonLdText && <script type="application/ld+json" is:inline set:html={jsonLdText} />}
   </body>
 </html>
 

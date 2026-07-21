@@ -27,11 +27,14 @@ interface MarkLine {
 const {
   series,
   yName,
+  ariaLabel,
   height = 380,
   markLines = [],
 }: {
   series: Series[];
   yName: string;
+  // Threaded to EChart, which requires it: see the comment there.
+  ariaLabel: string;
   height?: number;
   markLines?: MarkLine[];
 } = $props();
@@ -136,4 +139,4 @@ function buildOption() {
 }
 </script>
 
-<EChart option={buildOption} {height} />
+<EChart option={buildOption} {ariaLabel} {height} />

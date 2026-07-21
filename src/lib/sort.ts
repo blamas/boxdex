@@ -1,4 +1,24 @@
-// Shared raw-value comparator and "missing sorts last" wrapper for catalog.ts and metrics.ts.
+// Shared raw-value comparator and "missing sorts last" wrapper for catalog.ts and metrics.ts,
+// plus the column-header helpers. State stays in each island: they reset it on different
+// signals (category vs tab).
+
+export function nextSortState<K>(activeKey: K | undefined, asc: boolean, key: K) {
+  return activeKey === key ? { key, asc: !asc } : { key, asc: true };
+}
+
+export function sortIndicator<K>(activeKey: K | undefined, asc: boolean, key: K): string {
+  if (activeKey !== key) return "";
+  return asc ? " ↑" : " ↓";
+}
+
+export function ariaSortFor<K>(
+  activeKey: K | undefined,
+  asc: boolean,
+  key: K
+): "ascending" | "descending" | "none" {
+  if (activeKey !== key) return "none";
+  return asc ? "ascending" : "descending";
+}
 
 export type SortableValue = number | string | boolean | undefined;
 

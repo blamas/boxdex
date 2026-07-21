@@ -722,6 +722,30 @@ button {
   }
 }
 
+/* ClientRouter view transitions are enabled globally, so a full page-swap animation runs
+   on every internal navigation. Users who ask the OS for reduced motion get none of it:
+   0.01ms rather than 0 keeps animation-end events firing for anything that awaits them. */
+/* biome-ignore-start lint/complexity/noImportantStyles: a reduced-motion opt-out has to
+   outrank the component-level animation and transition declarations it is overriding,
+   which is the whole point of the block. This is the canonical form of the pattern. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* biome-ignore-end lint/complexity/noImportantStyles: see above */
+
 @media print {
   /* Force the light palette and keep backgrounds/borders so panel "boxes" render;
      browsers drop background colours from print by default. */

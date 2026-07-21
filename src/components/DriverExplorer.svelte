@@ -6,6 +6,7 @@ import { withAll } from "../lib/combobox-items";
 import { ebp } from "../lib/driver";
 import type { CompressionDriver, ConeDriver, Driver, Horn } from "../lib/schemas";
 import { BASE } from "../lib/site";
+import { ariaSortFor, nextSortState, sortIndicator as sortIndicatorFor } from "../lib/sort";
 import { readParam } from "../lib/url-state";
 import Combobox from "./Combobox.svelte";
 import LoadMore, { ROW_LIMIT } from "./LoadMore.svelte";
@@ -206,11 +207,9 @@ function setTab(nextTab: Tab) {
 }
 
 function toggleSort(key: SortKey) {
-  if (sortKey === key) sortAsc = !sortAsc;
-  else {
-    sortKey = key;
-    sortAsc = true;
-  }
+  const next = nextSortState(sortKey, sortAsc, key);
+  sortKey = next.key;
+  sortAsc = next.asc;
 }
 
 function toggleSelect(id: string) {
@@ -226,15 +225,9 @@ function goCompare() {
   window.location.href = `${base}?ids=${encodeURIComponent(ids)}`;
 }
 
-function sortIndicator(key: SortKey) {
-  if (sortKey !== key) return "";
-  return sortAsc ? " ↑" : " ↓";
-}
+const sortIndicator = (key: SortKey) => sortIndicatorFor(sortKey, sortAsc, key);
 
-function ariaSort(key: SortKey): "ascending" | "descending" | "none" {
-  if (sortKey !== key) return "none";
-  return sortAsc ? "ascending" : "descending";
-}
+const ariaSort = (key: SortKey) => ariaSortFor(sortKey, sortAsc, key);
 </script>
 
 <div class="tab-pills">

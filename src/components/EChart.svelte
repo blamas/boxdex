@@ -6,13 +6,15 @@ interface Props {
   // Builder, not a plain object: it is re-invoked on theme change so options that
   // embed theme values (accent colour, radar theme spread) pick up the new theme.
   option: () => object;
+  // Required: ECharts renders to <canvas>, so without a name the chart is empty to a screen reader.
+  ariaLabel: string;
   height?: number;
   // Hook to attach instance-level handlers (e.g. chart.on("click", …)); runs again
   // after every re-init.
   onInit?: (chart: EChartsInstance) => void;
 }
 
-const { option, height = 380, onInit }: Props = $props();
+const { option, ariaLabel, height = 380, onInit }: Props = $props();
 
 let host: HTMLDivElement;
 let chart: EChartsInstance | null = null;
@@ -42,7 +44,8 @@ function deepMerge(
 
 function themeOption(): object {
   return deepMerge(
-    getActiveTheme().theme as Record<string, unknown>,
+    // Makes ECharts describe series and ranges on the canvas itself. A builder may override.
+    deepMerge(getActiveTheme().theme as Record<string, unknown>, { aria: { enabled: true } }),
     option() as Record<string, unknown>
   );
 }
@@ -81,4 +84,11 @@ $effect(() => {
 });
 </script>
 
-<div bind:this={host} style="width:100%;height:var(--echart-h,{height}px);"></div>
+<!-- role="figure" rather than role="img": it names the chart without collapsing the
+     subtree, so the aria description ECharts writes onto the canvas stays reachable. -->
+<div
+  bind:this={host}
+  role="figure"
+  aria-label={ariaLabel}
+  style="width:100%;height:var(--echart-h,{height}px);"
+></div>

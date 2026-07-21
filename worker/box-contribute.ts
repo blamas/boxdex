@@ -98,6 +98,8 @@ function emitMapping(obj: Record<string, unknown>, indent: number): string[] {
       for (const item of v) {
         if (isPlainObject(item)) {
           const itemLines = emitMapping(item, indent + 2);
+          // driverProfiles:[{}] reaches here: requiredFieldErrors only checks the array is non-empty.
+          if (itemLines.length === 0) continue;
           const first = itemLines[0].slice((indent + 2) * 2);
           lines.push(`${itemPad}- ${first}`);
           for (let i = 1; i < itemLines.length; i++) lines.push(itemLines[i]);
@@ -306,12 +308,18 @@ async function verifyTurnstile(secret: string, token: string, ip: string | null)
   form.append("secret", secret);
   form.append("response", token);
   if (ip) form.append("remoteip", ip);
-  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-    method: "POST",
-    body: form,
-  });
-  const data = (await res.json()) as { success?: boolean };
-  return data.success === true;
+  // Never throws: a siteverify 5xx must read as a failed challenge, not a bare 500.
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: form,
+    });
+    if (!res.ok) return false;
+    const data = (await res.json()) as { success?: boolean };
+    return data.success === true;
+  } catch {
+    return false;
+  }
 }
 
 async function installationToken(env: BoxContributeEnv): Promise<string> {

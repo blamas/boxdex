@@ -1,9 +1,47 @@
 ---
-import { DEFAULT_LOCALE, LOCALES } from "../i18n";
+import { DEFAULT_LOCALE, LOCALES, useTranslations } from "../i18n";
 import { BASE } from "../lib/site";
+
+// A locale dispatcher, but still a real document: crawlers and unfurlers land here and do
+// not always follow the JS redirect.
+const t = useTranslations(DEFAULT_LOCALE);
+const defaultHref = `${BASE}/${DEFAULT_LOCALE}/`;
+const canonical = new URL(defaultHref, Astro.site).href;
+const ogImage = new URL(`${BASE}/og.png`, Astro.site).href;
 ---
-<noscript><meta http-equiv="refresh" content={`0;url=${BASE}/${DEFAULT_LOCALE}/`} /></noscript>
-<script is:inline define:vars={{ locales: LOCALES, defaultLocale: DEFAULT_LOCALE, base: BASE }}>
-  const lang = locales.find((l) => navigator.language.startsWith(l)) ?? defaultLocale;
-  window.location.replace(`${base}/${lang}/`);
-</script>
+<!doctype html>
+<html lang={DEFAULT_LOCALE}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boxdex</title>
+    <meta name="description" content={t.pages.catalog.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
+    <link rel="apple-touch-icon" href={`${BASE}/apple-touch-icon.png`} />
+    <meta property="og:title" content="Boxdex" />
+    <meta property="og:description" content={t.pages.catalog.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Boxdex" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Boxdex" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+    {LOCALES.map((l) => (
+      <link rel="alternate" hreflang={l} href={new URL(`${BASE}/${l}/`, Astro.site).href} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <noscript><meta http-equiv="refresh" content={`0;url=${defaultHref}`} /></noscript>
+    <script is:inline define:vars={{ locales: LOCALES, defaultLocale: DEFAULT_LOCALE, base: BASE }}>
+      const lang = locales.find((l) => navigator.language.startsWith(l)) ?? defaultLocale;
+      window.location.replace(`${base}/${lang}/`);
+    </script>
+  </head>
+  <body>
+    <p><a href={defaultHref}>Boxdex</a></p>
+  </body>
+</html>

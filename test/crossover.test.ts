@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   applyCrossovers,
+  cornerStatus,
   EXTRAPOLATION_OCTAVES,
   extrapolatedDb,
   findCrossingHz,
@@ -9,7 +10,9 @@ import {
   resolveCrossovers,
   suggestCrossovers,
   type XoCurve,
+  type XoPoint,
   type XoSuggestion,
+  xoMarkLines,
   xoOverrideKey,
 } from "../src/lib/crossover";
 import { LOG_GRID, type ResponseBand } from "../src/lib/stack";
@@ -566,20 +569,18 @@ describe("resolveCrossovers", () => {
     const [p] = resolveCrossovers([suggestion({ cdMinHz: 95 })], {
       [xoOverrideKey("box", "lo")]: 80,
     });
-    expect(p.lowWarnings).toContain("below the CD protection floor (≥ 95 Hz): diaphragm risk");
+    expect(p.lowWarnings).toEqual([{ key: "belowCdFloor", params: { hz: 95 } }]);
   });
 
   it("warns overrides outside this box's own measured range", () => {
     const [lowBelow] = resolveCrossovers([suggestion()], { [xoOverrideKey("box", "lo")]: 50 });
-    expect(lowBelow.lowWarnings).toContain("below this box's own lowest measured point (70 Hz)");
+    expect(lowBelow.lowWarnings).toContainEqual({ key: "belowOwnData", params: { hz: 70 } });
     const [lowAbove] = resolveCrossovers([suggestion()], { [xoOverrideKey("box", "lo")]: 9000 });
-    expect(lowAbove.lowWarnings).toContain("above this box's own highest measured point (4000 Hz)");
+    expect(lowAbove.lowWarnings).toContainEqual({ key: "aboveOwnData", params: { hz: 4000 } });
     const [highBelow] = resolveCrossovers([suggestion()], { [xoOverrideKey("box", "hi")]: 50 });
-    expect(highBelow.highWarnings).toContain("below this box's own lowest measured point (70 Hz)");
+    expect(highBelow.highWarnings).toContainEqual({ key: "belowOwnData", params: { hz: 70 } });
     const [highAbove] = resolveCrossovers([suggestion()], { [xoOverrideKey("box", "hi")]: 5000 });
-    expect(highAbove.highWarnings).toContain(
-      "above this box's own highest measured point (4000 Hz)"
-    );
+    expect(highAbove.highWarnings).toContainEqual({ key: "aboveOwnData", params: { hz: 4000 } });
   });
 
   it("clears the gap flag when a custom override fills it in", () => {
@@ -624,5 +625,85 @@ describe("resolveCrossovers", () => {
     const [p] = resolveCrossovers([suggestion()], { [xoOverrideKey("box", "lo")]: 0 });
     expect(p.lowCustom).toBe(false);
     expect(p.lowHz).toBe(90);
+  });
+});
+
+function xoPoint(over: Partial<XoPoint> = {}): XoPoint {
+  return {
+    id: "a",
+    name: "A",
+    lowHz: undefined,
+    highHz: undefined,
+    lowCustom: false,
+    highCustom: false,
+    lowGap: false,
+    highGap: false,
+    lowExtrapolated: false,
+    highExtrapolated: false,
+    lowApproximated: false,
+    highApproximated: false,
+    clampedToCdMin: false,
+    highClampedToCdMin: false,
+    lowWarnings: [],
+    highWarnings: [],
+    ...over,
+  };
+}
+
+describe("cornerStatus", () => {
+  it("reports none for a user-set corner regardless of other flags", () => {
+    const p = xoPoint({ lowCustom: true, lowGap: true, lowApproximated: true });
+    expect(cornerStatus(p, "lo")).toBe("none");
+  });
+
+  it("ranks gap above clamped, approximated and extrapolated", () => {
+    const p = xoPoint({
+      lowGap: true,
+      clampedToCdMin: true,
+      lowApproximated: true,
+      lowExtrapolated: true,
+    });
+    expect(cornerStatus(p, "lo")).toBe("gap");
+  });
+
+  it("ranks clamped above approximated, and approximated above extrapolated", () => {
+    expect(cornerStatus(xoPoint({ clampedToCdMin: true, lowApproximated: true }), "lo")).toBe(
+      "clamped"
+    );
+    expect(cornerStatus(xoPoint({ lowApproximated: true, lowExtrapolated: true }), "lo")).toBe(
+      "approximated"
+    );
+    expect(cornerStatus(xoPoint({ lowExtrapolated: true }), "lo")).toBe("extrapolated");
+  });
+
+  it("reads the hi side's own independent flags", () => {
+    const p = xoPoint({ lowGap: true, highClampedToCdMin: true });
+    expect(cornerStatus(p, "hi")).toBe("clamped");
+    expect(cornerStatus(xoPoint(), "hi")).toBe("none");
+  });
+});
+
+describe("xoMarkLines", () => {
+  const color = (id: string) => ({ a: "#aaa", b: "#bbb" })[id];
+
+  it("assigns highpass colour to lowHz and lowpass colour to highHz", () => {
+    const lines = xoMarkLines([xoPoint({ id: "a", lowHz: 100, highHz: 2000 })], color);
+    expect(lines).toEqual([
+      { hz: 100, highpassColor: "#aaa" },
+      { hz: 2000, lowpassColor: "#aaa" },
+    ]);
+  });
+
+  it("merges two boxes meeting at the same frequency into one entry", () => {
+    const lines = xoMarkLines(
+      [xoPoint({ id: "a", highHz: 100 }), xoPoint({ id: "b", lowHz: 100 })],
+      color
+    );
+    expect(lines).toEqual([{ hz: 100, lowpassColor: "#aaa", highpassColor: "#bbb" }]);
+  });
+
+  it("skips points with no colour and corners that are unset", () => {
+    expect(xoMarkLines([xoPoint({ id: "zzz", lowHz: 100 })], color)).toEqual([]);
+    expect(xoMarkLines([xoPoint({ id: "a" })], color)).toEqual([]);
   });
 });

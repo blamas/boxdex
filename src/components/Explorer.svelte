@@ -14,7 +14,8 @@ import {
   sortEnclosuresByColumn,
   sortRecords,
 } from "../lib/metrics";
-import { BASE } from "../lib/site";
+import { fetchJson } from "../lib/site";
+import { ariaSortFor, nextSortState, sortIndicator } from "../lib/sort";
 import Combobox from "./Combobox.svelte";
 import LoadMore, { ROW_LIMIT } from "./LoadMore.svelte";
 
@@ -57,22 +58,14 @@ let colSortKey: EnclosureColumnKey | undefined = $derived(resetColSort(category)
 let colSortAsc = $state(true);
 
 function toggleColSort(key: EnclosureColumnKey) {
-  if (colSortKey === key) colSortAsc = !colSortAsc;
-  else {
-    colSortKey = key;
-    colSortAsc = true;
-  }
+  const next = nextSortState(colSortKey, colSortAsc, key);
+  colSortKey = next.key;
+  colSortAsc = next.asc;
 }
 
-function colSortIndicator(key: EnclosureColumnKey) {
-  if (colSortKey !== key) return "";
-  return colSortAsc ? " ↑" : " ↓";
-}
+const colSortIndicator = (key: EnclosureColumnKey) => sortIndicator(colSortKey, colSortAsc, key);
 
-function colAriaSort(key: EnclosureColumnKey): "ascending" | "descending" | "none" {
-  if (colSortKey !== key) return "none";
-  return colSortAsc ? "ascending" : "descending";
-}
+const colAriaSort = (key: EnclosureColumnKey) => ariaSortFor(colSortKey, colSortAsc, key);
 
 const allTopologies = $derived([...new Set(records.map((r) => r.topology))].sort());
 
@@ -102,9 +95,7 @@ const driverCountItems = $derived(
 
 onMount(async () => {
   try {
-    const res = await fetch(`${BASE}/api/manifest.json`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    records = await res.json();
+    records = await fetchJson("/api/manifest.json");
   } catch (e) {
     error = String(e);
   } finally {

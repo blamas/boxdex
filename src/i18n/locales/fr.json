@@ -1,5 +1,7 @@
 {
   "nav": {
+    "toggleNav": "Afficher ou masquer la navigation",
+    "language": "Langue",
     "catalog": "Catalogue",
     "compare": "Comparer",
     "explore": "Explorer",
@@ -198,6 +200,7 @@
       "heading": "Mon stack",
       "subtitle": "Choisissez les caissons par rôle, réglez les quantités et vérifiez la couverture et les crossovers.",
       "notice": "Les suggestions de crossovers, la réponse système et les estimations de couverture sont des calculs théoriques issus de formules simples et des courbes SPL stockées, pas des simulations acoustiques. Utilisez cet outil pour dimensionner rapidement une sono ou comme point de départ, puis validez avec des mesures et une simulation.",
+      "noticeLimits": "Voir ce que ce modèle calcule et ne calcule pas",
       "noticeLink": "En savoir plus sur la conception et la simulation de systèmes sonores"
     },
     "help": {
@@ -439,6 +442,7 @@
     "verified": "vérifié"
   },
   "compare": {
+    "chartAriaLabel": "Courbes {measure} superposées pour les caissons sélectionnés, en fonction de la fréquence en Hz",
     "search": "Rechercher…",
     "normalise": "Normaliser le pic à 0 dB",
     "advanced": "Avancé",
@@ -599,6 +603,10 @@
     "channelPrefix": "{n} canaux ·",
     "wiringsNote": "Les câblages sont par canal pour la répartition choisie. La puissance ampli est la puissance continue dans la charge choisie : ≥ 1× le total AES des caissons, idéalement 2× pour les peaks propres, un ampli qui clip tue les HP plus vite qu'un vrai surdimensionnement. Les charges affichées sont nominales : une chute d'impédance minimale déclarée ne dégrade l'évaluation que si elle descend plus bas que les 0,8× nominal déjà tolérés par la norme IEC.",
     "worstCaseLoad": "impédance minimale réelle (pire cas) : {load} Ω",
+    "wiringSingle": "seul",
+    "wiringParallel": "{parallel}× parallèle",
+    "wiringSeries": "{series}× série",
+    "wiringSeriesParallel": "{series} série × {parallel} parallèle",
     "coverage": "Couverture",
     "depthFromStack": "Distance depuis le stack",
     "targetSpl": "SPL cible",
@@ -627,6 +635,9 @@
     "raisedToCdFloor": "relevé au plancher CD",
     "extrapolated": "extrapolé, à vérifier",
     "approximated": "point le plus proche, pas un croisement exact",
+    "xoWarnBelowCdFloor": "sous le plancher de protection du moteur (≥ {hz} Hz) : risque pour la membrane",
+    "xoWarnBelowOwnData": "sous le point mesuré le plus bas de ce caisson ({hz} Hz)",
+    "xoWarnAboveOwnData": "au-dessus du point mesuré le plus haut de ce caisson ({hz} Hz)",
     "spectralBalance": "Équilibre spectral : subs {tilt} vs tops",
     "spectralBalanceSuffix": "moy",
     "loading": "Chargement des courbes…",
@@ -634,9 +645,11 @@
     "noSplAvailable": "Aucune courbe SPL disponible pour les caissons sélectionnés.",
     "chartNoteXo": "Gras = réponse système prédite avec crossovers LR4 idéaux appliqués (bandes filtrées, somme cohérente, suppose des bandes alignées en phase). Pointillé = bandes individuelles filtrées. Prédiction dérivée. Courbes stockées inchangées.",
     "chartNoteNoXo": "Gras = réponse système prédite (courbes par bande pondérées par le gain de couplage, puis sommées en puissance). Pointillé = bandes individuelles. Prédiction dérivée. Courbes stockées inchangées.",
-    "systemPredicted": "Système (prédit)"
+    "systemPredicted": "Système (prédit)",
+    "chartAriaLabel": "Réponse en fréquence prédite du système : SPL en dB en fonction de la fréquence en Hz, une courbe par bande plus la réponse système sommée"
   },
   "boxCurves": {
+    "chartAriaLabel": "Courbe {measure} pour {name}, en fonction de la fréquence en Hz",
     "simulation": "Simulation",
     "measurement": "Mesure",
     "loading": "Chargement…",
@@ -647,6 +660,7 @@
     "measuredSolid": "mesuré (plein)"
   },
   "designSpace": {
+    "chartAriaLabel": "Nuage de points de {y} en fonction de {x} pour le catalogue de caissons, un point par caisson.",
     "xAxis": "Axe X",
     "yAxis": "Axe Y",
     "colorBy": "Couleur par",
@@ -659,6 +673,7 @@
     "provenance": "Provenance"
   },
   "radarCompare": {
+    "chartAriaLabel": "Diagramme radar comparant {items} sur {n} axes, chacun normalisé à 100 = maximum du catalogue. Les mêmes valeurs figurent dans le tableau ci-dessus.",
     "selectPlaceholder": "sélectionner...",
     "selectPrompt": "Sélectionnez au moins une entrée dans la liste déroulante ci-dessus, ou allez à {listLabel} et cochez des cases pour comparer.",
     "model": "Modèle",
@@ -771,6 +786,22 @@
     "fit": "Adéquation",
     "notes": "Notes",
     "compare": "Comparer",
+    "tierClose": "proche",
+    "tierUsable": "utilisable",
+    "tierRisky": "risqué",
+    "paramFs": "Fs",
+    "paramQts": "Qts",
+    "paramVas": "Vas",
+    "paramXmax": "Xmax",
+    "paramSens": "Sens",
+    "paramMinXo": "XO min",
+    "paramRangeLow": "Bande basse",
+    "paramRangeHigh": "Bande haute",
+    "paramVoiceCoil": "Bobine",
+    "flagImpedanceDiffers": "{candidate} Ω contre {target} Ω : la charge ampli change",
+    "flagLowerPower": "{candidate} W contre {target} W : tenue en puissance plus faible",
+    "flagLowerExcursion": "Xmax {candidate} mm < {target} mm : SPL limité par l'excursion plus bas",
+    "flagHigherMinCrossover": "coupure minimale {candidate} Hz > {target} Hz : remonter le XO",
     "compareClosest": "Comparer les {n} plus proches avec le {model} →",
     "provenanceNoteCone": "Classé par similarité de paramètres uniquement (Qts, Fs, Vas, Xmax, sensibilité). Même taille nominale requise. Une indication, pas une simulation, modélisez l'échange avant de couper ou d'acheter.",
     "provenanceNoteComp": "Classé par similarité de paramètres uniquement (plancher crossover, plage, sensibilité, voice coil). Même exit requis. Une indication, pas une simulation, modélisez l'échange avant de couper ou d'acheter.",
@@ -985,7 +1016,7 @@
           "crossoverSuggestions": {
             "term": "Suggestions de crossover",
             "ariaLabel": "Lien vers Suggestions de crossover",
-            "def": "Un point de crossover par paire de bandes adjacentes : la valeur indiquée du caisson quand disponible, sinon la moyenne géométrique de la zone de recouvrement, limitée aux planchers de protection des HP à compression. Les lacunes spectrales sont signalées plutôt que masquées."
+            "def": "Un point de crossover par paire de bandes adjacentes, déterminé à partir des courbes SPL des caissons eux-mêmes plutôt que de leurs specs déclarées : la fréquence où les deux courbes composites se croisent à SPL égal, cherchée sur une grille log au 1/12 d'octave et relevée au plancher de protection des HP à compression le cas échéant. La recherche peut aller jusqu'à une octave au-delà du dernier point mesuré d'une courbe, en suivant la pente de ce bord. Sans croisement réel, le point le plus proche est retenu et signalé comme approximé ; au-delà de 20 dB d'écart, une lacune est signalée à la place. Ces points sont des départs pour un vrai calage, pas des presets DSP : le modèle ne traite que le module, sans terme de phase."
           },
           "systemResponse": {
             "term": "Réponse système prédite",
@@ -999,6 +1030,16 @@
             "term": "Badges mesuré vs simulé",
             "ariaLabel": "Lien vers Badges mesuré vs simulé",
             "def": "Chaque caisson est marqué mesuré ou simulé. Les mesures viennent de REW ou Klippel, les simulations de Hornresp ou AkAbak. Les deux ne sont jamais mélangés sur la même courbe."
+          },
+          "sourceQuality": {
+            "term": "D'où viennent les specs des HP",
+            "ariaLabel": "Lien vers D'où viennent les specs des HP",
+            "def": "Les paramètres des HP sont transcrits, et leurs sources sont inégales : la plupart des fiches renvoient à des agrégateurs tiers plutôt qu'à une fiche constructeur, et certaines n'ont aucun lien source. Considérez chaque valeur comme nominale constructeur tant que vous n'avez pas vérifié le lien. Les paramètres Thiele-Small publiés portent en général sur un seul exemplaire et varient de 10 à 20 % d'une unité à l'autre : une valeur affichée à trois décimales est une transcription, pas une tolérance."
+          },
+          "modelLimits": {
+            "term": "Ce que les prédictions supposent",
+            "ariaLabel": "Lien vers Ce que les prédictions supposent",
+            "def": "Les prédictions sont de l'arithmétique sur les courbes stockées, pas des simulations acoustiques. Principales hypothèses : le gain de réseau est non borné et indépendant de la fréquence, la distance suit la loi en carré inverse d'une source ponctuelle sans absorption de l'air, le modèle de crossover ne traite que le module sans terme de phase (il ne peut donc montrer ni lobes ni annulation dans la zone de coupure), et aucune prédiction ne tient compte de la compression thermique ou d'évent. L'alignement temporel, la directivité, le levage et les réglages de limiteur sont entièrement hors périmètre. Le détail complet, avec chaque constante citée depuis le code, est dans docs/methodology.md du dépôt."
           },
           "exports": {
             "term": "Exports",
@@ -1066,7 +1107,7 @@
           },
           "horn_profile": {
             "term": "Profil d'évasement",
-            "def": "La courbe mathématique des parois du horn. Conique : parois droites, pattern le plus large, plus simple à construire. Exponentiel : évasement classique, coupure basse pour une bouche donnée. Tractrix : transition d'impédance plus douce, courant en sono PA. Sphéroïdal oblat : optimisé pour une directivité constante selon la fréquence. Radial : parois en forme de secteur, bon contrôle du pattern sur un plan. Multicellulaire : réseau de petits horns, large couverture, look sono vintage. Diffraction : guide d'onde plat, très large couverture avec peu de profondeur."
+            "def": "La courbe mathématique des parois du horn. Conique : parois droites, pattern le plus large, plus simple à construire. Exponentiel : évasement classique, coupure basse pour une bouche donnée. Tractrix : transition d'impédance plus douce, courant en sono PA. Sphéroïdal oblat : optimisé pour une directivité constante selon la fréquence. Radial : parois en forme de secteur, bon contrôle du pattern sur un plan. Multicellulaire : réseau de petits horns, large couverture, look sono vintage. Diffraction : guide d'onde plat, très large couverture avec peu de profondeur. Hypex : hyperbolique-exponentiel, une famille située entre le conique et l'exponentiel, la constante d'évasement arbitre entre charge et ondulations dans le médium. Le Cléac'h : évasement calculé pour que le front d'onde reste sphérique sur l'axe, ce qui minimise les modes d'ordre supérieur, apprécié en hi-fi à pavillon et en large bande."
           }
         },
         "system": {
@@ -1152,6 +1193,10 @@
           "transmission_line": {
             "term": "Ligne de transmission",
             "def": "Un long conduit amorti derrière le HP, ~quart de longueur d'onde à l'accord : extension profonde et propre dans un caisson modeste. Plus un choix hi-fi/studio qu'un cheval de bataille de sono, grand pour le SPL qu'il produit."
+          },
+          "cardioid": {
+            "term": "Cardioïde",
+            "def": "Un caisson unique conçu pour rayonner vers l'avant et annuler vers l'arrière, soit avec des HP opposés, soit avec un HP arrière alimenté en retard et en opposition de phase. Apporte environ 10-15 dB de réjection avant-arrière dans le grave, ce qui dégage la scène et le voisinage du champ des subs, au prix d'un peu de niveau vers l'avant et de canaux d'ampli supplémentaires. À distinguer du end-fire, qui obtient un résultat similaire en espaçant plusieurs caissons ordinaires : c'est une propriété de la disposition, pas du caisson. Boxdex décrit la topologie caisson par caisson, le end-fire n'a donc pas de valeur de taxonomie."
           }
         },
         "availability": {

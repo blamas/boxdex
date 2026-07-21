@@ -49,6 +49,18 @@ describe("parseCurveCsv", () => {
     expect(result.freq).toEqual([200]);
     expect(result.value).toEqual([6.4]);
   });
+
+  it("sorts a descending export ascending, keeping each value with its frequency", () => {
+    const result = parseCurveCsv("400,3\n200,2\n100,1");
+    expect(result.freq).toEqual([100, 200, 400]);
+    expect(result.value).toEqual([1, 2, 3]);
+  });
+
+  it("orders unsorted rows without inventing or dropping points", () => {
+    const result = parseCurveCsv("200,2\n50,9\n400,3\n100,1");
+    expect(result.freq).toEqual([50, 100, 200, 400]);
+    expect(result.value).toEqual([9, 1, 2, 3]);
+  });
 });
 
 describe("toPairs", () => {

@@ -21,7 +21,8 @@
         "front_loaded_horn",
         "folded_horn",
         "scoop",
-        "transmission_line"
+        "transmission_line",
+        "cardioid"
       ]
     },
     "driverProfiles": {
