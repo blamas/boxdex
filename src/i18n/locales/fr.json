@@ -173,7 +173,7 @@
   "pages": {
     "catalog": {
       "title": "Catalogue",
-      "description": "Plans de caissons libres : catalogue de designs subwoofer et top",
+      "description": "Catalogue de caissons ouvert : designs subwoofer et top",
       "heading": "Catalogue de caissons"
     },
     "compare": {
@@ -227,7 +227,7 @@
     },
     "contribute": {
       "title": "Ajouter un caisson",
-      "description": "Contribuez un plan de caisson libre à Boxdex",
+      "description": "Contribuez un plan de caisson à Boxdex",
       "heading": "Ajouter un caisson",
       "subtitle": "Soumettez un caisson complet. À l'envoi, nous ouvrons une pull request qu'un mainteneur relira."
     },
