@@ -16,12 +16,7 @@ interface Props {
   preloadData?: string[];
 }
 
-const {
-  title,
-  description = "The open speaker catalog: enclosure plans, driver specs, and horn data",
-  jsonLd,
-  preloadData = [],
-} = Astro.props;
+const { title, description, jsonLd, preloadData = [] } = Astro.props;
 
 // Escaped so an embedded "</script>" cannot close the block early.
 const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, "\\u003c") : undefined;
@@ -29,6 +24,7 @@ const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, "\\u003c") : un
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
 const t = useTranslations(locale);
+const pageDescription = description ?? t.meta.description;
 
 // Strip BASE then locale prefix to get the path for the language switcher.
 // Lookahead (?=/|$) prevents matching a locale code that prefixes the next path segment.
@@ -49,7 +45,7 @@ const localeAlternates = allLocales.map((l) => ({
 const defaultLocaleHref = localeAlternates.find((l) => l.code === DEFAULT_LOCALE)?.href;
 
 // Unfurlers do not resolve relative image paths, so og:image has to be absolute.
-const ogImage = new URL(`${BASE}/og.png`, Astro.site).href;
+const ogImage = new URL(`${BASE}/og-${locale}.png`, Astro.site).href;
 
 function navHref(path: string) {
   return getRelativeLocaleUrl(locale, path);
@@ -63,7 +59,7 @@ function navHref(path: string) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{title} · Boxdex</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
     {localeAlternates.map((l) => <link rel="alternate" hreflang={l.code} href={l.href} />)}
     {defaultLocaleHref && <link rel="alternate" hreflang="x-default" href={defaultLocaleHref} />}
@@ -72,7 +68,7 @@ function navHref(path: string) {
     <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
     <link rel="apple-touch-icon" href={`${BASE}/apple-touch-icon.png`} />
     <meta property="og:title" content={`${title} · Boxdex`} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Boxdex" />

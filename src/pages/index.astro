@@ -7,7 +7,7 @@ import { BASE } from "../lib/site";
 const t = useTranslations(DEFAULT_LOCALE);
 const defaultHref = `${BASE}/${DEFAULT_LOCALE}/`;
 const canonical = new URL(defaultHref, Astro.site).href;
-const ogImage = new URL(`${BASE}/og.png`, Astro.site).href;
+const ogImage = new URL(`${BASE}/og-${DEFAULT_LOCALE}.png`, Astro.site).href;
 ---
 <!doctype html>
 <html lang={DEFAULT_LOCALE}>

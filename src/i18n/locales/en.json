@@ -13,6 +13,11 @@
     "toggleTheme": "Toggle light/dark theme",
     "ariaLabel": "Main navigation"
   },
+  "meta": {
+    "titleRest": ": the enclosure catalog",
+    "description": "The enclosure catalog: everything you need, from specs to your next stack",
+    "ogDescription": "Everything you need, from specs to your next stack"
+  },
   "contributeBox": {
     "loading": "Loading drivers…",
     "failedToLoad": "Could not load the driver catalog.",
@@ -173,7 +178,7 @@
   "pages": {
     "catalog": {
       "title": "Catalog",
-      "description": "Open enclosure catalog: subwoofer and top designs",
+      "description": "The enclosure catalog: subwoofer and top designs, with specs and curves to compare",
       "heading": "Enclosure Catalog"
     },
     "compare": {

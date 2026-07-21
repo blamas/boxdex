@@ -13,6 +13,11 @@
     "toggleTheme": "Basculer thème clair/sombre",
     "ariaLabel": "Navigation principale"
   },
+  "meta": {
+    "titleRest": " : le catalogue de caissons",
+    "description": "Le catalogue de caissons : tout ce qu'il vous faut, des specs à votre prochain stack",
+    "ogDescription": "Tout ce qu'il vous faut, des specs à votre prochain stack"
+  },
   "contributeBox": {
     "loading": "Chargement des HP…",
     "failedToLoad": "Impossible de charger le catalogue de HP.",
@@ -173,7 +178,7 @@
   "pages": {
     "catalog": {
       "title": "Catalogue",
-      "description": "Catalogue de caissons ouvert : designs subwoofer et top",
+      "description": "Le catalogue de caissons : designs subwoofer et top, avec specs et courbes à comparer",
       "heading": "Catalogue de caissons"
     },
     "compare": {

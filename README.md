@@ -1,4 +1,4 @@
-# Boxdex: the open speaker catalog
+# Boxdex: the enclosure catalog
 
 [![CI](https://github.com/blamas/boxdex/actions/workflows/ci.yml/badge.svg)](https://github.com/blamas/boxdex/actions/workflows/ci.yml)
 [![Deploy](https://github.com/blamas/boxdex/actions/workflows/deploy.yml/badge.svg)](https://github.com/blamas/boxdex/actions/workflows/deploy.yml)
