@@ -10,7 +10,7 @@ export default defineConfig({
       // Pure logic only. Islands/pages need a browser and are out of scope. The worker
       // request path and its pure helpers are measured, box-contribute's GitHub REST
       // orchestration is integration-level and stays out.
-      include: ["src/lib/**/*.ts", "worker/index.ts", "worker/resolve.ts"],
+      include: ["src/lib/**/*.ts", "worker/index.ts", "worker/resolve.ts", "worker/visitor.ts"],
       // No behaviour to test: ECharts registration, const tables, env-derived consts,
       // zod declarations (validated by `astro sync`), and history/location DOM glue.
       exclude: [

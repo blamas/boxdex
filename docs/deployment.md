@@ -7,11 +7,13 @@ bucket, a Worker serves them. GitHub Actions runs the build and the sync. There 
 Cloudflare Pages or Workers Builds integration: the Git integration is disconnected.
 
 The fully-static architecture is a deliberate privacy choice: there is no server-side
-session handling, no application database, and no opportunity to log user behaviour
-beyond what Cloudflare's infrastructure captures for any CDN request (IP, user-agent,
-URL). We add nothing on top of that. Future write endpoints (e.g. the planned box-contribute
-form) will operate on enclosure metadata only and will not require or store any personal
-data.
+session handling, no application database, no analytics vendor, and no client-side
+tracking script. The one exception is a minimal, privacy-preserving visitor summary
+(`client`/`bot`/`country`/a monthly-rotating non-reversible `visitorHash`) logged for
+HTML page views only, see [ADR-013](decisions/013-privacy-preserving-visitor-metrics.md).
+Raw IP and user-agent are read in memory to derive that summary and are never logged.
+The box-contribute form operates on enclosure metadata only and does not require or
+store any personal data.
 
 See [ADR-003](decisions/003-r2-worker-hosting.md) for why R2+Worker over Pages/Workers
 static assets, and [ADR-004](decisions/004-diffed-pr-previews.md) for the diffed PR
@@ -40,14 +42,15 @@ Set these in the GitHub repo settings before any deploy runs.
 | `R2_S3_ENDPOINT` | `https://<account-id>.r2.cloudflarestorage.com` | R2 S3 endpoint for rclone |
 | `PUBLIC_TURNSTILE_SITE_KEY` | `0x4AAA…` | Turnstile site key baked into the contribute island at build time (public by design). Empty until the widget exists: the form then renders without a widget and the endpoint rejects submissions |
 
-The box-contribute endpoint additionally needs two **Worker secrets**, set with
-`wrangler secret put`, never committed and never in GitHub Actions:
+The Worker additionally needs these **Worker secrets**, set with `wrangler secret put`,
+never committed and never in GitHub Actions:
 
 | Worker secret | Description |
 |---------------|-------------|
 | `GITHUB_APP_PRIVATE_KEY` | PEM private key of the GitHub App that opens contribution PRs |
 | `TURNSTILE_SECRET` | Turnstile secret key for `siteverify` |
 | `E2E_BYPASS_SECRET` (optional) | If set, a request with header `x-e2e-bypass` matching this value verifies against Cloudflare's documented always-pass Turnstile test secret instead of `TURNSTILE_SECRET`, letting an internal test script drive the real production form without a human solving Turnstile. Unset in normal operation, only needed while running such a test. It never takes effect when `ASSET_PREFIX` is `production`. |
+| `VISITOR_HASH_SALT` (optional) | Salt for the monthly-rotating visitor hash, see [ADR-013](decisions/013-privacy-preserving-visitor-metrics.md). Generate with `openssl rand -hex 32`. Safe to rotate any time, the monthly period already bounds cross-month correlation, rotation only adds defense-in-depth. If unset, visitor pages are still served normally, just without the `visitorHash` field in the log. |
 
 ---
 

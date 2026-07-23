@@ -21,8 +21,15 @@ function ctx() {
   return { waitUntil: (p: Promise<unknown>) => waited.push(p), passThroughOnException: () => {} };
 }
 
-function run(path: string, env: Record<string, unknown>, init?: RequestInit): Promise<Response> {
+function run(
+  path: string,
+  env: Record<string, unknown>,
+  init?: RequestInit,
+  cf?: Record<string, unknown>
+): Promise<Response> {
   const req = new Request(`https://boxdex.example${path}`, init);
+  // biome-ignore lint/suspicious/noExplicitAny: test stubs stand in for Cloudflare runtime types.
+  if (cf) (req as any).cf = cf;
   // biome-ignore lint/suspicious/noExplicitAny: test stubs stand in for Cloudflare runtime types.
   return worker.fetch(req as any, env as any, ctx() as any);
 }
@@ -127,5 +134,92 @@ describe("worker fetch handler", () => {
     const res = await run("/en/nope", prod({}));
     expect(res.status).toBe(404);
     expect(await res.text()).toBe("Not found");
+  });
+});
+
+// biome-ignore lint/suspicious/noExplicitAny: console.log args are untyped in the vitest spy.
+function loggedEvent(spy: ReturnType<typeof vi.spyOn>, event: string): any {
+  return (
+    spy.mock.calls
+      .map((c: unknown[]) => JSON.parse(c[0] as string))
+      // biome-ignore lint/suspicious/noExplicitAny: parsed log JSON is untyped.
+      .find((l: any) => l.event === event)
+  );
+}
+
+describe("visitor logging", () => {
+  const CHROME_WINDOWS =
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36";
+
+  it("attaches client/bot/country/visitorHash to an HTML GET when a salt is set", async () => {
+    const spy = vi.spyOn(console, "log").mockImplementation(() => {});
+    const env = { ...prod({ "production/en/index.html": { body: "hi" } }), VISITOR_HASH_SALT: "s" };
+    await run(
+      "/en/",
+      env,
+      { headers: { "user-agent": CHROME_WINDOWS, "cf-connecting-ip": "203.0.113.5" } },
+      { country: "FR", botManagement: { score: 90, verifiedBot: false } }
+    );
+    const served = loggedEvent(spy, "served");
+    expect(served.client).toBe("Chrome/Windows/desktop");
+    expect(served.bot).toBe(false);
+    expect(served.country).toBe("FR");
+    expect(served.visitorHash).toMatch(/^[0-9a-f]{16}$/);
+    spy.mockRestore();
+  });
+
+  it("flags a verified bot and its category, omits visitorHash without a salt", async () => {
+    const spy = vi.spyOn(console, "log").mockImplementation(() => {});
+    const env = prod({ "production/en/index.html": { body: "hi" } });
+    await run(
+      "/en/",
+      env,
+      { headers: { "user-agent": "Googlebot/2.1" } },
+      {
+        country: "US",
+        botManagement: { score: 1, verifiedBot: true },
+        verifiedBotCategory: "search_engine",
+      }
+    );
+    const served = loggedEvent(spy, "served");
+    expect(served.bot).toBe(true);
+    expect(served.botCategory).toBe("search_engine");
+    expect(served.visitorHash).toBeUndefined();
+    spy.mockRestore();
+  });
+
+  it("does not attach visitor fields to a non-HTML asset request", async () => {
+    const spy = vi.spyOn(console, "log").mockImplementation(() => {});
+    const env = { ...prod({ "production/logo.png": { body: "bytes" } }), VISITOR_HASH_SALT: "s" };
+    await run(
+      "/logo.png",
+      env,
+      { headers: { "user-agent": CHROME_WINDOWS, "cf-connecting-ip": "203.0.113.5" } },
+      { country: "FR", botManagement: { score: 90, verifiedBot: false } }
+    );
+    const served = loggedEvent(spy, "served");
+    expect(served.client).toBeUndefined();
+    expect(served.bot).toBeUndefined();
+    expect(served.country).toBeUndefined();
+    expect(served.visitorHash).toBeUndefined();
+    spy.mockRestore();
+  });
+
+  it("attaches visitor fields on a 304 not-modified HTML hit too", async () => {
+    const spy = vi.spyOn(console, "log").mockImplementation(() => {});
+    const env = {
+      ...prod({ "production/en/index.html": { body: "hi", httpEtag: '"e1"' } }),
+      VISITOR_HASH_SALT: "s",
+    };
+    await run(
+      "/en/",
+      env,
+      { headers: { "if-none-match": '"e1"', "user-agent": CHROME_WINDOWS } },
+      { country: "FR", botManagement: { score: 90, verifiedBot: false } }
+    );
+    const notModified = loggedEvent(spy, "not_modified");
+    expect(notModified.client).toBe("Chrome/Windows/desktop");
+    expect(notModified.visitorHash).toMatch(/^[0-9a-f]{16}$/);
+    spy.mockRestore();
   });
 });
