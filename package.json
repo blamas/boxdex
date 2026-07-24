@@ -22,7 +22,7 @@
     "wrangler:types": "wrangler types worker/worker-configuration.d.ts --include-runtime=false --strict-vars=false"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.2",
+    "@astrojs/mdx": "^7.0.3",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/svelte": "^9.0.1",
     "@fontsource/jetbrains-mono": "^5.3.0",
@@ -31,17 +31,17 @@
     "astro-pagefind": "^2.0.1",
     "echarts": "^6.1.0",
     "satori": "^0.28.2",
-    "svelte": "^5.56.4"
+    "svelte": "^5.56.6"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@axe-core/playwright": "^4.12.1",
-    "@biomejs/biome": "^2.5.3",
-    "@cloudflare/workers-types": "^5.20260710.1",
+    "@biomejs/biome": "^2.5.4",
+    "@cloudflare/workers-types": "^5.20260717.1",
     "@playwright/test": "1.61.1",
     "@types/node": "^26.1.1",
     "@vitest/coverage-v8": "^4.1.10",
-    "knip": "^6.26.0",
+    "knip": "^6.27.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10",
     "wrangler": "^4"
