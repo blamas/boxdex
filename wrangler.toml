@@ -33,4 +33,4 @@ invocation_logs = true
 destinations = [ "alloy-reyth" ]
 
 [observability.traces]
-enabled = true
+enabled = false
