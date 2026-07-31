@@ -30,6 +30,7 @@ enabled = true
 [observability.logs]
 enabled = true
 invocation_logs = true
+destinations = [ "alloy-reyth" ]
 
 [observability.traces]
 enabled = true
