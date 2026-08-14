@@ -36,12 +36,12 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.12.1",
-    "@biomejs/biome": "^2.5.6",
-    "@cloudflare/workers-types": "^5.20260731.1",
+    "@biomejs/biome": "^2.5.7",
+    "@cloudflare/workers-types": "^5.20260804.1",
     "@playwright/test": "1.62.1",
     "@types/node": "^26.1.2",
     "@vitest/coverage-v8": "^4.1.10",
-    "knip": "^6.29.0",
+    "knip": "^6.32.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10",
     "wrangler": "^4"
