@@ -15,7 +15,7 @@ jobs:
     if: github.event.action != 'closed'
     permissions:
       contents: read
-    uses: ./.github/workflows/ci.yml
+    uses: $/.github/workflows/ci.yml
 
   deploy-pr:
     needs: ci
