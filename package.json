@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.8",
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/sitemap": "^3.7.4",
     "@astrojs/svelte": "^9.0.1",
     "@fontsource/jetbrains-mono": "^5.3.0",
     "@resvg/resvg-js": "^2.6.2",
@@ -31,17 +31,17 @@
     "astro-pagefind": "^2.0.1",
     "echarts": "^6.1.0",
     "satori": "^0.33.4",
-    "svelte": "^5.56.10"
+    "svelte": "^5.57.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.13.0",
-    "@biomejs/biome": "^2.5.11",
-    "@cloudflare/workers-types": "^5.20260828.1",
+    "@biomejs/biome": "^2.5.12",
+    "@cloudflare/workers-types": "^5.20260904.1",
     "@playwright/test": "1.62.1",
-    "@types/node": "^26.4.0",
+    "@types/node": "^26.4.1",
     "@vitest/coverage-v8": "^4.1.11",
-    "knip": "^6.32.3",
+    "knip": "^6.34.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11",
     "wrangler": "^4"
