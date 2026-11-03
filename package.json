@@ -30,7 +30,7 @@
     "astro": "^7.3.2",
     "astro-pagefind": "^2.0.1",
     "echarts": "^6.1.0",
-    "satori": "^0.33.4",
+    "satori": "^0.33.5",
     "svelte": "^5.57.0"
   },
   "devDependencies": {
